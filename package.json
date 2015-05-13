@@ -1,0 +1,13 @@
+{
+  "name": "keithjgrant.com",
+  "version": "1.0.0",
+  "description": "My Website",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Keith J Grant",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-jade": "^1.0.0",
+    "gulp-sass": "^2.0.1"
+  }
+}
