@@ -1,8 +1,9 @@
 .masthead {
-  margin: 1em -2em 6em;
-  padding: 2em;
-  background-color: #333;
-  animation: swingdown .6s cubic-bezier(0.70, 0.35, 0.35, 1.5);
+  height: 80vh;
+  padding: 2em ;
+  margin-bottom: 2em;
+  background: $black url(../images/blue-bokeh.jpg) center no-repeat;
+  background-size: cover;
 
   > h1 {
     color: $header-color;

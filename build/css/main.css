@@ -399,11 +399,18 @@ th {
   100% {
     transform: rotateZ(0) rotateY(0); } }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1.0; } }
+
 body {
   background-color: #222;
   color: #eee;
-  font-family: "Merriweather";
-  margin: 0 20vw; }
+  font-family: "Merriweather", Helvetica, Arial, sans-serif; }
 
 p {
   line-height: 1.6; }
@@ -423,24 +430,14 @@ a:active {
   color: #00acf3; }
 
 .masthead {
-  margin: 1em -2em 6em;
+  height: 80vh;
   padding: 2em;
-  background-color: #333;
-  animation: swingdown 0.6s cubic-bezier(0.7, 0.35, 0.35, 1.5); }
+  margin-bottom: 2em;
+  background: #222 url(../images/blue-bokeh.jpg) center no-repeat;
+  background-size: cover; }
   .masthead > h1 {
     color: #6C6263;
     margin-top: 0; }
 
-.grid {
-  position: absolute;
-  left: 20vw;
-  right: 20vw;
-  overflow: hidden; }
-
-.grid-panel {
-  background: #6C6263;
-  height: 5.9vw;
-  width: 10%;
-  float: left;
-  animation: pane-drop 1s cubic-bezier(0.93, -0.21, 0.32, 1.5);
-  animation: pane-drop 1s cubic-bezier(0.72, -0.19, 0.64, 1.24); }
+.post {
+  animation: fade-in 1.5s ease-out; }
