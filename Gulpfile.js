@@ -3,10 +3,13 @@
 var gulp = require('gulp');
 var jade = require('gulp-jade');
 var sass = require('gulp-sass');
-var connect = require('gulp-connect');
-var del = require('del');
 var minifyCSS = require('gulp-minify-css');
+var connect = require('gulp-connect');
+var open = require('gulp-open');
+var del = require('del');
 var jadeVars = require('./src/jade-vars.json');
+
+var PORT_NUM = 4242;
 
 gulp.task('clean', function (done) {
   del('./build/**/*', done);
@@ -43,9 +46,17 @@ gulp.task('sass:verbose', function () {
 gulp.task('connect', function () {
   connect.server({
     root: ['build'],
-    port: 4242,
+    port: PORT_NUM,
     livereload: true
   });
+});
+
+gulp.task('open', function(){
+  gulp.src('./build/index.html')
+    .pipe(open('', {
+      url: 'http://localhost:' + PORT_NUM,
+      app: 'google chrome'
+    }));
 });
 
 gulp.task('watch', ['connect'], function () {
@@ -54,4 +65,4 @@ gulp.task('watch', ['connect'], function () {
 
 gulp.task('build', ['copy:images', 'jade', 'sass:verbose']);
 
-gulp.task('default', ['build', 'connect', 'watch']);
+gulp.task('default', ['build', 'connect', 'watch', 'open']);
