@@ -1,0 +1,25 @@
+body {
+  background-color: $page-background;
+  color: $font-color;
+  font-family: $font-primary;
+  margin: 0 20vw;
+}
+
+p {
+  line-height: 1.6;
+}
+
+a:link {
+  color: $blue;
+  text-shadow: $blue 0 0 3px;
+}
+a:visited {
+  color: desaturate($blue, 20%);
+  text-shadow: $blue 0 0 0;
+}
+a:hover {
+  text-shadow: $blue 0 0 1px;
+}
+a:active {
+  color: saturate($blue, 20%);
+}

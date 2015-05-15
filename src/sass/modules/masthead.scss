@@ -1,0 +1,11 @@
+.masthead {
+  margin: 1em -2em 6em;
+  padding: 2em;
+  background-color: #333;
+  animation: swingdown .6s cubic-bezier(0.70, 0.35, 0.35, 1.5);
+
+  > h1 {
+    color: $header-color;
+    margin-top: 0;
+  }
+}

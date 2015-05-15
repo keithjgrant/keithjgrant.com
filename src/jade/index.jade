@@ -1,3 +1,41 @@
 doctype html
+head
+  meta(charset="utf-8")
+  meta(http-equiv="x-ua-compatible", content="ie=edge")
+  title Keith J Grant
+  meta(name='description', content='')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  link(rel='apple-touch-icon', href='apple-touch-icon.png')
+  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Merriweather:400,700')
+  link(rel='stylesheet', href='css/main.css')
+  script(src='js/vendor/modernizr-2.8.3.min.js')
 
-h1 This is a test
+body
+
+  header.masthead
+    h1 Keith J Grant
+    .bio JavaScript, CSS, UX, and the open web.  I am for tacos, and against mosquitos.
+      .bio-twitter
+        a(href="http://twitter.com/keithjgrantxyz") @keithjgrant
+
+  .grid
+    - var row = 0
+    while row < 10
+      - var col = 0
+      while col < 10
+        .grid-panel= col
+        - col++
+      - row++
+
+
+  section.post
+    h2.post-title Taming CSS
+    .post-content
+      p Observation 1: Web developers, in general, don’t know CSS as well as they should.
+      p Observation 2: There aren’t really any good roadmaps for learning all the essentials of CSS.
+      p There are great resources for the basics, for styling, for code organization/architecture, for advanced tricks. But to work through them all, you get a lot of overlap, and they still leave you with missing gaps in your knowledge. Often, with CSS, you don’t know what you don’t know, and that makes it hard to move forward. My hope is to fix that, by putting them all together in one place.
+      p Announcing <a href="https://github.com/keithjgrant/Taming-CSS">Taming CSS</a>, a CSS book for web developers.
+    date.post-date 29 April 2015
+
+
+  script(src="js/main.js")
