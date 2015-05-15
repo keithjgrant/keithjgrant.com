@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var minifyCSS = require('gulp-minify-css');
 var connect = require('gulp-connect');
 var open = require('gulp-open');
+var shell = require('gulp-shell');
 var del = require('del');
 var jadeVars = require('./src/jade-vars.json');
 
@@ -58,6 +59,10 @@ gulp.task('open', function(){
       app: 'google chrome'
     }));
 });
+
+gulp.task('deploy', shell.task([
+  'git subtree push --prefix build origin gh-pages'
+]));
 
 gulp.task('watch', ['connect'], function () {
   gulp.watch('./src/**/*', ['build']);
