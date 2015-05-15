@@ -1,12 +1,31 @@
+$masthead-image: url(../images/atlanta-mist.jpg);
+$bokeh-image: url(../images/blue-bokeh.jpg);
+$masthead-mask: transparentize($deep-blue, .5);
+$masthead-text: $gray-light;
+
 .masthead {
-  height: 80vh;
-  padding: 2em ;
+  color: $masthead-text;
+  min-height: 80vh;
+  padding: 2em;
   margin-bottom: 2em;
-  background: $black url(../images/blue-bokeh.jpg) center no-repeat;
+  background: $deep-blue $masthead-image center no-repeat;
+  background-image: linear-gradient(to top, $masthead-mask, $masthead-mask), $masthead-image;
   background-size: cover;
 
   > h1 {
-    color: $header-color;
+    color: $blue-light;
     margin-top: 0;
+  }
+
+  a:link {
+    text-shadow: $link-color 0 0 3px;
+    text-decoration: none;
+  }
+  a:hover {
+    text-shadow: $link-color 0 0 1px;
+  }
+
+  @media screen and (min-width: $breakpoint) {
+    padding: 10vh 20% 2em;
   }
 }

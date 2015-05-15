@@ -3,10 +3,23 @@ $white: #eee;
 $brown: #6C6263;
 $blue: #07A9EC;
 
+$deep-blue: #030b22;
+$gray-light: #c9c6b2;
+$blue-light: #9bd0d5;
+$blue: #125568;
+$blue-dark: #0d3358;
+$blue-darker: $deep-blue;
+$red: #f15d78;
+$tan: #e0be9b;
+
 $font-primary: 'Merriweather', Helvetica, Arial, sans-serif;
 $font-header: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-$page-background: $black;
+$page-background: $deep-blue;
 $header-color: $brown;
 $font-color: $white;
 $brand-color: $blue;
+
+$link-color: $red;
+
+$breakpoint: 768px;

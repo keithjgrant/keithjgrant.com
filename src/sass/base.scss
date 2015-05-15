@@ -1,24 +1,26 @@
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: $page-background;
   color: $font-color;
   font-family: $font-primary;
-}
-
-p {
   line-height: 1.6;
 }
 
 a:link {
-  color: $blue;
-  text-shadow: $blue 0 0 3px;
+  color: $link-color;
+  text-shadow: $link-color 0 0 1px;
 }
 a:visited {
-  color: desaturate($blue, 20%);
-  text-shadow: $blue 0 0 0;
+  color: desaturate($link-color, 20%);
+  text-shadow: $link-color 0 0 0;
 }
 a:hover {
-  text-shadow: $blue 0 0 1px;
+  text-shadow: $link-color 0 0 1px;
 }
 a:active {
-  color: saturate($blue, 20%);
+  color: saturate($link-color, 20%);
 }

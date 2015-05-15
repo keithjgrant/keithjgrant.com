@@ -1,4 +1,7 @@
 .post {
-  // animation: swingdown 1.2s cubic-bezier(0.72, 0.35, 0.65, 1.43);
-  animation: fade-in 1.5s ease-out;
+  padding: 2em;
+
+  @media screen and (min-width: $breakpoint) {
+    padding: 2em 20%;
+  }
 }
