@@ -61,6 +61,7 @@ gulp.task('open', function(){
 });
 
 gulp.task('deploy', shell.task([
+  'git push',
   'git subtree push --prefix build origin gh-pages'
 ]));
 
