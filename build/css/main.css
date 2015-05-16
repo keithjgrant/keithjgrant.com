@@ -463,7 +463,8 @@ a:active {
 
 @media screen and (min-width: 42em) {
   .l-main {
-    padding: 2em 20%; } }
+    padding: 2em 20%;
+    margin-bottom: 20em; } }
 
 .masthead {
   color: #c9c6b2;
