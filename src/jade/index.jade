@@ -12,15 +12,9 @@ body
         .bio-twitter
           a(href="http://twitter.com/keithjgrant") @keithjgrant
 
-  main.l-main
-    section.post
-      h2.post-title Taming CSS
-      .post-content
-        p Observation 1: Web developers, in general, don’t know CSS as well as they should.
-        p Observation 2: There aren’t really any good roadmaps for learning all the essentials of CSS.
-        p There are great resources for the basics, for styling, for code organization/architecture, for advanced tricks. But to work through them all, you get a lot of overlap, and they still leave you with missing gaps in your knowledge. Often, with CSS, you don’t know what you don’t know, and that makes it hard to move forward. My hope is to fix that, by putting them all together in one place.
-        p Announcing <a href="https://github.com/keithjgrant/Taming-CSS">Taming CSS</a>, a CSS book for web developers.
-      date.post-date 29 April 2015
+  if posts.length
+    - post = posts[0]
+    include posts/_post-content
 
 
-  //- script(src="js/main.js")
+    //- script(src="js/main.js")

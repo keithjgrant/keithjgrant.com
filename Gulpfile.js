@@ -39,17 +39,25 @@ function renderPage (src, dest, locals) {
     .pipe(gulp.dest('./build'));
 }
 
-function getPostContent (url) {
-  var src = 'src/jade/posts/' + url + '.jade';
+function getPostContent (slug) {
+  var src = 'src/jade/posts/' + slug + '.jade';
   return jadeRender.renderFile(src, {});
 }
 
 function fillPost (post) {
-  if (!post.url) {
-    post.url = urlify(post.title);
+  if (!post.slug) {
+    post.slug = urlify(post.title);
   }
-  post.content = renderPage(post.url);
+  post.url = '/posts/' + post.slug + '.html'
   return post;
+}
+
+var months = ['January', 'February', 'March',
+  'April', 'May', 'June', 'July', 'August', 'September',
+  'October', 'November', 'December'];
+function formatDate (dateStr) {
+  var date = new Date(dateStr);
+  return date.getDate() + ' ' + months[date.getMonth()] + ' ' + date.getFullYear();
 }
 
 gulp.task('jade', function () {
@@ -59,15 +67,21 @@ gulp.task('jade', function () {
         dest = './' + page + '.html',
         locals = {
           posts: posts,
-          pages: pages
+          pages: pages,
+          getPostContent: getPostContent,
+          formatDate: formatDate
         };
     renderPage(src, dest, locals);
   };
   for (var j = 0; j < posts.length; j++) {
     var post = fillPost(posts[j]),
         src = './src/jade/posts/_post.jade',
-        dest = './posts/' + post.url + '.html'
-        locals = post;
+        dest = '.' + post.url
+        locals = {
+          post: post,
+          getPostContent: getPostContent,
+          formatDate: formatDate
+        }
     renderPage(src, dest, locals);
   };
 });
