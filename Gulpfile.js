@@ -126,6 +126,6 @@ gulp.task('watch', ['connect'], function () {
   gulp.watch('./src/**/*', ['build']);
 });
 
-gulp.task('build', ['copy:images', 'jade', 'sass:verbose', 'cname']);
+gulp.task('build', ['copy:images', 'jade', 'sass', 'cname']);
 
 gulp.task('default', ['build', 'connect', 'watch', 'open']);
