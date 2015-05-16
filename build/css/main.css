@@ -476,6 +476,10 @@ a:active {
   background-image: linear-gradient(to top, rgba(3, 11, 34, 0.5), rgba(3, 11, 34, 0.5)), url(../images/atlanta-mist.jpg);
   background-size: cover; }
 
+.masthead-small {
+  margin-bottom: -75vh;
+  background-image: linear-gradient(to top, rgba(3, 11, 34, 0.8), rgba(3, 11, 34, 0.8)), url(../images/atlanta-mist.jpg); }
+
 .masthead-content {
   animation: 1s blur-in ease-out;
   transform-origin: 15% 15%;
