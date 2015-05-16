@@ -5,5 +5,5 @@ main.l-main
     else
       h2.post-title
         a(href=post.url)!= post.title
-    .post-content!= getPostContent(post.slug)
-    date.post-date!= formatDate(post.date)
+    .post-content!= post.getContent()
+    date.post-date!= post.formattedDate
