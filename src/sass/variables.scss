@@ -1,3 +1,6 @@
+
+// BASE
+
 $black: #222;
 $white: #eee;
 $brown: #6C6263;
@@ -12,8 +15,16 @@ $blue-darker: $deep-blue;
 $red: #f15d78;
 $tan: #e0be9b;
 
-$font-primary: 'Merriweather', Helvetica, Arial, sans-serif;
-$font-header: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$white: $gray-light;
+
+$font-serif: 'Merriweather', Georgia, Garamond, serif;
+$font-sans: 'Open Sans', Helvetica, Arial, sans-serif;
+
+$font-light: 200;
+$font-regular: 400;
+$font-bold: 700;
+
+// DERIVED
 
 $page-background: $deep-blue;
 $header-color: $brown;
@@ -22,4 +33,6 @@ $brand-color: $blue;
 
 $link-color: $red;
 
-$breakpoint: 768px;
+$breakpoint: 42em;
+
+$font-primary: $font-serif;

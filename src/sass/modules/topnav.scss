@@ -1,0 +1,34 @@
+
+.topnav {
+  background-color: $blue-light;
+  color: $white;
+  font-family: $font-sans;
+
+  > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 2em;
+
+    > li {
+      display: inline-block;
+
+      a {
+        display: block;
+        padding: .2em 1rem;
+        border-bottom: transparent 2px solid;
+        color: $blue-dark;
+        text-decoration: none;
+        text-shadow: none;
+      }
+      a:hover {
+        border-bottom: $red 2px solid;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint) {
+  .topnav > ul {
+    padding: 0 20%;
+  }
+}

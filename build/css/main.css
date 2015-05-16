@@ -399,13 +399,11 @@ th {
   100% {
     transform: rotateZ(0) rotateY(0); } }
 
-@keyframes fade-in {
+@keyframes blur-in {
   0% {
-    opacity: 0; }
-  50% {
-    opacity: 0; }
-  100% {
-    opacity: 1.0; } }
+    transform: scale(0.85, 0.85);
+    -webkit-filter: blur(1em); }
+  100% { } }
 
 /*
 background: linear-gradient(270deg, #12ecb4, #125aec);
@@ -436,13 +434,15 @@ animation: AnimationName 30s ease infinite;
 
 body {
   background-color: #030b22;
-  color: #eee;
-  font-family: "Merriweather", Helvetica, Arial, sans-serif;
+  color: #c9c6b2;
+  font-family: "Merriweather", Georgia, Garamond, serif;
+  font-size: 80%;
   line-height: 1.6; }
 
 a:link {
   color: #f15d78;
-  text-shadow: #f15d78 0 0 1px; }
+  text-shadow: #f15d78 0 0 1px;
+  text-decoration: none; }
 
 a:visited {
   color: #df6f83;
@@ -454,6 +454,17 @@ a:hover {
 a:active {
   color: #ff4f6f; }
 
+@media screen and (min-width: 42em) {
+  body {
+    font-size: 100%; } }
+
+.l-main {
+  padding: 2em; }
+
+@media screen and (min-width: 42em) {
+  .l-main {
+    padding: 2em 20%; } }
+
 .masthead {
   color: #c9c6b2;
   min-height: 80vh;
@@ -462,20 +473,47 @@ a:active {
   background: #030b22 url(../images/atlanta-mist.jpg) center no-repeat;
   background-image: linear-gradient(to top, rgba(3, 11, 34, 0.5), rgba(3, 11, 34, 0.5)), url(../images/atlanta-mist.jpg);
   background-size: cover; }
-  .masthead > h1 {
+
+.masthead-content {
+  animation: 1s blur-in ease-out;
+  transform-origin: 15% 15%;
+  padding: 0 1rem; }
+  .masthead-content > h1 {
     color: #9bd0d5;
     margin-top: 0; }
-  .masthead a:link {
+  .masthead-content a:link {
     text-shadow: #f15d78 0 0 3px;
     text-decoration: none; }
-  .masthead a:hover {
+  .masthead-content a:hover {
     text-shadow: #f15d78 0 0 1px; }
-  @media screen and (min-width: 768px) {
-    .masthead {
-      padding: 10vh 20% 2em; } }
+
+@media screen and (min-width: 42em) {
+  .masthead {
+    padding: 10vh 20% 2em; } }
 
 .post {
-  padding: 2em; }
-  @media screen and (min-width: 768px) {
-    .post {
-      padding: 2em 20%; } }
+  padding: 0 2rem; }
+
+.topnav {
+  background-color: #9bd0d5;
+  color: #c9c6b2;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif; }
+  .topnav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 2em; }
+    .topnav > ul > li {
+      display: inline-block; }
+      .topnav > ul > li a {
+        display: block;
+        padding: 0.2em 1rem;
+        border-bottom: transparent 2px solid;
+        color: #0d3358;
+        text-decoration: none;
+        text-shadow: none; }
+      .topnav > ul > li a:hover {
+        border-bottom: #f15d78 2px solid; }
+
+@media screen and (min-width: 42em) {
+  .topnav > ul {
+    padding: 0 20%; } }

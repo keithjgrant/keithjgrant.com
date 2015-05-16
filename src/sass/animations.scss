@@ -67,15 +67,12 @@
     }
 }
 
-@keyframes fade-in {
+@keyframes blur-in {
     0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0;
+        transform: scale(.85, .85);
+        -webkit-filter: blur(1em);
     }
     100% {
-        opacity: 1.0;
     }
 }
 

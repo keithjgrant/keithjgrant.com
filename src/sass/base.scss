@@ -7,12 +7,14 @@ body {
   background-color: $page-background;
   color: $font-color;
   font-family: $font-primary;
+  font-size: 80%;
   line-height: 1.6;
 }
 
 a:link {
   color: $link-color;
   text-shadow: $link-color 0 0 1px;
+  text-decoration: none;
 }
 a:visited {
   color: desaturate($link-color, 20%);
@@ -24,3 +26,10 @@ a:hover {
 a:active {
   color: saturate($link-color, 20%);
 }
+
+@media screen and (min-width: $breakpoint) {
+  body {
+    font-size: 100%;
+  }
+}
+
