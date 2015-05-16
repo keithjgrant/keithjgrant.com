@@ -15,17 +15,18 @@ var pages = require('./src/pages.json');
 
 var PORT_NUM = 4242;
 
-var jadeVars = {
-  posts: posts
-};
-
 gulp.task('clean', function (done) {
   del('./build/**/*', done);
 });
 
 gulp.task('copy:images', function () {
-  gulp.src(['./src/images/**/*'])
+  gulp.src('./src/images/**/*')
     .pipe(gulp.dest('build/images'));
+});
+
+gulp.task('cname', function () {
+  gulp.src('./src/CNAME')
+    .pipe(gulp.dest('build'));
 });
 
 function urlify (title) {
@@ -125,6 +126,6 @@ gulp.task('watch', ['connect'], function () {
   gulp.watch('./src/**/*', ['build']);
 });
 
-gulp.task('build', ['copy:images', 'jade', 'sass:verbose']);
+gulp.task('build', ['copy:images', 'jade', 'sass:verbose', 'cname']);
 
 gulp.task('default', ['build', 'connect', 'watch', 'open']);
