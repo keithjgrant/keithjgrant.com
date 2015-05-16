@@ -7,10 +7,17 @@ var minifyCSS = require('gulp-minify-css');
 var connect = require('gulp-connect');
 var open = require('gulp-open');
 var shell = require('gulp-shell');
+var rename = require('gulp-rename');
+var jadeRender = require('jade');
 var del = require('del');
-var jadeVars = require('./src/jade-vars.json');
+var posts = require('./src/posts.json');
+var pages = require('./src/pages.json');
 
 var PORT_NUM = 4242;
+
+var jadeVars = {
+  posts: posts
+};
 
 gulp.task('clean', function (done) {
   del('./build/**/*', done);
@@ -21,13 +28,48 @@ gulp.task('copy:images', function () {
     .pipe(gulp.dest('build/images'));
 });
 
+function urlify (title) {
+  return title.replace(' ', '-').toLowerCase();
+}
+
+function renderPage (src, dest, locals) {
+  gulp.src(src)
+    .pipe(jade({locals: locals}))
+    .pipe(rename(dest))
+    .pipe(gulp.dest('./build'));
+}
+
+function getPostContent (url) {
+  var src = 'src/jade/posts/' + url + '.jade';
+  return jadeRender.renderFile(src, {});
+}
+
+function fillPost (post) {
+  if (!post.url) {
+    post.url = urlify(post.title);
+  }
+  post.content = renderPage(post.url);
+  return post;
+}
+
 gulp.task('jade', function () {
-  gulp.src('./src/jade/**/*.jade')
-    .pipe(jade({
-      locals: jadeVars
-    }))
-    .pipe(gulp.dest('./build'))
-    .pipe(connect.reload());
+  for (var i = 0; i < pages.length; i++) {
+    var page = pages[i],
+        src = './src/jade/' + page + '.jade',
+        dest = './' + page + '.html',
+        locals = {
+          posts: posts,
+          pages: pages
+        };
+    renderPage(src, dest, locals);
+  };
+  for (var j = 0; j < posts.length; j++) {
+    var post = fillPost(posts[j]),
+        src = './src/jade/posts/_post.jade',
+        dest = './posts/' + post.url + '.html'
+        locals = post;
+    renderPage(src, dest, locals);
+  };
 });
 
 gulp.task('sass', function () {

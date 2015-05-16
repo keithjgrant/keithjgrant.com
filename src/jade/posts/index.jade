@@ -1,0 +1,11 @@
+doctype html
+include ../_head
+
+body
+
+  include ../_nav
+
+  main.l-main
+    ul
+    for post in posts
+      li: a(href=post.url+'.html')= post.title
