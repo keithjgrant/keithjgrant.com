@@ -1,0 +1,163 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '--save-dev', 'path' ]
+2 info using npm@2.10.0
+3 info using node@v0.10.35
+4 verbose node symlink /usr/local/bin/node
+5 verbose install initial load of /Users/kgrant/src/site/package.json
+6 warn package.json keithjgrant.com@1.0.0 No repository field.
+7 warn package.json keithjgrant.com@1.0.0 No license field.
+8 verbose installManyTop reading scoped package data from /Users/kgrant/src/site/node_modules/del/package.json
+9 verbose installManyTop reading scoped package data from /Users/kgrant/src/site/node_modules/gulp/package.json
+10 verbose installManyTop reading scoped package data from /Users/kgrant/src/site/node_modules/gulp-connect/package.json
+11 verbose installManyTop reading scoped package data from /Users/kgrant/src/site/node_modules/gulp-jade/package.json
+12 verbose installManyTop reading scoped package data from /Users/kgrant/src/site/node_modules/gulp-minify-css/package.json
+13 verbose installManyTop reading scoped package data from /Users/kgrant/src/site/node_modules/gulp-open/package.json
+14 verbose installManyTop reading scoped package data from /Users/kgrant/src/site/node_modules/gulp-rename/package.json
+15 verbose installManyTop reading scoped package data from /Users/kgrant/src/site/node_modules/gulp-rss/package.json
+16 verbose installManyTop reading scoped package data from /Users/kgrant/src/site/node_modules/gulp-sass/package.json
+17 verbose installManyTop reading scoped package data from /Users/kgrant/src/site/node_modules/gulp-shell/package.json
+18 verbose installManyTop reading scoped package data from /Users/kgrant/src/site/node_modules/jade/package.json
+19 verbose installManyTop reading scoped package data from /Users/kgrant/src/site/node_modules/marked/package.json
+20 info package.json gulp@3.8.11 No license field.
+21 info package.json gulp-rename@1.2.2 No license field.
+22 info package.json gulp-minify-css@1.1.1 No license field.
+23 info package.json gulp-jade@1.0.0 No license field.
+24 info package.json gulp-open@0.3.2 No license field.
+25 verbose readDependencies loading dependencies from /Users/kgrant/src/site/package.json
+26 silly cache add args [ 'path', null ]
+27 verbose cache add spec path
+28 silly cache add parsed spec { raw: 'path',
+28 silly cache add   scope: null,
+28 silly cache add   name: 'path',
+28 silly cache add   rawSpec: '',
+28 silly cache add   spec: '*',
+28 silly cache add   type: 'range' }
+29 silly addNamed path@*
+30 verbose addNamed "*" is a valid semver range for path
+31 silly addNameRange { name: 'path', range: '*', hasData: false }
+32 silly mapToRegistry name path
+33 silly mapToRegistry using default registry
+34 silly mapToRegistry registry https://registry.npmjs.org/
+35 silly mapToRegistry uri https://registry.npmjs.org/path
+36 verbose addNameRange registry:https://registry.npmjs.org/path not in flight; fetching
+37 verbose request uri https://registry.npmjs.org/path
+38 verbose request no auth needed
+39 info attempt registry request try #1 at 16:08:31
+40 verbose request using bearer token for auth
+41 verbose request id 9a995f228749c109
+42 http request GET https://registry.npmjs.org/path
+43 http 200 https://registry.npmjs.org/path
+44 silly get cb [ 200,
+44 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+44 silly get     etag: '"C981AR0QGXK75OG7263M96H0O"',
+44 silly get     'content-type': 'application/json',
+44 silly get     'cache-control': 'max-age=60',
+44 silly get     'content-length': '4018',
+44 silly get     'accept-ranges': 'bytes',
+44 silly get     date: 'Sun, 17 May 2015 20:08:29 GMT',
+44 silly get     via: '1.1 varnish',
+44 silly get     connection: 'keep-alive',
+44 silly get     'x-served-by': 'cache-jfk1022-JFK',
+44 silly get     'x-cache': 'MISS',
+44 silly get     'x-cache-hits': '0',
+44 silly get     'x-timer': 'S1431893309.019533,VS0,VE82',
+44 silly get     vary: 'Accept' } ]
+45 verbose get saving path to /Users/kgrant/.npm/registry.npmjs.org/path/.cache.json
+46 silly addNameRange number 2 { name: 'path', range: '*', hasData: true }
+47 silly addNameRange versions [ 'path', [ '0.4.9', '0.4.10', '0.11.14' ] ]
+48 silly addNamed path@0.11.14
+49 verbose addNamed "0.11.14" is a plain semver version for path
+50 silly mapToRegistry name path
+51 silly mapToRegistry using default registry
+52 silly mapToRegistry registry https://registry.npmjs.org/
+53 silly mapToRegistry uri https://registry.npmjs.org/path
+54 verbose addRemoteTarball https://registry.npmjs.org/path/-/path-0.11.14.tgz not in flight; adding
+55 verbose addRemoteTarball [ 'https://registry.npmjs.org/path/-/path-0.11.14.tgz',
+55 verbose addRemoteTarball   'cbc7569355cb3c83afeb4ace43ecff95231e5a7d' ]
+56 info retry fetch attempt 1 at 16:08:32
+57 info attempt registry request try #1 at 16:08:32
+58 http fetch GET https://registry.npmjs.org/path/-/path-0.11.14.tgz
+59 verbose request using bearer token for auth
+60 http fetch 200 https://registry.npmjs.org/path/-/path-0.11.14.tgz
+61 silly fetchAndShaCheck shasum cbc7569355cb3c83afeb4ace43ecff95231e5a7d
+62 verbose addTmpTarball /var/folders/g1/bw8f_3j97js_zx1mccv6m1p1w5gj1s/T/npm-42410-24d31f8c/registry.npmjs.org/path/-/path-0.11.14.tgz not in flight; adding
+63 verbose addTmpTarball already have metadata; skipping unpack for path@0.11.14
+64 silly cache afterAdd path@0.11.14
+65 verbose afterAdd /Users/kgrant/.npm/path/0.11.14/package/package.json not in flight; writing
+66 verbose afterAdd /Users/kgrant/.npm/path/0.11.14/package/package.json written
+67 silly install resolved [ { author: { name: 'Joyent', url: 'http://www.joyent.com' },
+67 silly install resolved     name: 'path',
+67 silly install resolved     description: 'Node.JS path module',
+67 silly install resolved     keywords: [ 'ender', 'path' ],
+67 silly install resolved     license: 'MIT',
+67 silly install resolved     version: '0.11.14',
+67 silly install resolved     homepage: 'http://nodejs.org/docs/latest/api/path.html',
+67 silly install resolved     repository: { type: 'git', url: 'git://github.com/jinder/path.git' },
+67 silly install resolved     main: './path.js',
+67 silly install resolved     gitHead: 'a723663db8388017634a2d854aca09532b12befa',
+67 silly install resolved     bugs: { url: 'https://github.com/jinder/path/issues' },
+67 silly install resolved     _id: 'path@0.11.14',
+67 silly install resolved     scripts: {},
+67 silly install resolved     _shasum: 'cbc7569355cb3c83afeb4ace43ecff95231e5a7d',
+67 silly install resolved     _from: 'path@*',
+67 silly install resolved     _npmVersion: '1.4.28',
+67 silly install resolved     _npmUser: { name: 'jinder', email: 'jindersidhu@gmail.com' },
+67 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+67 silly install resolved     dist:
+67 silly install resolved      { shasum: 'cbc7569355cb3c83afeb4ace43ecff95231e5a7d',
+67 silly install resolved        tarball: 'http://registry.npmjs.org/path/-/path-0.11.14.tgz' },
+67 silly install resolved     directories: {},
+67 silly install resolved     _resolved: 'https://registry.npmjs.org/path/-/path-0.11.14.tgz' } ]
+68 info install path@0.11.14 into /Users/kgrant/src/site
+69 info installOne path@0.11.14
+70 verbose installOne of path to /Users/kgrant/src/site not in flight; installing
+71 verbose lock using /Users/kgrant/.npm/_locks/path-718422af09a0603c.lock for /Users/kgrant/src/site/node_modules/path
+72 silly install write writing path 0.11.14 to /Users/kgrant/src/site/node_modules/path
+73 verbose unbuild node_modules/path
+74 silly gentlyRm /Users/kgrant/src/site/node_modules/path is being purged from base /Users/kgrant/src/site
+75 verbose gentlyRm don't care about contents; nuking /Users/kgrant/src/site/node_modules/path
+76 verbose tar unpack /Users/kgrant/.npm/path/0.11.14/package.tgz
+77 verbose tar unpacking to /Users/kgrant/src/site/node_modules/path
+78 silly gentlyRm /Users/kgrant/src/site/node_modules/path is being purged
+79 verbose gentlyRm don't care about contents; nuking /Users/kgrant/src/site/node_modules/path
+80 silly gunzTarPerm modes [ '755', '644' ]
+81 silly gunzTarPerm extractEntry package.json
+82 silly gunzTarPerm extractEntry README.md
+83 silly gunzTarPerm extractEntry LICENSE
+84 silly gunzTarPerm extractEntry path.js
+85 verbose write writing to /Users/kgrant/src/site/node_modules/path/package.json
+86 info preinstall path@0.11.14
+87 verbose readDependencies loading dependencies from /Users/kgrant/src/site/node_modules/path/package.json
+88 verbose readDependencies loading dependencies from /Users/kgrant/src/site/node_modules/path/package.json
+89 silly install resolved []
+90 verbose about to build /Users/kgrant/src/site/node_modules/path
+91 info build /Users/kgrant/src/site/node_modules/path
+92 info linkStuff path@0.11.14
+93 silly linkStuff path@0.11.14 has /Users/kgrant/src/site/node_modules as its parent node_modules
+94 verbose linkBins path@0.11.14
+95 verbose linkMans path@0.11.14
+96 verbose rebuildBundles path@0.11.14
+97 info install path@0.11.14
+98 info postinstall path@0.11.14
+99 verbose unlock done using /Users/kgrant/.npm/_locks/path-718422af09a0603c.lock for /Users/kgrant/src/site/node_modules/path
+100 verbose validateInstall loading /Users/kgrant/src/site/package.json for validation
+101 verbose stack Error: The package gulp does not satisfy its siblings' peerDependencies requirements!
+101 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
+101 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:267:7
+101 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:138:5
+101 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+101 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+101 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+101 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+101 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+101 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+101 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+102 verbose cwd /Users/kgrant/src/site
+103 error Darwin 13.4.0
+104 error argv "node" "/usr/local/bin/npm" "install" "--save-dev" "path"
+105 error node v0.10.35
+106 error npm  v2.10.0
+107 error code EPEERINVALID
+108 error peerinvalid The package gulp does not satisfy its siblings' peerDependencies requirements!
+108 error peerinvalid Peer gulp-rss@0.0.1 wants gulp@~2.7.0
+109 verbose exit [ 1, true ]

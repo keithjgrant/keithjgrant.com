@@ -1,9 +1,9 @@
 doctype html
-include _head
+include @_head
 
 body
 
-  include _nav
+  include @_nav
 
   header.masthead
     .masthead-content
@@ -14,8 +14,8 @@ body
 
   if posts.length
     - var post = posts[0]
-    include posts/_post-content
+    include @posts/_post-content
 
-  include _footer
+  include @_footer
 
     //- script(src="js/main.js")

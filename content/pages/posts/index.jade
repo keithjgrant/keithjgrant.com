@@ -1,9 +1,9 @@
 doctype html
-include ../_head
+include @_head
 
 body
 
-  include ../_nav
+  include @_nav
   .masthead.masthead-small
 
   main.l-main
@@ -14,4 +14,4 @@ body
           for post in posts
             li: a(href=post.url)= post.title
 
-  include ../_footer
+  include @_footer
