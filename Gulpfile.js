@@ -5,9 +5,9 @@ var connect = require('gulp-connect');
 var open = require('gulp-open');
 var shell = require('gulp-shell');
 var rss = require('gulp-rss');
-var jadeTask = require('./lib/jadeTask');
-var sassTask = require('./lib/sassTask');
-var copyTask = require('./lib/copyTask');
+var jadeTask = require('./src/jadeTask');
+var sassTask = require('./src/sassTask');
+var copyTask = require('./src/copyTask');
 var del = require('del');
 
 var PORT_NUM = 4242;
@@ -48,7 +48,7 @@ gulp.task('deploy', shell.task([
 ]));
 
 gulp.task('watch', ['connect'], function () {
-  gulp.watch('./src/**/*', ['build']);
+  gulp.watch('./content/**/*', ['build']);
 });
 
 gulp.task('build', ['copy', 'jade', 'sass']);
