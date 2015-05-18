@@ -1,0 +1,22 @@
+doctype xml
+rss(version='2.0', xmlns:atom='http://www.w3.org/2005/Atom')
+  channel
+    title= title
+    link= url
+    - var atomLink = '<atom:link href="' + feedUrl + '" rel="self" type="application/rss+xml"/>'
+    != atomLink
+    description= description
+    language= language
+    if posts.length
+      lastBuildDate= new Date(posts[0].date).toUTCString()
+    each post in posts
+      - var postUrl = url + post.url
+      item
+        title= post.title
+        link= postUrl
+        description
+          | <![CDATA[
+          | !{post.getContent()}
+          | ]]>
+        pubDate= new Date(post.date).toUTCString()
+        guid(isPermaLink='true')= postUrl

@@ -4,10 +4,10 @@ var gulp = require('gulp');
 var connect = require('gulp-connect');
 var open = require('gulp-open');
 var shell = require('gulp-shell');
-var rss = require('gulp-rss');
 var jadeTask = require('./src/jadeTask');
 var sassTask = require('./src/sassTask');
 var copyTask = require('./src/copyTask');
+var rssTask = require('./src/rssTask');
 var del = require('del');
 
 var PORT_NUM = 4242;
@@ -20,11 +20,9 @@ gulp.task('jade', jadeTask);
 
 gulp.task('sass', sassTask);
 
-gulp.task('rss', function () {
-
-});
-
 gulp.task('copy', copyTask);
+
+gulp.task('rss', rssTask);
 
 gulp.task('connect', function () {
   connect.server({
