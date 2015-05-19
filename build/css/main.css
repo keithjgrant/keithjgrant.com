@@ -498,13 +498,25 @@ a:active {
       display: inline-block; }
       .topnav > ul > li a {
         display: block;
+        position: relative;
         padding: 0.2em 1rem;
-        border-bottom: transparent 2px solid;
         color: #0d3358;
         text-decoration: none;
         text-shadow: none; }
-      .topnav > ul > li a:hover {
-        border-bottom: #f15d78 2px solid; }
+        .topnav > ul > li a:after {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: auto;
+          width: 0%;
+          content: '';
+          background-color: #f15d78;
+          height: 2px;
+          -webkit-transition: all 0.2s linear;
+          transition: all 0.2s linear; }
+        .topnav > ul > li a:hover:after {
+          width: 100%;
+          left: 0; }
 
 @media screen and (min-width: 42em) {
   .topnav > ul {

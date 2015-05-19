@@ -14,14 +14,30 @@
 
       a {
         display: block;
+        position: relative;
         padding: .2em 1rem;
-        border-bottom: transparent 2px solid;
+        // border-bottom: transparent 2px solid;
         color: $blue-dark;
         text-decoration: none;
         text-shadow: none;
-      }
-      a:hover {
-        border-bottom: $red 2px solid;
+        // transition: all .3s ease-in-out;
+
+        &:after {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: auto;
+          width: 0%;
+          content: '';
+          background-color: $red;
+          height: 2px;
+          -webkit-transition: all .2s linear;
+                  transition: all .2s linear;
+        }
+        &:hover:after {
+          width: 100%;
+          left: 0;
+        }
       }
     }
   }
