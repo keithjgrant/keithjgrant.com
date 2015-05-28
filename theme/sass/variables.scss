@@ -12,10 +12,13 @@ $tan: #e0be9b;
 
 $white: $gray-light;
 
-$font-serif: 'Merriweather', Georgia, Garamond, serif;
-$font-sans: 'Open Sans', Helvetica, Arial, sans-serif;
+// $font-serif: 'Merriweather', Georgia, Garamond, serif;
+// $font-sans: 'Open Sans', Helvetica, Arial, sans-serif;
+$font-serif: Josefin Slab, Georgia, Garamond, serif;
+$font-sans: Forum, Helvetica, Arial, sans-serif;
 
-$font-light: 200;
+
+$font-light: 100;
 $font-regular: 400;
 $font-bold: 700;
 
@@ -31,4 +34,4 @@ $link-color: $red;
 
 $breakpoint: 42em;
 
-$font-primary: $font-serif;
+$font-primary: $font-sans;

@@ -16,11 +16,9 @@
         display: block;
         position: relative;
         padding: .2em 1rem;
-        // border-bottom: transparent 2px solid;
         color: $blue-dark;
         text-decoration: none;
         text-shadow: none;
-        // transition: all .3s ease-in-out;
 
         &:after {
           position: absolute;
@@ -37,6 +35,10 @@
         &:hover:after {
           width: 100%;
           left: 0;
+        }
+
+        &:active {
+          color: $red;
         }
       }
     }

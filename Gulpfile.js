@@ -46,7 +46,7 @@ gulp.task('deploy', shell.task([
 ]));
 
 gulp.task('watch', ['connect'], function () {
-  gulp.watch('./content/**/*', ['build']);
+  gulp.watch(['./content/**/*', './theme/**/*'], ['build']);
 });
 
 gulp.task('build', ['copy', 'jade', 'sass']);

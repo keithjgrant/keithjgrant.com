@@ -27,9 +27,10 @@ $masthead-text: $gray-light;
   padding: 0 1rem;
 
   > h1 {
+    font-family: $font-serif;
     color: $blue-light;
     margin-top: 0;
-    font-weight: $font-bold;
+    font-weight: $font-light;
   }
 
   a:link {

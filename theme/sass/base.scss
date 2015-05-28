@@ -7,7 +7,7 @@ body {
   background-color: $page-background;
   color: $font-color;
   font-family: $font-primary;
-  font-size: 80%;
+  font-size: 90%;
   line-height: 1.6;
 }
 
@@ -24,7 +24,7 @@ a:hover {
   text-shadow: $link-color 0 0 1px;
 }
 a:active {
-  color: saturate($link-color, 20%);
+  color: $white;
 }
 
 @media screen and (min-width: $breakpoint) {

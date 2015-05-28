@@ -414,8 +414,8 @@ th {
 body {
   background-color: #030b22;
   color: #c9c6b2;
-  font-family: "Merriweather", Georgia, Garamond, serif;
-  font-size: 80%;
+  font-family: Forum, Helvetica, Arial, sans-serif;
+  font-size: 90%;
   line-height: 1.6; }
 
 a:link {
@@ -431,7 +431,7 @@ a:hover {
   text-shadow: #f15d78 0 0 1px; }
 
 a:active {
-  color: #ff4f6f; }
+  color: #c9c6b2; }
 
 @media screen and (min-width: 42em) {
   body {
@@ -463,9 +463,10 @@ a:active {
   transform-origin: 15% 15%;
   padding: 0 1rem; }
   .masthead-content > h1 {
+    font-family: Josefin Slab, Georgia, Garamond, serif;
     color: #9bd0d5;
     margin-top: 0;
-    font-weight: 700; }
+    font-weight: 100; }
   .masthead-content a:link {
     text-shadow: #f15d78 0 0 3px;
     text-decoration: none; }
@@ -481,7 +482,8 @@ a:active {
 
 .post-title {
   font-size: 1.5rem;
-  font-weight: 700; }
+  font-weight: 100;
+  font-family: Josefin Slab, Georgia, Garamond, serif; }
 
 .post-date::before {
   content: "— "; }
@@ -489,7 +491,7 @@ a:active {
 .topnav {
   background-color: #9bd0d5;
   color: #c9c6b2;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif; }
+  font-family: Forum, Helvetica, Arial, sans-serif; }
   .topnav > ul {
     list-style: none;
     margin: 0;
@@ -517,6 +519,8 @@ a:active {
         .topnav > ul > li a:hover:after {
           width: 100%;
           left: 0; }
+        .topnav > ul > li a:active {
+          color: #f15d78; }
 
 @media screen and (min-width: 42em) {
   .topnav > ul {
