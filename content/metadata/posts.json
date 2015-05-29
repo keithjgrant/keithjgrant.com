@@ -1,9 +1,12 @@
 [
   {
     "title": "Taming CSS",
-    "date": "2015-04-29"
+    "date": "2015/04/29"
   }, {
     "title": "Hosting on Github",
-    "date": "2015-05-16"
+    "date": "2015/05/16"
+  }, {
+    "title": "Against CSS in JS",
+    "date": "2015/05/29"
   }
 ]

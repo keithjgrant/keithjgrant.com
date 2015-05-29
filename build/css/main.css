@@ -437,6 +437,11 @@ a:active {
   body {
     font-size: 100%; } }
 
+code {
+  padding: 0.2em 0.4em;
+  font-size: .9rem;
+  background-color: #0d3358; }
+
 .l-main {
   padding: 2em; }
 
@@ -487,6 +492,16 @@ a:active {
 
 .post-date::before {
   content: "— "; }
+
+.post h1, .post h2, .post h3 {
+  font-weight: 100;
+  font-family: Josefin Slab, Georgia, Garamond, serif; }
+
+.post h2 {
+  font-size: 1.2rem; }
+
+.post h3 {
+  font-size: 1rem; }
 
 .topnav {
   background-color: #9bd0d5;
