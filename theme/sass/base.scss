@@ -27,14 +27,19 @@ a:active {
   color: $white;
 }
 
+code {
+  padding: .2em .4em;
+  font-size: .8rem;
+  background-color: $blue-dark;
+}
+
 @media screen and (min-width: $breakpoint) {
   body {
     font-size: 100%;
   }
+
+  code {
+    font-size: .9rem;
+  }
 }
 
-code {
-  padding: .2em .4em;
-  font-size: .9rem;
-  background-color: $blue-dark;
-}

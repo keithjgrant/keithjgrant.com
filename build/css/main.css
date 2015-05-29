@@ -433,14 +433,16 @@ a:hover {
 a:active {
   color: #c9c6b2; }
 
-@media screen and (min-width: 42em) {
-  body {
-    font-size: 100%; } }
-
 code {
   padding: 0.2em 0.4em;
-  font-size: .9rem;
+  font-size: .8rem;
   background-color: #0d3358; }
+
+@media screen and (min-width: 42em) {
+  body {
+    font-size: 100%; }
+  code {
+    font-size: .9rem; } }
 
 .l-main {
   padding: 2em; }
