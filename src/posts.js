@@ -32,9 +32,6 @@ function urlify (title) {
 
 function formatDate (dateStr) {
   var date = new Date(dateStr);
-  console.log(dateStr);
-  console.log(date);
-  console.log(date.getDate());
   return date.getDate() + ' ' + months[date.getMonth()] + ' ' + date.getFullYear();
 }
 
