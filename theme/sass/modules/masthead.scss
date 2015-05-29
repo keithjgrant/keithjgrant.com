@@ -1,7 +1,7 @@
 $masthead-image: url(../images/atlanta-mist.jpg);
 $bokeh-image: url(../images/blue-bokeh.jpg);
-$masthead-mask: transparentize($deep-blue, .5);
-$masthead-mask-dark: transparentize($deep-blue, .2);
+$masthead-mask: transparentize($blue-darker, .5);
+$masthead-mask-dark: transparentize($blue-darker, .2);
 $masthead-text: $gray-light;
 
 .masthead {
@@ -9,7 +9,7 @@ $masthead-text: $gray-light;
   min-height: 78vh;
   padding: 2em;
   margin-bottom: 2em;
-  background: $deep-blue $masthead-image center no-repeat;
+  background: $blue-darker $masthead-image center no-repeat;
   background-image: linear-gradient(to top, $masthead-mask,
     $masthead-mask), $masthead-image;
   background-size: cover;

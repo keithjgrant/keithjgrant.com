@@ -1,6 +1,6 @@
 @keyframes technicolor-border {
     0% {
-        border-color: hsl(0, 100%, 50%);
+        color: hsl(0, 100%, 50%);
     }
     16.667% {
         border-color: hsl(60, 100%, 50%);
@@ -19,6 +19,30 @@
     }
     100% {
         border-color: hsl(360, 100%, 50%);
+    }
+}
+
+@keyframes technicolor-text {
+    0% {
+        color: hsl(350, 84%, 65%);
+    }
+    16.667% {
+        color: hsl(50, 84%, 65%);
+    }
+    33.333% {
+        color: hsl(110, 84%, 65%);
+    }
+    50% {
+        color: hsl(170, 84%, 65%);
+    }
+    66.667% {
+        color: hsl(230, 84%, 65%);
+    }
+    83.333% {
+        color: hsl(290, 84%, 65%);
+    }
+    100% {
+        color: hsl(350, 84%, 65%);
     }
 }
 

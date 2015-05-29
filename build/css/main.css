@@ -355,7 +355,7 @@ th {
 
 @keyframes technicolor-border {
   0% {
-    border-color: red; }
+    color: red; }
   16.667% {
     border-color: yellow; }
   33.333% {
@@ -368,6 +368,22 @@ th {
     border-color: magenta; }
   100% {
     border-color: red; } }
+
+@keyframes technicolor-text {
+  0% {
+    color: #f15b74; }
+  16.667% {
+    color: #f1d85b; }
+  33.333% {
+    color: #74f15b; }
+  50% {
+    color: #5bf1d8; }
+  66.667% {
+    color: #5b74f1; }
+  83.333% {
+    color: #d85bf1; }
+  100% {
+    color: #f15b74; } }
 
 @keyframes swingdown-orig {
   0% {
@@ -428,7 +444,8 @@ a:visited {
   text-shadow: #f15d78 0 0 0; }
 
 a:hover {
-  text-shadow: #f15d78 0 0 1px; }
+  text-shadow: #f15d78 0 0 1px;
+  animation: technicolor-text 10s infinite; }
 
 a:active {
   color: #c9c6b2; }
@@ -436,7 +453,7 @@ a:active {
 code {
   padding: 0.2em 0.4em;
   font-size: .8rem;
-  background-color: #0d3358; }
+  background-color: #061a37; }
 
 @media screen and (min-width: 42em) {
   body {
