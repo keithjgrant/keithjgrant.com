@@ -40,11 +40,11 @@
 
   ## All or Nothing
 
-  When you start bringing your styles into your JavaScript, where do you stop?  If you only bring in some of them, how are you going to define that boundary?  When you need to change something in the look and feel, do you know whether you need to open up your styles.css or your styles.js?  The only logical solution here is to bring in all of it.
+  When you start bringing your styles into your JavaScript, where do you stop?  If you only bring in some of them, how are you going to define that boundary?  When you need to change something in the look and feel, do you know whether you need to open up your styles.css or your styles.js?  The only logical solution here is to bring in all of it and abondon stylesheets altogether.
 
-  The problem with that is, CSS takes care of some things cleanly for us that you are probably taking for granted.  This is helpful for fonts in particulare: The default font size, the font face and line-height, and the color of your font are all inherited silently from one of the topmost elements on the page.  Do you want to explicitly set these things on every single component you build?  Because you will have to.
+  The problem with that is, CSS takes care of some things cleanly for us that you are probably taking for granted.  This is helpful for fonts in particular: The default font size, the font face and line-height, and the color of your font are all inherited silently from one of the topmost elements on the page.  Do you want to explicitly set these things on every single component you build?  Because you will have to.
 
-  Not only that, but if you distribute your component, the users of that component need to be all-in on the same paradigm, as well.  Your component sets inline styles, which means they can't be overridden without <code>!important</code>.  Sure, you can allow the user to pass in their own styles, which means the user of your component must have their styles defined in their JavaScript.  What if they want to use traditional stylesheets?  You're forcing their hand.
+  Not only that, but if you distribute your component, the users of that component need to be all-in on the same paradigm, as well.  Your component sets inline styles, which means they can't be overridden without <code>!important</code>.  To get around this problem, you can allow the user to pass in their own styles, but this means the user of your component must have their styles defined in their JavaScript as well.  What if they want to use traditional stylesheets?  You're forcing their hand.
 
   ## Missing CSS Features
 
