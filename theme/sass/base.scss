@@ -27,10 +27,14 @@ a:active {
   color: $white;
 }
 
-code {
+code,
+pre {
   padding: .2em .4em;
   font-size: .8rem;
   background-color: $blue-dark2;
+}
+pre > code {
+  padding: 0;
 }
 
 @media screen and (min-width: $breakpoint) {

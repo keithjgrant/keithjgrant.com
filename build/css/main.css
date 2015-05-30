@@ -449,10 +449,14 @@ a:hover {
 a:active {
   color: #c9c6b2; }
 
-code {
+code,
+pre {
   padding: 0.2em 0.4em;
   font-size: .8rem;
   background-color: #061a37; }
+
+pre > code {
+  padding: 0; }
 
 @media screen and (min-width: 42em) {
   body {
