@@ -11,11 +11,11 @@
 
   We already have two promising libraries, doing for CSS what Babel does for JavaScript: <a href="https://github.com/postcss/postcss">PostCSS</a> and <a href="http://cssnext.io/">cssnext</a>.  These transpile CSS using the latest spec into compatible CSS that works in browsers today.  This is huge.  Things that we've relied on SASS and LESS for can now be done in "pure" CSS, namely variables and advanced color functions.  They also include support for things like custom media queries and custom selectors.  If you are not familiar with either of these libraries, they are worth reading up on.
 
-  But honestly, these additions to spec is not all that exciting.  Variables and color functions are nice conveniences, but they do little to solve the real difficulties we face with CSS at scale.  I think, instead of emulating Babel, we need to emulate CoffeeScript.  It pushed the boundaries of JS, and now, as a result, 60% of ES6 features came straight from CoffeeScript.  Let's do the same thing with CSS.  Think outside the box, and dream up new features to help.  PostCSS is especially good for this, because it is modular.  We just need to start experimenting with plugins.
+  The problem is these additions to spec are not all that exciting.  Variables and color functions are nice conveniences, but they do little to solve the real difficulties we face with CSS at scale.  I think, instead of emulating Babel, we need to emulate CoffeeScript.  It pushed the boundaries of JS, and now, as a result, 60% of ES6 features came straight from CoffeeScript.  Let's do the same thing with CSS.  Think outside the box, and dream up new features to help.  PostCSS is especially good for this, because it is modular.  We just need to start writing some experimental plugins.
 
   ## Scoped CSS
 
-  One cutting-edge feature that I think has the most promise is <a href="http://davidwalsh.name/scoped-css">scoped css</a>.  This allows us to add a "scoped" attribute to a style tag, and those styles will only be applied to the parent element of the style tag and its children.  For example:
+  One cutting-edge feature that I think has promise is <a href="http://davidwalsh.name/scoped-css">scoped css</a>.  This allows us to add a "scoped" attribute to a style tag, and those styles will only be applied to the parent element of the style tag and its children.  For example:
 
   ```html
   <div class="outer">
@@ -44,10 +44,10 @@
   }
   ```
 
-  Then we could combine a PostCSS plugin with a polyfill to make it work.  Again, this is just an idea.  I don't really know how well it would play out in practice, but I would sure like to try.  It sure seems to have promise at addressing nearly all of Christopher Chedeaux's seven problems with CSS at scale.
+  Then we could combine a PostCSS plugin with a polyfill to make it work.  Again, this is just an idea.  I don't really know how well it solve our difficulties in practice, but I would sure like to try.  It sure seems to have promise at addressing nearly all of Christopher Chedeaux's seven problems with CSS at scale.
 
   ## Let's Start Experimenting
 
-  Maybe my enhanced scope idea won't work out.  Maybe someone else will come up with a better idea.  Either way, I think we need to try.  Maybe there is something to be found if we augmented <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@namespace">@namespace</a> instead.  Maybe the answer lies with the shadow DOM and web components.
+  Maybe my enhanced scope idea won't work out.  Someone else may come up with a better idea.  Either way, I think we need to try.  Perhaps there is something to be found if we augmented <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@namespace">@namespace</a> instead.  Maybe the answer lies with the shadow DOM and web components, or something else entirely new.
 
-  My hope here is not that we come up with a postprocessor or polyfill library that makes CSS easier, though that is the first step.  My hope is ultimately that we find a way to solve the problems we have, and that the best solution makes its way into the official spec. Who knows?  Maybe if PostCSS or cssnext keeps gaining traction, we will invent entirely new polyfills for the future that address any number of issues.  JavaScript has got a lot of momentum moving forward.  It's time for CSS to do the same.
+  My hope here is not that we come up with a postprocessor or polyfill library that makes CSS easier, though that is the first step.  My hope is ultimately that we find a way to solve the problems we have, and that the best solution makes its way into the official spec, after we prove it out on production sites. Who knows?  Maybe if PostCSS or cssnext keeps gaining traction, we will invent entirely new polyfills for the future that address any number of issues.  JavaScript has got a lot of momentum moving forward.  It's time for CSS to do the same.
