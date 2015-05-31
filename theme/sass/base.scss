@@ -33,8 +33,9 @@ pre {
   font-size: .8rem;
   background-color: $blue-dark2;
 }
-pre > code {
+pre code {
   padding: 0;
+  background-color: transparent;
 }
 
 @media screen and (min-width: $breakpoint) {
