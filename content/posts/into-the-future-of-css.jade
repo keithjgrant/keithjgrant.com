@@ -30,7 +30,7 @@
   </div>
   ```
 
-  These can be nested, and scoped elements can even be targeted in our regular stylesheet with the <code>:scoped</code> pseudo-class.
+  These can be nested, and scoped elements can even be targeted in our regular stylesheet with the <code>:scoped</code> pseudo-class.  Scoped styles override styles from a higher-up scope or the global page, regardless of selector specificity.
 
   The spec for this was proposed in 2011, and not much has happened with it since then.  Only Firefox has added support.  Chrome added support behind an experimental features flag&mdash;but has since removed it.  There are polyfills available, but as it is, this has not gone very far, and it's not hard to see why.  Who wants to write a bunch of CSS inline in the document?  That feels more like a step backwards.
 
