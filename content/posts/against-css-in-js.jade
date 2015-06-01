@@ -50,7 +50,7 @@
 
   I think there is a place for a few inline styles in a React component.  I'll admit I've had to do it a few times.  Most often, though, it is because I need to accomplish something that can't be done in pure CSS (yet), such as animating from <code>height: 0</code> to <code>height: auto</code>.  Animation is a bit of a different topic here, but, honestly, even that is invariably easier to do when it can be accomplished with pure CSS.  The power of transitions and keyframe animation is much harder to replicate in JavaScript without the help of yet another dependency.  The browser already has this stuff built in.  Take advantage of it.  It is so much easier to just toggle a classname and not have to think about it when I'm trying to focus on another problem.
 
-  You also lose the ability to do some other things, as well, like provide fallback values for older browsers.  Unless you want to start browser sniffing and adding conditionals around your styles.  Again, this is adding more responsibilities to your components that otherwise they would not have.
+  You also lose the ability to do some other things, as well, like media queries and fallback values for older browsers.  Unless you want to start browser sniffing and adding conditionals around your styles.  Again, this is adding more responsibilities to your components that otherwise they would not have.
 
   ## In Defense Of CSS
 
