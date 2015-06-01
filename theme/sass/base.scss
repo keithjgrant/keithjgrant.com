@@ -38,6 +38,10 @@ pre code {
   background-color: transparent;
 }
 
+img {
+  max-width: 100%;
+}
+
 @media screen and (min-width: $breakpoint) {
   body {
     font-size: 110%;

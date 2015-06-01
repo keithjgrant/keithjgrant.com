@@ -398,6 +398,9 @@ pre code {
   padding: 0;
   background-color: transparent; }
 
+img {
+  max-width: 100%; }
+
 @media screen and (min-width: 42em) {
   body {
     font-size: 110%; }
