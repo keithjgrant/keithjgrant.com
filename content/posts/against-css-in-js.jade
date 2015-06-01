@@ -28,7 +28,7 @@
 
   However, moving the styles into the JavaScript does not address this problem at all.  When we moved our HTML into our React components, we redefined which concerns we were separating.  Each component is now a unique concern.  When we bring CSS into that, we are not further breaking up our concerns; we are just adding more responsibilities to the concerns we already have.
 
-  In a best-case scenario, with well organized code, we require in a style module into our React component and add it to the props.  This is roughly equivalent to adding a class name that references a stylesheet--there is no net gain in terms of separation of concerns.  But, we don't always work in a best-case scenario.  Now that our JavaScript has taken responsibility for styling, it will have take care of things that we take for granted with CSS.  This will add unnecessary bloat to your codebase, and make separation of concerns more difficult.
+  In a best-case scenario, with well organized code, we require in a style module into our React component and add it to the props.  This is roughly equivalent to adding a class name that references a stylesheet--there is no net gain in terms of separation of concerns.  But, we don't always work in a best-case scenario.  Now that our JavaScript has taken responsibility for styling, it will have to take care of things that we take for granted with CSS.  This will add unnecessary bloat to your codebase, and make separation of concerns more difficult.
 
   If your stylesheets are well organized and written with best practices, there is no bi-directional dependency between them and the HTML.  So we do not need to solve the same problem with our CSS that we had to solve with our markup.
 
