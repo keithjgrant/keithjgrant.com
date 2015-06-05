@@ -21,7 +21,7 @@
 </code></pre>
 <p>These can be nested, and scoped elements can even be targeted in our regular stylesheet with the <code>:scoped</code> pseudo-class.  Scoped styles override styles from a higher-up scope or the global page, regardless of selector specificity.</p>
 <p>The spec for this was proposed in 2011, and not much has happened with it since then.  Only Firefox has added support.  Chrome added support behind an experimental features flag&mdash;but has since removed it.  There are polyfills available, but as it is, this has not gone very far, and it&#39;s not hard to see why.  Who wants to write a bunch of CSS inline in the document?  That feels more like a step backwards.</p>
-<p>So, here&#39;s an idea.  What if we assigned a value to the scoped attribute, <code>&lt;style scoped=&quot;widget&quot;/&gt;</code>, and then create an at-rule to define a named scope, maybe something like this:</p>
+<p>So, here&#39;s an idea.  What if we assigned a value to the scoped attribute, <code class="prettyprint">&lt;style scoped=&quot;widget&quot;/&gt;</code>, and then create an at-rule to define a named scope, maybe something like this:</p>
 <pre><code class="lang-css">@scope(&#39;widget&#39;) {
   p {
     color: red;

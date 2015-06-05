@@ -34,7 +34,7 @@
 
   The spec for this was proposed in 2011, and not much has happened with it since then.  Only Firefox has added support.  Chrome added support behind an experimental features flag&mdash;but has since removed it.  There are polyfills available, but as it is, this has not gone very far, and it's not hard to see why.  Who wants to write a bunch of CSS inline in the document?  That feels more like a step backwards.
 
-  So, here's an idea.  What if we assigned a value to the scoped attribute, <code>&lt;style scoped="widget"/&gt;</code>, and then create an at-rule to define a named scope, maybe something like this:
+  So, here's an idea.  What if we assigned a value to the scoped attribute, <code class="prettyprint">&lt;style scoped="widget"/&gt;</code>, and then create an at-rule to define a named scope, maybe something like this:
 
   ```css
   @scope('widget') {

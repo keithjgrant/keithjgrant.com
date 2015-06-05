@@ -509,10 +509,14 @@ img {
 /* Tomorrow Night Eighties Theme */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 .prettyprint {
-  font-size: 12px;
+  font-size: 14px;
+  font-size: .9rem;
   line-height: 1.5;
   border: 1px solid #0d3358;
-  padding: 10px; }
+  padding: .7em; }
+
+code.prettyprint {
+  padding: 0.2em 0.4em; }
 
 .pln {
   color: #cccccc; }
@@ -527,7 +531,6 @@ img {
   .typ {
     color: #6699cc; }
   .lit {
-    /*color: #f99157;*/
     color: #f15d78; }
   .pun {
     color: #cccccc; }
@@ -536,15 +539,12 @@ img {
   .clo {
     color: #cccccc; }
   .tag {
-    /*color: #f2777a;*/
     color: #6699cc; }
   .atn {
-    /*color: #f99157;*/
     color: #f15d78; }
   .atv {
     color: #66cccc; }
   .dec {
-    /*color: #f99157;*/
     color: #f15d78; }
   .var {
     color: #f2777a; }
