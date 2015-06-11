@@ -6,14 +6,13 @@ $masthead-text: $gray-light;
 
 .masthead {
   color: $masthead-text;
-  min-height: 70vh;
+  min-height: 78vh;
   padding: 2em;
   margin-bottom: 2em;
   background: $blue-darker $masthead-image center no-repeat;
   background-image: linear-gradient(to top, $masthead-mask,
     $masthead-mask), $masthead-image;
   background-size: cover;
-  transition: min-height 1s ease-in-out;
 }
 
 .masthead-small {
