@@ -417,12 +417,13 @@ img {
 
 .masthead {
   color: #c9c6b2;
-  min-height: 78vh;
+  min-height: 70vh;
   padding: 2em;
   margin-bottom: 2em;
   background: #030b22 url(../images/atlanta-mist.jpg) center no-repeat;
   background-image: linear-gradient(to top, rgba(3, 11, 34, 0.5), rgba(3, 11, 34, 0.5)), url(../images/atlanta-mist.jpg);
-  background-size: cover; }
+  background-size: cover;
+  transition: min-height 1s ease-in-out; }
 
 .masthead-small {
   margin-bottom: -75vh;
@@ -450,6 +451,7 @@ img {
 .post {
   padding: 0 1rem; }
 
+.page-title,
 .post-title {
   font-size: 1.5rem;
   font-weight: 100;
