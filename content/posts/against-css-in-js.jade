@@ -20,7 +20,7 @@
 
   ## We Are Not Solving the Same Problem As Before
 
-  The relationship between CSS and JavaScript is not like the relationship between HTML and JavaScript.  With HTML, a true separation of concerns between the markup and the corresponding component code is impossible (because they are in fact the same concern).  With CSS, this separation is possible.  And, in fact, the concerns are unique, so separation is vital to clean code organization.
+  The relationship between CSS and JavaScript is not like the relationship between HTML and JavaScript.  With HTML, a true separation of concerns between the markup and the corresponding component code is impossible.  With CSS, this separation is possible and is in fact vital to clean code organization.
 
   Your CSS should be wholly independent from your markup (and especially independent from your JavaScript).  If you find, as <a href="http://programmers.stackexchange.com/questions/271294/why-is-it-or-was-it-important-to-separate-css-from-html">this stackexchange user observed</a>&mdash;that your "commit history shows me the opposite - [you] usually edit both HTML and CSS together"&mdash;then you are doing CSS wrong.  CSS should not depend on the markup; the markup should depend on the CSS.  Or, more accurately, it should depend on the modular, reusable API defined by the CSS.
 
