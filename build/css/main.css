@@ -383,7 +383,7 @@ a:visited {
   text-shadow: #f15d78 0 0 0; }
 
 a:hover {
-  text-shadow: #f15d78 0 0 1px; }
+  text-decoration: underline; }
 
 a:active {
   color: #c9c6b2; }
