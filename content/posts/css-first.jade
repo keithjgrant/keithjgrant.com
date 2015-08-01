@@ -40,9 +40,9 @@
 
   This is the secret to separating the concerns of CSS from those of HTML and JavaScript. The CSS specifies the rules, and it's up to the other two to follow them. It's a one-way contract.
 
-  We tried for years to do it the other way around, and that's what got us into trouble. When you appreach web development HTML first, the HTML inevitably becomes coupled with the CSS. The CSS Zen Garden model works... until the HTML changes. And in in the real world, the HTML changes all the time. If the CSS is based on that HTML, the CSS will have to change with it.
+  We tried for years to do it the other way around, and that's what got us into trouble. When you approach web development HTML first, the HTML inevitably becomes coupled with the CSS. The CSS Zen Garden model works... until the HTML changes. And in in the real world, the HTML changes all the time. If the CSS is based on that HTML, the CSS will have to change with it.
 
-  Instead, by developing the CSS first, in a way that is modular, we can apply it again and again to changing HTML, without needing to make changes upstream. The HTML just has to follow the conventions layed out by the API.
+  Instead, by developing the CSS first, in a way that is modular, we can apply it again and again to changing HTML, without needing to make changes upstream. The HTML just has to follow the conventions laid out by the API.
 
   To do this, we need to develop our CSS as if it is for a third party, similar to Bootstrap and other CSS frameworks. In any project of moderate to large scale, this necessitates two important features for our CSS: it should be well documented, and it should be versioned.
 
@@ -56,7 +56,7 @@
 
   This documentation serves double-duty: it also becomes your unit tests. Every module you build, and the variations thereof, are rendered into a page. Package your documentation with your CSS. Write the documentation for a module as you write the CSS. See it in action during development.
 
-  If you need to verify multiple perumations of module states or test how various modules work together, add sections to your documentation to do these things, where you won't bog down developers who are referring to the docs. Our documentation at work has a series of fully-mocked up static pages (to ensure everything works together as expected) and several "test" pages where our grid system is put through paces and various table styles are mixed and matched in numerous ways to ensure they all work well together.
+  If you need to verify multiple permutations of module states or test how various modules work together, add sections to your documentation to do these things, where you won't bog down developers who are referring to the docs. Our documentation at work has a series of fully-mocked up static pages (to ensure everything works together as expected) and several "test" pages where our grid system is put through paces and various table styles are mixed and matched in numerous ways to ensure they all work well together.
 
   Unit tests in CSS are notoriously difficult to do. Some people use tools that take screenshots and compare for changes, but this is prone to all sorts of false positives. Some rely on linting, but that only gets you so far. If you write documentation as you develop, it serves the same purpose. Even better, eyes are on your tests, because developers and content editors will refer to it regularly.
 
@@ -76,4 +76,4 @@
 
   This adds a small obstacle to adding new styles, which is intentional. It forces you to stop and think about your CSS outside the context of your particular problem, and encourages you to write a more general-use module. It also encourages developers to use existing styles as much as possible before rolling their own, which will result in a more cohesive look and feel throughout your site.
 
-  The API of your CSS will be much more robust as a result of this work.  That API is important. The inner-workings of your CSS are easy to change. Your HTML is easy to change. But that API between them is the most important part. Making signifact changes to that is costly, because everything on both sides needs to be updated accordingly. Design that API well. Design it from the viewpoint of the CSS, and then build your HTML to match.
+  The API of your CSS will be much more robust as a result of this work.  That API is important. The inner-workings of your CSS are easy to change. Your HTML is easy to change. But that API between them is the most important part. Making significant changes to that is costly, because everything on both sides needs to be updated accordingly. Design that API well. Design it from the viewpoint of the CSS, and then build your HTML to match.
