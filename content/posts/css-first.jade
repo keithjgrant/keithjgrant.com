@@ -5,7 +5,7 @@
 
   Don't get me wrong, the CSS Zen Garden was an essential part of moving the web forward. Without it, we might have seen table-based designs for much longer than we did. It did a lot of good for us, but it left us with one bad habit: it taught us to write HTML (or take existing HTML), and then write CSS for it. But this is wrong. The HTML shouldn't come first; the CSS should.
 
-  ## The first dependency
+  ## CSS: your first dependency
 
   Many web developers still try to think about how to write their HTML so that it can be sensibly targeted by their CSS. Instead, we aught to be writing selectors that can be used easily by HTML. The HTML depends upon the CSS, not the other way around.
 
@@ -44,7 +44,9 @@
 
   Instead, by developing the CSS first, in a way that is modular, we can apply it again and again to changing HTML, without needing to make changes upstream. The HTML just has to follow the conventions laid out by the API.
 
-  To do this, we need to develop our CSS as if it is for a third party, similar to Bootstrap and other CSS frameworks. In any project of moderate to large scale, this necessitates two important features for our CSS: it should be well documented, and it should be versioned.
+  <q class="pullquote">Develop your CSS as if it is for a third party</q>
+
+  To do this, we need to develop our CSS as if it is for a third party, similar to Bootstrap and other CSS frameworks. If your project (or your team) is moderate to large size, this will begin to necessitate two important features for our CSS: it should be well documented, and it should be versioned.
 
   ## Documentation-driven
 
@@ -68,12 +70,14 @@
 
   Publish a changelog. This can make developers aware of new features, as well as give them a heads up when you deprecate something.
 
-  ## Agile
+  ## Write the CSS in a clean-room
 
   *CSS first* doesn't mean you write all of your CSS before you write any HTML or JavaScript. It applies at a finer-grained level. Each module is first built in the CSS before it can be used in the HTML. When you need styles in your app or website, your first stop should be the existing CSS documentation. Look for something that already meets your needs. Once you have built up a robust toolset of styles, you will often find you don't need something new after all.
 
   Only when nothing there fits your situation should you start coding new CSS. Once it's written, and "tested" (i.e. added to the documentation), bump the version and cut a new release of the CSS.
 
   This adds a small obstacle to adding new styles, which is intentional. It forces you to stop and think about your CSS outside the context of your particular problem, and encourages you to write a more general-use module. It also encourages developers to use existing styles as much as possible before rolling their own, which will result in a more cohesive look and feel throughout your site.
+
+  This is probably overkill for small projects. I certainly don't jump through all these hoops for this blog. But the more your project scales up, the more essential they will become, and the more your team will benefit from them.
 
   The API of your CSS will be much more robust as a result of this work.  That API is important. The inner-workings of your CSS are easy to change. Your HTML is easy to change. But that API between them is the most important part. Making significant changes to that is costly, because everything on both sides needs to be updated accordingly. Design that API well. Design it from the viewpoint of the CSS, and then build your HTML to match.

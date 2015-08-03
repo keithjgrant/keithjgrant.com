@@ -1,0 +1,30 @@
+
+.pullquote {
+  position: relative;
+  float: right;
+  max-width: 50%;
+  padding: 1em;
+  margin: 0 0 0 .5em;
+  font-family: $font-serif;
+  font-weight: $font-light;
+  background-color: $blue-dark2;
+}
+
+.pullquote::before,
+.pullquote::after {
+  position: absolute;
+  font-family: $font-sans;
+  font-size: 3em;
+  opacity: 0.5;
+  padding-left: .1em; // prevent character being clipped
+}
+.pullquote::before {
+  content: $left-quote;
+  top: -0.5em;
+  left: -0.2em;
+}
+.pullquote::after {
+  content: $right-quote;
+  bottom: -1.0em;
+  right: -0.2em;
+}

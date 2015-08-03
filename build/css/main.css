@@ -507,6 +507,34 @@ img {
   .topnav > ul {
     padding: 0 20%; } }
 
+.pullquote {
+  position: relative;
+  float: right;
+  max-width: 50%;
+  padding: 1em;
+  margin: 0 0 0 0.5em;
+  font-family: Josefin Slab, Georgia, Garamond, serif;
+  font-weight: 100;
+  background-color: #061a37; }
+
+.pullquote::before,
+.pullquote::after {
+  position: absolute;
+  font-family: Forum, Helvetica, Arial, sans-serif;
+  font-size: 3em;
+  opacity: 0.5;
+  padding-left: .1em; }
+
+.pullquote::before {
+  content: "“";
+  top: -0.5em;
+  left: -0.2em; }
+
+.pullquote::after {
+  content: "”";
+  bottom: -1.0em;
+  right: -0.2em; }
+
 /* Tomorrow Night Eighties Theme */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 .prettyprint {
