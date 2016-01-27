@@ -9,16 +9,22 @@ body {
   font-family: $font-primary;
   font-size: 90%;
   line-height: 1.6;
+
+  // background-image: repeating-linear-gradient(180deg,transparent,transparent 28.16px,#eee 28.16px,#eee 56.32px);
+}
+
+p {
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
 }
 
 a:link {
   color: $link-color;
-  text-shadow: $link-color 0 0 1px;
   text-decoration: none;
+  font-weight: $font-bold;
 }
 a:visited {
   color: desaturate($link-color, 20%);
-  text-shadow: $link-color 0 0 0;
 }
 a:hover {
   text-decoration: underline;
@@ -26,12 +32,33 @@ a:hover {
 a:active {
   color: $white;
 }
+a {
+  position: relative;
+}
+a::before {
+  position: absolute;
+  top: auto;
+  right: -.5em;
+  bottom: -.5em;
+  left: -.5em;
+  height: 0%;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.05);
+  -webkit-transition: all .2s linear;
+          transition: all .2s linear;
+  transform: rotate(15deg);
+}
+a:hover::before {
+  height: 170%;
+  top: -.4em;
+  transform: rotate(-5deg);
+}
 
 code,
 pre {
   padding: .2em .4em;
   font-size: .8rem;
-  background-color: $blue-dark2;
+  background-color: $gray-1;
 }
 pre code {
   padding: 0;
@@ -51,4 +78,3 @@ img {
     font-size: .9rem;
   }
 }
-

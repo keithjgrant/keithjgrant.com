@@ -10,16 +10,21 @@ $blue-darker: #030b22;
 $red: #f15d78;
 $tan: #e0be9b;
 
-$white: $gray-light;
+$white: #fff;
+$black: #333;
+
+$gray-1: #f8f8f8;
+$gray-2: #eee;
+$gray-3: #e8e8e8;
 
 // $font-serif: 'Merriweather', Georgia, Garamond, serif;
 // $font-sans: 'Open Sans', Helvetica, Arial, sans-serif;
-$font-serif: Josefin Slab, Georgia, Garamond, serif;
-$font-sans: Forum, Helvetica, Arial, sans-serif;
+$font-serif: PT Serif, Georgia, Garamond, serif;
+$font-sans: Palanquin, Helvetica, Arial, sans-serif;
 
 
 $font-light: 100;
-$font-regular: 400;
+$font-regular: 100;
 $font-bold: 700;
 
 $emdash: "\2014";
@@ -28,11 +33,11 @@ $right-quote: "\201d";
 
 // DERIVED
 
-$page-background: $blue-darker;
-$font-color: $white;
+$page-background: $white;
+$font-color: $black;
 $brand-color: $blue;
 
-$link-color: $red;
+$link-color: #46494C;
 
 $breakpoint: 42em;
 

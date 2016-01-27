@@ -17,6 +17,18 @@
   h1, h2, h3 {
     font-weight: $font-light;
     font-family: $font-serif;
+
+    &::after {
+      display: block;
+      content: '';
+      border-top: 2px solid $gray-2;
+      margin-left: -50%;
+      margin-right: -50%;
+      transform: rotate(-1deg);
+    }
+    &:nth-child(odd)::after {
+      transform: rotate(1deg) translateY(.3em);
+    }
   }
   h2 {
     font-size: 1.2rem;

@@ -1,78 +1,75 @@
-/* Tomorrow Night Eighties Theme */
+/* Tomorrow Theme */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 .prettyprint {
-  font-size: 14px;
-  font-size: .9rem;
-  line-height: 1.6;
-  border: 1px solid $blue-dark;
-  padding: .7em;
-}
-code.prettyprint {
-  padding: .2em .4em;
+  background: $gray-1;
+  font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  border: 1px solid $gray-2;
+  padding: 10px;
 }
 
 .pln {
-  color: #cccccc;
+  color: #4d4d4c;
 }
 
 @media screen {
   .str {
-    color: #99cc99;
+    color: #718c00;
   }
 
   .kwd {
-    color: #cc99cc;
+    color: #8959a8;
   }
 
   .com {
-    color: #999999;
+    color: #8e908c;
   }
 
   .typ {
-    color: #6699cc;
+    color: #4271ae;
   }
 
   .lit {
-    color: $red;
+    color: #f5871f;
   }
 
   .pun {
-    color: #cccccc;
+    color: #4d4d4c;
   }
 
   .opn {
-    color: #cccccc;
+    color: #4d4d4c;
   }
 
   .clo {
-    color: #cccccc;
+    color: #4d4d4c;
   }
 
   .tag {
-    color: #6699cc;
+    color: #c82829;
   }
 
   .atn {
-    color: $red;
+    color: #f5871f;
   }
 
   .atv {
-    color: #66cccc;
+    color: #3e999f;
   }
 
   .dec {
-    color: $red;
+    color: #f5871f;
   }
 
   .var {
-    color: #f2777a;
+    color: #c82829;
   }
 
   .fun {
-    color: #6699cc;
+    color: #4271ae;
   }
 }
-/*
 @media print, projection {
   .str {
     color: #006600;
@@ -114,34 +111,10 @@ code.prettyprint {
     color: #006600;
   }
 }
-*/
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums {
-    position: relative;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;
-    counter-reset: item;
-
-    &:before {
-        display: block;
-        content: '';
-        position: absolute;
-        top: -10px;
-        bottom: -10px;
-        left: -10px;
-        width: 2em;
-    }
-
-    li {
-        display: block;
-    }
-    li:before {
-        padding-right: 1em;
-        content: counter(item);
-        counter-increment: item;
-        color: $blue;
-    }
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* IE indents via margin-left */

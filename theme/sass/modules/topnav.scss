@@ -1,8 +1,9 @@
 
 .topnav {
-  background-color: $blue-light;
-  color: $white;
+  background-color: $gray-1;
+  color: $black;
   font-family: $font-sans;
+  box-shadow: $gray-2 0 2px 4px;
 
   > ul {
     list-style: none;
@@ -15,26 +16,29 @@
       a {
         display: block;
         position: relative;
-        padding: .2em 1rem;
+        padding: .4em 1rem;
         color: $blue-dark;
+        font-weight: $font-regular;
         text-decoration: none;
         text-shadow: none;
 
-        &:after {
+        &::before {
           position: absolute;
+          top: auto;
           right: 0;
           bottom: 0;
-          left: auto;
-          width: 0%;
+          left: 0;
+          height: 0%;
           content: '';
-          background-color: $red;
-          height: 2px;
+          background-color: rgba(0, 0, 0, 0.05);
           -webkit-transition: all .2s linear;
                   transition: all .2s linear;
+          transform: rotate(15deg);
         }
-        &:hover:after {
-          width: 100%;
-          left: 0;
+        &:hover::before {
+          height: 100%;
+          top: 0;
+          transform: rotate(-5deg);
         }
 
         &:active {

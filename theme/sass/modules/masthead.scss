@@ -5,6 +5,8 @@ $masthead-mask-dark: transparentize($blue-darker, .2);
 $masthead-text: $gray-light;
 
 .masthead {
+  display: none;  // TODO: keep masthead ?
+
   color: $masthead-text;
   min-height: 78vh;
   padding: 2em;
