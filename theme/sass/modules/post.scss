@@ -1,5 +1,6 @@
 .post {
   padding: 0 1rem;
+  margin-bottom: 3.2em;
 
   .post-date::before {
     content: $emdash + ' ';

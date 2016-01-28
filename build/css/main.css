@@ -429,6 +429,9 @@ img {
   code {
     font-size: .9rem; } }
 
+footer {
+  text-align: right; }
+
 .l-main {
   padding: 2em; }
 
@@ -470,7 +473,8 @@ img {
   margin: 0; }
 
 .post {
-  padding: 0 1rem; }
+  padding: 0 1rem;
+  margin-bottom: 3.2em; }
   .post .post-date::before {
     content: "— "; }
   .post .post-title {
