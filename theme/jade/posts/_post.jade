@@ -4,7 +4,8 @@ include ../_head
 body
 
   include ../_nav
-  .masthead.masthead-small
+  .masthead
+    h1.page-title!= post.title
 
   - var isPostPage = true
   include _post-content

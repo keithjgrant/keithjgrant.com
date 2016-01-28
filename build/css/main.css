@@ -464,35 +464,34 @@ img {
     margin: -4.8em -10% -1.6em;
     padding: 4.8em 20% 1.6em; } }
 
+.page-title {
+  font-size: 2rem;
+  font-family: PT Serif, Georgia, Garamond, serif;
+  margin: 0; }
+
 .post {
   padding: 0 1rem; }
-
-.page-title,
-.post .post-title {
-  font-size: 2rem;
-  font-family: PT Serif, Georgia, Garamond, serif; }
-
-.post-date::before {
-  content: "— "; }
-
-.post h1, .post h2, .post h3 {
-  font-weight: 100;
-  font-family: PT Serif, Georgia, Garamond, serif; }
-  .post h1::after, .post h2::after, .post h3::after {
-    display: block;
-    content: '';
-    border-top: 2px solid #eee;
-    margin-left: -50%;
-    margin-right: -50%;
-    transform: rotate(-1deg); }
-  .post h1:nth-child(odd)::after, .post h2:nth-child(odd)::after, .post h3:nth-child(odd)::after {
-    transform: rotate(1deg) translateY(0.3em); }
-
-.post h2 {
-  font-size: 1.2rem; }
-
-.post h3 {
-  font-size: 1rem; }
+  .post .post-date::before {
+    content: "— "; }
+  .post .post-title {
+    font-size: 2rem;
+    font-family: PT Serif, Georgia, Garamond, serif; }
+  .post h1, .post h2, .post h3 {
+    font-weight: 100;
+    font-family: PT Serif, Georgia, Garamond, serif; }
+    .post h1::after, .post h2::after, .post h3::after {
+      display: block;
+      content: '';
+      border-top: 2px solid #eee;
+      margin-left: -50%;
+      margin-right: -50%;
+      transform: rotate(-1deg); }
+    .post h1:nth-child(odd)::after, .post h2:nth-child(odd)::after, .post h3:nth-child(odd)::after {
+      transform: rotate(1deg) translateY(0.3em); }
+  .post h2 {
+    font-size: 1.2rem; }
+  .post h3 {
+    font-size: 1rem; }
 
 .topnav {
   position: relative;

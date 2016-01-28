@@ -4,11 +4,11 @@ include @_head
 body
 
   include @_nav
-  .masthead.masthead-small
+  .masthead
+    h1.page-title Posts
 
   main.l-main
     section.post
-      h1.post-title Posts
       .post-content
         ul.post-list
           for post in posts

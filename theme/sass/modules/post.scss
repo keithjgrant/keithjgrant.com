@@ -1,18 +1,15 @@
 .post {
   padding: 0 1rem;
-}
 
-.page-title,
-.post .post-title {
-  font-size: 2rem;
-  font-family: $font-serif;
-}
+  .post-date::before {
+    content: $emdash + ' ';
+  }
 
-.post-date::before {
-  content: $emdash + ' ';
-}
+  .post-title {
+    font-size: 2rem;
+    font-family: $font-serif;
+  }
 
-.post {
   h1, h2, h3 {
     font-weight: $font-light;
     font-family: $font-serif;
