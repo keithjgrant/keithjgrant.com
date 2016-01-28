@@ -1,7 +1,12 @@
 head
   meta(charset="utf-8")
   meta(http-equiv="x-ua-compatible", content="ie=edge")
-  title Keith J Grant
+  if post
+    title!= post.title + ' | Keith J Grant'
+  else if title
+    title!= title + ' | Keith J Grant'
+  else
+    title Keith J Grant
   meta(name='description', content='')
   meta(name='viewport', content='width=device-width, initial-scale=1')
   meta(name="theme-color", content="#666")

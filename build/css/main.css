@@ -440,6 +440,12 @@ footer {
     padding: 1.9em 20%;
     margin-bottom: 20em; } }
 
+.bio .bio-twitter > a::before {
+  display: none; }
+
+.bio .bio-twitter > a:hover {
+  text-decoration: underline; }
+
 .masthead {
   transform: rotate(5deg);
   margin: -2.6em -1em -1.6em;
