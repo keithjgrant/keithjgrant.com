@@ -386,9 +386,6 @@ a:link {
 a:visited {
   color: #494949; }
 
-a:hover {
-  text-decoration: underline; }
-
 a:active {
   color: #fff; }
 
@@ -441,45 +438,38 @@ img {
     margin-bottom: 20em; } }
 
 .masthead {
-  display: none;
-  color: #c9c6b2;
-  min-height: 78vh;
-  padding: 2em;
-  margin-bottom: 2em;
-  background: #030b22 url(../images/atlanta-mist.jpg) center no-repeat;
-  background-image: linear-gradient(to top, rgba(3, 11, 34, 0.5), rgba(3, 11, 34, 0.5)), url(../images/atlanta-mist.jpg);
-  background-size: cover; }
-
-.masthead-small {
-  margin-bottom: -75vh;
-  background-image: linear-gradient(to top, rgba(3, 11, 34, 0.8), rgba(3, 11, 34, 0.8)), url(../images/atlanta-mist.jpg); }
+  transform: rotate(5deg);
+  margin: -2.6em -1em -1.6em;
+  padding: 2.6em 1.6em 1.6em;
+  text-align: right;
+  box-shadow: #eee 0px 2px 2px;
+  background-color: #eee; }
 
 .masthead-content {
-  animation: 1s blur-in ease-out;
-  transform-origin: 15% 15%;
   padding: 0 1rem; }
   .masthead-content > h1 {
     font-family: PT Serif, Georgia, Garamond, serif;
-    color: #9bd0d5;
+    color: #46494C;
     margin-top: 0;
     font-weight: 100; }
   .masthead-content a:link {
-    text-shadow: #46494C 0 0 3px;
-    text-decoration: none; }
-  .masthead-content a:hover {
-    text-shadow: #46494C 0 0 1px; }
+    text-decoration: none;
+    font-weight: 100; }
 
 @media screen and (min-width: 42em) {
   .masthead {
-    padding: 10vh 20% 2em; } }
+    padding-right: 20%;
+    padding-left: 20%;
+    padding-top: 4.8em;
+    margin: -4.8em -10% -1.6em;
+    padding: 4.8em 20% 1.6em; } }
 
 .post {
   padding: 0 1rem; }
 
 .page-title,
-.post-title {
-  font-size: 1.5rem;
-  font-weight: 100;
+.post .post-title {
+  font-size: 2rem;
   font-family: PT Serif, Georgia, Garamond, serif; }
 
 .post-date::before {
@@ -505,6 +495,8 @@ img {
   font-size: 1rem; }
 
 .topnav {
+  position: relative;
+  z-index: 1;
   background-color: #f8f8f8;
   color: #333;
   font-family: Palanquin, Helvetica, Arial, sans-serif;

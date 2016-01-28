@@ -27,7 +27,6 @@ a:visited {
   color: desaturate($link-color, 20%);
 }
 a:hover {
-  text-decoration: underline;
 }
 a:active {
   color: $white;

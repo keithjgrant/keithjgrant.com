@@ -5,47 +5,36 @@ $masthead-mask-dark: transparentize($blue-darker, .2);
 $masthead-text: $gray-light;
 
 .masthead {
-  display: none;  // TODO: keep masthead ?
-
-  color: $masthead-text;
-  min-height: 78vh;
-  padding: 2em;
-  margin-bottom: 2em;
-  background: $blue-darker $masthead-image center no-repeat;
-  background-image: linear-gradient(to top, $masthead-mask,
-    $masthead-mask), $masthead-image;
-  background-size: cover;
-}
-
-.masthead-small {
-  margin-bottom: -75vh;
-  background-image: linear-gradient(to top, $masthead-mask-dark,
-    $masthead-mask-dark), $masthead-image;
+  transform: rotate(5deg);
+  margin: -2.6em -1em -1.6em;
+  padding: 2.6em 1.6em 1.6em;
+  text-align: right;
+  box-shadow: $gray-2 0px 2px 2px;
+  background-color: $gray-2;
 }
 
 .masthead-content {
-  animation: 1s blur-in ease-out;
-  transform-origin: 15% 15%;
   padding: 0 1rem;
 
   > h1 {
     font-family: $font-serif;
-    color: $blue-light;
+    color: $link-color;
     margin-top: 0;
     font-weight: $font-light;
   }
 
   a:link {
-    text-shadow: $link-color 0 0 3px;
     text-decoration: none;
-  }
-  a:hover {
-    text-shadow: $link-color 0 0 1px;
+    font-weight: $font-light;
   }
 }
 
 @media screen and (min-width: $breakpoint) {
   .masthead {
-    padding: 10vh 20% 2em;
+    padding-right: 20%;
+    padding-left: 20%;
+    padding-top: 4.8em;
+    margin: -4.8em -10% -1.6em;
+    padding: 4.8em 20% 1.6em;
   }
 }

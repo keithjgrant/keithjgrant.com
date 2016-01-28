@@ -1,5 +1,7 @@
 
 .topnav {
+  position: relative;
+  z-index: 1;
   background-color: $gray-1;
   color: $black;
   font-family: $font-sans;
