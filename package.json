@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "My Website",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "gulp": "gulp"
+  },
   "author": "Keith J Grant",
   "devDependencies": {
     "del": "^1.1.1",
