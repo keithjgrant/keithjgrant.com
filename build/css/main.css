@@ -368,6 +368,7 @@ th {
   box-sizing: border-box; }
 
 body {
+  overflow-x: hidden;
   background-color: #fff;
   color: #333;
   font-family: Palanquin, Helvetica, Arial, sans-serif;
