@@ -367,6 +367,11 @@ th {
 * {
   box-sizing: border-box; }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden; }
+
 body {
   overflow-x: hidden;
   background-color: #fff;
@@ -441,6 +446,12 @@ footer {
     padding: 1.9em 20%;
     margin-bottom: 20em; } }
 
+.bio .bio-twitter > a::before {
+  display: none; }
+
+.bio .bio-twitter > a:hover {
+  text-decoration: underline; }
+
 .masthead {
   transform: rotate(5deg);
   margin: -2.6em -1em -1.6em;
@@ -462,11 +473,8 @@ footer {
 
 @media screen and (min-width: 42em) {
   .masthead {
-    padding-right: 20%;
-    padding-left: 20%;
-    padding-top: 4.8em;
     margin: -4.8em -10% -1.6em;
-    padding: 4.8em 20% 1.6em; } }
+    padding: 4.8em 20% 1.6em 50%; } }
 
 .page-title {
   font-size: 2rem;
