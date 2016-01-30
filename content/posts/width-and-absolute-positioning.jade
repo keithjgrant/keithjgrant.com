@@ -170,6 +170,6 @@ pre.prettyprint.
         .child
 p Now that was unexpected, at least to me. With <code>right: 0; bottom: 0</code>, the margin is contained inside the positioned descendant; they will shrink the size of the element.
 p With <code>width: 100%; height: 100%</code>, the top and left margins are contained, but the element is shifted, maintaining its original size. The right and bottom margins are then added outside the whole structure.
-p What’s interesting is that the parent element isn’t affecting the shape of the child element at all&mdash;though it does provide the height to the positioned container.
-h2#takeaways Take-aways
+p What’s interesting is that in all these scenarios, the parent element doesn’t affect the shape of the child element at all&mdash. Though it does provide the height to the positioned container.
+h2#takeaway Take-away
 p So what does this mean? It seems to me that <code>top: 0; right: 0; bottom: 0; left: 0</code> is probably the one to favor, as it's a little more predictable, unless you have a particular reason to use height or width instead.
