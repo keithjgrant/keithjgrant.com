@@ -17,7 +17,7 @@ style(type="text/css").
   .demo .parent {
     width: 200px;
     min-height: 200px;
-    border: 1px solid #666;
+    border: 2px solid #936;
   }
   .demo .child {
     position: absolute;
@@ -68,7 +68,7 @@ style(type="text/css").
 
   <h2 id="experimenting">Experimenting</h2>
 
-  So here’s the basic scenario I set up. Three elements: one relatively positioned as the anchor for the absolute positioning, one to serve as the parent, and then the child, which will be absolutely positioned. For better visibility, the positioned container has a faint background color, the parent has a thin black border, and the child has a medium gray background (transparent, so the others will show through).
+  So here’s the basic scenario I set up. Three elements: one relatively positioned as the anchor for the absolute positioning, one to serve as the parent, and then the child, which will be absolutely positioned. For better visibility, the positioned container has a faint background color, the parent has a purple border, and the child has a medium gray background (transparent, so the others will show through).
 
   ```html
     <div class="positioned">
@@ -88,7 +88,7 @@ style(type="text/css").
     .parent {
       width: 200px;
       min-height: 200px;
-      border: 1px solid #666;
+      border: 2px solid #936;
     }
 
     .child {
@@ -123,7 +123,7 @@ style(type="text/css").
       .parent
         .child
 
-p The two children appear identical. They overflow outside the parent, and fill the size of the positioned container. Let's add some padding and see what happens...
+p The two children appear identical. They overflow outside the parent, and fill the size of the positioned container. Visually, you can’t tell the difference between the container and the child. Let's add some padding to the child and see what happens...
 pre.prettyprint.
   .child {
     padding: 1em;

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Keith J Grant</title><link>http://keithjgrant.com</link><atom:link href="http://keithjgrant.com/feed.xml" rel="self" type="application/rss+xml"/><description>JavaScript, CSS, UX, and the open web</description><language>en-US</language><lastBuildDate>Thu, 28 Jan 2016 05:00:00 GMT</lastBuildDate><item><title>Width and absolute positioning</title><link>http://keithjgrant.com/posts/width-and-absolute-positioning.html</link><description><![CDATA[
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Keith J Grant</title><link>http://keithjgrant.com</link><atom:link href="http://keithjgrant.com/feed.xml" rel="self" type="application/rss+xml"/><description>JavaScript, CSS, UX, and the open web</description><language>en-US</language><lastBuildDate>Sat, 30 Jan 2016 05:00:00 GMT</lastBuildDate><item><title>Width and absolute positioning</title><link>http://keithjgrant.com/posts/width-and-absolute-positioning.html</link><description><![CDATA[
 <style type="text/css">.demo {
   display: flex;
   flex-flow: space-between;
@@ -17,7 +17,7 @@
 .demo .parent {
   width: 200px;
   min-height: 200px;
-  border: 1px solid #666;
+  border: 2px solid #936;
 }
 .demo .child {
   position: absolute;
@@ -61,7 +61,7 @@
 <p>So, the two scenarios are effectively the same. But a quick look at the spec made it clear that padding and margin would weigh in. So it might worth a little experimenting to see what we get.</p>
 <h2 id="experimenting">Experimenting</h2>
 
-<p>So here’s the basic scenario I set up. Three elements: one relatively positioned as the anchor for the absolute positioning, one to serve as the parent, and then the child, which will be absolutely positioned. For better visibility, the positioned container has a faint background color, the parent has a thin black border, and the child has a medium gray background (transparent, so the others will show through).</p>
+<p>So here’s the basic scenario I set up. Three elements: one relatively positioned as the anchor for the absolute positioning, one to serve as the parent, and then the child, which will be absolutely positioned. For better visibility, the positioned container has a faint background color, the parent has a purple border, and the child has a medium gray background (transparent, so the others will show through).</p>
 <pre><code class="lang-html">  &lt;div class=&quot;positioned&quot;&gt;
     &lt;div class=&quot;parent&quot;&gt;
       &lt;div class=&quot;child&quot;&gt;
@@ -77,7 +77,7 @@
   .parent {
     width: 200px;
     min-height: 200px;
-    border: 1px solid #666;
+    border: 2px solid #936;
   }
 
   .child {
@@ -97,7 +97,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-}</pre><div class="demo-2 positioned"><div class="parent"><div class="child"></div></div></div></div></div><p>The two children appear identical. They overflow outside the parent, and fill the size of the positioned container. Let's add some padding and see what happens...</p><pre class="prettyprint">.child {
+}</pre><div class="demo-2 positioned"><div class="parent"><div class="child"></div></div></div></div></div><p>The two children appear identical. They overflow outside the parent, and fill the size of the positioned container. Visually, you can’t tell the difference between the container and the child. Let's add some padding to the child and see what happens...</p><pre class="prettyprint">.child {
   padding: 1em;
 }</pre><div class="demo demo--padding"><div class="demo-col"><div class="demo-1 positioned"><div class="parent"><div class="child"></div></div></div></div><div class="demo-col"><div class="demo-2 positioned"><div class="parent"><div class="child"></div></div></div></div></div><p>...nothing. Note, I've got <code>box-sizing: border-box</code> set globally on the page. Let's turn that off:</p><pre class="prettyprint">.child {
   box-sizing: content-box;
@@ -105,7 +105,7 @@
 }</pre><div class="demo demo--padding-2"><div class="demo-col"><div class="demo-1 positioned"><div class="parent"><div class="child"></div></div></div></div><div class="demo-col"><div class="demo-2 positioned"><div class="parent"><div class="child"></div></div></div></div></div><p>The padding still has no effect on the size of the first variation. But it adds to the width and height in the second; that child now overflows the positioned container. That makes sense. So there's a key difference here, if you don't have a global box-sizing fix in place.</p><p>Now let’s see what a margin does:</p><pre class="prettyprint">.child {
   margin: 1em;
 }</pre><div class="demo demo--margin"><div class="demo-col"><div class="demo-1 positioned"><div class="parent"><div class="child"></div></div></div></div><div class="demo-col"><div class="demo-2 positioned"><div class="parent"><div class="child"></div></div></div></div></div><p>Now that was unexpected, at least to me. With <code>right: 0; bottom: 0</code>, the margin is contained inside the positioned descendant; they will shrink the size of the element.</p><p>With <code>width: 100%; height: 100%</code>, the top and left margins are contained, but the element is shifted, maintaining its original size. The right and bottom margins are then added outside the whole structure.</p><p>What’s interesting is that in all these scenarios, the parent element doesn’t affect the shape of the child element at all&mdash. Though it does provide the height to the positioned container.</p><h2 id="takeaway">Take-away</h2><p>So what does this mean? It seems to me that <code>top: 0; right: 0; bottom: 0; left: 0</code> is probably the one to favor, as it's a little more predictable, unless you have a particular reason to use height or width instead.</p>
-]]></description><pubDate>Thu, 28 Jan 2016 05:00:00 GMT</pubDate><guid isPermaLink="true">http://keithjgrant.com/posts/width-and-absolute-positioning.html</guid></item><item><title>Simply white</title><link>http://keithjgrant.com/posts/simply-white.html</link><description><![CDATA[
+]]></description><pubDate>Sat, 30 Jan 2016 05:00:00 GMT</pubDate><guid isPermaLink="true">http://keithjgrant.com/posts/width-and-absolute-positioning.html</guid></item><item><title>Simply white</title><link>http://keithjgrant.com/posts/simply-white.html</link><description><![CDATA[
 <p><a href="http://www.benjaminmoore.com/en-us/for-your-home/benjamin-moore-color-trends-2016">Benjamin
 Moore</a> has declared the Color of the Year for 2016 to be &quot;simply white&quot;. We have reached peak
 minimalism, y&#39;all.</p>
