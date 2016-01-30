@@ -1,14 +1,109 @@
-<!DOCTYPE html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Width and absolute positioning | Keith J Grant</title><meta name="description" content=""><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#666"><link rel="alternate" type="application/rss+xml" title="Keith J Grant" href="http://keithjgrant.com/feed.xml"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif|Palanquin:100,700" type="text/css"><link rel="stylesheet" href="/css/main.min.css"></head><body><nav class="topnav"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/posts">Posts</a></li><li><a href="/talks">Talks</a></li></ul></nav><div class="masthead"><h1 class="page-title">Width and absolute positioning</h1></div><main class="l-main"><article class="post"><div class="post-content"><p>I recently came across this question on Twitter:</p>
-<p><blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">What&#39;s the diff on a position:absolute el btw {top:0;right:0;bottom:0;left:0;} and {top:0;left:0;height:100%;width:100%;} ?</p>&mdash; Karl Swedberg (@kswedberg) <a href="https://twitter.com/kswedberg/status/692720642580295681">January 28, 2016</a></blockquote></p>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!DOCTYPE html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Width and absolute positioning | Keith J Grant</title><meta name="description" content=""><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#666"><link rel="alternate" type="application/rss+xml" title="Keith J Grant" href="http://keithjgrant.com/feed.xml"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif|Palanquin:100,700" type="text/css"><link rel="stylesheet" href="/css/main.min.css"></head><body><nav class="topnav"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/posts">Posts</a></li><li><a href="/talks">Talks</a></li></ul></nav><div class="masthead"><h1 class="page-title">Width and absolute positioning</h1></div><main class="l-main"><article class="post"><div class="post-content"><style type="text/css">.demo {
+  display: flex;
+  flex-flow: space-between;
+  margin: 1em 0;
+}
 
-<p>“That’s easy”, I thought. “They often seem the same in practice, but width and height are based on the parent (or nearest block-level ancestor). Top, right, bottom, and left are based on the nearest <em>positioned</em> ancestor. Those aren’t necessarily the same element.”</p>
+.demo-col {
+  flex: 1;
+  padding: 0 1em;
+}
+
+.demo .positioned {
+  position: relative;
+  background-color: rgba(0,0,255, 0.1);
+}
+.demo .parent {
+  width: 200px;
+  min-height: 200px;
+  border: 1px solid #666;
+}
+.demo .child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.demo-1 .child {
+  right: 0;
+  bottom: 0;
+}
+
+.demo-2 .child {
+  width: 100%;
+  height: 100%;
+}
+
+.demo--padding .child {
+  padding: 1em;
+}
+
+.demo--padding-2 {
+  margin-bottom: 2em;
+}
+.demo--padding-2 .child {
+  box-sizing: content-box;
+  padding: 1em;
+}
+
+.demo--margin .child {
+  margin: 1em;
+}
+</style><p>I recently came across this question on Twitter:</p>
+<p><blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">What&#39;s the diff on a position:absolute el btw {top:0;right:0;bottom:0;left:0;} and {top:0;left:0;height:100%;width:100%;} ?</p>&mdash; Karl Swedberg (@kswedberg) <a href="https://twitter.com/kswedberg/status/692720642580295681">January 28, 2016</a></blockquote></p>
+<p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+“That’s easy”, I thought. “They often seem the same in practice, but width and height are based on the parent (or nearest block-level ancestor). Top, right, bottom, and left are based on the nearest <em>positioned</em> ancestor. Those aren’t necessarily the same element.”</p>
 <p>Shows what I know: my <a href="http://codepen.io/keithjgrant/pen/obddgy">quick mockup</a> to illustrate the difference proved me wrong.</p>
 <p>On first pass, <code>top: 0; right: 0; bottom: 0; left: 0;</code> and <code>top: 0; left: 0; width: 100%; height: 100%;</code> are equivalent. Of course, we always <em>treat</em> them as equivalent, because in most real-world cases, the nearest positioned ancestor is the nearest block-level element (usually the parent). But my codepen showed me an absolutely positioned element whose width and height are derived from the positioned ancestor, not the immediate container.</p>
 <p>In retrospect, this makes a certain kind of sense, because the absolutely positioned element is removed from the normal flow. It&#39;s then “contained” by the positioned ancestor.</p>
-<p>Intrigued, I dug up the relevant part of the <a href="https://www.w3.org/TR/CSS2/visudet.html#abs-non-replaced-width">spec</a>. Really, click that. And tell me if you can make sense of it in one reading. Because it&#39;s really got a lot of edge cases in play there. What happens if margins are set? What if one margin is set to <code>auto</code>? “Shrink-to-fit” rules and hypothetical “static-position” blocks. Yikes. And that&#39;s the CSS 2.1 spec, so it doesn’t even consider <code>box-sizing: border-box</code>.</p>
-<p>So, the two scenarios behave the same without an margin or padding. Looking at the spec made it clear that those would weigh in. And sure enough, some folks on twitter pointed out that padding would change the width and height calculations if you don’t have border-box sizing in place. So let’s look at the effect margin has on it. The horizontal and vertical behave the same, so I’ll just focus on the interplay between left/right margin and width.</p>
-</div><date class="post-date">28 January 2016</date></article><footer><a href="/posts">See more posts</a></footer></main><script src="/js/vendor/prettify.js"></script><script src="/js/run-prettify.js"></script><script>if (document.location.hostname !== 'localhost') {
+<p>So, the two scenarios are effectively the same. But a quick look at the spec made it clear that padding and margin would weigh in. So it might worth a little experimenting to see what we get.</p>
+<h2 id="experimenting">Experimenting</h2>
+
+<p>So here’s the basic scenario I set up. Three elements: one relatively positioned as the anchor for the absolute positioning, one to serve as the parent, and then the child, which will be absolutely positioned. For better visibility, the positioned container has a faint background color, the parent has a thin black border, and the child has a medium gray background (transparent, so the others will show through).</p>
+<pre><code class="lang-html">  &lt;div class=&quot;positioned&quot;&gt;
+    &lt;div class=&quot;parent&quot;&gt;
+      &lt;div class=&quot;child&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+<pre><code class="lang-css">  .positioned {
+    position: relative;
+    background-color: rgba(0,0,255, 0.1);
+  }
+
+  .parent {
+    width: 200px;
+    min-height: 200px;
+    border: 1px solid #666;
+  }
+
+  .child {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+</code></pre>
+<p>Then, we’ll play around with the child’s properties to see what happens. We&#39;ll create two variations. First, one with top, right, bottom, and left all set to zero. And second, one with a top and left of zero, and a width and height of 100%.</p>
+<div class="demo demo--basic"><div class="demo-col"><pre class="prettyprint">.child {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+</pre><div class="demo-1 positioned"><div class="parent"><div class="child"></div></div></div></div><div class="demo-col"><pre class="prettyprint">.child {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}</pre><div class="demo-2 positioned"><div class="parent"><div class="child"></div></div></div></div></div><p>The two children appear identical. They overflow outside the parent, and fill the size of the positioned container. Let's add some padding and see what happens...</p><pre class="prettyprint">.child {
+  padding: 1em;
+}</pre><div class="demo demo--padding"><div class="demo-col"><div class="demo-1 positioned"><div class="parent"><div class="child"></div></div></div></div><div class="demo-col"><div class="demo-2 positioned"><div class="parent"><div class="child"></div></div></div></div></div><p>...nothing. Note, I've got <code>box-sizing: border-box</code> set globally on the page. Let's turn that off:</p><pre class="prettyprint">.child {
+  box-sizing: content-box;
+  padding: 1em;
+}</pre><div class="demo demo--padding-2"><div class="demo-col"><div class="demo-1 positioned"><div class="parent"><div class="child"></div></div></div></div><div class="demo-col"><div class="demo-2 positioned"><div class="parent"><div class="child"></div></div></div></div></div><p>The padding still has no effect on the size of the first variation. But it adds to the width and height in the second; that child now overflows the positioned container. That makes sense. So there's a key difference here, if you don't have a global box-sizing fix in place.</p><p>Now let’s see what a margin does:</p><pre class="prettyprint">.child {
+  margin: 1em;
+}</pre><div class="demo demo--margin"><div class="demo-col"><div class="demo-1 positioned"><div class="parent"><div class="child"></div></div></div></div><div class="demo-col"><div class="demo-2 positioned"><div class="parent"><div class="child"></div></div></div></div></div><p>Now that was unexpected, at least to me. With <code>right: 0; bottom: 0</code>, the margin is contained inside the positioned descendant; they will shrink the size of the element.</p><p>With <code>width: 100%; height: 100%</code>, the top and left margins are contained, but the element is shifted, maintaining its original size. The right and bottom margins are then added outside the whole structure.</p><p>What’s interesting is that the parent element isn’t affecting the shape of the child element at all&mdash;though it does provide the height to the positioned container.</p><h2 id="takeaways">Take-aways</h2><p>So what does this mean? It seems to me that <code>top: 0; right: 0; bottom: 0; left: 0</code> is probably the one to favor, as it's a little more predictable, unless you have a particular reason to use height or width instead.</p></div><date class="post-date">28 January 2016</date></article><footer><a href="/posts">See more posts</a></footer></main><script src="/js/vendor/prettify.js"></script><script src="/js/run-prettify.js"></script><script>if (document.location.hostname !== 'localhost') {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
