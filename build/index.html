@@ -1,14 +1,20 @@
-<!DOCTYPE html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Keith J Grant</title><meta name="description" content=""><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#666"><link rel="alternate" type="application/rss+xml" title="Keith J Grant" href="http://keithjgrant.com/feed.xml"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif|Palanquin:100,700" type="text/css"><link rel="stylesheet" href="/css/main.min.css"></head><body><nav class="topnav"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/posts">Posts</a></li><li><a href="/talks">Talks</a></li></ul></nav><header class="masthead"><div class="masthead-content"><h1>Keith J Grant</h1><div class="bio">JavaScript, CSS, UX, and the open web.<div class="bio-twitter"><a href="http://twitter.com/keithjgrant">@keithjgrant</a></div></div></div></header><main class="l-main"><article class="post"><h2 class="post-title"><a href="/posts/width-and-absolute-positioning.html">Width and absolute positioning</a></h2><div class="post-content"><style type="text/css">.demo {
-  display: flex;
-  flex-flow: space-between;
+<!DOCTYPE html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Keith J Grant</title><meta name="description" content=""><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#666"><link rel="alternate" type="application/rss+xml" title="Keith J Grant" href="http://keithjgrant.com/feed.xml"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif|Palanquin:100,700" type="text/css"><link rel="stylesheet" href="/css/main.min.css"></head><body><nav class="topnav"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/posts">Posts</a></li><li><a href="/talks">Talks</a></li></ul></nav><header class="masthead"><div class="masthead-content"><h1>Keith J Grant</h1><div class="bio">JavaScript, CSS, UX, and the open web.<div class="bio-twitter"><a href="http://twitter.com/keithjgrant">@keithjgrant</a></div></div></div></header><main class="l-main"><article class="post"><h2 class="post-title"><a href="/posts/width-and-absolute-positioning.html">Width and absolute positioning</a></h2><div class="post-content"><style type="text/css">.demo-col {
   margin: 1em 0;
 }
+@media screen and (min-width: 900px) {
+  .demo {
+    display: flex;
+    flex-flow: space-between;
+    margin: 1em 0;
+  }
 
-.demo-col {
-  flex: 1;
-}
-.demo-col:not(:first-child) {
-  margin-left: 3em;
+  .demo-col {
+    flex: 1;
+    margin: 0;
+  }
+  .demo-col:not(:first-child) {
+    margin-left: 3em;
+  }
 }
 
 .demo .positioned {

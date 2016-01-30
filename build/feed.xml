@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Keith J Grant</title><link>http://keithjgrant.com</link><atom:link href="http://keithjgrant.com/feed.xml" rel="self" type="application/rss+xml"/><description>JavaScript, CSS, UX, and the open web</description><language>en-US</language><lastBuildDate>Sat, 30 Jan 2016 05:00:00 GMT</lastBuildDate><item><title>Width and absolute positioning</title><link>http://keithjgrant.com/posts/width-and-absolute-positioning.html</link><description><![CDATA[
-<style type="text/css">.demo {
-  display: flex;
-  flex-flow: space-between;
+<style type="text/css">.demo-col {
   margin: 1em 0;
 }
+@media screen and (min-width: 900px) {
+  .demo {
+    display: flex;
+    flex-flow: space-between;
+    margin: 1em 0;
+  }
 
-.demo-col {
-  flex: 1;
-}
-.demo-col:not(:first-child) {
-  margin-left: 3em;
+  .demo-col {
+    flex: 1;
+    margin: 0;
+  }
+  .demo-col:not(:first-child) {
+    margin-left: 3em;
+  }
 }
 
 .demo .positioned {
