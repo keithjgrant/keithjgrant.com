@@ -458,7 +458,8 @@ footer {
   padding: 2.6em 1.6em 1.6em;
   text-align: right;
   box-shadow: #eee 0px 2px 2px;
-  background-color: #eee; }
+  background-color: #eee;
+  background-color: rgba(0, 0, 0, 0.07); }
 
 .masthead-content {
   padding: 0 1rem; }
@@ -572,6 +573,12 @@ footer {
 
 .post-list > li > a {
   font-weight: 100; }
+
+.float-right {
+  float: right !important; }
+
+.float-left {
+  float: left !important; }
 
 /* Tomorrow Theme */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
