@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Keith J Grant</title><link>http://keithjgrant.com</link><atom:link href="http://keithjgrant.com/feed.xml" rel="self" type="application/rss+xml"/><description>JavaScript, CSS, UX, and the open web</description><language>en-US</language><lastBuildDate>Sat, 06 Feb 2016 05:00:00 GMT</lastBuildDate><item><title>A quest for interchangeable parts</title><link>http://keithjgrant.com/posts/a-quest-for-interchangeable-parts.html</link><description><![CDATA[
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Keith J Grant</title><link>http://keithjgrant.com</link><atom:link href="http://keithjgrant.com/feed.xml" rel="self" type="application/rss+xml"/><description>JavaScript, CSS, UX, and the open web</description><language>en-US</language><lastBuildDate>Thu, 09 Jun 2016 04:00:00 GMT</lastBuildDate><item><title>Save Scoped CSS</title><link>http://keithjgrant.com/posts/save-scoped-css.html</link><description><![CDATA[
+<p>About <a href="/posts/into-the-future-of-css.html#scoped-css">a year ago</a>, I wrote about a promising feature of CSS, scoping. I love the idea of this feature, and I think it could be one of the most important changes in the near future of CSS. You know all those complaints about “in CSS everything is global&quot;? This feature is the answer.</p>
+<p>I became excited recently when I noticed some movement in the W3C concerning this spec. So I took a look at what was going on. I found some good news, and I found some bad news.</p>
+<h2 id="the-good-news">The good news</h2>
+<p>The <a href="https://drafts.csswg.org/css-scoping/">editor&#39;s draft of the specification</a> has recently been updated. The changes, I think, significantly improve the viability of the feature. They more closely resemble the hypothetical changes I wished for last year. Most importantly, scoped styles would no longer need to be defined inline in the HTML document; you can define scoped styles in an external stylesheet.</p>
+<p>The proposed syntax looks like this, using a new <code>@scope</code> at-rule:</p>
+<pre><code class="lang-css">@scope .foo-module {
+  p {
+    color: blue;
+  }
+}
+
+@scope .bar-module {
+  p {
+    color: red;
+  }
+}
+</code></pre>
+<p>Each scope is defined with a selector (<code>.foo-module</code>, <code>.bar-module</code>). This establishes a new scope for matched elements and their descendants. Inside the braces that follow, you can specify any styles you wish. These styles are then applied only to the elements belonging to that scope.</p>
+<p>According to the rules of <a href="https://www.w3.org/TR/css-cascade-3/#cascade-scope">the cascade</a>, rules applied to an inner scope will override those applied to an outer scope, <em>regardless of their selector specificity</em>. This is precisely the behavior CSS-in-JS and/or CSS Modules users want! And yes, this definition is in the current Candidate Recommendation of the spec.</p>
+<p>This means, given the example above, a <code>foo-module</code> inside a <code>bar-module</code> will have blue text; and a <code>bar-module</code> inside a <code>foo-module</code> will have red text. This could solve so many developer frustrations.</p>
+<h2 id="the-bad-news">The bad news</h2>
+<p>I got excited when I saw these changes, so I started reading more on what prompted them. I discovered that it is a sort of last-ditch effort to salvage the spec. The problem? Browser vendors have shown no interest in implementing it. Firefox has long-since implemented the earlier version of the spec, but that&#39;s it.</p>
+<p>If we developers want this feature, we need to let the browser vendors know. Otherwise, it&#39;s DOA.</p>
+<p>So tell them, please. Follow these links, and up-vote or leave comments in support of scoped styles:</p>
+<ul>
+<li><a href="https://groups.google.com/a/chromium.org/forum/#!searchin/blink-dev/scoped/blink-dev/R1x18ZLS5qQ/Bjuh_cENhlQJ">Chrome</a></li>
+<li><a href="https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/6508310-scoped-styles">Edge</a></li>
+<li>I couldn&#39;t find a channel for Safari. If you know where it is, please let me know and I&#39;ll add it here.</li>
+</ul>
+<p>Let&#39;s not allow this to die.</p>
+
+]]></description><pubDate>Thu, 09 Jun 2016 04:00:00 GMT</pubDate><guid isPermaLink="true">http://keithjgrant.com/posts/save-scoped-css.html</guid></item><item><title>A quest for interchangeable parts</title><link>http://keithjgrant.com/posts/a-quest-for-interchangeable-parts.html</link><description><![CDATA[
 <p>This is a bolt. <img class="float-right" src="/images/2016/m20-bolt.jpg" height="200" width="200" alt="bolt"> You may not realize it, but it is a modern marvel. It is a 150mm bolt with an M20 threading. It works in any piece of hardware that is cut with the same size and threading. It can be turned with any 30mm hex wrench. You can reach into a pile of M20-2.50 nuts, made by any manufacturer, pull any one out, and it will fit this bolt.</p>
 <p>This is because of a key principle that made the industrial revolution possible: <a href="https://en.wikipedia.org/wiki/Interchangeable_parts">interchangeable parts</a>. It took countless inventors over the course of hundreds of years to perfect the manufacturing necessary for this. Many people, such as Eli Whitney and Samuel Colt, devoted years of their lives and a great amount of resources in the quest to achieve it.</p>
 <p>Before their efforts, everything had to be hand-made for the particular project. Every gun was uniquely crafted. Every piece of rigging on a ship. And if a part broke, you couldn’t just buy a replacement; one had to be hand-made to fit the parts it integrated with... or the entire device had to be replaced.</p>
