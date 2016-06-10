@@ -291,13 +291,13 @@ body {
 
 .slide-title .mario {
   position: absolute;
-  top: -30vh;
+  top: -6em;
   left: 0;
   z-index: -1; }
 
 .slide-title .megaman {
   position: absolute;
-  bottom: -30vh;
+  bottom: -5em;
   right: 0;
   z-index: -1;
   transform: rotateY(180deg); }
