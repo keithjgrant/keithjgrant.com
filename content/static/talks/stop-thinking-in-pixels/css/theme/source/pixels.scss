@@ -1,0 +1,63 @@
+/**
+ * Black theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #001B38;
+
+$mainFont: 'Slabo', sans-serif;
+$mainColor: #fff;
+$linkColor: #4BA3D5;
+$linkColorHover: lighten( $linkColor, 20% );
+$headingFont: 'Press Start 2P', Impact, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: -0.03em;
+$headingTextTransform: none;
+$headingColor: #4ba3d5;
+$selectionBackgroundColor: #4BA3D5;
+$mainFontSize: 30px;
+
+$heading1Size: 2.11em;
+$heading2Size: 1.55em;
+$heading3Size: 1.00em;
+$heading4Size: 1.00em;
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.reveal section img {
+  border: 0;
+  box-shadow: none;
+  background: none;
+}
+
+.slide-title {
+  .mario {
+    position: absolute;
+    top: -30vh;
+    left: 0;
+    z-index: -1;
+  }
+  .megaman {
+    position: absolute;
+    bottom: -30vh;
+    right: 0;
+    z-index: -1;
+    transform: rotateY(180deg);
+  }
+}
