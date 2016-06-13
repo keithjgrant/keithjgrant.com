@@ -17,18 +17,18 @@
 
 
 // Override theme settings (see ../template/settings.scss)
-$backgroundColor: #001B38;
+$backgroundColor: #001b38;
 
-$mainFont: 'Slabo', sans-serif;
+$mainFont: 'Slabo 27px', sans-serif;
 $mainColor: #fff;
-$linkColor: #4BA3D5;
+$linkColor: #4ba3d5;
 $linkColorHover: lighten( $linkColor, 20% );
 $headingFont: 'Press Start 2P', Impact, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: -0.03em;
 $headingTextTransform: none;
 $headingColor: #4ba3d5;
-$selectionBackgroundColor: #4BA3D5;
+$selectionBackgroundColor: #4ba3d5;
 $mainFontSize: 30px;
 
 $heading1Size: 2.11em;
@@ -46,7 +46,18 @@ $heading4Size: 1.00em;
   background: none;
 }
 
+.reveal .slides {
+  text-align: left;
+
+  p > img:only-child {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
 .slide-title {
+  text-align: center;
+
   .mario {
     position: absolute;
     top: -6em;
@@ -59,5 +70,16 @@ $heading4Size: 1.00em;
     right: 0;
     z-index: -1;
     transform: rotateY(180deg);
+  }
+}
+
+.slide-lengths {
+  table {
+    width: 100%;
+    margin: initial;
+  }
+
+  tbody td {
+    border-bottom: 0;
   }
 }
