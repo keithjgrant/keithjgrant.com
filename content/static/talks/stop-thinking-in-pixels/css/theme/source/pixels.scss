@@ -12,14 +12,14 @@
 
 
 // Include theme-specific fonts
-@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
-@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@import url("https://fonts.googleapis.com/css?family=Lora");
 
 
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: #001b38;
 
-$mainFont: 'Slabo 27px', sans-serif;
+$mainFont: 'Lora', sans-serif;
 $mainColor: #fff;
 $linkColor: #4ba3d5;
 $linkColorHover: lighten( $linkColor, 20% );
@@ -33,28 +33,40 @@ $mainFontSize: 30px;
 
 $heading1Size: 2.11em;
 $heading2Size: 1.55em;
-$heading3Size: 1.00em;
+$heading3Size: 1.55em;
 $heading4Size: 1.00em;
 
 // Theme template ------------------------------
 @import "../template/theme";
 // ---------------------------------------------
 
-.reveal section img {
-  border: 0;
-  box-shadow: none;
-  background: none;
-}
+/* overrides */
+.reveal {
+  h3, h4, h5, h6 {
+    font-family: $mainFont;
+  }
 
-.reveal .slides {
-  text-align: left;
+  h4, h5, h6 {
+    color: $mainColor;
+  }
 
-  p > img:only-child {
-    display: block;
-    margin: 0 auto;
+  section img {
+    border: 0;
+    box-shadow: none;
+    background: none;
+  }
+
+  .slides {
+    text-align: left;
+
+    img:only-child {
+      display: block;
+      margin: 0 auto;
+    }
   }
 }
 
+/* individual slides*/
 .slide-title {
   text-align: center;
 
@@ -81,5 +93,26 @@ $heading4Size: 1.00em;
 
   tbody td {
     border-bottom: 0;
+  }
+}
+
+.slide-ems-intro {
+  .em-box,
+  .em-box-adjusted {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    background: rgba(255, 255, 255, .2);
+    border: 2px solid #ccc;
+  }
+
+  .em-box + .em-box {
+    margin-left: 3rem;
+  }
+
+  .em-box-adjusted {
+    line-height: .8;
+    margin-left: 3rem;
+    vertical-align: bottom;
   }
 }

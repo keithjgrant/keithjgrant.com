@@ -48,25 +48,22 @@
 
 
         <section>
-          <section data-markdown>
-            <script type="text/template">
-              # CSS:<br> Late binding of styles
+          <section>
+            <h1>CSS:<br> Late binding of styles</h1>
 
-              * Unknown content
-              * Unknown medium
-            </script>
+            <ul>
+              <li>Unknown <u>Content</u></li>
+              <li>Unknown <u>Medium</u></li>
+            </ul>
           </section>
 
 
-          <section data-markdown>
-            <script type="text/template">
-              ## A little history...
-            </script>
+          <section>
+            <h2>A little history...</h2>
           </section>
 
-          <section data-markdown>
-            <script type="text/template">
-              ![Screenshot of old netscape browser](images/netscape.jpg)
+          <section>
+            <img src="images/netscape.jpg" alt="Screenshot of old netscape browser">
             </script>
           </section>
 
@@ -82,19 +79,16 @@
             </script>
           </section>
 
-          <section data-markdown>
-            <script type="text/template">
-              ## We can no longer hide from the abstraction that comes with CSS
-            </script>
+          <section>
+            <h3>We can no longer hide from the abstraction that comes with CSS</h3>
+            <h4 class="fragment">...but we can use it to our advantage</h4>
           </section>
         </section><!-- end late binding/history -->
 
 
         <section>
-          <section data-markdown>
-            <script type="text/template">
-              # Relative units
-            </script>
+          <section>
+            <h1>Relative units</h1>
           </section>
 
           <section data-markdown class="slide-lengths">
@@ -112,10 +106,18 @@
             </script>
           </section>
 
-          <section data-markdown>
-            <script type="text/template">
-              ## Em = the current font size
-            </script>
+          <section>
+            <h2>Absolute units</h2>
+            <p>1in = 25.4mm = 2.54cm = 6pc = 72pt = 96px</p>
+            <p class="fragment">Booooooring</p>
+          </section>
+
+          <section class="slide-ems-intro">
+            <h2>Ems</h2>
+            <p>equal to the current element's font size</p>
+            <div class="em-box" style="font-size: 4em">M</div>
+            <div class="em-box" style="font-size: 2em">M</div>
+            <div class="fragment em-box-adjusted" style="font-size: 4em">Yy</div>
           </section>
 
           <section data-markdown>
