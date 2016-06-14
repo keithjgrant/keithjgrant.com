@@ -24,26 +24,19 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown class="slide-title">
-          <script type="text/template">
-            # Stop Thinking in Pixels
+        <section class="slide-title">
+          <h1>Stop Thinking<br/>in Pixels</h1>
 
-            ![Mario jumping](images/mario-jump.gif) <!-- .element: class="mario" data-fragment-index="1" -->
-            ![Megaman](images/megaman.png) <!-- .element: class="megaman" data-fragment-index="2" -->
-          </script>
+          <p><img src="images/mario-jump.gif" alt="Mario jumping" class="mario"/></p>
+          <p><img src="images/megaman.png" alt="Megaman" class="megaman"/></p>
         </section>
 
 
-        <section data-markdown>
-          <script type="text/template">
-            ## Bonjour!
-
-            @keithjgrant
-
-            Developer: Intercontinental Exchange/New York Stock Exchange
-
-            Author: CSS in Depth, Manning Publications (2017)
-          </script>
+        <section>
+          <h2>Bonjour!</h2>
+          <p>@keithjgrant</p>
+          <p>Developer: Intercontinental Exchange/New York Stock Exchange</p>
+          <p>Author: CSS in Depth, Manning Publications (2017)</p>
         </section>
 
 
@@ -52,8 +45,8 @@
             <h1>CSS:<br> Late binding of styles</h1>
 
             <ul>
-              <li>Unknown <u>Content</u></li>
-              <li>Unknown <u>Medium</u></li>
+              <li>Unknown Content</li>
+              <li>Unknown Medium</li>
             </ul>
           </section>
 
@@ -80,7 +73,7 @@
           </section>
 
           <section>
-            <h3>We can no longer hide from the abstraction that comes with CSS</h3>
+            <h3>We can no longer hide from<br>the abstraction that comes with CSS</h3>
             <h4 class="fragment">...but we can use it to our advantage</h4>
           </section>
         </section><!-- end late binding/history -->
@@ -91,38 +84,42 @@
             <h1>Relative units</h1>
           </section>
 
-          <section data-markdown class="slide-lengths">
-            <script type="text/template">
-              ## Lengths
-
-              | Absolute | Relative |
-              | -------- | -------- |
-              | px       | em       |
-              | mm       | rem      |
-              | cm       | vh       |
-              | in       | vw       |
-              | pt       | vmin     |
-              | pc       | vmax     |
-            </script>
+          <section class="slide-lengths">
+            <h2>Lengths</h2>
+            <table>
+              <thead>
+                <tr>
+                  <td>Absolute</td>
+                  <td>Relative</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>px</td><td>em</td></tr>
+                <tr><td>mm</td><td>rem</td></tr>
+                <tr><td>cm</td><td>vw</td></tr>
+                <tr><td>in</td><td>vh</td></tr>
+                <tr><td>pt</td><td>vmin</td></tr>
+                <tr><td>pc</td><td>vmax</td></tr>
+              </tbody>
+            </table>
           </section>
 
           <section>
             <h2>Absolute units</h2>
-            <p>1in = 25.4mm = 2.54cm = 6pc = 72pt = 96px</p>
+            <p>96px = 72pt = 6pc = 1in = 2.54cm = 25.4mm</p>
             <p class="fragment">Booooooring</p>
           </section>
 
           <section class="slide-ems-intro">
             <h2>Ems</h2>
-            <p>equal to the current element's font size</p>
+            <p>Equal to the current element's font size</p>
             <div class="em-box" style="font-size: 4em">M</div>
             <div class="em-box" style="font-size: 2em">M</div>
             <div class="fragment em-box-adjusted" style="font-size: 4em">Yy</div>
           </section>
 
-          <section data-markdown>
-            <script type="text/template">
-            </script>
+          <section>
+
           </section>
 
           <section data-markdown>

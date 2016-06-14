@@ -13,13 +13,13 @@
 
 // Include theme-specific fonts
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
-@import url("https://fonts.googleapis.com/css?family=Lora");
+@import url("https://fonts.googleapis.com/css?family=Play");
 
 
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: #001b38;
 
-$mainFont: 'Lora', sans-serif;
+$mainFont: 'Play', sans-serif;
 $mainColor: #fff;
 $linkColor: #4ba3d5;
 $linkColorHover: lighten( $linkColor, 20% );
