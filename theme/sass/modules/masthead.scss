@@ -5,13 +5,15 @@ $masthead-mask-dark: transparentize($blue-darker, .2);
 $masthead-text: $gray-light;
 
 .masthead {
+  position: relative; // enable z-index
+  z-index: -1;        // fixed box-shadow overlapping page content
   transform: rotate(5deg);
   margin: -2.6em -1em -1.6em;
   padding: 2.6em 1.6em 1.6em;
   text-align: right;
   box-shadow: $gray-2 0px 2px 2px;
   background-color: $gray-2;
-  background-color: rgba(0, 0, 0, 0.07);  
+  background-color: rgba(0, 0, 0, 0.07);
 }
 
 .masthead-content {

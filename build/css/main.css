@@ -453,6 +453,8 @@ footer {
   text-decoration: underline; }
 
 .masthead {
+  position: relative;
+  z-index: -1;
   transform: rotate(5deg);
   margin: -2.6em -1em -1.6em;
   padding: 2.6em 1.6em 1.6em;
