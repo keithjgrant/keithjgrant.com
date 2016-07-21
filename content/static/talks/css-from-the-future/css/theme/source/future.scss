@@ -83,7 +83,15 @@ $heading4Size: 1.00em;
 .slide-title {
   text-align: center;
 
-  img {
+  h1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    text-shadow: 0.01em 0.01em 0.04em $paleYellow;
+  }
+
+  .council {
     max-height: 40vh;
   }
 }

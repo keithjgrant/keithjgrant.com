@@ -310,7 +310,13 @@ body {
  */
 .slide-title {
   text-align: center; }
-  .slide-title img {
+  .slide-title h1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    text-shadow: 0.01em 0.01em 0.04em #ffffd4; }
+  .slide-title .council {
     max-height: 40vh; }
 
 .slide-specs .columns {
