@@ -33,26 +33,44 @@
 
 
         <section>
-          <h2>Bonjour!</h2>
-          <p>@keithjgrant</p>
+          <h2>@keithjgrant</h2>
           <p>Developer: Intercontinental Exchange/New York Stock Exchange</p>
           <p>Author: CSS in Depth, Manning Publications (2017)</p>
+          <p><a href="http://keithjgrant.com/talks">keithjgrant.com/talks</a></p>
         </section>
 
 
         <section>
           <section>
-            <h1>CSS:<br> Late binding of styles</h1>
+            <h1>“Late binding”</h1>
+          </section>
 
-            <ul>
-              <li>Unknown Content</li>
-              <li>Unknown Medium</li>
-            </ul>
+          <section>
+            <h2>CSS is unique</h2>
+            <div class="split">
+              <div class="split-left">
+                <p>Conventional design:<br>putting content onto canvas</p>
+                <ul>
+                  <li>Print publishing</li>
+                  <li>Photoshop</li>
+                  <li>InDesign</li>
+                  <li>PDFs</li>
+                </ul>
+              </div>
+              <div class="split-right fragment">
+                <p>CSS:</p>
+                <ul>
+                  <li>Unknown Content</li>
+                  <li>Unknown Medium</li>
+                </ul>
+              </div>
+            </div>
           </section>
 
 
           <section>
-            <h2>A little history...</h2>
+            <h2>Hiding from the abstraction</h2>
+            <p>Brief history of web design</p>
           </section>
 
           <section>
@@ -60,21 +78,18 @@
             </script>
           </section>
 
-          <section data-markdown>
-            <script type="text/template">
-              ![Screenshot of 750px fixed-width layout](images/fixed-width.png)
-            </script>
+          <section>
+            <p><img alt="Screenshot of 750px fixed-width layout" src="images/fixed-width.png"/></p>
           </section>
 
-          <section data-markdown>
-            <script type="text/template">
-              ![A hand holding original iPhone](images/iphone.jpg)
-            </script>
+          <section>
+            <p><img alt="A hand holding original iPhone" src="images/iphone.jpg"/></p>
           </section>
 
           <section>
             <h3>We can no longer hide from<br>the abstraction that comes with CSS</h3>
-            <h4 class="fragment">...but we can use it to our advantage</h4>
+            <p class="fragment">...but we can use it to our advantage</p>
+            <p class="fragment">CSS provides the tools for working with the abstraction</p>
           </section>
         </section><!-- end late binding/history -->
 
@@ -82,6 +97,10 @@
         <section>
           <section>
             <h1>Relative units</h1>
+          </section>
+
+          <section>
+            # arcane law example
           </section>
 
           <section class="slide-lengths">
@@ -104,11 +123,19 @@
             </table>
           </section>
 
-          <section>
+          <section class="slide-abs-units">
             <h2>Absolute units</h2>
             <p>96px = 72pt = 6pc = 1in = 2.54cm = 25.4mm</p>
-            <p class="fragment">Booooooring</p>
+            <div class="fragment"><br><br><br><br>
+              <p>...but our princess is in another castle</p>
+              <img src="images/toadstool.png" alt="Mario and toadstool" class="toadstool"/>
+            </div>
           </section>
+
+        </section><!-- end abs vs reltive -->
+
+        <section>
+          <section><h1>Ems</h1></section>
 
           <section class="slide-ems-intro">
             <h2>Ems</h2>
@@ -118,25 +145,177 @@
             <div class="fragment em-box-adjusted" style="font-size: 4em">Yy</div>
           </section>
 
+          <section class="slide-ems-basic">
+            <h2>Using ems</h2>
+            <div class="split">
+              <div class="split-left">
+                <code><pre>.tile {
+  padding: .6em 1.2em;
+  border-radius: .3em;
+  border: 2px solid white;
+}</pre></code>
+              </div>
+              <div class="split-right fragment">
+                <div class="tile">
+                  Ems are great for padding, margin, border-radius.
+                </div>
+              </div>
+            <div>
+          </section>
+
           <section>
-
+            <div class="split">
+              <div class="split-left">
+                <h2>Specified vs. computed value</h2>
+                <code><pre>.tile {
+  padding: .6em 1.2em;
+  border-radius: .3em;
+  border: 2px solid black;
+}</pre></code>
+              </div>
+              <div class="split-right" style="position: relative; overflow: hidden; min-height: 80vh">
+                <img
+                  src="images/devtools-computed.png"
+                  alt="DevTools showing computed styles"
+                  class="fragment"
+                  style="position: absolute; left:0; right: 0; max-height: initial"/>
+                <img src="images/devtools-specified.png" alt="DevTools showing computed styles"/>
+              </div>
+            </div>
           </section>
 
-          <section data-markdown>
-            <script type="text/template">
-            </script>
+          <section class="slide-ems-sized">
+            <h2>Using ems</h2>
+            <div class="split">
+              <div class="split-left">
+                <code><pre>.tile {
+  font-size: 16px;
+  padding: .6em 1.2em;
+  border-radius: .3em;
+  border: 2px solid white;
+}
+
+.tile--small {
+  font-size: 12px;
+}</pre></code>
+              </div>
+              <div class="split-right fragment">
+                <div class="tile">
+                  Ems are great for padding, margin, border-radius.
+                </div>
+                <div class="tile tile--small fragment">
+                  Ems are great for padding, margin, border-radius.
+                </div>
+              </div>
+            <div>
           </section>
 
+          <section class="slide-ems-font-size">
+            <h2>Ems for font-size</h2>
+            <p>Equal to the <em>inherited</em> font-size</p>
+            <div class="bordered">
+              <p>font-size: 16px</p>
+              <div class="bordered fragment">
+                <p>font-size: 1.2em <em>// 19.2px</em></p>
+                <div class="bordered fragment">
+                  <p>font-size: .875em <em>// ???</em></p>
+                  <div class="bordered fragment">
+                    <p>font-size: .9em <em>// this is ridiculous</em></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="slide-ems-trouble">
+            <h2>Trouble with ems</h2>
+            <div class="split">
+              <div class="split-left">
+                <code><pre>ul {
+  font-size: .8em;
+}</pre></code>
+              </div>
+              <div class="split-right fragment" style="font-size: 1.2em">
+                <ul><li>Nested elements
+                  <ul><li>have this problem
+                    <ul><li>when you
+                      <ul><li>use ems
+                        <ul><li>for font size
+                        </li></ul>
+                      </li></ul>
+                    </li></ul>
+                  </li></ul>
+                </li></ul>
+              </div>
+            <div>
+          </section>
+
+          <section>
+            <h2>rems</h2>
+            <p>“Root ems”&mdash;relative to font size of <em>root</em> element (<code>&lt;html&gt;</code>)</p>
+          </section>
+
+          <section class="slide-rems-list">
+            <h2>Use rems for font size</h2>
+            <div class="split">
+              <div class="split-left">
+                <code><pre>ul {
+  font-size: .8em;
+}</pre></code>
+              </div>
+              <div class="split-right fragment" style="font-size: 1.2em">
+                <ul><li>Nested elements
+                  <ul><li>are all the same
+                    <ul><li>when you
+                      <ul><li>use rems
+                        <ul><li>for font size
+                        </li></ul>
+                      </li></ul>
+                    </li></ul>
+                  </li></ul>
+                </li></ul>
+              </div>
+            <div>
+          </section>
         </section><!-- end ems primer -->
 
-        <section data-markdown>
-          <script type="text/template">
-            # Thank you!
+        <section>
 
-            Twitter: [@keithjgrant](http://twitter.com/keithjgrant)
+          <section>
+            <h2>Accessibility</h2>
+            <p>Use relative units for font sizes</p>
+            <p><img src="images/browser-settings.png"
+              alt="Browser zoom and font size settings"/></p>
+          </section>
 
-            Slides: [keithjgrant.com/talks](http://keithjgrant.com/talks)
-          </script>
+          <section>
+            resize module
+          </section>
+        </section><!-- end -->
+
+        <section>
+          <section>
+            resize page
+          </section>
+
+          <section>
+            no media queries! yay calc()
+          </section>
+        </section><!-- end -->
+
+        <section>
+          <section>
+            variables
+          </section>
+        </section><!-- end -->
+
+        <section class="slide-end">
+          <h1>Thank you!</h1>
+          <p>Twitter:
+            <a href="http://twitter.com/keithjgrant">@keithjgrant</a></p>
+          <p>Slides:
+            <a href="http://keithjgrant.com/talks">keithjgrant.com/talks</a></p>
+          <p><img class="chozo" src="images/chozo.png"/></p>
         </section>
       </div>
     </div>
