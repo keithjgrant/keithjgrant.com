@@ -1,0 +1,181 @@
+/**
+ * Theme for CSS from the Future
+ *
+ * http://www.colourlovers.com/palette/1437170/The_Future_Retro
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url("https://fonts.googleapis.com/css?family=Exo");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed");
+
+
+// Override theme settings (see ../template/settings.scss)
+$black: #16031f;
+$olive: #c2c2a8;
+$paleYellow: #ffffd4;
+$paleGreen: #b3d8c6;
+$brightRed: #dd334d;
+
+$backgroundColor: #001b38;
+
+$mainFont: 'Open Sans Condensed', sans-serif;
+$mainColor: #fff;
+$linkColor: $paleGreen;
+$linkColorHover: lighten( $linkColor, 20% );
+$headingFont: 'Exo', sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: -0.03em;
+$headingTextTransform: none;
+$headingColor: $brightRed;
+$selectionBackgroundColor: $brightRed;
+$mainFontSize: 30px;
+
+$heading1Size: 2.11em;
+$heading2Size: 1.55em;
+$heading3Size: 1.55em;
+$heading4Size: 1.00em;
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+/* overrides */
+.reveal {
+  h3, h4, h5, h6 {
+    font-family: $mainFont;
+  }
+
+  h4, h5, h6 {
+    color: $mainColor;
+  }
+
+  section img {
+    border: 0;
+    box-shadow: none;
+    background: none;
+  }
+
+  .slides {
+    text-align: left;
+
+    img:only-child {
+      display: block;
+      margin: 0 auto;
+    }
+
+    img.image-nocenter {
+      margin: initial;
+    }
+  }
+}
+
+/*
+ * individual slides
+ */
+
+.slide-title {
+  text-align: center;
+
+  img {
+    max-height: 40vh;
+  }
+}
+
+.slide-specs {
+  .columns {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 30vh;
+
+    > li {
+      width: 30%
+    }
+  }
+}
+
+.slide-spec-process {
+  .stages {
+    list-style: none;
+    padding-left: none;
+    font-size: 0.7em;
+  }
+
+  .stages > li {
+    position: relative;
+    padding: 1em;
+    border: 2px solid currentColor;
+    border-radius: .5em;
+    width: 80%;
+    color: $black;
+    background-color: $paleGreen;
+
+    &:nth-child(1) {
+      background-color: $olive;
+    }
+    &:nth-child(2) {
+      margin-left: 4em;
+    }
+    &:nth-child(3) {
+      margin-left: 8em;
+    }
+    &:nth-child(4) {
+      margin-left: 12em;
+    }
+    &:nth-child(5) {
+      margin-left: 16em;
+    }
+  }
+
+  .stages > li:not(:first-child) {
+    margin-top: 1em;
+    text-align: center;
+
+    &::before {
+      position: absolute;
+      top: calc(50% - 0.7em);
+      left: -1.5em;
+      content: "➥";
+      color: #fff;
+    }
+  }
+}
+
+.slide-lengths {
+  table {
+    width: 100%;
+    margin: initial;
+  }
+
+  tbody td {
+    border-bottom: 0;
+  }
+}
+
+.slide-ems-intro {
+  .em-box,
+  .em-box-adjusted {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    background: rgba(255, 255, 255, .2);
+    border: 2px solid #ccc;
+  }
+
+  .em-box + .em-box {
+    margin-left: 3rem;
+  }
+
+  .em-box-adjusted {
+    line-height: .8;
+    margin-left: 3rem;
+    vertical-align: bottom;
+  }
+}
