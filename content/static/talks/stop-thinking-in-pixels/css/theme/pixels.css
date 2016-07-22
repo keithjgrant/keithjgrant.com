@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Black theme for reveal.js.
  *
@@ -311,6 +312,17 @@ body {
 .reveal em {
   margin-right: .15em; }
 
+.reveal blockquote {
+  padding: .5em 1em; }
+
+.reveal q > cite {
+  display: block;
+  font-size: .667em;
+  text-align: right;
+  font-style: normal; }
+  .reveal q > cite::before {
+    content: "— "; }
+
 .split {
   display: flex; }
   .split .split-left,
@@ -385,14 +397,30 @@ body {
   border: 2px solid white;
   padding: .6em 1.2em;
   border-radius: .3em;
-  margin-bottom: 1.5em; }
+  margin-bottom: 1em; }
 
 .slide-ems-basic .tile--small,
 .slide-ems-sized .tile--small {
   font-size: .75em; }
 
 .slide-ems-trouble ul {
+  font-size: 1em; }
+
+.slide-ems-trouble ul ul {
   font-size: .8em; }
+
+.slide-rems-list ul {
+  font-size: 1em; }
+
+.slide-ch .ch-block {
+  width: 30ch;
+  padding: .5em 1em;
+  background-color: #fff;
+  color: #001b38; }
+
+.slide-ch .ch-block-alt {
+  margin-top: .2em;
+  font-family: Times New Roman, serif; }
 
 .slide-end .chozo {
   position: absolute;

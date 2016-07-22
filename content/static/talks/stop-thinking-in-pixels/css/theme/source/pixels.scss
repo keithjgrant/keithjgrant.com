@@ -75,6 +75,23 @@ $heading4Size: 1.00em;
   em {
     margin-right: .15em;
   }
+
+  blockquote {
+    padding: .5em 1em;
+  }
+
+  q {
+    > cite {
+      display: block;
+      font-size: .667em;
+      text-align: right;
+      font-style: normal;
+
+      &::before {
+        content: "— "
+      }
+    }
+  }
 }
 
 .split {
@@ -177,7 +194,7 @@ $heading4Size: 1.00em;
     border: 2px solid white;
     padding: .6em 1.2em;
     border-radius: .3em;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
   }
 
   .tile--small {
@@ -188,13 +205,31 @@ $heading4Size: 1.00em;
 
 .slide-ems-trouble {
   ul {
+    font-size: 1em;
+  }
+
+  ul ul {
     font-size: .8em;
   }
 }
 
 .slide-rems-list {
   ul {
-    font-size: .8rem;
+    font-size: 1em;
+  }
+}
+
+.slide-ch {
+  .ch-block {
+    width: 30ch;
+    padding: .5em 1em;
+    background-color: $mainColor;
+    color: $backgroundColor;
+  }
+
+  .ch-block-alt {
+    margin-top: .2em;
+    font-family: Times New Roman, serif;
   }
 }
 

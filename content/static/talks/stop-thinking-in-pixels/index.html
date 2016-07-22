@@ -59,6 +59,7 @@
               </div>
               <div class="split-right fragment">
                 <p>CSS:</p>
+                <br />
                 <ul>
                   <li>Unknown Content</li>
                   <li>Unknown Medium</li>
@@ -99,10 +100,6 @@
             <h1>Relative units</h1>
           </section>
 
-          <section>
-            # arcane law example
-          </section>
-
           <section class="slide-lengths">
             <h2>Lengths</h2>
             <table>
@@ -115,10 +112,11 @@
               <tbody>
                 <tr><td>px</td><td>em</td></tr>
                 <tr><td>mm</td><td>rem</td></tr>
-                <tr><td>cm</td><td>vw</td></tr>
-                <tr><td>in</td><td>vh</td></tr>
-                <tr><td>pt</td><td>vmin</td></tr>
-                <tr><td>pc</td><td>vmax</td></tr>
+                <tr><td>cm</td><td>ch</td></tr>
+                <tr><td>in</td><td>vw</td></tr>
+                <tr><td>pt</td><td>vh</td></tr>
+                <tr><td>pc</td><td>vmin</td></tr>
+                <tr><td>  </td><td>vmax</td></tr>
               </tbody>
             </table>
           </section>
@@ -132,13 +130,28 @@
             </div>
           </section>
 
+          <section>
+            <h2>Problem with absolute units:</h2>
+            <p>They don’t adapt to their environment</p>
+            <p><q class="fragment">
+              “Single men between the ages of twenty-one and fifty must pay an annual tax of <strong>one dollar</strong>.”
+              <cite>Missouri law, enacted 1820</cite>
+            </q></p>
+            <!-- source: http://blog.lawinfo.com/2012/09/28/weird-laws-true-or-false-edition-5/ -->
+            <p><q class="fragment">
+              “If any person has a puppet show, wire dancing or tumbling act in the state of Indiana and receives money for it, they will be fined <strong>$3</strong> under the Act to Prevent Certain Immoral Practices.”
+              <cite>Indiana law</cite>
+            </q></p>
+            <!-- http://www.dumblaws.com/laws/united-states/indiana -->
+          </section>
+
         </section><!-- end abs vs reltive -->
 
         <section>
           <section><h1>Ems</h1></section>
 
           <section class="slide-ems-intro">
-            <h2>Ems</h2>
+            <h2>Em</h2>
             <p>Equal to the current element's font size</p>
             <div class="em-box" style="font-size: 4em">M</div>
             <div class="em-box" style="font-size: 2em">M</div>
@@ -166,7 +179,7 @@
           <section>
             <div class="split">
               <div class="split-left">
-                <h2>Specified vs. computed value</h2>
+                <h2>Declared vs. computed value</h2>
                 <code><pre>.tile {
   padding: .6em 1.2em;
   border-radius: .3em;
@@ -200,11 +213,15 @@
 }</pre></code>
               </div>
               <div class="split-right fragment">
+                <code><pre>&lt;div class="tile"&gt;</pre></code>
                 <div class="tile">
                   Ems are great for padding, margin, border-radius.
                 </div>
-                <div class="tile tile--small fragment">
-                  Ems are great for padding, margin, border-radius.
+                <div class="fragment">
+                  <code><pre>&lt;div class="tile tile--small"&gt;</pre></code>
+                  <div class="tile tile--small">
+                    Ems are great for padding, margin, border-radius.
+                  </div>
                 </div>
               </div>
             <div>
@@ -235,7 +252,7 @@
   font-size: .8em;
 }</pre></code>
               </div>
-              <div class="split-right fragment" style="font-size: 1.2em">
+              <div class="split-right fragment">
                 <ul><li>Nested elements
                   <ul><li>have this problem
                     <ul><li>when you
@@ -251,8 +268,8 @@
           </section>
 
           <section>
-            <h2>rems</h2>
-            <p>“Root ems”&mdash;relative to font size of <em>root</em> element (<code>&lt;html&gt;</code>)</p>
+            <h2>rem</h2>
+            <p>“Root em”&mdash;relative to font size of <em>root</em> element (<code>&lt;html&gt;</code>)</p>
           </section>
 
           <section class="slide-rems-list">
@@ -260,10 +277,10 @@
             <div class="split">
               <div class="split-left">
                 <code><pre>ul {
-  font-size: .8em;
+  font-size: .8rem;
 }</pre></code>
               </div>
-              <div class="split-right fragment" style="font-size: 1.2em">
+              <div class="split-right fragment">
                 <ul><li>Nested elements
                   <ul><li>are all the same
                     <ul><li>when you
@@ -277,31 +294,70 @@
               </div>
             <div>
           </section>
+
+          <section>
+            <h2>ch</h2>
+            <p>Equal to the width of “0” character</p>
+
+            <!-- http://clagnut.com/blog/2384/ -->
+          </section>
+
+          <section class="slide-ch">
+            <h2>ch</h2>
+            <p>Usually about equal to 0.5em, but changes based upon <em>width</em> of the font</p>
+            <div class="ch-block">
+              This block is 30ch wide.
+            </div>
+            <div class="ch-block ch-block-alt">
+              This block is 30ch wide.
+            </div>
+          </section>
+
+          <section>
+            <h2>Recommendation</h2>
+            <p>By default, use:</p>
+            <dl>
+              <dt>em</dt>
+              <dd>padding, margin, border-radius</dd>
+              <dt>rem</dt>
+              <dd>font-size</dd>
+              <dt>px</dt>
+              <dd>border-width</dd>
+            </dl>
+          </section>
         </section><!-- end ems primer -->
 
         <section>
-
           <section>
-            <h2>Accessibility</h2>
-            <p>Use relative units for font sizes</p>
-            <p><img src="images/browser-settings.png"
-              alt="Browser zoom and font size settings"/></p>
+            <section>
+              <h2>Accessibility</h2>
+              <p>Use relative units for font sizes</p>
+              <p><img src="images/browser-settings.png"
+                alt="Browser zoom and font size settings"/></p>
+            </section>
           </section>
-
-          <section>
-            resize module
-          </section>
-        </section><!-- end -->
+        </section>
 
         <section>
           <section>
-            resize page
+            <h1>Resize a module</h1>
+          </section>
+
+          <section>
+            <p>Use rem for global sizing</p>
+            <p>Use em for local sizing</p>
+          </section>
+        </section><!-- end resize module -->
+
+        <section>
+          <section>
+            <h1>Resize entire page</h1>
           </section>
 
           <section>
             no media queries! yay calc()
           </section>
-        </section><!-- end -->
+        </section><!-- end resize page -->
 
         <section>
           <section>
