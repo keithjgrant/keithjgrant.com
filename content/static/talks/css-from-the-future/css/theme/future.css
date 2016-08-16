@@ -317,7 +317,7 @@ body {
     text-align: center;
     text-shadow: 0.01em 0.01em 0.04em #ffffd4; }
   .slide-title .council {
-    max-height: 40vh; }
+    width: 35vw; }
 
 .slide-specs .columns {
   display: flex;

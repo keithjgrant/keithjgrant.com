@@ -17,19 +17,25 @@
 
 
 // Override theme settings (see ../template/settings.scss)
-$backgroundColor: #001b38;
+$backgroundColor: #111; //#001b38;
+
+$orange: #fb3;
+$blue: #3bf;
+$green: #3f5;
+$red: #f36;
 
 $mainFont: 'Play', sans-serif;
 $mainColor: #fff;
-$linkColor: #4ba3d5;
+$linkColor: $green; //#4ba3d5;
 $linkColorHover: lighten( $linkColor, 20% );
 $headingFont: 'Press Start 2P', Impact, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: -0.03em;
 $headingTextTransform: none;
-$headingColor: #4ba3d5;
-$selectionBackgroundColor: #4ba3d5;
+$headingColor: $blue; //#4ba3d5;
+$selectionBackgroundColor: $blue; //#4ba3d5;
 $mainFontSize: 30px;
+$highlightColor: $orange;
 
 $heading1Size: 2.11em;
 $heading2Size: 1.55em;
@@ -40,9 +46,13 @@ $heading4Size: 1.00em;
 @import "../template/theme";
 // ---------------------------------------------
 
+body {
+  background-image: -webkit-radial-gradient(#222, #111);
+  background-image: radial-gradient(#222, #111);
+}
 /* overrides */
 .reveal {
-  h3, h4, h5, h6 {
+  h2, h3, h4, h5, h6 {
     font-family: $mainFont;
   }
 
@@ -66,14 +76,35 @@ $heading4Size: 1.00em;
   }
 
   pre {
+    margin: 0;
+    box-shadow: none;
+  }
+
+  pre > code {
     padding: .5em 1em;
+    margin-bottom: 1.2em;
+    box-shadow: 0 0 0.375em rgba(0, 0, 0, 0.3);
+  }
+
+  code {
     margin: 0;
     box-shadow: none;
     background-color: rgba(255, 255, 255, .1);
   }
 
+  code mark {
+    border-bottom: 3px solid $highlightColor;
+    background-color: transparent;
+    color: inherit;
+  }
+
   em {
     margin-right: .15em;
+    color: $orange;
+  }
+
+  strong {
+    color: $orange;
   }
 
   blockquote {
@@ -107,6 +138,34 @@ $heading4Size: 1.00em;
   .split-right {
     padding-left: .5em;
   }
+}
+
+.example-good,
+.example-bad {
+  position: relative;
+}
+
+.example-good::after,
+.example-bad::after {
+  display: block;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  height: 1.2em;
+  width: 1.2em;
+  text-align: center;
+  color: #333;
+  border-radius: 50%;
+  font-size: 1.2em;
+  line-height: 1.2;
+}
+.example-good::after {
+  content: "\2713";
+  background-color: $green;
+}
+.example-bad::after {
+  content: "\2717";
+  background-color: $red;
 }
 
 .reveal .bordered {
@@ -154,18 +213,6 @@ $heading4Size: 1.00em;
   }
 }
 
-.DELETED {
-  .circle {
-    display: inline-block;
-    line-height: 8em;
-    width: 8em;
-    text-align: center;
-    border: 2px solid currentColor;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-}
-
 .slide-ems-intro {
   .em-box,
   .em-box-adjusted {
@@ -198,7 +245,7 @@ $heading4Size: 1.00em;
   }
 
   .tile--small {
-    font-size: .75em;
+    font-size: .625em;
   }
 }
 

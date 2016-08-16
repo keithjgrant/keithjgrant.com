@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/theme/pixels.css">
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="lib/css/monokai-sublime-modified.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -58,12 +58,11 @@
                 </ul>
               </div>
               <div class="split-right fragment">
-                <p>CSS:</p>
-                <br />
-                <ul>
-                  <li>Unknown Content</li>
-                  <li>Unknown Medium</li>
-                </ul>
+                <p>CSS:<br />
+                  Writing rules to put<br />
+                  <em>unknown content</em> into an<br />
+                  <em>unknown medium</em>.
+                </p>
               </div>
             </div>
           </section>
@@ -76,7 +75,6 @@
 
           <section>
             <img src="images/netscape.jpg" alt="Screenshot of old netscape browser">
-            </script>
           </section>
 
           <section>
@@ -90,7 +88,7 @@
           <section>
             <h3>We can no longer hide from<br>the abstraction that comes with CSS</h3>
             <p class="fragment">...but we can use it to our advantage</p>
-            <p class="fragment">CSS provides the tools for working with the abstraction</p>
+            <p class="fragment">CSS provides the tools for working with abstraction</p>
           </section>
         </section><!-- end late binding/history -->
 
@@ -133,15 +131,15 @@
           <section>
             <h2>Problem with absolute units:</h2>
             <p>They don’t adapt to their environment</p>
-            <p><q class="fragment">
-              “Single men between the ages of twenty-one and fifty must pay an annual tax of <strong>one dollar</strong>.”
+            <q class="fragment">
+              “Single men between the ages of twenty-one and fifty must pay an annual tax of <u>one dollar</u>.”
               <cite>Missouri law, enacted 1820</cite>
-            </q></p>
+            </q>
             <!-- source: http://blog.lawinfo.com/2012/09/28/weird-laws-true-or-false-edition-5/ -->
-            <p><q class="fragment">
-              “If any person has a puppet show, wire dancing or tumbling act in the state of Indiana and receives money for it, they will be fined <strong>$3</strong> under the Act to Prevent Certain Immoral Practices.”
+            <q class="fragment">
+              “If any person has a puppet show, wire dancing or tumbling act in the state of Indiana and receives money for it, they will be fined <u>$3</u> under the Act to Prevent Certain Immoral Practices.”
               <cite>Indiana law</cite>
-            </q></p>
+            </q>
             <!-- http://www.dumblaws.com/laws/united-states/indiana -->
           </section>
 
@@ -162,29 +160,33 @@
             <h2>Using ems</h2>
             <div class="split">
               <div class="split-left">
-                <code><pre>.tile {
-  padding: .6em 1.2em;
-  border-radius: .3em;
+                <pre><code data-trim class="css">
+.tile {
+  padding: 0.6em 1.2em;
+  border-radius: 0.3em;
   border: 2px solid white;
-}</pre></code>
+}
+                </code></pre>
               </div>
               <div class="split-right fragment">
                 <div class="tile">
                   Ems are great for padding, margin, border-radius.
                 </div>
               </div>
-            <div>
+            </div>
           </section>
 
           <section>
             <div class="split">
               <div class="split-left">
-                <h2>Declared vs. computed value</h2>
-                <code><pre>.tile {
-  padding: .6em 1.2em;
-  border-radius: .3em;
+                <h2>Declared vs.<br />computed value</h2>
+                <pre><code data-trim data-noescape>
+.tile {
+  padding: 0.6em 1.2em;
+  border-radius: <mark>0.3em</mark>;
   border: 2px solid black;
-}</pre></code>
+}
+                </code></pre>
               </div>
               <div class="split-right" style="position: relative; overflow: hidden; min-height: 80vh">
                 <img
@@ -192,7 +194,9 @@
                   alt="DevTools showing computed styles"
                   class="fragment"
                   style="position: absolute; left:0; right: 0; max-height: initial"/>
-                <img src="images/devtools-specified.png" alt="DevTools showing computed styles"/>
+                <img
+                  src="images/devtools-declared.png"
+                  alt="DevTools showing computed styles"/>
               </div>
             </div>
           </section>
@@ -201,30 +205,32 @@
             <h2>Using ems</h2>
             <div class="split">
               <div class="split-left">
-                <code><pre>.tile {
+                <pre><code data-trim data-noescape>
+.tile {
   font-size: 16px;
-  padding: .6em 1.2em;
-  border-radius: .3em;
+  padding: 0.6em 1.2em;
+  border-radius: 0.3em;
   border: 2px solid white;
 }
 
 .tile--small {
-  font-size: 12px;
-}</pre></code>
+  <mark>font-size: 10px;</mark>
+}
+                </code></pre>
               </div>
               <div class="split-right fragment">
-                <code><pre>&lt;div class="tile"&gt;</pre></code>
+                <pre><code>&lt;div class="tile"&gt;</code></pre>
                 <div class="tile">
                   Ems are great for padding, margin, border-radius.
                 </div>
                 <div class="fragment">
-                  <code><pre>&lt;div class="tile tile--small"&gt;</pre></code>
+                  <pre><code>&lt;div class="tile tile--small"&gt;</code></pre>
                   <div class="tile tile--small">
                     Ems are great for padding, margin, border-radius.
                   </div>
                 </div>
               </div>
-            <div>
+            </div>
           </section>
 
           <section class="slide-ems-font-size">
@@ -248,9 +254,11 @@
             <h2>Trouble with ems</h2>
             <div class="split">
               <div class="split-left">
-                <code><pre>ul {
-  font-size: .8em;
-}</pre></code>
+                <pre><code data-trim>
+ul {
+  font-size: 0.8em;
+}
+                </code></pre>
               </div>
               <div class="split-right fragment">
                 <ul><li>Nested elements
@@ -264,7 +272,7 @@
                   </li></ul>
                 </li></ul>
               </div>
-            <div>
+            </div>
           </section>
 
           <section>
@@ -276,15 +284,17 @@
             <h2>Use rems for font size</h2>
             <div class="split">
               <div class="split-left">
-                <code><pre>ul {
-  font-size: .8rem;
-}</pre></code>
+                <pre><code data-trim class="css">
+ul {
+  font-size: 0.8rem;
+}
+                </code></pre>
               </div>
               <div class="split-right fragment">
                 <ul><li>Nested elements
                   <ul><li>are all the same
                     <ul><li>when you
-                      <ul><li>use rems
+                      <ul><li>use <em>rems</em>
                         <ul><li>for font size
                         </li></ul>
                       </li></ul>
@@ -292,13 +302,12 @@
                   </li></ul>
                 </li></ul>
               </div>
-            <div>
+            </div>
           </section>
 
           <section>
             <h2>ch</h2>
             <p>Equal to the width of “0” character</p>
-
             <!-- http://clagnut.com/blog/2384/ -->
           </section>
 
@@ -329,12 +338,41 @@
 
         <section>
           <section>
-            <section>
-              <h2>Accessibility</h2>
-              <p>Use relative units for font sizes</p>
-              <p><img src="images/browser-settings.png"
-                alt="Browser zoom and font size settings"/></p>
-            </section>
+            <h1>Accessibility</h1>
+          </section>
+
+          <section>
+            <h2>Use relative units for font sizes</h2>
+            <p><img src="images/browser-settings.png"
+              alt="Browser zoom and font size settings"/></p>
+          </section>
+
+          <section>
+            <p>Ems based on an absolute font are still (partially) absolute</p>
+            <div class="split">
+              <div class="split-left">
+                <pre><code data-trim class="css example-bad">
+:root {
+  font-size: 16px;
+}
+
+.tabs {
+  font-size: 1.125rem;
+}
+                </code> </pre>
+              </div>
+              <div class="split-right fragment">
+                <pre><code data-trim class="css example-good">
+:root {
+  font-size: 1em;
+}
+
+.tabs {
+  font-size: 1.125rem;
+}
+                </code></pre>
+              </div>
+            </div>
           </section>
         </section>
 
@@ -365,13 +403,22 @@
           </section>
         </section><!-- end -->
 
+        <section>
+          <h2>CSS in Action</h2>
+          <p>50% off code: <strong>mlgrant2</strong></p>
+          <p>TODO: cover image</p>
+        </section>
+
         <section class="slide-end">
           <h1>Thank you!</h1>
           <p>Twitter:
             <a href="http://twitter.com/keithjgrant">@keithjgrant</a></p>
           <p>Slides:
             <a href="http://keithjgrant.com/talks">keithjgrant.com/talks</a></p>
-          <p><img class="chozo" src="images/chozo.png"/></p>
+          <p><img
+            class="chozo"
+            src="images/chozo.png"
+            alt="Metroid 'chozo' statue"/></p>
         </section>
       </div>
     </div>
