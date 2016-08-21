@@ -47,8 +47,10 @@ $heading4Size: 1.00em;
 // ---------------------------------------------
 
 body {
-  background-image: -webkit-radial-gradient(#222, #111);
-  background-image: radial-gradient(#222, #111);
+  // background-image: -webkit-radial-gradient(#222, #111);
+  // background-image: radial-gradient(#222, #111);
+  background-image: -webkit-radial-gradient(hsl(200, 9%, 13%), hsl(200, 10%, 7%));
+  background-image: radial-gradient(hsl(200, 9%, 13%), hsl(200, 10%, 7%));
 }
 /* overrides */
 .reveal {
@@ -123,6 +125,10 @@ body {
       }
     }
   }
+
+  .owl * + * {
+    margin-top: 1em;
+  }
 }
 
 .split {
@@ -139,6 +145,34 @@ body {
     padding-left: .5em;
   }
 }
+
+.reveal {
+  .bordered {
+    position: relative;
+    border: 2px solid currentColor;
+    padding: .5em 1em;
+    min-height: 1em;
+  }
+  .bordered-code {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .bordered-padded {
+    padding: 2em 1em 1.5em;
+  }
+}
+
+.blue {
+  color: $blue !important;
+}
+.orange {
+  color: $orange !important;
+}
+.green {
+  color: $green !important;
+}
+
 
 .example-good,
 .example-bad {
@@ -166,11 +200,6 @@ body {
 .example-bad::after {
   content: "\2717";
   background-color: $red;
-}
-
-.reveal .bordered {
-  border: 2px solid currentColor;
-  padding: .5em 1em;
 }
 
 /* individual slides*/
@@ -249,7 +278,6 @@ body {
   }
 }
 
-
 .slide-ems-trouble {
   ul {
     font-size: 1em;
@@ -258,6 +286,67 @@ body {
   ul ul {
     font-size: .8em;
   }
+}
+
+.slide-module-diagram {
+  .bordered {
+    border-color: $orange;
+  }
+
+  .bordered-blue {
+    border-color: $blue;
+  }
+
+  .m-title {
+    padding-top: 1em;
+    margin-bottom: 1em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .m-title-2 {
+    display: flex;
+    padding: 0.5em;
+
+    > * {
+      flex: 1;
+      min-height: 1em;
+      margin-top: 0;
+      border: 2px solid $orange;
+    }
+    > * + * {
+      margin-left: 0.5em;
+    }
+  }
+
+  .split-left {
+    min-height: 2em;
+    margin-right: 0.5em;
+  }
+  .split-right {
+    min-height: 2em;
+    margin-left: 0.5em;
+  }
+}
+
+.slide-module-resize {
+  .tile {
+    border: 2px solid white;
+    padding: .6em 1.2em;
+    border-radius: .3em;
+    margin-bottom: 1em;
+    font-size: 1em;
+  }
+
+  .tile__title {
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
+
+  .tile--small { font-size: 0.625em; }
+  .tile--large { font-size: 1.3em; }
 }
 
 .slide-rems-list {
@@ -280,7 +369,6 @@ body {
   }
 }
 
-
 .slide-end {
   .chozo {
     position: absolute;
@@ -288,4 +376,10 @@ body {
     right: 0;
     z-index: -1;
   }
+}
+
+.clearfix::after {
+  display: table;
+  content: " ";
+  clear: both;
 }

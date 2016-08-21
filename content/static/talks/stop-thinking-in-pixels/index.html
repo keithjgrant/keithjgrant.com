@@ -25,7 +25,7 @@
     <div class="reveal">
       <div class="slides">
         <section class="slide-title">
-          <h1>Stop Thinking<br/>in Pixels</h1>
+          <h1>Stop Thinking<br/>in <span class="orange">Pixels</span></h1>
 
           <p><img src="images/mario-jump.gif" alt="Mario jumping" class="mario"/></p>
           <p><img src="images/megaman.png" alt="Megaman" class="megaman"/></p>
@@ -359,7 +359,7 @@ ul {
 .tabs {
   font-size: 1.125rem;
 }
-                </code> </pre>
+                </code></pre>
               </div>
               <div class="split-right fragment">
                 <pre><code data-trim class="css example-good">
@@ -381,10 +381,115 @@ ul {
             <h1>Resize a module</h1>
           </section>
 
+          <section class="slide-module-diagram">
+            <h2>Base font sizes on a known container</h2>
+            <div class="bordered bordered-blue bordered-padded">
+              <code class="css bordered-code">{ font-size: <em class="blue">1rem</em>; }</code>
+              <div class="fragment">
+                <div class="bordered bordered-padded m-title">
+                  <code class="css bordered-code">{ font-size: <em>0.8em</em>; }</code>
+                </div>
+                <div class="split">
+                  <div class="bordered bordered-padded split-left">
+                    <code class="css bordered-code">{ font-size: <em>1em</em>; }</code>
+                  </div>
+                  <div class="bordered bordered-padded split-right">
+                    <code class="css bordered-code">{ font-size: <em>1.2em</em>; }</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="slide-module-diagram owl">
+            <h2>Base font sizes on a known container</h2>
+            <div class="bordered bordered-blue m-title-2">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="split">
+              <div class="split-left" style="flex: 75%">
+                <div class="bordered bordered-blue">
+                  <div class="bordered m-title">
+                  </div>
+                  <div class="split">
+                    <div class="bordered split-left">
+                      <div class="bordered bordered-blue"> </div>
+                    </div>
+                    <div class="bordered split-right" style="margin-top: 0">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="split-right" style="flex: 50%; margin-top: 0;">
+                <div class="bordered bordered-blue">
+                  <div class="bordered m-title">
+                  </div>
+                  <div class="bordered m-title">
+                  </div>
+                  <div class="bordered m-title">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="slide-module-resize">
+            <div class="split">
+              <div class="split-left">
+                <pre><code data-trim data-noescape class="css">
+.tile {
+  border: 2px solid white;
+  padding: .6em 1.2em;
+  border-radius: .3em;
+  margin-bottom: 1em;
+  <mark>font-size: 1rem</mark>;
+}
+
+.tile__title {
+  <mark>font-size: 0.8em</mark>;
+  text-transform: uppercase;
+}
+                </code></pre>
+                <pre class="fragment" data-fragment-index="1">
+                  <code data-trim data-noescape class="css">
+.tile--small {
+  <mark>font-size: 0.625em</mark>;
+}
+                </code></pre>
+                <pre class="fragment" data-fragment-index="2">
+                  <code data-trim data-noescape class="css">
+.tile--large {
+  <mark>font-size: 1.3em</mark>;
+}
+                </code></pre>
+              </div>
+              <div class="split-right">
+                <div class="tile">
+                  <h4 class="tile__title">Game saved</h4>
+                  <p>Hold RESET while you turn POWER off!!</p>
+                </div>
+                <div class="tile tile--small fragment"  data-fragment-index="1">
+                  <h4 class="tile__title">Game saved</h4>
+                  <p>Hold RESET while you turn POWER off!!</p>
+                </div>
+                <div class="tile tile--large fragment"  data-fragment-index="2">
+                  <h4 class="tile__title">Game saved</h4>
+                  <p>Hold RESET while you turn POWER off!!</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section>
             <p>Use rem for global sizing</p>
             <p>Use em for local sizing</p>
           </section>
+
         </section><!-- end resize module -->
 
         <section>
@@ -404,7 +509,7 @@ ul {
         </section><!-- end -->
 
         <section>
-          <h2>CSS in Action</h2>
+          <h2>CSS in Depth</h2>
           <p>50% off code: <strong>mlgrant2</strong></p>
           <p>TODO: cover image</p>
         </section>
