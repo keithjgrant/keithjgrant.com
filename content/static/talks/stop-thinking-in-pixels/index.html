@@ -42,7 +42,7 @@
 
         <section>
           <section>
-            <h1>“Late binding”</h1>
+            <h1>Late binding</h1>
           </section>
 
           <section>
@@ -123,7 +123,7 @@
             <h2>Absolute units</h2>
             <p>96px = 72pt = 6pc = 1in = 2.54cm = 25.4mm</p>
             <div class="fragment"><br><br><br><br>
-              <p>...but our princess is in another castle</p>
+              <p>...but our units are in another castle</p>
               <img src="images/toadstool.png" alt="Mario and toadstool" class="toadstool"/>
             </div>
           </section>
@@ -374,6 +374,34 @@ ul {
               </div>
             </div>
           </section>
+
+          <section>
+            <h2>There’s more to ems than just accessibility</h2>
+            <div class="split">
+              <div class="split-left">
+                <pre><code data-trim class="css example-bad">
+:root {
+  font-size: 0.625em; /* = 10px */
+}
+
+.tabs {
+  font-size: 1.4rem; /* 14px */
+}
+                </code></pre>
+              </div>
+              <div class="split-right fragment">
+                <pre><code data-trim class="css example-good">
+:root {
+  font-size: 0.875em; /* actual base font */
+}
+
+.tabs {
+  /* no styles needed */
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
         </section>
 
         <section>
@@ -403,35 +431,37 @@ ul {
 
           <section class="slide-module-diagram owl">
             <h2>Base font sizes on a known container</h2>
-            <div class="bordered bordered-blue m-title-2">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="split">
-              <div class="split-left" style="flex: 75%">
-                <div class="bordered bordered-blue">
-                  <div class="bordered m-title">
-                  </div>
-                  <div class="split">
-                    <div class="bordered split-left">
-                      <div class="bordered bordered-blue"> </div>
+            <div class="bordered bordered-blue">
+              <div class="bordered bordered-blue m-title-2">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="split">
+                <div class="split-left" style="flex: 75%">
+                  <div class="bordered bordered-blue">
+                    <div class="bordered m-title">
                     </div>
-                    <div class="bordered split-right" style="margin-top: 0">
+                    <div class="split">
+                      <div class="bordered split-left">
+                        <div class="bordered bordered-blue"> </div>
+                      </div>
+                      <div class="bordered split-right" style="margin-top: 0">
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="split-right" style="flex: 50%; margin-top: 0;">
-                <div class="bordered bordered-blue">
-                  <div class="bordered m-title">
-                  </div>
-                  <div class="bordered m-title">
-                  </div>
-                  <div class="bordered m-title">
+                <div class="split-right" style="flex: 50%; margin-top: 0;">
+                  <div class="bordered bordered-blue">
+                    <div class="bordered m-title">
+                    </div>
+                    <div class="bordered m-title">
+                    </div>
+                    <div class="bordered m-title">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -486,8 +516,8 @@ ul {
           </section>
 
           <section>
-            <p>Use rem for global sizing</p>
-            <p>Use em for local sizing</p>
+            <p>Use <strong class="blue">rem</strong> for <em>global sizing</em></p>
+            <p>Use <strong class="blue">em</strong> for <em>local sizing</em></p>
           </section>
 
         </section><!-- end resize module -->
@@ -495,6 +525,41 @@ ul {
         <section>
           <section>
             <h1>Resize entire page</h1>
+          </section>
+
+          <section>
+            <h2>Scale based on viewport size</h2>
+            <pre><code data-trim data-noescape class="css">
+:root {
+  font-size: 0.8em;
+}
+
+@media (min-width: 35em) {
+  :root {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 50em) {
+  :root {
+    font-size 1.2em;
+  }
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Viewport-relative units</h2>
+            <ul>
+              <li><em>vw</em>&mdash;% of viewport width</li>
+              <li><em>vh</em>&mdash;% of viewport height</li>
+              <li><em>vmin</em>&mdash;smaller of vh/vw</li>
+              <li><em>vmax</em>&mdash;larger of vh/vw</li>
+            </ul>
+          </section>
+
+          <section class="slide-v-units">
+
           </section>
 
           <section>
