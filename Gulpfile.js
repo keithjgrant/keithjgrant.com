@@ -51,4 +51,4 @@ gulp.task('watch', ['connect'], function () {
 
 gulp.task('build', ['copy', 'jade', 'sass', 'rss']);
 
-gulp.task('default', ['build', 'connect', 'watch', 'open']);
+gulp.task('default', ['build', 'connect']); //, 'watch', 'open']);
