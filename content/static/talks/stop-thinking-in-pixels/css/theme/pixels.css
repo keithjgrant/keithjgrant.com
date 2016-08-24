@@ -380,6 +380,9 @@ body {
 .green {
   color: #3f5 !important; }
 
+.text-right {
+  text-align: right !important; }
+
 .example-good,
 .example-bad {
   position: relative; }

@@ -565,6 +565,25 @@ ul {
           <section>
             no media queries! yay calc()
           </section>
+
+          <section>
+            <h2>Breakpoints for free</h2>
+            <p><em>(experimental)</em></p>
+            <pre><code data-trim class="css">
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container > * {
+  flex: 50vmin;
+  min-width: 300px;
+}
+            </code></pre>
+            <p class="text-right">
+              <a href="auto-breakpoints.html" target="demo">demo</a>
+            </p>
+          </section>
         </section><!-- end resize page -->
 
         <section>
