@@ -40,7 +40,7 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #3bf;
-  font-family: "Press Start 2P", Impact, sans-serif;
+  font-family: "Press Start 2P", "OCR a std", "Monaco", monospace;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: -0.03em;
@@ -290,6 +290,11 @@ body {
   background-image: radial-gradient(#1e2224, #101214); }
 
 /* overrides */
+.reveal h1 {
+  font-family: "Press Start 2P", "OCR a std", "Monaco", monospace;
+  font-smooth: never;
+  -webkit-font-smoothing: none; }
+
 .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   font-family: "Play", sans-serif; }
 
@@ -409,20 +414,48 @@ body {
   content: "\2717";
   background-color: #f36; }
 
+.reveal .img-tl {
+  position: absolute;
+  top: -4em;
+  left: 0;
+  width: 4em;
+  max-height: initial;
+  z-index: -1;
+  image-rendering: pixelated; }
+
+.reveal .img-tr {
+  position: absolute;
+  top: -4em;
+  right: 0;
+  width: 4em;
+  max-height: initial;
+  z-index: -1;
+  image-rendering: pixelated; }
+
+.reveal .img-bl {
+  position: absolute;
+  bottom: -5em;
+  left: 0;
+  width: 4em;
+  max-height: initial;
+  z-index: -1;
+  image-rendering: pixelated; }
+
+.reveal .img-br {
+  position: absolute;
+  bottom: -5em;
+  right: 0;
+  width: 4em;
+  max-height: initial;
+  z-index: -1;
+  image-rendering: pixelated; }
+
+.reveal .img-flipped {
+  transform: rotateY(180deg); }
+
 /* individual slides*/
 .slide-title {
   text-align: center; }
-  .slide-title .mario {
-    position: absolute;
-    top: -6em;
-    left: 0;
-    z-index: -1; }
-  .slide-title .megaman {
-    position: absolute;
-    bottom: -5em;
-    right: 0;
-    z-index: -1;
-    transform: rotateY(180deg); }
 
 .slide-lengths table {
   width: 100%;
@@ -533,10 +566,34 @@ body {
   margin-top: .2em;
   font-family: Times New Roman, serif; }
 
-.slide-end .chozo {
+.slide-book .cover {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 50%;
+  right: 0em;
+  max-height: initial;
+  max-width: initial;
+  transform: translateY(-50%);
+  width: 11em; }
+
+.slide-book .astronaut {
+  position: absolute;
+  top: -3.5em;
+  left: -4.5em;
+  width: 4em;
+  image-rendering: pixelated;
+  z-index: -1; }
+
+.slide-end .footnote {
+  margin-top: 2em;
+  text-align: right;
+  color: #77b; }
+
+.slide-end .tentacle {
+  position: absolute;
+  bottom: -7em;
+  left: -4em;
+  width: 5em;
+  image-rendering: pixelated;
   z-index: -1; }
 
 .clearfix::after {

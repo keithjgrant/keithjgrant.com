@@ -28,7 +28,7 @@ $mainFont: 'Play', sans-serif;
 $mainColor: #fff;
 $linkColor: $green; //#4ba3d5;
 $linkColorHover: lighten( $linkColor, 20% );
-$headingFont: 'Press Start 2P', Impact, sans-serif;
+$headingFont: "Press Start 2P", "OCR a std", "Monaco", monospace;
 $headingTextShadow: none;
 $headingLetterSpacing: -0.03em;
 $headingTextTransform: none;
@@ -54,6 +54,13 @@ body {
 }
 /* overrides */
 .reveal {
+
+  h1 {
+    font-family: $headingFont;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+  }
+
   h2, h3, h4, h5, h6 {
     font-family: $mainFont;
   }
@@ -205,23 +212,55 @@ body {
   background-color: $red;
 }
 
-/* individual slides*/
-.slide-title {
-  text-align: center;
-
-  .mario {
+.reveal {
+  .img-tl {
     position: absolute;
-    top: -6em;
+    top: -4em;
     left: 0;
+    width: 4em;
+    max-height: initial;
     z-index: -1;
+    image-rendering: pixelated;
   }
-  .megaman {
+
+  .img-tr {
+    position: absolute;
+    top: -4em;
+    right: 0;
+    width: 4em;
+    max-height: initial;
+    z-index: -1;
+    image-rendering: pixelated;
+  }
+
+  .img-bl {
+    position: absolute;
+    bottom: -5em;
+    left: 0;
+    width: 4em;
+    max-height: initial;
+    z-index: -1;
+    image-rendering: pixelated;
+  }
+
+  .img-br {
     position: absolute;
     bottom: -5em;
     right: 0;
+    width: 4em;
+    max-height: initial;
     z-index: -1;
+    image-rendering: pixelated;
+  }
+
+  .img-flipped {
     transform: rotateY(180deg);
   }
+}
+
+/* individual slides*/
+.slide-title {
+  text-align: center;
 }
 
 .slide-lengths {
@@ -372,11 +411,40 @@ body {
   }
 }
 
-.slide-end {
-  .chozo {
+.slide-book {
+  .cover {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    top: 50%;
+    right: 0em;
+    max-height: initial;
+    max-width: initial;
+    transform: translateY(-50%);
+    width: 11em;
+  }
+
+  .astronaut {
+    position: absolute;
+    top: -3.5em;
+    left: -4.5em;
+    width: 4em;
+    image-rendering: pixelated;
+    z-index: -1;
+  }
+}
+
+.slide-end {
+  .footnote {
+    margin-top: 2em;
+    text-align: right;
+    color: #77b;
+  }
+
+  .tentacle {
+    position: absolute;
+    bottom: -7em;
+    left: -4em;
+    width: 5em;
+    image-rendering: pixelated;
     z-index: -1;
   }
 }
