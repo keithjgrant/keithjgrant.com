@@ -4,8 +4,20 @@
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 @import url("https://fonts.googleapis.com/css?family=Play");
+/**
+ * The FontStruction “Dragon Warrior (NES)”
+ * (http://fontstruct.com/fontstructions/show/1312022) by Patrick Lauke
+ * is licensed under a Creative Commons Attribution license
+ * (http://creativecommons.org/licenses/by/3.0/).
+ */
+@font-face {
+  font-family: 'Dragon Warrior';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../dragon-warrior.woff) format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -40,7 +52,7 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #3bf;
-  font-family: "Press Start 2P", "OCR a std", "Monaco", monospace;
+  font-family: "Dragon Warrior", "OCR a std", "Monaco", monospace;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: -0.03em;
@@ -291,7 +303,7 @@ body {
 
 /* overrides */
 .reveal h1 {
-  font-family: "Press Start 2P", "OCR a std", "Monaco", monospace;
+  font-family: "Dragon Warrior", "OCR a std", "Monaco", monospace;
   font-smooth: never;
   -webkit-font-smoothing: none; }
 
@@ -584,9 +596,17 @@ body {
   z-index: -1; }
 
 .slide-end .footnote {
+  max-width: 60%;
   margin-top: 2em;
+  margin-left: auto;
+  font-size: .875;
   text-align: right;
   color: #77b; }
+  .slide-end .footnote p {
+    margin: 0.2em 0; }
+  .slide-end .footnote a:link,
+  .slide-end .footnote a:visited {
+    color: #a199c8; }
 
 .slide-end .tentacle {
   position: absolute;
