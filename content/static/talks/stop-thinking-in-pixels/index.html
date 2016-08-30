@@ -26,9 +26,13 @@
       <div class="slides">
         <section class="slide-title">
           <h1>Stop Thinking<br/>in <span class="orange">Pixels</span></h1>
+          <ul class="main-menu">
+            <li class="is-active">Game start</li>
+            <li>Password</li>
+          </ul>
 
-          <p><img src="images/gladiator.png" alt="pixelated gladiator" class="img-tl"/></p>
-          <p><img src="images/brontosaurus.png" alt="pixelated dinosaur" class="img-br img-flipped"/></p>
+          <p><img src="images/gladiator.png" alt="pixelated gladiator" class="img-tl" style="top: 1em;" /></p>
+          <p><img src="images/brontosaurus.png" alt="pixelated dinosaur" class="img-br img-flipped" style="bottom: -2em;" /></p>
         </section>
 
 
@@ -71,7 +75,7 @@
 
 
           <section>
-            <h2>Hiding from the abstraction</h2>
+            <h2>Hiding from abstraction</h2>
             <p>Brief history of web design</p>
           </section>
 
@@ -90,7 +94,7 @@
           <section>
             <h3>We can no longer hide from<br>the abstraction that comes with CSS</h3>
             <p class="fragment">...but we can use it to our advantage</p>
-            <p class="fragment">CSS provides the tools for working with abstraction</p>
+            <p class="fragment">CSS provides tools for working with abstraction</p>
           </section>
         </section><!-- end late binding/history -->
 
@@ -125,23 +129,20 @@
           <section class="slide-abs-units">
             <h2>Absolute units</h2>
             <p>96px = 72pt = 6pc = 1in = 2.54cm = 25.4mm</p>
-            <div class="fragment"><br><br><br><br>
-              <p>...but our units are in another castle</p>
-            </div>
           </section>
 
           <section>
-            <h2>Problem with absolute units:</h2>
-            <p>They don’t adapt to their environment</p>
+            <h2>But our units are in another castle!</h2>
+            <p>Absolute units don’t adapt to their environment</p>
             <q class="fragment">
               “Single men between the ages of twenty-one and fifty must pay an annual tax of <u>one dollar</u>.”
               <cite>Missouri law, enacted 1820</cite>
             </q>
             <!-- source: http://blog.lawinfo.com/2012/09/28/weird-laws-true-or-false-edition-5/ -->
-            <q class="fragment">
+            <!-- <q class="fragment">
               “If any person has a puppet show, wire dancing or tumbling act in the state of Indiana and receives money for it, they will be fined <u>$3</u> under the Act to Prevent Certain Immoral Practices.”
               <cite>Indiana law</cite>
-            </q>
+            </q> -->
             <!-- http://www.dumblaws.com/laws/united-states/indiana -->
           </section>
 
@@ -160,8 +161,7 @@
           </section>
 
           <section class="slide-ems-intro">
-            <h2>Em</h2>
-            <p>Equal to the current element's font size</p>
+            <h2>It's dangerous to go alone! Take this.</h2>
             <div class="em-box" style="font-size: 4em">M</div>
             <div class="em-box" style="font-size: 2em">M</div>
             <div class="fragment em-box-adjusted" style="font-size: 4em">Yy</div>
@@ -251,6 +251,7 @@
               <p>font-size: 16px</p>
               <div class="bordered fragment">
                 <p>font-size: 1.2em <em>// 19.2px</em></p>
+                <p>padding: 1.2em <em>// 23.04px</em></p>
                 <div class="bordered fragment">
                   <p>font-size: .875em <em>// ???</em></p>
                   <div class="bordered fragment">
@@ -362,7 +363,7 @@ ul {
           </section>
 
           <section>
-            <p>Ems based on an absolute font are still (partially) absolute</p>
+            <p>Ems based on an absolute font are still (kind of) absolute</p>
             <div class="split">
               <div class="split-left">
                 <pre><code data-trim class="css example-bad">
@@ -406,7 +407,8 @@ ul {
               <div class="split-right fragment">
                 <pre><code data-trim class="css example-good">
 :root {
-  font-size: 0.875em; /* actual base font */
+  /* actual base font */
+  font-size: 0.875em;
 }
 
 .tabs {
@@ -581,7 +583,7 @@ ul {
           </section>
 
           <section>
-            <h2>Breakpoints for free</h2>
+            <!-- <h2>Breakpoints for free</h2>
             <p><em>(experimental)</em></p>
             <pre><code data-trim class="css">
 .container {
@@ -593,7 +595,7 @@ ul {
   flex: 50vmin;
   min-width: 300px;
 }
-            </code></pre>
+            </code></pre> -->
             <p class="text-right">
               <a href="auto-breakpoints.html" target="demo">demo</a>
             </p>
@@ -602,13 +604,22 @@ ul {
 
         <section>
           <section>
-            variables
+            <h1>CSS variables</h1>
           </section>
         </section><!-- end -->
 
         <section>
           <section>
-            future: color functions
+            <h1>Dynamic colors</h1>
+          </section>
+
+          <section>
+            [currentColor example]
+          </section>
+
+          <section>
+            <h2>Welcome to warp zone!</h2>
+            <p>A peek into the future</p>
           </section>
         </section>
 
@@ -621,7 +632,7 @@ ul {
         </section>
 
         <section class="slide-end">
-          <h1>Thanks for playing!</h1>
+          <h2>Thanks for playing!</h2>
           <p>Twitter:
             <a href="http://twitter.com/keithjgrant">@keithjgrant</a></p>
           <p>Web:
@@ -656,5 +667,9 @@ ul {
         ]
       });
     </script>
+
+    <!--
+    It's a secret to everybody
+    -->
   </body>
 </html>

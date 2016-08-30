@@ -297,6 +297,12 @@ body {
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
+@keyframes cursor-blink {
+  0%, 49% {
+    border-left-color: #fb3; }
+  50%, 99% {
+    border-left-color: transparent; } }
+
 body {
   background-image: -webkit-radial-gradient(#1e2224, #101214);
   background-image: radial-gradient(#1e2224, #101214); }
@@ -363,8 +369,42 @@ body {
   .reveal q > cite::before {
     content: "— "; }
 
+.reveal dt {
+  color: #fb3; }
+
 .reveal .owl * + * {
   margin-top: 1em; }
+
+.reveal .main-menu {
+  margin-top: 2em;
+  margin-left: 0; }
+  .reveal .main-menu > li {
+    font-family: "Dragon Warrior", "OCR a std", "Monaco", monospace;
+    font-weight: normal;
+    -moz-osx-font-smoothing: never;
+    -webkit-font-smoothing: none;
+    font-smooth: never;
+    list-style: none;
+    margin-bottom: 0.5em; }
+  .reveal .main-menu > .is-active {
+    position: relative; }
+    .reveal .main-menu > .is-active::before {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0.25em;
+      left: -1em;
+      border: 0.3em solid transparent;
+      animation: cursor-blink 1s steps(2, start) infinite; }
+
+.reveal .pixel-font {
+  font-family: "Dragon Warrior", "OCR a std", "Monaco", monospace;
+  font-weight: normal;
+  -moz-osx-font-smoothing: never;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  margin: 1.6em 0;
+  font-size: 0.875em; }
 
 .split {
   display: flex; }

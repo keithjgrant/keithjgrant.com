@@ -64,6 +64,19 @@ $heading4Size: 1.00em;
   image-rendering: pixelated;
 }
 
+@mixin pixel-font() {
+  font-family: $headingFont;
+  font-weight: normal;
+  -moz-osx-font-smoothing: never;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+}
+
+@keyframes cursor-blink {
+  0%, 49% { border-left-color: $orange; }
+  50%, 99% { border-left-color: transparent; }
+}
+
 body {
   // background-image: -webkit-radial-gradient(#222, #111);
   // background-image: radial-gradient(#222, #111);
@@ -74,11 +87,7 @@ body {
 .reveal {
 
   h1, h2 {
-    font-family: $headingFont;
-    font-weight: normal;
-    -moz-osx-font-smoothing: never;
-    -webkit-font-smoothing: none;
-    font-smooth: never;
+    @include pixel-font();
   }
 
   h3, h4, h5, h6 {
@@ -153,8 +162,43 @@ body {
     }
   }
 
+  dt {
+    color: $orange;
+  }
+
   .owl * + * {
     margin-top: 1em;
+  }
+
+  .main-menu {
+    margin-top: 2em;
+    margin-left: 0;
+
+    > li {
+      @include pixel-font();
+      list-style: none;
+      margin-bottom: 0.5em;
+    }
+
+    > .is-active {
+      position: relative;
+
+      &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0.25em;
+        left: -1em;
+        border: 0.3em solid transparent;
+        animation: cursor-blink 1s steps(2, start) infinite;
+      }
+    }
+  }
+
+  .pixel-font {
+    @include pixel-font();
+    margin: 1.6em 0;
+    font-size: 0.875em;
   }
 }
 
@@ -208,7 +252,6 @@ body {
 .example-bad {
   position: relative;
 }
-
 .example-good::after,
 .example-bad::after {
   display: block;
@@ -278,7 +321,10 @@ body {
   }
 }
 
-/* individual slides*/
+
+/**
+ * individual slides
+ */
 .slide-title {
   text-align: center;
 }
@@ -291,16 +337,6 @@ body {
 
   tbody td {
     border-bottom: 0;
-  }
-}
-
-.slide-abs-units {
-  .toadstool {
-    position: absolute;
-    right: 0em;
-    bottom: 0em;
-    width: 13em;
-    z-index: -1;
   }
 }
 
