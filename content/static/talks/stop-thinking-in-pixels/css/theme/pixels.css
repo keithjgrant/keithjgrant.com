@@ -302,12 +302,14 @@ body {
   background-image: radial-gradient(#1e2224, #101214); }
 
 /* overrides */
-.reveal h1 {
+.reveal h1, .reveal h2 {
   font-family: "Dragon Warrior", "OCR a std", "Monaco", monospace;
-  font-smooth: never;
-  -webkit-font-smoothing: none; }
+  font-weight: normal;
+  -moz-osx-font-smoothing: never;
+  -webkit-font-smoothing: none;
+  font-smooth: never; }
 
-.reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+.reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   font-family: "Play", sans-serif; }
 
 .reveal h4, .reveal h5, .reveal h6 {
@@ -433,6 +435,8 @@ body {
   width: 4em;
   max-height: initial;
   z-index: -1;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: -moz-crisp-edges;
   image-rendering: pixelated; }
 
 .reveal .img-tr {
@@ -442,6 +446,8 @@ body {
   width: 4em;
   max-height: initial;
   z-index: -1;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: -moz-crisp-edges;
   image-rendering: pixelated; }
 
 .reveal .img-bl {
@@ -451,6 +457,8 @@ body {
   width: 4em;
   max-height: initial;
   z-index: -1;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: -moz-crisp-edges;
   image-rendering: pixelated; }
 
 .reveal .img-br {
@@ -460,6 +468,8 @@ body {
   width: 4em;
   max-height: initial;
   z-index: -1;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: -moz-crisp-edges;
   image-rendering: pixelated; }
 
 .reveal .img-flipped {
@@ -592,6 +602,8 @@ body {
   top: -3.5em;
   left: -4.5em;
   width: 4em;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: -moz-crisp-edges;
   image-rendering: pixelated;
   z-index: -1; }
 
@@ -613,6 +625,8 @@ body {
   bottom: -7em;
   left: -4em;
   width: 5em;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: -moz-crisp-edges;
   image-rendering: pixelated;
   z-index: -1; }
 

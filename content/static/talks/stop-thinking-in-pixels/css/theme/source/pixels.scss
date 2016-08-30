@@ -58,6 +58,12 @@ $heading4Size: 1.00em;
 @import "../template/theme";
 // ---------------------------------------------
 
+@mixin crisp-image() {
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+}
+
 body {
   // background-image: -webkit-radial-gradient(#222, #111);
   // background-image: radial-gradient(#222, #111);
@@ -67,13 +73,15 @@ body {
 /* overrides */
 .reveal {
 
-  h1 {
+  h1, h2 {
     font-family: $headingFont;
-    font-smooth: never;
+    font-weight: normal;
+    -moz-osx-font-smoothing: never;
     -webkit-font-smoothing: none;
+    font-smooth: never;
   }
 
-  h2, h3, h4, h5, h6 {
+  h3, h4, h5, h6 {
     font-family: $mainFont;
   }
 
@@ -232,7 +240,7 @@ body {
     width: 4em;
     max-height: initial;
     z-index: -1;
-    image-rendering: pixelated;
+    @include crisp-image();
   }
 
   .img-tr {
@@ -242,7 +250,7 @@ body {
     width: 4em;
     max-height: initial;
     z-index: -1;
-    image-rendering: pixelated;
+    @include crisp-image();
   }
 
   .img-bl {
@@ -252,7 +260,7 @@ body {
     width: 4em;
     max-height: initial;
     z-index: -1;
-    image-rendering: pixelated;
+    @include crisp-image();
   }
 
   .img-br {
@@ -262,7 +270,7 @@ body {
     width: 4em;
     max-height: initial;
     z-index: -1;
-    image-rendering: pixelated;
+    @include crisp-image();
   }
 
   .img-flipped {
@@ -439,7 +447,7 @@ body {
     top: -3.5em;
     left: -4.5em;
     width: 4em;
-    image-rendering: pixelated;
+    @include crisp-image();
     z-index: -1;
   }
 }
@@ -468,7 +476,7 @@ body {
     bottom: -7em;
     left: -4em;
     width: 5em;
-    image-rendering: pixelated;
+    @include crisp-image();
     z-index: -1;
   }
 }
