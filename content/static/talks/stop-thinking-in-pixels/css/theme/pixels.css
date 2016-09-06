@@ -18,6 +18,13 @@
   src: url(../dragon-warrior.woff) format("woff");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
 
+@font-face {
+  font-family: 'Heavy Smash';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../heavy-smash.woff) format("woff");
+  unicode-range: U+0040; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -52,7 +59,7 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #3bf;
-  font-family: "Dragon Warrior", "OCR a std", "Monaco", monospace;
+  font-family: "Heavy Smash", "Dragon Warrior", "OCR a std", "Monaco", monospace;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: -0.03em;
@@ -309,7 +316,7 @@ body {
 
 /* overrides */
 .reveal h1, .reveal h2 {
-  font-family: "Dragon Warrior", "OCR a std", "Monaco", monospace;
+  font-family: "Heavy Smash", "Dragon Warrior", "OCR a std", "Monaco", monospace;
   font-weight: normal;
   -moz-osx-font-smoothing: never;
   -webkit-font-smoothing: none;
@@ -379,7 +386,7 @@ body {
   margin-top: 2em;
   margin-left: 0; }
   .reveal .main-menu > li {
-    font-family: "Dragon Warrior", "OCR a std", "Monaco", monospace;
+    font-family: "Heavy Smash", "Dragon Warrior", "OCR a std", "Monaco", monospace;
     font-weight: normal;
     -moz-osx-font-smoothing: never;
     -webkit-font-smoothing: none;
@@ -398,7 +405,7 @@ body {
       animation: cursor-blink 1s steps(2, start) infinite; }
 
 .reveal .pixel-font {
-  font-family: "Dragon Warrior", "OCR a std", "Monaco", monospace;
+  font-family: "Heavy Smash", "Dragon Warrior", "OCR a std", "Monaco", monospace;
   font-weight: normal;
   -moz-osx-font-smoothing: never;
   -webkit-font-smoothing: none;
@@ -515,7 +522,9 @@ body {
 .reveal .img-flipped {
   transform: rotateY(180deg); }
 
-/* individual slides*/
+/**
+ * individual slides
+ */
 .slide-title {
   text-align: center; }
 
@@ -525,13 +534,6 @@ body {
 
 .slide-lengths tbody td {
   border-bottom: 0; }
-
-.slide-abs-units .toadstool {
-  position: absolute;
-  right: 0em;
-  bottom: 0em;
-  width: 13em;
-  z-index: -1; }
 
 .slide-ems-intro .em-box,
 .slide-ems-intro .em-box-adjusted {
@@ -586,7 +588,7 @@ body {
     flex: 1;
     min-height: 1em;
     margin-top: 0;
-    border: 2px solid #fb3; }
+    border: 2px solid #3bf; }
   .slide-module-diagram .m-title-2 > * + * {
     margin-left: 0.5em; }
 
