@@ -92,8 +92,8 @@
           </section>
 
           <section>
-            <h3>We can no longer hide from<br>the abstraction that comes with CSS</h3>
-            <p class="fragment">...but we can use it to our advantage</p>
+            <h3>Don’t hide from abstraction</h3>
+            <p>Use it to your advantage</p>
             <p class="fragment">CSS provides tools for working with abstraction</p>
           </section>
         </section><!-- end late binding/history -->
@@ -145,12 +145,6 @@
             </q> -->
             <!-- http://www.dumblaws.com/laws/united-states/indiana -->
           </section>
-
-          <section>
-            <h2>Don’t micromanage your CSS</h2>
-            <p class="fragment">Delegate responsibility to it</p>
-          </section>
-
         </section><!-- end abs vs reltive -->
 
 
@@ -168,7 +162,7 @@
           </section>
 
           <section class="slide-ems-basic">
-            <h2>Using ems</h2>
+            <h2>It’s all relative</h2>
             <div class="split">
               <div class="split-left">
                 <pre><code data-trim class="css">
@@ -243,15 +237,48 @@
               </div>
             </div>
           </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Problems with em</h1>
+            <p><img src="images/chili-pepper.png" alt="pixelated chili pepper" class="img-br"/></p>
+          </section>
+
+          <section>
+            <h2>Ems for font-size</h2>
+            <p>Based on <em>inherited</em> font-size</p>
+            <pre><code data-trim data-noescape>
+.parent {
+  font-size: 16px;
+}
+
+.parent > .child {
+  font-size: 1.2em; /* 19.2px */
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Font-size vs<br />other properties</h2>
+            <p>Same declared value; different computed value</p>
+            <pre><code data-trim data-noescape>
+.tile {
+  font-size: 1.2em;     /* 19.2px */
+
+  margin: 1.2em;        /* 23.04px */
+  padding: 1.2em;       /* 23.04px */
+  border-radius: 1.2em; /* 23.04px */
+}
+            </code></pre>
+          </section>
 
           <section class="slide-ems-font-size">
-            <h2>Ems for font-size</h2>
-            <p>Equal to the <em>inherited</em> font-size</p>
+            <h2>Deeply-nested ems</h2>
             <div class="bordered">
               <p>font-size: 16px</p>
               <div class="bordered fragment">
                 <p>font-size: 1.2em <em>// 19.2px</em></p>
-                <p>padding: 1.2em <em>// 23.04px</em></p>
                 <div class="bordered fragment">
                   <p>font-size: .875em <em>// ???</em></p>
                   <div class="bordered fragment">
@@ -263,7 +290,7 @@
           </section>
 
           <section class="slide-ems-trouble">
-            <h2>Trouble with ems</h2>
+            <h2>Shrinking text problem </h2>
             <div class="split">
               <div class="split-left">
                 <pre><code data-trim>
@@ -317,7 +344,6 @@ ul {
             </div>
           </section>
 
-
           <section>
             <h2>ch</h2>
             <p>Equal to the width of “0” character</p>
@@ -326,7 +352,7 @@ ul {
 
           <section class="slide-ch">
             <h2>ch</h2>
-            <p>Usually about equal to 0.5em, but changes based upon <em>width</em> of the font</p>
+            <p>Usually about equal to 0.5em,<br />but changes based upon <em>width</em> of the font</p>
             <div class="ch-block">
               This block is 30ch wide.
             </div>
@@ -346,13 +372,14 @@ ul {
               <dt>px</dt>
               <dd>border-width</dd>
             </dl>
+            <p class="fragment">When in doubt, us ems</p>
           </section>
         </section><!-- end ems primer -->
 
 
         <section>
           <section>
-            <h1>Accessibility</h1>
+            <h1>Typography</h1>
             <p><img src="images/cactus.png" alt="pixelated cactus" class="img-br"/></p>
           </section>
 
@@ -363,7 +390,7 @@ ul {
           </section>
 
           <section>
-            <p>Ems based on an absolute font are still (kind of) absolute</p>
+            <p>Ems based on an absolute font are not a11y-friendly</p>
             <div class="split">
               <div class="split-left">
                 <pre><code data-trim class="css example-bad">
@@ -391,12 +418,16 @@ ul {
           </section>
 
           <section>
-            <h2>There’s more to ems than just accessibility</h2>
+            <h2>There’s more to ems than just a11y</h2>
+          </section>
+
+          <section>
+            <h3>Stop thinking in pixels</h3>
             <div class="split">
               <div class="split-left">
                 <pre><code data-trim class="css example-bad">
 :root {
-  font-size: 0.625em; /* = 10px */
+  font-size: 0.625em; /* 10px */
 }
 
 .tabs {
@@ -418,6 +449,31 @@ ul {
               </div>
             </div>
           </section>
+
+          <section>
+            <h2>Math :(</h2>
+            <img src="images/px-to-em.png" alt="Screenshot of px to em conversion tool" />
+            <p class="text-right"><a href="http://pxtoem.com/">pxtoem.com</a></p>
+          </section>
+
+          <section>
+            <h3>[desired] / [inherited]</h3>
+            <p>14px / 16px = 0.875em</p>
+            <p class="fragment">18px / 14px = 1.2857em</p>
+            <p class="fragment">24px / 13&pi; = <em>STOP IT</em></p>
+          </section>
+
+          <section>
+            <h3>Beautiful typography is about ratios</h3>
+            <img src="images/type-scale.png" alt="Screenshot of ratio-based typography scaling tool" />
+            <p class="text-right"><a href="http://type-scale.com/">type-scale.com</a></p>
+          </section>
+
+          <section>
+            <h2>Don’t micromanage<br />your CSS</h2>
+            <p>Delegate responsibility to it</p>
+          </section>
+
         </section>
 
         <section>
@@ -426,20 +482,121 @@ ul {
           </section>
 
           <section class="slide-module-diagram">
-            <h2>Base font sizes on a known container</h2>
+            <h2>Base font size on a known container</h2>
             <div class="bordered bordered-padded">
-              <code class="css bordered-code">{ font-size: <em class="blue">1rem</em>; }</code>
+              <code class="css bordered-code">{ font-size: <em>1rem</em>; }</code>
               <div class="fragment">
                 <div class="bordered bordered-blue bordered-padded m-title">
-                  <code class="css bordered-code">{ font-size: <em>0.8em</em>; }</code>
+                  <code class="css bordered-code">{ font-size: <em class="blue">0.8em</em>; }</code>
                 </div>
                 <div class="split">
                   <div class="bordered bordered-blue bordered-padded split-left">
-                    <code class="css bordered-code">{ font-size: <em>1em</em>; }</code>
+                    <code class="css bordered-code">{ font-size: <em class="blue">1em</em>; }</code>
                   </div>
                   <div class="bordered bordered-blue bordered-padded split-right">
-                    <code class="css bordered-code">{ font-size: <em>1.2em</em>; }</code>
+                    <code class="css bordered-code">{ font-size: <em class="blue">1.2em</em>; }</code>
                   </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="slide-module-resize">
+            <h3>One rem-value at root; all else in ems</h3>
+            <div class="split">
+              <div class="split-left">
+                <pre><code data-trim data-noescape class="css">
+.tile {
+  border: 2px solid white;
+  padding: .6em 1.2em;
+  border-radius: .3em;
+  margin-bottom: 1em;
+  <mark>font-size: 1rem</mark>;
+}
+
+.tile__title {
+  <mark>font-size: 0.8em</mark>;
+  text-transform: uppercase;
+}
+                </code></pre>
+                <pre class="fragment" data-fragment-index="1">
+                  <code data-trim data-noescape class="css">
+.tile--small {
+  <mark>font-size: 0.625rem</mark>;
+}
+                </code></pre>
+                <pre class="fragment" data-fragment-index="2">
+                  <code data-trim data-noescape class="css">
+.tile--large {
+  <mark>font-size: 1.3rem</mark>;
+}
+                </code></pre>
+              </div>
+              <div class="split-right">
+                <div class="tile">
+                  <h4 class="tile__title">Game saved</h4>
+                  <p>Hold RESET while you turn POWER off!!</p>
+                </div>
+                <div class="tile tile--small fragment"  data-fragment-index="1">
+                  <h4 class="tile__title">Game saved</h4>
+                  <p>Hold RESET while you turn POWER off!!</p>
+                </div>
+                <div class="tile tile--large fragment"  data-fragment-index="2">
+                  <h4 class="tile__title">Game saved</h4>
+                  <p>Hold RESET while you turn POWER off!!</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <p>Use <strong class="blue">rem</strong> for <em>global sizing</em></p>
+            <p>Use <strong class="blue">em</strong> for <em>local sizing</em></p>
+          </section>
+
+          <section class="slide-close-icon">
+            <h3>Scale buttons/icons/svg</h3>
+            <div class="split">
+              <div class="split-left">
+                <pre><code data-trim data-noescape class="css">
+.tile {
+  position: relative;
+}
+
+.tile__close {
+  position: absolute;
+  <mark>font-size: 1em;</mark>
+  top: 0;
+  right: 0;
+  <mark>width: 1em;</mark>
+  <mark>height: 1em;</mark>
+  text-indent: 200%;
+}
+
+.tile__close::after {
+  content: "\00D7";
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-indent: 0;
+}
+                </code></pre>
+              </div>
+              <div class="split-right">
+                <div class="tile">
+                  <button class="tile__close">close</button>
+                  <h4 class="tile__title">Game saved</h4>
+                  <p>Hold RESET while you turn POWER off!!</p>
+                </div>
+                <div class="tile tile--small">
+                  <button class="tile__close">close</button>
+                  <h4 class="tile__title">Game saved</h4>
+                  <p>Hold RESET while you turn POWER off!!</p>
+                </div>
+                <div class="tile tile--large">
+                  <button class="tile__close">close</button>
+                  <h4 class="tile__title">Game saved</h4>
+                  <p>Hold RESET while you turn POWER off!!</p>
                 </div>
               </div>
             </div>
@@ -484,56 +641,12 @@ ul {
             </div>
           </section>
 
-          <section class="slide-module-resize">
-            <div class="split">
-              <div class="split-left">
-                <pre><code data-trim data-noescape class="css">
-.tile {
-  border: 2px solid white;
-  padding: .6em 1.2em;
-  border-radius: .3em;
-  margin-bottom: 1em;
-  <mark>font-size: 1rem</mark>;
-}
-
-.tile__title {
-  <mark>font-size: 0.8em</mark>;
-  text-transform: uppercase;
-}
-                </code></pre>
-                <pre class="fragment" data-fragment-index="1">
-                  <code data-trim data-noescape class="css">
-.tile--small {
-  <mark>font-size: 0.625em</mark>;
-}
-                </code></pre>
-                <pre class="fragment" data-fragment-index="2">
-                  <code data-trim data-noescape class="css">
-.tile--large {
-  <mark>font-size: 1.3em</mark>;
-}
-                </code></pre>
-              </div>
-              <div class="split-right">
-                <div class="tile">
-                  <h4 class="tile__title">Game saved</h4>
-                  <p>Hold RESET while you turn POWER off!!</p>
-                </div>
-                <div class="tile tile--small fragment"  data-fragment-index="1">
-                  <h4 class="tile__title">Game saved</h4>
-                  <p>Hold RESET while you turn POWER off!!</p>
-                </div>
-                <div class="tile tile--large fragment"  data-fragment-index="2">
-                  <h4 class="tile__title">Game saved</h4>
-                  <p>Hold RESET while you turn POWER off!!</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
           <section>
-            <p>Use <strong class="blue">rem</strong> for <em>global sizing</em></p>
-            <p>Use <strong class="blue">em</strong> for <em>local sizing</em></p>
+            [TODO:]
+            * box-shadow (underline, etc)
+            * icon/image
+            * inline icon (search icon in input)
+            * series of social icons
           </section>
 
         </section><!-- end resize module -->
@@ -606,6 +719,11 @@ ul {
             <p class="text-right">
               <a href="resize-line-wrap.html" target="demo">demo</a>
             </p>
+          </section>
+
+          <section>
+            <h2>Jump in with both feet</h2>
+            <p>Ems are most powerful when you fully embrace them</p>
           </section>
         </section><!-- end resize page -->
 
@@ -693,7 +811,8 @@ ul {
       // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         history: true,
-
+        transition: "zoom",
+        // transitionSpeed: "fast",
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
           { src: 'plugin/markdown/marked.js' },

@@ -56,8 +56,8 @@ $selectionBackgroundColor: $blue; //#4ba3d5;
 $mainFontSize: 30px;
 $highlightColor: $orange;
 
-$heading1Size: 2.11em;
-$heading2Size: 1.55em;
+$heading1Size: 1.9em; // 2.11em;
+$heading2Size: 1.45em; // 1.55em;
 $heading3Size: 1.55em;
 $heading4Size: 1.00em;
 
@@ -129,6 +129,7 @@ body {
     padding: 1em 1.4em;
     margin-bottom: 1.2em;
     box-shadow: 0 0 0.375em rgba(0, 0, 0, 0.3);
+    max-height: initial;
   }
 
   code {
@@ -334,6 +335,10 @@ body {
  */
 .slide-title {
   text-align: center;
+
+  h1 {
+    font-size: 2.11em;
+  }
 }
 
 .slide-lengths {
@@ -436,7 +441,8 @@ body {
   }
 }
 
-.slide-module-resize {
+.slide-module-resize,
+.slide-close-icon {
   .tile {
     border: 2px solid white;
     padding: .6em 1.2em;
@@ -457,6 +463,34 @@ body {
 .slide-rems-list {
   ul {
     font-size: 1em;
+  }
+}
+
+.slide-close-icon {
+  .tile {
+    position: relative;
+  }
+
+  .tile__close {
+    position: absolute;
+    font-size: 1em;
+    top: 0;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    text-indent: 200%;
+    overflow: hidden;
+    border: 0;
+    background-color: transparent;
+  }
+
+  .tile__close::after {
+    content: "\00D7";
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-indent: 0;
+    color: white;
   }
 }
 
