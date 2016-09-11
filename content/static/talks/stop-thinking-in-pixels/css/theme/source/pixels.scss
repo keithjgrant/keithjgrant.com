@@ -225,6 +225,15 @@ body {
   }
 }
 
+.split-2-3 {
+  .split-left {
+    flex: 2;
+  }
+  .split-right {
+    flex: 1;
+  }
+}
+
 .reveal {
   .bordered {
     position: relative;
@@ -441,8 +450,7 @@ body {
   }
 }
 
-.slide-module-resize,
-.slide-close-icon {
+.slide-module-resize {
   .tile {
     border: 2px solid white;
     padding: .6em 1.2em;
@@ -463,34 +471,6 @@ body {
 .slide-rems-list {
   ul {
     font-size: 1em;
-  }
-}
-
-.slide-close-icon {
-  .tile {
-    position: relative;
-  }
-
-  .tile__close {
-    position: absolute;
-    font-size: 1em;
-    top: 0;
-    right: 0;
-    width: 1em;
-    height: 1em;
-    text-indent: 200%;
-    overflow: hidden;
-    border: 0;
-    background-color: transparent;
-  }
-
-  .tile__close::after {
-    content: "\00D7";
-    position: absolute;
-    left: 0;
-    top: 0;
-    text-indent: 0;
-    color: white;
   }
 }
 

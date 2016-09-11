@@ -554,50 +554,91 @@ ul {
             <p>Use <strong class="blue">em</strong> for <em>local sizing</em></p>
           </section>
 
-          <section class="slide-close-icon">
-            <h3>Scale buttons/icons/svg</h3>
-            <div class="split">
+
+          <section>
+            <h3>Scalable modules</h3>
+            <div class="split split-2-3">
               <div class="split-left">
                 <pre><code data-trim data-noescape class="css">
 .tile {
-  position: relative;
+  border: 2px solid white;
+  padding: .6em 1.2em;
+  border-radius: .3em;
+  margin-bottom: 1em;
+  <mark>font-size: 1rem</mark>;
 }
 
-.tile__close {
-  position: absolute;
-  <mark>font-size: 1em;</mark>
-  top: 0;
-  right: 0;
-  <mark>width: 1em;</mark>
-  <mark>height: 1em;</mark>
-  text-indent: 200%;
-}
-
-.tile__close::after {
-  content: "\00D7";
-  position: absolute;
-  left: 0;
-  top: 0;
-  text-indent: 0;
+.tile__title {
+  <mark>font-size: 0.8em</mark>;
+  text-transform: uppercase;
 }
                 </code></pre>
               </div>
               <div class="split-right">
-                <div class="tile">
-                  <button class="tile__close">close</button>
-                  <h4 class="tile__title">Game saved</h4>
-                  <p>Hold RESET while you turn POWER off!!</p>
-                </div>
-                <div class="tile tile--small">
-                  <button class="tile__close">close</button>
-                  <h4 class="tile__title">Game saved</h4>
-                  <p>Hold RESET while you turn POWER off!!</p>
-                </div>
-                <div class="tile tile--large">
-                  <button class="tile__close">close</button>
-                  <h4 class="tile__title">Game saved</h4>
-                  <p>Hold RESET while you turn POWER off!!</p>
-                </div>
+                <a href="demo-tiles.html" target="demo">demo</a>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3>Scalable shapes</h3>
+            <div class="split split-2-3">
+              <div class="split-left">
+                <pre><code data-trim data-noescape class="css">
+.dropdown__toggle::after {
+  content: "";
+  position: absolute;
+  right: <mark>1em</mark>;
+  top: <mark>1em</mark>;
+  border: <mark>0.3em</mark> solid;
+  border-color: black transparent transparent;
+}
+                </code></pre>
+              </div>
+              <div class="split-right">
+                <a href="demo-dropdown.html" target="demo">demo</a>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3>Scalable images</h3>
+            <div class="split split-2-3">
+              <div class="split-left">
+                <pre><code data-trim data-noescape class="css">
+.twitter > img {
+  height: <mark>1em</mark>;
+  width: <mark>1em</mark>;
+  vertical-align: <mark>-0.1em</mark>;
+}
+                </code></pre>
+              </div>
+              <div class="split-right">
+                <a href="demo-svg.html" target="demo">demo</a>
+              </div>
+            </div>
+            <p>SVG FTW!</p>
+          </section>
+
+          <section>
+            <h3>Scalable shadows</h3>
+            <div class="split split-2-3">
+              <div class="split-left">
+                <pre><code data-trim data-noescape class="css">
+a:link {
+  text-decoration: none;
+  box-shadow: inset 0 <mark>-0.1em</mark> 0 0 #cef;
+  transition: box-shadow 0.2s ease-in-out;
+  color: #346;
+}
+
+a:hover {
+  box-shadow: inset 0 <mark>-1.2em</mark> 0 0 #cef;
+}
+                </code></pre>
+              </div>
+              <div class="split-right">
+                <a href="demo-box-shadow.html" target="demo">demo</a>
               </div>
             </div>
           </section>
@@ -639,14 +680,6 @@ ul {
                 </div>
               </div>
             </div>
-          </section>
-
-          <section>
-            [TODO:]
-            * box-shadow (underline, etc)
-            * icon/image
-            * inline icon (search icon in input)
-            * series of social icons
           </section>
 
         </section><!-- end resize module -->
@@ -711,13 +744,6 @@ ul {
             </code></pre>
             <p class="text-right">
               <a href="resize-vw1.html" target="demo">demo</a>
-            </p>
-          </section>
-
-          <section>
-            [line-wrapping elements]
-            <p class="text-right">
-              <a href="resize-line-wrap.html" target="demo">demo</a>
             </p>
           </section>
 
