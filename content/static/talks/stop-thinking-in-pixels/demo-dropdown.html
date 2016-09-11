@@ -1,0 +1,145 @@
+<!doctype html>
+<head>
+  <style>
+    :root {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1em;
+    }
+
+    .button-group {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+
+    .button-group > button {
+      padding: 0.2em 1em;
+      font-size: 1rem;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      color: #346;
+      dispay: block;
+    }
+    .button-group > button.active {
+      background-color: #346;
+      color: #fff;
+    }
+
+    .dropdown {
+      display: inline-block;
+      position: relative;
+      font-size: 1rem;
+    }
+
+    .dropdown__toggle {
+      padding: 0.5em 2em 0.5em 1.5em;
+      border: 1px solid #ccc;
+      font-size: 1em;
+      background-color: #eee;
+    }
+
+    .dropdown__toggle::after {
+      content: "";
+      position: absolute;
+      right: 1em;
+      top: 1em;
+      border: 0.3em solid;
+      border-color: black transparent transparent;
+    }
+
+    .dropdown__drawer {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 2.1em;
+      min-width: 100%;
+      background-color: #eee;
+    }
+
+    .dropdown.is-open .dropdown__toggle::after {
+      top: 0.7em;
+      border-color: transparent transparent black;
+    }
+    .dropdown.is-open .dropdown__drawer {
+      display: block;
+    }
+
+    .dropdown--small {
+      font-size: 0.75rem;
+    }
+
+    .dropdown--large {
+      font-size: 2rem;
+    }
+
+    .menu {
+      padding-left: 0;
+      margin: 0;
+      list-style-type: none;
+      border: 1px solid #999;
+    }
+
+    .menu > li + li {
+      border-top: 1px solid #999;
+    }
+
+    .menu > li > a {
+      display: block;
+      padding: .5em 1.5em;
+      background-color: #eee;
+      color: #369;
+      text-decoration: none;
+    }
+
+    .menu > li > a:hover {
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="button-group">
+    <button value="small">small</button>
+    <button value="medium" class="active">medium</button>
+    <button value="large">large</button>
+  </div>
+
+  <div id="demo" class="dropdown">
+    <button class="dropdown__toggle">Main Menu</button>
+    <div class="dropdown__drawer">
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/coffees">Coffees</a></li>
+        <li><a href="/brewers">Brewers</a></li>
+        <li><a href="/specials">Specials</a></li>
+        <li><a href="/about">About us</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    (function () {
+      var buttons = document.querySelectorAll('.button-group > button');
+      Array.prototype.map.call(buttons, function(button) {
+        button.addEventListener('click', handleClick);
+      });
+
+      function handleClick(e) {
+        Array.prototype.map.call(buttons, function(button) {
+          button.className = '';
+        });
+        this.className = 'active';
+        var demo = document.getElementById('demo');
+        demo.classList.remove('dropdown--small', 'dropdown--large');
+        demo.classList.add('dropdown--' + e.target.value);
+      }
+    }());
+
+    (function () {
+      var toggle = document.querySelector('.dropdown__toggle');
+      toggle.addEventListener('click', function (event) {
+        event.preventDefault();
+        var dropdown = event.target.parentNode;
+        dropdown.classList.toggle('is-open');
+      });
+    }());
+  </script>
+</body>
