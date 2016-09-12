@@ -38,8 +38,16 @@
 
         <section>
           <h2>@keithjgrant</h2>
-          <p>Dev: Intercontinental Exchange/New York Stock Exchange</p>
-          <p>Author: CSS in Depth, Manning Publications (2017)</p>
+          <dl>
+            <dt style="color: white">Developer</dt>
+            <dd>
+              Intercontinental Exchange/New York Stock Exchange
+            </dd>
+            <dt style="color: white">Author</dt>
+            <dd>
+              <i>CSS in Depth</i>, Manning Publications (2017)
+            </dd>
+          </dl>
           <p><a href="http://keithjgrant.com/talks">keithjgrant.com/talks</a></p>
           <p><img src="images/vault-boy.png" alt="pixelated boy" class="img-tr"/></p>
         </section>
@@ -77,10 +85,6 @@
           <section>
             <h2>Hiding from abstraction</h2>
             <p>Brief history of web design</p>
-          </section>
-
-          <section>
-            <img src="images/netscape.jpg" alt="Screenshot of old netscape browser">
           </section>
 
           <section>
@@ -134,7 +138,11 @@
           <section>
             <h2>But our units are in another castle!</h2>
             <p>Absolute units don’t adapt to their environment</p>
-            <q class="fragment">
+          </section>
+
+          <section>
+            <h3>Absolute units</h3>
+            <q>
               “Single men between the ages of twenty-one and fifty must pay an annual tax of <u>one dollar</u>.”
               <cite>Missouri law, enacted 1820</cite>
             </q>
@@ -315,7 +323,7 @@ ul {
           </section>
 
           <section>
-            <h2>rem</h2>
+            <h2>Solution: rem</h2>
             <p>“Root em”&mdash;relative to font size of <em>root</em> element (<code>&lt;html&gt;</code>)</p>
           </section>
 
@@ -451,16 +459,16 @@ ul {
           </section>
 
           <section>
-            <h2>Math :(</h2>
-            <img src="images/px-to-em.png" alt="Screenshot of px to em conversion tool" />
-            <p class="text-right"><a href="http://pxtoem.com/">pxtoem.com</a></p>
-          </section>
-
-          <section>
             <h3>[desired] / [inherited]</h3>
             <p>14px / 16px = 0.875em</p>
             <p class="fragment">18px / 14px = 1.2857em</p>
             <p class="fragment">24px / 13&pi; = <em>STOP IT</em></p>
+          </section>
+
+          <section>
+            <h2>Math :(</h2>
+            <img src="images/px-to-em.png" alt="Screenshot of px to em conversion tool" />
+            <p class="text-right"><a href="http://pxtoem.com/">pxtoem.com</a></p>
           </section>
 
           <section>
