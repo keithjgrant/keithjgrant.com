@@ -1,0 +1,87 @@
+<!doctype html>
+<head>
+  <style>
+    :root {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1em;
+    }
+
+    button {
+      padding: 0.2em 1em;
+      font-size: 1rem;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      color: #346;
+      dispay: block;
+    }
+    button.active {
+      background-color: #346;
+      color: #fff;
+    }
+
+    .button-group {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+
+    .tile {
+      border: 2px solid #000;
+      padding: .6em 1.2em;
+      border-radius: .3em;
+      margin-bottom: 1em;
+      font-size: 1rem;
+    }
+    .tile > * {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .tile > * + * {
+      margin-top: 1em;
+    }
+
+    .tile__title {
+      font-size: 0.8em;
+      text-transform: uppercase;
+    }
+
+    .tile--large {
+      font-size: 2rem;
+    }
+
+    .tile--small {
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="button-group">
+    <button value="small">small</button>
+    <button value="medium" class="active">medium</button>
+    <button value="large">large</button>
+  </div>
+
+  <div class="tile" id="demo">
+    <h4 class="tile__title">Game saved</h4>
+    <p>
+      Hold RESET while you turn POWER off!!
+    </p>
+  </div>
+
+  <script type="text/javascript">
+    (function () {
+      var buttons = document.querySelectorAll('button');
+      Array.prototype.map.call(buttons, function(button) {
+        button.addEventListener('click', handleClick);
+      });
+
+      function handleClick(e) {
+        Array.prototype.map.call(buttons, function(button) {
+          button.className = '';
+        });
+        this.className = 'active';
+        var demo = document.getElementById('demo');
+        demo.className = 'tile tile--' + e.target.value;
+      }
+    }());
+  </script>
+</body>

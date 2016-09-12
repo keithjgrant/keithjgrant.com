@@ -7,12 +7,10 @@
     <title>Stop Thinking in Pixels</title>
 
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/night.css">
+    <link rel="stylesheet" href="css/theme/pixels.css">
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
-
-    <link href='https://fonts.googleapis.com/css?family=Press+Start+2P|Slabo+27px' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="lib/css/monokai-sublime-modified.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -26,26 +24,829 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown>
-          <script type="text/template">
-            # Stop Thinking in Pixels
-          </script>
+        <section class="slide-title">
+          <h1>Stop Thinking<br/>in <span class="orange">Pixels</span></h1>
+          <ul class="main-menu">
+            <li class="is-active">Game start</li>
+            <li>Password</li>
+          </ul>
+
+          <p><img src="images/gladiator.png" alt="pixelated gladiator" class="img-tl" style="top: 1em;" /></p>
+          <p><img src="images/brontosaurus.png" alt="pixelated dinosaur" class="img-br img-flipped" style="bottom: -2em;" /></p>
+        </section>
+
+
+        <section>
+          <h2>@keithjgrant</h2>
+          <dl>
+            <dt style="color: white">Developer</dt>
+            <dd>
+              Intercontinental Exchange/New York Stock Exchange
+            </dd>
+            <dt style="color: white">Author</dt>
+            <dd>
+              <i>CSS in Depth</i>, Manning Publications (2017)
+            </dd>
+          </dl>
+          <p><a href="http://keithjgrant.com/talks">keithjgrant.com/talks</a></p>
+          <p><img src="images/vault-boy.png" alt="pixelated boy" class="img-tr"/></p>
+        </section>
+
+
+        <section>
+          <section>
+            <h1>Late binding</h1>
+            <p><img src="images/hourglass.png" alt="pixelated hourglass" class="img-br"/></p>
+          </section>
+
+          <section>
+            <h2>CSS is unique</h2>
+            <div class="split">
+              <div class="split-left">
+                <p>Conventional design:<br>putting content onto canvas</p>
+                <ul>
+                  <li>Print publishing</li>
+                  <li>Photoshop</li>
+                  <li>InDesign</li>
+                  <li>PDFs</li>
+                </ul>
+              </div>
+              <div class="split-right fragment">
+                <p>CSS:<br />
+                  Writing rules to put<br />
+                  <em>unknown content</em> into an<br />
+                  <em>unknown medium</em>.
+                </p>
+              </div>
+            </div>
+          </section>
+
+
+          <section>
+            <h2>Hiding from abstraction</h2>
+            <p>Brief history of web design</p>
+          </section>
+
+          <section>
+            <p><img alt="Screenshot of 750px fixed-width layout" src="images/fixed-width.png"/></p>
+          </section>
+
+          <section>
+            <p><img alt="A hand holding original iPhone" src="images/iphone.jpg"/></p>
+          </section>
+
+          <section>
+            <h3>Don’t hide from abstraction</h3>
+            <p>Use it to your advantage</p>
+            <p class="fragment">CSS provides tools for working with abstraction</p>
+          </section>
+        </section><!-- end late binding/history -->
+
+
+        <section>
+          <section>
+            <h1>Relative units</h1>
+          <p><img src="images/master-key.png" alt="pixelated key" class="img-br"/></p>
+          </section>
+
+          <section class="slide-lengths">
+            <h2>Lengths</h2>
+            <table>
+              <thead>
+                <tr>
+                  <td>Absolute</td>
+                  <td>Relative</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>px</td><td>em</td></tr>
+                <tr><td>mm</td><td>rem</td></tr>
+                <tr><td>cm</td><td>ch</td></tr>
+                <tr><td>in</td><td>vw</td></tr>
+                <tr><td>pt</td><td>vh</td></tr>
+                <tr><td>pc</td><td>vmin</td></tr>
+                <tr><td>  </td><td>vmax</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="slide-abs-units">
+            <h2>Absolute units</h2>
+            <p>96px = 72pt = 6pc = 1in = 2.54cm = 25.4mm</p>
+          </section>
+
+          <section>
+            <h2>But our units are in another castle!</h2>
+            <p>Absolute units don’t adapt to their environment</p>
+          </section>
+
+          <section>
+            <h3>Absolute units</h3>
+            <q>
+              “Single men between the ages of twenty-one and fifty must pay an annual tax of <u>one dollar</u>.”
+              <cite>Missouri law, enacted 1820</cite>
+            </q>
+            <!-- source: http://blog.lawinfo.com/2012/09/28/weird-laws-true-or-false-edition-5/ -->
+            <!-- <q class="fragment">
+              “If any person has a puppet show, wire dancing or tumbling act in the state of Indiana and receives money for it, they will be fined <u>$3</u> under the Act to Prevent Certain Immoral Practices.”
+              <cite>Indiana law</cite>
+            </q> -->
+            <!-- http://www.dumblaws.com/laws/united-states/indiana -->
+          </section>
+        </section><!-- end abs vs reltive -->
+
+
+        <section>
+          <section>
+            <h1>Ems</h1>
+            <p><img src="images/devil-dinosaur.png" alt="pixelated red dinosaur" class="img-br img-flipped"/></p>
+          </section>
+
+          <section class="slide-ems-intro">
+            <h2>It's dangerous to go alone! Take this.</h2>
+            <div class="em-box" style="font-size: 4em">M</div>
+            <div class="em-box" style="font-size: 2em">M</div>
+            <div class="fragment em-box-adjusted" style="font-size: 4em">Yy</div>
+          </section>
+
+          <section class="slide-ems-basic">
+            <h2>It’s all relative</h2>
+            <div class="split">
+              <div class="split-left">
+                <pre><code data-trim class="css">
+.tile {
+  padding: 0.6em 1.2em;
+  border-radius: 0.3em;
+  border: 2px solid white;
+}
+                </code></pre>
+              </div>
+              <div class="split-right fragment">
+                <div class="tile">
+                  Ems are great for padding, margin, border-radius.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="split">
+              <div class="split-left">
+                <h2>Declared vs.<br />computed value</h2>
+                <pre><code data-trim data-noescape>
+.tile {
+  padding: 0.6em 1.2em;
+  border-radius: <mark>0.3em</mark>;
+  border: 2px solid black;
+}
+                </code></pre>
+              </div>
+              <div class="split-right" style="position: relative; overflow: hidden; min-height: 80vh">
+                <img
+                  src="images/devtools-computed.png"
+                  alt="DevTools showing computed styles"
+                  class="fragment"
+                  style="position: absolute; left:0; right: 0; max-height: initial"/>
+                <img
+                  src="images/devtools-declared.png"
+                  alt="DevTools showing computed styles"/>
+              </div>
+            </div>
+          </section>
+
+          <section class="slide-ems-sized">
+            <h2>Using ems</h2>
+            <div class="split">
+              <div class="split-left">
+                <pre><code data-trim data-noescape>
+.tile {
+  font-size: 16px;
+  padding: 0.6em 1.2em;
+  border-radius: 0.3em;
+  border: 2px solid white;
+}
+
+.tile--small {
+  <mark>font-size: 10px;</mark>
+}
+                </code></pre>
+              </div>
+              <div class="split-right fragment">
+                <pre><code>&lt;div class="tile"&gt;</code></pre>
+                <div class="tile">
+                  Ems are great for padding, margin, border-radius.
+                </div>
+                <div class="fragment">
+                  <pre><code>&lt;div class="tile tile--small"&gt;</code></pre>
+                  <div class="tile tile--small">
+                    Ems are great for padding, margin, border-radius.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </section>
 
         <section>
-          <section data-markdown>
-            <script type="text/template">
-              # First, a little history
-
-              blah blah [blah](http://google.com)
-            </script>
+          <section>
+            <h1>Problems with em</h1>
+            <p><img src="images/chili-pepper.png" alt="pixelated chili pepper" class="img-br"/></p>
           </section>
 
-          <section data-markdown>
-            <script type="text/template">
-              # Three
-            </script>
+          <section>
+            <h2>Ems for font-size</h2>
+            <p>Based on <em>inherited</em> font-size</p>
+            <pre><code data-trim data-noescape>
+.parent {
+  font-size: 16px;
+}
+
+.parent > .child {
+  font-size: 1.2em; /* 19.2px */
+}
+            </code></pre>
           </section>
+
+          <section>
+            <h2>Font-size vs<br />other properties</h2>
+            <p>Same declared value; different computed value</p>
+            <pre><code data-trim data-noescape>
+.tile {
+  font-size: 1.2em;     /* 19.2px */
+
+  margin: 1.2em;        /* 23.04px */
+  padding: 1.2em;       /* 23.04px */
+  border-radius: 1.2em; /* 23.04px */
+}
+            </code></pre>
+          </section>
+
+          <section class="slide-ems-font-size">
+            <h2>Deeply-nested ems</h2>
+            <div class="bordered">
+              <p>font-size: 16px</p>
+              <div class="bordered fragment">
+                <p>font-size: 1.2em <em>// 19.2px</em></p>
+                <div class="bordered fragment">
+                  <p>font-size: .875em <em>// ???</em></p>
+                  <div class="bordered fragment">
+                    <p>font-size: .9em <em>// this is ridiculous</em></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="slide-ems-trouble">
+            <h2>Shrinking text problem </h2>
+            <div class="split">
+              <div class="split-left">
+                <pre><code data-trim>
+ul {
+  font-size: 0.8em;
+}
+                </code></pre>
+              </div>
+              <div class="split-right fragment">
+                <ul><li>Nested elements
+                  <ul><li>have this problem
+                    <ul><li>when you
+                      <ul><li>use ems
+                        <ul><li>for font size
+                        </li></ul>
+                      </li></ul>
+                    </li></ul>
+                  </li></ul>
+                </li></ul>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>Solution: rem</h2>
+            <p>“Root em”&mdash;relative to font size of <em>root</em> element (<code>&lt;html&gt;</code>)</p>
+          </section>
+
+          <section class="slide-rems-list">
+            <h2>Use rems for font size</h2>
+            <div class="split">
+              <div class="split-left">
+                <pre><code data-trim class="css">
+ul {
+  font-size: 0.8rem;
+}
+                </code></pre>
+              </div>
+              <div class="split-right fragment">
+                <ul><li>Nested elements
+                  <ul><li>are all the same
+                    <ul><li>when you
+                      <ul><li>use <em>rems</em>
+                        <ul><li>for font size
+                        </li></ul>
+                      </li></ul>
+                    </li></ul>
+                  </li></ul>
+                </li></ul>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>ch</h2>
+            <p>Equal to the width of “0” character</p>
+            <!-- http://clagnut.com/blog/2384/ -->
+          </section>
+
+          <section class="slide-ch">
+            <h2>ch</h2>
+            <p>Usually about equal to 0.5em,<br />but changes based upon <em>width</em> of the font</p>
+            <div class="ch-block">
+              This block is 30ch wide.
+            </div>
+            <div class="ch-block ch-block-alt">
+              This block is 30ch wide.
+            </div>
+          </section>
+
+          <section>
+            <h2>Recommendation</h2>
+            <p>By default, use:</p>
+            <dl>
+              <dt>em</dt>
+              <dd>padding, margin, border-radius</dd>
+              <dt>rem</dt>
+              <dd>font-size</dd>
+              <dt>px</dt>
+              <dd>border-width</dd>
+            </dl>
+            <p class="fragment">When in doubt, us ems</p>
+          </section>
+        </section><!-- end ems primer -->
+
+
+        <section>
+          <section>
+            <h1>Typography</h1>
+            <p><img src="images/cactus.png" alt="pixelated cactus" class="img-br"/></p>
+          </section>
+
+          <section>
+            <h2>Use relative units for font sizes</h2>
+            <p><img src="images/browser-settings.png"
+              alt="Browser zoom and font size settings"/></p>
+          </section>
+
+          <section>
+            <p>Ems based on an absolute font are not a11y-friendly</p>
+            <div class="split">
+              <div class="split-left">
+                <pre><code data-trim class="css example-bad">
+:root {
+  font-size: 16px;
+}
+
+.tabs {
+  font-size: 1.125rem;
+}
+                </code></pre>
+              </div>
+              <div class="split-right fragment">
+                <pre><code data-trim class="css example-good">
+:root {
+  font-size: 1em;
+}
+
+.tabs {
+  font-size: 1.125rem;
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>There’s more to ems than just a11y</h2>
+          </section>
+
+          <section>
+            <h3>Stop thinking in pixels</h3>
+            <div class="split">
+              <div class="split-left">
+                <pre><code data-trim class="css example-bad">
+:root {
+  font-size: 0.625em; /* 10px */
+}
+
+.tabs {
+  font-size: 1.4rem; /* 14px */
+}
+                </code></pre>
+              </div>
+              <div class="split-right fragment">
+                <pre><code data-trim class="css example-good">
+:root {
+  /* actual base font */
+  font-size: 0.875em;
+}
+
+.tabs {
+  /* no styles needed */
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3>[desired] / [inherited]</h3>
+            <p>14px / 16px = 0.875em</p>
+            <p class="fragment">18px / 14px = 1.2857em</p>
+            <p class="fragment">24px / 13&pi; = <em>STOP IT</em></p>
+          </section>
+
+          <section>
+            <h2>Math :(</h2>
+            <img src="images/px-to-em.png" alt="Screenshot of px to em conversion tool" />
+            <p class="text-right"><a href="http://pxtoem.com/">pxtoem.com</a></p>
+          </section>
+
+          <section>
+            <h3>Beautiful typography is about ratios</h3>
+            <img src="images/type-scale.png" alt="Screenshot of ratio-based typography scaling tool" />
+            <p class="text-right"><a href="http://type-scale.com/">type-scale.com</a></p>
+          </section>
+
+          <section>
+            <h2>Don’t micromanage<br />your CSS</h2>
+            <p>Delegate responsibility to it</p>
+          </section>
+
+        </section>
+
+        <section>
+          <section>
+            <h1>Resize a module</h1>
+          </section>
+
+          <section class="slide-module-diagram">
+            <h2>Base font size on a known container</h2>
+            <div class="bordered bordered-padded">
+              <code class="css bordered-code">{ font-size: <em>1rem</em>; }</code>
+              <div class="fragment">
+                <div class="bordered bordered-blue bordered-padded m-title">
+                  <code class="css bordered-code">{ font-size: <em class="blue">0.8em</em>; }</code>
+                </div>
+                <div class="split">
+                  <div class="bordered bordered-blue bordered-padded split-left">
+                    <code class="css bordered-code">{ font-size: <em class="blue">1em</em>; }</code>
+                  </div>
+                  <div class="bordered bordered-blue bordered-padded split-right">
+                    <code class="css bordered-code">{ font-size: <em class="blue">1.2em</em>; }</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="slide-module-resize">
+            <h3>One rem-value at root; all else in ems</h3>
+            <div class="split">
+              <div class="split-left">
+                <pre><code data-trim data-noescape class="css">
+.tile {
+  border: 2px solid white;
+  padding: .6em 1.2em;
+  border-radius: .3em;
+  margin-bottom: 1em;
+  <mark>font-size: 1rem</mark>;
+}
+
+.tile__title {
+  <mark>font-size: 0.8em</mark>;
+  text-transform: uppercase;
+}
+                </code></pre>
+                <pre class="fragment" data-fragment-index="1">
+                  <code data-trim data-noescape class="css">
+.tile--small {
+  <mark>font-size: 0.625rem</mark>;
+}
+                </code></pre>
+                <pre class="fragment" data-fragment-index="2">
+                  <code data-trim data-noescape class="css">
+.tile--large {
+  <mark>font-size: 1.3rem</mark>;
+}
+                </code></pre>
+              </div>
+              <div class="split-right">
+                <div class="tile">
+                  <h4 class="tile__title">Game saved</h4>
+                  <p>Hold RESET while you turn POWER off!!</p>
+                </div>
+                <div class="tile tile--small fragment"  data-fragment-index="1">
+                  <h4 class="tile__title">Game saved</h4>
+                  <p>Hold RESET while you turn POWER off!!</p>
+                </div>
+                <div class="tile tile--large fragment"  data-fragment-index="2">
+                  <h4 class="tile__title">Game saved</h4>
+                  <p>Hold RESET while you turn POWER off!!</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <p>Use <strong class="blue">rem</strong> for <em>global sizing</em></p>
+            <p>Use <strong class="blue">em</strong> for <em>local sizing</em></p>
+          </section>
+
+
+          <section>
+            <h3>Scalable modules</h3>
+            <div class="split split-2-3">
+              <div class="split-left">
+                <pre><code data-trim data-noescape class="css">
+.tile {
+  border: 2px solid white;
+  padding: .6em 1.2em;
+  border-radius: .3em;
+  margin-bottom: 1em;
+  <mark>font-size: 1rem</mark>;
+}
+
+.tile__title {
+  <mark>font-size: 0.8em</mark>;
+  text-transform: uppercase;
+}
+                </code></pre>
+              </div>
+              <div class="split-right">
+                <a href="demo-tiles.html" target="demo">demo</a>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3>Scalable shapes</h3>
+            <div class="split split-2-3">
+              <div class="split-left">
+                <pre><code data-trim data-noescape class="css">
+.dropdown__toggle::after {
+  content: "";
+  position: absolute;
+  right: <mark>1em</mark>;
+  top: <mark>1em</mark>;
+  border: <mark>0.3em</mark> solid;
+  border-color: black transparent transparent;
+}
+                </code></pre>
+              </div>
+              <div class="split-right">
+                <a href="demo-dropdown.html" target="demo">demo</a>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3>Scalable images</h3>
+            <div class="split split-2-3">
+              <div class="split-left">
+                <pre><code data-trim data-noescape class="css">
+.twitter > img {
+  height: <mark>1em</mark>;
+  width: <mark>1em</mark>;
+  vertical-align: <mark>-0.1em</mark>;
+}
+                </code></pre>
+              </div>
+              <div class="split-right">
+                <a href="demo-svg.html" target="demo">demo</a>
+              </div>
+            </div>
+            <p>SVG FTW!</p>
+          </section>
+
+          <section>
+            <h3>Scalable shadows</h3>
+            <div class="split split-2-3">
+              <div class="split-left">
+                <pre><code data-trim data-noescape class="css">
+a:link {
+  text-decoration: none;
+  box-shadow: inset 0 <mark>-0.1em</mark> 0 0 #cef;
+  transition: box-shadow 0.2s ease-in-out;
+  color: #346;
+}
+
+a:hover {
+  box-shadow: inset 0 <mark>-1.2em</mark> 0 0 #cef;
+}
+                </code></pre>
+              </div>
+              <div class="split-right">
+                <a href="demo-box-shadow.html" target="demo">demo</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="slide-module-diagram owl">
+            <h2>All your base font are belong to us</h2>
+            <div class="bordered">
+              <div class="bordered m-title-2">
+                <div class="bordered-blue"></div>
+                <div class="bordered-blue"></div>
+                <div class="bordered-blue"></div>
+                <div class="bordered-blue"></div>
+                <div class="bordered-blue"></div>
+                <div class="bordered-blue"></div>
+              </div>
+              <div class="split">
+                <div class="split-left" style="flex: 75%">
+                  <div class="bordered">
+                    <div class="bordered bordered-blue m-title">
+                    </div>
+                    <div class="split">
+                      <div class="bordered bordered-blue split-left">
+                        <div class="bordered"> </div>
+                      </div>
+                      <div class="bordered bordered-blue split-right" style="margin-top: 0">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="split-right" style="flex: 50%; margin-top: 0;">
+                  <div class="bordered">
+                    <div class="bordered bordered-blue m-title">
+                    </div>
+                    <div class="bordered bordered-blue m-title">
+                    </div>
+                    <div class="bordered bordered-blue m-title">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </section><!-- end resize module -->
+
+        <section>
+          <section>
+            <h1>Responsive resize</h1>
+          </section>
+
+          <section>
+            <h2>Scale for each breakpoint</h2>
+            <pre><code data-trim data-noescape class="css">
+:root {
+  font-size: 0.8em;
+}
+
+@media (min-width: 35em) {
+  :root {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 50em) {
+  :root {
+    font-size: 1.25em;
+  }
+}
+            </code></pre>
+            <p class="text-right">
+              <a href="demo-page-breakpoint.html" target="demo">demo</a>
+            </p>
+          </section>
+
+          <section>
+            <h2>Viewport-relative units</h2>
+            <ul>
+              <li><em>vw</em>&mdash;% of viewport width</li>
+              <li><em>vh</em>&mdash;% of viewport height</li>
+              <li><em>vmin</em>&mdash;smaller of vh/vw</li>
+              <li><em>vmax</em>&mdash;larger of vh/vw</li>
+            </ul>
+          </section>
+
+          <section class="slide-v-units">
+            <h2>Scale based on viewport size</h2>
+            <pre><code data-trim data-noescape class="css">
+:root {
+  font-size: <mark>2vw</mark>;
+}
+            </code></pre>
+            <p class="text-right">
+              <a href="demo-page-vw.html" target="demo">demo</a>
+            </p>
+          </section>
+
+          <section class="slide-v-units">
+            <h2>calc() to the rescue</h2>
+            <pre><code data-trim data-noescape class="css">
+:root {
+  font-size: <mark>calc(0.5em + 1vw)</mark>;
+}
+            </code></pre>
+            <p class="text-right">
+              <a href="demo-page-calc.html" target="demo">demo</a>
+            </p>
+          </section>
+
+          <section>
+            <h2>Jump in with both feet</h2>
+            <p>Ems are most powerful when you fully embrace them</p>
+          </section>
+        </section><!-- end resize page -->
+
+        <section>
+          <section>
+            <h1>Communication</h1>
+            [title? -doing division w/ designer]
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Context-aware styles</h1>
+          </section>
+
+          <section>
+            [descendant selector]
+          </section>
+
+          <section>
+            [bad practice]
+          </section>
+
+          <section>
+            [inverse example]
+          </section>
+
+          <section>
+            [ex would break down w/ "neon" class]
+          </section>
+        </section><!-- end context-aware styles -->
+
+        <section>
+          <section>
+            <h1>CSS variables</h1>
+          </section>
+        </section><!-- end -->
+
+        <section>
+          <section>
+            <h1>Dynamic colors</h1>
+          </section>
+
+          <section>
+            [currentColor example]
+          </section>
+
+          <section>
+            <h2>Welcome to warp zone!</h2>
+            <p>A peek into the future</p>
+          </section>
+        </section>
+
+        <section class="slide-book">
+          <h2>CSS in Depth</h2>
+          <p><a href="https://manning.com/books/css-in-depth">manning.com/books/css-in-depth</a></p>
+          <p>50% off code: <strong>mlgrant2</strong></p>
+          <p><img src="images/book-cover.png" alt="CSS in Depth book cover" class="cover"/></p>
+          <p><img src="images/astronaut.png" alt="astronaut in space suit" class="astronaut"/></p>
+        </section>
+
+        <section class="slide-end" id="credits">
+          <div class="credit-scroll">
+            <div class="credit-scroll__inner pixel-font" id="credits-inner">
+              <h2 class="title-big">Thanks for playing!</h2>
+              <dl class="purple">
+                <dt>Pixel art</dt>
+                <dd><a href="https://twitter.com/amandaglosson">@amandaglosson</a></dd>
+                <dt>“Dragon Warrior” font</dt>
+                <dd><a href="https://twitter.com/patrick_h_lauke">@patrick_h_lauke</a></dd>
+              </dl>
+              <h3 class="purple">Find me on:</h3>
+              <div class="split purple">
+                <div class="split-left">
+                  <p>Twitter</p>
+                  <p><a href="http://twitter.com/keithjgrant">@keithjgrant</a></p>
+                </div>
+                <div class="split-right">
+                  <p>Web</p>
+                  <p><a href="http://keithjgrant.com">keithjgrant.com</a></p>
+                </div>
+              </div>
+              <h2 class="title-big" style="margin-top: 4em">THE END</h2>
+            </div>
+          </div>
+          <p><img
+            class="tentacle"
+            src="images/tentacle.png"
+            alt="purple tentacle"/></p>
         </section>
       </div>
     </div>
@@ -57,7 +858,8 @@
       // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         history: true,
-
+        transition: "zoom",
+        // transitionSpeed: "fast",
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
           { src: 'plugin/markdown/marked.js' },
@@ -66,6 +868,18 @@
           { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
         ]
       });
+      Reveal.addEventListener( 'slidechanged', function(e) {
+        var el = document.getElementById('credits-inner');
+        if (e.currentSlide.id !== 'credits') {
+          el.style.animationName = '';
+        } else {
+          el.style.animationName = 'scroll';
+        }
+      });
     </script>
+
+    <!--
+    It's a secret to everybody
+    -->
   </body>
 </html>
