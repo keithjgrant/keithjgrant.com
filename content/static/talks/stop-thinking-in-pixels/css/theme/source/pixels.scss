@@ -510,22 +510,63 @@ body {
 }
 
 .slide-end {
-  .footnote {
-    max-width: 60%;
-    margin-top: 2em;
-    margin-left: auto;
-    font-size: .875;
-    text-align: right;
+
+  .credit-scroll {
+    height: 13em;
+    overflow: hidden;
+  }
+
+  .credit-scroll__inner {
+    // height: 200%;
+    animation-duration: 15s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    text-align: center;
+  }
+
+  .title-big {
+    margin: 5em 0;
+    color: $blue;
+  }
+
+  .purple {
     color: #77b;
 
     p {
-      margin: 0.2em 0;
+      margin: 1.2em 0;
     }
 
     a:link,
     a:visited {
       color: #a199c8;
     }
+
+    h3 {
+      color: inherit;
+    }
+
+    dt {
+      color: inherit;
+    }
+  }
+
+  dl {
+    margin: 3em 0;
+    text-align: center;
+
+    dt, dd {
+      margin: 2em 0;
+    }
+  }
+
+  h3 {
+    font-size: 1em;
+    font-family: $headingFont;
+  }
+
+  .caps {
+    text-transform: uppercase;
   }
 
   .tentacle {
@@ -542,4 +583,14 @@ body {
   display: table;
   content: " ";
   clear: both;
+}
+
+@keyframes scroll {
+  0%, 10% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(-93%);
+  }
 }

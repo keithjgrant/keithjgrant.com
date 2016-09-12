@@ -819,17 +819,30 @@ a:hover {
           <p><img src="images/astronaut.png" alt="astronaut in space suit" class="astronaut"/></p>
         </section>
 
-        <section class="slide-end">
-          <h2>Thanks for playing!</h2>
-          <p>Twitter:
-            <a href="http://twitter.com/keithjgrant">@keithjgrant</a></p>
-          <p>Web:
-            <a href="http://keithjgrant.com">keithjgrant.com</a></p>
-          <aside class="footnote">
-            <p>Special thanks to:</p>
-            <p><a href="https://twitter.com/amandaglosson">@amandaglosson</a>: pixel art</p>
-            <p><a href="https://twitter.com/patrick_h_lauke">@patrick_h_lauke</a>: “Dragon Warrior” font</p>
-          </aside>
+        <section class="slide-end" id="credits">
+          <div class="credit-scroll">
+            <div class="credit-scroll__inner pixel-font" id="credits-inner">
+              <h2 class="title-big">Thanks for playing!</h2>
+              <dl class="purple">
+                <dt>Pixel art</dt>
+                <dd><a href="https://twitter.com/amandaglosson">@amandaglosson</a></dd>
+                <dt>“Dragon Warrior” font</dt>
+                <dd><a href="https://twitter.com/patrick_h_lauke">@patrick_h_lauke</a></dd>
+              </dl>
+              <h3 class="purple">Find me on:</h3>
+              <div class="split purple">
+                <div class="split-left">
+                  <p>Twitter</p>
+                  <p><a href="http://twitter.com/keithjgrant">@keithjgrant</a></p>
+                </div>
+                <div class="split-right">
+                  <p>Web</p>
+                  <p><a href="http://keithjgrant.com">keithjgrant.com</a></p>
+                </div>
+              </div>
+              <h2 class="title-big" style="margin-top: 4em">The end</h2>
+            </div>
+          </div>
           <p><img
             class="tentacle"
             src="images/tentacle.png"
@@ -854,6 +867,14 @@ a:hover {
           { src: 'plugin/notes/notes.js', async: true },
           { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
         ]
+      });
+      Reveal.addEventListener( 'slidechanged', function(e) {
+        var el = document.getElementById('credits-inner');
+        if (e.currentSlide.id !== 'credits') {
+          el.style.animationName = '';
+        } else {
+          el.style.animationName = 'scroll';
+        }
       });
     </script>
 
