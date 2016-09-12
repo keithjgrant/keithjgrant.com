@@ -1,0 +1,74 @@
+<!doctype html>
+<head>
+  <style>
+    :root {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1em;
+    }
+
+    button {
+      padding: 0.2em 1em;
+      font-size: 1rem;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      color: #346;
+      dispay: block;
+    }
+    button.active {
+      background-color: #346;
+      color: #fff;
+    }
+
+    .button-group {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+
+    a:link {
+      text-decoration: none;
+      box-shadow: inset 0 -0.1em 0 0 #cef;
+      transition: box-shadow .2s ease-in-out;
+      color: #346;
+    }
+
+    a:hover {
+      box-shadow: inset 0 -1.2em 0 0 #cef;
+    }
+
+    .large {
+      font-size: 2em;
+    }
+
+    .small {
+      font-size: 0.75em;
+    }
+  </style>
+</head>
+<body>
+  <div class="button-group">
+    <button value="small">small</button>
+    <button value="medium" class="active">medium</button>
+    <button value="large">large</button>
+  </div>
+
+  <p id="demo">
+    <a href="#">Sample link</a>
+  </p>
+
+  <script type="text/javascript">
+    (function () {
+      var buttons = document.querySelectorAll('button');
+      Array.prototype.map.call(buttons, function(button) {
+        button.addEventListener('click', handleClick);
+      });
+
+      function handleClick(e) {
+        Array.prototype.map.call(buttons, function(button) {
+          button.className = '';
+        });
+        this.className = 'active';
+        document.body.className = e.target.value;
+      }
+    }());
+  </script>
+</body>

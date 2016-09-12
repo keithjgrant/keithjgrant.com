@@ -1,0 +1,89 @@
+<!doctype html>
+<head>
+  <style>
+    :root {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1em;
+    }
+
+    .button-group {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+
+    .button-group > button {
+      padding: 0.2em 1em;
+      font-size: 1rem;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      color: #346;
+      dispay: block;
+    }
+    .button-group > button.active {
+      background-color: #346;
+      color: #fff;
+    }
+
+    .twitter {
+      padding: 0.3em 1em;
+      font-size: 1rem;
+      background-color: #fff;
+      border: 1px solid #00abf1;
+      border-radius: 0.3em;
+    }
+
+    .twitter > img {
+      height: 1em;
+      width: 1em;
+      vertical-align: -0.1em;
+    }
+
+    .twitter--small {
+      font-size: 0.75rem;
+    }
+
+    .twitter--large {
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="button-group">
+    <button value="small">small</button>
+    <button value="medium" class="active">medium</button>
+    <button value="large">large</button>
+  </div>
+
+  <button id="demo" class="twitter">
+    Tweet this
+    <img src="images/twitter.svg" />
+  </button>
+
+  <script type="text/javascript">
+    (function () {
+      var buttons = document.querySelectorAll('.button-group > button');
+      Array.prototype.map.call(buttons, function(button) {
+        button.addEventListener('click', handleClick);
+      });
+
+      function handleClick(e) {
+        Array.prototype.map.call(buttons, function(button) {
+          button.className = '';
+        });
+        this.className = 'active';
+        var demo = document.getElementById('demo');
+        demo.classList.remove('twitter--small', 'twitter--large');
+        demo.classList.add('twitter--' + e.target.value);
+      }
+    }());
+
+    (function () {
+      var toggle = document.querySelector('.dropdown__toggle');
+      toggle.addEventListener('click', function (event) {
+        event.preventDefault();
+        var dropdown = event.target.parentNode;
+        dropdown.classList.toggle('is-open');
+      });
+    }());
+  </script>
+</body>

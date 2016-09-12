@@ -1,0 +1,89 @@
+<!doctype html>
+
+<head>
+  <style>
+    :root {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #222;
+      background-image: -webkit-radial-gradient(#222, #111);
+      background-image: radial-gradient(#222, #111);
+      color: #fff;
+    }
+
+    *+ * {
+      margin-top: 2rem;
+    }
+
+    .split {
+      display: flex;
+      padding: 2em;
+    }
+
+    .split> * {
+      flex: 1;
+      margin-top: 0;
+    }
+
+    .split> *+ * {
+      margin-left: 2rem;
+    }
+
+    .style-demo {
+      display: block;
+      padding: 0 1em;
+      border: 1px solid #666;
+      white-space: pre;
+      font-family: monospace;
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="split">
+    <style class="style-demo" contentEditable>
+.tile {
+  padding: 0.6em 1.2em;
+  border-radius: 0.3em;
+  border: 2px solid white;
+}
+
+.tile__title {
+  margin: 0 0 0.8em;
+  color: #ccc;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.tile--small {
+
+}
+
+.tile--large {
+
+}
+    </style>
+
+    <div>
+      <div class="tile">
+        <h4 class="tile__title">Lorem ipsum</h4>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat, ex non tristique fermentum, metus enim vulputate est, eget sodales augue justo non felis. Proin pellentesque id eros et elementum. Nullam id efficitur magna. Morbi imperdiet faucibus varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus massa diam, dictum a nisl vitae, dignissim blandit leo. Curabitur tortor urna, dictum vel lectus at, hendrerit luctus ex. Phasellus ornare tempus erat.
+      </div>
+
+      <div class="tile tile--small">
+        <h4 class="tile__title">Lorem ipsum</h4>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat, ex non tristique fermentum, metus enim vulputate est, eget sodales augue justo non felis. Proin pellentesque id eros et elementum. Nullam id efficitur magna. Morbi imperdiet faucibus varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus massa diam, dictum a nisl vitae, dignissim blandit leo. Curabitur tortor urna, dictum vel lectus at, hendrerit luctus ex. Phasellus ornare tempus erat.
+      </div>
+
+      <div class="tile tile--large">
+        <h4 class="tile__title">Lorem ipsum</h4>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat, ex non tristique fermentum, metus enim vulputate est, eget sodales augue justo non felis. Proin pellentesque id eros et elementum. Nullam id efficitur magna. Morbi imperdiet faucibus varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus massa diam, dictum a nisl vitae, dignissim blandit leo. Curabitur tortor urna, dictum vel lectus at, hendrerit luctus ex. Phasellus ornare tempus erat.
+      </div>
+    </div>
+
+</body>
