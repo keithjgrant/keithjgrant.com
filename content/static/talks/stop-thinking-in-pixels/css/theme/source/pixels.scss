@@ -594,3 +594,16 @@ body {
     transform: translateY(-93%);
   }
 }
+
+.frag-show {
+  display: none;
+}
+.frag {
+  .frag-strike {
+    text-decoration: line-through;
+  }
+
+  .frag-show {
+    display: inline;
+  }
+}

@@ -393,12 +393,15 @@ ul {
 
           <section>
             <h2>Use relative units for font sizes</h2>
-            <p><img src="images/browser-settings.png"
-              alt="Browser zoom and font size settings"/></p>
+            <pre><code data-trim class="css">
+.tabs {
+  font-size: 1.125rem;
+}
+            </code></pre>
           </section>
 
           <section>
-            <p>Ems based on an absolute font are not a11y-friendly</p>
+            <p>Ems based on an absolute font are not accessible</p>
             <div class="split">
               <div class="split-left">
                 <pre><code data-trim class="css example-bad">
@@ -423,6 +426,12 @@ ul {
                 </code></pre>
               </div>
             </div>
+          </section>
+
+          <section>
+            <h2>Default font vs. zoom</h2>
+            <p><img src="images/browser-settings.png"
+              alt="Browser zoom and font size settings"/></p>
           </section>
 
           <section>
@@ -486,7 +495,44 @@ ul {
 
         <section>
           <section>
-            <h1>Resize a module</h1>
+            <h1>Resizable<br />modules</h1>
+            <img src="images/test-tubes.png" alt="Pixelated test tubes" class="img-br" />
+          </section>
+
+          <section>
+            <h2>Resizing px is tedious</h3>
+            <div class="split">
+              <div class="split-left">
+                <pre><code data-trim data-noescape class="css example-bad">
+.tile {
+  border: 2px solid white;
+  padding: 7px 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.tile__title {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+                </code></pre>
+              </div>
+              <div class="split-right fragment">
+                <pre><code data-trim data-noescape class="css example-bad">
+.tile--small {
+  padding: 4px 10px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  font-size: 10px;
+}
+
+.tile--small > .tile__title {
+  font-size: 8px;
+}
+                </code></pre>
+              </div>
+            </div>
           </section>
 
           <section class="slide-module-diagram">
@@ -516,8 +562,8 @@ ul {
                 <pre><code data-trim data-noescape class="css">
 .tile {
   border: 2px solid white;
-  padding: .6em 1.2em;
-  border-radius: .3em;
+  padding: 0.6em 1.2em;
+  border-radius: 0.3em;
   margin-bottom: 1em;
   <mark>font-size: 1rem</mark>;
 }
@@ -570,8 +616,8 @@ ul {
                 <pre><code data-trim data-noescape class="css">
 .tile {
   border: 2px solid white;
-  padding: .6em 1.2em;
-  border-radius: .3em;
+  padding: 0.6em 1.2em;
+  border-radius: 0.3em;
   margin-bottom: 1em;
   <mark>font-size: 1rem</mark>;
 }
@@ -610,7 +656,7 @@ ul {
           </section>
 
           <section>
-            <h3>Scalable images</h3>
+            <h3>Scalable icons/images</h3>
             <div class="split split-2-3">
               <div class="split-left">
                 <pre><code data-trim data-noescape class="css">
@@ -689,12 +735,13 @@ a:hover {
               </div>
             </div>
           </section>
-
         </section><!-- end resize module -->
+
 
         <section>
           <section>
-            <h1>Responsive resize</h1>
+            <h1>Responsive<br />resize</h1>
+            <img src="images/treasure-chest.png" alt="Pixelated treasure chest" class="img-br" />
           </section>
 
           <section>
@@ -761,44 +808,115 @@ a:hover {
           </section>
         </section><!-- end resize page -->
 
+
         <section>
           <section>
-            <h1>Communication</h1>
-            [title? -doing division w/ designer]
+            <h1 style="margin-bottom: 2em;">Designer vs. developer</h1>
+            <img src="images/pirate.png" alt="Pixelated pirate" class="img-br img-flipped" />
+            <img src="images/park-ranger.png" alt="Pixelated park ranger" class="img-bl" />
           </section>
-        </section>
+
+          <section>
+            <h2 style="text-indent: -0.9ch">“Can you make this margin 3px taller?”</h2>
+            <p>Sometimes you need to talk in absolutes</p>
+          </section>
+
+          <section>
+            <h2>Two options:</h2>
+            <ol>
+              <li>Do the conversion yourself</li>
+              <li>Teach the other party ems</li>
+            </ol>
+          </section>
+
+          <section>
+            <h3>[desired] / [inherited]</h3>
+            <p>Sometimes it’s just easier to play with values in DevTools</p>
+          </section>
+
+          <section>
+            <h2>Do the math</h2>
+            <p>Push through the awkward phase</p>
+          </section>
+        </section><!-- end designer/developer -->
 
         <section>
           <section>
             <h1>Context-aware styles</h1>
+            <img src="images/blue-heron.png" alt="Pixelated blue heron" class="img-br" />
           </section>
 
           <section>
-            [descendant selector]
+            <h2>Descendant selectors</h2>
+            <pre><code data-trim class="css example-bad">
+.tile {
+  color: red;
+}
+
+.sidebar .tile {
+  color: blue;
+}
+            </code></pre>
+            <div>
+              <p>Bad practice: <span class="frag-strike">Styles</span><em class="frag-show">Selectors</em> based on context</p>
+              <div class="fragment frag-trigger"></div>
+            </div>
           </section>
 
           <section>
-            [bad practice]
-          </section>
-
-          <section>
-            [inverse example]
-          </section>
-
-          <section>
-            [ex would break down w/ "neon" class]
+            <h3>Ems/rems are context-aware</h3>
+            <pre><code data-trim class="css example-good">
+.tile {
+  font-size: 1.2rem;
+}
+            </code></pre>
+            <p>Styles are contained in the module</p>
           </section>
         </section><!-- end context-aware styles -->
 
         <section>
           <section>
-            <h1>CSS variables</h1>
+            <h1>“CSS variables”</h1>
+            <img src="images/magic-lamp.png" alt="Pixelated magic lamp" class="img-br" />
           </section>
-        </section><!-- end -->
+
+          <section>
+            <h2>Custom properties</h2>
+            <pre><code data-trim class="css">
+:root {
+  --font-color: black;
+}
+
+.tile {
+  color: var(--font-color);
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Context-aware CSS</h2>
+            <pre><code data-trim class="css example-good">
+:root {
+  --font-color: black;
+}
+
+.inverse {
+  background-color: black;
+  --font-color: white;
+}
+
+.tile {
+  color: var(--font-color);
+}
+            </code></pre>
+            <p>Styles are contained in the module</p>
+          </section>
+        </section><!-- end custom properties -->
 
         <section>
           <section>
             <h1>Dynamic colors</h1>
+            <img src="images/mushrooms.png" alt="Pixelated mushrooms" class="img-br" />
           </section>
 
           <section>
@@ -809,14 +927,35 @@ a:hover {
             <h2>Welcome to warp zone!</h2>
             <p>A peek into the future</p>
           </section>
-        </section>
+        </section><!-- end dynamic colors -->
 
-        <section class="slide-book">
-          <h2>CSS in Depth</h2>
-          <p><a href="https://manning.com/books/css-in-depth">manning.com/books/css-in-depth</a></p>
-          <p>50% off code: <strong>mlgrant2</strong></p>
-          <p><img src="images/book-cover.png" alt="CSS in Depth book cover" class="cover"/></p>
-          <p><img src="images/astronaut.png" alt="astronaut in space suit" class="astronaut"/></p>
+        <section>
+          <section class="slide-book">
+            <h2>CSS in Depth</h2>
+            <p><a href="https://manning.com/books/css-in-depth">manning.com/books/css-in-depth</a></p>
+            <p>50% off code: <strong>mlgrant2</strong></p>
+            <p><img src="images/book-cover.png" alt="CSS in Depth book cover" class="cover"/></p>
+            <p><img src="images/astronaut.png" alt="astronaut in space suit" class="astronaut"/></p>
+          </section>
+
+          <section>
+            <h2>CSS in Depth</h2>
+            <div class="split">
+              <div class="split-left">
+                <p><a href="https://manning.com/books/css-in-depth">manning.com/books/css-in-depth</a></p>
+                <p>50% off code: <strong>mlgrant2</strong></p>
+              </div>
+              <div class="split-left">
+                <ul>
+                  <li>Fundamentals revisited</li>
+                  <li>Layout techniques (old & new)</li>
+                  <li>Dealing with CSS at scale</li>
+                  <li>Translations, transitions, animations</li>
+                  <li>Making your design look good</li>
+                </ul>
+              </div>
+            </div>
+          </section>
         </section>
 
         <section class="slide-end" id="credits">
@@ -868,12 +1007,22 @@ a:hover {
           { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
         ]
       });
-      Reveal.addEventListener( 'slidechanged', function(e) {
+      Reveal.addEventListener('slidechanged', function(e) {
         var el = document.getElementById('credits-inner');
         if (e.currentSlide.id !== 'credits') {
           el.style.animationName = '';
         } else {
           el.style.animationName = 'scroll';
+        }
+      });
+      Reveal.addEventListener('fragmentshown', function(e) {
+        if (event.fragment.classList.contains('frag-trigger')) {
+          event.fragment.parentElement.classList.add('frag');
+        }
+      });
+      Reveal.addEventListener('fragmenthidden', function(e) {
+        if (event.fragment.classList.contains('frag-trigger')) {
+          event.fragment.parentElement.classList.remove('frag');
         }
       });
     </script>
