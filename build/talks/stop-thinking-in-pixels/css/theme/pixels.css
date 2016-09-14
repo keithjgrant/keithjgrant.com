@@ -718,3 +718,12 @@ body {
     transform: translateY(0%); }
   100% {
     transform: translateY(-93%); } }
+
+.frag-show {
+  display: none; }
+
+.frag .frag-strike {
+  text-decoration: line-through; }
+
+.frag .frag-show {
+  display: inline; }
