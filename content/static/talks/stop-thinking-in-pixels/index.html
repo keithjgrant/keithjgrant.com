@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="images/gladiator-cropped.png" type="image/png">
+    <link rel="icon" href="images/gladiator-cropped.png" type="image/png">
 
     <title>Stop Thinking in Pixels</title>
 
@@ -53,6 +55,7 @@
         </section>
 
 
+        <!--
         <section>
           <section>
             <h1>Late binding</h1>
@@ -60,49 +63,20 @@
           </section>
 
           <section>
-            <h2 style="text-indent: -0.9ch">“I wish we could throw out CSS and create something better”</h2>
-          </section>
-
-          <section>
             <h2>CSS is unique</h2>
-            <div class="split">
-              <div class="split-left">
-                <p>Conventional design:<br>putting content onto canvas</p>
-                <ul>
-                  <li>Print publishing</li>
-                  <li>Photoshop</li>
-                  <li>InDesign</li>
-                  <li>PDFs</li>
-                </ul>
-              </div>
-              <div class="split-right fragment">
-                <p>CSS:<br />
-                  Writing rules to put<br />
-                  <em>unknown content</em> into an<br />
-                  <em>unknown medium</em>.
-                </p>
-              </div>
-            </div>
+            <p>Rules for <em>unknown content</em> in an
+              <em>unknown medium</em>
+            </p>
           </section>
-
 
           <section>
             <h2>Hiding from abstraction</h2>
-            <p>Brief history of web design</p>
-          </section>
-
-          <section>
             <p><img alt="Screenshot of 750px fixed-width layout" src="images/fixed-width.png"/></p>
           </section>
 
           <section>
-            <p><img alt="A hand holding original iPhone" src="images/iphone.jpg"/></p>
-          </section>
-
-          <section>
-            <h3>Don’t hide from abstraction</h3>
-            <p>Use it to your advantage</p>
-            <p class="fragment">CSS provides tools for working with abstraction</p>
+            <h3>Use abstraction to your advantage</h3>
+            <p>CSS provides tools for working with abstraction</p>
           </section>
         </section><!-- end late binding/history -->
 
@@ -144,19 +118,16 @@
             <p>Absolute units don’t adapt to their environment</p>
           </section>
 
+          <!--
           <section>
             <h3>Absolute units</h3>
             <q>
               “Single men between the ages of twenty-one and fifty must pay an annual tax of <u>one dollar</u>.”
               <cite>Missouri law, enacted 1820</cite>
             </q>
-            <!-- source: http://blog.lawinfo.com/2012/09/28/weird-laws-true-or-false-edition-5/ -->
-            <!-- <q class="fragment">
-              “If any person has a puppet show, wire dancing or tumbling act in the state of Indiana and receives money for it, they will be fined <u>$3</u> under the Act to Prevent Certain Immoral Practices.”
-              <cite>Indiana law</cite>
-            </q> -->
-            <!-- http://www.dumblaws.com/laws/united-states/indiana -->
+            <!-- source: http://blog.lawinfo.com/2012/09/28/weird-laws-true-or-false-edition-5/ --/>
           </section>
+          -->
         </section><!-- end abs vs reltive -->
 
 
@@ -170,7 +141,7 @@
             <h2>It's dangerous to go alone! Take this.</h2>
             <div class="em-box" style="font-size: 4em">M</div>
             <div class="em-box" style="font-size: 2em">M</div>
-            <div class="fragment em-box-adjusted" style="font-size: 4em">Yy</div>
+            <!--<div class="fragment em-box-adjusted" style="font-size: 4em">Yy</div>-->
           </section>
 
           <section class="slide-ems-basic">
@@ -356,10 +327,11 @@ ul {
             </div>
           </section>
 
+          <!--
           <section>
             <h2>ch</h2>
             <p>Equal to the width of “0” character</p>
-            <!-- http://clagnut.com/blog/2384/ -->
+            <!-- http://clagnut.com/blog/2384/ --/>
           </section>
 
           <section class="slide-ch">
@@ -372,17 +344,18 @@ ul {
               This block is 30ch wide.
             </div>
           </section>
+          -->
 
           <section>
             <h2>Recommendation</h2>
             <p>By default, use:</p>
             <dl>
-              <dt>em</dt>
-              <dd>padding, margin, border-radius</dd>
-              <dt>rem</dt>
-              <dd>font-size</dd>
               <dt>px</dt>
               <dd>border-width</dd>
+              <dt>rem</dt>
+              <dd>font-size</dd>
+              <dt>em</dt>
+              <dd>padding, margin, border-radius</dd>
             </dl>
             <p class="fragment">When in doubt, us ems</p>
           </section>
@@ -395,6 +368,7 @@ ul {
             <p><img src="images/cactus.png" alt="pixelated cactus" class="img-br"/></p>
           </section>
 
+          <!--
           <section>
             <h2>Use relative units for font sizes</h2>
             <pre><code data-trim class="css">
@@ -437,11 +411,13 @@ ul {
             <p><img src="images/browser-settings.png"
               alt="Browser zoom and font size settings"/></p>
           </section>
+          -->
 
           <section>
-            <h2>There’s more to ems than just a11y</h2>
+            <h2>There’s more to ems than just accessibility</h2>
           </section>
 
+          <!--
           <section>
             <h3>Stop thinking in pixels</h3>
             <div class="split">
@@ -470,6 +446,7 @@ ul {
               </div>
             </div>
           </section>
+          -->
 
           <section>
             <h3>[desired] / [inherited]</h3>
@@ -853,7 +830,7 @@ a:hover {
             <img src="images/blue-heron.png" alt="Pixelated blue heron" class="img-br" />
           </section>
 
-          <section>
+          <!--<section>
             <h2>Descendant selectors</h2>
             <pre><code data-trim class="css example-bad">
 .tile {
@@ -879,13 +856,13 @@ a:hover {
             </code></pre>
             <p>Styles are contained in the module</p>
           </section>
-        </section><!-- end context-aware styles -->
+        </section><!-- end context-aware styles --/>
 
         <section>
           <section>
-            <h1>“CSS variables”</h1>
+            <h2>“CSS variables”</h2>
             <img src="images/magic-lamp.png" alt="Pixelated magic lamp" class="img-br" />
-          </section>
+          </section>-->
 
           <section>
             <h2>Custom properties</h2>
@@ -918,20 +895,22 @@ a:hover {
             </code></pre>
             <p>Styles are contained in the module</p>
           </section>
-        </section><!-- end custom properties -->
+        <!--</section><!-- end custom properties --/>
 
         <section>
           <section>
             <h1>Dynamic colors</h1>
             <img src="images/mushrooms.png" alt="Pixelated mushrooms" class="img-br" />
-          </section>
+          </section>-->
 
           <section>
+            <h2>Dynamic colors</h2>
             [currentColor example]
           </section>
 
           <section>
             <h2>Welcome to warp zone!</h2>
+            [color functions]
             <p>A peek into the future</p>
           </section>
         </section><!-- end dynamic colors -->
@@ -945,6 +924,7 @@ a:hover {
             <p><img src="images/astronaut.png" alt="astronaut in space suit" class="astronaut"/></p>
           </section>
 
+          <!--
           <section>
             <h2>CSS in Depth</h2>
             <div class="split">
@@ -962,7 +942,7 @@ a:hover {
                 </ul>
               </div>
             </div>
-          </section>
+          </section>-->
         </section>
 
         <section class="slide-end" id="credits">
@@ -986,7 +966,7 @@ a:hover {
                   <p><a href="http://keithjgrant.com">keithjgrant.com</a></p>
                 </div>
               </div>
-              <h2 class="title-big" style="margin-top: 4em">THE END</h2>
+              <h2 class="title-big" style="margin-top: 3em">THE END</h2>
             </div>
           </div>
           <p><img
