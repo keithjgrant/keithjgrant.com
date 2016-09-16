@@ -32,7 +32,7 @@
   font-style: normal;
   font-weight: 400;
   src: url(../heavy-smash.woff) format('woff');
-  unicode-range: U+0040;
+  unicode-range: U+0040; /* @ symbol only */
 }
 
 // Override theme settings (see ../template/settings.scss)
@@ -591,7 +591,7 @@ body {
   }
 
   100% {
-    transform: translateY(-93%);
+    transform: translateY(-97%);
   }
 }
 
