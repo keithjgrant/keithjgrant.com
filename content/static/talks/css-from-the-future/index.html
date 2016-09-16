@@ -24,20 +24,20 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section class="slide-title">
+        <section class="slide-title" data-background-image="images/sillouette.jpg">
           <h1>CSS from the Future</h1>
-          <p><img
+          <!-- <p><img
             src="images/sillouette.jpg"
             alt="Phone booth time machine in the future"
             class="council"
-          /></p>
+          /></p> -->
         </section>
 
 
         <section>
           <h2>@keithjgrant</h2>
-          <p>Developer: Intercontinental Exchange/New York Stock Exchange</p>
-          <p>Author: CSS in Depth, Manning Publications (2017)</p>
+          <p><em>Intercontinental Exchange</em>/New York Stock Exchange</p>
+          <p><em>CSS in Depth</em>, Manning Publications (2017)</p>
           <p><a href="http://keithjgrant.com/talks">keithjgrant.com/talks</a></p>
         </section>
 
@@ -57,27 +57,24 @@
 
           <section>
             <h2>W3C</h2>
-            <ul>
-              <li>Oversees standards for the <em>Open Web Platform</em></li>
-              <li>Dozens of working groups (e.g. CSS WG)</li>
-              <li>Hundreds of member companies<br />&mdash; including all major browser vendors</li>
-            </ul>
+            <p>Oversees standards<br />for the <em>Open Web Platform</em></p>
+            <p>Dozens of working groups, including <em>CSS WG</em></p>
           </section>
 
           <section>
             <h2>CSS WG</h2>
-            <p>100+ members:</p>
+            <p><em>100+ members</em>:</p>
             <ul>
               <li>W3C staff (6)</li>
               <li>W3C invited experts (10)</li>
-              <li><strong>Representatives from W3C member companies</strong></li>
+              <li>Representatives from W3C member companies</li>
             </ul>
           </section>
 
           <section class="slide-specs">
             <h2>CSS Specifications</h2>
-            <p>There is no “CSS3” specification</p>
-            <ul class="fragment columns small">
+            <p>There is <em>no “CSS3”</em> specification</p>
+            <ul class="fragment columns small wordy">
               <li>Cascading &amp; Inheritance</li>
               <li>Selectors</li>
               <li>Box Model</li>
@@ -101,12 +98,12 @@
           <section class="slide-spec-process">
             <h2>Specification development</h2>
             <!-- https://www.w3.org/2015/Process-20150901/#maturity-levels -->
-            <ul class="stages">
+            <ul class="stages stages--full">
               <li>Editor’s Draft</li>
               <li>Working Draft</li>
-              <li>Candidate Recommendation</li>
-              <li>Proposed Recommendation</li>
-              <li>W3C Recommendation</li>
+              <li class="is-active">Candidate Recommendation</li>
+              <li class="is-active">Proposed Recommendation</li>
+              <li class="is-active">W3C Recommendation</li>
             </ul>
           </section>
         </section>
@@ -115,22 +112,43 @@
           <section>
             <h1>Custom properties</h1>
             <p>a.k.a. "CSS Variables"</p>
+            <ul class="stages">
+              <li>ED</li>
+              <li>WD</li>
+              <li class="is-active">CR</li>
+              <li>PR</li>
+              <li>REC</li>
+            </ul>
           </section>
 
           <section>
-            <h2>Cool... but what’s with the syntax?</h2>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h1>Custom selectors</h1>
+            <p>Cool... but what’s with <em>that syntax?</em></p>
           </section>
         </section>
 
         <section>
           <section>
             <h1>Custom media queries</h1>
+            <ul class="stages">
+              <li>ED</li>
+              <li class="is-active">WD</li>
+              <li>CR</li>
+              <li>PR</li>
+              <li>REC</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Custom selectors</h1>
+            <ul class="stages">
+              <li class="is-active">ED</li>
+              <li>WD</li>
+              <li>CR</li>
+              <li>PR</li>
+              <li>REC</li>
+            </ul>
           </section>
         </section>
 
@@ -138,6 +156,14 @@
           <section>
             <h1>@apply</h1>
             <p>"Mixins" / "Extends"</p>
+            <ul class="stages">
+              <li class="fragment is-active">“A collection of interesting ideas”</li>
+              <li>ED</li>
+              <li>WD</li>
+              <li>CR</li>
+              <li>PR</li>
+              <li>REC</li>
+            </ul>
           </section>
 
           <!-- no support for parameters; use custom properties -->
@@ -146,14 +172,30 @@
         <section>
           <section>
             <h1>Nested selectors</h1>
+            <ul class="stages">
+              <li class="is-active">ED</li>
+              <li>WD</li>
+              <li>CR</li>
+              <li>PR</li>
+              <li>REC</li>
+            </ul>
           </section>
         </section>
 
         <section>
           <section>
             <h1>Color functions</h1>
+            <ul class="stages">
+              <li class="is-active">ED</li>
+              <li>WD</li>
+              <li>CR</li>
+              <li>PR</li>
+              <li>REC</li>
+            </ul>
           </section>
         </section>
+
+        <!-- @import ? -->
 
         <section>
           <section>
@@ -165,6 +207,34 @@
           <section>
             <h1>Using this syntax today</h1>
             <p><a href="http://postcss.org/">PostCSS</a> + <a href="http://cssnext.io/">cssnext</a></p>
+          </section>
+        </section>
+
+        <section>
+          <section class="slide-book">
+            <h2>CSS in Depth</h2>
+            <p><a href="https://manning.com/books/css-in-depth">manning.com/books/css-in-depth</a></p>
+            <p>50% off code: <strong>mlgrant2</strong></p>
+            <p><img src="images/book-cover.png" alt="CSS in Depth book cover" class="cover" style="position: absolute; right: 0; top: 0; height: 100%;"/></p>
+          </section>
+
+          <section>
+            <h2>CSS in Depth</h2>
+            <div>
+              <div>
+                <p><a href="https://manning.com/books/css-in-depth">manning.com/books/css-in-depth</a></p>
+                <p>50% off code: <strong>mlgrant2</strong></p>
+              </div>
+              <div>
+                <ul class="wordy">
+                  <li>Fundamentals revisited</li>
+                  <li>Mastering layout (incl. positioning, flexbox, grid)</li>
+                  <li>CSS at scale</li>
+                  <li>Translations, transitions, animations</li>
+                  <li>Making your design look good</li>
+                </ul>
+              </div>
+            </div>
           </section>
         </section>
 
