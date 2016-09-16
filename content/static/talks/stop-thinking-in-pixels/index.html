@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="shortcut icon" href="images/gladiator-cropped.png" type="image/png">
-    <link rel="icon" href="images/gladiator-cropped.png" type="image/png">
 
     <title>Stop Thinking in Pixels</title>
 
@@ -16,11 +14,11 @@
 
     <!-- Printing and PDF exports -->
     <script>
-      var link = document.createElement( 'link' );
+      var link = document.createElement('link');
       link.rel = 'stylesheet';
       link.type = 'text/css';
       link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
+      document.getElementsByTagName('head')[0].appendChild(link);
     </script>
   </head>
   <body>
@@ -868,10 +866,12 @@ a:hover {
             <h2>Custom properties</h2>
             <pre><code data-trim class="css">
 :root {
+  /* declaration */
   --font-color: black;
 }
 
 .tile {
+  /* usage */
   color: var(--font-color);
 }
             </code></pre>
@@ -879,7 +879,7 @@ a:hover {
 
           <section>
             <h2>Context-aware CSS</h2>
-            <pre><code data-trim class="css example-good">
+            <pre><code data-trim class="css">
 :root {
   --font-color: black;
 }
@@ -891,9 +891,10 @@ a:hover {
 
 .tile {
   color: var(--font-color);
+  border-color: var(--font-color);
 }
             </code></pre>
-            <p>Styles are contained in the module</p>
+            <p class="text-right"><a href="demo-variables.html" target="demo">demo</a></p>
           </section>
         <!--</section><!-- end custom properties --/>
 
@@ -905,13 +906,64 @@ a:hover {
 
           <section>
             <h2>Dynamic colors</h2>
-            [currentColor example]
+            <pre><code data-trim data-noescape class="css">
+.message {
+  padding: 0.4em 0.8em;
+  color: navyblue;
+  background-color: lightblue;
+  border: 1px solid <mark>currentColor</mark>;
+}
+
+.message--danger {
+  color: darkred; /* changes border color too! */
+  background-color: pink;
+}
+            </code></pre>
+            <p class="text-right"><a href="demo-current-color.html" target="demo">demo</a></p>
           </section>
 
           <section>
             <h2>Welcome to warp zone!</h2>
-            [color functions]
             <p>A peek into the future</p>
+          </section>
+
+          <section>
+            <h2>Color manipulation</h2>
+            <pre><code data-trim data-noescape class="css">
+.whoa {
+  color: var(--brand-blue);
+  background-color: color(currentColor lightness(+50%));
+  border: 1px solid currentColor;
+}
+
+.whoa--danger {
+  color: var(--brand-red);
+}
+
+.whoa--warning {
+  color: var(--brand-orange);
+}
+            </code></pre>
+            <p class="text-right"><a href="http://codepen.io/keithjgrant/pen/XjKrod?editors=0100" target="demo">demo</a> (transpiled)</p>
+          </section>
+
+          <section>
+            <h3>Stack multiple adjustments</h3>
+            <pre><code data-trim data-noescape class="css">
+.neat {
+  background: color(
+    #f00
+    lightness(+30%)
+    hue(+40)
+    saturation(-30%)
+  );
+}
+            </code></pre>
+            <p class="fragment">Other adjustments: red, green, blue, whiteness, blackness, tint, shade, blend, contrast</p>
+          </section>
+
+          <section>
+            <h2>Create hierarchies<br />of values</h2>
           </section>
         </section><!-- end dynamic colors -->
 
