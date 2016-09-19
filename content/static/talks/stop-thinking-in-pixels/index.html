@@ -362,92 +362,21 @@ ul {
 
         <section>
           <section>
-            <h1>Typography</h1>
+            <h1 style="text-indent: -0.9ch">“Use relative units for<br />font-size”</h1>
             <p><img src="images/cactus.png" alt="pixelated cactus" class="img-br"/></p>
           </section>
 
-          <!--
           <section>
-            <h2>Use relative units for font sizes</h2>
-            <pre><code data-trim class="css">
-.tabs {
-  font-size: 1.125rem;
-}
-            </code></pre>
+            <h3>There’s more to ems than just accessibility</h3>
+            <ul class="fragment">
+              <li>More accurate</li>
+              <li>Simpler code</li>
+              <li>Better flexibility</li>
+            </ul>
           </section>
 
           <section>
-            <p>Ems based on an absolute font are not accessible</p>
-            <div class="split">
-              <div class="split-left">
-                <pre><code data-trim class="css example-bad">
-:root {
-  font-size: 16px;
-}
-
-.tabs {
-  font-size: 1.125rem;
-}
-                </code></pre>
-              </div>
-              <div class="split-right fragment">
-                <pre><code data-trim class="css example-good">
-:root {
-  font-size: 1em;
-}
-
-.tabs {
-  font-size: 1.125rem;
-}
-                </code></pre>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <h2>Default font vs. zoom</h2>
-            <p><img src="images/browser-settings.png"
-              alt="Browser zoom and font size settings"/></p>
-          </section>
-          -->
-
-          <section>
-            <h2>There’s more to ems than just accessibility</h2>
-          </section>
-
-          <!--
-          <section>
-            <h3>Stop thinking in pixels</h3>
-            <div class="split">
-              <div class="split-left">
-                <pre><code data-trim class="css example-bad">
-:root {
-  font-size: 0.625em; /* 10px */
-}
-
-.tabs {
-  font-size: 1.4rem; /* 14px */
-}
-                </code></pre>
-              </div>
-              <div class="split-right fragment">
-                <pre><code data-trim class="css example-good">
-:root {
-  /* actual base font */
-  font-size: 0.875em;
-}
-
-.tabs {
-  /* no styles needed */
-}
-                </code></pre>
-              </div>
-            </div>
-          </section>
-          -->
-
-          <section>
-            <h3>[desired] / [inherited]</h3>
+            <h3>[desired size] / [base size]</h3>
             <p>14px / 16px = 0.875em</p>
             <p class="fragment">18px / 14px = 1.2857em</p>
             <p class="fragment">24px / 13&pi; = <em>STOP IT</em></p>
@@ -460,9 +389,36 @@ ul {
           </section>
 
           <section>
+            <h3><i>The Elements of Typographic Scale</i>,<br />Robert Bringhurst</h3>
+            <p><img src="images/typographic-scale.gif" alt="The typographic scale: 12pt, 14pt, 16pt, and so on" /></p>
+          </section>
+
+          <section>
             <h3>Beautiful typography is about ratios</h3>
             <img src="images/type-scale.png" alt="Screenshot of ratio-based typography scaling tool" />
             <p class="text-right"><a href="http://type-scale.com/">type-scale.com</a></p>
+          </section>
+
+          <section>
+            <h3>Use a scalar</h3>
+            <div class="split">
+              <div class="split-left">
+                <ul style="list-style: none; margin-left: 0;">
+                  <li style="font-size: 2.441em">2.441em</li>
+                  <li style="font-size: 1.953em">1.953em</li>
+                  <li style="font-size: 1.563em">1.563em</li>
+                  <li style="font-size: 1.25em"><strong>1.25em</strong></li>
+                  <li style="font-size: 1em">1em</li>
+                  <li style="font-size: 0.8em"><strong>0.8em</strong></li>
+                  <li style="font-size: 0.64em">0.64em</li>
+                  <li style="font-size: 0.512em">0.512em</li>
+                </ul>
+              </div>
+              <div class="split-right">
+                <p class="fragment">Scalar: <strong>1.25em</strong><br />&mdash; always produces next font size up</p>
+                <p class="fragment">Inverse scalar: <strong>0.8em</strong> (1 / 1.25)<br />&mdash; always produces next font size down</p>
+              </div>
+            </div>
           </section>
 
           <section>
