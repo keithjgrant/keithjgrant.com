@@ -288,11 +288,17 @@ body {
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
 /* overrides */
+.reveal h1 {
+  text-align: center; }
+
 .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   font-family: "Bevan", Impact, sans-serif; }
 
 .reveal h4, .reveal h5, .reveal h6 {
   color: #fff; }
+
+.reveal pre {
+  width: initial; }
 
 .reveal section img {
   border: 0;
@@ -351,6 +357,7 @@ body {
   font-size: 0.7em; }
 
 .reveal .stages:not(.stages--full) {
+  margin-top: 3.998em;
   display: flex;
   justify-content: center; }
   .reveal .stages:not(.stages--full) > li + li {
@@ -379,7 +386,8 @@ body {
 .reveal .stages--full > li + li {
   margin-top: 1em; }
   .reveal .stages--full > li + li::before {
-    content: "➥"; }
+    content: "➥";
+    font-size: 2em; }
 
 .reveal .stages--full li:nth-child(2) {
   margin-left: 4em; }
@@ -425,3 +433,9 @@ body {
     flex: 1; }
   .split > * + * {
     margin-left: 1em; }
+
+.text-center {
+  text-align: center !important; }
+
+.text-right {
+  text-align: right !important; }

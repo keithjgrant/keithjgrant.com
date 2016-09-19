@@ -58,12 +58,21 @@ $heading4Size: 1.00em;
 
 /* overrides */
 .reveal {
+
+  h1 {
+    text-align: center;
+  }
+
   h3, h4, h5, h6 {
     font-family: $mainFont;
   }
 
   h4, h5, h6 {
     color: $mainColor;
+  }
+
+  pre {
+    width: initial;
   }
 
   section img {
@@ -147,6 +156,7 @@ $heading4Size: 1.00em;
     font-size: 0.7em;
   }
   .stages:not(.stages--full) {
+    margin-top: 3.998em;
     display: flex;
     justify-content: center;
 
@@ -186,6 +196,7 @@ $heading4Size: 1.00em;
 
       &::before {
         content: "➥";
+        font-size: 2em;
       }
     }
 
@@ -249,4 +260,12 @@ $heading4Size: 1.00em;
   > * + * {
     margin-left: 1em;
   }
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
 }
