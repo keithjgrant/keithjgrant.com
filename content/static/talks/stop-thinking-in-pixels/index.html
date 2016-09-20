@@ -52,33 +52,7 @@
           <p><img src="images/vault-boy.png" alt="pixelated boy" class="img-tr"/></p>
         </section>
 
-
         <!--
-        <section>
-          <section>
-            <h1>Late binding</h1>
-            <p><img src="images/hourglass.png" alt="pixelated hourglass" class="img-br"/></p>
-          </section>
-
-          <section>
-            <h2>CSS is unique</h2>
-            <p>Rules for <em>unknown content</em> in an
-              <em>unknown medium</em>
-            </p>
-          </section>
-
-          <section>
-            <h2>Hiding from abstraction</h2>
-            <p><img alt="Screenshot of 750px fixed-width layout" src="images/fixed-width.png"/></p>
-          </section>
-
-          <section>
-            <h3>Use abstraction to your advantage</h3>
-            <p>CSS provides tools for working with abstraction</p>
-          </section>
-        </section><!-- end late binding/history -->
-
-
         <section>
           <section>
             <h1>Relative units</h1>
@@ -125,9 +99,8 @@
             </q>
             <!-- source: http://blog.lawinfo.com/2012/09/28/weird-laws-true-or-false-edition-5/ --/>
           </section>
-          -->
+          --/>
         </section><!-- end abs vs reltive -->
-
 
         <section>
           <section>
@@ -219,6 +192,7 @@
             </div>
           </section>
         </section>
+
 
         <section>
           <section>
@@ -325,25 +299,6 @@ ul {
             </div>
           </section>
 
-          <!--
-          <section>
-            <h2>ch</h2>
-            <p>Equal to the width of “0” character</p>
-            <!-- http://clagnut.com/blog/2384/ --/>
-          </section>
-
-          <section class="slide-ch">
-            <h2>ch</h2>
-            <p>Usually about equal to 0.5em,<br />but changes based upon <em>width</em> of the font</p>
-            <div class="ch-block">
-              This block is 30ch wide.
-            </div>
-            <div class="ch-block ch-block-alt">
-              This block is 30ch wide.
-            </div>
-          </section>
-          -->
-
           <section>
             <h2>Recommendation</h2>
             <p>By default, use:</p>
@@ -354,6 +309,8 @@ ul {
               <dd>font-size</dd>
               <dt>em</dt>
               <dd>padding, margin, border-radius</dd>
+              <dt><i>unitless</i></dt>
+              <dd>line-height</dd>
             </dl>
             <p class="fragment">When in doubt, us ems</p>
           </section>
@@ -425,8 +382,40 @@ ul {
             <h2>Don’t micromanage<br />your CSS</h2>
             <p>Delegate responsibility to it</p>
           </section>
-
         </section>
+
+
+        <section>
+          <section>
+            <h1 style="margin-bottom: 2em;">Designer vs. developer</h1>
+            <img src="images/pirate.png" alt="Pixelated pirate" class="img-br img-flipped" />
+            <img src="images/park-ranger.png" alt="Pixelated park ranger" class="img-bl" />
+          </section>
+
+          <section>
+            <h2 style="text-indent: -0.9ch">“Can you make this margin 3px taller?”</h2>
+            <p>Sometimes you need to talk in absolutes</p>
+          </section>
+
+          <section>
+            <h2>Two options:</h2>
+            <ol>
+              <li>Do the conversion yourself</li>
+              <li>Teach the other party ems</li>
+            </ol>
+          </section>
+
+          <section>
+            <h3>[desired] / [inherited]</h3>
+            <p>Sometimes it’s just easier to play with values in DevTools</p>
+          </section>
+
+          <section>
+            <h2>Do the math</h2>
+            <p>Push through the awkward phase</p>
+          </section>
+        </section><!-- end designer/developer -->
+
 
         <section>
           <section>
@@ -746,77 +735,11 @@ a:hover {
           </section>
         </section><!-- end resize page -->
 
-
-        <section>
-          <section>
-            <h1 style="margin-bottom: 2em;">Designer vs. developer</h1>
-            <img src="images/pirate.png" alt="Pixelated pirate" class="img-br img-flipped" />
-            <img src="images/park-ranger.png" alt="Pixelated park ranger" class="img-bl" />
-          </section>
-
-          <section>
-            <h2 style="text-indent: -0.9ch">“Can you make this margin 3px taller?”</h2>
-            <p>Sometimes you need to talk in absolutes</p>
-          </section>
-
-          <section>
-            <h2>Two options:</h2>
-            <ol>
-              <li>Do the conversion yourself</li>
-              <li>Teach the other party ems</li>
-            </ol>
-          </section>
-
-          <section>
-            <h3>[desired] / [inherited]</h3>
-            <p>Sometimes it’s just easier to play with values in DevTools</p>
-          </section>
-
-          <section>
-            <h2>Do the math</h2>
-            <p>Push through the awkward phase</p>
-          </section>
-        </section><!-- end designer/developer -->
-
         <section>
           <section>
             <h1>Context-aware styles</h1>
             <img src="images/blue-heron.png" alt="Pixelated blue heron" class="img-br" />
           </section>
-
-          <!--<section>
-            <h2>Descendant selectors</h2>
-            <pre><code data-trim class="css example-bad">
-.tile {
-  color: red;
-}
-
-.sidebar .tile {
-  color: blue;
-}
-            </code></pre>
-            <div>
-              <p>Bad practice: <span class="frag-strike">Styles</span><em class="frag-show">Selectors</em> based on context</p>
-              <div class="fragment frag-trigger"></div>
-            </div>
-          </section>
-
-          <section>
-            <h3>Ems/rems are context-aware</h3>
-            <pre><code data-trim class="css example-good">
-.tile {
-  font-size: 1.2rem;
-}
-            </code></pre>
-            <p>Styles are contained in the module</p>
-          </section>
-        </section><!-- end context-aware styles --/>
-
-        <section>
-          <section>
-            <h2>“CSS variables”</h2>
-            <img src="images/magic-lamp.png" alt="Pixelated magic lamp" class="img-br" />
-          </section>-->
 
           <section>
             <h2>Custom properties</h2>
