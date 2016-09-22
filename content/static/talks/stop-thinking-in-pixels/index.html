@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
 
     <title>Stop Thinking in Pixels</title>
 
@@ -52,55 +53,6 @@
           <p><img src="images/vault-boy.png" alt="pixelated boy" class="img-tr"/></p>
         </section>
 
-        <!--
-        <section>
-          <section>
-            <h1>Relative units</h1>
-          <p><img src="images/master-key.png" alt="pixelated key" class="img-br"/></p>
-          </section>
-
-          <section class="slide-lengths">
-            <h2>Lengths</h2>
-            <table>
-              <thead>
-                <tr>
-                  <td>Absolute</td>
-                  <td>Relative</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>px</td><td>em</td></tr>
-                <tr><td>mm</td><td>rem</td></tr>
-                <tr><td>cm</td><td>ch</td></tr>
-                <tr><td>in</td><td>vw</td></tr>
-                <tr><td>pt</td><td>vh</td></tr>
-                <tr><td>pc</td><td>vmin</td></tr>
-                <tr><td>  </td><td>vmax</td></tr>
-              </tbody>
-            </table>
-          </section>
-
-          <section class="slide-abs-units">
-            <h2>Absolute units</h2>
-            <p>96px = 72pt = 6pc = 1in = 2.54cm = 25.4mm</p>
-          </section>
-
-          <section>
-            <h2>But our units are in another castle!</h2>
-            <p>Absolute units don’t adapt to their environment</p>
-          </section>
-
-          <!--
-          <section>
-            <h3>Absolute units</h3>
-            <q>
-              “Single men between the ages of twenty-one and fifty must pay an annual tax of <u>one dollar</u>.”
-              <cite>Missouri law, enacted 1820</cite>
-            </q>
-            <!-- source: http://blog.lawinfo.com/2012/09/28/weird-laws-true-or-false-edition-5/ --/>
-          </section>
-          --/>
-        </section><!-- end abs vs reltive -->
 
         <section>
           <section>
@@ -303,14 +255,12 @@ ul {
             <h2>Recommendation</h2>
             <p>By default, use:</p>
             <dl>
-              <dt>px</dt>
-              <dd>border-width</dd>
               <dt>rem</dt>
               <dd>font-size</dd>
+              <dt>px</dt>
+              <dd>border-width</dd>
               <dt>em</dt>
               <dd>padding, margin, border-radius</dd>
-              <dt><i>unitless</i></dt>
-              <dd>line-height</dd>
             </dl>
             <p class="fragment">When in doubt, us ems</p>
           </section>
@@ -346,7 +296,7 @@ ul {
           </section>
 
           <section>
-            <h3><i>The Elements of Typographic Scale</i>,<br />Robert Bringhurst</h3>
+            <h3><i>The Elements of Typographic Style</i>,<br />Robert Bringhurst</h3>
             <p><img src="images/typographic-scale.gif" alt="The typographic scale: 12pt, 14pt, 16pt, and so on" /></p>
           </section>
 
@@ -357,7 +307,14 @@ ul {
           </section>
 
           <section>
-            <h3>Use a scalar</h3>
+            <h3>Standard approach to web typography:</h3>
+            <p>Use a scalar...</p>
+            <p class="fragment">...to calculate px font sizes...</p>
+            <p class="fragment">...to reverse back out to an em scalar.</p>
+          </section>
+
+          <section>
+            <h3>Just use a scalar</h3>
             <div class="split">
               <div class="split-left">
                 <ul style="list-style: none; margin-left: 0;">
@@ -735,6 +692,7 @@ a:hover {
           </section>
         </section><!-- end resize page -->
 
+        <!--
         <section>
           <section>
             <h1>Context-aware styles</h1>
@@ -775,13 +733,13 @@ a:hover {
             </code></pre>
             <p class="text-right"><a href="demo-variables.html" target="demo">demo</a></p>
           </section>
-        <!--</section><!-- end custom properties --/>
+        </section><!-- end custom properties --/>
 
         <section>
           <section>
             <h1>Dynamic colors</h1>
             <img src="images/mushrooms.png" alt="Pixelated mushrooms" class="img-br" />
-          </section>-->
+          </section>
 
           <section>
             <h2>Dynamic colors</h2>
@@ -854,26 +812,6 @@ a:hover {
             <p><img src="images/book-cover.png" alt="CSS in Depth book cover" class="cover"/></p>
             <p><img src="images/astronaut.png" alt="astronaut in space suit" class="astronaut"/></p>
           </section>
-
-          <!--
-          <section>
-            <h2>CSS in Depth</h2>
-            <div class="split">
-              <div class="split-left">
-                <p><a href="https://manning.com/books/css-in-depth">manning.com/books/css-in-depth</a></p>
-                <p>50% off code: <strong>mlgrant2</strong></p>
-              </div>
-              <div class="split-left">
-                <ul>
-                  <li>Fundamentals revisited</li>
-                  <li>Mastering layout<br />(incl. positioning, flexbox, grid)</li>
-                  <li>CSS at scale</li>
-                  <li>Translations, transitions, animations</li>
-                  <li>Making your design look good</li>
-                </ul>
-              </div>
-            </div>
-          </section>-->
         </section>
 
         <section class="slide-end" id="credits">
@@ -915,7 +853,7 @@ a:hover {
       // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         history: true,
-        transition: "zoom",
+        transition: "slide",
         // transitionSpeed: "fast",
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
