@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="shortcut icon" href="images/gladiator-cropped.png" type="image/png">
-    <link rel="icon" href="images/gladiator-cropped.png" type="image/png">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
 
     <title>Stop Thinking in Pixels</title>
 
@@ -16,11 +15,11 @@
 
     <!-- Printing and PDF exports -->
     <script>
-      var link = document.createElement( 'link' );
+      var link = document.createElement('link');
       link.rel = 'stylesheet';
       link.type = 'text/css';
       link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
+      document.getElementsByTagName('head')[0].appendChild(link);
     </script>
   </head>
   <body>
@@ -55,95 +54,23 @@
         </section>
 
 
-        <!--
         <section>
-          <section>
-            <h1>Late binding</h1>
-            <p><img src="images/hourglass.png" alt="pixelated hourglass" class="img-br"/></p>
-          </section>
-
-          <section>
-            <h2>CSS is unique</h2>
-            <p>Rules for <em>unknown content</em> in an
-              <em>unknown medium</em>
-            </p>
-          </section>
-
-          <section>
-            <h2>Hiding from abstraction</h2>
-            <p><img alt="Screenshot of 750px fixed-width layout" src="images/fixed-width.png"/></p>
-          </section>
-
-          <section>
-            <h3>Use abstraction to your advantage</h3>
-            <p>CSS provides tools for working with abstraction</p>
-          </section>
-        </section><!-- end late binding/history -->
-
-
-        <section>
-          <section>
-            <h1>Relative units</h1>
-          <p><img src="images/master-key.png" alt="pixelated key" class="img-br"/></p>
-          </section>
-
-          <section class="slide-lengths">
-            <h2>Lengths</h2>
-            <table>
-              <thead>
-                <tr>
-                  <td>Absolute</td>
-                  <td>Relative</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>px</td><td>em</td></tr>
-                <tr><td>mm</td><td>rem</td></tr>
-                <tr><td>cm</td><td>ch</td></tr>
-                <tr><td>in</td><td>vw</td></tr>
-                <tr><td>pt</td><td>vh</td></tr>
-                <tr><td>pc</td><td>vmin</td></tr>
-                <tr><td>  </td><td>vmax</td></tr>
-              </tbody>
-            </table>
-          </section>
-
-          <section class="slide-abs-units">
-            <h2>Absolute units</h2>
-            <p>96px = 72pt = 6pc = 1in = 2.54cm = 25.4mm</p>
-          </section>
-
-          <section>
-            <h2>But our units are in another castle!</h2>
-            <p>Absolute units don’t adapt to their environment</p>
-          </section>
-
           <!--
-          <section>
-            <h3>Absolute units</h3>
-            <q>
-              “Single men between the ages of twenty-one and fifty must pay an annual tax of <u>one dollar</u>.”
-              <cite>Missouri law, enacted 1820</cite>
-            </q>
-            <!-- source: http://blog.lawinfo.com/2012/09/28/weird-laws-true-or-false-edition-5/ --/>
-          </section>
-          -->
-        </section><!-- end abs vs reltive -->
-
-
-        <section>
           <section>
             <h1>Ems</h1>
             <p><img src="images/devil-dinosaur.png" alt="pixelated red dinosaur" class="img-br img-flipped"/></p>
           </section>
+          -->
 
           <section class="slide-ems-intro">
             <h2>It's dangerous to go alone! Take this.</h2>
-            <div class="em-box" style="font-size: 4em">M</div>
-            <div class="em-box" style="font-size: 2em">M</div>
-            <!--<div class="fragment em-box-adjusted" style="font-size: 4em">Yy</div>-->
+            <div style="display: flex; justify-content: center; align-items: flex-end;">
+              <div class="em-box" style="font-size: 4em">M</div>
+              <div class="em-box" style="font-size: 2em">M</div>
+            </div>
           </section>
 
+          <!--
           <section class="slide-ems-basic">
             <h2>It’s all relative</h2>
             <div class="split">
@@ -222,11 +149,13 @@
           </section>
         </section>
 
+
         <section>
           <section>
             <h1>Problems with em</h1>
             <p><img src="images/chili-pepper.png" alt="pixelated chili pepper" class="img-br"/></p>
           </section>
+          -->
 
           <section>
             <h2>Ems for font-size</h2>
@@ -240,6 +169,7 @@
   font-size: 1.2em; /* 19.2px */
 }
             </code></pre>
+            <p><img src="images/chili-pepper.png" alt="pixelated chili pepper" class="img-br"/></p>
           </section>
 
           <section>
@@ -300,6 +230,7 @@ ul {
           <section>
             <h2>Solution: rem</h2>
             <p>“Root em”&mdash;relative to font size of <em>root</em> element (<code>&lt;html&gt;</code>)</p>
+            <p><img src="images/magic-lamp.png" alt="Pixelated magic lamp" class="img-br" /></p>
           </section>
 
           <section class="slide-rems-list">
@@ -327,33 +258,14 @@ ul {
             </div>
           </section>
 
-          <!--
-          <section>
-            <h2>ch</h2>
-            <p>Equal to the width of “0” character</p>
-            <!-- http://clagnut.com/blog/2384/ --/>
-          </section>
-
-          <section class="slide-ch">
-            <h2>ch</h2>
-            <p>Usually about equal to 0.5em,<br />but changes based upon <em>width</em> of the font</p>
-            <div class="ch-block">
-              This block is 30ch wide.
-            </div>
-            <div class="ch-block ch-block-alt">
-              This block is 30ch wide.
-            </div>
-          </section>
-          -->
-
           <section>
             <h2>Recommendation</h2>
             <p>By default, use:</p>
             <dl>
-              <dt>px</dt>
-              <dd>border-width</dd>
               <dt>rem</dt>
               <dd>font-size</dd>
+              <dt>px</dt>
+              <dd>border-width</dd>
               <dt>em</dt>
               <dd>padding, margin, border-radius</dd>
             </dl>
@@ -364,92 +276,21 @@ ul {
 
         <section>
           <section>
-            <h1>Typography</h1>
+            <h2 style="text-indent: -0.9ch">“Use relative units<br />for font-size”</h2>
             <p><img src="images/cactus.png" alt="pixelated cactus" class="img-br"/></p>
           </section>
 
-          <!--
           <section>
-            <h2>Use relative units for font sizes</h2>
-            <pre><code data-trim class="css">
-.tabs {
-  font-size: 1.125rem;
-}
-            </code></pre>
+            <h3>There’s more to ems than just accessibility</h3>
+            <ul class="fragment">
+              <li>More accurate</li>
+              <li>Simpler code</li>
+              <li>Better flexibility</li>
+            </ul>
           </section>
 
           <section>
-            <p>Ems based on an absolute font are not accessible</p>
-            <div class="split">
-              <div class="split-left">
-                <pre><code data-trim class="css example-bad">
-:root {
-  font-size: 16px;
-}
-
-.tabs {
-  font-size: 1.125rem;
-}
-                </code></pre>
-              </div>
-              <div class="split-right fragment">
-                <pre><code data-trim class="css example-good">
-:root {
-  font-size: 1em;
-}
-
-.tabs {
-  font-size: 1.125rem;
-}
-                </code></pre>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <h2>Default font vs. zoom</h2>
-            <p><img src="images/browser-settings.png"
-              alt="Browser zoom and font size settings"/></p>
-          </section>
-          -->
-
-          <section>
-            <h2>There’s more to ems than just accessibility</h2>
-          </section>
-
-          <!--
-          <section>
-            <h3>Stop thinking in pixels</h3>
-            <div class="split">
-              <div class="split-left">
-                <pre><code data-trim class="css example-bad">
-:root {
-  font-size: 0.625em; /* 10px */
-}
-
-.tabs {
-  font-size: 1.4rem; /* 14px */
-}
-                </code></pre>
-              </div>
-              <div class="split-right fragment">
-                <pre><code data-trim class="css example-good">
-:root {
-  /* actual base font */
-  font-size: 0.875em;
-}
-
-.tabs {
-  /* no styles needed */
-}
-                </code></pre>
-              </div>
-            </div>
-          </section>
-          -->
-
-          <section>
-            <h3>[desired] / [inherited]</h3>
+            <h3>[desired size] / [base size]</h3>
             <p>14px / 16px = 0.875em</p>
             <p class="fragment">18px / 14px = 1.2857em</p>
             <p class="fragment">24px / 13&pi; = <em>STOP IT</em></p>
@@ -462,9 +303,44 @@ ul {
           </section>
 
           <section>
+            <h3><i>The Elements of Typographic Style</i>,<br />Robert Bringhurst</h3>
+            <p><img src="images/typographic-scale.gif" alt="The typographic scale: 12pt, 14pt, 16pt, and so on" /></p>
+          </section>
+
+          <section>
             <h3>Beautiful typography is about ratios</h3>
             <img src="images/type-scale.png" alt="Screenshot of ratio-based typography scaling tool" />
             <p class="text-right"><a href="http://type-scale.com/">type-scale.com</a></p>
+          </section>
+
+          <section>
+            <h3>Common approach to web typography:</h3>
+            <p>Use a scalar...</p>
+            <p class="fragment">...to calculate px font sizes...</p>
+            <p class="fragment">...to reverse back out to an em scalar 🤔</p>
+          </section>
+
+          <section class="slide-scalar">
+            <h3>Just use a scalar</h3>
+            <div class="split">
+              <div class="split-left">
+                <ul class="scalar-fonts">
+                  <li style="font-size: 2.441em">2.441em</li>
+                  <li style="font-size: 1.953em">1.953em</li>
+                  <li style="font-size: 1.563em">1.563em</li>
+                  <li style="font-size: 1.25em"><strong>1.25em</strong></li>
+                  <li style="font-size: 1em">1em</li>
+                  <li style="font-size: 0.8em"><strong>0.8em</strong></li>
+                  <li style="font-size: 0.64em">0.64em</li>
+                  <li style="font-size: 0.512em">0.512em</li>
+                  <li style="font-size: 0.41em">0.41em</li>
+                </ul>
+              </div>
+              <div class="split-right">
+                <p class="fragment">Scalar: <strong>1.25em</strong><br />&mdash; always produces next font size up</p>
+                <p class="fragment">Inverse scalar: <strong>0.8em</strong> (1 / 1.25)<br />&mdash; always produces next font size down</p>
+              </div>
+            </div>
           </section>
 
           <section>
@@ -472,12 +348,57 @@ ul {
             <p>Delegate responsibility to it</p>
           </section>
 
+          <section>
+            <h3 style="text-indent: -0.9ch">“Can you make this margin 3px taller?”</h3>
+            <div class="fragment">
+              <p>Two options:</p>
+              <ol>
+                <li>Do the conversion yourself</li>
+                <li>Teach the other party ems</li>
+              </ol>
+            </div>
+            <p><img src="images/pirate.png" alt="Pixelated pirate" class="img-br img-flipped" /></p>
+          </section>
+
         </section>
+
+        <!--
+        <section>
+          <section>
+            <h1 style="margin-bottom: 2em;">Designer vs. developer</h1>
+            <img src="images/pirate.png" alt="Pixelated pirate" class="img-br img-flipped" />
+            <img src="images/park-ranger.png" alt="Pixelated park ranger" class="img-bl" />
+          </section>
+
+          <section>
+            <h2 style="text-indent: -0.9ch">“Can you make this margin 3px taller?”</h2>
+            <p>Sometimes you need to talk in absolutes</p>
+          </section>
+
+          <section>
+            <h2>Two options:</h2>
+            <ol>
+              <li>Do the conversion yourself</li>
+              <li>Teach the other party ems</li>
+            </ol>
+          </section>
+
+          <section>
+            <h3>[desired] / [inherited]</h3>
+            <p>Sometimes it’s just easier to play with values in DevTools</p>
+          </section>
+
+          <section>
+            <h2>Do the math</h2>
+            <p>Push through the awkward phase</p>
+          </section>
+        </section><!-- end designer/developer -->
+
 
         <section>
           <section>
-            <h1>Resizable<br />modules</h1>
-            <img src="images/test-tubes.png" alt="Pixelated test tubes" class="img-br" />
+            <h2>Resizable<br />modules</h2>
+            <p><img src="images/test-tubes.png" alt="Pixelated test tubes" class="img-br" /></p>
           </section>
 
           <section>
@@ -537,7 +458,7 @@ ul {
           </section>
 
           <section class="slide-module-resize">
-            <h3>One rem-value at root; all else in ems</h3>
+            <h3>One rem-value at module root&mdash;all else in ems</h3>
             <div class="split">
               <div class="split-left">
                 <pre><code data-trim data-noescape class="css">
@@ -587,6 +508,7 @@ ul {
           <section>
             <p>Use <strong class="blue">rem</strong> for <em>global sizing</em></p>
             <p>Use <strong class="blue">em</strong> for <em>local sizing</em></p>
+            <p><img src="images/mushrooms.png" alt="Pixelated mushrooms" class="img-br img-flipped" /></p>
           </section>
 
 
@@ -724,8 +646,8 @@ a:hover {
 
         <section>
           <section>
-            <h1>Responsive<br />resize</h1>
-            <img src="images/treasure-chest.png" alt="Pixelated treasure chest" class="img-br" />
+            <h2>It's a secret<br />to everybody</h2>
+            <p><img src="images/treasure-chest.png" alt="Pixelated treasure chest" class="img-br" /></p>
           </section>
 
           <section>
@@ -787,91 +709,36 @@ a:hover {
           </section>
 
           <section>
-            <h2>Jump in with both feet</h2>
-            <p>Ems are most powerful when you fully embrace them</p>
+            <h3>A consistent hierachy</h3>
+            <p><img src="images/hierarchy.png" alt="tree structure with root node, child nodes, and leaf nodes" /></p>
           </section>
-        </section><!-- end resize page -->
-
+        </section>
 
         <section>
           <section>
-            <h1 style="margin-bottom: 2em;">Designer vs. developer</h1>
-            <img src="images/pirate.png" alt="Pixelated pirate" class="img-br img-flipped" />
-            <img src="images/park-ranger.png" alt="Pixelated park ranger" class="img-bl" />
+            <h2>Jump in with<br />both feet</h2>
+            <p>Ems are most powerful when you fully embrace them</p>
+            <p><img src="images/blue-heron.png" alt="Pixelated blue heron" class="img-br" /></p>
           </section>
+        </section><!-- end resize page -->
 
-          <section>
-            <h2 style="text-indent: -0.9ch">“Can you make this margin 3px taller?”</h2>
-            <p>Sometimes you need to talk in absolutes</p>
-          </section>
-
-          <section>
-            <h2>Two options:</h2>
-            <ol>
-              <li>Do the conversion yourself</li>
-              <li>Teach the other party ems</li>
-            </ol>
-          </section>
-
-          <section>
-            <h3>[desired] / [inherited]</h3>
-            <p>Sometimes it’s just easier to play with values in DevTools</p>
-          </section>
-
-          <section>
-            <h2>Do the math</h2>
-            <p>Push through the awkward phase</p>
-          </section>
-        </section><!-- end designer/developer -->
-
+        <!--
         <section>
           <section>
             <h1>Context-aware styles</h1>
             <img src="images/blue-heron.png" alt="Pixelated blue heron" class="img-br" />
           </section>
 
-          <!--<section>
-            <h2>Descendant selectors</h2>
-            <pre><code data-trim class="css example-bad">
-.tile {
-  color: red;
-}
-
-.sidebar .tile {
-  color: blue;
-}
-            </code></pre>
-            <div>
-              <p>Bad practice: <span class="frag-strike">Styles</span><em class="frag-show">Selectors</em> based on context</p>
-              <div class="fragment frag-trigger"></div>
-            </div>
-          </section>
-
-          <section>
-            <h3>Ems/rems are context-aware</h3>
-            <pre><code data-trim class="css example-good">
-.tile {
-  font-size: 1.2rem;
-}
-            </code></pre>
-            <p>Styles are contained in the module</p>
-          </section>
-        </section><!-- end context-aware styles --/>
-
-        <section>
-          <section>
-            <h2>“CSS variables”</h2>
-            <img src="images/magic-lamp.png" alt="Pixelated magic lamp" class="img-br" />
-          </section>-->
-
           <section>
             <h2>Custom properties</h2>
             <pre><code data-trim class="css">
 :root {
+  /* declaration */
   --font-color: black;
 }
 
 .tile {
+  /* usage */
   color: var(--font-color);
 }
             </code></pre>
@@ -879,7 +746,7 @@ a:hover {
 
           <section>
             <h2>Context-aware CSS</h2>
-            <pre><code data-trim class="css example-good">
+            <pre><code data-trim class="css">
 :root {
   --font-color: black;
 }
@@ -891,27 +758,79 @@ a:hover {
 
 .tile {
   color: var(--font-color);
+  border-color: var(--font-color);
 }
             </code></pre>
-            <p>Styles are contained in the module</p>
+            <p class="text-right"><a href="demo-variables.html" target="demo">demo</a></p>
           </section>
-        <!--</section><!-- end custom properties --/>
+        </section><!-- end custom properties --/>
 
         <section>
           <section>
             <h1>Dynamic colors</h1>
             <img src="images/mushrooms.png" alt="Pixelated mushrooms" class="img-br" />
-          </section>-->
+          </section>
 
           <section>
             <h2>Dynamic colors</h2>
-            [currentColor example]
+            <pre><code data-trim data-noescape class="css">
+.message {
+  padding: 0.4em 0.8em;
+  color: navyblue;
+  background-color: lightblue;
+  border: 1px solid <mark>currentColor</mark>;
+}
+
+.message--danger {
+  color: darkred; /* changes border color too! */
+  background-color: pink;
+}
+            </code></pre>
+            <p class="text-right"><a href="demo-current-color.html" target="demo">demo</a></p>
           </section>
 
           <section>
             <h2>Welcome to warp zone!</h2>
-            [color functions]
             <p>A peek into the future</p>
+          </section>
+
+          <section>
+            <h2>Color manipulation</h2>
+            <pre><code data-trim data-noescape class="css">
+.whoa {
+  color: var(--brand-blue);
+  background-color: color(currentColor lightness(+50%));
+  border: 1px solid currentColor;
+}
+
+.whoa--danger {
+  color: var(--brand-red);
+}
+
+.whoa--warning {
+  color: var(--brand-orange);
+}
+            </code></pre>
+            <p class="text-right"><a href="http://codepen.io/keithjgrant/pen/XjKrod?editors=0100" target="demo">demo</a> (transpiled)</p>
+          </section>
+
+          <section>
+            <h3>Stack multiple adjustments</h3>
+            <pre><code data-trim data-noescape class="css">
+.neat {
+  background: color(
+    #f00
+    lightness(+30%)
+    hue(+40)
+    saturation(-30%)
+  );
+}
+            </code></pre>
+            <p class="fragment">Other adjustments: red, green, blue, whiteness, blackness, tint, shade, blend, contrast</p>
+          </section>
+
+          <section>
+            <h2>Create hierarchies<br />of values</h2>
           </section>
         </section><!-- end dynamic colors -->
 
@@ -923,26 +842,6 @@ a:hover {
             <p><img src="images/book-cover.png" alt="CSS in Depth book cover" class="cover"/></p>
             <p><img src="images/astronaut.png" alt="astronaut in space suit" class="astronaut"/></p>
           </section>
-
-          <!--
-          <section>
-            <h2>CSS in Depth</h2>
-            <div class="split">
-              <div class="split-left">
-                <p><a href="https://manning.com/books/css-in-depth">manning.com/books/css-in-depth</a></p>
-                <p>50% off code: <strong>mlgrant2</strong></p>
-              </div>
-              <div class="split-left">
-                <ul>
-                  <li>Fundamentals revisited</li>
-                  <li>Mastering layout<br />(incl. positioning, flexbox, grid)</li>
-                  <li>CSS at scale</li>
-                  <li>Translations, transitions, animations</li>
-                  <li>Making your design look good</li>
-                </ul>
-              </div>
-            </div>
-          </section>-->
         </section>
 
         <section class="slide-end" id="credits">
@@ -984,7 +883,7 @@ a:hover {
       // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         history: true,
-        transition: "zoom",
+        transition: "slide",
         // transitionSpeed: "fast",
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
@@ -1013,9 +912,5 @@ a:hover {
         }
       });
     </script>
-
-    <!--
-    It's a secret to everybody
-    -->
   </body>
 </html>

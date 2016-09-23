@@ -12,29 +12,39 @@
 
 
 // Include theme-specific fonts
-@import url("https://fonts.googleapis.com/css?family=Exo");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Changa+One");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Arvo");
+@import url("https://fonts.googleapis.com/css?family=Bevan");
 
 
 // Override theme settings (see ../template/settings.scss)
-$black: #16031f;
-$olive: #c2c2a8;
-$paleYellow: #ffffd4;
-$paleGreen: #b3d8c6;
-$brightRed: #dd334d;
+// $black: #16031f;
+// $olive: #c2c2a8;
+// $paleYellow: #ffffd4;
+// $paleGreen: #b3d8c6;
+// $brightRed: #dd334d;
 
-$backgroundColor: #001b38;
+$teal: #375157;
+$black: darken($teal, 20%);
+$white: #e6eaeb;
+$gold: #ffc871;
+$red: #e8547e;
 
-$mainFont: 'Open Sans Condensed', sans-serif;
+// $backgroundColor: #001b38;
+
+$backgroundColor: $black;
+
+$mainFont: 'Bevan', Impact, sans-serif;
 $mainColor: #fff;
-$linkColor: $paleGreen;
-$linkColorHover: lighten( $linkColor, 20% );
-$headingFont: 'Exo', sans-serif;
+$linkColor: $red;
+$linkColorHover: lighten($linkColor, 20%);
+$headingFont: 'Arvo', Helvetica, Arial, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: -0.03em;
 $headingTextTransform: none;
-$headingColor: $brightRed;
-$selectionBackgroundColor: $brightRed;
+$headingColor: $gold;
+$selectionBackgroundColor: $red;
 $mainFontSize: 30px;
 
 $heading1Size: 2.11em;
@@ -48,12 +58,25 @@ $heading4Size: 1.00em;
 
 /* overrides */
 .reveal {
+
+  h1 {
+    text-align: center;
+  }
+
   h3, h4, h5, h6 {
     font-family: $mainFont;
   }
 
   h4, h5, h6 {
     color: $mainColor;
+  }
+
+  pre {
+    width: initial;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   section img {
@@ -74,6 +97,28 @@ $heading4Size: 1.00em;
       margin: initial;
     }
   }
+
+  p {
+    margin: 1.414em 0;
+  }
+
+  em, strong {
+    color: $gold;
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  em {
+    font-size: 1.414em;
+  }
+
+  strong {
+    font-size: 1.999em;
+  }
+
+  .wordy {
+    font-family: $headingFont;
+  }
 }
 
 /*
@@ -84,11 +129,10 @@ $heading4Size: 1.00em;
   text-align: center;
 
   h1 {
-    position: absolute;
-    top: 0;
-    right: 0;
+    font-family: $mainFont;
+    color: $black;
     text-align: center;
-    text-shadow: 0.01em 0.01em 0.04em $paleYellow;
+    text-shadow: 0.01em 0.01em 0.1em $gold;
   }
 
   .council {
@@ -109,81 +153,102 @@ $heading4Size: 1.00em;
   }
 }
 
-.slide-spec-process {
+.reveal {
   .stages {
     list-style: none;
-    padding-left: none;
+    padding-left: 0;
     font-size: 0.7em;
+  }
+  .stages:not(.stages--full) {
+    margin-top: 3.998em;
+    display: flex;
+    justify-content: center;
+
+    > li + li {
+      margin-left: 2em;
+    }
   }
 
   .stages > li {
     position: relative;
     padding: 1em;
     border: 2px solid currentColor;
-    border-radius: .5em;
-    width: 80%;
-    color: $black;
-    background-color: $paleGreen;
-
-    &:nth-child(1) {
-      background-color: $olive;
-    }
-    &:nth-child(2) {
-      margin-left: 4em;
-    }
-    &:nth-child(3) {
-      margin-left: 8em;
-    }
-    &:nth-child(4) {
-      margin-left: 12em;
-    }
-    &:nth-child(5) {
-      margin-left: 16em;
-    }
-  }
-
-  .stages > li:not(:first-child) {
-    margin-top: 1em;
+    border-radius: 0.5em;
+    color: $teal;
+    background-color: $white;
     text-align: center;
 
-    &::before {
+    &.is-active {
+      background-color: $gold;
+    }
+
+    + li::before {
       position: absolute;
       top: calc(50% - 0.7em);
       left: -1.5em;
-      content: "➥";
-      color: #fff;
+      content: "➡";
+      color: $white;
+    }
+  }
+  .stages--full {
+    li {
+      width: 80%;
+    }
+
+    > li + li {
+      margin-top: 1em;
+
+      &::before {
+        content: "➥";
+        font-size: 2em;
+      }
+    }
+
+    li:nth-child(2) {
+      margin-left: 4em;
+    }
+    li:nth-child(3) {
+      margin-left: 8em;
+    }
+    li:nth-child(4) {
+      margin-left: 12em;
+    }
+    li:nth-child(5) {
+      margin-left: 16em;
     }
   }
 }
 
-.slide-lengths {
-  table {
-    width: 100%;
-    margin: initial;
-  }
-
-  tbody td {
-    border-bottom: 0;
+.slide-vars-basic {
+  .button {
+    background-color: #e8547e;
+    padding: 0.5em;
+    color: white;
+    border: none;
+    font-size: 1em;
   }
 }
 
-.slide-ems-intro {
-  .em-box,
-  .em-box-adjusted {
-    display: inline-block;
-    height: 1em;
-    width: 1em;
-    background: rgba(255, 255, 255, .2);
-    border: 2px solid #ccc;
-  }
+/**
+ * Utils
+ */
+.reveal .split {
+  display: flex;
+  width: 100%;
+  margin-left: -1em;
+  margin-right: -1em;
 
-  .em-box + .em-box {
-    margin-left: 3rem;
+  > * {
+    flex: 1;
+    margin-left: 1em;
+    margin-right: 1em;
   }
+}
 
-  .em-box-adjusted {
-    line-height: .8;
-    margin-left: 3rem;
-    vertical-align: bottom;
-  }
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
 }

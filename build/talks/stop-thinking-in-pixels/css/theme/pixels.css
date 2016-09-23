@@ -630,15 +630,11 @@ body {
 .slide-rems-list ul {
   font-size: 1em; }
 
-.slide-ch .ch-block {
-  width: 30ch;
-  padding: .5em 1em;
-  background-color: #fff;
-  color: #111; }
-
-.slide-ch .ch-block-alt {
-  margin-top: .2em;
-  font-family: Times New Roman, serif; }
+.slide-scalar .scalar-fonts {
+  margin-left: 0.2em;
+  list-style-type: none; }
+  .slide-scalar .scalar-fonts > li {
+    margin-left: -0.2em; }
 
 .slide-book .cover {
   position: absolute;

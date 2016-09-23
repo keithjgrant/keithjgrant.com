@@ -474,17 +474,14 @@ body {
   }
 }
 
-.slide-ch {
-  .ch-block {
-    width: 30ch;
-    padding: .5em 1em;
-    background-color: $mainColor;
-    color: $backgroundColor;
-  }
+.slide-scalar {
+  .scalar-fonts {
+    margin-left: 0.2em;
+    list-style-type: none;
 
-  .ch-block-alt {
-    margin-top: .2em;
-    font-family: Times New Roman, serif;
+    & > li {
+      margin-left: -0.2em;
+    }
   }
 }
 

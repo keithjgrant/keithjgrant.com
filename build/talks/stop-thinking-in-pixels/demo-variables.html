@@ -1,0 +1,86 @@
+<!doctype html>
+<head>
+  <style>
+    :root {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1em;
+      --font-color: black;
+    }
+
+    .inverse {
+      background-color: black;
+      --font-color: white;
+    }
+
+    button {
+      padding: 0.2em 1em;
+      font-size: 1rem;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      color: #346;
+      dispay: block;
+    }
+    button.active {
+      background-color: #346;
+      color: #fff;
+    }
+
+    .button-group {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+
+    .tile {
+      border: 2px solid var(--font-color);
+      padding: .6em 1.2em;
+      border-radius: .3em;
+      margin-bottom: 1em;
+      font-size: 1rem;
+      color: var(--font-color);
+    }
+    .tile > * {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .tile > * + * {
+      margin-top: 1em;
+    }
+
+    .tile__title {
+      font-size: 0.8em;
+      text-transform: uppercase;
+    }
+
+    .flex {
+      max-width: 150ch;
+      display: flex;
+      margin-left: -0.5em;
+      margin-right: -0.5em;
+    }
+    .flex > * {
+      flex: 1;
+      margin: 0 0.5em;
+      padding: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex">
+    <div>
+      <div class="tile" id="demo">
+        <h4 class="tile__title">Custom properties</h4>
+        <p>
+          It's a secret to everybody
+        </p>
+      </div>
+    </div>
+    <div class="inverse">
+      <div class="tile" id="demo">
+        <h4 class="tile__title">Custom properties</h4>
+        <p>
+          It's a secret to everybody
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
