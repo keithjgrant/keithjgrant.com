@@ -582,6 +582,20 @@ footer {
 .float-left {
   float: left !important; }
 
+.img-right {
+  display: block; }
+  @media screen and (min-width: 42em) {
+    .img-right {
+      float: right;
+      margin-left: 1em; } }
+
+.img-left {
+  display: block; }
+  @media screen and (min-width: 42em) {
+    .img-left {
+      float: left;
+      margin-right: 1em; } }
+
 /* Tomorrow Theme */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 .prettyprint {

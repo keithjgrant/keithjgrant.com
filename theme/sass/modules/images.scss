@@ -1,0 +1,19 @@
+
+
+.img-right {
+  display: block;
+
+  @media screen and (min-width: $breakpoint) {
+    float: right;
+    margin-left: 1em;
+  }
+}
+
+.img-left {
+  display: block;
+
+  @media screen and (min-width: $breakpoint) {
+    float: left;
+    margin-right: 1em;
+  }
+}
