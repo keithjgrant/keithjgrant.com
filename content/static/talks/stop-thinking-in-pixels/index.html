@@ -55,18 +55,22 @@
 
 
         <section>
+          <!--
           <section>
             <h1>Ems</h1>
             <p><img src="images/devil-dinosaur.png" alt="pixelated red dinosaur" class="img-br img-flipped"/></p>
           </section>
+          -->
 
           <section class="slide-ems-intro">
             <h2>It's dangerous to go alone! Take this.</h2>
-            <div class="em-box" style="font-size: 4em">M</div>
-            <div class="em-box" style="font-size: 2em">M</div>
-            <!--<div class="fragment em-box-adjusted" style="font-size: 4em">Yy</div>-->
+            <div style="display: flex; justify-content: center; align-items: flex-end;">
+              <div class="em-box" style="font-size: 4em">M</div>
+              <div class="em-box" style="font-size: 2em">M</div>
+            </div>
           </section>
 
+          <!--
           <section class="slide-ems-basic">
             <h2>It’s all relative</h2>
             <div class="split">
@@ -151,6 +155,7 @@
             <h1>Problems with em</h1>
             <p><img src="images/chili-pepper.png" alt="pixelated chili pepper" class="img-br"/></p>
           </section>
+          -->
 
           <section>
             <h2>Ems for font-size</h2>
@@ -164,6 +169,7 @@
   font-size: 1.2em; /* 19.2px */
 }
             </code></pre>
+            <p><img src="images/chili-pepper.png" alt="pixelated chili pepper" class="img-br"/></p>
           </section>
 
           <section>
@@ -224,6 +230,7 @@ ul {
           <section>
             <h2>Solution: rem</h2>
             <p>“Root em”&mdash;relative to font size of <em>root</em> element (<code>&lt;html&gt;</code>)</p>
+            <p><img src="images/magic-lamp.png" alt="Pixelated magic lamp" class="img-br" /></p>
           </section>
 
           <section class="slide-rems-list">
@@ -307,17 +314,17 @@ ul {
           </section>
 
           <section>
-            <h3>Standard approach to web typography:</h3>
+            <h3>Common approach to web typography:</h3>
             <p>Use a scalar...</p>
             <p class="fragment">...to calculate px font sizes...</p>
-            <p class="fragment">...to reverse back out to an em scalar.</p>
+            <p class="fragment">...to reverse back out to an em scalar 🤔</p>
           </section>
 
-          <section>
+          <section class="slide-scalar">
             <h3>Just use a scalar</h3>
             <div class="split">
               <div class="split-left">
-                <ul style="list-style: none; margin-left: 0;">
+                <ul class="scalar-fonts">
                   <li style="font-size: 2.441em">2.441em</li>
                   <li style="font-size: 1.953em">1.953em</li>
                   <li style="font-size: 1.563em">1.563em</li>
@@ -326,6 +333,7 @@ ul {
                   <li style="font-size: 0.8em"><strong>0.8em</strong></li>
                   <li style="font-size: 0.64em">0.64em</li>
                   <li style="font-size: 0.512em">0.512em</li>
+                  <li style="font-size: 0.41em">0.41em</li>
                 </ul>
               </div>
               <div class="split-right">
@@ -339,9 +347,22 @@ ul {
             <h2>Don’t micromanage<br />your CSS</h2>
             <p>Delegate responsibility to it</p>
           </section>
+
+          <section>
+            <h2 style="text-indent: -0.9ch">“Can you make this margin 3px taller?”</h2>
+            <div class="fragment">
+              <p>Two options:</p>
+              <ol>
+                <li>Do the conversion yourself</li>
+                <li>Teach the other party ems</li>
+              </ol>
+            </div>
+            <p><img src="images/pirate.png" alt="Pixelated pirate" class="img-br img-flipped" /></p>
+          </section>
+
         </section>
 
-
+        <!--
         <section>
           <section>
             <h1 style="margin-bottom: 2em;">Designer vs. developer</h1>
@@ -487,6 +508,7 @@ ul {
           <section>
             <p>Use <strong class="blue">rem</strong> for <em>global sizing</em></p>
             <p>Use <strong class="blue">em</strong> for <em>local sizing</em></p>
+            <p><img src="images/mushrooms.png" alt="Pixelated mushrooms" class="img-br img-flipped" /></p>
           </section>
 
 
@@ -687,8 +709,16 @@ a:hover {
           </section>
 
           <section>
-            <h2>Jump in with both feet</h2>
+            <h3>A consistent hierachy</h3>
+            <p><img src="images/hierarchy.png" alt="tree structure with root node, child nodes, and leaf nodes" /></p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Jump in with both feet</h1>
             <p>Ems are most powerful when you fully embrace them</p>
+            <p><img src="images/blue-heron.png" alt="Pixelated blue heron" class="img-br" /></p>
           </section>
         </section><!-- end resize page -->
 
