@@ -158,7 +158,7 @@
           -->
 
           <section>
-            <h2>Ems for font-size</h2>
+            <h3>Ems for font-size</h3>
             <p>Based on <em>inherited</em> font-size</p>
             <pre><code data-trim data-noescape>
 .parent {
@@ -173,7 +173,7 @@
           </section>
 
           <section>
-            <h2>Font-size vs<br />other properties</h2>
+            <h3>Font-size vs other properties</h3>
             <p>Same declared value; different computed value</p>
             <pre><code data-trim data-noescape>
 .tile {
@@ -187,7 +187,7 @@
           </section>
 
           <section class="slide-ems-font-size">
-            <h2>Deeply-nested ems</h2>
+            <h3>Deeply-nested ems</h3>
             <div class="bordered">
               <p>font-size: 16px</p>
               <div class="bordered fragment">
@@ -203,7 +203,7 @@
           </section>
 
           <section class="slide-ems-trouble">
-            <h2>Shrinking text problem </h2>
+            <h3>Shrinking text problem </h3>
             <div class="split">
               <div class="split-left">
                 <pre><code data-trim>
@@ -234,7 +234,7 @@ ul {
           </section>
 
           <section class="slide-rems-list">
-            <h2>Use rems for font size</h2>
+            <h3>Use rems for font size</h3>
             <div class="split">
               <div class="split-left">
                 <pre><code data-trim class="css">
@@ -259,7 +259,7 @@ ul {
           </section>
 
           <section>
-            <h2>Recommendation</h2>
+            <h3>Recommendation</h3>
             <p>By default, use:</p>
             <dl>
               <dt>rem</dt>
@@ -297,7 +297,7 @@ ul {
           </section>
 
           <section>
-            <h2>Math :(</h2>
+            <h3>Math :(</h3>
             <img src="images/px-to-em.png" alt="Screenshot of px to em conversion tool" />
             <p class="text-right"><a href="http://pxtoem.com/">pxtoem.com</a></p>
           </section>
@@ -308,7 +308,7 @@ ul {
           </section>
 
           <section>
-            <h3>Beautiful typography is about ratios</h3>
+            <h2>Beautiful typography is about ratios</h2>
             <img src="images/type-scale.png" alt="Screenshot of ratio-based typography scaling tool" />
             <p class="text-right"><a href="http://type-scale.com/">type-scale.com</a></p>
           </section>
@@ -346,6 +346,7 @@ ul {
           <section>
             <h2>Don’t micromanage<br />your CSS</h2>
             <p>Delegate responsibility to it</p>
+            <p><img src="images/blue-ribbon.png" alt="Pixelated blue ribbon" class="img-br" /></p>
           </section>
 
           <section>
@@ -402,7 +403,7 @@ ul {
           </section>
 
           <section>
-            <h2>Resizing px is tedious</h3>
+            <h3>Resizing px is tedious</h3>
             <div class="split">
               <div class="split-left">
                 <pre><code data-trim data-noescape class="css example-bad">
@@ -438,7 +439,7 @@ ul {
           </section>
 
           <section class="slide-module-diagram">
-            <h2>Base font size on a known container</h2>
+            <h3>Base font size on a known container</h3>
             <div class="bordered bordered-padded">
               <code class="css bordered-code">{ font-size: <em>1rem</em>; }</code>
               <div class="fragment">
@@ -604,7 +605,7 @@ a:hover {
           </section>
 
           <section class="slide-module-diagram owl">
-            <h2>All your base font are belong to us</h2>
+            <h3>All your base font are belong to us</h3>
             <div class="bordered">
               <div class="bordered m-title-2">
                 <div class="bordered-blue"></div>
@@ -651,7 +652,7 @@ a:hover {
           </section>
 
           <section>
-            <h2>Scale for each breakpoint</h2>
+            <h3>Scale for each breakpoint</h3>
             <pre><code data-trim data-noescape class="css">
 :root {
   font-size: 0.8em;
@@ -675,7 +676,7 @@ a:hover {
           </section>
 
           <section>
-            <h2>Viewport-relative units</h2>
+            <h3>Viewport-relative units</h3>
             <ul>
               <li><em>vw</em>&mdash;% of viewport width</li>
               <li><em>vh</em>&mdash;% of viewport height</li>
@@ -685,7 +686,7 @@ a:hover {
           </section>
 
           <section class="slide-v-units">
-            <h2>Scale based on viewport size</h2>
+            <h3>Scale based on viewport size</h3>
             <pre><code data-trim data-noescape class="css">
 :root {
   font-size: <mark>2vw</mark>;
@@ -697,7 +698,7 @@ a:hover {
           </section>
 
           <section class="slide-v-units">
-            <h2>calc() to the rescue</h2>
+            <h3>calc() to the rescue</h3>
             <pre><code data-trim data-noescape class="css">
 :root {
   font-size: <mark>calc(0.5em + 1vw)</mark>;
@@ -709,7 +710,7 @@ a:hover {
           </section>
 
           <section>
-            <h3>A consistent hierachy</h3>
+            <h2>A consistent hierachy</h2>
             <p><img src="images/hierarchy.png" alt="tree structure with root node, child nodes, and leaf nodes" /></p>
           </section>
         </section>
