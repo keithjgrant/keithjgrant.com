@@ -299,6 +299,8 @@ body {
 
 .reveal pre {
   width: initial; }
+  .reveal pre:first-child {
+    margin-top: 0; }
 
 .reveal section img {
   border: 0;
@@ -401,38 +403,25 @@ body {
 .reveal .stages--full li:nth-child(5) {
   margin-left: 16em; }
 
-.slide-lengths table {
-  width: 100%;
-  margin: initial; }
+.slide-vars-basic .button {
+  background-color: #e8547e;
+  padding: 0.5em;
+  color: white;
+  border: none;
+  font-size: 1em; }
 
-.slide-lengths tbody td {
-  border-bottom: 0; }
-
-.slide-ems-intro .em-box,
-.slide-ems-intro .em-box-adjusted {
-  display: inline-block;
-  height: 1em;
-  width: 1em;
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid #ccc; }
-
-.slide-ems-intro .em-box + .em-box {
-  margin-left: 3rem; }
-
-.slide-ems-intro .em-box-adjusted {
-  line-height: .8;
-  margin-left: 3rem;
-  vertical-align: bottom; }
-
-.split {
+/**
+ * Utils
+ */
+.reveal .split {
   display: flex;
   width: 100%;
   margin-left: -1em;
   margin-right: -1em; }
-  .split > * {
-    flex: 1; }
-  .split > * + * {
-    margin-left: 1em; }
+  .reveal .split > * {
+    flex: 1;
+    margin-left: 1em;
+    margin-right: 1em; }
 
 .text-center {
   text-align: center !important; }

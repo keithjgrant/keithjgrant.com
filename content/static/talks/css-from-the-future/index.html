@@ -137,20 +137,64 @@
             </code></pre>
           </section>
 
-          <section>
+          <section class="slide-vars-basic">
             <h2>Using CSS variables</h2>
             <div class="split">
               <div>
                 <pre><code data-trim>
+:root {
+  --brand-color: #e8547e;
+  --button-padding: 0.5em;
+}
 
+.button {
+  background-color: var(--brand-color);
+  padding: var(--button-padding);
+  color: white;
+  border: none;
+}
                 </code></pre>
               </div>
+              <div class="fragment">
+                <button class="button" onClick="javascript: void">Submit</button>
+              </div>
             </div>
-          </section>
           </section>
 
           <section>
             <p>Cool... but what’s with <em>that syntax?</em></p>
+          </section>
+
+          <section>
+            <p>A new class of CSS <em>properties</em></p>
+            <pre><code data-trim>
+.foo {
+  /* regular property */
+  font-family: Helvetica, Arial, sans-serif;
+
+  /* vendor-prefixed */
+  -webkit-user-select: none;
+
+  /* custom */
+  --button-padding: 0.5em;
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <p>Your preprocessor doesn't have variables<br />...it has <em>constants</em></p>
+            <p class="text-right"><em>CSS</em> has variables</p>
+          </section>
+
+          <section>
+            <p>Apply to <em>elements</em> with a <em>selector</em></p>
+            <pre><code data-trim>
+/* only applies to #sidebar element and its descendants */
+#sidebar {
+  --button-padding: 1em;
+  --main-color: blue;
+}
+            </code></pre>
           </section>
         </section>
 
@@ -293,5 +337,5 @@
         ]
       });
     </script>
-  </body>
+  </br>
 </html>
