@@ -57,13 +57,6 @@
 
 
         <section>
-          <!--
-          <section>
-            <h1>Ems</h1>
-            <p><img src="images/devil-dinosaur.png" alt="pixelated red dinosaur" class="img-br img-flipped"/></p>
-          </section>
-          -->
-
           <section class="slide-ems-intro">
             <h2>It's dangerous to go alone! Take this.</h2>
             <div style="display: flex; justify-content: center; align-items: flex-end;">
@@ -72,95 +65,8 @@
             </div>
           </section>
 
-          <!--
-          <section class="slide-ems-basic">
-            <h2>It’s all relative</h2>
-            <div class="split">
-              <div class="split-left">
-                <pre><code data-trim class="css">
-.tile {
-  padding: 0.6em 1.2em;
-  border-radius: 0.3em;
-  border: 2px solid white;
-}
-                </code></pre>
-              </div>
-              <div class="split-right fragment">
-                <div class="tile">
-                  Ems are great for padding, margin, border-radius.
-                </div>
-              </div>
-            </div>
-          </section>
-
           <section>
-            <div class="split">
-              <div class="split-left">
-                <h2>Declared vs.<br />computed value</h2>
-                <pre><code data-trim data-noescape>
-.tile {
-  padding: 0.6em 1.2em;
-  border-radius: <mark>0.3em</mark>;
-  border: 2px solid black;
-}
-                </code></pre>
-              </div>
-              <div class="split-right" style="position: relative; overflow: hidden; min-height: 80vh">
-                <img
-                  src="images/devtools-computed.png"
-                  alt="DevTools showing computed styles"
-                  class="fragment"
-                  style="position: absolute; left:0; right: 0; max-height: initial"/>
-                <img
-                  src="images/devtools-declared.png"
-                  alt="DevTools showing computed styles"/>
-              </div>
-            </div>
-          </section>
-
-          <section class="slide-ems-sized">
-            <h2>Using ems</h2>
-            <div class="split">
-              <div class="split-left">
-                <pre><code data-trim data-noescape>
-.tile {
-  font-size: 16px;
-  padding: 0.6em 1.2em;
-  border-radius: 0.3em;
-  border: 2px solid white;
-}
-
-.tile--small {
-  <mark>font-size: 10px;</mark>
-}
-                </code></pre>
-              </div>
-              <div class="split-right fragment">
-                <pre><code>&lt;div class="tile"&gt;</code></pre>
-                <div class="tile">
-                  Ems are great for padding, margin, border-radius.
-                </div>
-                <div class="fragment">
-                  <pre><code>&lt;div class="tile tile--small"&gt;</code></pre>
-                  <div class="tile tile--small">
-                    Ems are great for padding, margin, border-radius.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </section>
-
-
-        <section>
-          <section>
-            <h1>Problems with em</h1>
-            <p><img src="images/chili-pepper.png" alt="pixelated chili pepper" class="img-br"/></p>
-          </section>
-          -->
-
-          <section>
-            <h2>Ems for font-size</h2>
+            <h3>Ems for font-size</h3>
             <p>Based on <em>inherited</em> font-size</p>
             <pre><code data-trim data-noescape>
 .parent {
@@ -175,7 +81,7 @@
           </section>
 
           <section>
-            <h2>Font-size vs<br />other properties</h2>
+            <h3>Font-size vs other properties</h3>
             <p>Same declared value; different computed value</p>
             <pre><code data-trim data-noescape>
 .tile {
@@ -189,7 +95,7 @@
           </section>
 
           <section class="slide-ems-font-size">
-            <h2>Deeply-nested ems</h2>
+            <h3>Deeply-nested ems</h3>
             <div class="bordered">
               <p>font-size: 16px</p>
               <div class="bordered fragment">
@@ -205,7 +111,7 @@
           </section>
 
           <section class="slide-ems-trouble">
-            <h2>Shrinking text problem </h2>
+            <h3>Shrinking text problem </h3>
             <div class="split">
               <div class="split-left">
                 <pre><code data-trim>
@@ -236,7 +142,7 @@ ul {
           </section>
 
           <section class="slide-rems-list">
-            <h2>Use rems for font size</h2>
+            <h3>Use rems for font size</h3>
             <div class="split">
               <div class="split-left">
                 <pre><code data-trim class="css">
@@ -261,7 +167,7 @@ ul {
           </section>
 
           <section>
-            <h2>Recommendation</h2>
+            <h3>Recommendation</h3>
             <p>By default, use:</p>
             <dl>
               <dt>rem</dt>
@@ -299,7 +205,7 @@ ul {
           </section>
 
           <section>
-            <h2>Math :(</h2>
+            <h3>Math :(</h3>
             <img src="images/px-to-em.png" alt="Screenshot of px to em conversion tool" />
             <p class="text-right"><a href="http://pxtoem.com/">pxtoem.com</a></p>
           </section>
@@ -310,7 +216,7 @@ ul {
           </section>
 
           <section>
-            <h3>Beautiful typography is about ratios</h3>
+            <h2>Beautiful typography is about ratios</h2>
             <img src="images/type-scale.png" alt="Screenshot of ratio-based typography scaling tool" />
             <p class="text-right"><a href="http://type-scale.com/">type-scale.com</a></p>
           </section>
@@ -348,6 +254,7 @@ ul {
           <section>
             <h2>Don’t micromanage<br />your CSS</h2>
             <p>Delegate responsibility to it</p>
+            <p><img src="images/blue-ribbon.png" alt="Pixelated blue ribbon" class="img-br" /></p>
           </section>
 
           <section>
@@ -361,40 +268,7 @@ ul {
             </div>
             <p><img src="images/pirate.png" alt="Pixelated pirate" class="img-br img-flipped" /></p>
           </section>
-
         </section>
-
-        <!--
-        <section>
-          <section>
-            <h1 style="margin-bottom: 2em;">Designer vs. developer</h1>
-            <img src="images/pirate.png" alt="Pixelated pirate" class="img-br img-flipped" />
-            <img src="images/park-ranger.png" alt="Pixelated park ranger" class="img-bl" />
-          </section>
-
-          <section>
-            <h2 style="text-indent: -0.9ch">“Can you make this margin 3px taller?”</h2>
-            <p>Sometimes you need to talk in absolutes</p>
-          </section>
-
-          <section>
-            <h2>Two options:</h2>
-            <ol>
-              <li>Do the conversion yourself</li>
-              <li>Teach the other party ems</li>
-            </ol>
-          </section>
-
-          <section>
-            <h3>[desired] / [inherited]</h3>
-            <p>Sometimes it’s just easier to play with values in DevTools</p>
-          </section>
-
-          <section>
-            <h2>Do the math</h2>
-            <p>Push through the awkward phase</p>
-          </section>
-        </section><!-- end designer/developer -->
 
 
         <section>
@@ -404,7 +278,7 @@ ul {
           </section>
 
           <section>
-            <h2>Resizing px is tedious</h3>
+            <h3>Resizing px is tedious</h3>
             <div class="split">
               <div class="split-left">
                 <pre><code data-trim data-noescape class="css example-bad">
@@ -440,7 +314,7 @@ ul {
           </section>
 
           <section class="slide-module-diagram">
-            <h2>Base font size on a known container</h2>
+            <h3>Base font size on a known container</h3>
             <div class="bordered bordered-padded">
               <code class="css bordered-code">{ font-size: <em>1rem</em>; }</code>
               <div class="fragment">
@@ -606,7 +480,7 @@ a:hover {
           </section>
 
           <section class="slide-module-diagram owl">
-            <h2>All your base font are belong to us</h2>
+            <h3>All your base font are belong to us</h3>
             <div class="bordered">
               <div class="bordered m-title-2">
                 <div class="bordered-blue"></div>
@@ -653,7 +527,7 @@ a:hover {
           </section>
 
           <section>
-            <h2>Scale for each breakpoint</h2>
+            <h3>Scale for each breakpoint</h3>
             <pre><code data-trim data-noescape class="css">
 :root {
   font-size: 0.8em;
@@ -677,7 +551,7 @@ a:hover {
           </section>
 
           <section>
-            <h2>Viewport-relative units</h2>
+            <h3>Viewport-relative units</h3>
             <ul>
               <li><em>vw</em>&mdash;% of viewport width</li>
               <li><em>vh</em>&mdash;% of viewport height</li>
@@ -687,7 +561,7 @@ a:hover {
           </section>
 
           <section class="slide-v-units">
-            <h2>Scale based on viewport size</h2>
+            <h3>Scale based on viewport size</h3>
             <pre><code data-trim data-noescape class="css">
 :root {
   font-size: <mark>2vw</mark>;
@@ -699,7 +573,7 @@ a:hover {
           </section>
 
           <section class="slide-v-units">
-            <h2>calc() to the rescue</h2>
+            <h3>calc() to the rescue</h3>
             <pre><code data-trim data-noescape class="css">
 :root {
   font-size: <mark>calc(0.5em + 1vw)</mark>;
@@ -711,7 +585,7 @@ a:hover {
           </section>
 
           <section>
-            <h3>A consistent hierachy</h3>
+            <h2>A consistent hierachy</h2>
             <p><img src="images/hierarchy.png" alt="tree structure with root node, child nodes, and leaf nodes" /></p>
           </section>
         </section>
