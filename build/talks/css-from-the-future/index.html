@@ -189,12 +189,26 @@
           <section>
             <p>Apply to <em>elements</em> with a <em>selector</em></p>
             <pre><code data-trim>
-/* only applies to #sidebar element and its descendants */
+:root {
+  --main-color: red;
+  --button-padding: 1.2em;
+}
+
+/* override the values in #sidebar */
 #sidebar {
-  --button-padding: 1em;
   --main-color: blue;
+  --button-padding: 1em;
 }
             </code></pre>
+            <p class="fragment">Variables only apply within the <em>targeted element</em> and its descendants</p>
+          </section>
+
+          <section>
+            ...
+          </section>
+
+          <section>
+            [browser support]
           </section>
         </section>
 
@@ -208,6 +222,19 @@
               <li>PR</li>
               <li>REC</li>
             </ul>
+          </section>
+
+          <section>
+            <p>Nope</p>
+            <pre><code data-trim class="example-bad">
+:root {
+  --breakpoint: (min-width: 30em);
+}
+
+@media var(--breakpoint) { /* invalid */
+  ...
+}
+            </code></pre>
           </section>
         </section>
 

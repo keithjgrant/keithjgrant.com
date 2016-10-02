@@ -554,14 +554,18 @@ footer {
     padding: 0 20%; } }
 
 .pullquote {
-  position: relative;
   float: right;
-  max-width: 50%;
+  max-width: 50%; }
+
+.pullquote,
+blockquote {
+  position: relative;
   padding: 1em;
   margin: 0 0 0 .5em;
   font-family: PT Serif, Georgia, Garamond, serif;
   font-weight: 100; }
-  .pullquote::before {
+  .pullquote::before,
+  blockquote::before {
     position: absolute;
     top: -10%;
     left: -5%;
@@ -570,7 +574,8 @@ footer {
     background-color: rgba(0, 0, 0, 0.1);
     transform: skewX(2deg);
     content: ''; }
-  .pullquote::after {
+  .pullquote::after,
+  blockquote::after {
     content: ''; }
 
 .post-list > li > a {
