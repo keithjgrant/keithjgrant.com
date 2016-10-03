@@ -10,6 +10,14 @@ head
   meta(name='description', content='')
   meta(name='viewport', content='width=device-width, initial-scale=1')
   meta(name="theme-color", content="#666")
+  meta(name="twitter:card", content="summary")
+  meta(name="twitter:site", content="@keithjgrant")
+  if post
+    meta(name="og:title", content!=post.title)
+  else if title
+    meta(name="og:title", content!=title)
+  else
+    meta(name="og:title", content="Keith J. Grant")
   link(rel="alternate", type="application/rss+xml", title="Keith J Grant", href="http://keithjgrant.com/feed.xml")
   link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=PT+Serif|Palanquin:100,700", type="text/css")
   link(rel='stylesheet', href='/css/main.min.css')
