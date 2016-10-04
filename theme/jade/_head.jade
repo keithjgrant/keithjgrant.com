@@ -3,17 +3,19 @@ head
   meta(http-equiv="x-ua-compatible", content="ie=edge")
   if post
     title!= post.title + ' | Keith J Grant'
+    - description = post.getContent().substr(0, 200);
+    meta(name='description', content!=description)
   else if title
     title!= title + ' | Keith J Grant'
   else
     title Keith J Grant
-  meta(name='description', content='')
   meta(name='viewport', content='width=device-width, initial-scale=1')
   meta(name="theme-color", content="#666")
   meta(name="twitter:card", content="summary")
   meta(name="twitter:site", content="@keithjgrant")
   if post
     meta(name="og:title", content!=post.title)
+    meta(name="og:description", content!=description)
   else if title
     meta(name="og:title", content!=title)
   else
