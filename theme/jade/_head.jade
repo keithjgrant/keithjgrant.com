@@ -13,8 +13,10 @@ head
   meta(name="theme-color", content="#666")
   meta(name="twitter:card", content="summary")
   meta(name="twitter:site", content="@keithjgrant")
+  meta(name="twitter:image", content="http://keithjgrant.com/images/keithjgrant.jpg")
   if post
-    meta(name="og:title", content!=post.title)
+    - ogTitle = post.title + ' | Keith J Grant'
+    meta(name="og:title", content!=ogTitle)
     meta(name="og:description", content!=description)
   else if title
     meta(name="og:title", content!=title)
