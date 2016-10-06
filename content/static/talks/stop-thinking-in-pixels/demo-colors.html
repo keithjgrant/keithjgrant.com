@@ -1,0 +1,39 @@
+<!doctype html>
+<head>
+  <style>
+    :root {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1em;
+      --font-color: black;
+    }
+
+    .alert {
+      color: #359;
+      background-color: rgb(217, 225, 242);
+      border: 1px solid currentColor;
+      padding: 1em;
+      margin: 1em 0;
+    }
+
+    .alert--danger {
+      color: #953;
+      background-color: rgb(242, 225, 217);
+    }
+
+    .alert--warning {
+      color: #871;
+      background-color: rgb(244, 232, 164);
+    }
+  </style>
+</head>
+<body>
+  <div class="alert">
+    Lorem ipsum dolor sit amet
+  </div>
+  <div class="alert alert--danger">
+    Lorem ipsum dolor sit amet
+  </div>
+  <div class="alert alert--warning">
+    Lorem ipsum dolor sit amet
+  </div>
+</body>
