@@ -179,6 +179,15 @@ ul {
             </dl>
             <p class="fragment">When in doubt, us ems</p>
           </section>
+
+          <section>
+            <h2>Side quest!</h2>
+            <p>Use <strong>unitless</strong> numbers for <code>line-height</code></p>
+            <ul class="fragment">
+              <li>Units: a fixed computed value inherits</li>
+              <li>Unitless: adapts to changes in descendant font sizes</li>
+            </ul>
+          </section>
         </section><!-- end ems primer -->
 
 
@@ -583,6 +592,55 @@ a:hover {
               <a href="demo-page-calc.html" target="demo-fullpage">demo</a>
             </p>
           </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Adaptive code</h2>
+            <p><img src="images/quiver.png" alt="Pixelated quiver of arrows" class="img-br" /></p>
+          </section>
+
+          <section>
+            <h3>CSS Variables</h3>
+            <pre><code data-trim class="css">
+:root {
+  --font-color: black;
+}
+
+.inverse {
+  background-color: black;
+  --font-color: white;
+}
+            </code></pre>
+            <pre class="fragment"><code data-trim class="css">
+.tile {
+  color: var(--font-color);
+  border-color: var(--font-color);
+}
+            </code></pre>
+            <p class="text-right"><a href="demo-variables.html" target="demo">demo</a></p>
+          </section>
+
+          <section>
+            <h3>Color functions (future spec)</h3>
+            <pre><code data-trim data-noescape class="css">
+.alert {
+  color: blue;
+  background-color: <mark>color(currentColor lightness(+50%))</mark>;
+  border: 1px solid currentColor;
+}
+
+.alert--danger {
+  color: red;
+}
+
+.alert--warning {
+  color: orange;
+}
+            </code></pre>
+            <p class="fragment">hue, saturation, lightness, red, green, blue,<br />whiteness, blackness, tint, shade, blend, contrast</p>
+            <p class="text-right"><a href="demo-colors.html" target="demo">demo</a> (PostCSS)</p>
+          </section>
 
           <section>
             <h2>A consistent hierachy</h2>
@@ -601,8 +659,8 @@ a:hover {
         <!--
         <section>
           <section>
-            <h1>Context-aware styles</h1>
-            <img src="images/blue-heron.png" alt="Pixelated blue heron" class="img-br" />
+            <h2>Dynamically changing styles</h2>
+            <img src="images/quiver.png" alt="Pixelated quiver of arrows" class="img-br" />
           </section>
 
           <section>
@@ -621,7 +679,7 @@ a:hover {
           </section>
 
           <section>
-            <h2>Context-aware CSS</h2>
+            <h3>Context-aware variables</h3>
             <pre><code data-trim class="css">
 :root {
   --font-color: black;
@@ -639,16 +697,14 @@ a:hover {
             </code></pre>
             <p class="text-right"><a href="demo-variables.html" target="demo">demo</a></p>
           </section>
-        </section><!-- end custom properties --/>
 
-        <section>
           <section>
-            <h1>Dynamic colors</h1>
+            <h2>Dynamic colors</h2>
             <img src="images/mushrooms.png" alt="Pixelated mushrooms" class="img-br" />
           </section>
 
           <section>
-            <h2>Dynamic colors</h2>
+            <h3>currentColor</h3>
             <pre><code data-trim data-noescape class="css">
 .message {
   padding: 0.4em 0.8em;

@@ -3,7 +3,8 @@ head
   meta(http-equiv="x-ua-compatible", content="ie=edge")
   if post
     title!= post.title + ' | Keith J Grant'
-    - description = post.getContent().substr(0, 200);
+    - stripped = post.getContent().replace(/<(?:.|\n)*?>/gm, '');
+    - description = stripped.substr(0, 200);
     meta(name='description', content!=description)
   else if title
     title!= title + ' | Keith J Grant'
