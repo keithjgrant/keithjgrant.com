@@ -110,6 +110,33 @@
 
         <section>
           <section>
+            <h1>Preprocessors</h1>
+            <!-- Add Sass, Less, Stylus logos -->
+          </section>
+
+          <section>
+            <p>Proprocessor features:</p>
+            <ul>
+              <li>Nested selectors</li>
+              <li>Variables</li>
+              <li>Arithmetic</li>
+              <li>Mixins</li>
+              <li>Extends</li>
+              <li>Color manipulation</li>
+              <li>File splitting</li>
+            </ul>
+          </section>
+
+          <section>
+            <img
+              style="width: 100%;"
+              src="images/circle-k.gif" alt="Strange things are afoot at the Cicle K"
+            />
+          </section>
+        </section>
+
+        <section>
+          <section>
             <h1>Nested selectors</h1>
             <ul class="stages">
               <li class="is-active">ED</li>
@@ -119,6 +146,18 @@
               <li>REC</li>
             </ul>
           </section>
+
+          <!--
+          extra braces?
+
+          warn against deep nesting
+
+          order of nested selectors ?
+            normal properties
+            modifiers, before, after
+            elements
+            class
+          -->
         </section><!-- end nested selectors -->
 
 
@@ -250,6 +289,11 @@
 }
             </code></pre>
           </section>
+
+          <!--
+          @media (30em < width < 50em)
+          @media (width >= 60em) // no 1px overlap of MQs
+          -->
         </section>
 
         <section>
@@ -268,7 +312,7 @@
         <section>
           <section>
             <h1>@apply</h1>
-            <p>"Mixins" / "Extends"</p>
+            <p class="text-center">"Mixins" / "Extends"</p>
             <ul class="stages">
               <li class="fragment is-active">“A collection of interesting ideas”</li>
               <li>ED</li>
@@ -279,6 +323,71 @@
             </ul>
           </section>
 
+          <section>
+            <p>But it works in Chrome <em>today</em><sup>*</sup></p>
+            <p class="fragment"><sup>*</sup>with "experimental web platform features" flag enabled</p>
+          </section>
+
+          <section>
+            <h2>Sass</h2>
+            <div class="split">
+              <div>
+                <h3>Mixin</h3>
+                <pre><code data-trim data-noescape>
+@mixin danger() {
+  color: white;
+  background-color: red;
+}
+
+.button--danger {
+  @include danger();
+}
+                </code></pre>
+                <pre><code data-trim data-noescape>
+.button--danger {
+  color: white;
+  background-color: red;
+}
+                </code></pre>
+              </div>
+              <div class="fragment">
+                <h3>Extends</h3>
+                <pre><code data-trim data-noescape>
+.danger {
+  color: white;
+  background-color: red;
+}
+
+.button--danger {
+  @extend .danger
+}
+                </code></pre>
+                <pre><code data-trim data-noescape>
+.danger, <mark>.button--danger</mark> {
+  color: white;
+  background-color: red;
+}
+                </code></pre>
+              </div>
+            </div>
+            <p class="fragment text-center">This distiction <em>won’t matter</em> anymore</p>
+          </section>
+
+          <section>
+            <p><em>Custom properties</em> can store just about <em>anything</em></p>
+            <pre><code data-trim data-noescape>
+:root {
+  --danger-theme: <mark>{
+    color: white;
+    background-color: red;
+  }</mark>;
+}
+
+.danger {
+  @apply --danger-theme;
+}
+            </code></pre>
+          </section>
           <!-- no support for parameters; use custom properties -->
         </section>
 
@@ -293,20 +402,117 @@
               <li>REC</li>
             </ul>
           </section>
+
+          <!--
+          tints & shade
+          RGBA adjust
+          HSL/HWB adjust
+          guaranteed adequate contrast per WCAG
+
+          -> Add Swatches beside code example
+         -->
         </section>
 
         <!-- @import ? -->
 
         <section>
           <section>
-            <h1>The one missing piece: Loops</h1>
+            <h1>Missing piece: Loops<span class="fragment">?</span></h1>
           </section>
         </section>
 
         <section>
           <section>
             <h1>Using this syntax today</h1>
-            <p><a href="http://postcss.org/">PostCSS</a> + <a href="http://cssnext.io/">cssnext</a></p>
+            <p class="text-center">
+              <a class="block-link" href="http://postcss.org/">
+                PostCSS<br />
+                <img src="images/postcss.svg" alt="PostCSS logo" style="height: 3em"/>
+              </a> + <a class="block-link" href="http://cssnext.io/">
+                cssnext<br />
+                <img src="images/cssnext.png" alt="cssnext logo" style="height: 3em" />
+              </a>
+            </p>
+          </section>
+
+          <section>
+            <h2>PostCSS ≈ Babel.js</h2>
+            <p>Mix &amp; match <em>plugin</em> of your choosing</p>
+          </section>
+
+          <section>
+            <h2>Autoprefixer</h2>
+            <p>Now a plugin for PostCSS</p>
+            <!--
+            transition to PostCSS
+
+            benefits:
+            modular, only use modules you need
+            write your own plugins in JS
+            -->
+          </section>
+
+          <section>
+            <div class="split">
+              <div>
+                <p>gulpfile.js</p>
+                <pre><code data-trim data-noescape>
+var postcss = require('gulp-postcss');
+
+gulp.task('css', function () {
+  var plugins = [
+    /* plugins go here */
+  ];
+  return gulp.src('./src/*.css')
+    <mark>.pipe(postcss(plugins))</mark>
+    .pipe(gulp.dest('./dest'));
+});
+                </code></pre>
+              </div>
+              <div>
+                <p>webpack.config.js</p>
+                <pre><code data-trim data-noescape>
+loaders: [
+  {
+    test:   /\.css$/,
+    loader: [
+      'style-loader',
+      'css-loader?importLoaders=1',
+      <mark>'postcss-loader'</mark>
+    ]
+  }
+]
+                </code></pre>
+                <p>postcss.config.js</p>
+                <pre><code data-trim data-noescape>
+module.exports = {
+  plugins: [
+    require('precss'),
+    require('autoprefixer')
+  ]
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>cssnext</h2>
+            <p>Collection of PostCSS plugins</p>
+            <ul class="columns small wordy">
+              <li>vendor prefixes</li>
+              <li>custom properties/var()*</li>
+              <li>@apply</li>
+              <li>reduced calc</li>
+              <li>custom media queries</li>
+              <li>media query ranges</li>
+              <li>custom selectors</li>
+              <li>nesting</li>
+              <li>color function</li>
+              <li>#rrggbbaa colors</li>
+              <li>:matches, :any-link, :not</li>
+              <li>attribute case-insensitive</li>
+            </ul>
           </section>
         </section>
 

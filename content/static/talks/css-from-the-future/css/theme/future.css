@@ -345,12 +345,12 @@ body {
   .slide-title .council {
     width: 35vw; }
 
-.slide-specs .columns {
+.reveal .columns {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   max-height: 30vh; }
-  .slide-specs .columns > li {
+  .reveal .columns > li {
     width: 30%; }
 
 .reveal .stages {
@@ -428,3 +428,7 @@ body {
 
 .text-right {
   text-align: right !important; }
+
+.block-link.block-link {
+  display: inline-block;
+  vertical-align: top; }

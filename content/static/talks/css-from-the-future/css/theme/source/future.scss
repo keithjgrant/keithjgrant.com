@@ -140,7 +140,7 @@ $heading4Size: 1.00em;
   }
 }
 
-.slide-specs {
+.reveal {
   .columns {
     display: flex;
     flex-direction: column;
@@ -151,9 +151,7 @@ $heading4Size: 1.00em;
       width: 30%
     }
   }
-}
 
-.reveal {
   .stages {
     list-style: none;
     padding-left: 0;
@@ -251,4 +249,9 @@ $heading4Size: 1.00em;
 
 .text-right {
   text-align: right !important;
+}
+
+.block-link.block-link {
+  display: inline-block;
+  vertical-align: top;
 }
