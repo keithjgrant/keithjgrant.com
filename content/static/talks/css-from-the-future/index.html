@@ -158,6 +158,140 @@
             elements
             class
           -->
+          <section>
+            <h2>The & selector</h2>
+            <div class="split">
+              <div>
+                <pre><code data-trim data-noescape>
+.parent {
+  color: red;
+
+  <mark>& .child</mark> {
+    color: blue;
+  }
+}
+
+.modal {
+  display: none;
+
+  <mark>&.is-visible</mark> {
+    display: block;
+  }
+}
+                </code></pre>
+              </div>
+              <div class="fragment">
+                <pre><code data-trim>
+.parent {
+  color: red;
+}
+
+.parent .child {
+    color: blue;
+  }
+}
+
+.modal {
+  display: none;
+}
+.modal.is-visible {
+    display: block;
+  }
+}
+                </code></pre>
+              </div>
+          </section>
+          <section>
+            <p>Must <em>begin</em> with “&”</p>
+            <pre class="example-bad"><code data-trim>
+.foo {
+  color: red;
+
+  .container & { /* invalid */
+    color: blue;
+  }
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <p>Use <em>@nest</em> for complicated nesting</p>
+            <div class="split">
+              <div>
+                <pre><code data-trim data-noescape>
+.foo {
+  color: red;
+
+  <mark>@nest .container &</mark> {
+    color: blue;
+  }
+}
+                </code></pre>
+              </div>
+              <div class="fragment">
+                <pre><code data-trim data-noescape>
+.foo {
+  color: red;
+}
+
+.container .foo {
+  color: blue;
+}
+                </code></pre>
+              </div>
+            </div>
+            <div class="split fragment">
+              <div>
+                <pre><code data-trim data-noescape>
+.bar {
+  border: 1px solid black;
+
+  <mark>@nest :not(&)</mark> {
+    border: 0;
+  }
+}
+                </code></pre>
+              </div>
+              <div class="fragment">
+                <pre class="example-bad"><code data-trim data-noescape>
+.bar {
+  border: 1px solid black;
+}
+:not(.bar) {
+  border: 0;
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <p>Doesn’t support partial class names</p>
+            <pre class="example-bad"><code data-trim data-noescape>
+.bar {
+  border: 1px solid black;
+
+  &-large {  /* invalid */
+    border-size: 2px;
+  }
+}
+
+/* expecting: */
+.bar-large {...}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Don’t go overboard</h2>
+            <pre class="example-bad"><code data-trim data-noescape>
+.bar {
+border: 1px solid black;
+}
+:not(.bar) {
+border: 0;
+}
+            </code></pre>
+          </section>
         </section><!-- end nested selectors -->
 
 
