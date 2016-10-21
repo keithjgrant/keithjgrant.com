@@ -47,10 +47,10 @@
           </section>
 
           <section>
-            <h2>Who are the W3C & CSS WG?</h2>
+            <h2>Who are the W3C?</h2>
             <p><img
               src="images/council-elders.jpg"
-              alt="Bill & Ted Council elders"
+              alt="Bill &amp; Ted Council elders"
               class="image-nocenter"
            /></p>
           </section>
@@ -106,7 +106,42 @@
               <li class="is-active">W3C Recommendation</li>
             </ul>
           </section>
+
+          <section>
+            <img src="images/github.png" alt="Screenshot of W3C repository on GitHub" />
+          </section>
         </section><!-- end Specification -->
+
+        <section>
+          <section>
+            <h1>Preprocessors</h1>
+            <p class="text-center">
+              <img src="images/less.png" alt="Less logo" style="width: 4em; margin-right: 2em; vertical-align: middle" />
+              <img src="images/sass.png" alt="Sass logo" style="width: 4em; margin-right: 2em; vertical-align: middle" />
+              <img src="images/stylus.png" alt="Stylus logo" style="width: 4em; vertical-align: middle" />
+            </p>
+          </section>
+
+          <section>
+            <h2>Proprocessor features:</h2>
+            <ul>
+              <li>Nested selectors</li>
+              <li>Variables</li>
+              <li>Arithmetic</li>
+              <li>Mixins</li>
+              <li>Extends</li>
+              <li>Color manipulation</li>
+              <li>File splitting</li>
+            </ul>
+          </section>
+
+          <section>
+            <img
+              style="width: 100%;"
+              src="images/circle-k.gif" alt="Strange things are afoot at the Cicle K"
+            />
+          </section>
+        </section>
 
         <section>
           <section>
@@ -118,6 +153,156 @@
               <li>PR</li>
               <li>REC</li>
             </ul>
+          </section>
+
+          <section>
+            <h2>The &amp; selector</h2>
+            <div class="split">
+              <div>
+                <pre><code data-trim data-noescape>
+.parent {
+  color: red;
+
+  <mark>&amp; .child</mark> {
+    color: blue;
+  }
+}
+
+.modal {
+  display: none;
+
+  <mark>&amp;.is-visible</mark> {
+    display: block;
+  }
+}
+                </code></pre>
+              </div>
+              <div class="fragment">
+                <pre><code data-trim>
+.parent {
+  color: red;
+}
+
+.parent .child {
+    color: blue;
+  }
+}
+
+.modal {
+  display: none;
+}
+.modal.is-visible {
+    display: block;
+  }
+}
+                </code></pre>
+              </div>
+          </section>
+          <section>
+            <p>Must <em>begin</em> with “&amp;”</p>
+            <pre class="example-bad"><code data-trim>
+.foo {
+  color: red;
+
+  .container &amp; { /* invalid */
+    color: blue;
+  }
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <p>Use <em>@nest</em> for complicated nesting</p>
+            <div class="split">
+              <div>
+                <pre><code data-trim data-noescape>
+.foo {
+  color: red;
+
+  <mark>@nest .container &amp;</mark> {
+    color: blue;
+  }
+}
+                </code></pre>
+              </div>
+              <div class="fragment">
+                <pre><code data-trim data-noescape>
+.foo {
+  color: red;
+}
+
+.container .foo {
+  color: blue;
+}
+                </code></pre>
+              </div>
+            </div>
+            <div class="split fragment">
+              <div>
+                <pre><code data-trim data-noescape>
+.bar {
+  border: 1px solid black;
+
+  <mark>@nest :not(&amp;)</mark> {
+    border: 0;
+  }
+}
+                </code></pre>
+              </div>
+              <div class="fragment">
+                <pre><code data-trim data-noescape>
+.bar {
+  border: 1px solid black;
+}
+:not(.bar) {
+  border: 0;
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <p><em>Doesn’t support</em> partial class names</p>
+            <pre class="example-bad"><code data-trim data-noescape>
+.bar {
+  border: 1px solid black;
+
+  &amp;-large {  /* invalid */
+    border-size: 2px;
+  }
+}
+
+/* expecting: */
+.bar-large {...}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Don’t go overboard</h2>
+            <pre class="example-bad"><code data-trim data-noescape>
+div.container {
+  &amp; div.content {
+    &amp; div.articles {
+      &amp; > div.post {
+        &amp; div.title {
+          &amp; h1 {
+            &amp; a {
+              color: purple;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+            </code></pre>
+            <p class="fragment">“The <em>Inception</em> rule”</p>
+          </section>
+
+          <section>
+            <h2>Write modular CSS</h2>
+            <p><a href="https://smacss.com/">smacss.com</a></p>
           </section>
         </section><!-- end nested selectors -->
 
@@ -177,6 +362,9 @@
 
           <section>
             <p>Cool... but what’s with <em>that syntax?</em></p>
+            <p class="text-center">
+              <img src="images/puzzled.jpg" alt="Bill &amp; Ted puzzled" />
+            </p>
           </section>
 
           <section>
@@ -208,8 +396,8 @@
   --button-padding: 1.2em;
 }
 
-/* override the values in #sidebar */
-#sidebar {
+/* override the values in .sidebar */
+.sidebar {
   --main-color: blue;
   --button-padding: 1em;
 }
@@ -218,13 +406,51 @@
           </section>
 
           <section>
-            ...
+            <p>Create styles that will <em>adapt</em></p>
+            <pre><code data-trim>
+.tile {
+  color: var(--font-color);
+  background: var(--bg-color);
+}
+            </code></pre>
           </section>
 
           <section>
-            [browser support]
+            <p>Use <em>fallback</em> values</p>
+            <pre><code data-trim>
+.tile {
+  color: var(--font-color, black);
+  background: var(--bg-color, transparent);
+}
+            </code></pre>
           </section>
-        </section>
+
+          <section>
+            <p>Access from <em>JavaScript</em></p>
+            <pre><code data-trim>
+element.style.getPropertyValue('--foo');
+            </code></pre>
+            <div class="fragment">
+              <p><em>Set</em> from JavaScript</p>
+              <pre><code data-trim>
+element.style.setProperty('--foo', 42);
+              </code></pre>
+            </div>
+          </section>
+          <section>
+            <img src="images/caniuse-variables.png" alt="Screenshot of CanIUse support for variables" />
+          </section>
+
+          <section>
+            <p><em>MS Edge</em>: in development</p>
+            <img src="images/variables-edge-status.png" alt="Edge development status: in progress"  />
+          </section>
+
+          <section>
+            <img src="images/napoleon-ice-cream.jpg" alt="Napoleon looking at a large bowl of ice cream" />
+          </section>
+        </section><!-- end variables -->
+
 
         <section>
           <section>
@@ -249,6 +475,33 @@
   ...
 }
             </code></pre>
+            <div class="fragment">
+              <img src="images/bogus.gif" alt="Bogus" />
+            </div>
+          </section>
+
+          <section>
+            <p>Syntax</p>
+            <pre><code data-trim data-noescape>
+@custom-media <mark>--large-viewport</mark> (min-width: 50em);
+
+@media (--large-viewport) {
+  /* styles for large viewport */
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Media query ranges</h3>
+            <pre><code data-trim data-noescape>
+@media (30em > width > 50em) {
+  /* styles for only medium viewport */
+}
+
+@media (width >= 50em) {
+  /* styles only for large viewport */
+}
+            </code></pre>
           </section>
         </section>
 
@@ -263,12 +516,120 @@
               <li>REC</li>
             </ul>
           </section>
-        </section>
+
+          <section>
+            <p>Create a <em>shorthand</em> for groups of selectors</p>
+            <pre><code data-trim data-noescape>
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+:--heading {
+  font-weight: bold;
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <p>Abbreviate <em>complicated</em> selectors</p>
+            <pre><code data-trim data-noescape>
+.list > li:first-child:nth-last-child(5),
+.list > li:first-child:nth-last-child(5) ~ li {
+  ...
+}
+            </code></pre>
+            <div class="fragment">
+              <pre><code data-trim data-noescape class="css">
+@custom-selector $rest:--n-siblings($n, $sel) {
+  specificity: $sel;
+  expansion: $rest:first-child:nth-last-child($n of $sel),
+    :first-child:nth-last-child($n of $sel) ~ $rest;
+}
+
+:--n-siblings(5) {
+  ...
+}
+              </code></pre>
+            </div>
+          </section>
+        </section><!-- end custom selectors -->
+
+        <section>
+          <section>
+            <h1>calc()</h1>
+            <ul class="stages">
+              <li>ED</li>
+              <li>WD</li>
+              <li class="is-active">CR</li>
+              <li>PR</li>
+              <li>REC</li>
+            </ul>
+          </section>
+
+          <section>
+            <img src="images/caniuse-calc.png" alt="Screenshot of CanIUse support for calc()" />
+          </section>
+
+          <section>
+            <div>
+              <p>Add/subtract <em>two units</em></p>
+              <pre><code data-trim data-noescape class="css">
+.banner {
+  width: calc(30% + 2em);
+}
+
+.tile {
+  width: calc(5rem - 20px);
+}
+              </code></pre>
+            </div>
+            <div class="fragment">
+              <p>Divide/multiple unit and a <em>number</em></p>
+              <pre><code data-trim data-noescape class="css">
+.column {
+  width: calc(100% / 3);
+}
+
+.callout {
+  width: calc(20em * 4);
+}
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <p>You can multiply to <em>add units</em></p>
+              <pre><code data-trim data-noescape class="css">
+.column {
+  --foo: 20;
+  width: calc(var(--foo) * 1em);  /* 20em */
+}
+              </code></pre>
+            </div>
+            <div class="fragment">
+              <p>You <em>cannot</em> remove units</p>
+              <pre><code data-trim data-noescape class="css">
+.column {
+  --foo: 20em;
+  --unitless-foo: calc(var(--foo) / 1em);  /* invalid */
+}
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h2>Takeaway:</h2>
+            <p>Use variables for <em>raw data</em></p>
+          </section>
+
+          <section>
+            <p>Unit algebra is <em>under consideration</em></p>
+          </section>
+        </section> <!-- end calc() -->
 
         <section>
           <section>
             <h1>@apply</h1>
-            <p>"Mixins" / "Extends"</p>
+            <p class="text-center">"Mixins" / "Extends"</p>
             <ul class="stages">
               <li class="fragment is-active">“A collection of interesting ideas”</li>
               <li>ED</li>
@@ -279,6 +640,111 @@
             </ul>
           </section>
 
+          <section>
+            <p>But it works in Chrome <em>today</em><sup>*</sup></p>
+            <p class="fragment"><sup>*</sup>with flag enabled</p>
+          </section>
+
+          <section>
+            <h2>Sass</h2>
+            <div class="split">
+              <div>
+                <h3>Mixin</h3>
+                <pre><code data-trim data-noescape class="css">
+@mixin danger() {
+  color: white;
+  background-color: red;
+}
+
+.button--danger {
+  @include danger();
+}
+                </code></pre>
+                <pre><code data-trim data-noescape>
+.button--danger {
+  color: white;
+  background-color: red;
+}
+                </code></pre>
+              </div>
+              <div class="fragment">
+                <h3>Extends</h3>
+                <pre><code data-trim data-noescape>
+.danger {
+  color: white;
+  background-color: red;
+}
+
+.button--danger {
+  @extend .danger
+} 1px solid red;
+}
+                </code></pre>
+                <pre><code data-trim data-noescape>
+.danger, .button--danger {
+  color: white;
+  background-color: red;
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <p><em>Custom properties</em> can store<br />just about <em>anything</em>...</p>
+            <pre><code data-trim>
+:root {
+  --foo: This is a valid CSS custom property;
+  --bar: function(x) { return x * x; };
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <p>...including more <em>CSS</em></p>
+            <pre><code data-trim data-noescape>
+:root {
+  --danger-theme: {
+    color: white;
+    background-color: red;
+  };
+}
+            </code></pre>
+            <div class="fragment">
+              <pre><code data-trim>
+.button--danger {
+  @apply --danger-theme;
+}
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <p>Mixin vs. extends<br />distinction <em>won’t matter</em> anymore</p>
+          </section>
+
+          <section>
+            <p>Use custom properties for <em>parameters</em>?</p>
+            <pre><code data-trim>
+:root {
+  --font-color: black;
+
+  --mixin-alert-box: {
+    padding: 1em;
+    color: var(--font-color);
+    border: var(--font-color);
+  }
+}
+            </code></pre>
+            <div class="fragment">
+              <pre><code data-trim>
+.alert--danger {
+  --font-color: red;
+  @apply --mixin-alert-box;
+}
+              </code></pre>
+            </div>
+          </section>
           <!-- no support for parameters; use custom properties -->
         </section>
 
@@ -293,20 +759,230 @@
               <li>REC</li>
             </ul>
           </section>
-        </section>
 
-        <!-- @import ? -->
+          <section>
+            <h2>color( &lt;base-color&gt; &lt;modifier-function&gt; )</h2>
+          </section>
+
+          <section>
+            <div class="split">
+              <div>
+                <p><em>Tint</em>: mix with white</p>
+                <pre><code data-trim data-noescape>
+a:link {
+  color: blue; <i class="swatch" style="background: blue"></i>
+}
+
+a:hover {
+  color: color(blue tint(50%)); <i class="swatch" style="background: rgb(128, 128, 255)"></i>
+}
+                </code></pre>
+              </div>
+              <div class="fragment">
+                <p><em>Shade</em>: mix with black</p>
+                <pre><code data-trim data-noescape>
+.item {
+  color: red; <i class="swatch" style="background: red"></i>
+}
+
+.item--dark {
+  color: color(red shade(50%)); <i class="swatch" style="background: rgb(128, 0, 0)"></i>
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>RGBA adjust</h2>
+            <pre><code data-trim data-noescape>
+.item {
+  color: #888; <i class="swatch" style="background: #888"></i>
+}
+.item--more-red {
+  color: color(#888 red(+50%)); <i class="swatch" style="background: rgb(204, 136, 136)"></i>
+}
+.item--less-green {
+  color: color(#888 green(-50%)); <i class="swatch" style="background: rgb(136, 68, 136)"></i>
+}
+.item--blue {
+  color: color(#888 blue(85%)); <i class="swatch" style="background: rgb(136, 136, 217)"></i>
+}
+.item--transparent {
+  color: color(#888 alpha(50%)); <i class="swatch" style="background: rgba(136, 136, 136, 0.5)"></i>
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <p>Chain modifiers</p>
+            <pre><code data-trim data-noescape>
+.example {
+  color: color(
+    var(--brand-color)   /* initial color */
+    tint(50%)
+    red(+25%)
+    saturation(-30%)
+    alpha(50%)
+  );
+}
+              </code></pre>
+          </section>
+
+          <section>
+            <h3>Color functions</h3>
+            <ul>
+              <li>tint, shade</li>
+              <li>red, green, blue, alpha</li>
+              <li>hue, saturation, lightness</li>
+              <li>whiteness, blackness</li>
+              <li>blend (mix two colors)</li>
+              <li>guaranteed contrast</li>
+            </ul>
+          </section>
+
+          <section>
+            <img src="images/excellent.gif" alt="excellent" style="width: 100%" />
+          </section>
+        </section>
 
         <section>
           <section>
-            <h1>The one missing piece: Loops</h1>
+            <h1>File splitting</h1>
+          </section>
+
+          <section>
+            <h2>@import &mdash; since 1990s</h2>
+            <p>But performance is horrible</p>
+          </section>
+
+          <section>
+            <h2>HTTP/2 will fix it<span class="fragment" data-fragment-index="1">?</span></h2>
+            <p class="fragment wordy" data-fragment-index="1">¯\_(ツ)_/¯</p>
           </section>
         </section>
 
         <section>
           <section>
             <h1>Using this syntax today</h1>
-            <p><a href="http://postcss.org/">PostCSS</a> + <a href="http://cssnext.io/">cssnext</a></p>
+            <p class="text-center">
+              <a class="block-link" href="http://postcss.org/">
+                PostCSS<br />
+                <img src="images/postcss.svg" alt="PostCSS logo" style="height: 3em"/>
+              </a> + <a class="block-link" href="http://cssnext.io/">
+                cssnext<br />
+                <img src="images/cssnext.png" alt="cssnext logo" style="height: 3em" />
+              </a>
+            </p>
+          </section>
+
+          <section>
+            <h2>PostCSS ≈ Babel.js</h2>
+            <p>Mix &amp; match <em>plugin</em> of your choosing</p>
+          </section>
+
+          <section>
+            <h2>Autoprefixer</h2>
+            <p>Now a plugin for PostCSS</p>
+            <div class="split">
+              <div>
+                <pre><code data-trim>
+.flexy {
+  display: flex;
+}
+                </code></pre>
+              </div>
+              <div>
+                <pre><code data-trim>
+.flexy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+                </code></pre>
+              </div>
+            </div>
+            <!--
+            transition to PostCSS
+
+            benefits:
+            modular, only use modules you need
+            write your own plugins in JS
+            -->
+          </section>
+
+          <section>
+            <div class="split">
+              <div>
+                <p>gulpfile.js</p>
+                <pre><code data-trim data-noescape>
+var postcss = require('gulp-postcss');
+
+gulp.task('css', function () {
+  var plugins = [
+    /* plugins go here */
+  ];
+  return gulp.src('./src/*.css')
+    <mark>.pipe(postcss(plugins))</mark>
+    .pipe(gulp.dest('./dest'));
+});
+                </code></pre>
+              </div>
+              <div>
+                <p>webpack.config.js</p>
+                <pre><code data-trim data-noescape>
+loaders: [
+  {
+    test:   /\.css$/,
+    loader: [
+      'style-loader',
+      'css-loader?importLoaders=1',
+      <mark>'postcss-loader'</mark>
+    ]
+  }
+]
+                </code></pre>
+                <p>postcss.config.js</p>
+                <pre><code data-trim data-noescape>
+module.exports = {
+  plugins: [
+    require('precss'),
+    require('autoprefixer')
+  ]
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>cssnext</h2>
+            <p>Collection of PostCSS plugins</p>
+            <ul class="columns small wordy">
+              <li>vendor prefixes</li>
+              <li>custom properties/var()*</li>
+              <li>@apply</li>
+              <li>reduced calc</li>
+              <li>custom media queries</li>
+              <li>media query ranges</li>
+              <li>custom selectors</li>
+              <li>nesting</li>
+              <li>color function</li>
+              <li>#rrggbbaa colors</li>
+              <li>:matches, :any-link, :not</li>
+              <li>attribute case-insensitive</li>
+            </ul>
+          </section>
+
+          <section>
+            <p>It’s <em>not perfect</em> yet, but it is close</p>
+            <img src="images/not-bad.gif" alt="not bad" style="width: 100%" />
+          </section>
+
+          <section>
+            <h2>Awkward transition</h2>
+            <p><em>Dynamic</em> variables</p>
+            <p class="text-right"><em>Static</em> colors</p>
           </section>
         </section>
 

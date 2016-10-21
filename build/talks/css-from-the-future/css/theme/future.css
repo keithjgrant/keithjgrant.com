@@ -302,6 +302,12 @@ body {
   .reveal pre:first-child {
     margin-top: 0; }
 
+.reveal code mark {
+  padding: 0 0.1em;
+  color: inherit;
+  background-color: transparent;
+  box-shadow: 0 0 0.3em 0.2em #e8547e; }
+
 .reveal section img {
   border: 0;
   box-shadow: none;
@@ -345,12 +351,12 @@ body {
   .slide-title .council {
     width: 35vw; }
 
-.slide-specs .columns {
+.reveal .columns {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   max-height: 30vh; }
-  .slide-specs .columns > li {
+  .reveal .columns > li {
     width: 30%; }
 
 .reveal .stages {
@@ -420,11 +426,48 @@ body {
   margin-right: -1em; }
   .reveal .split > * {
     flex: 1;
-    margin-left: 1em;
-    margin-right: 1em; }
+    margin: 0 1em; }
 
 .text-center {
   text-align: center !important; }
 
 .text-right {
   text-align: right !important; }
+
+.block-link.block-link {
+  display: inline-block;
+  vertical-align: top; }
+
+.example-good,
+.example-bad {
+  position: relative; }
+
+.example-good::after,
+.example-bad::after {
+  display: block;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  height: 1.2em;
+  width: 1.2em;
+  text-align: center;
+  color: #333;
+  border-radius: 50%;
+  font-size: 1.2em;
+  line-height: 1.2; }
+
+.example-good::after {
+  content: "\2713";
+  background-color: #5293a2; }
+
+.example-bad::after {
+  content: "\2717";
+  background-color: #e8547e; }
+
+.swatch {
+  display: inline-block;
+  height: 2em;
+  width: 2em;
+  border-radius: 0.2em;
+  vertical-align: -0.7em;
+  margin-left: 0.4em; }

@@ -30,6 +30,7 @@ $black: darken($teal, 20%);
 $white: #e6eaeb;
 $gold: #ffc871;
 $red: #e8547e;
+$green: saturate(lighten($teal, 20%), 10%);
 
 // $backgroundColor: #001b38;
 
@@ -77,6 +78,13 @@ $heading4Size: 1.00em;
     &:first-child {
       margin-top: 0;
     }
+  }
+
+  code mark {
+    padding: 0 0.1em;
+    color: inherit;
+    background-color: transparent;
+    box-shadow: 0 0 0.3em 0.2em $red;
   }
 
   section img {
@@ -140,7 +148,7 @@ $heading4Size: 1.00em;
   }
 }
 
-.slide-specs {
+.reveal {
   .columns {
     display: flex;
     flex-direction: column;
@@ -151,9 +159,7 @@ $heading4Size: 1.00em;
       width: 30%
     }
   }
-}
 
-.reveal {
   .stages {
     list-style: none;
     padding-left: 0;
@@ -240,8 +246,7 @@ $heading4Size: 1.00em;
 
   > * {
     flex: 1;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin: 0 1em;
   }
 }
 
@@ -251,4 +256,45 @@ $heading4Size: 1.00em;
 
 .text-right {
   text-align: right !important;
+}
+
+.block-link.block-link {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.example-good,
+.example-bad {
+  position: relative;
+}
+.example-good::after,
+.example-bad::after {
+  display: block;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  height: 1.2em;
+  width: 1.2em;
+  text-align: center;
+  color: #333;
+  border-radius: 50%;
+  font-size: 1.2em;
+  line-height: 1.2;
+}
+.example-good::after {
+  content: "\2713";
+  background-color: $green;
+}
+.example-bad::after {
+  content: "\2717";
+  background-color: $red;
+}
+
+.swatch {
+  display: inline-block;
+  height: 2em;
+  width: 2em;
+  border-radius: 0.2em;
+  vertical-align: -0.7em;
+  margin-left: 0.4em;
 }
