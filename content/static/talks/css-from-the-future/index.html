@@ -47,7 +47,7 @@
           </section>
 
           <section>
-            <h2>Who are the W3C & CSS WG?</h2>
+            <h2>Who are the W3C?</h2>
             <p><img
               src="images/council-elders.jpg"
               alt="Bill & Ted Council elders"
@@ -147,26 +147,15 @@
             </ul>
           </section>
 
-          <!--
-          extra braces?
-
-          warn against deep nesting
-
-          order of nested selectors ?
-            normal properties
-            modifiers, before, after
-            elements
-            class
-          -->
           <section>
-            <h2>The & selector</h2>
+            <h2>The &amp; selector</h2>
             <div class="split">
               <div>
                 <pre><code data-trim data-noescape>
 .parent {
   color: red;
 
-  <mark>& .child</mark> {
+  <mark>&amp; .child</mark> {
     color: blue;
   }
 }
@@ -174,7 +163,7 @@
 .modal {
   display: none;
 
-  <mark>&.is-visible</mark> {
+  <mark>&amp;.is-visible</mark> {
     display: block;
   }
 }
@@ -202,12 +191,12 @@
               </div>
           </section>
           <section>
-            <p>Must <em>begin</em> with “&”</p>
+            <p>Must <em>begin</em> with “&amp;”</p>
             <pre class="example-bad"><code data-trim>
 .foo {
   color: red;
 
-  .container & { /* invalid */
+  .container &amp; { /* invalid */
     color: blue;
   }
 }
@@ -222,7 +211,7 @@
 .foo {
   color: red;
 
-  <mark>@nest .container &</mark> {
+  <mark>@nest .container &amp;</mark> {
     color: blue;
   }
 }
@@ -246,14 +235,14 @@
 .bar {
   border: 1px solid black;
 
-  <mark>@nest :not(&)</mark> {
+  <mark>@nest :not(&amp;)</mark> {
     border: 0;
   }
 }
                 </code></pre>
               </div>
               <div class="fragment">
-                <pre class="example-bad"><code data-trim data-noescape>
+                <pre><code data-trim data-noescape>
 .bar {
   border: 1px solid black;
 }
@@ -266,12 +255,12 @@
           </section>
 
           <section>
-            <p>Doesn’t support partial class names</p>
+            <p><em>Doesn’t support</em> partial class names</p>
             <pre class="example-bad"><code data-trim data-noescape>
 .bar {
   border: 1px solid black;
 
-  &-large {  /* invalid */
+  &amp;-large {  /* invalid */
     border-size: 2px;
   }
 }
@@ -284,13 +273,28 @@
           <section>
             <h2>Don’t go overboard</h2>
             <pre class="example-bad"><code data-trim data-noescape>
-.bar {
-border: 1px solid black;
-}
-:not(.bar) {
-border: 0;
+div.container {
+  &amp; div.content {
+    &amp; div.articles {
+      &amp; > div.post {
+        &amp; div.title {
+          &amp; h1 {
+            &amp; a {
+              color: purple;
+            }
+          }
+        }
+      }
+    }
+  }
 }
             </code></pre>
+            <p class="fragment">“The <em>Inception</em> rule”</p>
+          </section>
+
+          <section>
+            <h2>Write modular CSS</h2>
+            <p><a href="https://smacss.com/">smacss.com</a></p>
           </section>
         </section><!-- end nested selectors -->
 
@@ -381,8 +385,8 @@ border: 0;
   --button-padding: 1.2em;
 }
 
-/* override the values in #sidebar */
-#sidebar {
+/* override the values in .sidebar */
+.sidebar {
   --main-color: blue;
   --button-padding: 1em;
 }
@@ -424,10 +428,29 @@ border: 0;
             </code></pre>
           </section>
 
-          <!--
-          @media (30em < width < 50em)
-          @media (width >= 60em) // no 1px overlap of MQs
-          -->
+          <section>
+            <p>Syntax</p>
+            <pre><code data-trim data-noescape>
+@custom-media <mark>--large-viewport</mark> (min-width: 50em);
+
+@media (--large-viewport) {
+  /* styles for large viewport */
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Media query ranges</h3>
+            <pre><code data-trim data-noescape>
+@media (30em > width > 50em) {
+  /* styles for only medium viewport */
+}
+
+@media (width >= 50em) {
+  /* styles only for large viewport */
+}
+            </code></pre>
+          </section>
         </section>
 
         <section>
@@ -440,6 +463,40 @@ border: 0;
               <li>PR</li>
               <li>REC</li>
             </ul>
+          </section>
+
+          <section>
+            <p>Create a <em>shorthand</em> for groups of selectors</p>
+            <pre><code data-trim data-noescape>
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+:--heading {
+  font-weight: bold;
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <p>Abbreviate <em>complicated</em> selectors</p>
+            <pre><code data-trim data-noescape>
+.list > li:first-child:nth-last-child(5),
+.list > li:first-child:nth-last-child(5) ~ li {
+  ...
+}
+            </code></pre>
+            <div class="fragment">
+              <pre><code data-trim data-noescape class="css">
+@custom-selector $rest:--n-siblings($n, $sel) {
+  specificity: $sel;
+  expansion: $rest:first-child:nth-last-child($n of $sel),
+    :first-child:nth-last-child($n of $sel) ~ $rest;
+}
+
+:--n-siblings(5) {
+  ...
+}
+              </code></pre>
+            </div>
           </section>
         </section>
 
@@ -467,7 +524,7 @@ border: 0;
             <div class="split">
               <div>
                 <h3>Mixin</h3>
-                <pre><code data-trim data-noescape>
+                <pre><code data-trim data-noescape class="css">
 @mixin danger() {
   color: white;
   background-color: red;
@@ -494,10 +551,11 @@ border: 0;
 
 .button--danger {
   @extend .danger
+} 1px solid red;
 }
                 </code></pre>
                 <pre><code data-trim data-noescape>
-.danger, <mark>.button--danger</mark> {
+.danger, .button--danger {
   color: white;
   background-color: red;
 }
@@ -517,7 +575,7 @@ border: 0;
   }</mark>;
 }
 
-.danger {
+.button--danger {
   @apply --danger-theme;
 }
             </code></pre>
