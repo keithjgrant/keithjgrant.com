@@ -595,14 +595,82 @@ div.container {
             </ul>
           </section>
 
-          <!--
-          tints & shade
-          RGBA adjust
-          HSL/HWB adjust
-          guaranteed adequate contrast per WCAG
+          <section>
+            <div class="split">
+              <div>
+                <p><em>Tint</em>: mix with white</p>
+                <pre><code data-trim data-noescape>
+a:link {
+  color: blue; <i class="swatch" style="background: blue"></i>
+}
 
-          -> Add Swatches beside code example
-         -->
+a:hover {
+  color: color(blue tint(50%)); <i class="swatch" style="background: rgb(128, 128, 255)"></i>
+}
+                </code></pre>
+              </div>
+              <div class="fragment">
+                <p><em>Shade</em>: mix with black</p>
+                <pre><code data-trim data-noescape>
+.item {
+  color: red; <i class="swatch" style="background: red"></i>
+}
+
+.item--dark {
+  color: color(red shade(50%)); <i class="swatch" style="background: rgb(128, 0, 0)"></i>
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>RGBA adjust</h2>
+            <pre><code data-trim data-noescape>
+.item {
+  color: #888; <i class="swatch" style="background: #888"></i>
+}
+.item--more-red {
+  color: color(#888 red(+50%)); <i class="swatch" style="background: rgb(204, 136, 136)"></i>
+}
+.item--less-green {
+  color: color(#888 green(-50%)); <i class="swatch" style="background: rgb(136, 68, 136)"></i>
+}
+.item--blue {
+  color: color(#888 blue(85%)); <i class="swatch" style="background: rgb(136, 136, 217)"></i>
+}
+.item--transparent {
+  color: color(#888 alpha(50%)); <i class="swatch" style="background: rgba(136, 136, 136, 0.5)"></i>
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <p>Chain modifiers</p>
+            <pre><code data-trim data-noescape>
+.example {
+  color: color(
+    var(--brand-color)   /* initial color */
+    tint(50%)
+    red(+25%)
+    saturation(-30%)
+    alpha(50%)
+  );
+}
+              </code></pre>
+          </section>
+
+          <section>
+            <h3>Color functions</h3>
+            <ul>
+              <li>tint, shade</li>
+              <li>red, green, blue, alpha</li>
+              <li>hue, saturation, lightness</li>
+              <li>whiteness, blackness</li>
+              <li>blend (mix two colors)</li>
+              <li>guaranteed contrast</li>
+            </ul>
+          </section>
         </section>
 
         <section>
@@ -618,12 +686,6 @@ div.container {
           <section>
             <h2>HTTP/2 will fix it<span class="fragment" data-fragment-index="1">?</span></h2>
             <p class="fragment wordy" data-fragment-index="1">¯\_(ツ)_/¯</p>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h1>Missing piece: Loops<span class="fragment">?</span></h1>
           </section>
         </section>
 

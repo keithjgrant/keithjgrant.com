@@ -463,3 +463,11 @@ body {
 .example-bad::after {
   content: "\2717";
   background-color: #e8547e; }
+
+.swatch {
+  display: inline-block;
+  height: 2em;
+  width: 2em;
+  border-radius: 0.2em;
+  vertical-align: -0.7em;
+  margin-left: 0.4em; }

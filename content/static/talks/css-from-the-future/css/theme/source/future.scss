@@ -289,3 +289,12 @@ $heading4Size: 1.00em;
   content: "\2717";
   background-color: $red;
 }
+
+.swatch {
+  display: inline-block;
+  height: 2em;
+  width: 2em;
+  border-radius: 0.2em;
+  vertical-align: -0.7em;
+  margin-left: 0.4em;
+}
