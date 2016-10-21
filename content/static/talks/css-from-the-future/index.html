@@ -50,7 +50,7 @@
             <h2>Who are the W3C?</h2>
             <p><img
               src="images/council-elders.jpg"
-              alt="Bill & Ted Council elders"
+              alt="Bill &amp; Ted Council elders"
               class="image-nocenter"
            /></p>
           </section>
@@ -115,7 +115,7 @@
           </section>
 
           <section>
-            <p>Proprocessor features:</p>
+            <h2>Proprocessor features:</h2>
             <ul>
               <li>Nested selectors</li>
               <li>Variables</li>
@@ -354,6 +354,9 @@ div.container {
 
           <section>
             <p>Cool... but what’s with <em>that syntax?</em></p>
+            <p class="text-center">
+              <img src="images/puzzled.jpg" alt="Bill &amp; Ted puzzled" />
+            </p>
           </section>
 
           <section>
@@ -395,13 +398,51 @@ div.container {
           </section>
 
           <section>
-            ...
+            <p>Create styles that will <em>adapt</em></p>
+            <pre><code data-trim>
+.tile {
+  color: var(--font-color);
+  background: var(--bg-color);
+}
+            </code></pre>
           </section>
 
           <section>
-            [browser support]
+            <p>Use <em>fallback</em> values</p>
+            <pre><code data-trim>
+.tile {
+  color: var(--font-color, black);
+  background: var(--bg-color, transparent);
+}
+            </code></pre>
           </section>
-        </section>
+
+          <section>
+            <p>Access from <em>JavaScript</em></p>
+            <pre><code data-trim>
+element.style.getPropertyValue('--foo');
+            </code></pre>
+            <div class="fragment">
+              <p><em>Set</em> from JavaScript</p>
+              <pre><code data-trim>
+element.style.setProperty('--foo', 42);
+              </code></pre>
+            </div>
+          </section>
+          <section>
+            <img src="images/caniuse-variables.png" alt="Screenshot of CanIUse support for variables" />
+          </section>
+
+          <section>
+            <p><em>MS Edge</em>: in development</p>
+            <img src="images/variables-edge-status.png" alt="Edge development status: in progress"  />
+          </section>
+
+          <section>
+            <img src="images/napoleon-ice-cream.jpg" alt="Napoleon looking at a large bowl of ice cream" />
+          </section>
+        </section><!-- end variables -->
+
 
         <section>
           <section>
@@ -426,6 +467,9 @@ div.container {
   ...
 }
             </code></pre>
+            <div class="fragment">
+              <img src="images/bogus.gif" alt="Bogus" />
+            </div>
           </section>
 
           <section>
@@ -498,7 +542,81 @@ div.container {
               </code></pre>
             </div>
           </section>
-        </section>
+        </section><!-- end custom selectors -->
+
+        <section>
+          <section>
+            <h1>calc()</h1>
+            <ul class="stages">
+              <li>ED</li>
+              <li>WD</li>
+              <li class="is-active">CR</li>
+              <li>PR</li>
+              <li>REC</li>
+            </ul>
+          </section>
+
+          <section>
+            <img src="images/caniuse-calc.png" alt="Screenshot of CanIUse support for calc()" />
+          </section>
+
+          <section>
+            <div>
+              <p>Add/subtract <em>two units</em></p>
+              <pre><code data-trim data-noescape class="css">
+.banner {
+  width: calc(30% + 2em);
+}
+
+.tile {
+  width: calc(5rem - 20px);
+}
+              </code></pre>
+            </div>
+            <div class="fragment">
+              <p>Divide/multiple unit and a <em>number</em></p>
+              <pre><code data-trim data-noescape class="css">
+.column {
+  width: calc(100% / 3);
+}
+
+.callout {
+  width: calc(20em * 4);
+}
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <p>You can multiply to <em>add units</em></p>
+              <pre><code data-trim data-noescape class="css">
+.column {
+  --foo: 20;
+  width: calc(var(--foo) * 1em);  /* 20em */
+}
+              </code></pre>
+            </div>
+            <div class="fragment">
+              <p>You <em>cannot</em> remove units</p>
+              <pre><code data-trim data-noescape class="css">
+.column {
+  --foo: 20em;
+  --unitless-foo: calc(var(--foo) / 1em);  /* invalid */
+}
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h2>Takeaway:</h2>
+            <p>Use variables for <em>raw data</em></p>
+          </section>
+
+          <section>
+            <p>Unit algebra is <em>under consideration</em></p>
+          </section>
+        </section> <!-- end calc() -->
 
         <section>
           <section>
@@ -516,7 +634,7 @@ div.container {
 
           <section>
             <p>But it works in Chrome <em>today</em><sup>*</sup></p>
-            <p class="fragment"><sup>*</sup>with "experimental web platform features" flag enabled</p>
+            <p class="fragment"><sup>*</sup>with flag enabled</p>
           </section>
 
           <section>
@@ -562,23 +680,62 @@ div.container {
                 </code></pre>
               </div>
             </div>
-            <p class="fragment text-center">This distiction <em>won’t matter</em> anymore</p>
           </section>
 
           <section>
-            <p><em>Custom properties</em> can store just about <em>anything</em></p>
+            <p><em>Custom properties</em> can store<br />just about <em>anything</em>...</p>
+            <pre><code data-trim>
+:root {
+  --foo: This is a valid CSS custom property;
+  --bar: function(x) { return x * x; };
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <p>...including more <em>CSS</em></p>
             <pre><code data-trim data-noescape>
 :root {
-  --danger-theme: <mark>{
+  --danger-theme: {
     color: white;
     background-color: red;
-  }</mark>;
+  };
 }
-
+            </code></pre>
+            <div class="fragment">
+              <pre><code data-trim>
 .button--danger {
   @apply --danger-theme;
 }
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <p>Mixin vs. extends<br />distinction <em>won’t matter</em> anymore</p>
+          </section>
+
+          <section>
+            <p>Use custom properties for <em>parameters</em>?</p>
+            <pre><code data-trim>
+:root {
+  --font-color: black;
+
+  --mixin-alert-box: {
+    padding: 1em;
+    color: var(--font-color);
+    border: var(--font-color);
+  }
+}
             </code></pre>
+            <div class="fragment">
+              <pre><code data-trim>
+.alert--danger {
+  --font-color: red;
+  @apply --mixin-alert-box;
+}
+              </code></pre>
+            </div>
           </section>
           <!-- no support for parameters; use custom properties -->
         </section>
@@ -593,6 +750,10 @@ div.container {
               <li>PR</li>
               <li>REC</li>
             </ul>
+          </section>
+
+          <section>
+            <h2>color( &lt;base-color&gt; &lt;modifier-function&gt; )</h2>
           </section>
 
           <section>
@@ -670,6 +831,10 @@ a:hover {
               <li>blend (mix two colors)</li>
               <li>guaranteed contrast</li>
             </ul>
+          </section>
+
+          <section>
+            <img src="images/excellent.gif" alt="excellent" style="width: 100%" />
           </section>
         </section>
 
@@ -781,6 +946,11 @@ module.exports = {
               <li>:matches, :any-link, :not</li>
               <li>attribute case-insensitive</li>
             </ul>
+          </section>
+
+          <section>
+            <p>It’s <em>not perfect</em> yet, but it is close</p>
+            <img src="images/not-bad.gif" alt="not bad" style="width: 100%" />
           </section>
         </section>
 
