@@ -470,7 +470,7 @@ div.container {
             <pre><code data-trim data-noescape>
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
-:heading {
+:--heading {
   font-weight: bold;
 }
             </code></pre>
@@ -481,11 +481,11 @@ div.container {
             <pre><code data-trim data-noescape>
 .list > li:first-child:nth-last-child(5),
 .list > li:first-child:nth-last-child(5) ~ li {
-  /* style items only when *exactly* five items present */
+  ...
 }
             </code></pre>
             <div class="fragment">
-              <pre><code data-trim data-noescape>
+              <pre><code data-trim data-noescape class="css">
 @custom-selector $rest:--n-siblings($n, $sel) {
   specificity: $sel;
   expansion: $rest:first-child:nth-last-child($n of $sel),
@@ -524,7 +524,7 @@ div.container {
             <div class="split">
               <div>
                 <h3>Mixin</h3>
-                <pre><code data-trim data-noescape>
+                <pre><code data-trim data-noescape class="css">
 @mixin danger() {
   color: white;
   background-color: red;
@@ -551,10 +551,11 @@ div.container {
 
 .button--danger {
   @extend .danger
+} 1px solid red;
 }
                 </code></pre>
                 <pre><code data-trim data-noescape>
-.danger, <mark>.button--danger</mark> {
+.danger, .button--danger {
   color: white;
   background-color: red;
 }
@@ -574,7 +575,7 @@ div.container {
   }</mark>;
 }
 
-.danger {
+.button--danger {
   @apply --danger-theme;
 }
             </code></pre>
