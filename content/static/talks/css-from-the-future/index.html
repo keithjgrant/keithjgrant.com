@@ -876,6 +876,24 @@ a:hover {
           <section>
             <h2>Autoprefixer</h2>
             <p>Now a plugin for PostCSS</p>
+            <div class="split">
+              <div>
+                <pre><code data-trim>
+.flexy {
+  display: flex;
+}
+                </code></pre>
+              </div>
+              <div>
+                <pre><code data-trim>
+.flexy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+                </code></pre>
+              </div>
+            </div>
             <!--
             transition to PostCSS
 
@@ -951,6 +969,12 @@ module.exports = {
           <section>
             <p>It’s <em>not perfect</em> yet, but it is close</p>
             <img src="images/not-bad.gif" alt="not bad" style="width: 100%" />
+          </section>
+
+          <section>
+            <h2>Awkward transition</h2>
+            <p><em>Dynamic</em> variables</p>
+            <p class="text-right"><em>Static</em> colors</p>
           </section>
         </section>
 
