@@ -141,6 +141,10 @@
               src="images/circle-k.gif" alt="Strange things are afoot at the Cicle K"
             />
           </section>
+
+          <section>
+            <p>Contents <em>may shift</em> during flight</p>
+          </section>
         </section>
 
         <section>
@@ -268,13 +272,13 @@
 .bar {
   border: 1px solid black;
 
-  &amp;-large {  /* invalid */
+  &amp;--large {  /* invalid */
     border-size: 2px;
   }
 }
 
 /* expecting: */
-.bar-large {...}
+.bar--large {...}
             </code></pre>
           </section>
 
@@ -402,17 +406,17 @@ div.container {
   --button-padding: 1em;
 }
             </code></pre>
-            <p class="fragment">Variables only apply within the <em>targeted element</em> and its descendants</p>
+            <pre class="fragment"><code data-trim>
+.button {
+  color: white;
+  background-color: var(--main-color);
+  padding: var(--button-padding);
+}
+            </code></pre>
           </section>
 
           <section>
             <p>Create styles that will <em>adapt</em></p>
-            <pre><code data-trim>
-.tile {
-  color: var(--font-color);
-  background: var(--bg-color);
-}
-            </code></pre>
           </section>
 
           <section>
@@ -475,7 +479,7 @@ element.style.setProperty('--foo', 42);
   ...
 }
             </code></pre>
-            <div class="fragment">
+            <div>
               <img src="images/bogus.gif" alt="Bogus" />
             </div>
           </section>
@@ -519,11 +523,16 @@ element.style.setProperty('--foo', 42);
 
           <section>
             <p>Create a <em>shorthand</em> for groups of selectors</p>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape class="css">
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
 :--heading {
   font-weight: bold;
+}
+            </code></pre>
+            <pre class="fragment"><code data-trim class="css">
+.tile__title > :--heading {
+  ...
 }
             </code></pre>
           </section>
@@ -597,7 +606,7 @@ element.style.setProperty('--foo', 42);
 
           <section>
             <div>
-              <p>You can multiply to <em>add units</em></p>
+              <p>You can multiply to <em>introduce units</em></p>
               <pre><code data-trim data-noescape class="css">
 .column {
   --foo: 20;
@@ -732,7 +741,7 @@ element.style.setProperty('--foo', 42);
   --mixin-alert-box: {
     padding: 1em;
     color: var(--font-color);
-    border: var(--font-color);
+    border: 1px solid var(--font-color);
   }
 }
             </code></pre>
@@ -839,6 +848,44 @@ a:hover {
               <li>blend (mix two colors)</li>
               <li>guaranteed contrast</li>
             </ul>
+          </section>
+
+          <section>
+            <p>Multiple colors derived from <em>single value</em></p>
+            <div class="split">
+              <div>
+                <pre><code data-trim data-noescape>
+.alert {
+  color: blue;
+  background-color: color(
+    currentColor
+    lightness(+50%)
+  );
+  border: 1px solid currentColor;
+}
+                </code></pre>
+              </div>
+              <div>
+                <img src="images/alert-blue.png" alt="blue alert box" />
+              </div>
+            </div>
+            <div class="split fragment">
+              <div>
+                <pre ><code data-trim data-noescape>
+
+.alert--danger {
+  color: red;
+}
+
+.alert--warning {
+  color: orange;
+}
+                </code></pre>
+              </div>
+              <div>
+                <img src="images/alert-colored.png" alt="red and orange alert boxes" />
+              </div>
+            </div>
           </section>
 
           <section>
@@ -975,6 +1022,34 @@ module.exports = {
           </section>
 
           <section>
+            <h2>Incomplete support:</h2>
+            <div class="split">
+              <div>
+                <p>Variables only on <em>:root</em></p>
+                <pre><code data-trim>
+:root {
+  --text-color: black;
+}
+                </code></pre>
+                <pre><code data-trim class="example-bad">
+.alert {
+  --text-color: red;
+}
+                </code></pre>
+              </div>
+              <div class="fragment">
+                <p>Color functions only on <em>static values</em></p>
+                <pre><code data-trim class="example-bad">
+.alert {
+  color: red;
+  background: color(currentColor tint(80%));
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
             <p>It’s <em>not perfect</em> yet, but it is close</p>
             <img src="images/not-bad.gif" alt="not bad" style="width: 100%" />
           </section>
@@ -1021,6 +1096,7 @@ module.exports = {
 
           <p>Twitter: <a href="http://twitter.com/keithjgrant">@keithjgrant</a></p>
           <p>Slides: <a href="http://keithjgrant.com/talks">keithjgrant.com/talks</a></p>
+          <p>Book: <a href="https://manning.com/books/css-in-depth">manning.com/books/css-in-depth</a></p>
           </script>
         </section>
       </div>
