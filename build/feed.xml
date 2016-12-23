@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Keith J Grant</title><link>http://keithjgrant.com</link><atom:link href="http://keithjgrant.com/feed.xml" rel="self" type="application/rss+xml"/><description>JavaScript, CSS, UX, and the open web</description><language>en-US</language><lastBuildDate>Sun, 02 Oct 2016 04:00:00 GMT</lastBuildDate><item><title>Your team needs a UX engineer</title><link>http://keithjgrant.com/posts/your-team-needs-a-ux-engineer.html</link><description><![CDATA[
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Keith J Grant</title><link>http://keithjgrant.com</link><atom:link href="http://keithjgrant.com/feed.xml" rel="self" type="application/rss+xml"/><description>JavaScript, CSS, UX, and the open web</description><language>en-US</language><lastBuildDate>Fri, 23 Dec 2016 05:00:00 GMT</lastBuildDate><item><title>Let’s talk about separation of concerns</title><link>http://keithjgrant.com/posts/separation-of-concerns.html</link><description><![CDATA[
+<p>There’s been a lot of talk lately about good old Separation of Concerns &mdash; primarily in the context of React and the use of inline styles or CSS-in-JS. Advocates of these approaches argue that the language we use (be it JS, HTML, or CSS) is an arbitrary line to draw. And I would say: Yes, language is, for the most part, an arbitrary line. But that’s beside the point.</p>
+<p>So let’s get one thing straight. This...</p>
+<pre><code>import styles from &#39;./tile.css&#39;
+...
+render() {
+  return &lt;div className={styles.tile}&gt;...&lt;/div&gt;
+}
+</code></pre><p>...is architectually equivalent to this:</p>
+<pre><code>render() {
+  return &lt;div className=&quot;tile&quot;&gt;...&lt;/div&gt;
+}
+</code></pre><p>The latter approach, however:</p>
+<ol>
+<li>requires a drastically simpler build process</li>
+<li>is both backwards- and forwards-compatible across all frameworks</li>
+<li>doesn’t try to pretend that those styles exist in perfect encapsulated isolation</li>
+</ol>
+<p>Stop championing CSS-in-JS as some ground breaking re-thinking of Separation of Concerns. It’s not. The React component will still inherit its font face, color, and size from a parent container. It still exists on the web platform, in an HTML document, where all the rules of styles and inheritance still apply.</p>
+<p>We can debate about class name collision, co-locating stylesheets, <a href="/posts/css-first.html">how styles fit into system archetecture</a>, and other related topics. But let’s take this one off the table. Because it’s a straw man argument.</p>
+
+]]></description><pubDate>Fri, 23 Dec 2016 05:00:00 GMT</pubDate><guid isPermaLink="true">http://keithjgrant.com/posts/separation-of-concerns.html</guid></item><item><title>Your team needs a UX engineer</title><link>http://keithjgrant.com/posts/your-team-needs-a-ux-engineer.html</link><description><![CDATA[
 <p>Recently, after I mentioned that I was the only one on my team that writes the CSS, someone replied, “You’re lucky”.</p>
 <p>It stuck with me, and I’ve been thinking about it since. The thing is, it’s not luck. It was a deliberate decision made early when the team was first put together. And I think the rest of the developers on my team would think themselves lucky for <em>not</em> having to touch the CSS. It is more valuable for us to have one person on the team who specializes in that.</p>
 <p>We need to rethink something about the way we build our web development teams. We spend a lot of effort hiring good programmers, but for the most part, they are interchangeable. We make sure that everyone we hire knows the fundamentals of software engineering, architecture, and the primary language the team uses. And then we <em>assume</em>.</p>
