@@ -1,13 +1,13 @@
 <!DOCTYPE html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Keith J Grant</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#666"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@keithjgrant"><meta name="twitter:image" content="http://keithjgrant.com/images/keithjgrant.jpg"><meta name="og:title" content="Keith J. Grant"><link rel="alternate" type="application/rss+xml" title="Keith J Grant" href="http://keithjgrant.com/feed.xml"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif|Palanquin:100,700" type="text/css"><link rel="stylesheet" href="/css/main.min.css"></head><body><nav class="topnav"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/posts">Posts</a></li><li><a href="/talks">Talks</a></li></ul></nav><header class="masthead"><div class="masthead-content"><h1>Keith J Grant</h1><div class="bio">JavaScript, CSS, UX, and the open web.<div class="bio-twitter"><a href="http://twitter.com/keithjgrant">@keithjgrant</a></div></div></div></header><main class="l-main"><article class="post"><h2 class="post-title"><a href="/posts/separation-of-concerns.html">Let’s talk about separation of concerns</a></h2><div class="post-content"><p>There’s been a lot of talk lately about good old Separation of Concerns &mdash; primarily in the context of React and the use of inline styles or CSS-in-JS. Advocates of these approaches argue that the language we use (be it JS, HTML, or CSS) is an arbitrary line to draw. And I would say: Yes, language is, for the most part, an arbitrary line. But that’s beside the point.</p>
 <p>So let’s get one thing straight. This...</p>
-<pre><code>import styles from &#39;./tile.css&#39;
+<pre><code>import styles from &#39;./tile.css&#39;;
 ...
 render() {
-  return &lt;div className={styles.tile}&gt;...&lt;/div&gt;
+  return &lt;div className={styles.tile}&gt;...&lt;/div&gt;;
 }
 </code></pre><p>...is architectually equivalent to this:</p>
 <pre><code>render() {
-  return &lt;div className=&quot;tile&quot;&gt;...&lt;/div&gt;
+  return &lt;div className=&quot;tile&quot;&gt;...&lt;/div&gt;;
 }
 </code></pre><p>The latter approach, however:</p>
 <ol>
@@ -16,7 +16,7 @@ render() {
 <li>doesn’t try to pretend that those styles exist in perfect encapsulated isolation</li>
 </ol>
 <p>Stop championing CSS-in-JS as some ground breaking re-thinking of Separation of Concerns. It’s not. The React component will still inherit its font face, color, and size from a parent container. It still exists on the web platform, in an HTML document, where all the rules of styles and inheritance still apply.</p>
-<p>We can debate about class name collision, co-locating stylesheets, <a href="/posts/css-first.html">how styles fit into system archetecture</a>, and other related topics. But let’s take this one off the table. Because it’s a straw man argument.</p>
+<p>We can debate about class name collision, co-locating stylesheets, <a href="/posts/css-first.html">how styles fit into system archetecture</a>, and other related topics. But let’s take this one off the table, because it’s a straw man argument.</p>
 </div><date class="post-date">23 December 2016</date></article><footer><a href="/posts">See more posts</a></footer></main><script src="/js/vendor/prettify.js"></script><script src="/js/run-prettify.js"></script><script>if (document.location.hostname !== 'localhost') {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
