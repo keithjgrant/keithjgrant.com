@@ -1,0 +1,74 @@
+<!doctype html>
+<head>
+  <title>Mockup</title>
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Lato:300" rel="stylesheet">
+  <!-- previously: Gentium Book Basic -->
+  <link rel="stylesheet" href="normalize.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <symbol id="icon-home" viewBox="0 0 1024 1024"><title>home</title><path class="path1" d="M1017.382 622.826l-452.050-499.634c-14.051-15.533-32.992-24.086-53.333-24.086-0.002 0 0 0 0 0-20.339 0-39.282 8.555-53.334 24.086l-452.050 499.634c-9.485 10.485-8.675 26.674 1.808 36.158 4.899 4.432 11.043 6.616 17.168 6.616 6.982 0 13.938-2.838 18.992-8.426l109.016-120.491v410.517c0 42.347 34.453 76.8 76.8 76.8h563.2c42.347 0 76.8-34.453 76.8-76.8v-410.517l109.018 120.493c9.485 10.483 25.674 11.296 36.158 1.808 10.483-9.485 11.293-25.675 1.806-36.158zM614.4 972.8h-204.8v-230.4c0-14.115 11.485-25.6 25.6-25.6h153.6c14.115 0 25.6 11.485 25.6 25.6v230.4zM819.2 947.2c0 14.115-11.485 25.6-25.6 25.6h-128v-230.4c0-42.349-34.451-76.8-76.8-76.8h-153.6c-42.347 0-76.8 34.451-76.8 76.8v230.4h-128c-14.115 0-25.6-11.485-25.6-25.6v-467.106l291.832-322.552c4.222-4.667 9.68-7.237 15.368-7.237s11.146 2.57 15.366 7.235l291.834 322.552v467.107z"></path></symbol>
+      <symbol id="icon-file" viewBox="0 0 1024 1024"><title>file-empty</title><path class="path1" d="M914.101 289.099l-230.4-230.4c-4.8-4.802-11.312-7.499-18.101-7.499h-486.4c-42.347 0-76.8 34.453-76.8 76.8v819.2c0 42.349 34.453 76.8 76.8 76.8h665.6c42.349 0 76.8-34.451 76.8-76.8v-640c0-6.79-2.698-13.301-7.499-18.101zM859.797 307.2h-168.597c-14.115 0-25.6-11.485-25.6-25.6v-168.597l194.197 194.197zM870.4 947.2c0 14.115-11.485 25.6-25.6 25.6h-665.6c-14.115 0-25.6-11.485-25.6-25.6v-819.2c0-14.115 11.485-25.6 25.6-25.6h435.2v179.2c0 42.347 34.451 76.8 76.8 76.8h179.2v588.8z"></path></symbol>
+      <symbol id="icon-pencil" viewBox="0 0 1024 1024"><title>pencil</title><path class="path1" d="M978.101 45.898c-28.77-28.768-67.018-44.611-107.701-44.611-40.685 0-78.933 15.843-107.701 44.611l-652.8 652.8c-2.645 2.645-4.678 5.837-5.957 9.354l-102.4 281.6c-3.4 9.347-1.077 19.818 5.957 26.85 4.885 4.888 11.43 7.499 18.104 7.499 2.933 0 5.891-0.502 8.744-1.541l281.6-102.4c3.515-1.28 6.709-3.312 9.354-5.958l652.8-652.8c28.768-28.768 44.613-67.018 44.613-107.702s-15.843-78.933-44.613-107.701zM293.114 873.883l-224.709 81.71 81.712-224.707 566.683-566.683 142.997 142.997-566.683 566.683zM941.899 225.098l-45.899 45.899-142.997-142.997 45.899-45.899c19.098-19.098 44.49-29.614 71.498-29.614s52.4 10.518 71.499 29.616c19.098 19.098 29.616 44.49 29.616 71.498s-10.52 52.4-29.616 71.498z"></path></symbol>
+      <symbol id="icon-screen" viewBox="0 0 1024 1024"><title>screen</title><path class="path1" d="M896 102.4h-819.2c-42.347 0-76.8 34.453-76.8 76.8v512c0 42.349 34.453 76.8 76.8 76.8h384v102.4h-179.2c-14.138 0-25.6 11.461-25.6 25.6s11.462 25.6 25.6 25.6h409.6c14.139 0 25.6-11.461 25.6-25.6s-11.461-25.6-25.6-25.6h-179.2v-102.4h384c42.349 0 76.8-34.451 76.8-76.8v-512c0-42.347-34.451-76.8-76.8-76.8zM921.6 691.2c0 14.115-11.485 25.6-25.6 25.6h-819.2c-14.115 0-25.6-11.485-25.6-25.6v-512c0-14.115 11.485-25.6 25.6-25.6h819.2c14.115 0 25.6 11.485 25.6 25.6v512z"></path></symbol>
+      <symbol id="icon-user" viewBox="0 0 1024 1024"><title>user</title><path class="path1" d="M486.4 563.2c-155.275 0-281.6-126.325-281.6-281.6s126.325-281.6 281.6-281.6 281.6 126.325 281.6 281.6-126.325 281.6-281.6 281.6zM486.4 51.2c-127.043 0-230.4 103.357-230.4 230.4s103.357 230.4 230.4 230.4c127.042 0 230.4-103.357 230.4-230.4s-103.358-230.4-230.4-230.4z"></path><path class="path2" d="M896 1024h-819.2c-42.347 0-76.8-34.451-76.8-76.8 0-3.485 0.712-86.285 62.72-168.96 36.094-48.126 85.514-86.36 146.883-113.634 74.957-33.314 168.085-50.206 276.797-50.206 108.71 0 201.838 16.893 276.797 50.206 61.37 27.275 110.789 65.507 146.883 113.634 62.008 82.675 62.72 165.475 62.72 168.96 0 42.349-34.451 76.8-76.8 76.8zM486.4 665.6c-178.52 0-310.267 48.789-381 141.093-53.011 69.174-54.195 139.904-54.2 140.61 0 14.013 11.485 25.498 25.6 25.498h819.2c14.115 0 25.6-11.485 25.6-25.6-0.006-0.603-1.189-71.333-54.198-140.507-70.734-92.304-202.483-141.093-381.002-141.093z"></path></symbol>
+    </defs>
+  </svg>
+  <header class="main-header h-card">
+    <h1 class="site-title">
+      <a class="p-name u-url" href="http://keithjgrant.com">
+        Keith J. Grant
+      </a>
+    </h1>
+    <div class="avatar">
+      <a href="/about">
+        <img class="u-photo" src="keithjgrant.jpg" alt="Photo of Keith" />
+      </a>
+    </div>
+  </header>
+  <nav class="main-nav">
+    <ul class="nav-links">
+      <li><a href="/">
+        <svg class="nav-links__icon"><use xlink:href="#icon-home"></use></svg>
+        <span class="nav-links__label">Home</span>
+      </a></li>
+      <li><a href="/posts">
+        <svg class="nav-links__icon"><use xlink:href="#icon-file"></use></svg>
+        <span class="nav-links__label">Posts</span>
+      </a></li>
+      <li><a href="/notes">
+        <svg class="nav-links__icon"><use xlink:href="#icon-pencil"></use></svg>
+        <span class="nav-links__label">Notes</span>
+      </a></li>
+      <li><a href="/talks">
+        <svg class="nav-links__icon"><use xlink:href="#icon-screen"></use></svg>
+        <span class="nav-links__label">Talks</span>
+      </a></li>
+      <li><a href="/about">
+        <svg class="nav-links__icon"><use xlink:href="#icon-user"></use></svg>
+        <span class="nav-links__label">About</span>
+      </a></li>
+    </ul>
+  </nav>
+  <main class="post-container">
+    <div class="focus-container focus-container--homepage">
+      <h2>JavaScript, CSS, UX, &amp; the open web</h2>
+    </div>
+    <article class="post-body">
+      <h2><a href="single.html">Let's talk about separation of concerns</a></h2>
+      <p>There's been a lot of talk lately about good old Separation of Concerns &mdash; primarily in the context of React and the use of inline styles or CSS-in-JS. Advocates of these approaches argue that the language we use (be it JS, HTML, or CSS) is an arbitrary line to draw. And I would say: Yes, language is, for the most part, an arbitrary line. But that's beside the point.</p>
+      <p>So let's get one thing straight. This...</p>
+      <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code><span class="kwd">import</span><span class="pln"> styles </span><span class="kwd">from</span><span class="pln"> </span><span class="str">'./tile.css'</span></code></li><li class="L1"><code><span class="pun">...</span></code></li><li class="L2"><code><span class="pln">render</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L3"><code><span class="pln">  </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">div className</span><span class="pun">={</span><span class="pln">styles</span><span class="pun">.</span><span class="pln">tile</span><span class="pun">}&gt;...&lt;/</span><span class="pln">div</span><span class="pun">&gt;</span></code></li><li class="L4"><code><span class="pun">}</span></code></li></ol></pre><p>...is architectually equivalent to this:</p>
+      <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code><span class="pln">render</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L1"><code><span class="pln">  </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">div className</span><span class="pun">=</span><span class="str">"tile"</span><span class="pun">&gt;...&lt;/</span><span class="pln">div</span><span class="pun">&gt;</span></code></li><li class="L2"><code><span class="pun">}</span></code></li></ol></pre><p>The latter approach, however:</p>
+      <ol>
+      <li>requires a drastically simpler build process</li>
+      <li>is both backwards- and forwards-compatible across all frameworks</li>
+      <li>doesn't try to pretend that those styles exist in perfect encapsulated isolation</li>
+      </ol>
+      <p>Stop championing CSS-in-JS as some ground breaking re-thinking of Separation of Concerns. It's not. The React component will still inherit its font face, color, and size from a parent container. It still exists on the web platform, in an HTML document, where all the rules of styles and inheritance still apply.</p>
+      <p>We can debate about class name collision, co-locating stylesheets, <a href="/posts/css-first.html">how styles fit into system archetecture</a>, and other related topics. But let's take this one off the table. Because it's a straw man argument.</p>
+    </article>
+  </main>
+</body>
