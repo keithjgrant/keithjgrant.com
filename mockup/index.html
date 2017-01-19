@@ -1,6 +1,7 @@
 <!doctype html>
 <head>
   <title>Mockup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Lato:300" rel="stylesheet">
   <!-- previously: Gentium Book Basic -->
   <link rel="stylesheet" href="normalize.css" />
@@ -78,18 +79,44 @@
         <p>We can debate about class name collision, co-locating stylesheets, <a href="/posts/css-first.html">how styles fit into system archetecture</a>, and other related topics. But let's take this one off the table. Because it's a straw man argument.</p>
         <p class="post-date">17 December 2015</p>
       </div>
+
       <div class="post-interaction">
-        <div>
-          <svg class="interaction-icon"><use xlink:href="#icon-heart"></use></svg>
-          3 likes
+        <div class="tabs">
+          <button aria-controls="pane-replies">
+            <svg class="interaction-icon"><use xlink:href="#icon-reply"></use></svg>
+            1 reply
+          </button>
+          <button aria-controls="pane-likes">
+            <svg class="interaction-icon"><use xlink:href="#icon-heart"></use></svg>
+            39 likes
+          </button>
+          <button aria-controls="pane-shares">
+            <svg class="interaction-icon"><use xlink:href="#icon-share"></use></svg>
+            10 shares
+          </button>
         </div>
-        <div>
-          <svg class="interaction-icon"><use xlink:href="#icon-share"></use></svg>
-          1 share
+        <div class="tab-pane" id="pane-replies" aria-controlled-by="tab-replies">
+          <h3>Replies</h3>
+          <ul class="replies">
+            <li class="reply p-comment h-cite p-author">
+              <img class="u-photo" src="https://pbs.twimg.com/profile_images/619677584805208064/RwwbnNpi_bigger.jpg" />
+              <div class="reply__author">
+                <a class="p-name u-url" href="https://twitter.com/DavidKPiano">David K.</a>
+              </div>
+              <div class="reply__body e-content">
+                I wish more blog posts were like this - succinct, clear, and straight to the point 💯
+              </div>
+              <div class="reply__source">
+                <a href="https://twitter.com/DavidKPiano/status/812347411939151872">23 Dec 2016</a>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div>
-          <svg class="interaction-icon"><use xlink:href="#icon-reply"></use></svg>
-          2 replies
+        <div class="tab-pane" id="pane-likes" aria-controlled-by="tab-likes">
+          <h3>Likes</h3>
+        </div>
+        <div class="tab-pane" id="pane-shares" aria-controlled-by="tab-shares">
+          <h3>Shares</h3>
         </div>
       </div>
     </article>
@@ -117,4 +144,6 @@
       </a></li>
     </ul>
   </div>
+
+  <script type="text/javascript" src="page.js"></script>
 </body>
