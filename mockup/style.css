@@ -239,7 +239,10 @@ body::before {
     display: inline-block;
     margin-right: 1em;
     opacity: 0;
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out, color 0.1s linear;
+    transition:
+      transform 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+      opacity 0.5s ease-out,
+      color 0.1s linear;
     transform: translateX(-1em);
   }
   .nav-links:hover .nav-links__label,
@@ -475,7 +478,7 @@ body::before {
   mix-blend-mode: overlay;
 }
 .iconlist > li:hover {
-  animation: .3s wobble ease-out;
+  animation: 0.3s wobble cubic-bezier(0.23, 0.9, 0.51, 1.23);
 }
 .iconlist a {
   text-decoration: none;
@@ -519,7 +522,7 @@ body::before {
     transform: translate3d(2%,0,1%) rotate3d(0,0,1,1deg)
   }
   75% {
-    transform: translate3d(-1%,0,0); /* rotate3d(0,0,1,-3deg) */
+    transform: translate3d(1%,0,0);
   }
   100% {
     transform: none
