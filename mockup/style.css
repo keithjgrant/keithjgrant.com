@@ -606,13 +606,13 @@ a.reply__date {
     transform: none
   }
   25% {
-    transform: translate3d(-1%,2%,0) rotate3d(0,0,1,-1deg)
+    transform: translate3d(1%,2%,0) rotate3d(0,0,1,-1deg)
   }
   50% {
-    transform: translate3d(2%,0,1%) rotate3d(0,0,1,1deg)
+    transform: translate3d(-2%,0,1%) rotate3d(0,0,1,1deg)
   }
   75% {
-    transform: translate3d(1%,0,0);
+    transform: translate3d(-1%,0,0);
   }
   100% {
     transform: none
