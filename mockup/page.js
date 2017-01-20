@@ -27,12 +27,6 @@
     });
   });
 
-  // fake loading
-  setTimeout(function () {
-    document.getElementById('comments-loader').classList.add('is-hidden');
-    document.getElementById('comments-pane').classList.remove('is-hidden');
-  }, 1000);
-
   // webmention form
   var submit = document.getElementById('webmention-submit');
   submit.addEventListener('click', function (e) {
@@ -61,4 +55,21 @@
     });
   });
 
+
+
+  function showInteractions() {
+    // document.getElementById('comments-loader').classList.add('is-hidden');
+    // document.getElementById('comments-pane').classList.remove('is-hidden');
+  };
+  showInteractions();
+
+  // Load webmentions jsonp
+  // var script = document.createElement('script');
+  // script.src = 'webmentions.js?callback=parseWebmentions'
+  // // document.getElementsByTagName('head')[0].appendChild(script);
+  //
+  // function parseWebmentions(data) {
+  //   var links = data.links;
+  //
+  // }
 }());
