@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Keith J. Grant</title>
+    <link>http://keithjgrant.com/index.xml</link>
+    <description>Recent content on Keith J. Grant</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Jan 2017 21:29:56 -0500</lastBuildDate>
+    <atom:link href="http://keithjgrant.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>2</title>
+      <link>http://keithjgrant.com/note/2016/01/22/2/</link>
+      <pubDate>Sun, 22 Jan 2017 21:29:56 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/note/2016/01/22/2/</guid>
+      <description>yeah
+</description>
+    </item>
+    
+    <item>
+      <title>2</title>
+      <link>http://keithjgrant.com/notes/2016/01/22/2/</link>
+      <pubDate>Sun, 22 Jan 2017 21:29:56 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/notes/2016/01/22/2/</guid>
+      <description>yeah
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://keithjgrant.com/note/2016/01/22/1/</link>
+      <pubDate>Sun, 22 Jan 2017 20:48:38 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/note/2016/01/22/1/</guid>
+      <description>dis a thing
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://keithjgrant.com/notes/2016/01/22/1/</link>
+      <pubDate>Sun, 22 Jan 2017 20:48:38 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/notes/2016/01/22/1/</guid>
+      <description>dis a thing
+</description>
+    </item>
+    
+    <item>
+      <title>Let’s Talk About Separation of Concerns</title>
+      <link>http://keithjgrant.com/posts/2016/12/separation-of-concerns/</link>
+      <pubDate>Fri, 23 Dec 2016 00:00:00 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/posts/2016/12/separation-of-concerns/</guid>
+      <description>&lt;p&gt;There’s been a lot of talk lately about good old Separation of Concerns &amp;mdash; primarily in the context of React and the use of inline styles or CSS-in-JS. Advocates of these approaches argue that the language we use (be it JS, HTML, or CSS) is an arbitrary line to draw. And I would say: Yes, language is, for the most part, an arbitrary line. But that’s beside the point.&lt;/p&gt;
+
+&lt;p&gt;So let’s get one thing straight. This&amp;hellip;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import styles from &#39;./tile.css&#39;;
+...
+render() {
+  return &amp;lt;div className={styles.tile}&amp;gt;...&amp;lt;/div&amp;gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip;is architectually equivalent to this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;render() {
+  return &amp;lt;div className=&amp;quot;tile&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The latter approach, however:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;requires a drastically simpler build process&lt;/li&gt;
+&lt;li&gt;is both backwards- and forwards-compatible across all frameworks&lt;/li&gt;
+&lt;li&gt;doesn’t try to pretend that those styles exist in perfect encapsulated isolation&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Stop championing CSS-in-JS as some ground breaking re-thinking of Separation of Concerns. It’s not. The React component will still inherit its font face, color, and size from a parent container. It still exists on the web platform, in an HTML document, where all the rules of styles and inheritance still apply.&lt;/p&gt;
+
+&lt;p&gt;We can debate about class name collision, co-locating stylesheets, &lt;a href=&#34;http://keithjgrant.com/posts/css-first.html&#34;&gt;how styles fit into system archetecture&lt;/a&gt;, and other related topics. But let’s take this one off the table, because it’s a straw man argument.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Your Team Needs a UX Engineer</title>
+      <link>http://keithjgrant.com/posts/2016/10/your-team-needs-a-ux-engineer/</link>
+      <pubDate>Sun, 02 Oct 2016 00:00:00 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/posts/2016/10/your-team-needs-a-ux-engineer/</guid>
+      <description>&lt;p&gt;Recently, after I mentioned that I was the only one on my team that writes the CSS, someone replied, “You’re lucky”.&lt;/p&gt;
+
+&lt;p&gt;It stuck with me, and I’ve been thinking about it since. The thing is, it’s not luck. It was a deliberate decision made early when the team was first put together. And I think the rest of the developers on my team would think themselves lucky for &lt;em&gt;not&lt;/em&gt; having to touch the CSS. It is more valuable for us to have one person on the team who specializes in that.&lt;/p&gt;
+
+&lt;p&gt;We need to rethink something about the way we build our web development teams. We spend a lot of effort hiring good programmers, but for the most part, they are interchangeable. We make sure that everyone we hire knows the fundamentals of software engineering, architecture, and the primary language the team uses. And then we &lt;em&gt;assume&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;If a developer has a solid grasp on JavaScript, we think, surely they know CSS. Surely they know how to deal with accessibility. Surely they have a grasp on how and when to use various HTML elements and aria-* properties. These are small beans compared to &lt;em&gt;the code&lt;/em&gt;. And in many ways, they are.&lt;/p&gt;
+
+&lt;p&gt;But, of course, this isn’t how it plays out. Because we hire purely for the bigger task, CSS and accessibility always remain an afterthought. On most teams, nobody really knows what they are doing when it comes to these topics. They team stumbles along, joking amongst themselves how horrible CSS is.&lt;/p&gt;
+
+&lt;p&gt;We need to fix this. On teams larger than four or five developers, I think we can: one person per team should be hired explicitly for these tasks. Most of the team will still be focused on JavaScript (or Python or Java). But one person&amp;mdash;call them a “CSS Developer” or “UX Engineer”&amp;mdash;should be hired specifically for these “afterthought” concerns.&lt;/p&gt;
+
+&lt;p&gt;Is a developer building a new component and needs some styles? The UX Engineer writes that CSS. The UX Engineer gives a snippet of HTML to the developer for them to incorporate into the component. The UX engineer ensures the correct semantics and can come alongside the developer to ensure keyboard navigation works. The UX Engineer maintains a pattern library for the team to use as a reference to find existing styles.&lt;/p&gt;
+
+&lt;p&gt;This UX Engineer serves an important role, but furthermore, they allow the other developer to offload some work. The developer can focus on the &amp;ldquo;bigger concern&amp;rdquo; of getting the business logic right and ensuring the app works correctly. This improves the developer’s productivity.&lt;/p&gt;
+
+&lt;p&gt;This is how things work on my team. I am effectively the UX Engineer, and I think everyone enjoys the process more because of it. In our case, we stumbled upon this setup&amp;mdash;I was originally hired for my JavaScript skills. As always, the CSS was an afterthought; I just happened to be good at it, so we settled into the current arrangement.&lt;/p&gt;
+
+&lt;p&gt;Don’t wait for your team to stumble into this. Set it up intentionally. Hire a UX Engineer.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CSS in Depth</title>
+      <link>http://keithjgrant.com/posts/2016/08/css-in-depth/</link>
+      <pubDate>Wed, 24 Aug 2016 00:00:00 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/posts/2016/08/css-in-depth/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://keithjgrant.com/images/2016/css-in-depth-cover.png&#34; alt=&#34;Cover of CSS in Depth&#34; class=&#34;float-right&#34;/&gt;My book is finally for sale! The &lt;abbr title=&#34;Manning Early Access Program&#34;&gt;MEAP&lt;/abbr&gt; is available on &lt;a href=&#34;https://manning.com/books/css-in-depth&#34;&gt;Manning’s website&lt;/a&gt;. The first three chapters are available now, and others will be rolling out steadily (I’ve actually already completed drafts of six chapters at this point).&lt;/p&gt;
+
+&lt;p&gt;Until the end of August, you can use my code &lt;strong&gt;mlgrant2&lt;/strong&gt; for 50% off. Follow &lt;a href=&#34;https://twitter.com/CSSinDepth&#34;&gt;@CSSinDepth&lt;/a&gt; on Twitter for updates.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Save Scoped CSS</title>
+      <link>http://keithjgrant.com/posts/2016/06/save-scoped-css/</link>
+      <pubDate>Thu, 09 Jun 2016 00:00:00 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/posts/2016/06/save-scoped-css/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update June 23, 2016:&lt;/strong&gt; The editor&amp;rsquo;s draft has been updated again. It looks like &lt;code&gt;@scope&lt;/code&gt; is gone for good, so this post is now a moot point. The way forward now lies in the Shadow DOM.&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;About &lt;a href=&#34;http://keithjgrant.com/posts/into-the-future-of-css.html#scoped-css&#34;&gt;a year ago&lt;/a&gt;, I wrote about a promising feature of CSS, scoping. I love the idea of this feature, and I think it could be one of the most important changes in the near future of CSS. You know all those complaints about “in CSS everything is global&amp;rdquo;? This feature is the answer.&lt;/p&gt;
+
+&lt;p&gt;I became excited recently when I noticed some movement in the W3C concerning this spec. So I took a look at what was going on. I found some good news, and I found some bad news.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-good-news&#34;&gt;The good news&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://drafts.csswg.org/css-scoping/&#34;&gt;editor&amp;rsquo;s draft of the specification&lt;/a&gt; has recently been updated. The changes, I think, significantly improve the viability of the feature. They more closely resemble the hypothetical changes I wished for last year. Most importantly, scoped styles would no longer need to be defined inline in the HTML document; you can define scoped styles in an external stylesheet.&lt;/p&gt;
+
+&lt;p&gt;The proposed syntax looks like this, using a new &lt;code&gt;@scope&lt;/code&gt; at-rule:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;@scope .foo-module {
+  p {
+    color: blue;
+  }
+}
+
+@scope .bar-module {
+  p {
+    color: red;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Each scope is defined with a selector (&lt;code&gt;.foo-module&lt;/code&gt;, &lt;code&gt;.bar-module&lt;/code&gt;). This establishes a new scope for matched elements and their descendants. Inside the braces that follow, you can specify any styles you wish. These styles are then applied only to the elements belonging to that scope.&lt;/p&gt;
+
+&lt;p&gt;According to the rules of &lt;a href=&#34;https://www.w3.org/TR/css-cascade-3/#cascade-scope&#34;&gt;the cascade&lt;/a&gt;, rules applied to an inner scope will override those applied to an outer scope, &lt;em&gt;regardless of their selector specificity&lt;/em&gt;. This is precisely the behavior CSS-in-JS and/or CSS Modules users want! And yes, this definition is in the current Candidate Recommendation of the spec.&lt;/p&gt;
+
+&lt;p&gt;This means, given the example above, a &lt;code&gt;foo-module&lt;/code&gt; inside a &lt;code&gt;bar-module&lt;/code&gt; will have blue text; and a &lt;code&gt;bar-module&lt;/code&gt; inside a &lt;code&gt;foo-module&lt;/code&gt; will have red text. This could solve so many developer frustrations.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-bad-news&#34;&gt;The bad news&lt;/h2&gt;
+
+&lt;p&gt;I got excited when I saw these changes, so I started reading more on what prompted them. I discovered that it is a sort of last-ditch effort to salvage the spec. The problem? Browser vendors have shown no interest in implementing it. Firefox has long-since implemented the earlier version of the spec, but that&amp;rsquo;s it.&lt;/p&gt;
+
+&lt;p&gt;If we developers want this feature, we need to let the browser vendors know. Otherwise, it&amp;rsquo;s DOA.&lt;/p&gt;
+
+&lt;p&gt;So tell them, please. Follow these links, and up-vote or leave comments in support of scoped styles:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://groups.google.com/a/chromium.org/forum/#!searchin/blink-dev/scoped/blink-dev/R1x18ZLS5qQ/Bjuh_cENhlQJ&#34;&gt;Chrome&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/14895573--scope&#34;&gt;Edge&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;I couldn&amp;rsquo;t find a channel for Safari. If you know where it is, please let me know and I&amp;rsquo;ll add it here.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let&amp;rsquo;s not allow this to die.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Quest for Interchangeable Parts</title>
+      <link>http://keithjgrant.com/posts/2016/02/a-quest-for-interchangeable-parts/</link>
+      <pubDate>Sat, 06 Feb 2016 00:00:00 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/posts/2016/02/a-quest-for-interchangeable-parts/</guid>
+      <description>
+
+&lt;p&gt;This is a bolt. &lt;img class=&#34;float-right&#34; src=&#34;http://keithjgrant.com/images/2016/m20-bolt.jpg&#34; height=&#34;200&#34; width=&#34;200&#34; alt=&#34;bolt&#34;&gt; You may not realize it, but it is a modern marvel. It is a 150mm bolt with an M20 threading. It works in any piece of hardware that is cut with the same size and threading. It can be turned with any 30mm hex wrench. You can reach into a pile of M20-2.50 nuts, made by any manufacturer, pull any one out, and it will fit this bolt.&lt;/p&gt;
+
+&lt;p&gt;This is because of a key principle that made the industrial revolution possible: &lt;a href=&#34;https://en.wikipedia.org/wiki/Interchangeable_parts&#34;&gt;interchangeable parts&lt;/a&gt;. It took countless inventors over the course of hundreds of years to perfect the manufacturing necessary for this. Many people, such as Eli Whitney and Samuel Colt, devoted years of their lives and a great amount of resources in the quest to achieve it.&lt;/p&gt;
+
+&lt;p&gt;Before their efforts, everything had to be hand-made for the particular project. Every gun was uniquely crafted. Every piece of rigging on a ship. And if a part broke, you couldn’t just buy a replacement; one had to be hand-made to fit the parts it integrated with&amp;hellip; or the entire device had to be replaced.&lt;/p&gt;
+
+&lt;h2 id=&#34;learn-from-history&#34;&gt;Learn from history&lt;/h2&gt;
+
+&lt;p&gt;This is a tweet. &lt;img src=&#34;http://keithjgrant.com/images/2016/tweet.png&#34; alt=&#34;screenshot of tweet&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;You may not realize it, but it is stuck in the pre-industrial age. Because it is not an interchangeable part. It doesn’t fit into a Facebook wall, or onto a YouTube page.&lt;/p&gt;
+
+&lt;p&gt;Sure, it’s &lt;em&gt;almost&lt;/em&gt; interchangeable. You can post a link to its url in most places, or a screenshot of the tweet. Or you can copy the text and give attribution. But it does not interoperate with other social networks. You can’t retweet it or like it from anywhere but a limited number of places: an embedded tweet (put there by a script provided by Twitter) or a third-party app that uses Twitter’s API. This is because Twitter has a vested interest in keeping a tight reign on where and how a tweet can, and cannot, be used.&lt;/p&gt;
+
+&lt;p&gt;Our digital world is full of these semi-interchangeable parts. You can buy an album from iTunes or Amazon or Google Play. However, if you assemble your music collection using two or more of these, you have to jump through some hoops to keep it all in one place and to sync it to your phone.&lt;/p&gt;
+
+&lt;p&gt;You can subscribe to Hulu and Netflix and Amazon Prime, but you can’t just tune into them on any TV: you need to use something like a Roku that brings them all together. Nothing is standardized.&lt;/p&gt;
+
+&lt;h2 id=&#34;a-better-way&#34;&gt;A better way&lt;/h2&gt;
+
+&lt;p&gt;Netflix has to build an app for iOS, an app for Android, an app for Roku and Apple TV and the Amazon Fire Stick. They do all this just so users of those devices can tune in to their service. What if, instead, they just produced their content in a single, standardized web format. Imagine if HBO and Hulu broadcast in the same format. Imagine if subscribers merely had to tune in their TVs to the right “channel” watch. No Apple TV or Roku necessary. Like broadcast television.&lt;/p&gt;
+
+&lt;p&gt;iTunes keeps an iron grip on the whole pipeline of your music: the financial transaction, the download, the files on your hard drive, the sync to your Apple device. What if, instead, iTunes or Amazon were just a store, and they all provided music in the same format for you to save wherever you choose, and sync however you choose. Like it a CD.&lt;/p&gt;
+
+&lt;p&gt;What if, instead of “following” your friend Joseph on Twitter, you could just follow &lt;em&gt;Joseph&lt;/em&gt;. He could tweet on Twitter or post to Facebook and you would get it, on the social network of your choosing, that offers the controls and options you like. There would be a single, common digital format for a social media post, that worked on all networks. You could be on Twitter or Google Plus, and read his updates, wherever they came from. Like email.&lt;/p&gt;
+
+&lt;h2 id=&#34;an-open-web&#34;&gt;An open web&lt;/h2&gt;
+
+&lt;p&gt;Unlike the centuries-long quest for interchangeable parts in manufacturing, there is nothing technically holding us back from this. We might need to hash out what these standards look like, but that is relatively easy. The forces holding us back are more capitalistic&amp;mdash;or rather, &lt;em&gt;monopolistic&lt;/em&gt;. Because the world of open standards I just described would be a much more open, free market: a level playing field where far more companies could innovate and compete, rather than just a small handful of big players. It would be a world where users had more choices and more control over their media, and where they didn’t have to put up with so much headache.&lt;/p&gt;
+
+&lt;p&gt;Has the digital age made life easier? Absolutely. I don’t want to go back to broadcast television or CDs. While email still serves a purpose, it’s different than that of social media.&lt;/p&gt;
+
+&lt;p&gt;But the digital age has still not matured. We need interchangeable parts. It will take some concerted effort to break through the barriers holding us back. I admit don’t know precisely how to do that. But, just as we pushed through the difficulties that held back physical manufacturing in centuries past and ushered in the industrial revolution, we can break through these, and usher in a new digital revolution. The modern digital life is still more complicated than it need be.&lt;/p&gt;
+
+&lt;p&gt;The Internet may be the first true write-once-run-anywhere platform, but as long as these industries are shackled by proprietary lock-in, these parts of the web aren’t open. An open web requires interchangeable parts.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Width and Absolute Positioning</title>
+      <link>http://keithjgrant.com/posts/2016/01/width-and-absolute-positioning/</link>
+      <pubDate>Sat, 30 Jan 2016 00:00:00 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/posts/2016/01/width-and-absolute-positioning/</guid>
+      <description>
+
+&lt;p&gt;I recently came across this question on Twitter:
+&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;What&amp;#39;s the diff on a position:absolute el btw {top:0;right:0;bottom:0;left:0;} and {top:0;left:0;height:100%;width:100%;} ?&lt;/p&gt;&amp;mdash; Karl Swedberg (@kswedberg) &lt;a href=&#34;https://twitter.com/kswedberg/status/692720642580295681&#34;&gt;January 28, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+“That’s easy”, I thought. “They often seem the same in practice, but width and height are based on the parent (or nearest block-level ancestor). Top, right, bottom, and left are based on the nearest &lt;em&gt;positioned&lt;/em&gt; ancestor. Those aren’t necessarily the same element.”&lt;/p&gt;
+
+&lt;p&gt;Shows what I know: my &lt;a href=&#34;http://codepen.io/keithjgrant/pen/obddgy&#34;&gt;quick mockup&lt;/a&gt; to illustrate the difference proved me wrong.&lt;/p&gt;
+
+&lt;p&gt;On first pass, &lt;code&gt;top: 0; right: 0; bottom: 0; left: 0;&lt;/code&gt; and &lt;code&gt;top: 0; left: 0; width: 100%; height: 100%;&lt;/code&gt; are equivalent. Of course, we always &lt;em&gt;treat&lt;/em&gt; them as equivalent, because in most real-world cases, the nearest positioned ancestor is the nearest block-level element (usually the parent). But my codepen showed me an absolutely positioned element whose width and height are derived from the positioned ancestor, not the immediate container.&lt;/p&gt;
+
+&lt;p&gt;In retrospect, this makes a certain kind of sense, because the absolutely positioned element is removed from the normal flow. It&amp;rsquo;s then “contained” by the positioned ancestor.&lt;/p&gt;
+
+&lt;p&gt;So, the two scenarios are effectively the same. But a quick look at the spec made it clear that padding and margin would weigh in. So it might worth a little experimenting to see what we get.&lt;/p&gt;
+
+&lt;h2 id=&#34;experimenting&#34;&gt;Experimenting&lt;/h2&gt;
+
+&lt;p&gt;So here’s the basic scenario I set up. Three elements: one relatively positioned as the anchor for the absolute positioning, one to serve as the parent, and then the child, which will be absolutely positioned. For better visibility, the positioned container has a faint background color, the parent has a purple border, and the child has a medium gray background (transparent, so the others will show through).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;  &amp;lt;div class=&amp;quot;positioned&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;parent&amp;quot;&amp;gt;
+      &amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt;
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;  .positioned {
+    position: relative;
+    background-color: rgba(0,0,255, 0.1);
+  }
+
+  .parent {
+    width: 200px;
+    min-height: 200px;
+    border: 2px solid #936;
+  }
+
+  .child {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then, we’ll play around with the child’s properties to see what happens. We&amp;rsquo;ll create two variations. First, one with top, right, bottom, and left all set to zero. And second, one with a top and left of zero, and a width and height of 100%.&lt;/p&gt;
+
+&lt;div class=&#34;demo demo--basic&#34;&gt;
+  &lt;div class=&#34;demo-col&#34;&gt;
+    &lt;pre class=&#34;prettyprint&#34;&gt;.child {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+&lt;/pre&gt;
+    &lt;div class=&#34;demo-1 positioned&#34;&gt;
+      &lt;div class=&#34;parent&#34;&gt;
+        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;demo-col&#34;&gt;
+    &lt;pre class=&#34;prettyprint&#34;&gt;.child {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}&lt;/pre&gt;
+    &lt;div class=&#34;demo-2 positioned&#34;&gt;
+      &lt;div class=&#34;parent&#34;&gt;
+        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The two children appear identical. They overflow outside the parent, and fill the size of the positioned container. Visually, you can’t tell the difference between the container and the child. Let&amp;rsquo;s add some padding to the child and see what happens&amp;hellip;&lt;/p&gt;
+
+&lt;pre class=&#34;prettyprint&#34;&gt;
+  .child {
+    padding: 1em;
+  }
+&lt;/pre&gt;
+  &lt;div class=&#34;demo demo--padding&#34;&gt;
+    &lt;div class=&#34;demo-col&#34;&gt;
+      &lt;div class=&#34;demo-1 positioned&#34;&gt;
+        &lt;div class=&#34;parent&#34;&gt;
+          &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;demo-col&#34;&gt;
+      &lt;div class=&#34;demo-2 positioned&#34;&gt;
+        &lt;div class=&#34;parent&#34;&gt;
+          &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+...nothing. Note, I&#39;ve got &lt;code&gt;box-sizing: border-box&lt;/code&gt; set globally on the page. Let&#39;s turn that off:
+&lt;pre class=&#34;prettyprint&#34;&gt;
+  .child {
+    box-sizing: content-box;
+    padding: 1em;
+  }
+&lt;/pre&gt;
+
+&lt;div class=&#34;demo demo--padding-2&#34;&gt;
+  &lt;div class=&#34;demo-col&#34;&gt;
+    &lt;div class=&#34;demo-1 positioned&#34;&gt;
+      &lt;div class=&#34;parent&#34;&gt;
+        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;demo-col&#34;&gt;
+    &lt;div class=&#34;demo-2 positioned&#34;&gt;
+      &lt;div class=&#34;parent&#34;&gt;
+        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The padding still has no effect on the size of the first variation. But it adds to the width and height in the second; that child now overflows the positioned container. That makes sense. So there&amp;rsquo;s a key difference here, if you don&amp;rsquo;t have a global box-sizing fix in place.&lt;/p&gt;
+
+&lt;p&gt;Now let’s see what a margin does:&lt;/p&gt;
+
+&lt;pre class=&#34;prettyprint&#34;&gt;
+  .child {
+    margin: 1em;
+  }
+&lt;/pre&gt;
+
+&lt;div class=&#34;demo demo--margin&#34;&gt;
+  &lt;div class=&#34;demo-col&#34;&gt;
+    &lt;div class=&#34;demo-1 positioned&#34;&gt;
+      &lt;div class=&#34;parent&#34;&gt;
+        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;demo-col&#34;&gt;
+    &lt;div class=&#34;demo-2 positioned&#34;&gt;
+      &lt;div class=&#34;parent&#34;&gt;
+        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now that was unexpected, at least to me. With &lt;code&gt;right: 0; bottom: 0&lt;/code&gt;, the margin is contained inside the positioned descendant; they will shrink the size of the element.&lt;/p&gt;
+
+&lt;p&gt;With &lt;code&gt;width: 100%; height: 100%&lt;/code&gt;, the top and left margins are contained, but the element is shifted, maintaining its original size. The right and bottom margins are then added outside the whole structure.&lt;/p&gt;
+
+&lt;p&gt;What’s interesting is that in all these scenarios, the parent element doesn’t affect the shape of the child element at all&amp;mdash;Though it does provide the height to the positioned container.&lt;/p&gt;
+
+&lt;h2 id=&#34;take-away&#34;&gt;Take-away&lt;/h2&gt;
+
+&lt;p&gt;So what does this mean? It seems to me that &lt;code&gt;top: 0; right: 0; bottom: 0; left: 0&lt;/code&gt; is probably the one to favor, as it&amp;rsquo;s a little more predictable, unless you have a particular reason to use height or width instead.&lt;/p&gt;
+
+&lt;style type=&#34;text/css&#34;&gt;
+  .demo-col {
+    margin: 1em 0;
+  }
+  @media screen and (min-width: 900px) {
+    .demo {
+      display: flex;
+      flex-flow: space-between;
+      margin: 1em 0;
+    }
+
+    .demo-col {
+      flex: 1;
+      margin: 0;
+    }
+    .demo-col:not(:first-child) {
+      margin-left: 3em;
+    }
+  }
+
+  .demo .positioned {
+    position: relative;
+    background-color: rgba(0,0,255, 0.1);
+  }
+  .demo .parent {
+    width: 200px;
+    min-height: 200px;
+    border: 2px solid #936;
+  }
+  .demo .child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .demo-1 .child {
+    right: 0;
+    bottom: 0;
+  }
+
+  .demo-2 .child {
+    width: 100%;
+    height: 100%;
+  }
+
+  .demo--padding .child {
+    padding: 1em;
+  }
+
+  .demo--padding-2 {
+    margin-bottom: 2em;
+  }
+  .demo--padding-2 .child {
+    box-sizing: content-box;
+    padding: 1em;
+  }
+
+  .demo--margin .child {
+    margin: 1em;
+  }
+&lt;/style&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Simply White</title>
+      <link>http://keithjgrant.com/posts/2016/01/simply-white/</link>
+      <pubDate>Wed, 27 Jan 2016 00:00:00 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/posts/2016/01/simply-white/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.benjaminmoore.com/en-us/for-your-home/benjamin-moore-color-trends-2016&#34;&gt;Benjamin
+Moore&lt;/a&gt; has declared the Color of the Year for 2016 to be &amp;ldquo;simply white&amp;rdquo;. We have reached peak
+minimalism, y&amp;rsquo;all.&lt;/p&gt;
+
+&lt;p&gt;So I&amp;rsquo;m steering into the skid. Here&amp;rsquo;s my new design.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://keithjgrant.com/images/2016/simply-white.png&#34; alt=&#34;screenshot of &#39;Simply White&#39; design&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CSS First</title>
+      <link>http://keithjgrant.com/posts/2015/08/css-first/</link>
+      <pubDate>Sat, 01 Aug 2015 10:00:00 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/posts/2015/08/css-first/</guid>
+      <description>
+
+&lt;p&gt;In 2003, the &lt;em&gt;CSS Zen Garden&lt;/em&gt; went live, and it spearheaded a revolution. At the time, many web designers were still using tables for layouts, and the battle for semantic markup was underway. The Zen Garden showed the world, in beautiful color, what CSS could do. By changing the CSS, you could make the website retro, postmodern, abstract, or elegant. You could move the sidebar to the left, the right, the top, or the bottom of the page. You could do anything with the font, the colors, the shapes and sizes of the elements on the screen. No changes to the HTML were necessary.&lt;/p&gt;
+
+&lt;p&gt;What we didn&amp;rsquo;t realize at the time was how much of a disservice this was for the next generation of designers and developers.&lt;/p&gt;
+
+&lt;p&gt;Don&amp;rsquo;t get me wrong, the CSS Zen Garden was an essential part of moving the web forward. Without it, we might have seen table-based designs for much longer than we did. It did a lot of good for us, but it left us with one bad habit: it taught us to write HTML (or take existing HTML), and then write CSS for it. But this is wrong. The HTML shouldn&amp;rsquo;t come first; the CSS should.&lt;/p&gt;
+
+&lt;h2 id=&#34;css-your-first-dependency&#34;&gt;CSS: your first dependency&lt;/h2&gt;
+
+&lt;p&gt;Many web developers still try to think about how to write their HTML so that it can be sensibly targeted by their CSS. Instead, we aught to be writing selectors that can be used easily by HTML. The HTML depends upon the CSS, not the other way around.&lt;/p&gt;
+
+&lt;p&gt;CSS is the first dependency of your website or web application. The HTML expects it to be there; the JavaScript expects it to be there. Certain things are supposed to happen when they add or remove classes. CSS should be modular enough that it can be reused on a number of different web pages, and ideally even across different applications if needed. If you are using a modern practice like &lt;a href=&#34;https://smacss.com/&#34;&gt;SMACSS&lt;/a&gt; or BEM, this thinking is probably not new to you, but it&amp;rsquo;s worth unpacking.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at a little CSS. The familiar &lt;a href=&#34;http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/&#34;&gt;media object&lt;/a&gt; will do:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.media {
+  margin: 10px 0;
+}
+.media::after {
+  /* clearfix */
+  display: block;
+  content: &amp;quot; &amp;quot;;
+  clear: both;
+}
+
+.media-object {
+  float: left;
+  margin-right: 10px;
+}
+
+.media-body {
+  overflow: hidden;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is designed for the &lt;code&gt;media&lt;/code&gt; class to go on a container div, and the &lt;code&gt;media-object&lt;/code&gt; and &lt;code&gt;media-body&lt;/code&gt; to go on two child elements. Most likely these will be an &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; and a &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;, but you could probably change that up a bit. This can be placed inside other modules, and other modules can be placed inside of this module&amp;rsquo;s media-body.&lt;/p&gt;
+
+&lt;p&gt;These class names and small bit of implied DOM structure dictate an API contract with the HTML and JavaScript. This way, it&amp;rsquo;s reusable. You can put as many, or as few, of these on the page as you need, and the CSS never needs to change. Other modules might come with various states: classes like &lt;code&gt;is-open&lt;/code&gt;, &lt;code&gt;is-active&lt;/code&gt;. JavaScript can toggle them and allow the CSS to show, hide, highlight, or do whatever else it needs to do. It&amp;rsquo;s all part of the API.&lt;/p&gt;
+
+&lt;p&gt;This is the secret to separating the concerns of CSS from those of HTML and JavaScript. The CSS specifies the rules, and it&amp;rsquo;s up to the other two to follow them. It&amp;rsquo;s a one-way contract.&lt;/p&gt;
+
+&lt;p&gt;We tried for years to do it the other way around, and that&amp;rsquo;s what got us into trouble. When you approach web development HTML first, the HTML inevitably becomes coupled with the CSS. The CSS Zen Garden model works&amp;hellip; until the HTML changes. And in in the real world, the HTML changes all the time. If the CSS is based on that HTML, the CSS will have to change with it.&lt;/p&gt;
+
+&lt;p&gt;Instead, by developing the CSS first, in a way that is modular, we can apply it again and again to changing HTML, without needing to make changes upstream. The HTML just has to follow the conventions laid out by the API.&lt;/p&gt;
+
+&lt;p&gt;To do this, we need to develop our CSS as if it is for a third party, similar to Bootstrap and other CSS frameworks. If your project (or your team) is moderate to large size, this will begin to necessitate two important features for our CSS: it should be well documented, and it should be versioned.&lt;/p&gt;
+
+&lt;h2 id=&#34;documentation-driven&#34;&gt;Documentation-driven&lt;/h2&gt;
+
+&lt;p&gt;Ugh. Documentation. The longest four-letter word in a developer&amp;rsquo;s life.  Bear with me on this.&lt;/p&gt;
+
+&lt;p&gt;Since you are producing an API that other developers will consume, it needs to be documented. That means show each module in action so developers can skim through and find the pieces they need. Publish static HTML pages that organizes them in a reasonable way. Show the variants available. Add some bare-bones JavaScript to illustrate changing states and transition effects. Your CSS will eat its own dog food before you ever use it in your app.&lt;/p&gt;
+
+&lt;p&gt;At my job, we document our styles using &lt;a href=&#34;http://jade-lang.com/&#34;&gt;Jade&lt;/a&gt;, and have some mixins that duplicate portions of markup: once to render on the page, and the second time to print the markup into a &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; tag for reading. But for smaller projects, this may not be necessary; browser dev tools make it easy enough for a developer look under the covers at any of your examples.&lt;/p&gt;
+
+&lt;p&gt;This documentation serves double-duty: it also becomes your unit tests. Every module you build, and the variations thereof, are rendered into a page. Package your documentation with your CSS. Write the documentation for a module as you write the CSS. See it in action during development.&lt;/p&gt;
+
+&lt;p&gt;If you need to verify multiple permutations of module states or test how various modules work together, add appendices to your documentation to do these things, where you won&amp;rsquo;t bog down developers who are referring to the main docs. Our documentation at work has a series of fully-mocked up static pages (to ensure everything works together as expected) and several &amp;ldquo;test&amp;rdquo; pages where our grid system is put through paces and various table styles are mixed and matched in numerous ways to ensure they all work well together.&lt;/p&gt;
+
+&lt;p&gt;Unit tests in CSS are notoriously difficult to do. Some people use tools that take screenshots and compare for changes, but this is prone to all sorts of false positives. Some rely on linting, but that only gets you so far. If you write documentation as you develop, it serves the same purpose. Even better, eyes are on your tests, because developers and content editors will refer to it regularly.&lt;/p&gt;
+
+&lt;h2 id=&#34;versioned&#34;&gt;Versioned&lt;/h2&gt;
+
+&lt;p&gt;Second, version your styles using &lt;a href=&#34;http://semver.org/&#34;&gt;semver&lt;/a&gt;. Your HTML is opting-in to your CSS. You can&amp;rsquo;t just change things out from underneath it. Deploy your styles to a url with the version in the path, so you always know what you&amp;rsquo;re getting. Alternately, package your styles in a way that your project can import them at a certain version, whether an npm module or Ruby gem or similar.&lt;/p&gt;
+
+&lt;p&gt;Dead code elimination is a tough problem with CSS. If your CSS is versioned, you can deprecate and delete features with much lower risk.&lt;/p&gt;
+
+&lt;p&gt;Publish a changelog. This can make developers aware of new features, as well as give them a heads up when you deprecate something.&lt;/p&gt;
+
+&lt;h2 id=&#34;write-the-css-in-a-clean-room&#34;&gt;Write the CSS in a clean-room&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;CSS first&lt;/em&gt; doesn&amp;rsquo;t mean you write all of your CSS before you write any HTML or JavaScript. It applies at a finer-grained level. Each module is first built in the CSS before it can be used in the HTML. When you need styles in your app or website, your first stop should be the existing CSS documentation. Look for something that already meets your needs. Once you have built up a robust toolset of styles, you will often find you don&amp;rsquo;t need something new after all.&lt;/p&gt;
+
+&lt;p&gt;Only when nothing there fits your situation should you start coding new CSS. Once it&amp;rsquo;s written, and &amp;ldquo;tested&amp;rdquo; (i.e. added to the documentation), bump the version and cut a new release of the CSS.&lt;/p&gt;
+
+&lt;p&gt;This adds a small obstacle to adding new styles, which is intentional. It forces you to stop and think about your CSS outside the context of your particular problem, and encourages you to write a more general-use module. It also encourages developers to use existing styles as much as possible before rolling their own, which will result in a more cohesive look and feel throughout your site.&lt;/p&gt;
+
+&lt;p&gt;This is probably overkill for small projects. I certainly don&amp;rsquo;t jump through all these hoops for this blog. But the more your project scales up, the more essential they will become, and the more your team will benefit from them.&lt;/p&gt;
+
+&lt;p&gt;The API of your CSS will be much more robust as a result of this work.  That API is important. The inner-workings of your CSS are easy to change. Your HTML is easy to change. But that API between them is the most important part. Making significant changes to that is costly, because everything on both sides needs to be updated accordingly. Design that API well. Design it from the viewpoint of the CSS, and then build your HTML to match.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Into the future of CSS</title>
+      <link>http://keithjgrant.com/posts/2015/05/into-the-future-of-css/</link>
+      <pubDate>Sat, 30 May 2015 00:00:00 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/posts/2015/05/into-the-future-of-css/</guid>
+      <description>
+
+&lt;p&gt;In my &lt;a href=&#34;http://keithjgrant.com/posts/2015/05/against-css-in-js.html&#34;&gt;last post&lt;/a&gt;, I laid out why I think moving our CSS into JavaScript is not a good idea.  If am totally honest, however, I have to admit I brushed off the concerns &lt;a href=&#34;https://twitter.com/vjeux&#34;&gt;Christopher Chedeaux&lt;/a&gt; raises in his slidedeck.  The seven problems he named can be mitigated by best practices, and most of us can do just fine, because we do not often work in apps of the same scale as Facebook or Google.  But that does not mean the problems aren&amp;rsquo;t worth discussion.&lt;/p&gt;
+
+&lt;p&gt;I may disagree with the solution proposed by the ReactJS team, but I think they are doing something very important by bringing these problems to the forefront.  I shot down their ideas in my last post, so now I want to follow up with some constructive ideas.&lt;/p&gt;
+
+&lt;h2 id=&#34;a-way-forward&#34;&gt;A Way Forward&lt;/h2&gt;
+
+&lt;p&gt;We need to figure out how to solve these problems.  Not just mitigate them or work around them, but full solutions that work at scale.  And if the current spec does not provide the means, we should work to discover what additions to the spec can get us there.&lt;/p&gt;
+
+&lt;p&gt;I think our best bet is learning from JavaScript, or more specifically, CoffeeScript and Babel.  Now that ES6 features are becoming supported more and more in browsers, we can see that CoffeeScript played an important role in making that happen.  CoffeeScript brought new syntax and important improvements like auto bound functions (i.e. &lt;code&gt;=&amp;gt;&lt;/code&gt;) and, thanks to a transpiler, made them possible even before browsers supported them.  Now, some of these features have made their way into ES6 and with them, a breath of new life.  Even more new features are being proposed, and we can use them today with Babel.&lt;/p&gt;
+
+&lt;p&gt;We already have two promising libraries, doing for CSS what Babel does for JavaScript: &lt;a href=&#34;https://github.com/postcss/postcss&#34;&gt;PostCSS&lt;/a&gt; and &lt;a href=&#34;http://cssnext.io/&#34;&gt;cssnext&lt;/a&gt;.  These transpile CSS using the latest spec into compatible CSS that works in browsers today.  This is huge.  Things that we&amp;rsquo;ve relied on SASS and LESS for can now be done in &amp;ldquo;pure&amp;rdquo; CSS, namely variables and advanced color functions.  They also include support for things like custom media queries and custom selectors.  If you are not familiar with either of these libraries, they are worth reading up on.&lt;/p&gt;
+
+&lt;p&gt;The problem is these additions to spec are not all that exciting.  Variables and color functions are nice conveniences, but they do little to solve the real difficulties we face with CSS at scale.  I think, instead of emulating Babel, we need to emulate CoffeeScript.  It pushed the boundaries of JS, and now, as a result, 60% of ES6 features came straight from CoffeeScript.  Let&amp;rsquo;s do the same thing with CSS.  Think outside the box, and dream up new features to help.  PostCSS is especially good for this, because it is modular.  We just need to start writing some experimental plugins.&lt;/p&gt;
+
+&lt;h2 id=&#34;scoped-css&#34;&gt;Scoped CSS&lt;/h2&gt;
+
+&lt;p&gt;One cutting-edge feature that I think has promise is &lt;a href=&#34;http://davidwalsh.name/scoped-css&#34;&gt;scoped css&lt;/a&gt;.  This allows us to add a &amp;ldquo;scoped&amp;rdquo; attribute to a style tag, and those styles will only be applied to the parent element of the style tag and its descendants.  For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div class=&amp;quot;outer&amp;quot;&amp;gt;
+  &amp;lt;p&amp;gt;Normal black text&amp;lt;/p&amp;gt;
+  &amp;lt;div class=&amp;quot;inner&amp;quot;&amp;gt;
+    &amp;lt;style scoped&amp;gt;
+      p { color: red; }
+    &amp;lt;/style&amp;gt;
+    &amp;lt;p&amp;gt;Red text!&amp;lt;/p&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;p&amp;gt;Normal black text&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;These can be nested, and scoped elements can even be targeted in our regular stylesheet with the &lt;code&gt;:scoped&lt;/code&gt; pseudo-class.  Scoped styles override styles from a higher-up scope or the global page, regardless of selector specificity.&lt;/p&gt;
+
+&lt;p&gt;The spec for this was proposed in 2011, and not much has happened with it since then.  Only Firefox has added support.  Chrome added support behind an experimental features flag&amp;mdash;but has since removed it.  There are polyfills available, but as it is, this has not gone very far, and it&amp;rsquo;s not hard to see why.  Who wants to write a bunch of CSS inline in the document?  That feels more like a step backwards.&lt;/p&gt;
+
+&lt;p&gt;So, here&amp;rsquo;s an idea.  What if we assigned a value to the scoped attribute, &lt;code class=&#34;prettyprint&#34;&gt;&amp;lt;style scoped=&amp;ldquo;widget&amp;rdquo;/&amp;gt;&lt;/code&gt;, and then create an at-rule to define a named scope, maybe something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;@scope(&#39;widget&#39;) {
+  p {
+    color: red;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This would define a set of scoped styles and assign them a scope name, then we can use that name to apply those styles to our component wherever we put it on the page.  Then we could combine a PostCSS plugin with a polyfill to make it work.  Again, this is just an idea.  I don&amp;rsquo;t really know how well it will solve our difficulties in practice, but I would sure like to try.  It sure seems to have promise at addressing nearly all of Christopher Chedeaux&amp;rsquo;s seven problems with CSS at scale.&lt;/p&gt;
+
+&lt;h2 id=&#34;let-s-start-experimenting&#34;&gt;Let&amp;rsquo;s Start Experimenting&lt;/h2&gt;
+
+&lt;p&gt;Maybe my enhanced scope idea won&amp;rsquo;t work out.  Maybe someone else will come up with a better idea.  Either way, I think we need to try.  Perhaps there is something to be found if we augmented &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/@namespace&#34;&gt;@namespace&lt;/a&gt; instead.  Maybe the answer lies with the shadow DOM and web components, or something else entirely new.&lt;/p&gt;
+
+&lt;p&gt;My hope here is not that we come up with a postprocessor or polyfill library that makes CSS easier, though that is the first step.  My hope is ultimately that we find a way to solve the problems we have, and that the best solution makes its way into the official spec, after we prove it out on production sites. Who knows?  Maybe if PostCSS or cssnext keeps gaining traction, we will invent entirely new polyfills for the future that address any number of issues.  JavaScript has got a lot of momentum moving forward.  It&amp;rsquo;s time for CSS to do the same.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Against CSS in JS</title>
+      <link>http://keithjgrant.com/posts/2015/05/against-css-in-js/</link>
+      <pubDate>Fri, 29 May 2015 00:00:00 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/posts/2015/05/against-css-in-js/</guid>
+      <description>
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Some folks want a unified language of the web instead of CSS, HTML, and JS.&amp;#10;&amp;#10;It&amp;#39;s increasingly looking like JS will just eat the other two.&lt;/p&gt;&amp;mdash; Henrik Joreteg (@HenrikJoreteg) &lt;a href=&#34;https://twitter.com/HenrikJoreteg/status/603959629425483776&#34;&gt;May 28, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;I have long believed that pieces of our &lt;a href=&#34;https://www.youtube.com/watch?v=x7cQ3mrcKaY&#34;&gt;JavaScript are intimately coupled with the DOM&lt;/a&gt;, especially in the context of web apps.  For far too long, we waved our hands and pretended we have a separation of concerns simply because our HTML is in one file and our JavaScript is in another.  Not only did this avoid the problem, I think it actually made it worse, because we had to write more and more complicated code to try and abstract away this coupling.&lt;/p&gt;
+
+&lt;p&gt;This coupling is real, and it is unavoidable.  We must bind event listeners to elements on the page.  We must update elements on the page from our JavaScript.  Our code must interact bidirectionally and in real-time with the elements of the DOM.  If it doesn&amp;rsquo;t&amp;hellip; then we just have static HTML.  Think about it, can you just open up your HTML and change around class names or ids without breaking anything?  Of course not.  You have to pull up your scripts and see which of those you need to get a handle on various DOM nodes.  Likewise, when you make changes to your JavaScript views, you inevitably need to make changes to the markup as well; add a class or id so you can target an element; wrap an extra div around a block so you can animate it a certain way.  This is the very definition of tight coupling.  You must have an intimate knowledge of both in order to safely make any substantive changes to either.&lt;/p&gt;
+
+&lt;p&gt;Instead, the mantra of React is to stop pretending the DOM and the JavaScript that controls it are separate concerns.  Join the two, and instead, separate concerns that are actually different: the dropdown menu is separate from the list of objects; the modal dialog box is separate from the page footer.  Why on earth would you put these all in the same HTML document?  Obviously, you shouldn&amp;rsquo;t.&lt;/p&gt;
+
+&lt;p&gt;When React came out, I was more than happy to embrace their controversial claim that pieces of our DOM should live in the JavaScript&amp;mdash;because I already knew it to be true.  They are the same concern, and every attempt we have ever made at separating them has ended in disaster.  Just think about the last time you had to deal with Backbone Views.  It actually makes me feel sick to my stomach to think about.  There was so much work for so little gain, and it was all boilerplate code to cross that barrier into DOM land.&lt;/p&gt;
+
+&lt;h2 id=&#34;so-what-about-css&#34;&gt;So What About CSS?&lt;/h2&gt;
+
+&lt;p&gt;This made sense once, so, naturally, there is talk about doing the same thing with CSS.  We brought our HTML (sort of) into our JavaScript and it cleaned a lot of things up, why not &lt;a href=&#34;https://medium.com/javascript-scene/jsx-looks-like-an-abomination-1c1ec351a918#1e2d&#34;&gt;do it with our styles&lt;/a&gt; as well?&lt;/p&gt;
+
+&lt;p&gt;This is a really bad idea.  Where, with JSX, my reaction was, &amp;ldquo;Yes, finally!&amp;rdquo;, my response here is quite the opposite.  I&amp;rsquo;ve had a hard time articulating exactly why I respond this way, especially on the length-constrained and fast-paced atmosphere of Twitter, so I&amp;rsquo;m setting out now to articulate my reasons here.&lt;/p&gt;
+
+&lt;p&gt;Before I dive in too deep, I do want to say I have interacted some with React Native folks on Twitter regarding this.  I acknowledge that their work is primarily in the realm of native applications, not in the context of the web.  I think this has ramifications for their use case that I myself am not familiar with.  My thoughts may be applicable to them, and they may not; I&amp;rsquo;m not well-versed in that world enough to speak to them directly.  But I do hope others take note of that distinction before they clamber to repeat these practices on the web.&lt;/p&gt;
+
+&lt;h2 id=&#34;we-are-not-solving-the-same-problem-as-before&#34;&gt;We Are Not Solving the Same Problem As Before&lt;/h2&gt;
+
+&lt;p&gt;The relationship between CSS and JavaScript is not like the relationship between HTML and JavaScript.  With HTML, a true separation of concerns between the markup and the corresponding component code is impossible.  With CSS, this separation is possible and is in fact vital to clean code organization.&lt;/p&gt;
+
+&lt;p&gt;Your CSS should be wholly independent from your markup (and especially independent from your JavaScript).  If you find, as &lt;a href=&#34;http://programmers.stackexchange.com/questions/271294/why-is-it-or-was-it-important-to-separate-css-from-html&#34;&gt;this stackexchange user observed&lt;/a&gt;&amp;mdash;that your &amp;ldquo;commit history shows me the opposite - [you] usually edit both HTML and CSS together&amp;rdquo;&amp;mdash;then you are doing CSS wrong.  CSS should not depend on the markup; the markup should depend on the CSS.  Or, more accurately, it should depend on the modular, reusable API defined by the CSS.&lt;/p&gt;
+
+&lt;p&gt;If you use the best practices of &lt;a href=&#34;http://oocss.org/&#34;&gt;OOCSS&lt;/a&gt;, &lt;a href=&#34;https://smacss.com/&#34;&gt;SMACSS&lt;/a&gt;, or BEM, you will not need to edit the CSS every time you edit a page.  In fact, once you have your basic building blocks of CSS defined, you can build out all sorts of things in the markup before you need to touch the styles again.  Far too often, developers write their CSS and HTML together, with selectors that mimic the structure of the DOM.  If one changes, then the other must change with it: a tight coupling.&lt;/p&gt;
+
+&lt;p&gt;However, moving the styles into the JavaScript does not address this problem at all.  When we moved our HTML into our React components, we redefined which concerns we were separating.  Each component is now a unique concern.  When we bring CSS into that, we are not further breaking up our concerns; we are just adding more responsibilities to the concerns we already have.&lt;/p&gt;
+
+&lt;p&gt;In a best-case scenario, with well organized code, we require in a style module into our React component and add it to the props.  This is roughly equivalent to adding a class name that references a stylesheet&amp;ndash;there is no net gain in terms of separation of concerns.  But, we don&amp;rsquo;t always work in a best-case scenario.  Now that our JavaScript has taken responsibility for styling, it will have to take care of things that we take for granted with CSS.  This will add unnecessary bloat to your codebase, and make separation of concerns more difficult.&lt;/p&gt;
+
+&lt;p&gt;If your stylesheets are well organized and written with best practices, there is no bi-directional dependency between them and the HTML.  So we do not need to solve the same problem with our CSS that we had to solve with our markup.&lt;/p&gt;
+
+&lt;h2 id=&#34;beware-framework-lock-in&#34;&gt;Beware Framework Lock-In&lt;/h2&gt;
+
+&lt;p&gt;CSS is universal. If your page has stylesheets, that&amp;rsquo;s cool, because everyone&amp;rsquo;s page has stylesheets.  Every JavaScript library and every HTML templating language works with CSS.  If you shift all of your styles into JavaScript, you are going to be locked into using JavaScript libraries that can use them.  Your styles no longer stand on their own.&lt;/p&gt;
+
+&lt;p&gt;If in 14 months you find a new view library or framework you want to try out, you&amp;rsquo;re out of luck.  You will have to invest a lot of time into pulling styles back out of JavaScript modules and into stylesheets again.  The most likely scenario is you would only bring out a portion of it&amp;mdash;just enough to use in the components you are building with the new library.  Sure, you may continue to make progress over time pulling styles back into regular stylesheets, but during that process, you&amp;rsquo;re going to have duplication of code, and you may even find yourself running into scenarios where the CSS has to be completely re-written to replicate the behavior you added in JavaScript.&lt;/p&gt;
+
+&lt;h2 id=&#34;all-or-nothing&#34;&gt;All or Nothing&lt;/h2&gt;
+
+&lt;p&gt;When you start bringing your styles into your JavaScript, where do you stop?  If you only bring in some of them, how are you going to define that boundary?  When you need to change something in the look and feel, do you know whether you need to open up your styles.css or your styles.js?  A logical solution here is to bring in all of it and abondon stylesheets altogether.&lt;/p&gt;
+
+&lt;p&gt;The problem with that is, CSS takes care of some things cleanly for us that you are probably taking for granted.  This is helpful for fonts in particular: The default font size, the font face and line-height, and the color of your font are all inherited silently from one of the topmost elements on the page.  Do you want to explicitly set these things on every single component you build?  Because you will have to.&lt;/p&gt;
+
+&lt;p&gt;Not only that, but if you distribute your component, the users of that component need to be all-in on the same paradigm, as well.  Your component sets inline styles, which means they can&amp;rsquo;t be overridden without &lt;code&gt;!important&lt;/code&gt;.  To get around this problem, you can allow the user to pass in their own styles, but this means the user of your component must have their styles defined in their JavaScript as well.  What if they want to use traditional stylesheets?  You&amp;rsquo;re forcing their hand.&lt;/p&gt;
+
+&lt;h2 id=&#34;missing-css-features&#34;&gt;Missing CSS Features&lt;/h2&gt;
+
+&lt;p&gt;I think there is a place for a few inline styles in a React component.  I&amp;rsquo;ll admit I&amp;rsquo;ve had to do it a few times.  Most often, though, it is because I need to accomplish something that can&amp;rsquo;t be done in pure CSS (yet), such as animating from &lt;code&gt;height: 0&lt;/code&gt; to &lt;code&gt;height: auto&lt;/code&gt;.  Animation is a bit of a different topic here, but, honestly, even that is invariably easier to do when it can be accomplished with pure CSS.  The power of transitions and keyframe animation is much harder to replicate in JavaScript without the help of yet another dependency.  The browser already has this stuff built in.  Take advantage of it.  It is so much easier to just toggle a classname and not have to think about it when I&amp;rsquo;m trying to focus on another problem.&lt;/p&gt;
+
+&lt;p&gt;You also lose the ability to do some other things, as well, like media queries and fallback values for older browsers.  Unless you want to start browser sniffing and adding conditionals around your styles.  Again, this is adding more responsibilities to your components that otherwise they would not have.&lt;/p&gt;
+
+&lt;h2 id=&#34;in-defense-of-css&#34;&gt;In Defense Of CSS&lt;/h2&gt;
+
+&lt;p&gt;At this point, I have to ask: what problem are we trying to solve?  There is a lot of baggage and many unknowns if we start doing CSS-in-JS.  We had better have a damn good reason before we go down that road.  Christopher Chedeau, in the &lt;a href=&#34;https://speakerdeck.com/vjeux/react-css-in-js&#34;&gt;original slidedeck&lt;/a&gt; that introduced this idea, outlines seven &amp;ldquo;problems&amp;rdquo; with CSS.  The thing is, they are solvable problems.  If we as web developers just understand CSS better, and take the time to learn modern best-practices like SMACSS and BEM, these issues almost entirely dissolve, especially at the scale most of us work at.  Don&amp;rsquo;t get me wrong; he does make some good points that are worth discussing, but I believe we have at least partial solutions for all of them (some of the latest proposals to the CSS spec help, as well).  If you want to discuss those points directly, feel free to ping me on &lt;a href=&#34;https://twitter.com/keithjgrant&#34;&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Many web developers fear CSS.  They fear it because the do not understand it.  And I am worried that, in that fear, we will collectively rush to move our styles into JavaScript in hopes that it solves our problems.  It won&amp;rsquo;t.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s time to truly &lt;a href=&#34;https://github.com/keithjgrant/Taming-CSS&#34;&gt;learn CSS&lt;/a&gt;, because that&amp;rsquo;s our real problem.  And that is a problem we can fix.&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;em&gt;Update: I have written a follow-up post: &lt;a href=&#34;http://keithjgrant.com/posts/into-the-future-of-css.html&#34;&gt;Into the Future of CSS&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hosting on Github</title>
+      <link>http://keithjgrant.com/posts/2015/05/hosting-on-github/</link>
+      <pubDate>Sat, 16 May 2015 16:26:32 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/posts/2015/05/hosting-on-github/</guid>
+      <description>&lt;p&gt;Well, this is a bit of an experiment&amp;hellip; I&amp;rsquo;ve lost track of how many times I&amp;rsquo;ve started a redesign of my WordPress blog, only to give up after days of fiddling.  This is kind of silly, since I generally finish the &lt;em&gt;design&lt;/em&gt; of my site fairly quickly, but get held up fighting with the implementation minutia.&lt;/p&gt;
+
+&lt;p&gt;I blog very rarely.  I also occasionally want to host various other pages that don&amp;rsquo;t necessarily need to fit with the theme of the rest of my site.  WordPress is really overkill for this.  What I really need is just some static hosting.  So I&amp;rsquo;m giving GitHub Pages a try.  Not only that, but I should be able to play with the design whenever I feel like, without too much time investment.&lt;/p&gt;
+
+&lt;p&gt;So here&amp;rsquo;s my new design.  It took me just a few days not only to build the site, but to also roll out some bare-bones blogging &amp;amp; deployment scripts in gulp; my database is a git repository.  I can blog in &lt;a href=&#34;http://jade-lang.com/&#34;&gt;Jade&lt;/a&gt; or MarkDown.  I think my wordpress days may be done, at least for now.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

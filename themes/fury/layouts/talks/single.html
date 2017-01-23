@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  {{ partial "meta.html" }}
+</head>
+<body>
+  {{ partial "svg.html" }}
+  {{ partial "header.html" }}
+
+  <main class="post-container">
+    <div class="focus-container">
+      <h1>{{ .Title }}</h1>
+    </div>
+    <article class="post-body h-entry">
+      <div class="content e-content">
+          {{ .Content }}
+      </div>
+    </article>
+  </main>
+
+  {{ partial "footer.html" }}
+</body>
+</html>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://keithjgrant.com/note/2016/01/22/2/</loc>
+    <lastmod>2017-01-22T21:29:56-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/notes/2016/01/22/2/</loc>
+    <lastmod>2017-01-22T21:29:56-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/note/2016/01/22/1/</loc>
+    <lastmod>2017-01-22T20:48:38-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/notes/2016/01/22/1/</loc>
+    <lastmod>2017-01-22T20:48:38-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/posts/2016/12/separation-of-concerns/</loc>
+    <lastmod>2016-12-23T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/posts/2016/10/your-team-needs-a-ux-engineer/</loc>
+    <lastmod>2016-10-02T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/posts/2016/08/css-in-depth/</loc>
+    <lastmod>2016-08-24T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/posts/2016/06/save-scoped-css/</loc>
+    <lastmod>2016-06-09T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/posts/2016/02/a-quest-for-interchangeable-parts/</loc>
+    <lastmod>2016-02-06T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/posts/2016/01/width-and-absolute-positioning/</loc>
+    <lastmod>2016-01-30T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/posts/2016/01/simply-white/</loc>
+    <lastmod>2016-01-27T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/posts/2015/08/css-first/</loc>
+    <lastmod>2015-08-01T10:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/posts/2015/05/into-the-future-of-css/</loc>
+    <lastmod>2015-05-30T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/posts/2015/05/against-css-in-js/</loc>
+    <lastmod>2015-05-29T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/posts/2015/05/hosting-on-github/</loc>
+    <lastmod>2015-05-16T16:26:32-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/posts/2015/04/taming-css/</loc>
+    <lastmod>2015-04-29T16:26:32-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/about/</loc>
+    <lastmod>2015-01-22T21:49:18-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/</loc>
+    <lastmod>2017-01-22T21:29:56-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/note/</loc>
+    <lastmod>2017-01-22T21:29:56-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/notes/</loc>
+    <lastmod>2017-01-22T21:29:56-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/posts/</loc>
+    <lastmod>2016-12-23T00:00:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/talks/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://keithjgrant.com/talks/all/</loc>
+  </url>
+  
+</urlset>

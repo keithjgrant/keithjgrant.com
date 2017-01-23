@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  {{ partial "meta.html" }}
+</head>
+<body>
+  {{ partial "svg.html" }}
+  {{ partial "header.html" }}
+
+  <main class="post-container">
+    <div class="focus-container focus-container--homepage">
+      <h2>JavaScript, CSS, UX, &amp; the open web</h2>
+    </div>
+    <article class="post-body h-entry">
+      {{ range first 1 (where .Site.Pages "Section" "posts") }}
+        <h2 class="p-name">
+          <a class="p-url" href="{{ .Permalink }}">
+            {{ .Title }}
+          </a>
+        </h2>
+        <div class="content e-content">
+            {{ .Content }}
+          <p class="post-date">{{ .Date.Format "02 Jan 2006" }}</p>
+        </div>
+        {{ partial "interactions.html" . }}
+      {{ end }}
+    </article>
+  </main>
+
+  {{ partial "recent-posts.html" . }}
+  {{ partial "footer.html" }}
+</body>
+</html>

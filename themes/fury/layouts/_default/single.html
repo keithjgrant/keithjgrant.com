@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  {{ partial "meta.html" }}
+</head>
+<body>
+  {{ partial "svg.html" }}
+  {{ partial "header.html" }}
+
+  <main class="post-container h-entry">
+    <div class="focus-container">
+      <h1 class="p-name">{{ .Title }}</h1>
+    </div>
+    <article class="post-body">
+      <div class="content e-content">
+          {{ .Content }}
+          <p class="post-date dt-published">{{ .Date.Format "02 Jan 2006" }}</p>
+      </div>
+      {{ partial "interactions.html" . }}
+    </article>
+  </main>
+
+  {{ partial "recent-posts.html" . }}
+  {{ partial "footer.html" }}
+</body>
+</html>

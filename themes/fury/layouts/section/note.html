@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  {{ partial "meta.html" }}
+</head>
+<body>
+  {{ partial "svg.html" }}
+  {{ partial "header.html" }}
+
+  <main class="post-container">
+    <div class="focus-container">
+      <h2>{{ .Title }}</h2>
+    </div>
+    <article class="post-body">
+      {{ range .Paginator.Pages }}
+        <div class="post-body__item h-entry">
+          <div class="content e-content">
+            <p>{{ .Content }}</p>
+            <p>
+              <a href="{{ .Permalink }}">{{ .Date.Format "02 Jan 2006" }}  {{ .Date }}</a>
+            </p>
+          </div>
+        </div>
+      {{ end }}
+    </article>
+
+    {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+      <div class="box">
+        <div class="split">
+          <div>
+            {{ if .Paginator.HasPrev }}
+              <a rel="prev" href="{{.Paginator.Prev.URL}}">
+                Newer
+              </a>
+            {{ end }}
+          </div>
+          <div>
+            {{ if .Paginator.HasNext }}
+              <a rel="next" href="{{.Paginator.Next.URL}}">
+                Older
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  </main>
+
+  {{ partial "footer.html" }}
+</body>
+</html>

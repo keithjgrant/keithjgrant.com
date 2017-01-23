@@ -1,0 +1,13 @@
+<div class="bottom-container">
+  <div class="bottom-container__inner">
+    <h3>Recent posts</h3>
+    <ul class="iconlist">
+      {{ range first 4 (where .Site.Pages "Section" "posts") }}
+      <li><a href="{{ .Permalink }}">
+        <svg class="focus-cap"><use xlink:href="#path-hex"></use></svg>
+        <div class="iconlist__title">{{ .Title }}</div>
+      </a></li>
+      {{ end }}
+    </ul>
+  </div>
+</div>

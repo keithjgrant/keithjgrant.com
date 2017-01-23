@@ -1,0 +1,6 @@
+title = "Keith J. Grant"
+baseurl = "http://keithjgrant.com/"
+languageCode = "en-us"
+theme = "fury"
+baseUrl = "http://keithjgrant.com"
+paginate = 15

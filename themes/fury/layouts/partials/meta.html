@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#1a3c4d">
+{{ with .Site.Params.contact }}<meta name="contact" content="{{ . }}">{{ end }}
+{{ .Hugo.Generator }}
+
+<link rel="apple-touch-icon" href="{{ .Site.BaseURL }}images/keithjgrant.png">
+{{ with .RSSLink }}<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ . }}">{{ end }}
+
+<link rel="pingback" href="https://webmention.io/username/xmlrpc" />
+<link rel="webmention" href="https://webmention.io/username/webmention" />
+<link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+<link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+<link rel="micropub" href="TODO" />
+
+<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Lato:300,700" rel="stylesheet">
+<link rel="canonical" href="{{ .Permalink }}">
+<!--<link rel="stylesheet" href="/css/normalize.css">-->
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/prettify-tommorow.css" />
