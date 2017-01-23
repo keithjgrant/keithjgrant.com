@@ -5,16 +5,11 @@
 {{ with .Site.Params.contact }}<meta name="contact" content="{{ . }}">{{ end }}
 {{ .Hugo.Generator }}
 
-<title>
 {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
-{{ if eq $url "/" }}
-    {{ .Site.Title }}
-{{ else }}
-    {{ if .Params.heading }} {{ .Params.heading }} {{ else }} {{ .Title }} {{ end }}
-{{ end }}
-</title>
+<title>{{ if eq $url "/" }}Keith J. Grant{{ else }}{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}{{ end }}</title>
 
 <link rel="apple-touch-icon" href="{{ .Site.BaseURL }}images/keithjgrant.png">
+<meta name="twitter:card" content="summary"><meta name="twitter:site" content="@keithjgrant"><meta name="twitter:image" content="http://keithjgrant.com/images/keithjgrant.jpg"><meta name="og:title" content="{{ if eq $url "/" }}Keith J. Grant{{ else }}{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}{{ end }}">
 {{ with .RSSLink }}<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ . }}">{{ end }}
 
 <link rel="pingback" href="https://webmention.io/keithjgrant.com/xmlrpc" />
