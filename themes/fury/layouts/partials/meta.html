@@ -5,6 +5,15 @@
 {{ with .Site.Params.contact }}<meta name="contact" content="{{ . }}">{{ end }}
 {{ .Hugo.Generator }}
 
+<title>
+{{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+{{ if eq $url "/" }}
+    {{ .Site.Title }}
+{{ else }}
+    {{ if .Params.heading }} {{ .Params.heading }} {{ else }} {{ .Title }} {{ end }}
+{{ end }}
+</title>
+
 <link rel="apple-touch-icon" href="{{ .Site.BaseURL }}images/keithjgrant.png">
 {{ with .RSSLink }}<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ . }}">{{ end }}
 
