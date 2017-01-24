@@ -29,9 +29,9 @@
     button.addEventListener('click', function (e) {
       var el = e.target;
       var paneId = el.getAttribute('aria-controls');
-      while (!id && el.tagName != 'BUTTON') {
+      while (!paneId && el.tagName != 'BUTTON') {
         el = el.parentNode;
-        id = el.getAttribute('aria-controls');
+        paneId = el.getAttribute('aria-controls');
       }
       if (!paneId) { return; }
       clearActiveTab();

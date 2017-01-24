@@ -27,7 +27,12 @@
 
   each(tabButtons, function(button) {
     button.addEventListener('click', function (e) {
-      var paneId = e.target.getAttribute('aria-controls');
+      var el = e.target;
+      var paneId = el.getAttribute('aria-controls');
+      while (!paneId && el.tagName != 'BUTTON') {
+        el = el.parentNode;
+        paneId = el.getAttribute('aria-controls');
+      }
       if (!paneId) { return; }
       clearActiveTab();
       e.target.classList.add('is-active');
