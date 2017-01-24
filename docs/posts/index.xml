@@ -7,8 +7,8 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 23 Jan 2017 15:34:37 -0500</lastBuildDate>
-    <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
-    <link rel="hub" href="https://pubsubhubbub.superfeedr.com/" />
+    <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
+    <link rel="self" href="/posts/index.xml" xmlns="http://www.w3.org/2005/Atom" />
     
     <item>
       <title>Hello, World Wide IndieWeb!</title>
@@ -634,111 +634,6 @@ minimalism, y&amp;rsquo;all.&lt;/p&gt;
 &lt;p&gt;Maybe my enhanced scope idea won&amp;rsquo;t work out.  Maybe someone else will come up with a better idea.  Either way, I think we need to try.  Perhaps there is something to be found if we augmented &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/@namespace&#34;&gt;@namespace&lt;/a&gt; instead.  Maybe the answer lies with the shadow DOM and web components, or something else entirely new.&lt;/p&gt;
 
 &lt;p&gt;My hope here is not that we come up with a postprocessor or polyfill library that makes CSS easier, though that is the first step.  My hope is ultimately that we find a way to solve the problems we have, and that the best solution makes its way into the official spec, after we prove it out on production sites. Who knows?  Maybe if PostCSS or cssnext keeps gaining traction, we will invent entirely new polyfills for the future that address any number of issues.  JavaScript has got a lot of momentum moving forward.  It&amp;rsquo;s time for CSS to do the same.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Against CSS in JS</title>
-      <link>http://keithjgrant.com/posts/2015/05/against-css-in-js/</link>
-      <pubDate>Fri, 29 May 2015 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2015/05/against-css-in-js/</guid>
-      <description>
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Some folks want a unified language of the web instead of CSS, HTML, and JS.&amp;#10;&amp;#10;It&amp;#39;s increasingly looking like JS will just eat the other two.&lt;/p&gt;&amp;mdash; Henrik Joreteg (@HenrikJoreteg) &lt;a href=&#34;https://twitter.com/HenrikJoreteg/status/603959629425483776&#34;&gt;May 28, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;I have long believed that pieces of our &lt;a href=&#34;https://www.youtube.com/watch?v=x7cQ3mrcKaY&#34;&gt;JavaScript are intimately coupled with the DOM&lt;/a&gt;, especially in the context of web apps.  For far too long, we waved our hands and pretended we have a separation of concerns simply because our HTML is in one file and our JavaScript is in another.  Not only did this avoid the problem, I think it actually made it worse, because we had to write more and more complicated code to try and abstract away this coupling.&lt;/p&gt;
-
-&lt;p&gt;This coupling is real, and it is unavoidable.  We must bind event listeners to elements on the page.  We must update elements on the page from our JavaScript.  Our code must interact bidirectionally and in real-time with the elements of the DOM.  If it doesn&amp;rsquo;t&amp;hellip; then we just have static HTML.  Think about it, can you just open up your HTML and change around class names or ids without breaking anything?  Of course not.  You have to pull up your scripts and see which of those you need to get a handle on various DOM nodes.  Likewise, when you make changes to your JavaScript views, you inevitably need to make changes to the markup as well; add a class or id so you can target an element; wrap an extra div around a block so you can animate it a certain way.  This is the very definition of tight coupling.  You must have an intimate knowledge of both in order to safely make any substantive changes to either.&lt;/p&gt;
-
-&lt;p&gt;Instead, the mantra of React is to stop pretending the DOM and the JavaScript that controls it are separate concerns.  Join the two, and instead, separate concerns that are actually different: the dropdown menu is separate from the list of objects; the modal dialog box is separate from the page footer.  Why on earth would you put these all in the same HTML document?  Obviously, you shouldn&amp;rsquo;t.&lt;/p&gt;
-
-&lt;p&gt;When React came out, I was more than happy to embrace their controversial claim that pieces of our DOM should live in the JavaScript&amp;mdash;because I already knew it to be true.  They are the same concern, and every attempt we have ever made at separating them has ended in disaster.  Just think about the last time you had to deal with Backbone Views.  It actually makes me feel sick to my stomach to think about.  There was so much work for so little gain, and it was all boilerplate code to cross that barrier into DOM land.&lt;/p&gt;
-
-&lt;h2 id=&#34;so-what-about-css&#34;&gt;So What About CSS?&lt;/h2&gt;
-
-&lt;p&gt;This made sense once, so, naturally, there is talk about doing the same thing with CSS.  We brought our HTML (sort of) into our JavaScript and it cleaned a lot of things up, why not &lt;a href=&#34;https://medium.com/javascript-scene/jsx-looks-like-an-abomination-1c1ec351a918#1e2d&#34;&gt;do it with our styles&lt;/a&gt; as well?&lt;/p&gt;
-
-&lt;p&gt;This is a really bad idea.  Where, with JSX, my reaction was, &amp;ldquo;Yes, finally!&amp;rdquo;, my response here is quite the opposite.  I&amp;rsquo;ve had a hard time articulating exactly why I respond this way, especially on the length-constrained and fast-paced atmosphere of Twitter, so I&amp;rsquo;m setting out now to articulate my reasons here.&lt;/p&gt;
-
-&lt;p&gt;Before I dive in too deep, I do want to say I have interacted some with React Native folks on Twitter regarding this.  I acknowledge that their work is primarily in the realm of native applications, not in the context of the web.  I think this has ramifications for their use case that I myself am not familiar with.  My thoughts may be applicable to them, and they may not; I&amp;rsquo;m not well-versed in that world enough to speak to them directly.  But I do hope others take note of that distinction before they clamber to repeat these practices on the web.&lt;/p&gt;
-
-&lt;h2 id=&#34;we-are-not-solving-the-same-problem-as-before&#34;&gt;We Are Not Solving the Same Problem As Before&lt;/h2&gt;
-
-&lt;p&gt;The relationship between CSS and JavaScript is not like the relationship between HTML and JavaScript.  With HTML, a true separation of concerns between the markup and the corresponding component code is impossible.  With CSS, this separation is possible and is in fact vital to clean code organization.&lt;/p&gt;
-
-&lt;p&gt;Your CSS should be wholly independent from your markup (and especially independent from your JavaScript).  If you find, as &lt;a href=&#34;http://programmers.stackexchange.com/questions/271294/why-is-it-or-was-it-important-to-separate-css-from-html&#34;&gt;this stackexchange user observed&lt;/a&gt;&amp;mdash;that your &amp;ldquo;commit history shows me the opposite - [you] usually edit both HTML and CSS together&amp;rdquo;&amp;mdash;then you are doing CSS wrong.  CSS should not depend on the markup; the markup should depend on the CSS.  Or, more accurately, it should depend on the modular, reusable API defined by the CSS.&lt;/p&gt;
-
-&lt;p&gt;If you use the best practices of &lt;a href=&#34;http://oocss.org/&#34;&gt;OOCSS&lt;/a&gt;, &lt;a href=&#34;https://smacss.com/&#34;&gt;SMACSS&lt;/a&gt;, or BEM, you will not need to edit the CSS every time you edit a page.  In fact, once you have your basic building blocks of CSS defined, you can build out all sorts of things in the markup before you need to touch the styles again.  Far too often, developers write their CSS and HTML together, with selectors that mimic the structure of the DOM.  If one changes, then the other must change with it: a tight coupling.&lt;/p&gt;
-
-&lt;p&gt;However, moving the styles into the JavaScript does not address this problem at all.  When we moved our HTML into our React components, we redefined which concerns we were separating.  Each component is now a unique concern.  When we bring CSS into that, we are not further breaking up our concerns; we are just adding more responsibilities to the concerns we already have.&lt;/p&gt;
-
-&lt;p&gt;In a best-case scenario, with well organized code, we require in a style module into our React component and add it to the props.  This is roughly equivalent to adding a class name that references a stylesheet&amp;ndash;there is no net gain in terms of separation of concerns.  But, we don&amp;rsquo;t always work in a best-case scenario.  Now that our JavaScript has taken responsibility for styling, it will have to take care of things that we take for granted with CSS.  This will add unnecessary bloat to your codebase, and make separation of concerns more difficult.&lt;/p&gt;
-
-&lt;p&gt;If your stylesheets are well organized and written with best practices, there is no bi-directional dependency between them and the HTML.  So we do not need to solve the same problem with our CSS that we had to solve with our markup.&lt;/p&gt;
-
-&lt;h2 id=&#34;beware-framework-lock-in&#34;&gt;Beware Framework Lock-In&lt;/h2&gt;
-
-&lt;p&gt;CSS is universal. If your page has stylesheets, that&amp;rsquo;s cool, because everyone&amp;rsquo;s page has stylesheets.  Every JavaScript library and every HTML templating language works with CSS.  If you shift all of your styles into JavaScript, you are going to be locked into using JavaScript libraries that can use them.  Your styles no longer stand on their own.&lt;/p&gt;
-
-&lt;p&gt;If in 14 months you find a new view library or framework you want to try out, you&amp;rsquo;re out of luck.  You will have to invest a lot of time into pulling styles back out of JavaScript modules and into stylesheets again.  The most likely scenario is you would only bring out a portion of it&amp;mdash;just enough to use in the components you are building with the new library.  Sure, you may continue to make progress over time pulling styles back into regular stylesheets, but during that process, you&amp;rsquo;re going to have duplication of code, and you may even find yourself running into scenarios where the CSS has to be completely re-written to replicate the behavior you added in JavaScript.&lt;/p&gt;
-
-&lt;h2 id=&#34;all-or-nothing&#34;&gt;All or Nothing&lt;/h2&gt;
-
-&lt;p&gt;When you start bringing your styles into your JavaScript, where do you stop?  If you only bring in some of them, how are you going to define that boundary?  When you need to change something in the look and feel, do you know whether you need to open up your styles.css or your styles.js?  A logical solution here is to bring in all of it and abondon stylesheets altogether.&lt;/p&gt;
-
-&lt;p&gt;The problem with that is, CSS takes care of some things cleanly for us that you are probably taking for granted.  This is helpful for fonts in particular: The default font size, the font face and line-height, and the color of your font are all inherited silently from one of the topmost elements on the page.  Do you want to explicitly set these things on every single component you build?  Because you will have to.&lt;/p&gt;
-
-&lt;p&gt;Not only that, but if you distribute your component, the users of that component need to be all-in on the same paradigm, as well.  Your component sets inline styles, which means they can&amp;rsquo;t be overridden without &lt;code&gt;!important&lt;/code&gt;.  To get around this problem, you can allow the user to pass in their own styles, but this means the user of your component must have their styles defined in their JavaScript as well.  What if they want to use traditional stylesheets?  You&amp;rsquo;re forcing their hand.&lt;/p&gt;
-
-&lt;h2 id=&#34;missing-css-features&#34;&gt;Missing CSS Features&lt;/h2&gt;
-
-&lt;p&gt;I think there is a place for a few inline styles in a React component.  I&amp;rsquo;ll admit I&amp;rsquo;ve had to do it a few times.  Most often, though, it is because I need to accomplish something that can&amp;rsquo;t be done in pure CSS (yet), such as animating from &lt;code&gt;height: 0&lt;/code&gt; to &lt;code&gt;height: auto&lt;/code&gt;.  Animation is a bit of a different topic here, but, honestly, even that is invariably easier to do when it can be accomplished with pure CSS.  The power of transitions and keyframe animation is much harder to replicate in JavaScript without the help of yet another dependency.  The browser already has this stuff built in.  Take advantage of it.  It is so much easier to just toggle a classname and not have to think about it when I&amp;rsquo;m trying to focus on another problem.&lt;/p&gt;
-
-&lt;p&gt;You also lose the ability to do some other things, as well, like media queries and fallback values for older browsers.  Unless you want to start browser sniffing and adding conditionals around your styles.  Again, this is adding more responsibilities to your components that otherwise they would not have.&lt;/p&gt;
-
-&lt;h2 id=&#34;in-defense-of-css&#34;&gt;In Defense Of CSS&lt;/h2&gt;
-
-&lt;p&gt;At this point, I have to ask: what problem are we trying to solve?  There is a lot of baggage and many unknowns if we start doing CSS-in-JS.  We had better have a damn good reason before we go down that road.  Christopher Chedeau, in the &lt;a href=&#34;https://speakerdeck.com/vjeux/react-css-in-js&#34;&gt;original slidedeck&lt;/a&gt; that introduced this idea, outlines seven &amp;ldquo;problems&amp;rdquo; with CSS.  The thing is, they are solvable problems.  If we as web developers just understand CSS better, and take the time to learn modern best-practices like SMACSS and BEM, these issues almost entirely dissolve, especially at the scale most of us work at.  Don&amp;rsquo;t get me wrong; he does make some good points that are worth discussing, but I believe we have at least partial solutions for all of them (some of the latest proposals to the CSS spec help, as well).  If you want to discuss those points directly, feel free to ping me on &lt;a href=&#34;https://twitter.com/keithjgrant&#34;&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Many web developers fear CSS.  They fear it because the do not understand it.  And I am worried that, in that fear, we will collectively rush to move our styles into JavaScript in hopes that it solves our problems.  It won&amp;rsquo;t.&lt;/p&gt;
-
-&lt;p&gt;It&amp;rsquo;s time to truly &lt;a href=&#34;https://github.com/keithjgrant/Taming-CSS&#34;&gt;learn CSS&lt;/a&gt;, because that&amp;rsquo;s our real problem.  And that is a problem we can fix.&lt;/p&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;em&gt;Update: I have written a follow-up post: &lt;a href=&#34;http://keithjgrant.com/posts/into-the-future-of-css.html&#34;&gt;Into the Future of CSS&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hosting on Github</title>
-      <link>http://keithjgrant.com/posts/2015/05/hosting-on-github/</link>
-      <pubDate>Sat, 16 May 2015 16:26:32 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2015/05/hosting-on-github/</guid>
-      <description>&lt;p&gt;Well, this is a bit of an experiment&amp;hellip; I&amp;rsquo;ve lost track of how many times I&amp;rsquo;ve started a redesign of my WordPress blog, only to give up after days of fiddling.  This is kind of silly, since I generally finish the &lt;em&gt;design&lt;/em&gt; of my site fairly quickly, but get held up fighting with the implementation minutia.&lt;/p&gt;
-
-&lt;p&gt;I blog very rarely.  I also occasionally want to host various other pages that don&amp;rsquo;t necessarily need to fit with the theme of the rest of my site.  WordPress is really overkill for this.  What I really need is just some static hosting.  So I&amp;rsquo;m giving GitHub Pages a try.  Not only that, but I should be able to play with the design whenever I feel like, without too much time investment.&lt;/p&gt;
-
-&lt;p&gt;So here&amp;rsquo;s my new design.  It took me just a few days not only to build the site, but to also roll out some bare-bones blogging &amp;amp; deployment scripts in gulp; my database is a git repository.  I can blog in &lt;a href=&#34;http://jade-lang.com/&#34;&gt;Jade&lt;/a&gt; or MarkDown.  I think my wordpress days may be done, at least for now.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Taming CSS</title>
-      <link>http://keithjgrant.com/posts/2015/04/taming-css/</link>
-      <pubDate>Wed, 29 Apr 2015 16:26:32 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2015/04/taming-css/</guid>
-      <description>&lt;p&gt;Observation 1: Web developers, in general, don’t know CSS as well as they should.&lt;/p&gt;
-
-&lt;p&gt;Observation 2: There aren’t really any good roadmaps for learning all the essentials of CSS.&lt;/p&gt;
-
-&lt;p&gt;There are great resources for the basics, for styling, for code organization/architecture, for advanced tricks. But to work through them all, you get a lot of overlap, and they still leave you with missing gaps in your knowledge. Often, with CSS, you don’t know what you don’t know, and that makes it hard to move forward. My hope is to fix that, by putting them all together in one place.&lt;/p&gt;
-
-&lt;p&gt;Announcing &lt;a href=&#34;https://github.com/keithjgrant/Taming-CSS&#34;&gt;Taming CSS&lt;/a&gt;, a CSS book for web developers.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; My book has been renamed to &lt;a href=&#34;http://manning.com/books/css-in-depth&#34;&gt;CSS in Depth&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

@@ -6,8 +6,8 @@
     <description>Recent content in Talks on Keith J. Grant</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="/talks/index.xml" rel="self" type="application/rss+xml" />
-    <link rel="hub" href="https://pubsubhubbub.superfeedr.com/" />
+    <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
+    <link rel="self" href="/talks/index.xml" xmlns="http://www.w3.org/2005/Atom" />
     
     <item>
       <title>Talks</title>

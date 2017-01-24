@@ -9,9 +9,9 @@
     <webMaster>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</webMaster>{{end}}{{ with .Site.Copyright }}
     <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
     <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
-    <atom:link href="{{.URL}}" rel="self" type="application/rss+xml" />
-    <link rel="hub" href="https://pubsubhubbub.superfeedr.com/" />
-    {{ range first 15 .Data.Pages }}
+    <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
+    <link rel="self" href="{{.URL}}" xmlns="http://www.w3.org/2005/Atom" />
+    {{ range first 10 .Data.Pages }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
