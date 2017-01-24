@@ -3,4 +3,4 @@ baseurl = "http://keithjgrant.com/"
 languageCode = "en-us"
 theme = "fury"
 baseUrl = "http://keithjgrant.com"
-paginate = 15
+paginate = 10
