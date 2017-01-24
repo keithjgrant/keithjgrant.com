@@ -5,7 +5,7 @@ request.post(
   {
     json: {
       "hub.mode": "publish",
-      "hub.url": "http://keithjgrant.com/posts/index.xml",
+      "hub.url": "http://keithjgrant.com/index.xml",
     }
   },
   function (error, response, body) {
