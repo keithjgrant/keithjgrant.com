@@ -1,11 +1,10 @@
 +++
 date = "2017-01-23T15:34:37-05:00"
 title = "Hello, World Wide IndieWeb!"
-draft = true
 
 +++
 
-It’s been a year, so it’s time for a new design! Only this time, the update is more than just a CSS revamp. This year, I join the “IndieWeb”. If you don’t know what that is, read on.
+It’s a new year, so it’s time for a new design! Only this time, the update is more than just a CSS revamp. This year, I join the “IndieWeb”. If you don’t know what that is, read on.
 
 Let me introduce you to the newest social network: it’s called the World Wide Web and it’s more than 25 years old.
 
