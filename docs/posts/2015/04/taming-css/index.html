@@ -124,7 +124,7 @@ There are great resources">
 </div>
 <div class="post-interaction is-hidden" id="comments">
   <div class="tabs">
-    <button aria-controls="pane-replies">
+    <button class="is-active" aria-controls="pane-replies">
       <svg class="interaction-icon"><use xlink:href="#icon-reply"></use></svg>
       <span id="reply-count"></span>
     </button>
@@ -137,7 +137,7 @@ There are great resources">
       <span id="share-count"></span>
     </button>
   </div>
-  <div class="tab-pane" id="pane-replies" aria-controlled-by="tab-replies">
+  <div class="tab-pane is-active" id="pane-replies" aria-controlled-by="tab-replies">
     <h3>Replies</h3>
     <form id="webmention-form" class="inline-form content" method="post" action="https://webmention.io/keithjgrant.com/webmention">
       <input type="hidden" name="target" value="http://keithjgrant.com/posts/2015/04/taming-css/" />
