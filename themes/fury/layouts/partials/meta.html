@@ -16,6 +16,7 @@
 <meta name="og:title" content="{{ if eq $url "/" }}Keith J. Grant{{ else }}{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}{{ end }}">
 <meta name="twitter:description" content="{{ substr .Summary 0 200 }}">
 {{ if .RSSLink }}<link rel="alternate" type="application/rss+xml" title="{{.Title}}" href="{{ .RSSLink }}">{{ end }}
+<link rel="self" href="https://keithjgrant.com" />
 <link rel="hub" href="https://pubsubhubbub.superfeedr.com/" />
 
 <link rel="pingback" href="https://webmention.io/keithjgrant.com/xmlrpc" />
