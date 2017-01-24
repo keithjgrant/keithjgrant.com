@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
-    <link rel="self" href="/talks/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    <link rel="self" href="http://keithjgrant.com/talks/index.xml" xmlns="http://www.w3.org/2005/Atom" />
     
     <item>
       <title>Talks</title>

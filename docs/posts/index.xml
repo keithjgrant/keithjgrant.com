@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 23 Jan 2017 15:34:37 -0500</lastBuildDate>
     <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
-    <link rel="self" href="/posts/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    <link rel="self" href="http://keithjgrant.com/posts/index.xml" xmlns="http://www.w3.org/2005/Atom" />
     
     <item>
       <title>Hello, World Wide IndieWeb!</title>
