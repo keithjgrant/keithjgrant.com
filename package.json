@@ -1,0 +1,27 @@
+{
+  "name": "keithjgrant.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "hugo server",
+    "build": "hugo -d docs",
+    "ping": "node ./scripts/ping.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keithjgrant/keithjgrant.com.git"
+  },
+  "author": "Keith J. Grant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keithjgrant/keithjgrant.com/issues"
+  },
+  "homepage": "https://github.com/keithjgrant/keithjgrant.com#readme",
+  "devDependencies": {
+    "request": "^2.79.0"
+  }
+}

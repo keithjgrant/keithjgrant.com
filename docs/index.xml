@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Keith J. Grant</title>
+    <title>Keith J. Grant on Keith J. Grant</title>
     <link>http://keithjgrant.com/index.xml</link>
-    <description>Recent content on Keith J. Grant</description>
+    <description>Recent content in Keith J. Grant on Keith J. Grant</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 23 Jan 2017 15:34:37 -0500</lastBuildDate>
-    <atom:link href="http://keithjgrant.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <link rel="hub" href="https://keithjgrant.superfeedr.com/" />
     
     <item>
       <title>Hello, World Wide IndieWeb!</title>

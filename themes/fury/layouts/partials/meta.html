@@ -8,7 +8,7 @@
 {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
 <title>{{ if eq $url "/" }}Keith J. Grant{{ else }}{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}{{ end }}</title>
 
-<link rel="apple-touch-icon" href="{{ .Site.BaseURL }}images/keithjgrant.png">
+<link rel="apple-touch-icon" href="{{ .Site.BaseURL }}/images/keithjgrant.png">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@keithjgrant">
@@ -16,6 +16,7 @@
 <meta name="og:title" content="{{ if eq $url "/" }}Keith J. Grant{{ else }}{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}{{ end }}">
 <meta name="twitter:description" content="{{ substr .Summary 0 200 }}">
 {{ with .RSSLink }}<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ . }}">{{ end }}
+<link rel="hub" href="https://keithjgrant.superfeedr.com/" />
 
 <link rel="pingback" href="https://webmention.io/keithjgrant.com/xmlrpc" />
 <link rel="webmention" href="https://webmention.io/keithjgrant.com/webmention" />

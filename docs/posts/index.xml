@@ -7,7 +7,8 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 23 Jan 2017 15:34:37 -0500</lastBuildDate>
-    <atom:link href="http://keithjgrant.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <link rel="hub" href="https://keithjgrant.superfeedr.com/" />
     
     <item>
       <title>Hello, World Wide IndieWeb!</title>
