@@ -65,31 +65,11 @@
     </item>
     
     <item>
-      <title>2</title>
-      <link>http://keithjgrant.com/notes/2016/01/22/2/</link>
-      <pubDate>Sun, 22 Jan 2017 21:29:56 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/notes/2016/01/22/2/</guid>
-      <description>yeah
-</description>
-    </item>
-    
-    <item>
       <title></title>
       <link>http://keithjgrant.com/note/2016/01/22/1/</link>
       <pubDate>Sun, 22 Jan 2017 20:48:38 -0500</pubDate>
       
       <guid>http://keithjgrant.com/note/2016/01/22/1/</guid>
-      <description>dis a thing
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://keithjgrant.com/notes/2016/01/22/1/</link>
-      <pubDate>Sun, 22 Jan 2017 20:48:38 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/notes/2016/01/22/1/</guid>
       <description>dis a thing
 </description>
     </item>
@@ -747,6 +727,38 @@ minimalism, y&amp;rsquo;all.&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s time to truly &lt;a href=&#34;https://github.com/keithjgrant/Taming-CSS&#34;&gt;learn CSS&lt;/a&gt;, because that&amp;rsquo;s our real problem.  And that is a problem we can fix.&lt;/p&gt;
 
 &lt;p&gt;&lt;br/&gt;&lt;em&gt;Update: I have written a follow-up post: &lt;a href=&#34;http://keithjgrant.com/posts/into-the-future-of-css.html&#34;&gt;Into the Future of CSS&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hosting on Github</title>
+      <link>http://keithjgrant.com/posts/2015/05/hosting-on-github/</link>
+      <pubDate>Sat, 16 May 2015 16:26:32 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/posts/2015/05/hosting-on-github/</guid>
+      <description>&lt;p&gt;Well, this is a bit of an experiment&amp;hellip; I&amp;rsquo;ve lost track of how many times I&amp;rsquo;ve started a redesign of my WordPress blog, only to give up after days of fiddling.  This is kind of silly, since I generally finish the &lt;em&gt;design&lt;/em&gt; of my site fairly quickly, but get held up fighting with the implementation minutia.&lt;/p&gt;
+
+&lt;p&gt;I blog very rarely.  I also occasionally want to host various other pages that don&amp;rsquo;t necessarily need to fit with the theme of the rest of my site.  WordPress is really overkill for this.  What I really need is just some static hosting.  So I&amp;rsquo;m giving GitHub Pages a try.  Not only that, but I should be able to play with the design whenever I feel like, without too much time investment.&lt;/p&gt;
+
+&lt;p&gt;So here&amp;rsquo;s my new design.  It took me just a few days not only to build the site, but to also roll out some bare-bones blogging &amp;amp; deployment scripts in gulp; my database is a git repository.  I can blog in &lt;a href=&#34;http://jade-lang.com/&#34;&gt;Jade&lt;/a&gt; or MarkDown.  I think my wordpress days may be done, at least for now.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Taming CSS</title>
+      <link>http://keithjgrant.com/posts/2015/04/taming-css/</link>
+      <pubDate>Wed, 29 Apr 2015 16:26:32 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/posts/2015/04/taming-css/</guid>
+      <description>&lt;p&gt;Observation 1: Web developers, in general, don’t know CSS as well as they should.&lt;/p&gt;
+
+&lt;p&gt;Observation 2: There aren’t really any good roadmaps for learning all the essentials of CSS.&lt;/p&gt;
+
+&lt;p&gt;There are great resources for the basics, for styling, for code organization/architecture, for advanced tricks. But to work through them all, you get a lot of overlap, and they still leave you with missing gaps in your knowledge. Often, with CSS, you don’t know what you don’t know, and that makes it hard to move forward. My hope is to fix that, by putting them all together in one place.&lt;/p&gt;
+
+&lt;p&gt;Announcing &lt;a href=&#34;https://github.com/keithjgrant/Taming-CSS&#34;&gt;Taming CSS&lt;/a&gt;, a CSS book for web developers.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; My book has been renamed to &lt;a href=&#34;http://manning.com/books/css-in-depth&#34;&gt;CSS in Depth&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
