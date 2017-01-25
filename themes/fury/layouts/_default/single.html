@@ -17,6 +17,9 @@
         <div class="content">
             {{ .Content }}
             <p class="post-date metadata"><date class="dt-published">{{ .Date.Format "02 Jan 2006 15:04:05" }}</date></p>
+            {{ if eq .Section "notes" }}
+              <a href="https://brid.gy/publish/twitter"></a>
+            {{ end }}
         </div>
       </div>
       {{ partial "interactions.html" . }}

@@ -10,7 +10,8 @@
     "start": "hugo server",
     "build": "hugo -d docs",
     "ping": "node ./scripts/ping.js",
-    "reply": "node ./scripts/reply.js"
+    "reply": "node ./scripts/reply.js",
+    "note": "node ./scripts/note.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/keithjgrant/keithjgrant.com#readme",
   "devDependencies": {
+    "prompt": "^1.0.0",
     "replace": "^0.3.0",
     "request": "^2.79.0"
   }
