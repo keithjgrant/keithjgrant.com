@@ -4,7 +4,7 @@
   {{ range $path }}
     {{ $domain := first 1 (split . "/") }}
     {{ range $domain }}
-      <div class="metadata">in reply to <a href="{{ $replyTo }}" class="u-in-reply-to">a post on {{ . }}</a></div>
+      <div class="metadata">in reply to <a href="{{ $replyTo }}" rel="in-reply-to" class="u-in-reply-to">a post on {{ . }}</a></div>
     {{ end }}
   {{ end }}
 {{ end }}
