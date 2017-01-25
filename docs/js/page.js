@@ -75,7 +75,11 @@
   // Load webmentions jsonp
   function loadWebmentions(url, aliases) {
     var urls = [];
-    urls.push(url.replace('localhost:1313', 'keithjgrant.com'));
+    url = url.replace('localhost:1313', 'keithjgrant.com');
+    urls.push(url);
+    if (url.substr(-1) === '/') {
+      urls.push(url.substr(0, url.length - 1));
+    }
     if (aliases) {
       aliases.forEach(function (alias) {
         urls.push(`http://keithjgrant.com${alias}`);
