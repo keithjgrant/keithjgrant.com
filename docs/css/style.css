@@ -73,7 +73,7 @@ a:active {
   margin-top: 0;
 }
 :first-child:empty {
-  display: none;
+  margin-bottom: 0;
 }
 :first-child:empty + * {
   margin-top: 0;
