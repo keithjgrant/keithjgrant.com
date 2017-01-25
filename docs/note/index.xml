@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
+    
     <title>Notes on Keith J. Grant</title>
+    
     <link>http://keithjgrant.com/note/index.xml</link>
     <description>Recent content in Notes on Keith J. Grant</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 22 Jan 2017 21:29:56 -0500</lastBuildDate>
-    <atom:link href="http://keithjgrant.com/note/index.xml" rel="self" type="application/rss+xml" />
+    <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
+    <link rel="self" href="http://keithjgrant.com/note/index.xml" xmlns="http://www.w3.org/2005/Atom" />
     
     <item>
       <title>2</title>
