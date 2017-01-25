@@ -6,7 +6,7 @@
 {{ .Hugo.Generator }}
 
 {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
-<title>{{ if eq $url "/" }}Keith J. Grant{{ else }}{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}{{ end }}</title>
+<title>{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ if .Title }}{{ .Title }}{{else}}Keith J. Grant{{ end }}{{ end }}</title>
 
 <link rel="apple-touch-icon" href="{{ .Site.BaseURL }}/images/keithjgrant.png">
 
