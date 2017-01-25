@@ -12,9 +12,10 @@
       <h1 class="p-name">{{ .Title }}</h1>
     </div>
     <article class="post-body">
+      {{ partial "in-reply-to" . }}
       <div class="content e-content">
           {{ .Content }}
-          <p class="post-date dt-published">{{ .Date.Format "02 Jan 2006" }}</p>
+          <p class="post-date metadata"><date class="dt-published">{{ .Date.Format "02 Jan 2006 15:04:05" }}</date></p>
       </div>
       {{ partial "interactions.html" . }}
     </article>

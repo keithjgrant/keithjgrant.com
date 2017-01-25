@@ -3,8 +3,9 @@
     <a class="p-url" href="{{ .Permalink }}">
       {{ .Title }}
     </a>
-    <span class="post-date dt-published">{{ .Date.Format "02 Jan 2006" }}</span>
+    <date class="post-date dt-published">{{ .Date.Format "02 Jan 2006" }}</date>
   </h2>
+  {{ partial "in-reply-to" . }}
   <div class="content">
     <p class="p-summary">{{ .Summary }}</p>
     <p>

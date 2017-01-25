@@ -72,6 +72,12 @@ a:active {
 :first-child {
   margin-top: 0;
 }
+:first-child:empty {
+  display: none;
+}
+:first-child:empty + * {
+  margin-top: 0;
+}
 :last-child {
   margin-bottom: 0;
 }
@@ -402,6 +408,12 @@ img {
   .post-interaction {
     margin-top: 3.05rem;
   }
+}
+
+.metadata {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: var(--gray-6);
 }
 
 .loading-indicator {
