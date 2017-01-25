@@ -20,7 +20,9 @@
     </article>
   </main>
 
-  {{ partial "recent-posts.html" . }}
+  {{ if eq .Section "posts" }}
+    {{ partial "recent-posts.html" . }}
+  {{ end }}
   {{ partial "footer.html" }}
 </body>
 </html>

@@ -167,7 +167,7 @@
 </div>
 <div class="post-interaction is-hidden" id="comments">
   <div class="tabs">
-    <button class="is-active" aria-controls="pane-replies">
+    <button aria-controls="pane-replies">
       <svg class="interaction-icon"><use xlink:href="#icon-reply"></use></svg>
       <span id="reply-count"></span>
     </button>
@@ -180,7 +180,7 @@
       <span id="share-count"></span>
     </button>
   </div>
-  <div class="tab-pane is-active" id="pane-replies" aria-controlled-by="tab-replies">
+  <div class="tab-pane " id="pane-replies" aria-controlled-by="tab-replies">
     <h3>Replies</h3>
     <form id="webmention-form" class="inline-form content" method="post" action="https://webmention.io/keithjgrant.com/webmention">
       <input type="hidden" name="target" value="http://keithjgrant.com/posts/2015/05/into-the-future-of-css/" />
@@ -237,7 +237,8 @@
     </article>
   </main>
 
-  <div class="bottom-container">
+  
+    <div class="bottom-container">
   <div class="bottom-container__inner">
     <h3>Recent posts</h3>
     <ul class="iconlist">
@@ -266,6 +267,7 @@
   </div>
 </div>
 
+  
   
 <script src="/js/prettify.js"></script>
 <script type="text/javascript" src="/js/page.js"></script>

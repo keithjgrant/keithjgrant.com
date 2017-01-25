@@ -1,0 +1,20 @@
+{{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+  <div class="box">
+    <div class="split">
+      <div>
+        {{ if .Paginator.HasPrev }}
+          <a rel="prev" href="{{.Paginator.Prev.URL}}">
+            Newer
+          </a>
+        {{ end }}
+      </div>
+      <div>
+        {{ if .Paginator.HasNext }}
+          <a rel="next" href="{{.Paginator.Next.URL}}">
+            Older
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}

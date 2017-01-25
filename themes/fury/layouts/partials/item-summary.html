@@ -1,0 +1,14 @@
+<div class="post-body__item h-entry">
+  <h2 class="p-name">
+    <a class="p-url" href="{{ .Permalink }}">
+      {{ .Title }}
+    </a>
+    <span class="post-date dt-published">{{ .Date.Format "02 Jan 2006" }}</span>
+  </h2>
+  <div class="content">
+    <p class="p-summary">{{ .Summary }}</p>
+    <p>
+      <a class="u-url" href="{{ .Permalink }}">Continue reading...</a>
+    </p>
+  </div>
+</div>
