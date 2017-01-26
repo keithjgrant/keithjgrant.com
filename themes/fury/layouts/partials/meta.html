@@ -13,10 +13,16 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@keithjgrant">
 <meta name="twitter:image" content="http://keithjgrant.com/images/keithjgrant.jpg">
-<meta name="og:title" content="{{ if eq $url "/" }}Keith J. Grant{{ else }}{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}{{ end }}">
-<meta name="twitter:description" content="{{ substr .Summary 0 200 }}">
-{{ if .RSSLink }}<link rel="alternate" type="application/rss+xml" title="{{.Title}}" href="{{ .RSSLink }}">{{ end }}
-<link rel="self" href="https://keithjgrant.com" />
+{{ if eq .URL "/" }}
+<meta name="og:title" content="Keith J. Grant">
+<meta name="twitter:description" content="JavaScript, CSS, UX, & the open web">
+<link rel="alternate" type="application/rss+xml" title="{{.Title}}" href="http://keithjgrant.com/posts/index.xml">
+{{ else }}
+<meta name="og:title" content="{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}">
+<meta name="twitter:description" content="{{ substr (plainify .Summary) 0 200 }}">
+{{ if .RSSLink }}<link rel="alternate" type="application/rss+xml" title="{{.Title}} | keithjgrant.com" href="{{ .RSSLink }}">{{ end }}
+{{ end }}
+<link rel="self" href="http://keithjgrant.com" />
 <link rel="hub" href="https://pubsubhubbub.superfeedr.com/" />
 
 <link rel="pingback" href="https://webmention.io/keithjgrant.com/xmlrpc" />
