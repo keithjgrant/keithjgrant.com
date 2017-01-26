@@ -9,17 +9,16 @@
 <meta name="generator" content="Hugo 0.18.1" />
 
 
-<title>Save Scoped CSS</title>
+<title>Notes</title>
 
 <link rel="apple-touch-icon" href="http://keithjgrant.com/images/keithjgrant.png">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@keithjgrant">
 <meta name="twitter:image" content="http://keithjgrant.com/images/keithjgrant.jpg">
-<meta name="og:title" content="Save Scoped CSS">
-<meta name="twitter:description" content="Update June 23, 2016: The editor&amp;rsquo;s draft has been updated again. It looks like @scope is gone for good, so this post is now a moot point. The way forward now lies in the Shadow DOM.
-About a year">
-
+<meta name="og:title" content="Notes">
+<meta name="twitter:description" content="">
+<link rel="alternate" type="application/rss+xml" title="Notes" href="http://keithjgrant.com/notes/index.xml">
 <link rel="self" href="https://keithjgrant.com" />
 <link rel="hub" href="https://pubsubhubbub.superfeedr.com/" />
 
@@ -30,7 +29,7 @@ About a year">
 <link rel="micropub" href="TODO" />
 
 <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Lato:300,700" rel="stylesheet">
-<link rel="canonical" href="http://keithjgrant.com/posts/2016/06/save-scoped-css/">
+<link rel="canonical" href="http://keithjgrant.com/notes/">
 
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/prettify-tommorow.css" />
@@ -101,177 +100,32 @@ About a year">
 </nav>
 
 
-  <main class="post-container h-entry">
+  <main class="post-container">
     <div class="focus-container">
-      <h1 class="p-name">Save Scoped CSS</h1>
+      <h2>Notes</h2>
     </div>
     <article class="post-body">
-      <div class="e-content">
+      
         
+          <div class="post-body__item h-entry">
+  
 
-        <div class="content">
-            
-
-<p><em><strong>Update June 23, 2016:</strong> The editor&rsquo;s draft has been updated again. It looks like <code>@scope</code> is gone for good, so this post is now a moot point. The way forward now lies in the Shadow DOM.</em></p>
-
-<hr />
-
-<p>About <a href="/posts/into-the-future-of-css.html#scoped-css">a year ago</a>, I wrote about a promising feature of CSS, scoping. I love the idea of this feature, and I think it could be one of the most important changes in the near future of CSS. You know all those complaints about “in CSS everything is global&rdquo;? This feature is the answer.</p>
-
-<p>I became excited recently when I noticed some movement in the W3C concerning this spec. So I took a look at what was going on. I found some good news, and I found some bad news.</p>
-
-<h2 id="the-good-news">The good news</h2>
-
-<p>The <a href="https://drafts.csswg.org/css-scoping/">editor&rsquo;s draft of the specification</a> has recently been updated. The changes, I think, significantly improve the viability of the feature. They more closely resemble the hypothetical changes I wished for last year. Most importantly, scoped styles would no longer need to be defined inline in the HTML document; you can define scoped styles in an external stylesheet.</p>
-
-<p>The proposed syntax looks like this, using a new <code>@scope</code> at-rule:</p>
-
-<pre><code class="language-css">@scope .foo-module {
-  p {
-    color: blue;
-  }
-}
-
-@scope .bar-module {
-  p {
-    color: red;
-  }
-}
-</code></pre>
-
-<p>Each scope is defined with a selector (<code>.foo-module</code>, <code>.bar-module</code>). This establishes a new scope for matched elements and their descendants. Inside the braces that follow, you can specify any styles you wish. These styles are then applied only to the elements belonging to that scope.</p>
-
-<p>According to the rules of <a href="https://www.w3.org/TR/css-cascade-3/#cascade-scope">the cascade</a>, rules applied to an inner scope will override those applied to an outer scope, <em>regardless of their selector specificity</em>. This is precisely the behavior CSS-in-JS and/or CSS Modules users want! And yes, this definition is in the current Candidate Recommendation of the spec.</p>
-
-<p>This means, given the example above, a <code>foo-module</code> inside a <code>bar-module</code> will have blue text; and a <code>bar-module</code> inside a <code>foo-module</code> will have red text. This could solve so many developer frustrations.</p>
-
-<h2 id="the-bad-news">The bad news</h2>
-
-<p>I got excited when I saw these changes, so I started reading more on what prompted them. I discovered that it is a sort of last-ditch effort to salvage the spec. The problem? Browser vendors have shown no interest in implementing it. Firefox has long-since implemented the earlier version of the spec, but that&rsquo;s it.</p>
-
-<p>If we developers want this feature, we need to let the browser vendors know. Otherwise, it&rsquo;s DOA.</p>
-
-<p>So tell them, please. Follow these links, and up-vote or leave comments in support of scoped styles:</p>
-
-<ul>
-<li><a href="https://groups.google.com/a/chromium.org/forum/#!searchin/blink-dev/scoped/blink-dev/R1x18ZLS5qQ/Bjuh_cENhlQJ">Chrome</a></li>
-<li><a href="https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/14895573--scope">Edge</a></li>
-<li>I couldn&rsquo;t find a channel for Safari. If you know where it is, please let me know and I&rsquo;ll add it here.</li>
-</ul>
-
-<p>Let&rsquo;s not allow this to die.</p>
-
-            <p class="post-date metadata"><date class="dt-published">09 Jun 2016 00:00:00</date></p>
-            
-        </div>
-      </div>
-      <div class="loading-indicator" id="comments-loader">
-  <svg class="interaction-icon"><use xlink:href="#icon-loading"></use></svg>
-  <div>Loading interactions...</div>
-</div>
-<div class="post-interaction is-hidden" id="comments">
-  <div class="tabs">
-    <button aria-controls="pane-replies">
-      <svg class="interaction-icon"><use xlink:href="#icon-reply"></use></svg>
-      <span id="reply-count"></span>
-    </button>
-    <button aria-controls="pane-likes">
-      <svg class="interaction-icon"><use xlink:href="#icon-heart"></use></svg>
-      <span id="like-count"></span>
-    </button>
-    <button aria-controls="pane-shares">
-      <svg class="interaction-icon"><use xlink:href="#icon-share"></use></svg>
-      <span id="share-count"></span>
-    </button>
-  </div>
-  <div class="tab-pane " id="pane-replies" aria-controlled-by="tab-replies">
-    <h3>Replies</h3>
-    <form id="webmention-form" class="inline-form content" method="post" action="https://webmention.io/keithjgrant.com/webmention">
-      <input type="hidden" name="target" value="http://keithjgrant.com/posts/2016/06/save-scoped-css/" />
-      <label for="reply-url">Have you written a <a href="https://indieweb.org/responses">response</a> to this? Let me know the URL:</label>
-      <div class="inline-form__inputs">
-        <input type="text" id="reply-url" name="source" />
-        <button type="submit" id="webmention-submit">Send Webmention</button>
-      </div>
-      <p class="form-alert is-hidden"></p>
-    </form>
-    <ul class="replies" id="replies"></ul>
-  </div>
-  <div class="tab-pane" id="pane-likes" aria-controlled-by="tab-likes">
-    <h3>Likes</h3>
-    <ul class="replies" id="likes"></ul>
-  </div>
-  <div class="tab-pane" id="pane-shares" aria-controlled-by="tab-shares">
-    <h3>Shares</h3>
-    <ul class="replies" id="shares"></ul>
+  <div class="content e-content">
+    <p><p>test</p>
+</p>
+    <p class="metadata">Posted <a class="u-url dt-published" href="http://keithjgrant.com/notes/2017/01/203439/">25 Jan 2017 20:34:40</a>
+    </p>
   </div>
 </div>
 
-<template id="reply-template">
-  <li class="reply">
-    <img src="" />
-    <div class="reply__body">
-      <div>
-        <a class="reply__author" href=""></a>
-        <a class="reply__date" href=""></a>
-      </div>
-      <div class="content reply__content"></div>
-    </div>
-  </li>
-</template>
-
-<template id="like-template">
-  <li class="reply reply--like">
-    <img src="" />
-    <div class="reply__body">
-      <div>
-        <a class="reply__author" href=""></a>
-        <a class="reply__date" href=""></a>
-      </div>
-    </div>
-  </li>
-</template>
-
-<script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function () {
-    loadWebmentions("http://keithjgrant.com/posts/2016/06/save-scoped-css/", ["/posts/save-scoped-css.html"]);
-  });
-</script>
-
+        
+      
     </article>
+
+    
+
   </main>
 
-  
-    <div class="bottom-container">
-  <div class="bottom-container__inner">
-    <h3>Recent posts</h3>
-    <ul class="iconlist">
-      
-      <li><a href="http://keithjgrant.com/posts/2017/01/hello-indieweb/">
-        <svg class="focus-cap"><use xlink:href="#path-hex"></use></svg>
-        <div class="iconlist__title">Hello, World Wide IndieWeb!</div>
-      </a></li>
-      
-      <li><a href="http://keithjgrant.com/posts/2016/12/separation-of-concerns/">
-        <svg class="focus-cap"><use xlink:href="#path-hex"></use></svg>
-        <div class="iconlist__title">Let’s Talk About Separation of Concerns</div>
-      </a></li>
-      
-      <li><a href="http://keithjgrant.com/posts/2016/10/your-team-needs-a-ux-engineer/">
-        <svg class="focus-cap"><use xlink:href="#path-hex"></use></svg>
-        <div class="iconlist__title">Your Team Needs a UX Engineer</div>
-      </a></li>
-      
-      <li><a href="http://keithjgrant.com/posts/2016/08/css-in-depth/">
-        <svg class="focus-cap"><use xlink:href="#path-hex"></use></svg>
-        <div class="iconlist__title">CSS in Depth</div>
-      </a></li>
-      
-    </ul>
-  </div>
-</div>
-
-  
   
 <script src="/js/prettify.js"></script>
 <script type="text/javascript" src="/js/page.js"></script>

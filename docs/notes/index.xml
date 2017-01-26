@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    
+    <title>Notes on Keith J. Grant</title>
+    
+    <link>http://keithjgrant.com/notes/index.xml</link>
+    <description>Recent content in Notes on Keith J. Grant</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Jan 2017 20:34:40 -0500</lastBuildDate>
+    <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
+    <link rel="self" href="http://keithjgrant.com/notes/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    
+    <item>
+      <title></title>
+      <link>http://keithjgrant.com/notes/2017/01/203439/</link>
+      <pubDate>Wed, 25 Jan 2017 20:34:40 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/notes/2017/01/203439/</guid>
+      <description>&lt;p&gt;test&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
