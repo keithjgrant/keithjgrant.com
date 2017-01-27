@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "hugo server",
+    "start:drafts": "hugo server -D",
     "build": "hugo -d docs",
     "ping": "node ./scripts/ping.js",
     "reply": "node ./scripts/reply.js",

@@ -109,48 +109,42 @@
     <article class="post-body h-entry">
       
         <h2 class="p-name">
-          <a class="p-url" href="http://keithjgrant.com/posts/2017/01/hello-indieweb/">
-            Hello, World Wide IndieWeb!
+          <a class="p-url" href="http://keithjgrant.com/posts/2017/01/its-both/">
+            It’s Both
           </a>
         </h2>
         <div class="content e-content">
             
 
-<p>It’s a new year, so it’s time for a new design! Only this time, the update is more than just a CSS revamp. This year, I join the “IndieWeb”. If you don’t know what that is, read on.</p>
+<p>I’m a JavaScript developer. I have experience working in large web applications and dealing with the problems that come from scaling up. I studied Computer Science in college and love solving problems of software architecture.</p>
 
-<p>Let me introduce you to the newest social network: it’s called the World Wide Web and it’s more than 25 years old.</p>
+<p>I’m also (in case you <a href="https://www.manning.com/books/css-in-depth">somehow missed it</a>) a “CSS Guy”. I learned CSS during its infancy in the mid-nineties and have worked to stay up to speed ever since.</p>
 
-<h2 id="the-decentralized-social-web">The decentralized social web</h2>
+<p>When I look out at the industry today, it kind of feels <a href="https://medium.com/javascript-scene/jsx-looks-like-an-abomination-1c1ec351a918#1e2d">like</a> <a href="http://mrmrs.io/writing/2016/03/24/scalable-css/">watching</a> <a href="http://www.zeldman.com/2017/01/03/kiss-my-classname/">parents</a> <a href="https://twitter.com/thejameskyle/status/824795012680421376">fight</a>. And I’ll admit it, I’ve <a href="/posts/2015/05/against-css-in-js/">contributed to the problem</a>. But the more I watch this unfold, the more I feel like we have two camps, talking right past one another, and no meeting in the middle. Both are missing the points the other is trying to make. So I’m shifting my stance:</p>
 
-<p>Social networks bother me. I don’t mean the privacy issues or mysterious sorting algorithms. Apart from these things, walled gardens are antithetical to the open standards that made the web successful in the first place. I can’t follow you on Facebook unless I have a Facebook account. You can’t like or reply to my tweet unless you join Twitter. The internet was founded on principles of decentralization, yet here we are, consolidating the bulk of our online activity into a small handful of sites we don’t control.</p>
+<h2 id="we-re-both-right">We’re both right</h2>
 
-<p>I have long wanted an open protocol to bring the key features of social networks (liking, commenting, sharing, following) out into the open web. Now, finally, I have discovered that a fair bit of progress has been made in this regard. The W3C now has a <a href="https://www.w3.org/wiki/Socialwg">Social Web working group</a>, and their specifications are stabilizing and have even been <a href="http://indieweb.org/">adopted by many</a>.</p>
+<p>Writing SPAs is complicated business. The page isn’t just a static document you can slap some styles on and call it a day. What if you need to load content dynamically, and it results in unpredictable source order of your CSS? How do you know if styles for deeply-nested dependencies are already loaded? How do you know when you can delete code?</p>
 
-<p>This redesign is my first step toward adopting these standards myself. I’ve completed phase one out of two (or possibly three) steps I want to take. Each one corresponds to a key piece of the “Social Web” protocols.</p>
+<p>These are hard problems. You can’t answer them by simply saying “learn CSS”. I personally may not like CSS-in-JS or inline styles, but I do realize they are important experiments. They are quests for answers to these issues. I don’t think they are the ultimate solution. That’s okay. Maybe they will get us to it.</p>
 
-<h2 id="phase-i-webmentions">Phase I: Webmentions</h2>
+<p>On the other hand, we have whole teams of developers who fundamentally don’t grok CSS. They code up their JavaScript components, then stick the styles they want into the project stylesheet. These may be great developers when it comes to traditional programming languages, but they get really frustrated with layout problems or specificity battles. Compound this with “too many cooks in the kitchen” and you have a real mess.</p>
 
-<p>This site now supports comments: you may comment on my blog by writing about it on your own blog. Then your blog should send mine a <a href="https://indieweb.org/Webmention">webmention</a>. These are similar to the old “pingbacks”, except they use a simpler format and they are an official <a href="https://www.w3.org/TR/webmention/">W3C Recommendation</a>. (If your site doesn’t support webmentions, I’ve provided a little form where you can submit this yourself).</p>
+<p>We have sixty-plus years of industry experience about architecting code in traditional programming languages, but we’ve struggled to apply this stuff to CSS. Only in the last seven years or so have we started to figure out best practices for the language, and we are not doing a great job of disseminating them. When we teach that BEM is a “naming convention” rather emphasize it is a way to architect systems with modular code, thousands of developers miss the point entirely. This only drives them further away because the so-called “best practices” don’t work when they aren’t actually followed.</p>
 
-<p>They basically work like this: I write you a post. Then you write a post, with metadata indicating it is a response to my post. Your blog then tells my blog that you replied and provides the URL. If I want, I can then link to your reply. Both our posts now link to each other, and we each own our own data!</p>
+<p>They don’t understand that BEM is about architecture, not simply namespacing. They don’t see the value of using a pattern library, of centralizing your CSS and imposing order on who controls the CSS rather than treating it like a garbage pile where any random dev can just add haphazard code.</p>
 
-<p>And because we are still beholden to some social networks, there is a service called <a href="https://brid.gy/">brid.gy</a> that will find links to my post (and replies to those links) on Twitter or Facebook, and let my blog know about them, so I can log them here as comments. We can drag the old social network silos out into the open web!</p>
+<p>When JavaScript-centric developers hear, “putting your CSS in JavaScript makes it easier” they clamor to get on board. But this must be made absolutely clear: you still need to understand CSS. If you don’t know what a block formatting context is, CSS in JS will not fix your layout issues. If you don’t understand stacking contexts, you will continue to struggle with futile z-index battles. If you don’t learn custom properties or the difference between cascade and inheritance or margin collapsing, these experiments will not really solve the fundamental problem: most teams don’t know how to develop with CSS.</p>
 
-<h2 id="phase-ii-micropub">Phase II: MicroPub</h2>
+<h2 id="always-bet-on-del-javascript-del-the-open-web">Always bet on <del>JavaScript</del> the Open Web</h2>
 
-<p>My next goal will be to incorporate something called MicroPub. This basically means I can write short posts (say, 140 characters), called Notes. I will use these notes to post replies to articles on the web. I can also syndicate these to twitter, where webmentions and brid.gy will help me track any conversation that happens there and link to it from my blog.</p>
+<p>So, yes. Hire engineers who know how to deal with system architecture. But also <a href="/posts/2016/10/your-team-needs-a-ux-engineer/">hire someone exclusively for their CSS skills</a>. Put smart people on your team from both camps. Let them work together to solve these problems. Because your problems are unique and your solutions might not look like someone else’s.</p>
 
-<p>This involves a few more moving parts than phase I, but thankfully, most of the tools for this already exist as services online. I just need to wire things up and test them out.</p>
+<p>I can say with confidence that CSS in JS will pass. In our industry, something new always comes along. The saying is, “Always bet on JavaScript” &mdash; but this isn’t quite right. When it’s JavaScript vs Java or Ruby, yes, bet on JS. JavaScript wins not because it is inherently better; it wins because it is part of the open web platform.</p>
 
-<h2 id="phase-iii-activitypub">Phase III: ActivityPub?</h2>
+<p>The open web platform always wins. And CSS is part of that platform. It’s not CSS versus JS. It’s CSS <em>plus</em> JS. The platform will evolve. And the platform will win.</p>
 
-<p>The last piece of the puzzle for a decentralized social web is the whole subscribers/followers bit. The old concepts of RSS, PubSub, and feed readers can do this, but that model is more of a one-way publication, not a two-way street. There is a new approaches the W3C has been working on called ActivityPub that involves tracking followers and bringing more of the social network activities into this realm.</p>
-
-<p>This arena isn’t as mature yet, but I’ve certainly got my eye on it.</p>
-
-<p>I have high hopes for this will take us. It may take a while &mdash; a couple years, at least &mdash; but I think we will start to see more discussion happening in this arena. If you want to learn more about this stuff, checkout <a href="http://indieweb.org/">indieweb.org</a> or the <a href="https://wordpress.org/plugins/indieweb/">IndieWeb WordPress plugin</a>. Hello, IndieWeb!</p>
-
-          <p class="post-date">23 Jan 2017</p>
+          <p class="post-date">27 Jan 2017</p>
         </div>
         <div class="loading-indicator" id="comments-loader">
   <svg class="interaction-icon"><use xlink:href="#icon-loading"></use></svg>
@@ -174,7 +168,7 @@
   <div class="tab-pane " id="pane-replies" aria-controlled-by="tab-replies">
     <h3>Replies</h3>
     <form id="webmention-form" class="inline-form content" method="post" action="https://webmention.io/keithjgrant.com/webmention">
-      <input type="hidden" name="target" value="http://keithjgrant.com/posts/2017/01/hello-indieweb/" />
+      <input type="hidden" name="target" value="http://keithjgrant.com/posts/2017/01/its-both/" />
       <label for="reply-url">Have you written a <a href="https://indieweb.org/responses">response</a> to this? Let me know the URL:</label>
       <div class="inline-form__inputs">
         <input type="text" id="reply-url" name="source" />
@@ -221,7 +215,7 @@
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function () {
-    loadWebmentions("http://keithjgrant.com/posts/2017/01/hello-indieweb/",  null );
+    loadWebmentions("http://keithjgrant.com/posts/2017/01/its-both/",  null );
   });
 </script>
 
@@ -233,6 +227,11 @@
   <div class="bottom-container__inner">
     <h3>Recent posts</h3>
     <ul class="iconlist">
+      
+      <li><a href="http://keithjgrant.com/posts/2017/01/its-both/">
+        <svg class="focus-cap"><use xlink:href="#path-hex"></use></svg>
+        <div class="iconlist__title">It’s Both</div>
+      </a></li>
       
       <li><a href="http://keithjgrant.com/posts/2017/01/hello-indieweb/">
         <svg class="focus-cap"><use xlink:href="#path-hex"></use></svg>
@@ -247,11 +246,6 @@
       <li><a href="http://keithjgrant.com/posts/2016/10/your-team-needs-a-ux-engineer/">
         <svg class="focus-cap"><use xlink:href="#path-hex"></use></svg>
         <div class="iconlist__title">Your Team Needs a UX Engineer</div>
-      </a></li>
-      
-      <li><a href="http://keithjgrant.com/posts/2016/08/css-in-depth/">
-        <svg class="focus-cap"><use xlink:href="#path-hex"></use></svg>
-        <div class="iconlist__title">CSS in Depth</div>
       </a></li>
       
     </ul>

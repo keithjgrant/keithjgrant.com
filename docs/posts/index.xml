@@ -8,9 +8,47 @@
     <description>Recent content in Posts on Keith J. Grant</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Jan 2017 15:34:37 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 27 Jan 2017 08:54:57 -0500</lastBuildDate>
     <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
     <link rel="self" href="http://keithjgrant.com/posts/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    
+    <item>
+      <title>It’s Both</title>
+      <link>http://keithjgrant.com/posts/2017/01/its-both/</link>
+      <pubDate>Fri, 27 Jan 2017 08:54:57 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/posts/2017/01/its-both/</guid>
+      <description>
+
+&lt;p&gt;I’m a JavaScript developer. I have experience working in large web applications and dealing with the problems that come from scaling up. I studied Computer Science in college and love solving problems of software architecture.&lt;/p&gt;
+
+&lt;p&gt;I’m also (in case you &lt;a href=&#34;https://www.manning.com/books/css-in-depth&#34;&gt;somehow missed it&lt;/a&gt;) a “CSS Guy”. I learned CSS during its infancy in the mid-nineties and have worked to stay up to speed ever since.&lt;/p&gt;
+
+&lt;p&gt;When I look out at the industry today, it kind of feels &lt;a href=&#34;https://medium.com/javascript-scene/jsx-looks-like-an-abomination-1c1ec351a918#1e2d&#34;&gt;like&lt;/a&gt; &lt;a href=&#34;http://mrmrs.io/writing/2016/03/24/scalable-css/&#34;&gt;watching&lt;/a&gt; &lt;a href=&#34;http://www.zeldman.com/2017/01/03/kiss-my-classname/&#34;&gt;parents&lt;/a&gt; &lt;a href=&#34;https://twitter.com/thejameskyle/status/824795012680421376&#34;&gt;fight&lt;/a&gt;. And I’ll admit it, I’ve &lt;a href=&#34;http://keithjgrant.com/posts/2015/05/against-css-in-js/&#34;&gt;contributed to the problem&lt;/a&gt;. But the more I watch this unfold, the more I feel like we have two camps, talking right past one another, and no meeting in the middle. Both are missing the points the other is trying to make. So I’m shifting my stance:&lt;/p&gt;
+
+&lt;h2 id=&#34;we-re-both-right&#34;&gt;We’re both right&lt;/h2&gt;
+
+&lt;p&gt;Writing SPAs is complicated business. The page isn’t just a static document you can slap some styles on and call it a day. What if you need to load content dynamically, and it results in unpredictable source order of your CSS? How do you know if styles for deeply-nested dependencies are already loaded? How do you know when you can delete code?&lt;/p&gt;
+
+&lt;p&gt;These are hard problems. You can’t answer them by simply saying “learn CSS”. I personally may not like CSS-in-JS or inline styles, but I do realize they are important experiments. They are quests for answers to these issues. I don’t think they are the ultimate solution. That’s okay. Maybe they will get us to it.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, we have whole teams of developers who fundamentally don’t grok CSS. They code up their JavaScript components, then stick the styles they want into the project stylesheet. These may be great developers when it comes to traditional programming languages, but they get really frustrated with layout problems or specificity battles. Compound this with “too many cooks in the kitchen” and you have a real mess.&lt;/p&gt;
+
+&lt;p&gt;We have sixty-plus years of industry experience about architecting code in traditional programming languages, but we’ve struggled to apply this stuff to CSS. Only in the last seven years or so have we started to figure out best practices for the language, and we are not doing a great job of disseminating them. When we teach that BEM is a “naming convention” rather emphasize it is a way to architect systems with modular code, thousands of developers miss the point entirely. This only drives them further away because the so-called “best practices” don’t work when they aren’t actually followed.&lt;/p&gt;
+
+&lt;p&gt;They don’t understand that BEM is about architecture, not simply namespacing. They don’t see the value of using a pattern library, of centralizing your CSS and imposing order on who controls the CSS rather than treating it like a garbage pile where any random dev can just add haphazard code.&lt;/p&gt;
+
+&lt;p&gt;When JavaScript-centric developers hear, “putting your CSS in JavaScript makes it easier” they clamor to get on board. But this must be made absolutely clear: you still need to understand CSS. If you don’t know what a block formatting context is, CSS in JS will not fix your layout issues. If you don’t understand stacking contexts, you will continue to struggle with futile z-index battles. If you don’t learn custom properties or the difference between cascade and inheritance or margin collapsing, these experiments will not really solve the fundamental problem: most teams don’t know how to develop with CSS.&lt;/p&gt;
+
+&lt;h2 id=&#34;always-bet-on-del-javascript-del-the-open-web&#34;&gt;Always bet on &lt;del&gt;JavaScript&lt;/del&gt; the Open Web&lt;/h2&gt;
+
+&lt;p&gt;So, yes. Hire engineers who know how to deal with system architecture. But also &lt;a href=&#34;http://keithjgrant.com/posts/2016/10/your-team-needs-a-ux-engineer/&#34;&gt;hire someone exclusively for their CSS skills&lt;/a&gt;. Put smart people on your team from both camps. Let them work together to solve these problems. Because your problems are unique and your solutions might not look like someone else’s.&lt;/p&gt;
+
+&lt;p&gt;I can say with confidence that CSS in JS will pass. In our industry, something new always comes along. The saying is, “Always bet on JavaScript” &amp;mdash; but this isn’t quite right. When it’s JavaScript vs Java or Ruby, yes, bet on JS. JavaScript wins not because it is inherently better; it wins because it is part of the open web platform.&lt;/p&gt;
+
+&lt;p&gt;The open web platform always wins. And CSS is part of that platform. It’s not CSS versus JS. It’s CSS &lt;em&gt;plus&lt;/em&gt; JS. The platform will evolve. And the platform will win.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Hello, World Wide IndieWeb!</title>
@@ -575,67 +613,6 @@ minimalism, y&amp;rsquo;all.&lt;/p&gt;
 &lt;p&gt;This is probably overkill for small projects. I certainly don&amp;rsquo;t jump through all these hoops for this blog. But the more your project scales up, the more essential they will become, and the more your team will benefit from them.&lt;/p&gt;
 
 &lt;p&gt;The API of your CSS will be much more robust as a result of this work.  That API is important. The inner-workings of your CSS are easy to change. Your HTML is easy to change. But that API between them is the most important part. Making significant changes to that is costly, because everything on both sides needs to be updated accordingly. Design that API well. Design it from the viewpoint of the CSS, and then build your HTML to match.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Into the future of CSS</title>
-      <link>http://keithjgrant.com/posts/2015/05/into-the-future-of-css/</link>
-      <pubDate>Sat, 30 May 2015 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2015/05/into-the-future-of-css/</guid>
-      <description>
-
-&lt;p&gt;In my &lt;a href=&#34;http://keithjgrant.com/posts/2015/05/against-css-in-js.html&#34;&gt;last post&lt;/a&gt;, I laid out why I think moving our CSS into JavaScript is not a good idea.  If am totally honest, however, I have to admit I brushed off the concerns &lt;a href=&#34;https://twitter.com/vjeux&#34;&gt;Christopher Chedeaux&lt;/a&gt; raises in his slidedeck.  The seven problems he named can be mitigated by best practices, and most of us can do just fine, because we do not often work in apps of the same scale as Facebook or Google.  But that does not mean the problems aren&amp;rsquo;t worth discussion.&lt;/p&gt;
-
-&lt;p&gt;I may disagree with the solution proposed by the ReactJS team, but I think they are doing something very important by bringing these problems to the forefront.  I shot down their ideas in my last post, so now I want to follow up with some constructive ideas.&lt;/p&gt;
-
-&lt;h2 id=&#34;a-way-forward&#34;&gt;A Way Forward&lt;/h2&gt;
-
-&lt;p&gt;We need to figure out how to solve these problems.  Not just mitigate them or work around them, but full solutions that work at scale.  And if the current spec does not provide the means, we should work to discover what additions to the spec can get us there.&lt;/p&gt;
-
-&lt;p&gt;I think our best bet is learning from JavaScript, or more specifically, CoffeeScript and Babel.  Now that ES6 features are becoming supported more and more in browsers, we can see that CoffeeScript played an important role in making that happen.  CoffeeScript brought new syntax and important improvements like auto bound functions (i.e. &lt;code&gt;=&amp;gt;&lt;/code&gt;) and, thanks to a transpiler, made them possible even before browsers supported them.  Now, some of these features have made their way into ES6 and with them, a breath of new life.  Even more new features are being proposed, and we can use them today with Babel.&lt;/p&gt;
-
-&lt;p&gt;We already have two promising libraries, doing for CSS what Babel does for JavaScript: &lt;a href=&#34;https://github.com/postcss/postcss&#34;&gt;PostCSS&lt;/a&gt; and &lt;a href=&#34;http://cssnext.io/&#34;&gt;cssnext&lt;/a&gt;.  These transpile CSS using the latest spec into compatible CSS that works in browsers today.  This is huge.  Things that we&amp;rsquo;ve relied on SASS and LESS for can now be done in &amp;ldquo;pure&amp;rdquo; CSS, namely variables and advanced color functions.  They also include support for things like custom media queries and custom selectors.  If you are not familiar with either of these libraries, they are worth reading up on.&lt;/p&gt;
-
-&lt;p&gt;The problem is these additions to spec are not all that exciting.  Variables and color functions are nice conveniences, but they do little to solve the real difficulties we face with CSS at scale.  I think, instead of emulating Babel, we need to emulate CoffeeScript.  It pushed the boundaries of JS, and now, as a result, 60% of ES6 features came straight from CoffeeScript.  Let&amp;rsquo;s do the same thing with CSS.  Think outside the box, and dream up new features to help.  PostCSS is especially good for this, because it is modular.  We just need to start writing some experimental plugins.&lt;/p&gt;
-
-&lt;h2 id=&#34;scoped-css&#34;&gt;Scoped CSS&lt;/h2&gt;
-
-&lt;p&gt;One cutting-edge feature that I think has promise is &lt;a href=&#34;http://davidwalsh.name/scoped-css&#34;&gt;scoped css&lt;/a&gt;.  This allows us to add a &amp;ldquo;scoped&amp;rdquo; attribute to a style tag, and those styles will only be applied to the parent element of the style tag and its descendants.  For example:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div class=&amp;quot;outer&amp;quot;&amp;gt;
-  &amp;lt;p&amp;gt;Normal black text&amp;lt;/p&amp;gt;
-  &amp;lt;div class=&amp;quot;inner&amp;quot;&amp;gt;
-    &amp;lt;style scoped&amp;gt;
-      p { color: red; }
-    &amp;lt;/style&amp;gt;
-    &amp;lt;p&amp;gt;Red text!&amp;lt;/p&amp;gt;
-  &amp;lt;/div&amp;gt;
-  &amp;lt;p&amp;gt;Normal black text&amp;lt;/p&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;These can be nested, and scoped elements can even be targeted in our regular stylesheet with the &lt;code&gt;:scoped&lt;/code&gt; pseudo-class.  Scoped styles override styles from a higher-up scope or the global page, regardless of selector specificity.&lt;/p&gt;
-
-&lt;p&gt;The spec for this was proposed in 2011, and not much has happened with it since then.  Only Firefox has added support.  Chrome added support behind an experimental features flag&amp;mdash;but has since removed it.  There are polyfills available, but as it is, this has not gone very far, and it&amp;rsquo;s not hard to see why.  Who wants to write a bunch of CSS inline in the document?  That feels more like a step backwards.&lt;/p&gt;
-
-&lt;p&gt;So, here&amp;rsquo;s an idea.  What if we assigned a value to the scoped attribute, &lt;code class=&#34;prettyprint&#34;&gt;&amp;lt;style scoped=&amp;ldquo;widget&amp;rdquo;/&amp;gt;&lt;/code&gt;, and then create an at-rule to define a named scope, maybe something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;@scope(&#39;widget&#39;) {
-  p {
-    color: red;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This would define a set of scoped styles and assign them a scope name, then we can use that name to apply those styles to our component wherever we put it on the page.  Then we could combine a PostCSS plugin with a polyfill to make it work.  Again, this is just an idea.  I don&amp;rsquo;t really know how well it will solve our difficulties in practice, but I would sure like to try.  It sure seems to have promise at addressing nearly all of Christopher Chedeaux&amp;rsquo;s seven problems with CSS at scale.&lt;/p&gt;
-
-&lt;h2 id=&#34;let-s-start-experimenting&#34;&gt;Let&amp;rsquo;s Start Experimenting&lt;/h2&gt;
-
-&lt;p&gt;Maybe my enhanced scope idea won&amp;rsquo;t work out.  Maybe someone else will come up with a better idea.  Either way, I think we need to try.  Perhaps there is something to be found if we augmented &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/@namespace&#34;&gt;@namespace&lt;/a&gt; instead.  Maybe the answer lies with the shadow DOM and web components, or something else entirely new.&lt;/p&gt;
-
-&lt;p&gt;My hope here is not that we come up with a postprocessor or polyfill library that makes CSS easier, though that is the first step.  My hope is ultimately that we find a way to solve the problems we have, and that the best solution makes its way into the official spec, after we prove it out on production sites. Who knows?  Maybe if PostCSS or cssnext keeps gaining traction, we will invent entirely new polyfills for the future that address any number of issues.  JavaScript has got a lot of momentum moving forward.  It&amp;rsquo;s time for CSS to do the same.&lt;/p&gt;
 </description>
     </item>
     
