@@ -1,6 +1,6 @@
 <div class="post-body__item h-entry">
   <h2 class="p-name">
-    <a class="p-url" href="{{ .Permalink }}">
+    <a class="u-url" href="{{ .Permalink }}">
       {{ .Title }}
     </a>
     <date class="post-date dt-published">{{ .Date.Format "02 Jan 2006" }}</date>
@@ -9,7 +9,7 @@
   <div class="content">
     <p class="p-summary">{{ .Summary }}</p>
     <p>
-      <a class="u-url" href="{{ .Permalink }}">Continue reading...</a>
+      <a href="{{ .Permalink }}">Continue reading...</a>
     </p>
   </div>
 </div>

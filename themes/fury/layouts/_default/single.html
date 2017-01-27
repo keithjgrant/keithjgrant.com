@@ -5,11 +5,11 @@
 </head>
 <body>
   {{ partial "svg.html" }}
-  {{ partial "header.html" }}
+  {{ partial "header.html" . }}
 
   <main class="post-container h-entry">
     <div class="focus-container">
-      <h1 class="p-name">{{ .Title }}</h1>
+      <h1 class="p-name"><a class="u-url" href="{{ .Permalink }}">{{ .Title }}</a></h1>
     </div>
     <article class="post-body">
       <div class="e-content">
