@@ -3,7 +3,7 @@ const exec = require('child_process').exec;
 const replace = require('replace');
 const prompt = require('prompt');
 const buildPath = require('./util/buildPath');
-const publish = require('./publish');
+const publish = require('./util/publish');
 
 const EDITOR = 'atom';
 

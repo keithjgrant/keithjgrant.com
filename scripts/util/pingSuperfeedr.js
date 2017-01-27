@@ -1,3 +1,5 @@
+const request = require('request');
+
 var validTypes = ['posts', 'notes', 'replies', 'likes']
 
 module.exports = function ping(type) {
