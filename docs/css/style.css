@@ -601,7 +601,6 @@ a.reply__date {
     position: relative;
     text-align: center;
     flex: 0 0 25%;
-    mix-blend-mode: overlay;
   }
   .iconlist > li:hover {
     animation: 0.3s wobble cubic-bezier(0.23, 0.9, 0.51, 1.23);
@@ -632,7 +631,7 @@ a.reply__date {
     display: inline-block;
     width: 7em;
     height: 8em;
-    fill: white;
+    fill: hsla(200, 5%, 60%, 0.6);
   }
 }
 
