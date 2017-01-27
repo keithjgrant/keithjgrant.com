@@ -30,7 +30,7 @@ function setContent() {
       silent: true,
     });
     publish('notes').then(function () {
-      var url = encodeURIComponent(`http://keithjgrant.com/${path}`);
+      var url = encodeURIComponent(`http://keithjgrant.com/${path.replace('.md', '/')}`);
       exec(`open https://telegraph.p3k.io/dashboard/send?url=${url}`, function () {
         resolve();
       });
@@ -42,13 +42,18 @@ var dashes = new Array(Math.min(content.length + 1, 110)).join('-');
 console.log(dashes);
 console.log(content);
 console.log(dashes);
-console.log(`Note is ${content.length} characters long.`);
 
-prompt.start();
-prompt.get(['Proceed? [Y/n]'], function (err, result) {
-  if (!err && result['Proceed? [Y/n]'] === 'Y') {
-    createFile();
-  } else {
-    console.log('Aborted');
-  }
-});
+if (content.length > 140) {
+  console.log(`Note is ${content.length} characters long.`);
+
+  prompt.start();
+  prompt.get(['Proceed? [Y/n]'], function (err, result) {
+    if (!err && result['Proceed? [Y/n]'] === 'Y') {
+      createFile();
+    } else {
+      console.log('Aborted');
+    }
+  });
+} else {
+  createFile();
+}

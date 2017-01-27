@@ -18,10 +18,10 @@
             {{ .Content }}
             <data class="p-bridgy-omit-link" value="maybe" />
         </div>
+        {{ if eq .Section "notes" }}
+        <a href="https://brid.gy/publish/twitter"></a>
+        {{ end }}
       </div>
-      {{ if eq .Section "notes" }}
-      <a href="https://brid.gy/publish/twitter"></a>
-      {{ end }}
       <p class="post-date metadata"><date class="dt-published">{{ .Date.Format "02 Jan 2006 15:04:05" }}</date></p>
       {{ partial "interactions.html" . }}
     </article>
