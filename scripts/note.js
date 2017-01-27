@@ -3,6 +3,7 @@ const exec = require('child_process').exec;
 const replace = require('replace');
 const prompt = require('prompt');
 const buildPath = require('./util/buildPath');
+const publish = require('./publish');
 
 const EDITOR = 'atom';
 
@@ -26,6 +27,7 @@ function setContent() {
     recursive: false,
     silent: true,
   });
+  publish('notes');
 }
 
 var dashes = new Array(Math.min(content.length + 1, 110)).join('-');

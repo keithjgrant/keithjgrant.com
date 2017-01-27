@@ -16,6 +16,7 @@
         {{ partial "in-reply-to" . }}
         <div class="content">
             {{ .Content }}
+            <data class="p-bridgy-omit-link" value="maybe" />
         </div>
       </div>
       {{ if eq .Section "notes" }}
