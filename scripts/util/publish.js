@@ -12,9 +12,9 @@ module.exports = function publish(type) {
 
     exec(`hugo -d docs && git add content/${type} docs/${type} && git commit -m "note" && git push`, function () {
       setTimeout(function () {
-        // ping(type);
+        ping(type);
         resolve();
-      }, 1000);
+      }, 5000);
     });
   });
 };
