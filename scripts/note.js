@@ -13,21 +13,29 @@ var path = buildPath('notes');
 
 function createFile() {
   exec(`hugo new ${path}`, function () {
-    setContent();
-    console.log('After publishing, send webmentions using https://telegraph.p3k.io/dashboard');
-    console.log(`Reply URL will be http://keithjgrant.com/${path}`)
+    setContent().then(function () {;
+      console.log('After publishing, send webmentions using https://telegraph.p3k.io/dashboard');
+      console.log(`Reply URL will be http://keithjgrant.com/${path}`)
+    });
   });
 }
 
 function setContent() {
-  replace({
-    regex: "POST",
-    replacement: content,
-    paths: [`content/${path}`],
-    recursive: false,
-    silent: true,
+  return new Promise(function (resolve, reject) {
+    replace({
+      regex: "POST",
+      replacement: content,
+      paths: [`content/${path}`],
+      recursive: false,
+      silent: true,
+    });
+    publish('notes').then(function () {
+      var url = encodeURIComponent(`http://keithjgrant.com/${path}`);
+      exec(`open https://telegraph.p3k.io/dashboard/send?url=${url}`, function () {
+        resolve();
+      });
+    });
   });
-  publish('notes');
 }
 
 var dashes = new Array(Math.min(content.length + 1, 110)).join('-');
