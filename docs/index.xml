@@ -8,9 +8,19 @@
     <description>Recent content in Keith J. Grant on Keith J. Grant</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Jan 2017 08:54:57 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 27 Jan 2017 14:51:58 -0500</lastBuildDate>
     <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
     <link rel="self" href="http://keithjgrant.com/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    
+    <item>
+      <title></title>
+      <link>http://keithjgrant.com/notes/2017/01/145158/</link>
+      <pubDate>Fri, 27 Jan 2017 14:51:58 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/notes/2017/01/145158/</guid>
+      <description>&lt;p&gt;Progressive enhancement and rule of least power MATTER &lt;a href=&#34;https://twitter.com/ArielleDRoss/status/825043489016705024&#34;&gt;https://twitter.com/ArielleDRoss/status/825043489016705024&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>It’s Both</title>
@@ -519,22 +529,6 @@ render() {
     margin: 1em;
   }
 &lt;/style&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Simply White</title>
-      <link>http://keithjgrant.com/posts/2016/01/simply-white/</link>
-      <pubDate>Wed, 27 Jan 2016 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2016/01/simply-white/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.benjaminmoore.com/en-us/for-your-home/benjamin-moore-color-trends-2016&#34;&gt;Benjamin
-Moore&lt;/a&gt; has declared the Color of the Year for 2016 to be &amp;ldquo;simply white&amp;rdquo;. We have reached peak
-minimalism, y&amp;rsquo;all.&lt;/p&gt;
-
-&lt;p&gt;So I&amp;rsquo;m steering into the skid. Here&amp;rsquo;s my new design.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://keithjgrant.com/images/2016/simply-white.png&#34; alt=&#34;screenshot of &#39;Simply White&#39; design&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

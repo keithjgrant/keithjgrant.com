@@ -14,7 +14,7 @@ module.exports = function publish(type) {
       setTimeout(function () {
         ping(type);
         resolve();
-      }, 5000);
+      }, 10000);
     });
   });
 };
