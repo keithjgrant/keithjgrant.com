@@ -8,9 +8,19 @@
     <description>Recent content in Notes on Keith J. Grant</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Jan 2017 14:51:58 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 03 Feb 2017 10:59:54 -0500</lastBuildDate>
     <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
     <link rel="self" href="http://keithjgrant.com/notes/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    
+    <item>
+      <title></title>
+      <link>http://keithjgrant.com/notes/2017/02/105953/</link>
+      <pubDate>Fri, 03 Feb 2017 10:59:54 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/notes/2017/02/105953/</guid>
+      <description>&lt;p&gt;Are there any codemods to convert LESS to PostCSS/cssnext syntax? Doesn&amp;rsquo;t need to be too fancy, just cut down on the busywork.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title></title>
