@@ -16,7 +16,9 @@
         {{ partial "in-reply-to" . }}
         <div class="content">
             {{ .Content }}
-            <data class="p-bridgy-omit-link" value="maybe" />
+            {{ if not (eq .Section "posts") }}
+              <data class="p-bridgy-omit-link" value="false" />
+            {{ end }}
         </div>
         {{ if eq .Section "notes" }}
         <a href="https://brid.gy/publish/twitter"></a>

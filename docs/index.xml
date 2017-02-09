@@ -8,9 +8,29 @@
     <description>Recent content in Keith J. Grant on Keith J. Grant</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Jan 2017 14:51:58 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 09 Feb 2017 08:42:36 -0500</lastBuildDate>
     <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
     <link rel="self" href="http://keithjgrant.com/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    
+    <item>
+      <title></title>
+      <link>http://keithjgrant.com/notes/2017/02/84236/</link>
+      <pubDate>Thu, 09 Feb 2017 08:42:36 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/notes/2017/02/84236/</guid>
+      <description>&lt;p&gt;Current status &lt;a href=&#34;https://www.youtube.com/watch?v=g0MLscghcN4&#34;&gt;https://www.youtube.com/watch?v=g0MLscghcN4&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://keithjgrant.com/notes/2017/02/105953/</link>
+      <pubDate>Fri, 03 Feb 2017 10:59:54 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/notes/2017/02/105953/</guid>
+      <description>&lt;p&gt;Are there any codemods to convert LESS to PostCSS/cssnext syntax? Doesn&amp;rsquo;t need to be too fancy, just cut down on the busywork.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title></title>
@@ -250,285 +270,6 @@ render() {
 &lt;/ul&gt;
 
 &lt;p&gt;Let&amp;rsquo;s not allow this to die.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A Quest for Interchangeable Parts</title>
-      <link>http://keithjgrant.com/posts/2016/02/a-quest-for-interchangeable-parts/</link>
-      <pubDate>Sat, 06 Feb 2016 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2016/02/a-quest-for-interchangeable-parts/</guid>
-      <description>
-
-&lt;p&gt;This is a bolt. &lt;img class=&#34;float-right&#34; src=&#34;http://keithjgrant.com/images/2016/m20-bolt.jpg&#34; height=&#34;200&#34; width=&#34;200&#34; alt=&#34;bolt&#34;&gt; You may not realize it, but it is a modern marvel. It is a 150mm bolt with an M20 threading. It works in any piece of hardware that is cut with the same size and threading. It can be turned with any 30mm hex wrench. You can reach into a pile of M20-2.50 nuts, made by any manufacturer, pull any one out, and it will fit this bolt.&lt;/p&gt;
-
-&lt;p&gt;This is because of a key principle that made the industrial revolution possible: &lt;a href=&#34;https://en.wikipedia.org/wiki/Interchangeable_parts&#34;&gt;interchangeable parts&lt;/a&gt;. It took countless inventors over the course of hundreds of years to perfect the manufacturing necessary for this. Many people, such as Eli Whitney and Samuel Colt, devoted years of their lives and a great amount of resources in the quest to achieve it.&lt;/p&gt;
-
-&lt;p&gt;Before their efforts, everything had to be hand-made for the particular project. Every gun was uniquely crafted. Every piece of rigging on a ship. And if a part broke, you couldn’t just buy a replacement; one had to be hand-made to fit the parts it integrated with&amp;hellip; or the entire device had to be replaced.&lt;/p&gt;
-
-&lt;h2 id=&#34;learn-from-history&#34;&gt;Learn from history&lt;/h2&gt;
-
-&lt;p&gt;This is a tweet. &lt;img src=&#34;http://keithjgrant.com/images/2016/tweet.png&#34; alt=&#34;screenshot of tweet&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;You may not realize it, but it is stuck in the pre-industrial age. Because it is not an interchangeable part. It doesn’t fit into a Facebook wall, or onto a YouTube page.&lt;/p&gt;
-
-&lt;p&gt;Sure, it’s &lt;em&gt;almost&lt;/em&gt; interchangeable. You can post a link to its url in most places, or a screenshot of the tweet. Or you can copy the text and give attribution. But it does not interoperate with other social networks. You can’t retweet it or like it from anywhere but a limited number of places: an embedded tweet (put there by a script provided by Twitter) or a third-party app that uses Twitter’s API. This is because Twitter has a vested interest in keeping a tight reign on where and how a tweet can, and cannot, be used.&lt;/p&gt;
-
-&lt;p&gt;Our digital world is full of these semi-interchangeable parts. You can buy an album from iTunes or Amazon or Google Play. However, if you assemble your music collection using two or more of these, you have to jump through some hoops to keep it all in one place and to sync it to your phone.&lt;/p&gt;
-
-&lt;p&gt;You can subscribe to Hulu and Netflix and Amazon Prime, but you can’t just tune into them on any TV: you need to use something like a Roku that brings them all together. Nothing is standardized.&lt;/p&gt;
-
-&lt;h2 id=&#34;a-better-way&#34;&gt;A better way&lt;/h2&gt;
-
-&lt;p&gt;Netflix has to build an app for iOS, an app for Android, an app for Roku and Apple TV and the Amazon Fire Stick. They do all this just so users of those devices can tune in to their service. What if, instead, they just produced their content in a single, standardized web format. Imagine if HBO and Hulu broadcast in the same format. Imagine if subscribers merely had to tune in their TVs to the right “channel” watch. No Apple TV or Roku necessary. Like broadcast television.&lt;/p&gt;
-
-&lt;p&gt;iTunes keeps an iron grip on the whole pipeline of your music: the financial transaction, the download, the files on your hard drive, the sync to your Apple device. What if, instead, iTunes or Amazon were just a store, and they all provided music in the same format for you to save wherever you choose, and sync however you choose. Like it a CD.&lt;/p&gt;
-
-&lt;p&gt;What if, instead of “following” your friend Joseph on Twitter, you could just follow &lt;em&gt;Joseph&lt;/em&gt;. He could tweet on Twitter or post to Facebook and you would get it, on the social network of your choosing, that offers the controls and options you like. There would be a single, common digital format for a social media post, that worked on all networks. You could be on Twitter or Google Plus, and read his updates, wherever they came from. Like email.&lt;/p&gt;
-
-&lt;h2 id=&#34;an-open-web&#34;&gt;An open web&lt;/h2&gt;
-
-&lt;p&gt;Unlike the centuries-long quest for interchangeable parts in manufacturing, there is nothing technically holding us back from this. We might need to hash out what these standards look like, but that is relatively easy. The forces holding us back are more capitalistic&amp;mdash;or rather, &lt;em&gt;monopolistic&lt;/em&gt;. Because the world of open standards I just described would be a much more open, free market: a level playing field where far more companies could innovate and compete, rather than just a small handful of big players. It would be a world where users had more choices and more control over their media, and where they didn’t have to put up with so much headache.&lt;/p&gt;
-
-&lt;p&gt;Has the digital age made life easier? Absolutely. I don’t want to go back to broadcast television or CDs. While email still serves a purpose, it’s different than that of social media.&lt;/p&gt;
-
-&lt;p&gt;But the digital age has still not matured. We need interchangeable parts. It will take some concerted effort to break through the barriers holding us back. I admit don’t know precisely how to do that. But, just as we pushed through the difficulties that held back physical manufacturing in centuries past and ushered in the industrial revolution, we can break through these, and usher in a new digital revolution. The modern digital life is still more complicated than it need be.&lt;/p&gt;
-
-&lt;p&gt;The Internet may be the first true write-once-run-anywhere platform, but as long as these industries are shackled by proprietary lock-in, these parts of the web aren’t open. An open web requires interchangeable parts.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Width and Absolute Positioning</title>
-      <link>http://keithjgrant.com/posts/2016/01/width-and-absolute-positioning/</link>
-      <pubDate>Sat, 30 Jan 2016 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2016/01/width-and-absolute-positioning/</guid>
-      <description>
-
-&lt;p&gt;I recently came across this question on Twitter:
-&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;What&amp;#39;s the diff on a position:absolute el btw {top:0;right:0;bottom:0;left:0;} and {top:0;left:0;height:100%;width:100%;} ?&lt;/p&gt;&amp;mdash; Karl Swedberg (@kswedberg) &lt;a href=&#34;https://twitter.com/kswedberg/status/692720642580295681&#34;&gt;January 28, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-“That’s easy”, I thought. “They often seem the same in practice, but width and height are based on the parent (or nearest block-level ancestor). Top, right, bottom, and left are based on the nearest &lt;em&gt;positioned&lt;/em&gt; ancestor. Those aren’t necessarily the same element.”&lt;/p&gt;
-
-&lt;p&gt;Shows what I know: my &lt;a href=&#34;http://codepen.io/keithjgrant/pen/obddgy&#34;&gt;quick mockup&lt;/a&gt; to illustrate the difference proved me wrong.&lt;/p&gt;
-
-&lt;p&gt;On first pass, &lt;code&gt;top: 0; right: 0; bottom: 0; left: 0;&lt;/code&gt; and &lt;code&gt;top: 0; left: 0; width: 100%; height: 100%;&lt;/code&gt; are equivalent. Of course, we always &lt;em&gt;treat&lt;/em&gt; them as equivalent, because in most real-world cases, the nearest positioned ancestor is the nearest block-level element (usually the parent). But my codepen showed me an absolutely positioned element whose width and height are derived from the positioned ancestor, not the immediate container.&lt;/p&gt;
-
-&lt;p&gt;In retrospect, this makes a certain kind of sense, because the absolutely positioned element is removed from the normal flow. It&amp;rsquo;s then “contained” by the positioned ancestor.&lt;/p&gt;
-
-&lt;p&gt;So, the two scenarios are effectively the same. But a quick look at the spec made it clear that padding and margin would weigh in. So it might worth a little experimenting to see what we get.&lt;/p&gt;
-
-&lt;h2 id=&#34;experimenting&#34;&gt;Experimenting&lt;/h2&gt;
-
-&lt;p&gt;So here’s the basic scenario I set up. Three elements: one relatively positioned as the anchor for the absolute positioning, one to serve as the parent, and then the child, which will be absolutely positioned. For better visibility, the positioned container has a faint background color, the parent has a purple border, and the child has a medium gray background (transparent, so the others will show through).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;  &amp;lt;div class=&amp;quot;positioned&amp;quot;&amp;gt;
-    &amp;lt;div class=&amp;quot;parent&amp;quot;&amp;gt;
-      &amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt;
-      &amp;lt;/div&amp;gt;
-    &amp;lt;/div&amp;gt;
-  &amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;  .positioned {
-    position: relative;
-    background-color: rgba(0,0,255, 0.1);
-  }
-
-  .parent {
-    width: 200px;
-    min-height: 200px;
-    border: 2px solid #936;
-  }
-
-  .child {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then, we’ll play around with the child’s properties to see what happens. We&amp;rsquo;ll create two variations. First, one with top, right, bottom, and left all set to zero. And second, one with a top and left of zero, and a width and height of 100%.&lt;/p&gt;
-
-&lt;div class=&#34;demo demo--basic&#34;&gt;
-  &lt;div class=&#34;demo-col&#34;&gt;
-    &lt;pre class=&#34;prettyprint&#34;&gt;.child {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-&lt;/pre&gt;
-    &lt;div class=&#34;demo-1 positioned&#34;&gt;
-      &lt;div class=&#34;parent&#34;&gt;
-        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&#34;demo-col&#34;&gt;
-    &lt;pre class=&#34;prettyprint&#34;&gt;.child {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}&lt;/pre&gt;
-    &lt;div class=&#34;demo-2 positioned&#34;&gt;
-      &lt;div class=&#34;parent&#34;&gt;
-        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The two children appear identical. They overflow outside the parent, and fill the size of the positioned container. Visually, you can’t tell the difference between the container and the child. Let&amp;rsquo;s add some padding to the child and see what happens&amp;hellip;&lt;/p&gt;
-
-&lt;pre class=&#34;prettyprint&#34;&gt;
-  .child {
-    padding: 1em;
-  }
-&lt;/pre&gt;
-  &lt;div class=&#34;demo demo--padding&#34;&gt;
-    &lt;div class=&#34;demo-col&#34;&gt;
-      &lt;div class=&#34;demo-1 positioned&#34;&gt;
-        &lt;div class=&#34;parent&#34;&gt;
-          &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;demo-col&#34;&gt;
-      &lt;div class=&#34;demo-2 positioned&#34;&gt;
-        &lt;div class=&#34;parent&#34;&gt;
-          &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-...nothing. Note, I&#39;ve got &lt;code&gt;box-sizing: border-box&lt;/code&gt; set globally on the page. Let&#39;s turn that off:
-&lt;pre class=&#34;prettyprint&#34;&gt;
-  .child {
-    box-sizing: content-box;
-    padding: 1em;
-  }
-&lt;/pre&gt;
-
-&lt;div class=&#34;demo demo--padding-2&#34;&gt;
-  &lt;div class=&#34;demo-col&#34;&gt;
-    &lt;div class=&#34;demo-1 positioned&#34;&gt;
-      &lt;div class=&#34;parent&#34;&gt;
-        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&#34;demo-col&#34;&gt;
-    &lt;div class=&#34;demo-2 positioned&#34;&gt;
-      &lt;div class=&#34;parent&#34;&gt;
-        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The padding still has no effect on the size of the first variation. But it adds to the width and height in the second; that child now overflows the positioned container. That makes sense. So there&amp;rsquo;s a key difference here, if you don&amp;rsquo;t have a global box-sizing fix in place.&lt;/p&gt;
-
-&lt;p&gt;Now let’s see what a margin does:&lt;/p&gt;
-
-&lt;pre class=&#34;prettyprint&#34;&gt;
-  .child {
-    margin: 1em;
-  }
-&lt;/pre&gt;
-
-&lt;div class=&#34;demo demo--margin&#34;&gt;
-  &lt;div class=&#34;demo-col&#34;&gt;
-    &lt;div class=&#34;demo-1 positioned&#34;&gt;
-      &lt;div class=&#34;parent&#34;&gt;
-        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&#34;demo-col&#34;&gt;
-    &lt;div class=&#34;demo-2 positioned&#34;&gt;
-      &lt;div class=&#34;parent&#34;&gt;
-        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now that was unexpected, at least to me. With &lt;code&gt;right: 0; bottom: 0&lt;/code&gt;, the margin is contained inside the positioned descendant; they will shrink the size of the element.&lt;/p&gt;
-
-&lt;p&gt;With &lt;code&gt;width: 100%; height: 100%&lt;/code&gt;, the top and left margins are contained, but the element is shifted, maintaining its original size. The right and bottom margins are then added outside the whole structure.&lt;/p&gt;
-
-&lt;p&gt;What’s interesting is that in all these scenarios, the parent element doesn’t affect the shape of the child element at all&amp;mdash;Though it does provide the height to the positioned container.&lt;/p&gt;
-
-&lt;h2 id=&#34;take-away&#34;&gt;Take-away&lt;/h2&gt;
-
-&lt;p&gt;So what does this mean? It seems to me that &lt;code&gt;top: 0; right: 0; bottom: 0; left: 0&lt;/code&gt; is probably the one to favor, as it&amp;rsquo;s a little more predictable, unless you have a particular reason to use height or width instead.&lt;/p&gt;
-
-&lt;style type=&#34;text/css&#34;&gt;
-  .demo-col {
-    margin: 1em 0;
-  }
-  @media screen and (min-width: 900px) {
-    .demo {
-      display: flex;
-      flex-flow: space-between;
-      margin: 1em 0;
-    }
-
-    .demo-col {
-      flex: 1;
-      margin: 0;
-    }
-    .demo-col:not(:first-child) {
-      margin-left: 3em;
-    }
-  }
-
-  .demo .positioned {
-    position: relative;
-    background-color: rgba(0,0,255, 0.1);
-  }
-  .demo .parent {
-    width: 200px;
-    min-height: 200px;
-    border: 2px solid #936;
-  }
-  .demo .child {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-
-  .demo-1 .child {
-    right: 0;
-    bottom: 0;
-  }
-
-  .demo-2 .child {
-    width: 100%;
-    height: 100%;
-  }
-
-  .demo--padding .child {
-    padding: 1em;
-  }
-
-  .demo--padding-2 {
-    margin-bottom: 2em;
-  }
-  .demo--padding-2 .child {
-    box-sizing: content-box;
-    padding: 1em;
-  }
-
-  .demo--margin .child {
-    margin: 1em;
-  }
-&lt;/style&gt;
 </description>
     </item>
     
