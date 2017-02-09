@@ -166,6 +166,7 @@ img {
   position: relative;
   margin-left: .8em;
   mix-blend-mode: luminosity;
+  z-index: 1;
 }
 .avatar img {
   height: 3em;
@@ -411,9 +412,20 @@ img {
 }
 
 .metadata {
+  margin: 1.8rem 0;
   font-size: 0.8em;
-  font-weight: bold;
   color: var(--gray-6);
+  text-align: right;
+}
+.metadata a {
+  color: inherit;
+  text-decoration: none;
+}
+.metadata a:hover {
+  text-decoration: underline;
+}
+p + .metadata--note {
+  margin-top: -1.8rem;
 }
 
 .loading-indicator {

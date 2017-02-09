@@ -8,9 +8,19 @@
     <description>Recent content in Keith J. Grant on Keith J. Grant</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Feb 2017 08:42:36 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 09 Feb 2017 09:16:25 -0500</lastBuildDate>
     <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
     <link rel="self" href="http://keithjgrant.com/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    
+    <item>
+      <title></title>
+      <link>http://keithjgrant.com/notes/2017/02/91624/</link>
+      <pubDate>Thu, 09 Feb 2017 09:16:25 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/notes/2017/02/91624/</guid>
+      <description>&lt;p&gt;Would it be totally annoying if my tweets linked back to my blog? It probably would, wouldn&amp;rsquo;t it?&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title></title>
@@ -211,65 +221,6 @@ render() {
       <description>&lt;p&gt;&lt;img src=&#34;http://keithjgrant.com/images/2016/css-in-depth-cover.png&#34; alt=&#34;Cover of CSS in Depth&#34; class=&#34;float-right&#34;/&gt;My book is finally for sale! The &lt;abbr title=&#34;Manning Early Access Program&#34;&gt;MEAP&lt;/abbr&gt; is available on &lt;a href=&#34;https://manning.com/books/css-in-depth&#34;&gt;Manning’s website&lt;/a&gt;. The first three chapters are available now, and others will be rolling out steadily (I’ve actually already completed drafts of six chapters at this point).&lt;/p&gt;
 
 &lt;p&gt;Until the end of August, you can use my code &lt;strong&gt;mlgrant2&lt;/strong&gt; for 50% off. Follow &lt;a href=&#34;https://twitter.com/CSSinDepth&#34;&gt;@CSSinDepth&lt;/a&gt; on Twitter for updates.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Save Scoped CSS</title>
-      <link>http://keithjgrant.com/posts/2016/06/save-scoped-css/</link>
-      <pubDate>Thu, 09 Jun 2016 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2016/06/save-scoped-css/</guid>
-      <description>
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update June 23, 2016:&lt;/strong&gt; The editor&amp;rsquo;s draft has been updated again. It looks like &lt;code&gt;@scope&lt;/code&gt; is gone for good, so this post is now a moot point. The way forward now lies in the Shadow DOM.&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;About &lt;a href=&#34;http://keithjgrant.com/posts/into-the-future-of-css.html#scoped-css&#34;&gt;a year ago&lt;/a&gt;, I wrote about a promising feature of CSS, scoping. I love the idea of this feature, and I think it could be one of the most important changes in the near future of CSS. You know all those complaints about “in CSS everything is global&amp;rdquo;? This feature is the answer.&lt;/p&gt;
-
-&lt;p&gt;I became excited recently when I noticed some movement in the W3C concerning this spec. So I took a look at what was going on. I found some good news, and I found some bad news.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-good-news&#34;&gt;The good news&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://drafts.csswg.org/css-scoping/&#34;&gt;editor&amp;rsquo;s draft of the specification&lt;/a&gt; has recently been updated. The changes, I think, significantly improve the viability of the feature. They more closely resemble the hypothetical changes I wished for last year. Most importantly, scoped styles would no longer need to be defined inline in the HTML document; you can define scoped styles in an external stylesheet.&lt;/p&gt;
-
-&lt;p&gt;The proposed syntax looks like this, using a new &lt;code&gt;@scope&lt;/code&gt; at-rule:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;@scope .foo-module {
-  p {
-    color: blue;
-  }
-}
-
-@scope .bar-module {
-  p {
-    color: red;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Each scope is defined with a selector (&lt;code&gt;.foo-module&lt;/code&gt;, &lt;code&gt;.bar-module&lt;/code&gt;). This establishes a new scope for matched elements and their descendants. Inside the braces that follow, you can specify any styles you wish. These styles are then applied only to the elements belonging to that scope.&lt;/p&gt;
-
-&lt;p&gt;According to the rules of &lt;a href=&#34;https://www.w3.org/TR/css-cascade-3/#cascade-scope&#34;&gt;the cascade&lt;/a&gt;, rules applied to an inner scope will override those applied to an outer scope, &lt;em&gt;regardless of their selector specificity&lt;/em&gt;. This is precisely the behavior CSS-in-JS and/or CSS Modules users want! And yes, this definition is in the current Candidate Recommendation of the spec.&lt;/p&gt;
-
-&lt;p&gt;This means, given the example above, a &lt;code&gt;foo-module&lt;/code&gt; inside a &lt;code&gt;bar-module&lt;/code&gt; will have blue text; and a &lt;code&gt;bar-module&lt;/code&gt; inside a &lt;code&gt;foo-module&lt;/code&gt; will have red text. This could solve so many developer frustrations.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-bad-news&#34;&gt;The bad news&lt;/h2&gt;
-
-&lt;p&gt;I got excited when I saw these changes, so I started reading more on what prompted them. I discovered that it is a sort of last-ditch effort to salvage the spec. The problem? Browser vendors have shown no interest in implementing it. Firefox has long-since implemented the earlier version of the spec, but that&amp;rsquo;s it.&lt;/p&gt;
-
-&lt;p&gt;If we developers want this feature, we need to let the browser vendors know. Otherwise, it&amp;rsquo;s DOA.&lt;/p&gt;
-
-&lt;p&gt;So tell them, please. Follow these links, and up-vote or leave comments in support of scoped styles:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://groups.google.com/a/chromium.org/forum/#!searchin/blink-dev/scoped/blink-dev/R1x18ZLS5qQ/Bjuh_cENhlQJ&#34;&gt;Chrome&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/14895573--scope&#34;&gt;Edge&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;I couldn&amp;rsquo;t find a channel for Safari. If you know where it is, please let me know and I&amp;rsquo;ll add it here.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Let&amp;rsquo;s not allow this to die.&lt;/p&gt;
 </description>
     </item>
     

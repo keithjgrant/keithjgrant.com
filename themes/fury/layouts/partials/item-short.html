@@ -1,8 +1,8 @@
 <div class="post-body__item h-entry">
   {{ partial "in-reply-to" . }}
   <div class="content e-content">
-    <p>{{ .Content }}</p>
-    <p class="metadata">Posted <a class="u-url dt-published" href="{{ .Permalink }}">{{ .Date.Format "02 Jan 2006 15:04:05"}}</a>
+    {{ .Content }}
+    <p class="metadata metadata--note"><a class="u-url dt-published" href="{{ .Permalink }}">{{ .Date.Format "02 Jan 2006 15:04:05"}}</a>
     </p>
   </div>
 </div>
