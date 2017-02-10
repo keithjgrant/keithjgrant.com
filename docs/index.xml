@@ -8,9 +8,19 @@
     <description>Recent content in Keith J. Grant on Keith J. Grant</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Feb 2017 09:16:25 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 10 Feb 2017 14:26:56 -0500</lastBuildDate>
     <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
     <link rel="self" href="http://keithjgrant.com/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    
+    <item>
+      <title>Test reply</title>
+      <link>http://keithjgrant.com/replies/2017/02/142656/</link>
+      <pubDate>Fri, 10 Feb 2017 14:26:56 -0500</pubDate>
+      
+      <guid>http://keithjgrant.com/replies/2017/02/142656/</guid>
+      <description>&lt;p&gt;Nice site&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title></title>
@@ -209,18 +219,6 @@ render() {
 &lt;p&gt;This is how things work on my team. I am effectively the UX Engineer, and I think everyone enjoys the process more because of it. In our case, we stumbled upon this setup&amp;mdash;I was originally hired for my JavaScript skills. As always, the CSS was an afterthought; I just happened to be good at it, so we settled into the current arrangement.&lt;/p&gt;
 
 &lt;p&gt;Don’t wait for your team to stumble into this. Set it up intentionally. Hire a UX Engineer.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>CSS in Depth</title>
-      <link>http://keithjgrant.com/posts/2016/08/css-in-depth/</link>
-      <pubDate>Wed, 24 Aug 2016 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2016/08/css-in-depth/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://keithjgrant.com/images/2016/css-in-depth-cover.png&#34; alt=&#34;Cover of CSS in Depth&#34; class=&#34;float-right&#34;/&gt;My book is finally for sale! The &lt;abbr title=&#34;Manning Early Access Program&#34;&gt;MEAP&lt;/abbr&gt; is available on &lt;a href=&#34;https://manning.com/books/css-in-depth&#34;&gt;Manning’s website&lt;/a&gt;. The first three chapters are available now, and others will be rolling out steadily (I’ve actually already completed drafts of six chapters at this point).&lt;/p&gt;
-
-&lt;p&gt;Until the end of August, you can use my code &lt;strong&gt;mlgrant2&lt;/strong&gt; for 50% off. Follow &lt;a href=&#34;https://twitter.com/CSSinDepth&#34;&gt;@CSSinDepth&lt;/a&gt; on Twitter for updates.&lt;/p&gt;
 </description>
     </item>
     
