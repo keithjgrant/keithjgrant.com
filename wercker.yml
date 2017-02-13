@@ -6,7 +6,7 @@ build:
         config: config.toml
         theme: fury
         flags: -d=docs
-deploy:
+deployx:
   steps:
     - install-packages:
         packages: git ssh-client
@@ -14,3 +14,9 @@ deploy:
         token: $GIT_TOKEN
         domain: hugo-wercker.ig.nore.me
         basedir: docs
+deploy:
+  steps:
+    - git-push:
+         gh_oauth: $GIT_TOKEN
+         gh_pages_domain: keithjgrant.com
+         basedir: docs
