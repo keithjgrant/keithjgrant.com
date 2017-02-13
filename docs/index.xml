@@ -8,9 +8,40 @@
     <description>Recent content in Keith J. Grant on Keith J. Grant</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Feb 2017 14:26:56 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 13 Feb 2017 18:08:18 +0000</lastBuildDate>
     <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
     <link rel="self" href="http://keithjgrant.com/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    
+    <item>
+      <title></title>
+      <link>http://keithjgrant.com/notes/2017/02/65298/</link>
+      <pubDate>Mon, 13 Feb 2017 18:08:18 +0000</pubDate>
+      
+      <guid>http://keithjgrant.com/notes/2017/02/65298/</guid>
+      <description>&lt;p&gt;This was a solid episode. I learned a few things about AMP. I’m&amp;hellip; slightly less hostile to it now&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://shoptalkshow.com/episodes/248-amp/&#34;&gt;http://shoptalkshow.com/episodes/248-amp/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://keithjgrant.com/replies/2017/02/54138/</link>
+      <pubDate>Mon, 13 Feb 2017 15:02:18 +0000</pubDate>
+      
+      <guid>http://keithjgrant.com/replies/2017/02/54138/</guid>
+      <description>&lt;p&gt;Yeah, I&amp;#39;ve switched back and forth b/t light and dark a few times over the years. Takes a day or so to get accustomed&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://keithjgrant.com/likes/2017/02/54029/</link>
+      <pubDate>Mon, 13 Feb 2017 15:00:29 +0000</pubDate>
+      
+      <guid>http://keithjgrant.com/likes/2017/02/54029/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Test reply</title>
@@ -109,116 +140,6 @@
       <description>&lt;p&gt;I definitely avoid using the microformat classes as hooks for CSS. That can lock you into HTML structures that you might need to change later on. Honestly, I’d prefer if microformats used a different attribute altogether, but I think that ship has sailed.&lt;/p&gt;
 
 &lt;p&gt;I haven’t mentioned anything about microformats in my book, though I could certainly point out this principle in more general terms &amp;mdash; try not to use the same classes as hooks for both JS and CSS, for instance (unless the two are inextricably linked to the same component).&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hello, World Wide IndieWeb!</title>
-      <link>http://keithjgrant.com/posts/2017/01/hello-indieweb/</link>
-      <pubDate>Mon, 23 Jan 2017 15:34:37 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2017/01/hello-indieweb/</guid>
-      <description>
-
-&lt;p&gt;It’s a new year, so it’s time for a new design! Only this time, the update is more than just a CSS revamp. This year, I join the “IndieWeb”. If you don’t know what that is, read on.&lt;/p&gt;
-
-&lt;p&gt;Let me introduce you to the newest social network: it’s called the World Wide Web and it’s more than 25 years old.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-decentralized-social-web&#34;&gt;The decentralized social web&lt;/h2&gt;
-
-&lt;p&gt;Social networks bother me. I don’t mean the privacy issues or mysterious sorting algorithms. Apart from these things, walled gardens are antithetical to the open standards that made the web successful in the first place. I can’t follow you on Facebook unless I have a Facebook account. You can’t like or reply to my tweet unless you join Twitter. The internet was founded on principles of decentralization, yet here we are, consolidating the bulk of our online activity into a small handful of sites we don’t control.&lt;/p&gt;
-
-&lt;p&gt;I have long wanted an open protocol to bring the key features of social networks (liking, commenting, sharing, following) out into the open web. Now, finally, I have discovered that a fair bit of progress has been made in this regard. The W3C now has a &lt;a href=&#34;https://www.w3.org/wiki/Socialwg&#34;&gt;Social Web working group&lt;/a&gt;, and their specifications are stabilizing and have even been &lt;a href=&#34;http://indieweb.org/&#34;&gt;adopted by many&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This redesign is my first step toward adopting these standards myself. I’ve completed phase one out of two (or possibly three) steps I want to take. Each one corresponds to a key piece of the “Social Web” protocols.&lt;/p&gt;
-
-&lt;h2 id=&#34;phase-i-webmentions&#34;&gt;Phase I: Webmentions&lt;/h2&gt;
-
-&lt;p&gt;This site now supports comments: you may comment on my blog by writing about it on your own blog. Then your blog should send mine a &lt;a href=&#34;https://indieweb.org/Webmention&#34;&gt;webmention&lt;/a&gt;. These are similar to the old “pingbacks”, except they use a simpler format and they are an official &lt;a href=&#34;https://www.w3.org/TR/webmention/&#34;&gt;W3C Recommendation&lt;/a&gt;. (If your site doesn’t support webmentions, I’ve provided a little form where you can submit this yourself).&lt;/p&gt;
-
-&lt;p&gt;They basically work like this: I write you a post. Then you write a post, with metadata indicating it is a response to my post. Your blog then tells my blog that you replied and provides the URL. If I want, I can then link to your reply. Both our posts now link to each other, and we each own our own data!&lt;/p&gt;
-
-&lt;p&gt;And because we are still beholden to some social networks, there is a service called &lt;a href=&#34;https://brid.gy/&#34;&gt;brid.gy&lt;/a&gt; that will find links to my post (and replies to those links) on Twitter or Facebook, and let my blog know about them, so I can log them here as comments. We can drag the old social network silos out into the open web!&lt;/p&gt;
-
-&lt;h2 id=&#34;phase-ii-micropub&#34;&gt;Phase II: MicroPub&lt;/h2&gt;
-
-&lt;p&gt;My next goal will be to incorporate something called MicroPub. This basically means I can write short posts (say, 140 characters), called Notes. I will use these notes to post replies to articles on the web. I can also syndicate these to twitter, where webmentions and brid.gy will help me track any conversation that happens there and link to it from my blog.&lt;/p&gt;
-
-&lt;p&gt;This involves a few more moving parts than phase I, but thankfully, most of the tools for this already exist as services online. I just need to wire things up and test them out.&lt;/p&gt;
-
-&lt;h2 id=&#34;phase-iii-activitypub&#34;&gt;Phase III: ActivityPub?&lt;/h2&gt;
-
-&lt;p&gt;The last piece of the puzzle for a decentralized social web is the whole subscribers/followers bit. The old concepts of RSS, PubSub, and feed readers can do this, but that model is more of a one-way publication, not a two-way street. There is a new approaches the W3C has been working on called ActivityPub that involves tracking followers and bringing more of the social network activities into this realm.&lt;/p&gt;
-
-&lt;p&gt;This arena isn’t as mature yet, but I’ve certainly got my eye on it.&lt;/p&gt;
-
-&lt;p&gt;I have high hopes for this will take us. It may take a while &amp;mdash; a couple years, at least &amp;mdash; but I think we will start to see more discussion happening in this arena. If you want to learn more about this stuff, checkout &lt;a href=&#34;http://indieweb.org/&#34;&gt;indieweb.org&lt;/a&gt; or the &lt;a href=&#34;https://wordpress.org/plugins/indieweb/&#34;&gt;IndieWeb WordPress plugin&lt;/a&gt;. Hello, IndieWeb!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Let’s Talk About Separation of Concerns</title>
-      <link>http://keithjgrant.com/posts/2016/12/separation-of-concerns/</link>
-      <pubDate>Fri, 23 Dec 2016 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2016/12/separation-of-concerns/</guid>
-      <description>&lt;p&gt;There’s been a lot of talk lately about good old Separation of Concerns &amp;mdash; primarily in the context of React and the use of inline styles or CSS-in-JS. Advocates of these approaches argue that the language we use (be it JS, HTML, or CSS) is an arbitrary line to draw. And I would say: Yes, language is, for the most part, an arbitrary line. But that’s beside the point.&lt;/p&gt;
-
-&lt;p&gt;So let’s get one thing straight. This&amp;hellip;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import styles from &#39;./tile.css&#39;;
-...
-render() {
-  return &amp;lt;div className={styles.tile}&amp;gt;...&amp;lt;/div&amp;gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&amp;hellip;is architectually equivalent to this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;render() {
-  return &amp;lt;div className=&amp;quot;tile&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The latter approach, however:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;requires a drastically simpler build process&lt;/li&gt;
-&lt;li&gt;is both backwards- and forwards-compatible across all frameworks&lt;/li&gt;
-&lt;li&gt;doesn’t try to pretend that those styles exist in perfect encapsulated isolation&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Stop championing CSS-in-JS as some ground breaking re-thinking of Separation of Concerns. It’s not. The React component will still inherit its font face, color, and size from a parent container. It still exists on the web platform, in an HTML document, where all the rules of styles and inheritance still apply.&lt;/p&gt;
-
-&lt;p&gt;We can debate about class name collision, co-locating stylesheets, &lt;a href=&#34;http://keithjgrant.com/posts/css-first.html&#34;&gt;how styles fit into system archetecture&lt;/a&gt;, and other related topics. But let’s take this one off the table, because it’s a straw man argument.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Your Team Needs a UX Engineer</title>
-      <link>http://keithjgrant.com/posts/2016/10/your-team-needs-a-ux-engineer/</link>
-      <pubDate>Sun, 02 Oct 2016 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2016/10/your-team-needs-a-ux-engineer/</guid>
-      <description>&lt;p&gt;Recently, after I mentioned that I was the only one on my team that writes the CSS, someone replied, “You’re lucky”.&lt;/p&gt;
-
-&lt;p&gt;It stuck with me, and I’ve been thinking about it since. The thing is, it’s not luck. It was a deliberate decision made early when the team was first put together. And I think the rest of the developers on my team would think themselves lucky for &lt;em&gt;not&lt;/em&gt; having to touch the CSS. It is more valuable for us to have one person on the team who specializes in that.&lt;/p&gt;
-
-&lt;p&gt;We need to rethink something about the way we build our web development teams. We spend a lot of effort hiring good programmers, but for the most part, they are interchangeable. We make sure that everyone we hire knows the fundamentals of software engineering, architecture, and the primary language the team uses. And then we &lt;em&gt;assume&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;If a developer has a solid grasp on JavaScript, we think, surely they know CSS. Surely they know how to deal with accessibility. Surely they have a grasp on how and when to use various HTML elements and aria-* properties. These are small beans compared to &lt;em&gt;the code&lt;/em&gt;. And in many ways, they are.&lt;/p&gt;
-
-&lt;p&gt;But, of course, this isn’t how it plays out. Because we hire purely for the bigger task, CSS and accessibility always remain an afterthought. On most teams, nobody really knows what they are doing when it comes to these topics. They team stumbles along, joking amongst themselves how horrible CSS is.&lt;/p&gt;
-
-&lt;p&gt;We need to fix this. On teams larger than four or five developers, I think we can: one person per team should be hired explicitly for these tasks. Most of the team will still be focused on JavaScript (or Python or Java). But one person&amp;mdash;call them a “CSS Developer” or “UX Engineer”&amp;mdash;should be hired specifically for these “afterthought” concerns.&lt;/p&gt;
-
-&lt;p&gt;Is a developer building a new component and needs some styles? The UX Engineer writes that CSS. The UX Engineer gives a snippet of HTML to the developer for them to incorporate into the component. The UX engineer ensures the correct semantics and can come alongside the developer to ensure keyboard navigation works. The UX Engineer maintains a pattern library for the team to use as a reference to find existing styles.&lt;/p&gt;
-
-&lt;p&gt;This UX Engineer serves an important role, but furthermore, they allow the other developer to offload some work. The developer can focus on the &amp;ldquo;bigger concern&amp;rdquo; of getting the business logic right and ensuring the app works correctly. This improves the developer’s productivity.&lt;/p&gt;
-
-&lt;p&gt;This is how things work on my team. I am effectively the UX Engineer, and I think everyone enjoys the process more because of it. In our case, we stumbled upon this setup&amp;mdash;I was originally hired for my JavaScript skills. As always, the CSS was an afterthought; I just happened to be good at it, so we settled into the current arrangement.&lt;/p&gt;
-
-&lt;p&gt;Don’t wait for your team to stumble into this. Set it up intentionally. Hire a UX Engineer.&lt;/p&gt;
 </description>
     </item>
     
