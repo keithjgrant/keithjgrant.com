@@ -1,0 +1,36 @@
+{
+"type": [
+  "h-entry"
+],
+"properties": {
+  "content": [
+    "test four"
+  ],
+  "category": [
+    "notes"
+  ]
+},
+"mp": {
+  "slug": [
+    "test-four"
+    ]
+  }
+}
+
+
+{
+  "type": [
+    "h-entry"
+  ],
+  "properties": {
+    "content": [
+      "reply to google"
+    ],
+    "in-reply-to": [
+      "http://google.com"
+      ]
+  }
+}
+
+MICROPUB_OPTION_DERIVE_CATEGORY
+{"replies": "in-reply-to", "likes": "like-of", "notes": "!in-reply-to && !like-of"}

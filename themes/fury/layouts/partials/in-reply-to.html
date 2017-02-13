@@ -1,10 +1,14 @@
-{{ with .Params.inReplyTo }}
-  {{ $replyTo := . }}
-  {{ $path := last 1 (split . "//") }}
-  {{ range $path }}
-    {{ $domain := first 1 (split . "/") }}
-    {{ range $domain }}
-      <div class="metadata">in reply to <a href="{{ $replyTo }}" rel="in-reply-to" class="u-in-reply-to">a post on {{ . }}</a></div>
+{{ with $.Param "mf-in-reply-to" }}
+  <div class="metadata text-left">in reply to
+  {{ range . }}
+    {{ $replyTo := . }}
+    {{ $path := last 1 (split . "//") }}
+    {{ range $path }}
+      {{ $domain := first 1 (split . "/") }}
+      {{ range $domain }}
+        <a href="{{ $replyTo }}" rel="in-reply-to" class="u-in-reply-to">a post on {{ . }}</a>
+      {{ end }}
     {{ end }}
   {{ end }}
+  </div>
 {{ end }}

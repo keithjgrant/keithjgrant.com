@@ -412,7 +412,7 @@ img {
 }
 
 .metadata {
-  margin: 1.8rem 0;
+  margin: 1.8rem 0 0;
   font-size: 0.8em;
   color: var(--gray-6);
   text-align: right;
@@ -667,6 +667,13 @@ a.reply__date {
 }
 img.float-right {
   margin-left: 1em;
+}
+
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
 }
 
 @keyframes spin {
