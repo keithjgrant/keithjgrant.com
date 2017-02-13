@@ -1,0 +1,7 @@
+{{ with $.Param "mf-like-of" }}
+  <p>
+  {{ range . }}
+    <a href="{{ . }}" rel="like-of" class="u-like-of">{{ . }}</a>
+  {{ end }}
+  </p>
+{{ end }}

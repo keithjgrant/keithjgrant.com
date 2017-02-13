@@ -14,6 +14,7 @@
     <article class="post-body">
       <div class="e-content">
         {{ partial "in-reply-to" . }}
+        {{ partial "like-of" . }}
         <div class="content">
             {{ .Content }}
             {{ if not (eq .Section "posts") }}
@@ -25,7 +26,9 @@
         {{ end }}
       </div>
       <p class="post-date metadata"><date class="dt-published">{{ .Date.Format "02 Jan 2006 15:04:05" }}</date></p>
-      {{ partial "interactions.html" . }}
+      {{ if not (eq .Section "likes") }}
+        {{ partial "interactions.html" . }}
+      {{ end }}
     </article>
   </main>
 
