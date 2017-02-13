@@ -2,6 +2,7 @@
 "type": [
   "h-entry"
 ],
+
 "properties": {
   "content": [
     "test four"
@@ -34,3 +35,39 @@
 
 MICROPUB_OPTION_DERIVE_CATEGORY
 {"replies": "in-reply-to", "likes": "like-of", "notes": "!in-reply-to && !like-of"}
+
+
+MICROPUB_SITE_SYNDICATE_TO
+[
+  {
+    "uid":"https://myfavoritesocialnetwork.example/aaronpk",
+    "name":"aaronpk on myfavoritesocialnetwork",
+    "service": {
+      "name":"My Favorite Social Network",
+      "url":"https://myfavoritesocialnetwork.example/",
+      "photo":"https://myfavoritesocialnetwork.example/img/icon.png"
+    },
+    "user": {
+      "name":"aaronpk",
+      "url":"https://myfavoritesocialnetwork.example/aaronpk",
+      "photo":"https://myfavoritesocialnetwork.example/aaronpk/photo.jpg"
+      }
+  }
+]
+[
+  {
+    "uid":"https://twitter.com/keithjgrant",
+    "name":"keithjgrant on Twitter",
+    "service": {
+      "name":"Twitter",
+      "url":"https://twitter.com/",
+      "photo":"https://g.twimg.com/about/feature-corporate/image/twitterbird_RGB.png"
+    },
+    "user": {
+      "name":"keithjgrant",
+      "url":"https://myfavoritesocialnetwork.example/aaronpk",
+      "photo":"https://pbs.twimg.com/profile_images/818626883432554497/uOwnZK4i_400x400.jpg"
+      }
+  }
+]
+[{"uid":"https://twitter.com/keithjgrant","name":"keithjgrant on Twitter","service": {"name":"Twitter","url":"https://twitter.com/","photo":"https://g.twimg.com/about/feature-corporate/image/twitterbird_RGB.png"},"user": {"name":"keithjgrant","url":"https://myfavoritesocialnetwork.example/aaronpk","photo":"https://pbs.twimg.com/profile_images/818626883432554497/uOwnZK4i_400x400.jpg"}}]
