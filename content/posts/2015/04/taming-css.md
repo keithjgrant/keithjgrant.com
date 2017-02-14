@@ -1,10 +1,9 @@
 +++
-title = "Taming CSS"
-date = "2015-04-29T16:26:32-05:00"
 aliases = ["/posts/taming-css.html"]
+date = "2015-04-29T16:26:32-05:00"
+title = "Taming CSS"
 
 +++
-
 Observation 1: Web developers, in general, don’t know CSS as well as they should.
 
 Observation 2: There aren’t really any good roadmaps for learning all the essentials of CSS.

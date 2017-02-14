@@ -1,9 +1,8 @@
 +++
-title = "It’s Both"
 date = "2017-01-27T08:54:57-05:00"
+title = "It’s Both"
 
 +++
-
 I’m a JavaScript developer. I have experience working in large web applications and dealing with the problems that come from scaling up. I studied Computer Science in college and love solving problems of software architecture.
 
 I’m also (in case you <a href="https://www.manning.com/books/css-in-depth">somehow missed it</a>) a “CSS Guy”. I learned CSS during its infancy in the mid-nineties and have worked to stay up to speed ever since.

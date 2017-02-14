@@ -1,10 +1,9 @@
 +++
-title = "Let’s Talk About Separation of Concerns"
-date =  "2016-12-23T00:00:00-05:00"
 aliases = ["/posts/separation-of-concerns.html"]
+date = "2016-12-23T00:00:00-05:00"
+title = "Let’s Talk About Separation of Concerns"
 
 +++
-
 There’s been a lot of talk lately about good old Separation of Concerns &mdash; primarily in the context of React and the use of inline styles or CSS-in-JS. Advocates of these approaches argue that the language we use (be it JS, HTML, or CSS) is an arbitrary line to draw. And I would say: Yes, language is, for the most part, an arbitrary line. But that’s beside the point.
 
 So let’s get one thing straight. This...

@@ -1,10 +1,9 @@
 +++
-title = "Against CSS in JS"
-date =  "2015-05-29T00:00:00-05:00"
 aliases = ["/posts/against-css-in-js.html"]
+date = "2015-05-29T00:00:00-05:00"
+title = "Against CSS in JS"
 
 +++
-
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Some folks want a unified language of the web instead of CSS, HTML, and JS.&#10;&#10;It&#39;s increasingly looking like JS will just eat the other two.</p>&mdash; Henrik Joreteg (@HenrikJoreteg) <a href="https://twitter.com/HenrikJoreteg/status/603959629425483776">May 28, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 

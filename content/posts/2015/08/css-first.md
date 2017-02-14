@@ -1,10 +1,9 @@
 +++
-title = "CSS First"
-date = "2015-08-01T10:00:00-05:00"
 aliases = ["/posts/css-first.html"]
+date = "2015-08-01T10:00:00-05:00"
+title = "CSS First"
 
 +++
-
 In 2003, the *CSS Zen Garden* went live, and it spearheaded a revolution. At the time, many web designers were still using tables for layouts, and the battle for semantic markup was underway. The Zen Garden showed the world, in beautiful color, what CSS could do. By changing the CSS, you could make the website retro, postmodern, abstract, or elegant. You could move the sidebar to the left, the right, the top, or the bottom of the page. You could do anything with the font, the colors, the shapes and sizes of the elements on the screen. No changes to the HTML were necessary.
 
 What we didn't realize at the time was how much of a disservice this was for the next generation of designers and developers.

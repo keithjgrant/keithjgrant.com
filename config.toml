@@ -1,6 +1,5 @@
-title = "Keith J. Grant"
-baseurl = "http://keithjgrant.com/"
-languageCode = "en-us"
-theme = "fury"
 baseUrl = "http://keithjgrant.com"
+languageCode = "en-us"
 paginate = 10
+theme = "fury"
+title = "Keith J. Grant"

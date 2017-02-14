@@ -1,10 +1,9 @@
 +++
-title = "Your Team Needs a UX Engineer"
-date =  "2016-10-02T00:00:00-05:00"
 aliases = ["/posts/your-team-needs-a-ux-engineer.html"]
+date = "2016-10-02T00:00:00-05:00"
+title = "Your Team Needs a UX Engineer"
 
 +++
-
 Recently, after I mentioned that I was the only one on my team that writes the CSS, someone replied, “You’re lucky”.
 
 It stuck with me, and I’ve been thinking about it since. The thing is, it’s not luck. It was a deliberate decision made early when the team was first put together. And I think the rest of the developers on my team would think themselves lucky for <em>not</em> having to touch the CSS. It is more valuable for us to have one person on the team who specializes in that.

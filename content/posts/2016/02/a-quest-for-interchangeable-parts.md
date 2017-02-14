@@ -1,10 +1,9 @@
 +++
-title = "A Quest for Interchangeable Parts"
-date =  "2016-02-06T00:00:00-05:00"
 aliases = ["/posts/a-quest-for-interchangeable-parts.html"]
+date = "2016-02-06T00:00:00-05:00"
+title = "A Quest for Interchangeable Parts"
 
 +++
-
 This is a bolt. <img class="float-right" src="/images/2016/m20-bolt.jpg" height="200" width="200" alt="bolt"> You may not realize it, but it is a modern marvel. It is a 150mm bolt with an M20 threading. It works in any piece of hardware that is cut with the same size and threading. It can be turned with any 30mm hex wrench. You can reach into a pile of M20-2.50 nuts, made by any manufacturer, pull any one out, and it will fit this bolt.
 
 This is because of a key principle that made the industrial revolution possible: <a href="https://en.wikipedia.org/wiki/Interchangeable_parts">interchangeable parts</a>. It took countless inventors over the course of hundreds of years to perfect the manufacturing necessary for this. Many people, such as Eli Whitney and Samuel Colt, devoted years of their lives and a great amount of resources in the quest to achieve it.

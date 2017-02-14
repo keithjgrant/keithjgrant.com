@@ -1,10 +1,9 @@
 +++
-title = "Width and Absolute Positioning"
-date =  "2016-01-30T00:00:00-05:00"
 aliases = ["/posts/width-and-absolute-positioning.html"]
+date = "2016-01-30T00:00:00-05:00"
+title = "Width and Absolute Positioning"
 
 +++
-
 I recently came across this question on Twitter:
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">What&#39;s the diff on a position:absolute el btw {top:0;right:0;bottom:0;left:0;} and {top:0;left:0;height:100%;width:100%;} ?</p>&mdash; Karl Swedberg (@kswedberg) <a href="https://twitter.com/kswedberg/status/692720642580295681">January 28, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

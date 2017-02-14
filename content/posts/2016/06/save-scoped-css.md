@@ -1,10 +1,9 @@
 +++
-title = "Save Scoped CSS"
-date =  "2016-06-09T00:00:00-05:00"
 aliases = ["/posts/save-scoped-css.html"]
+date = "2016-06-09T00:00:00-05:00"
+title = "Save Scoped CSS"
 
 +++
-
 _**Update June 23, 2016:** The editor's draft has been updated again. It looks like `@scope` is gone for good, so this post is now a moot point. The way forward now lies in the Shadow DOM._
 
 ---
