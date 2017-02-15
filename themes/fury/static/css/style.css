@@ -675,6 +675,13 @@ img.float-right {
 .text-right {
   text-align: right !important;
 }
+.text-center {
+  text-align: center !important;
+}
+
+twitterwidget {
+  margin: 0 auto;
+}
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
