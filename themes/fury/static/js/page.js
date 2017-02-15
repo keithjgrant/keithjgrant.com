@@ -234,7 +234,7 @@ window.twttr = (function(d, s, id) {
 
 // load tweets
 twttr.ready(function () {
-  var links = document.querySelectorAll('.h-entry a[href*="//twitter.com"]');
+  var links = document.querySelectorAll('.h-entry a[href*="//twitter.com"]:only-child');
   Array.prototype.map.call(links, function (link) {
     var parts = link.href.split('/');
     var id = parts.pop();
