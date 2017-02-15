@@ -1,5 +1,5 @@
 {{ with $.Param "mf-like-of" }}
-  <p>
+  <p class="show-embeds">
   {{ range . }}
     <a href="{{ . }}" rel="like-of" class="u-like-of">{{ . }}</a>
   {{ end }}

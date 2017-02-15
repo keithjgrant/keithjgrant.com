@@ -15,7 +15,7 @@
       <div class="e-content">
         {{ partial "in-reply-to" . }}
         {{ partial "like-of" . }}
-        <div class="content">
+        <div class="content show-embeds">
             {{ .Content }}
             {{ if not (eq .Section "posts") }}
               <data class="p-bridgy-omit-link" value="false" />
