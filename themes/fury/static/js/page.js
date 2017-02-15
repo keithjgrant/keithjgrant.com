@@ -234,11 +234,11 @@ window.twttr = (function(d, s, id) {
 
 // load tweets
 twttr.ready(function () {
-  var links = document.querySelectorAll('.show-embeds a[href*="//twitter.com"]:only-child');
+  var links = document.querySelectorAll('.show-embeds a[href*="//twitter.com"]');
   Array.prototype.map.call(links, function (link) {
     var parts = link.href.split('/');
     var id = parts.pop();
-    if (parts.pop() !== 'status') {
+    if (parts.pop() !== 'status' || link.href !== link.innerHTML) {
       return;
     }
 
