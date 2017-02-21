@@ -14,6 +14,7 @@
     <article class="post-body">
       <div class="e-content">
         {{ partial "in-reply-to" . }}
+        {{ partial "repost-of" . }}
         {{ partial "like-of" . }}
         <div class="content show-embeds">
             {{ .Content }}

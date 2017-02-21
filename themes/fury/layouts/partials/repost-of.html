@@ -1,0 +1,8 @@
+{{ with $.Param "mf-repost-of" }}
+  <p class="show-embeds">
+    Reposted link: 
+  {{ range . }}
+    <a href="{{ . }}" rel="repost-of" class="u-repost-of">{{ . }}</a>
+  {{ end }}
+  </p>
+{{ end }}
