@@ -21,10 +21,10 @@
             {{ if not (eq .Section "posts") }}
               <data class="p-bridgy-omit-link" value="false" />
             {{ end }}
+          {{ if not (eq .Section "posts") }}
+            <a href="https://brid.gy/publish/twitter"></a>
+          {{ end }}
         </div>
-        {{ if not (eq .Section "posts") }}
-        <a href="https://brid.gy/publish/twitter"></a>
-        {{ end }}
       </div>
       <p class="post-date metadata"><date class="dt-published">{{ .Date.Format "02 Jan 2006 15:04:05" }}</date></p>
       {{ if not (eq .Section "likes") }}
