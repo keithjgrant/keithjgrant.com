@@ -22,7 +22,7 @@
               <data class="p-bridgy-omit-link" value="false" />
             {{ end }}
         </div>
-        {{ if eq .Section "notes" }}
+        {{ if not (eq .Section "posts") }}
         <a href="https://brid.gy/publish/twitter"></a>
         {{ end }}
       </div>
