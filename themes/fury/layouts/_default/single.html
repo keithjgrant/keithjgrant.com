@@ -3,20 +3,20 @@
 <head>
   {{ partial "meta.html" . }}
 </head>
-<body>
+<body class="h-entry">
   {{ partial "svg.html" }}
   {{ partial "header.html" . }}
 
-  <main class="post-container h-entry">
+  <main class="post-container">
     <div class="focus-container">
       <h1 class="p-name"><a class="u-url" href="{{ .Permalink }}">{{ .Title }}</a></h1>
     </div>
     <article class="post-body">
-      <div class="e-content">
+      <div>
         {{ partial "in-reply-to" . }}
         {{ partial "repost-of" . }}
         {{ partial "like-of" . }}
-        <div class="content show-embeds">
+        <div class="e-content content show-embeds">
             {{ .Content }}
             {{ if not (eq .Section "posts") }}
               <data class="p-bridgy-omit-link" value="false" />
