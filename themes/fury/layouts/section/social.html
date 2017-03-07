@@ -12,7 +12,8 @@
       <h2>{{ .Title }}</h2>
     </div>
     <article class="post-body">
-      {{ range where .Site.Pages "Section" "in" (slice "replies" "likes") }}
+      {{ $paginator := .Paginate (where .Site.Pages "Section" "in" (slice "replies" "likes")) }}
+      {{ range $paginator.Pages }}
         {{ partial "item-short.html" . }}
       {{ end }}
     </article>
