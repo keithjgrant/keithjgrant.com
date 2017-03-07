@@ -1,4 +1,5 @@
 {{ with $.Param "mf-like-of" }}
+  <div class="metadata text-left">liked a post</div>
   <p class="show-embeds">
   {{ range . }}
     <a href="{{ . }}" rel="like-of" class="u-like-of">{{ . }}</a>
