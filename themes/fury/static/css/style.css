@@ -343,6 +343,8 @@ img {
   .nav-links > li:nth-child(3) .nav-links__label { transition-delay: 0.1s; }
   .nav-links > li:nth-child(4) .nav-links__label { transition-delay: 0.15s; }
   .nav-links > li:nth-child(5) .nav-links__label { transition-delay: 0.2s; }
+  .nav-links > li:nth-child(6) .nav-links__label { transition-delay: 0.25s; }
+  .nav-links > li:nth-child(7) .nav-links__label { transition-delay: 0.3s; }
 
 }
 
