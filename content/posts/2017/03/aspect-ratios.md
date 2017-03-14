@@ -3,7 +3,6 @@ date = "2017-03-14T10:12:43-04:00"
 title = "A better approach to CSS aspect ratios"
 
 +++
-
 There’s an old hack for creating elements with a fixed aspect ratio that involves using a percentage-based padding. You may be familiar with it. It looks something like this:
 
 ```css
