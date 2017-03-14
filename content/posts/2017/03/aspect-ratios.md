@@ -41,7 +41,7 @@ A while back, I stumbled across an approach that is similar, but prevents the ov
 
 ```css
 .tile {
-  background-color: bisque;
+  background-color: darkseagreen;
 }
 .tile::before {
   content: "";
@@ -93,6 +93,7 @@ Then, in the `::after` pseudo-element, we clear the float, forcing the element t
 <style>
   .-demo-container {
     max-width: 300px;
+    line-height: 1.6;
   }
 
   .-demo1 {
@@ -103,7 +104,8 @@ Then, in the `::after` pseudo-element, we clear the float, forcing the element t
   }
 
   .-demo2 {
-    background-color: bisque;
+    background-color: darkseagreen;
+    line-height: 1.6;
   }
   .-demo2::before {
     content: "";
@@ -117,7 +119,8 @@ Then, in the `::after` pseudo-element, we clear the float, forcing the element t
   }
 
   .-demo3 {
-    background-color: bisque;
+    background-color: darkseagreen;
+    line-height: 1.6;
   }
   .-demo3::before {
     content: "";
