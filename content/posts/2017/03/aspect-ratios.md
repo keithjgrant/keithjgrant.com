@@ -22,7 +22,7 @@ The element is forced to have no height, then its bottom padding is set to the a
   </div>
 </figure>
 
-This works because of a peculiar quirk of padding: Any padding specified in percent computes to a percentage of the elements *width*&mdash;even if it is a top or bottom padding. (The same is true for margin as well.) This is a bit counter-intuitive, but it comes in handy. I think the original reasoning was so you could declare something like `padding: 5%` and get an equal padding on all four sides of the element, regardless of its shape.
+This works because of a peculiar quirk of padding: Any padding specified in percent computes to a percentage of the element’s *width*&mdash;even if it is a top or bottom padding. (The same is true for margin as well.) This is a bit counter-intuitive, but it comes in handy. I think the original reasoning was so you could declare something like `padding: 5%` and get an equal padding on all four sides of the element, regardless of its shape.
 
 Of course, this approach has a problem: overflow is cut off:
 
@@ -54,7 +54,7 @@ A while back, I stumbled across an approach that is similar, but prevents the ov
 }
 ```
 
-This produces a very similar result:
+The `::after` is just a familiar clearfix. This produces a very similar result:
 
 <figure class="-demo-container">
   <div class="-demo2">
