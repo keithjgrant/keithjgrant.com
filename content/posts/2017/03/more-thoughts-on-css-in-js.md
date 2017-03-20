@@ -3,7 +3,6 @@ date = "2017-03-20T15:07:49-04:00"
 title = "More thoughts on CSS in JS"
 
 +++
-
 At a previous job, I was brought in to a team of Java devs to provide a little JS support. They had been using something called PrimeFaces, basically a bunch of front-end components you drop into JSF pages. Working with it was horrid.
 
 In short, these devs knew nothing about JavaScript or the front-end, but this tool let them sort of hack a UI together. It abstracted away all the tools needed for really working in the front end. For me, someone adept in JavaScript, working with PrimeFaces was like trying to code without a keyboard.
