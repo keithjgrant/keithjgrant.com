@@ -1,12 +1,9 @@
 +++
 date = "2017-03-24T14:15:34-04:00"
 title = "CSS is Not Broken"
-mf-in-reply-to = [
-  "https://medium.com/@zamarrowski/css-is-broken-5138773e17a5"
-]
+mf-in-reply-to = ["https://medium.com/@zamarrowski/css-is-broken-5138773e17a5"]
 
 +++
-
 Coding in any language is hard before you spend time mastering it. Imagine what your JavaScript would look like if you never took the time to learn about OOP or functional programming principles? Just because you *expect* CSS to be easy, doesn’t mean the language is broken when you find it is not.
 
 A lot of people have <a href="https://simpleprogrammer.com/2013/05/06/why-javascript-is-doomed/">gone on about</a> <a href="https://medium.com/smalltalk-talk/the-three-worst-programming-languages-b1ec25a232c1#e848">how horrible JavaScript is</a>. JavaScript is not horrible. It is an incredible language. It has a few odd quirks, just as CSS does. But if you take the time to actually understand these quirks, you will reap huge reward.
