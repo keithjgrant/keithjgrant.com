@@ -114,6 +114,7 @@
           likes.push(l);
           break;
         case "repost":
+        case "link":
           reposts.push(l);
           break;
         default:
@@ -163,10 +164,17 @@
     var t = document.getElementById('like-template').content;
     var list = document.getElementById('shares');
     reposts.map(function(l) {
-      t.querySelector('img').src = l.data.author.photo;
-      var author = t.querySelector('.reply__author');
-      author.href = l.data.author.url;
-      author.innerHTML = l.data.author.name;
+      if (l.data.author) {
+        t.querySelector('img').src = l.data.author.photo;
+        var author = t.querySelector('.reply__author');
+        author.href = l.data.author.url;
+        author.innerHTML = l.data.author.name;
+      } else {
+        t.querySelector('img').src = '';
+        var author = t.querySelector('.reply__author');
+        author.href = l.data.url;
+        author.innerHTML = 'inbound link';
+      }
       var date = t.querySelector('.reply__date');
       date.href = l.data.url;
       var d = new Date(l.data.published || l.verified_date);
@@ -194,6 +202,7 @@
         author.innerHTML = l.data.author.name;
         body.innerHTML = l.data.content;
       } else {
+        t.querySelector('img').src = '';
         author.href = l.data.url;
         author.innerHTML = l.data.url;
         body.innerHTML = `<i>link from <a href="${l.data.url}">${l.data.url}</a></i>`;
