@@ -1,7 +1,7 @@
 +++
 date = "2017-03-24T14:15:34-04:00"
-title = "CSS is Not Broken"
 mf-in-reply-to = ["https://medium.com/@zamarrowski/css-is-broken-5138773e17a5"]
+title = "CSS is Not Broken"
 
 +++
 Coding in any language is hard before you spend time mastering it. Imagine what your JavaScript would look like if you never took the time to learn about OOP or functional programming principles? Just because you *expect* CSS to be easy, doesn’t mean the language is broken when you find it is not.
