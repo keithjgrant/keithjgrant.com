@@ -86,7 +86,7 @@
       });
     }
     var script = document.createElement('script');
-    var src = 'https://webmention.io/api/mentions?jsonp=parseWebmentions';
+    var src = 'https://webmention.io/api/mentions?perPage=500&jsonp=parseWebmentions';
     urls.forEach(function (url) {
       src += `&target[]=${encodeURIComponent(url)}`;
     });
