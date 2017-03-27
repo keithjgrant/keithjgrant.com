@@ -97,7 +97,7 @@
   window.loadWebmentions = loadWebmentions;
 
   function parseWebmentions(data) {
-    var links = data.links;
+    var links = data.links.sort(wmSort);
     var likes = [];
     var reposts = [];
     var replies = [];
@@ -128,6 +128,24 @@
     showInteractions();
   }
   window.parseWebmentions = parseWebmentions;
+
+  function wmSort (a, b) {
+    const dateA = getWmDate(a);
+    const dateB = getWmDate(b);
+    if (dateA < dateB) {
+      return -1;
+    } else if (dateB < dateA) {
+      return 1;
+    }
+    return 0;
+  }
+
+  function getWmDate (webmention) {
+    if (webmention.data.published) {
+      return new Date(webmention.data.published);
+    }
+    return new Date(webmention.verified_date);
+  }
 
   var months = [
     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
