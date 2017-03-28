@@ -217,6 +217,7 @@ img {
   text-align: center;
   color: white;
   mix-blend-mode: overlay;
+  transform: translateZ(0); /* fix occasional rendering jank in Chrome 56 */
 }
 .focus-container > h1,
 .focus-container > h2 {
