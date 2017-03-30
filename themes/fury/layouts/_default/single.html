@@ -26,7 +26,7 @@
           {{ end }}
         </div>
       </div>
-      <p class="post-date metadata"><date class="dt-published">{{ .Date.Format "02 Jan 2006 15:04:05" }}</date></p>
+      <p class="post-date metadata text-right"><date class="dt-published">{{ .Date.Format "02 Jan 2006 15:04:05" }}</date></p>
       {{ if not (eq .Section "likes") }}
         {{ partial "interactions.html" . }}
       {{ end }}

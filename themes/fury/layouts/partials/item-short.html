@@ -1,10 +1,17 @@
 <div class="post-body__item h-entry">
-  {{ partial "in-reply-to" . }}
-  {{ partial "repost-of" . }}
-  {{ partial "like-of" . }}
-  <div class="content e-content show-embeds">
-    {{ .Content }}
-    <p class="metadata metadata--note"><a class="u-url dt-published" href="{{ .Permalink }}">{{ .Date.Format "02 Jan 2006 15:04:05"}}</a>
-    </p>
+  <div class="post-preview">
+    {{ partial "in-reply-to" . }}
+    {{ partial "repost-of" . }}
+    {{ partial "like-of" . }}
+    <div class="post-preview__date metadata">
+      <a class="u-url dt-published" href="{{ .Permalink }}">{{ .Date.Format "02 Jan 2006 15:04:05"}}</a>
+    </div>
+    {{ if .Content }}
+    <div class="post-preview__content">
+      <div class="content e-content show-embeds">
+        {{ .Content }}
+      </div>
+    </div>
+    {{ end }}
   </div>
 </div>
