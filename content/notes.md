@@ -1,4 +1,8 @@
++++
+title = ""
+type = "page"
 
++++
 # Olive branch
 
 * abstract nature of CSS - doing it in JS removes unknowns
