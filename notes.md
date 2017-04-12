@@ -27,4 +27,7 @@ Here are things that each fit in a tweet, but they don’t all fit in a tweet to
 4. Syndication & Silos
 5. WebPub & Readers
 
-# CSS isn’t like QWOP
+
+# The invisible parts of HTML
+
+Play off of https://madebymike.com.au/writing/the-invisible-parts-of-CSS/
