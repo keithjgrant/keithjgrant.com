@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <title>Palette</title>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans+Condensed:300|Open+Sans:300" rel="stylesheet">
+  <style type="text/css">
+    :root {
+      --blue-1: hsl(211, 100%, 10%);
+      --blue-2: hsl(211, 65%, 18%);
+      --blue-3: hsl(211, 57%, 25%);
+      --blue-4: hsl(211, 39%, 44%);
+      --blue-5: hsl(211, 51%, 65%);
+      --blue-6: hsl(211, 65%, 85%);
+      --blue-7: hsl(211, 90%, 93%);
+      --blue-rich-1: hsl(211, 65%, 48%);
+      --blue-rich-2: hsl(211, 85%, 55%);
+      --blue-rich-3: hsl(211, 95%, 65%);
+      --blue-rich-4: hsl(211, 100%, 72%);
+
+      --red-1: hsl(344, 100%, 15%);
+      --red-2: hsl(344, 99%, 20%);
+      --red-3: hsl(344, 98%, 27%);
+      --red-4: hsl(344, 96%, 48%);
+      --red-5: hsl(344, 98%, 65%);
+      --red-6: hsl(344, 99%, 85%);
+      --red-7: hsl(344, 100%, 93%);
+
+      --green-1: hsl(179, 100%, 10%);
+      --green-2: hsl(179, 100%, 14%);
+      --green-3: hsl(179, 100%, 19%);
+      --green-4: hsl(179, 100%, 24%);
+      --green-5: hsl(179, 93%, 34%);
+      --green-6: hsl(179, 73%, 50%);
+      --green-7: hsl(179, 80%, 70%);
+
+      --yellow: hsl(31, 80%, 60%);
+      --yellow-9: hsl(31, 90%, 97%);
+
+      --purple: #862254;
+    }
+
+    body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr auto;
+      min-height: 100vh;
+      margin: 0;
+      font: 1.1em/1.5 Open Sans, Helvetica, Arial, sans-serif;
+      letter-spacing: 0.01em;
+      background-color: var(--yellow-9);
+      color: var(--blue-3);
+    }
+
+    h1, h2, h3, .footer {
+      font-family: 'Amatic SC', cursive;
+    }
+
+    a:link {
+      font-weight: bold;
+      text-decoration: none;
+      color: var(--blue-rich-2);
+    }
+    a:visited,
+    a.visited {
+      color: var(--purple);
+    }
+    a:hover {
+      color: var(--blue-rich-3);
+    }
+    a:active,
+    a.active {
+      color: var(--red-4);
+      text-decoration: underline;
+    }
+
+
+    .palette {
+      grid-row: 1 / -1;
+      padding: 3em 4em;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      align-content: start;
+      grid-gap: 2em;
+      box-shadow: inset -1em 0 1em -0.7em rgba(0,0,0,0.3);
+    }
+
+    .swatch {
+      display: flex;
+    }
+    .swatch > div {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background-color: var(--color);
+    }
+    .swatch > div + div {
+      margin-left: -50px;
+    }
+
+    .wheel {
+      grid-column: 1 / -1;
+      justify-self: center;
+      width: 285px;
+      height: 285px;
+      position: relative;
+      rotate: -90deg;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .wheel::after {
+      content: '';
+      position: absolute;
+      top: 70px;
+      left: 70px;
+      width: 144px;
+      height: 144px;
+      background-color: var(--yellow-9);
+      border-radius: 50%;
+    }
+    .wheel > div {
+      position: absolute;
+      height: 0;
+      width: 37px;
+      top: 75px;
+      left: 105px;
+      border-top: 75px solid var(--color);
+    	border-left: 20px solid transparent;
+    	border-right: 20px solid transparent;
+      transform-origin: 50% 143px;
+      translate: 0 -75px;
+    }
+    .wheel > div:nth-child(1) {}
+    .wheel > div:nth-child(2) { rotate: 30deg; }
+    .wheel > div:nth-child(3) { rotate: 60deg; }
+    .wheel > div:nth-child(4) { rotate: 90deg; }
+    .wheel > div:nth-child(5) { rotate: 120deg; }
+    .wheel > div:nth-child(6) { rotate: 150deg; }
+    .wheel > div:nth-child(7) { rotate: 180deg; }
+    .wheel > div:nth-child(8) { rotate: 210deg; }
+    .wheel > div:nth-child(9) { rotate: 240deg; }
+    .wheel > div:nth-child(10) { rotate: 270deg; }
+    .wheel > div:nth-child(11) { rotate: 300deg; }
+    .wheel > div:nth-child(12) { rotate: 330deg; }
+
+    .text {
+      padding: 3em 4em;
+    }
+
+    .lead {
+      font-size: 1.4rem;
+      font-family: Open Sans Condensed, sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    .footer {
+      padding: 1em;
+      background-color: var(--blue-1);
+      color: var(--blue-5);
+      font-size: 2em;
+    }
+
+    .b1 { --color: var(--blue-1); }
+    .b2 { --color: var(--blue-2); }
+    .b3 { --color: var(--blue-3); }
+    .b4 { --color: var(--blue-4); }
+    .b5 { --color: var(--blue-5); }
+    .b6 { --color: var(--blue-6); }
+    .b7 { --color: var(--blue-7); }
+    .bb1 { --color: var(--blue-rich-1); }
+    .bb2 { --color: var(--blue-rich-2); }
+    .bb3 { --color: var(--blue-rich-3); }
+    .bb4 { --color: var(--blue-rich-4); }
+
+    .r1 { --color: var(--red-1); }
+    .r2 { --color: var(--red-2); }
+    .r3 { --color: var(--red-3); }
+    .r4 { --color: var(--red-4); }
+    .r5 { --color: var(--red-5); }
+    .r6 { --color: var(--red-6); }
+    .r7 { --color: var(--red-7); }
+
+    .g1 { --color: var(--green-1); }
+    .g2 { --color: var(--green-2); }
+    .g3 { --color: var(--green-3); }
+    .g4 { --color: var(--green-4); }
+    .g5 { --color: var(--green-5); }
+    .g6 { --color: var(--green-6); }
+    .g7 { --color: var(--green-7); }
+
+    .y { --color: var(--yellow); }
+
+    .ry { --color: #EE3744; } /* red-yellow */
+    .yr { --color: #ED6946; } /* yellow-red */
+    .yg { --color: #9D9057; } /* yellow-green */
+    .gy { --color: #4E8567; } /* green-yellow */
+    .bg { --color: #0E5C6E; } /* blue(dark)-green */
+    .p1 { --color: var(--purple); } /* dark purple */
+    .p2 { --color: #9A3A70; } /* purple - unused */
+  </style>
+</head>
+<body>
+  <div class="palette">
+    <div class="swatch">
+      <div class="b1"></div>
+      <div class="b2"></div>
+      <div class="b3"></div>
+      <div class="b4"></div>
+    </div>
+    <div class="swatch">
+      <div class="b4"></div>
+      <div class="b5"></div>
+      <div class="b6"></div>
+      <div class="b7"></div>
+    </div>
+    <div></div>
+    <div class="swatch">
+      <div class="bb1"></div>
+      <div class="bb2"></div>
+      <div class="bb3"></div>
+      <div class="bb4"></div>
+    </div>
+    <div class="swatch">
+      <div class="r1"></div>
+      <div class="r2"></div>
+      <div class="r3"></div>
+      <div class="r4"></div>
+    </div>
+    <div class="swatch">
+      <div class="r4"></div>
+      <div class="r5"></div>
+      <div class="r6"></div>
+      <div class="r7"></div>
+    </div>
+    <div class="swatch">
+      <div class="g1"></div>
+      <div class="g2"></div>
+      <div class="g3"></div>
+      <div class="g4"></div>
+    </div>
+    <div class="swatch">
+      <div class="g4"></div>
+      <div class="g5"></div>
+      <div class="g6"></div>
+      <div class="g7"></div>
+    </div>
+
+    <div class="wheel">
+      <div class="b2"></div>
+      <div class="b3"></div>
+      <div class="p1"></div>
+      <div class="r4"></div>
+      <div class="ry"></div>
+      <div class="yr"></div>
+      <div class="y"></div>
+      <div class="yg"></div>
+      <div class="gy"></div>
+      <div class="g4"></div>
+      <div class="bg"></div>
+      <div class="b1"></div>
+    </div>
+  </div>
+  <div class="text">
+    <h1>Hello. I’m Keith</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo pretium metus, nec vulputate turpis accumsan pellentesque. Fusce sed feugiat libero, <a href="#">pulvinar sodales</a> tortor. Suspendisse sed ornare libero. Vivamus mollis neque at ligula tincidunt, ut elementum felis tristique. Nulla eros metus, viverra sed cursus dapibus, vehicula eu leo. Nulla rutrum luctus interdum. Morbi vitae risus nisi.</p>
+    <p class="lead">Aliquam bibendum laoreet ex nec tempor. Aenean molestie justo libero, ac volutpat lorem pharetra in. Praesent lacinia lorem nisi, at <a href="#">pharetra lorem</a> molestie vitae.</p>
+    <p>Curabitur cursus odio ut leo tincidunt, ac aliquet diam laoreet. Suspendisse quis hendrerit diam, ac porta risus. Vivamus commodo metus et nulla molestie auctor. <a href="#" class="visited">Integer feugiat</a> ac metus sit amet sollicitudin. Morbi vehicula euismod sollicitudin. Sed nulla nunc, blandit nec magna at, laoreet venenatis orci. Vivamus nec mi ipsum. Donec euismod scelerisque nisi ut tincidunt. Integer vitae dui suscipit mi imperdiet tincidunt sit amet sit amet libero.</p>
+    <p>Duis urna augue, consequat ut dapibus sit amet, porta id urna. Donec et vehicula mauris, id facilisis risus. Maecenas sagittis molestie efficitur. Pellentesque <a href="#" class="active">luctus vitae</a> est sed finibus. Phasellus finibus justo id ex fermentum, non condimentum felis porttitor. Vivamus eu odio quam. Sed tellus dui, mollis in lectus vitae, fermentum hendrerit lacus.</p>
+  </div>
+  <footer class="footer">
+    Keith J. Grant
+  </footer>
+</body>
+</html>
