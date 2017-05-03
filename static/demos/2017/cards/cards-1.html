@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Cards demo #1</title>
+    <link rel="stylesheet" href="/demos/scaffold.css">
+  </head>
+
+  <body>
+    <div class="demo-container">
+      <h1>Cards demo #1</h1>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Card 1</h3>
+          <h4 class="subheading">Subheading</h4>
+          <p class="details">Details. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget libero ornare, viverra eros non, dignissim dui. Curabitur porta elit a faucibus maximus. Sed vehicula orci vitae elit dapibus commodo. Proin auctor auctor ante quis semper. Cras semper nisi at accumsan ultrices. Pellentesque ac purus quam. Nulla luctus massa at accumsan tempus.</p>
+          <button>Button</button>
+        </div>
+
+        <div class="card">
+          <h3>Card 1</h3>
+          <h4 class="subheading">Subheading</h4>
+          <p class="details">Details. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget libero ornare, viverra eros non, dignissim dui. Curabitur porta elit a faucibus maximus. Sed vehicula orci vitae elit dapibus commodo. Proin auctor auctor ante quis semper. Cras semper nisi at accumsan ultrices. Pellentesque ac purus quam. Nulla luctus massa at accumsan tempus.</p>
+          <button>Button</button>
+        </div>
+
+        <div class="card">
+          <h3>Card 1</h3>
+          <h4 class="subheading">Subheading</h4>
+          <p class="details">Details. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget libero ornare, viverra eros non, dignissim dui. Curabitur porta elit a faucibus maximus. Sed vehicula orci vitae elit dapibus commodo. Proin auctor auctor ante quis semper. Cras semper nisi at accumsan ultrices. Pellentesque ac purus quam. Nulla luctus massa at accumsan tempus.</p>
+          <button>Button</button>
+        </div>
+
+        <div class="card">
+          <h3>Card 1</h3>
+          <h4 class="subheading">Subheading</h4>
+          <p class="details">Details. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget libero ornare, viverra eros non, dignissim dui. Curabitur porta elit a faucibus maximus. Sed vehicula orci vitae elit dapibus commodo. Proin auctor auctor ante quis semper. Cras semper nisi at accumsan ultrices. Pellentesque ac purus quam. Nulla luctus massa at accumsan tempus.</p>
+          <button>Button</button>
+        </div>
+      </div>
+
+      <style type="text/css" class="demo-styles">
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1em;
+}
+
+.card {
+  flex: 1 1 250px;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+}
+
+.card > :first-child {
+  margin-top: 0; /*override h1 top margin */
+}
+
+button {
+  padding: 0.5em 0.8em;
+  background-color: hsl(210, 80%, 40%);
+  color: white;
+  border: 0;
+}
+button:hover {
+  background-color: hsl(210, 70%, 50%);
+}
+      </style>
+    </div>
+  </body>
+</html>
