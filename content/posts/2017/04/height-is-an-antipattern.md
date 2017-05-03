@@ -1,7 +1,7 @@
 +++
-title = "Specifying height is an antipattern"
 date = "2017-03-15T15:33:22-04:00"
 draft = true
+title = "Specifying height is an antipattern"
 
 +++
 The title says it all.
