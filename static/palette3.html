@@ -5,17 +5,17 @@
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans+Condensed:300|Open+Sans:300" rel="stylesheet">
   <style type="text/css">
     :root {
-      --blue-1: hsl(211, 100%, 10%);
-      --blue-2: hsl(211, 65%, 18%);
-      --blue-3: hsl(211, 57%, 25%);
-      --blue-4: hsl(211, 39%, 44%);
-      --blue-5: hsl(211, 51%, 65%);
-      --blue-6: hsl(211, 65%, 85%);
-      --blue-7: hsl(211, 90%, 93%);
-      --blue-rich-1: hsl(211, 65%, 48%);
-      --blue-rich-2: hsl(211, 85%, 55%);
-      --blue-rich-3: hsl(211, 95%, 65%);
-      --blue-rich-4: hsl(211, 100%, 72%);
+      --blue-1: hsl(200, 100%, 10%);
+      --blue-2: hsl(200, 65%, 18%);
+      --blue-3: hsl(200, 57%, 25%);
+      --blue-4: hsl(200, 39%, 44%);
+      --blue-5: hsl(200, 51%, 65%);
+      --blue-6: hsl(200, 65%, 85%);
+      --blue-7: hsl(200, 90%, 93%);
+      --blue-rich-1: hsl(200, 65%, 48%);
+      --blue-rich-2: hsl(200, 85%, 55%);
+      --blue-rich-3: hsl(200, 95%, 65%);
+      --blue-rich-4: hsl(200, 100%, 72%);
 
       --red-1: hsl(344, 100%, 15%);
       --red-2: hsl(344, 99%, 20%);
@@ -35,6 +35,8 @@
 
       --yellow: hsl(31, 80%, 60%);
       --yellow-9: hsl(31, 90%, 97%);
+      /*--yellow: hsl(27, 100%, 72%);
+      --yellow-9: hsl(27, 90%, 97%);*/
 
       --purple: #862254;
     }
@@ -196,13 +198,14 @@
 
     .y { --color: var(--yellow); }
 
-    .ry { --color: #EE3744; } /* red-yellow */
-    .yr { --color: #ED6946; } /* yellow-red */
-    .yg { --color: #9D9057; } /* yellow-green */
-    .gy { --color: #4E8567; } /* green-yellow */
-    .bg { --color: #0E5C6E; } /* blue(dark)-green */
-    .p1 { --color: var(--purple); } /* dark purple */
-    .p2 { --color: #9A3A70; } /* purple - unused */
+    .b { --color: var(--blue-4); } /* blue */
+    .rb { --color: #9A4270;}
+    .ry { --color: #EE3745; } /* red-yellow */
+    .yr { --color: #ED6A46; } /* yellow-red */
+    .yg { --color: #9D9157; } /* yellow-green */
+    .gy { --color: #4E8568; } /* green-yellow */
+    .gb { --color: #096B71;} /* green-blue */
+    .bg { --color: #125B6B; } /* blue-green */
 
     .text-right { text-align: right !important; }
     /*.hide { display: none !important; }*/
@@ -255,9 +258,9 @@
     </div>
 
     <div class="wheel">
-      <div class="b2"></div>
       <div class="b3"></div>
-      <div class="p1"></div>
+      <div class="b"></div>
+      <div class="rb"></div>
       <div class="r4"></div>
       <div class="ry"></div>
       <div class="yr"></div>
@@ -265,8 +268,8 @@
       <div class="yg"></div>
       <div class="gy"></div>
       <div class="g4"></div>
+      <div class="gb"></div>
       <div class="bg"></div>
-      <div class="b1"></div>
     </div>
 
     <div class="swatch hide">

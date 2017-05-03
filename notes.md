@@ -31,3 +31,18 @@ Here are things that each fit in a tweet, but they don’t all fit in a tweet to
 # The invisible parts of HTML
 
 Play off of https://madebymike.com.au/writing/the-invisible-parts-of-CSS/
+
+
+
+# sitemap
+
+home
+posts (articles)
+notes
+social (likes + replies)
+
+talks
+about
+rss
+twitter, github, etc.
+CSS in Depth ?

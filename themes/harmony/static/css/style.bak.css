@@ -1,0 +1,188 @@
+
+:root {
+  --blue-1: hsl(211, 100%, 10%);
+  --blue-2: hsl(211, 65%, 18%);
+  --blue-3: hsl(211, 57%, 25%);
+  --blue-4: hsl(211, 39%, 44%);
+  --blue-5: hsl(211, 51%, 65%);
+  --blue-6: hsl(211, 65%, 85%);
+  --blue-7: hsl(211, 90%, 93%);
+  --blue-rich-1: hsl(211, 65%, 48%);
+  --blue-rich-2: hsl(211, 85%, 55%);
+  --blue-rich-3: hsl(211, 95%, 65%);
+  --blue-rich-4: hsl(211, 100%, 72%);
+
+  --red-1: hsl(344, 100%, 15%);
+  --red-2: hsl(344, 99%, 20%);
+  --red-3: hsl(344, 98%, 27%);
+  --red-4: hsl(344, 96%, 48%);
+  --red-5: hsl(344, 98%, 65%);
+  --red-6: hsl(344, 99%, 85%);
+  --red-7: hsl(344, 100%, 93%);
+
+  --green-1: hsl(179, 100%, 10%);
+  --green-2: hsl(179, 100%, 14%);
+  --green-3: hsl(179, 100%, 19%);
+  --green-4: hsl(179, 100%, 24%);
+  --green-5: hsl(179, 93%, 34%);
+  --green-6: hsl(179, 73%, 50%);
+  --green-7: hsl(179, 80%, 70%);
+
+  --yellow: hsl(31, 80%, 60%);
+  --yellow-9: hsl(31, 90%, 97%);
+
+  --purple: #862254;
+
+  --black: var(--blue-1);
+  --white: var(--yellow-9);
+
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: Open Sans;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--blue-3);
+
+  --mouse-x: 10;
+  --mouse-y: 10;
+}
+
+h1, h2, h3 {
+  font-family: Amatic SC;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+a:link {
+  color: var(--blue-rich-2);
+  font-weight: bold;
+  text-decoration: none;
+}
+a:visited {
+  color: var(--blue-rich-1);
+}
+a:hover {
+  color: var(--blue-rich-3);
+}
+a:active {
+  color: var(--red-4);
+  text-decoration: underline;
+}
+
+#note {
+  display: grid;
+  min-height: 100vh;
+  background-color: var(--blue-4);
+  background-image: linear-gradient(165deg, var(--blue-4), var(--blue-rich-1));
+}
+
+.focus {
+  max-width: 45rem;
+  align-self: center;
+  justify-self: center;
+  border-radius: 0.3rem;
+  overflow: hidden;
+  box-shadow: 0 1em 4em var(--blue-3);
+}
+
+.focus__body {
+  padding: 4rem;
+  font-size: 2em;
+  font-family: Open Sans Condensed;
+  background-image: linear-gradient(to bottom, var(--blue-rich-3), var(--blue-rich-2));
+  color: var(--white);
+}
+
+.focus__footer {
+  padding: 2rem 4rem;
+  background-color: var(--white);
+  color: var(--black);
+}
+.focus__footer:nth-child(2n + 1) {
+  background-color: var(--blue-7);
+}
+.focus__footer:nth-child(4n) {
+  background-color: var(--blue-6);
+}
+
+#article {
+  display: grid;
+  grid-template-columns: 40vw auto 10vw;
+  background-image: linear-gradient(145deg, var(--blue-4), var(--green-4));
+}
+
+.article {
+  grid-column: 2 / span 1;
+  background-color: var(--yellow-9);
+  box-shadow: 1em 2em 1em hsla(211, 65%, 18%, 0.2);
+  margin: 3em 0;
+  padding: 2em 4em 2em 3.5em;
+  border-radius: 0.2em;
+  text-shadow: 2em 3em 1.5em hsla(211, 65%, 18%, 0.2);
+}
+.article > :first-child {
+  margin-top: 0;
+}
+
+#article .nav {
+  grid-column: 1 / span 1;
+}
+
+.nav {
+  display: grid;
+}
+
+.nav-main {
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  list-style: none;
+}
+.nav-main > li > a {
+  position: relative;
+  color: white;
+  padding: 0.7em 1em;
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  display: inline-block;
+  letter-spacing: 0.1em;
+}
+.nav-main > li > a:hover {
+  color: var(--yellow);
+}
+.nav-main__label {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+.nav-main > li > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.9em;
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  border: 1px solid var(--yellow-9);
+  transition: transform 0.3s cubic-bezier(0.9, -0.01, 1, 1),
+              opacity 0.3s linear;
+}
+.nav-main:hover .nav-main__label {
+  opacity: 1.0;
+}
+.nav-main:hover > li > a::before {
+  transform: translateX(-5em);
+  opacity: 0;
+}
