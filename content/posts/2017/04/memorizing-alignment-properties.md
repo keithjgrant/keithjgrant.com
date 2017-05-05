@@ -25,8 +25,8 @@ You know there’s a `vertical-align` property, right? Maybe it didn’t ever do
  * `align-items` controls how the flex items align themselves vertically within each row.
  * `align-self` on a single flex item controls how that item is aligned vertically within a row, overriding its parent’s `align-items` setting.
 
-## Hope that helps
+## One caveat
 
-If you can remember this rule, you’ll have a lot more of flexbox ready from memory. Note that **these swap if you change the flex direction** to “column” or “column reverse”.
+If you can remember this rule, you’ll have a lot more of flexbox ready from memory. Note that **these swap if you change the flex direction** to “column” or “column reverse”. Technically speaking, `justify-content` spaces along the main axis, and `align-*` properties space along the cross axis. But learn the default behavior, as it is the most common scenario; and know that rotating these axes changes it.
 
 As a bonus, these properties also apply to CSS Grid as well. Grid also brings in a `justify-items` and `justify-self` property to fill out the set. These work much like their `align-*` counterparts, but on the horizontal plane.
