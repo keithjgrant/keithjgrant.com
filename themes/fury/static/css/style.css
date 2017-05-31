@@ -4,6 +4,7 @@
   --gray-1: hsl(210, 17%, 95%);
   --gray-4: hsl(210, 7%, 76%);
   --gray-6: hsl(210, 7%, 56%);
+  --gray-7: hsl(210, 7%, 46%);
   --content-bg: white;
   --content-color: #333;
   --font-heading: Alfa Slab One, Garamond, serif;
@@ -56,6 +57,21 @@ input, button {
 dl {
   display: grid;
   grid-template-columns: auto auto;
+}
+
+blockquote {
+  font-family: Alfa Slab One, Garamond, serif;
+  font-family: var(--font-heading);
+  color: hsl(210, 7%, 46%);
+  color: var(--gray-7);
+}
+blockquote > cite {
+  font-family: Lato, sans-serif;
+  font-family: var(--font-body);
+  color: var(--content-color);
+}
+blockquote > cite::before {
+  content: "–";
 }
 
 a:link {
