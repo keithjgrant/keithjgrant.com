@@ -1,13 +1,18 @@
 /* Tomorrow Theme */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 .prettyprint {
-  background: $gray-1;
-  font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
-  font-size: 12px;
-  line-height: 1.5;
-  border: 1px solid $gray-2;
-  padding: 10px;
+  padding: 0.75em;
   overflow: auto;
+  border: 1px solid hsl(210, 10%, 80%);
+  background-color: hsl(210, 17%, 95%);
+  font-family: Menlo,
+    "Bitstream Vera Sans Mono",
+    "DejaVu Sans Mono",
+    Monaco,
+    Consolas,
+    monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
 
 .pln {
@@ -119,24 +124,11 @@ ol.linenums {
 }
 
 /* IE indents via margin-left */
-li.L0,
-li.L1,
-li.L2,
-li.L3,
-li.L4,
-li.L5,
-li.L6,
-li.L7,
-li.L8,
-li.L9 {
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
   /* */
 }
 
 /* Alternate shading for lines */
-li.L1,
-li.L3,
-li.L5,
-li.L7,
-li.L9 {
+li.L1, li.L3, li.L5, li.L7, li.L9 {
   /* */
 }
