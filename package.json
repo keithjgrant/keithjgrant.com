@@ -9,7 +9,7 @@
   "scripts": {
     "start": "hugo server",
     "start:drafts": "hugo server -D",
-    "next": "hugo server --theme harmony",
+    "next": "hugo server --theme shindig",
     "build": "hugo -d docs",
     "ping": "node ./scripts/ping.js",
     "reply": "node ./scripts/reply.js",

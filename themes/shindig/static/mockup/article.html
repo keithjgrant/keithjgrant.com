@@ -3,6 +3,8 @@
   <head>
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans+Condensed:300|Open+Sans:300,600" rel="stylesheet">
+    <script defer type="text/javascript" src="/js/bundle.js">
+    </script>
   </head>
   <body id="article">
     <nav class="nav">
@@ -23,7 +25,7 @@
 
       <p>You can get down to the “bare metal” in CSS, if you want. You can specify absolute positions for everything and set explicit heights and define every single value in pixels and override inheritance. But in the end, this will make more work for yourself and unearth edge cases you didn’t think about.</p>
 
-      <p>The next time you find yourself asking something like, “How do I vertically center this?”, take a step back. Are you having trouble because you set the height on something? Why did you set a height? What are you *actually* trying to achieve? Instead of focusing on a specific metric, think about the system as a whole: perhaps you want several items to all have the same height. Now, the problem is defined in terms of some desired <a href="https://www.youtube.com/watch?v=TGHbkTGVqoU">System Behavior</a>. Solve for that: flexbox or grid can align multiple elements with the same height (they can also center the contents within, too).</p>
+      <p>The next time you find yourself asking something like, “How do I vertically center this?”, take a step back. Are you having trouble because you set the height on something? Why did you set a height? What are you <em>actually</em> trying to achieve? Instead of focusing on a specific metric, think about the system as a whole: perhaps you want several items to all have the same height. Now, the problem is defined in terms of some desired <a href="https://www.youtube.com/watch?v=TGHbkTGVqoU">system behavior</a>. Solve for that: flexbox or grid can align multiple elements with the same height (they can also center the contents within, too).</p>
 
       <p>The automatic behaviors of CSS aren’t always apparent if you aren’t familiar with them. They can result in weird outcomes, and you will be frustrated by them. So, I think, the first tendency is to find a way to turn off this “help.” Don’t.</p>
 
