@@ -193,7 +193,7 @@ Instead, I think this is a strong candidate for a mixin. Refactoring to a mixin 
 
 It’s clear what this does without any comments, and it gives me a mixin that performs a fairly common action, so other modules elsewhere could benefit from the same change. I did keep the `width: 100%` here rather than moving it into the mixin, because that might cause unexpected breakages if the mixin applied that elsewhere.
 
-Furthermore, the original ruleset had ten declarations. That’s about as long as I like to get, before I start thinking [“code smell”](https://en.wikipedia.org/wiki/Code_smell). A mixin is be a great way to shorten things up. It’s easier to get an overall feel for what this ruleset does at a glance.
+Furthermore, the original ruleset had ten declarations. That’s about as long as I like to get, before I start thinking [“code smell”](https://en.wikipedia.org/wiki/Code_smell). A mixin is a great way to shorten things up. It’s easier to get an overall feel for what this ruleset does at a glance.
 
 Refactoring to a mixin won’t always be a preferable option, but look for it.
 
