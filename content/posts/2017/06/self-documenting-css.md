@@ -258,7 +258,7 @@ Styleguide Alerts
 */
 ```
 
-This is not just a comment; it is code. It is parsed by KSS and used to generate HTML output. It is part of your documentation. And, I would say, this is *better* than a separate hand-build HTML file, because it is co-located in the same file and more likely to stay in sync with the code.
+This is not just a comment; it is code. It is parsed by KSS and used to generate HTML output. It is part of your documentation. And, I would say, this is better than a separate hand-build HTML file, because it is co-located in the same file and more likely to stay in sync with the code.
 
 Another type of mandatory comments are licenses. When you use a third-party library with a license in a comment, you typically need to include that.
 
