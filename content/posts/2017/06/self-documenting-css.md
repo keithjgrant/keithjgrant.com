@@ -263,4 +263,4 @@ This is not just a comment; it is code. It is parsed by KSS and used to generate
 Another type of mandatory comments are licenses. When you use a third-party library with a license in a comment, you typically need to include that.
 
 
-When I pull out [Robert Martin quotes](https://twitter.com/keithjgrant/status/867803638026035200) about comments, it tends to get a reaction. I don’t do it to be contrary. I do it because I believe in straightforward code that’s easy to understand quickly. If you’re littering your code with comments, it may mean you’re doing exactly the opposite.
+When I pull out [Robert Martin quotes](https://twitter.com/keithjgrant/status/867803638026035200) about comments, it tends to get a reaction. I don’t do it to be contrary. I do it because I believe in straightforward code that’s easy to understand quickly. If you’re littering your code with comments, be sure it’s not because you’re doing exactly the opposite.
