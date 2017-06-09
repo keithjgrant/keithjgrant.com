@@ -1,4 +1,5 @@
 +++
+aliases = ["/posts/2017/04/memorizing-alignment-properties/"]
 date = "2017-05-05T09:44:55-04:00"
 title = "Memorizing Alignment Properties"
 
