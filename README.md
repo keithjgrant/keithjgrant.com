@@ -1,2 +1,1 @@
-
 # keithjgrant.com

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Fira+Sans+Condensed:400,700" rel="stylesheet">
+    <script defer type="text/javascript" src="/js/bundle.js">
+    </script>
+    <style>
+      body {
+        line-height: 1.4;
+        margin: 3em auto;
+        max-width: 1200px;
+        font-size: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2em;
+        /*-webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;*/
+        background-color: var(--yellow-9);
+      }
+
+      .one {
+        font-family: Linux Libertine;
+        letter-spacing: -0.01em;
+      }
+      .one h1,
+      .one h2 {
+        font-family: Linux Libertine Display;
+        letter-spacing: -0.02em;
+      }
+
+      .one .lead {
+        font-family: Linux Libertine Display;
+        letter-spacing: -0.02em;
+      }
+
+      .two {
+        font-family: Linux Biolinum, Fira Sans;
+        letter-spacing: -0.02em;
+      }
+      .two h1,
+      .two h2,
+      .two .lead {
+        font-family: Fira Sans Condensed;
+        letter-spacing: 0;
+        font-weight: 700;
+      }
+
+      .two .lead {
+        font-family: Fira Sans Condensed;
+        letter-spacing: -0.02em;
+        font-size: 1.6em;
+        font-weight: 400;
+      }
+
+      .lead {
+        font-size: 1.8rem;
+      }
+
+      pre {
+        font-family: Fira Mono;
+        font-size: 0.8rem;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <article class="one">
+      <h1>Don't QWOP Your Way Through CSS</h1>
+      <p><a href="http://www.foddy.net/Athletics.html">QWOP</a>, if you haven’t played it, is a ridiculous running game. Instead of pressing, say, the right arrow key to run, you must control each of the runner’s muscles independently. Pressing the keys Q, W, O, and P will each extend one leg or bend one knee. Coordinating them all is incredibly difficult, and you are usually lucky if you can make a full stride before falling on your head.</p>
+
+      <h2>Think in systems</h2>
+      <p>This is also how a lot of developers treat CSS. Instead of thinking about constructing a robust system, they focus on only one specific part of the desired result. Instead of asking, “How do I run?”, they ask, “How do I flex my knee?” I can teach you how to flex your knee, but if QWOP shows us anything, that knowledge might actually make running more difficult.</p>
+
+      <p>CSS does a lot of work for you, if you will let it. Normal document flow ensures things all fit together on the page; this is why you should be judicious with positioning that breaks out of document flow. CSS automatically sizes your elements to contain their text; this is why you should avoid explicitly setting height. Relative units allow you to define one value in terms of another so they will respond together if the context changes; this is why I sometimes frown on pixel units. Margins collapse so that paragraphs stack with the correct spacing. Certain properties inherit down the DOM tree so you don’t have to specify a font for every single element.</p>
+      <hr>
+      <p class="lead">A note here about something I’m thinking about, in 140 characters or less.</p>
+    </article>
+    <article class="two">
+      <h1>Don't QWOP Your Way Through CSS</h1>
+      <p><a href="http://www.foddy.net/Athletics.html">QWOP</a>, if you haven’t played it, is a ridiculous running game. Instead of pressing, say, the right arrow key to run, you must control each of the runner’s muscles independently. Pressing the keys Q, W, O, and P will each extend one leg or bend one knee. Coordinating them all is incredibly difficult, and you are usually lucky if you can make a full stride before falling on your head.</p>
+
+      <h2>Think in systems</h2>
+      <p>This is also how a lot of developers treat CSS. Instead of thinking about constructing a robust system, they focus on only one specific part of the desired result. Instead of asking, “How do I run?”, they ask, “How do I flex my knee?” I can teach you how to flex your knee, but if QWOP shows us anything, that knowledge might actually make running more difficult.</p>
+
+      <p>CSS does a lot of work for you, if you will let it. Normal document flow ensures things all fit together on the page; this is why you should be judicious with positioning that breaks out of document flow. CSS automatically sizes your elements to contain their text; this is why you should avoid explicitly setting height. Relative units allow you to define one value in terms of another so they will respond together if the context changes; this is why I sometimes frown on pixel units. Margins collapse so that paragraphs stack with the correct spacing. Certain properties inherit down the DOM tree so you don’t have to specify a font for every single element.</p>
+      <hr>
+      <p class="lead">A note here about something I’m thinking about, in 140 characters or less.</p>
+    </article>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+@font-face {
+  font-family: Linux Biolinum;
+  font-weight: normal;
+  src: url(linux/LinBiolinum_R.woff);
+}
+
+@font-face {
+  font-family: Linux Biolinum;
+  font-weight: bold;
+  src: url(linux/LinBiolinum_RB.woff);
+}
+
+@font-face {
+  font-family: Linux Libertine;
+  font-weight: normal;
+  src: url(linux/LinLibertine_R.woff);
+}
+
+@font-face {
+  font-family: Linux Libertine;
+  font-weight: bold;
+  src: url(linux/LinLibertine_RB.woff);
+}
+
+@font-face {
+  font-family: Linux Libertine Display;
+  font-weight: bold;
+  src: url(linux/LinLibertine_DR.woff);
+}
+
+@font-face {
+  font-family: Days;
+  font-weight: bold;
+  src: url(Days/Days.otf);
+}

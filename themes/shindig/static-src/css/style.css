@@ -1,6 +1,16 @@
 @import "variables.css";
 /*@import 'nav-main.css';*/
 
+/*
+Abril Fatface + Montserrat 300
+Abril Fatface + News Cycle
+Amatic SC + Lato
+News Cycle + Montserrat 300
+
+
+Fira Sans regular (400), Fira Sans Condensed 700
+*/
+
 :root {
   box-sizing: border-box;
 }
@@ -9,21 +19,21 @@
 }
 
 body {
+  min-height: 100vh;
   margin: 0;
-  font-family: Open Sans;
+  color: var(--blue-3);
+  font-family: Cormorant Garamond;
   font-size: 1.1rem;
   line-height: 1.5;
   letter-spacing: 0.01em;
-  color: var(--blue-3);
-  min-height: 100vh;
 }
 
 h1, h2, h3 {
-  font-family: Amatic SC;
+  font-family: Tulia, Playfair Display, serif;
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 a:link {
@@ -85,18 +95,14 @@ a:active {
 
 #article {
   display: grid;
-  grid-template-columns: 40vw auto 10vw;
-  background-image: radial-gradient(var(--green-4), var(--blue-4));
+  grid-template-columns: 20vw 60ch auto;
+  color: var(--blue-1);
+  background-color: var(--yellow-9);
 }
 
 .article {
   grid-column: 2 / span 1;
   margin: 3em 0;
-  padding: 2em 4em 2em 3.5em;
-  border-radius: 0.2em;
-  background-color: var(--yellow-9);
-  box-shadow: 1em 2em 1em hsla(211, 65%, 18%, 0.2);
-  text-shadow: 2em 3em 1.5em hsla(211, 65%, 18%, 0.2);
 }
 
 .article > :first-child {
