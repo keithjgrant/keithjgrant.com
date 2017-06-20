@@ -95,9 +95,11 @@ a:active {
 
 #article {
   display: grid;
-  grid-template-columns: 20vw 60ch auto;
+  grid-template-columns: 10vw 75ch auto;
   color: var(--blue-1);
   background-color: var(--yellow-9);
+  font-size: 1.15rem;
+  line-height: 1.75;
 }
 
 .article {

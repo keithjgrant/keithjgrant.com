@@ -12,13 +12,19 @@
 
 @font-face {
   font-family: Linux Libertine;
-  font-weight: normal;
+  font-weight: 400;
   src: url(linux/LinLibertine_R.woff);
 }
 
 @font-face {
   font-family: Linux Libertine;
-  font-weight: bold;
+  font-weight: 500;
+  src: url(linux/LinLibertine_RZ.woff);
+}
+
+@font-face {
+  font-family: Linux Libertine;
+  font-weight: 600;
   src: url(linux/LinLibertine_RB.woff);
 }
 
@@ -26,10 +32,4 @@
   font-family: Linux Libertine Display;
   font-weight: bold;
   src: url(linux/LinLibertine_DR.woff);
-}
-
-@font-face {
-  font-family: Days;
-  font-weight: bold;
-  src: url(Days/Days.otf);
 }
