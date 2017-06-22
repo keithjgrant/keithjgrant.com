@@ -28,6 +28,10 @@ body {
   letter-spacing: 0.01em;
 }
 
+img {
+  max-width: 100%;
+}
+
 h1, h2, h3 {
   font-family: Tulia, Playfair Display, serif;
 }

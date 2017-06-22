@@ -33,3 +33,18 @@
   font-weight: bold;
   src: url(linux/LinLibertine_DR.woff);
 }
+
+@font-face {
+  font-family: Brela;
+  font-weight: normal;
+  src: url(brela/brelaregular.otf);
+}
+
+/*
+Fira Sans Condensed + Martel*   - current fave
+Poppins + Brela
+Roboto Slab + Work Sans*
+Proza Libre*+
+Linux Biolinum + Brela - both humanist
+Open Sans + Martel
+*/
