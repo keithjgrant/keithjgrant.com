@@ -3,28 +3,92 @@
   <head>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/fonts.css">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Fira+Sans+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700|Proza+Libre" rel="stylesheet">
     <script defer type="text/javascript" src="/js/bundle.js">
     </script>
     <style>
-    body {
-      font-family: Linux Biolinum;
-      letter-spacing: -0.02em;
-    }
+      body {
+        font-family: Brela;
+        letter-spacing: -0.02em;
+      }
 
-    h1, h2 {
-      font-family: Fira Sans Condensed;
-      font-weight: 700;
-    }
+      h1, h2 {
+        font-family: Work Sans;
+        letter-spacing: -0.02em;
+      }
+
+      #article {
+        grid-template-columns:
+          minmax(1rem, auto)
+          [wide-start] minmax(2rem, 10ch)
+          [main-start] minmax(auto, 65ch) [main-end]
+          minmax(2rem, 10ch) [wide-end]
+          minmax(1rem, auto);
+        background-color: var(--yellow-9);
+      }
+
+      .nav {
+        position: relative;
+        grid-column: wide;
+        /*background-color: var(--blue-1);*/
+        /*color: var(--yellow-sub-9);*/
+        border-bottom: 1px solid var(--blue-3);
+      }
+      .nav::before {
+        /*background-color: var(--blue-1);*/
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -50vw;
+        bottom: 0;
+        left: -50vw;
+        z-index: -1;
+      }
+
+      .nav-main {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+      }
+      .nav-main > li > a {
+        display: block;
+        padding: 1em;
+        color: inherit;
+        font-family: Fira Sans, sans-serif;
+        font-size: 0.85rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+      }
+      .nav-main__more {
+        opacity: 0;
+        transition: opacity ease-out .7s;
+      }
+      .nav-main:focus-within .nav-main__more {
+        opacity: 1;
+      }
+      .nav-main:hover .nav-main__more,
+      .nav-main__more:focus {
+        opacity: 1;
+      }
+
+      .article {
+        grid-column: main;
+      }
     </style>
   </head>
   <body id="article">
     <nav class="nav">
       <ul class="nav-main">
-        <li><a href="/"><span class="nav-main__label">Home</span></a></li>
-        <li><a href="/posts"><span class="nav-main__label">Posts</span></a></li>
-        <li><a href="/notes"><span class="nav-main__label">Notes</span></a></li>
-        <li><a href="#nav-more"><span class="nav-main__label">More…</span></a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/posts">Posts</a></li>
+        <li><a href="/notes">Notes</a></li>
+        <li class="nav-main__more"><a href="/social">Social</a></li>
+        <li class="nav-main__more"><a href="/talks">Talks</a></li>
+        <li class="nav-main__more"><a href="/css-in-depth">CSS in Depth</a></li>
+        <li class="nav-main__more"><a href="/about">About</a></li>
       </ul>
     </nav>
     <article class="article">

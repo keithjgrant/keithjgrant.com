@@ -1,0 +1,37 @@
+/* TODO: switch to prism.js http://prismjs.com/ */
+.prettyprint {
+  & ol.linenums {
+    color: var(--gray-4);
+    font-size: 0.8rem;
+
+    & > li > code {
+      color: var(--yellow-9);
+      font-size: 1rem;
+    }
+  }
+
+  /* comments */
+  & .com {
+    color: var(--gray-5);
+  }
+
+  /* punctuation */
+  & .pun {
+    color: var(--gray-6);
+  }
+
+  /* selectors */
+  & .pln {
+    color: var(--blue-5);
+  }
+
+  /* @include */
+  & .lit {
+    color: var(--gray-5);
+  }
+
+  /* strings */
+  & .str {
+    color: var(--yellow-sub-5);
+  }
+}

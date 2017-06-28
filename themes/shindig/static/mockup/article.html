@@ -3,49 +3,275 @@
   <head>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/fonts.css">
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:700|Martel|Fira+Sans:400" rel="stylesheet">
     <script defer type="text/javascript" src="/js/bundle.js">
     </script>
     <style>
       body {
-        font-family: Brela;
-      }
-
-      h1, h2 {
-        font-family: Work Sans;
+        font-family: Martel;
         letter-spacing: -0.02em;
       }
 
+      h1, h2 {
+        font-family: Fira Sans Condensed;
+        letter-spacing: -0.02em;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
       #article {
-        grid-template-columns: minmax(1rem, auto) minmax(auto, 65ch) minmax(1rem, auto);
-        background-color: hsl(34, 48%, 97%);
+        grid-template-columns:
+          minmax(1rem, auto)
+          [wide-start] minmax(2rem, 10ch)
+          [main-start] minmax(auto, 65ch) [main-end]
+          minmax(2rem, 10ch) [wide-end]
+          minmax(1rem, auto);
+        background-color: var(--yellow-9);
+      }
+
+      .nav {
+        position: relative;
+        grid-column: wide;
+        /*background-color: var(--blue-1);*/
+        /*color: var(--yellow-sub-9);*/
+        border-bottom: 1px solid var(--blue-3);
+      }
+      .nav::before {
+        /*background-color: var(--blue-1);*/
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -50vw;
+        bottom: 0;
+        left: -50vw;
+        z-index: -1;
+      }
+
+      .nav-main {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+      }
+      .nav-main > li > a {
+        display: block;
+        padding: 1em;
+        color: inherit;
+        font-family: Work Sans, sans-serif;
+        font-size: 0.85rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+      }
+      .nav-main__more {
+        opacity: 0;
+        transition: opacity ease-out .7s;
+      }
+      .nav-main:focus-within .nav-main__more {
+        opacity: 1;
+      }
+      .nav-main:hover .nav-main__more,
+      .nav-main__more:focus {
+        opacity: 1;
+      }
+
+      .article {
+        grid-column: main;
+      }
+
+      pre {
+        padding: 0.4em 1em;
+        background-color: var(--gray-3);
+        border-radius: 0.4em;
+        color: var(--yellow-9);
+        font-family: Fira Mono, monospace;
+      }
+      pre > ol {
+        margin: 0;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+      }
+      .logo {
+        font-family: Fira Sans Condensed;
+        text-transform: uppercase;
+        letter-spacing 0.5em;
+        font-size: 0.6rem;
+        line-height: 1;
       }
     </style>
   </head>
   <body id="article">
     <nav class="nav">
+      <div class="logo">
+        Keith<br>Grant
+      </div>
       <ul class="nav-main">
-        <li><a href="/"><span class="nav-main__label">Home</span></a></li>
-        <li><a href="/posts"><span class="nav-main__label">Posts</span></a></li>
-        <li><a href="/notes"><span class="nav-main__label">Notes</span></a></li>
-        <li><a href="#nav-more"><span class="nav-main__label">More…</span></a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/posts">Posts</a></li>
+        <li><a href="/notes">Notes</a></li>
+        <li class="nav-main__more"><a href="/social">Social</a></li>
+        <li class="nav-main__more"><a href="/talks">Talks</a></li>
+        <li class="nav-main__more"><a href="/css-in-depth">CSS in Depth</a></li>
+        <li class="nav-main__more"><a href="/about">About</a></li>
       </ul>
     </nav>
     <article class="article">
-      <h1>Don’t QWOP Your Way Through CSS</h1>
-      <p><a href="http://www.foddy.net/Athletics.html">QWOP</a>, if you haven’t played it, is a ridiculous running game. Instead of pressing, say, the right arrow key to run, you must control each of the runner’s muscles independently. Pressing the keys Q, W, O, and P will each extend one leg or bend one knee. Coordinating them all is incredibly difficult, and you are usually lucky if you can make a full stride before falling on your head.</p>
+      <h1>Thoughts on self-documenting CSS</h1>
 
-      <p>This is also how a lot of developers treat CSS. Instead of thinking about constructing a robust system, they focus on only one specific part of the desired result. Instead of asking, “How do I run?”, they ask, “How do I flex my knee?” I can teach you how to flex your knee, but if QWOP shows us anything, that knowledge might actually make running more difficult.</p>
+      <p>One of the best programming books I’ve ever read is <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/">Clean Code</a> by Robert C. Martin. If you have never read it, add it to your list.</p>
 
-      <p>CSS does a lot of work for you, if you will let it. Normal document flow ensures things all fit together on the page; this is why you should be judicious with positioning that breaks out of document flow. CSS automatically sizes your elements to contain their text; this is why you should avoid explicitly setting height. Relative units allow you to define one value in terms of another so they will respond together if the context changes; this is why I sometimes frown on pixel units. Margins collapse so that paragraphs stack with the correct spacing. Certain properties inherit down the DOM tree so you don’t have to specify a font for every single element.</p>
+      <blockquote>
+        Every comment represents a failure to make the code self explanatory.
+        <cite>Robert C. Martin</cite>
+      </blockquote>
 
-      <p>You can get down to the “bare metal” in CSS, if you want. You can specify absolute positions for everything and set explicit heights and define every single value in pixels and override inheritance. But in the end, this will make more work for yourself and unearth edge cases you didn’t think about.</p>
+      <p>In one section, Martin discusses code comments, and makes a strong argument against them. I won’t repeat all his arguments, but in short he maintains they have a tendency to fall out of date. The computer ignores them, so nothing guarantees they accurately describe what the code does. It is far better when the code itself is clear; then both the programmer and the computer are reading the same thing.</p>
 
-      <p>The next time you find yourself asking something like, “How do I vertically center this?”, take a step back. Are you having trouble because you set the height on something? Why did you set a height? What are you <em>actually</em> trying to achieve? Instead of focusing on a specific metric, think about the system as a whole: perhaps you want several items to all have the same height. Now, the problem is defined in terms of some desired <a href="https://www.youtube.com/watch?v=TGHbkTGVqoU">system behavior</a>. Solve for that: flexbox or grid can align multiple elements with the same height (they can also center the contents within, too).</p>
+      <p>Consider the following:</p>
 
-      <p>The automatic behaviors of CSS aren’t always apparent if you aren’t familiar with them. They can result in weird outcomes, and you will be frustrated by them. So, I think, the first tendency is to find a way to turn off this “help.” Don’t.</p>
+      <pre class=""><code>// Check to see if the employee is eligible for full benefits
+if ((employee.flags & HOURLY_FLAG) && (employee.age > 65)) {
+  …
+}</code></pre>
 
-      <p>Trust CSS; it does good things for you if you let it. Learn how to solve for system behaviors. Unless you like running by pressing Q, W, O, and P.</p>
+      <p>Is the comment helpful? Absolutely. But this is better:</p>
+
+      <pre class=""><code>if (employee.isEligibleForFullBenefits()) {
+  …
+}</code></pre>
+
+      <p>The code says what it means and does what it says. Much of the time, a comment can be improved by deleting it and encapsulating meaning in well-named functions or variables. To be clear, Martin does not say comments should <em>never</em> be used—but you should always strive to render them unnecessary. Every comment represents a failure to do so.</p>
+
+      <h2 id="what-about-css">What about CSS?</h2>
+
+      <p>I agree with Martin regarding comments. However, this thinking raises interesting questions when it comes to a declarative language like CSS. Declarations have to follow a strict pattern. Selectors are determined by the structure of the HTML, at least in part. You have far fewer options regarding code structure. Does this mean your CSS should have comments all over the place?</p>
+
+      <p>Well… maybe. We use comments different ways for a variety of reason. Let’s look at some comments, and consider what they add (or not) to the code. I’ll start with some low-hanging fruit, then move on to the less obvious stuff.</p>
+
+      <h2 id="bad-obvious-comments">Bad: Obvious Comments</h2>
+
+      <p>In any language, obvious comments are unnecessary. The following are actual examples of comments from an earlier version of Bootstrap 3 source:</p>
+
+      <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-sass"><span class="com">// Addresses</span></code></li><li class="L1"><code class="language-sass"><span class="pln">address </span><span class="pun">{…}</span></code></li></ol></pre>
+
+      <p>Yes, that does appear to be a selector for addresses.</p>
+
+      <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-sass"><span class="com">// Unordered and Ordered lists</span></code></li><li class="L1"><code class="language-sass"><span class="pln">ul</span><span class="pun">,</span></code></li><li class="L2"><code class="language-sass"><span class="pln">ol </span><span class="pun">{…}</span></code></li></ol></pre>
+
+      <p>Really?</p>
+
+      <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-sass"><span class="com">// Blockquotes</span></code></li><li class="L1"><code class="language-sass"><span class="pln">blockquote </span><span class="pun">{…}</span></code></li></ol></pre>
+
+      <p>OMG. Make it stop.</p>
+
+      <p>Don’t do comments like this. Delete that crap. It’s only echoing what’s already there in the code. Thankfully, most of these have been removed in newer versions of Bootstrap.</p>
+
+      <h2 id="bad-section-separators">Bad: Section Separators</h2>
+
+      <p>One type of comment that’s mostly unique to CSS are section separators. This sort of thing:</p>
+
+      <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-css"><span class="com">/* -----------------</span></code></li><li class="L1"><code class="language-css"><span class="com"> * TOOLTIPS</span></code></li><li class="L2"><code class="language-css"><span class="com"> * ----------------- */</span></code></li></ol></pre>
+
+      <p>These things drive me nuts. Don’t get me wrong; I understand why we have them. Our stylesheets can get really long. When scrolling through a 1000 line file, you need landmarks like this to help navigate.</p>
+
+      <p>But here’s the thing: we don’t work in 1000 line files any more. If your project needs a stylesheet this large, it should be broken out into bite-sized partials and you should be using a preprocessor to piece them all together. You don’t need a big <code>TOOLTIPS</code> at the top of the file if the file is called <code>tooltips.scss</code>. If you feel like you need a separator comment, split the code into a new file.</p>
+
+      <h2 id="bad-explaining-the-language">Bad: Explaining the Language</h2>
+
+      <p>I’m going to pick on Bootstrap again. This is from their <a href="https://github.com/twbs/bootstrap/blob/v4-dev/scss/_tooltip.scss#L11">_tooltips.scss</a>:</p>
+
+      <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code><span class="com">// Allow breaking very long words so they don't overflow the tooltip's bounds</span></code></li><li class="L1"><code><span class="pln">word</span><span class="pun">-</span><span class="pln">wrap</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">break</span><span class="pun">-</span><span class="pln">word</span><span class="pun">;</span></code></li></ol></pre>
+
+      <p>This is very close to the category of “obvious comments.” This comment explains what the <code>word-wrap</code> property does, and no more. There is another rule of code comments that says a comment should explain <a href="https://blog.codinghorror.com/code-tells-you-how-comments-tell-you-why/">why, not what</a>. This comment breaks that rule. Delete it.</p>
+
+      <p>There might be a fuzzy bound here in CSS, however. There are hundreds of properties, and you probably don’t know them all. If you’re using something <em>really</em> obscure, maybe a comment like this is okay. Maybe.</p>
+
+      <h2 id="bad-explaining-the-library">Bad: Explaining the Library</h2>
+
+      <p>Let’s look at another comment from the same Bootstrap file:</p>
+
+      <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-sass"><span class="com">// Our parent element can be arbitrary since tooltips are by default inserted as a</span></code></li><li class="L1"><code class="language-sass"><span class="com">// sibling of their target element. So reset our font and text properties to avoid</span></code></li><li class="L2"><code class="language-sass"><span class="com">// inheriting weird values.</span></code></li><li class="L3"><code class="language-sass"><span class="lit">@include</span><span class="pln"> reset</span><span class="pun">-</span><span class="pln">text</span><span class="pun">();</span></code></li><li class="L4"><code class="language-sass"><span class="pln">font</span><span class="pun">-</span><span class="pln">size</span><span class="pun">:</span><span class="pln"> $font</span><span class="pun">-</span><span class="pln">size</span><span class="pun">-</span><span class="pln">sm</span><span class="pun">;</span></code></li></ol></pre>
+
+      <p>This one is interesting. It seems to pass the “why, not what” sniff test. It explains that unexpected font properties might be inherited by this module, then uses a mixin to reset the font properties.</p>
+
+      <p>But upon further reflection, it’s obvious that this is the only reason the mixin exists in the first place. In fact, a search through the codebase reveals an identical comment every place this mixin is used. At the very least, this comment belongs where the mixin is defined, not each and every place it is used. You could move the comment there and cut down the number of comments cluttering the code.</p>
+
+      <p>However, I think even that is unnecessary: the name of the mixin provides enough information. And if it doesn’t, give it a name that does. Call it <code>reset-inherited-font</code> or something more explicit that makes clear not only what it does, but why you need it. This is a function call; you have total control over the name here. Use that to your advantage and make it say what it does in a way that renders the comment unnecessary.</p>
+
+      <p>Preprocessors are one area where CSS is most like a conventional programming language. When you have the chance, use well-named variables and mixins to make the meaning of the code obvious. This code snippet gets this right with the <code>$font-size-sm</code> variable: you know at a glance that the font is smaller than the main font size. You can also safely infer that this is a commonly-used font size; it is the same font size as other small text throughout the codebase.</p>
+
+      <h2 id="bad-old-comments">Bad: Old Comments</h2>
+
+      <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-css"><span class="pun">.</span><span class="pln">dropdown</span><span class="pun">-</span><span class="pln">header </span><span class="pun">{</span></code></li><li class="L1"><code class="language-css"><span class="pln">  </span><span class="pun">…</span></code></li><li class="L2"><code class="language-css"><span class="pln">  white</span><span class="pun">-</span><span class="pln">space</span><span class="pun">:</span><span class="pln"> nowrap</span><span class="pun">;</span><span class="pln"> </span><span class="com">// as with &gt; li &gt; a</span></code></li><li class="L3"><code class="language-css"><span class="pun">}</span></code></li></ol></pre>
+
+      <p><a href="https://github.com/twbs/bootstrap/blob/620257456ed0685cae6b6ff51d2ab1e37f02a4fa/scss/_dropdown.scss#L122">“as with &gt; li &gt; a”</a>? What does that mean? My first assumption is that, elsewhere in the file, there is an <code>&gt; li &gt; a</code> selector and this somehow refers to that. Maybe there’s another comment there explaining the reasoning… But scanning through the file, there is no such selector. There is another <code>nowrap</code> under a <code>.dropdown-item</code> selector. Maybe that’s what this refers to? Or maybe it refers to something that has since been deleted or refactored into another file? The only way to know would be to dig through the git history.</p>
+
+      <p>This is an old comment. It presumably meant something at some point in time, but the code has long-since drifted from that. This gets back to one of the main reasons Robert Martin is so hard on comments: the code changes out from underneath them and they become meaningless—or worse: they lie and actively lead you in the wrong direction. When you find a comment like this, delete it. It adds nothing to the code and has in fact has wasted our time trying to make sense of it.</p>
+
+      <h2 id="sometimes-ok-meaningful-comments">Sometimes OK: Meaningful Comments</h2>
+
+      <p>Here’s another block of code with several comments:</p>
+
+      <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-sass"><span class="pun">.</span><span class="pln">dropdown</span><span class="pun">-</span><span class="pln">item </span><span class="pun">{</span></code></li><li class="L1"><code class="language-sass"><span class="pln">  display</span><span class="pun">:</span><span class="pln"> block</span><span class="pun">;</span></code></li><li class="L2"><code class="language-sass"><span class="pln">  width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100</span><span class="pun">%;</span><span class="pln"> </span><span class="com">// For `&lt;button&gt;`s</span></code></li><li class="L3"><code class="language-sass"><span class="pln">  padding</span><span class="pun">:</span><span class="pln"> $dropdown</span><span class="pun">-</span><span class="pln">item</span><span class="pun">-</span><span class="pln">padding</span><span class="pun">-</span><span class="pln">y $dropdown</span><span class="pun">-</span><span class="pln">item</span><span class="pun">-</span><span class="pln">padding</span><span class="pun">-</span><span class="pln">x</span><span class="pun">;</span></code></li><li class="L4"><code class="language-sass"><span class="pln">  clear</span><span class="pun">:</span><span class="pln"> both</span><span class="pun">;</span></code></li><li class="L5"><code class="language-sass"><span class="pln">  font</span><span class="pun">-</span><span class="pln">weight</span><span class="pun">:</span><span class="pln"> $font</span><span class="pun">-</span><span class="pln">weight</span><span class="pun">-</span><span class="pln">normal</span><span class="pun">;</span></code></li><li class="L6"><code class="language-sass"><span class="pln">  color</span><span class="pun">:</span><span class="pln"> $dropdown</span><span class="pun">-</span><span class="pln">link</span><span class="pun">-</span><span class="pln">color</span><span class="pun">;</span></code></li><li class="L7"><code class="language-sass"><span class="pln">  text</span><span class="pun">-</span><span class="pln">align</span><span class="pun">:</span><span class="pln"> inherit</span><span class="pun">;</span><span class="pln"> </span><span class="com">// For `&lt;button&gt;`s</span></code></li><li class="L8"><code class="language-sass"><span class="pln">  white</span><span class="pun">-</span><span class="pln">space</span><span class="pun">:</span><span class="pln"> nowrap</span><span class="pun">;</span></code></li><li class="L9"><code class="language-sass"><span class="pln">  background</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span><span class="pln"> </span><span class="com">// For `&lt;button&gt;`s</span></code></li><li class="L0"><code class="language-sass"><span class="pln">  border</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> </span><span class="com">// For `&lt;button&gt;`s</span></code></li><li class="L1"><code class="language-sass"><span class="pun">}</span></code></li></ol></pre>
+
+      <p>These comments are meaningful. They tell me that several of these properties are applied specifically to override <code>&lt;button&gt;</code> styles. These are good comments, because that is not immediately obvious.</p>
+
+      <p>But it’s worth asking the question: is there a way to express this in the code itself? You could move those particular declarations into a second ruleset that targets buttons specifically:</p>
+
+      <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-sass"><span class="pun">.</span><span class="pln">dropdown</span><span class="pun">-</span><span class="pln">item </span><span class="pun">{</span></code></li><li class="L1"><code class="language-sass"><span class="pln">  display</span><span class="pun">:</span><span class="pln"> block</span><span class="pun">;</span></code></li><li class="L2"><code class="language-sass"><span class="pln">  padding</span><span class="pun">:</span><span class="pln"> $dropdown</span><span class="pun">-</span><span class="pln">item</span><span class="pun">-</span><span class="pln">padding</span><span class="pun">-</span><span class="pln">y $dropdown</span><span class="pun">-</span><span class="pln">item</span><span class="pun">-</span><span class="pln">padding</span><span class="pun">-</span><span class="pln">x</span><span class="pun">;</span></code></li><li class="L3"><code class="language-sass"><span class="pln">  clear</span><span class="pun">:</span><span class="pln"> both</span><span class="pun">;</span></code></li><li class="L4"><code class="language-sass"><span class="pln">  font</span><span class="pun">-</span><span class="pln">weight</span><span class="pun">:</span><span class="pln"> $font</span><span class="pun">-</span><span class="pln">weight</span><span class="pun">-</span><span class="pln">normal</span><span class="pun">;</span></code></li><li class="L5"><code class="language-sass"><span class="pln">  color</span><span class="pun">:</span><span class="pln"> $dropdown</span><span class="pun">-</span><span class="pln">link</span><span class="pun">-</span><span class="pln">color</span><span class="pun">;</span></code></li><li class="L6"><code class="language-sass"><span class="pln">  white</span><span class="pun">-</span><span class="pln">space</span><span class="pun">:</span><span class="pln"> nowrap</span><span class="pun">;</span></code></li><li class="L7"><code class="language-sass"><span class="pun">}</span></code></li><li class="L8"><code class="language-sass"></code></li><li class="L9"><code class="language-sass"><span class="pln">button</span><span class="pun">.</span><span class="pln">dropdown</span><span class="pun">-</span><span class="pln">item </span><span class="pun">{</span></code></li><li class="L0"><code class="language-sass"><span class="pln">  width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100</span><span class="pun">%;</span></code></li><li class="L1"><code class="language-sass"><span class="pln">  text</span><span class="pun">-</span><span class="pln">align</span><span class="pun">:</span><span class="pln"> inherit</span><span class="pun">;</span></code></li><li class="L2"><code class="language-sass"><span class="pln">  background</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></li><li class="L3"><code class="language-sass"><span class="pln">  border</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span></code></li><li class="L4"><code class="language-sass"><span class="pun">}</span></code></li></ol></pre>
+
+      <p>This is very explicit and easily understood. Unfortunately, it also raises the selector specificity. That’s a side-effect that may not be acceptable.</p>
+
+      <p>Instead, I think this is a strong candidate for a mixin. Refactoring to a mixin could mean cleaning up the code in several other places as well. Consider this version:</p>
+
+      <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-sass"><span class="pun">.</span><span class="pln">dropdown</span><span class="pun">-</span><span class="pln">item </span><span class="pun">{</span></code></li><li class="L1"><code class="language-sass"><span class="pln">  </span><span class="lit">@include</span><span class="pln"> remove</span><span class="pun">-</span><span class="pln">button</span><span class="pun">-</span><span class="pln">styles</span><span class="pun">;</span></code></li><li class="L2"><code class="language-sass"></code></li><li class="L3"><code class="language-sass"><span class="pln">  display</span><span class="pun">:</span><span class="pln"> block</span><span class="pun">;</span></code></li><li class="L4"><code class="language-sass"><span class="pln">  width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100</span><span class="pun">%;</span></code></li><li class="L5"><code class="language-sass"><span class="pln">  padding</span><span class="pun">:</span><span class="pln"> $dropdown</span><span class="pun">-</span><span class="pln">item</span><span class="pun">-</span><span class="pln">padding</span><span class="pun">-</span><span class="pln">y $dropdown</span><span class="pun">-</span><span class="pln">item</span><span class="pun">-</span><span class="pln">padding</span><span class="pun">-</span><span class="pln">x</span><span class="pun">;</span></code></li><li class="L6"><code class="language-sass"><span class="pln">  clear</span><span class="pun">:</span><span class="pln"> both</span><span class="pun">;</span></code></li><li class="L7"><code class="language-sass"><span class="pln">  font</span><span class="pun">-</span><span class="pln">weight</span><span class="pun">:</span><span class="pln"> $font</span><span class="pun">-</span><span class="pln">weight</span><span class="pun">-</span><span class="pln">normal</span><span class="pun">;</span></code></li><li class="L8"><code class="language-sass"><span class="pln">  color</span><span class="pun">:</span><span class="pln"> $dropdown</span><span class="pun">-</span><span class="pln">link</span><span class="pun">-</span><span class="pln">color</span><span class="pun">;</span></code></li><li class="L9"><code class="language-sass"><span class="pln">  white</span><span class="pun">-</span><span class="pln">space</span><span class="pun">:</span><span class="pln"> nowrap</span><span class="pun">;</span></code></li><li class="L0"><code class="language-sass"><span class="pun">}</span></code></li></ol></pre>
+
+      <p>It’s clear what this does without any comments, and it gives me a mixin that performs a fairly common action, so other modules elsewhere could benefit from the same change. I did keep the <code>width: 100%</code> here rather than moving it into the mixin, because that might cause unexpected breakages if the mixin applied that elsewhere.</p>
+
+      <p>Furthermore, the original ruleset had ten declarations. That’s about as long as I like to get, before I start thinking <a href="https://en.wikipedia.org/wiki/Code_smell">“code smell”</a>. A mixin is a great way to shorten things up. It’s easier to get an overall feel for what this ruleset does at a glance.</p>
+
+      <p>Refactoring to a mixin won’t always be a preferable option, but look for it.</p>
+
+      <h2 id="good-annotate-obscure-bugfixes">Good: Annotate Obscure Bugfixes</h2>
+
+      <p>I’ve brought the hammer down hard on comments here. But I’m not always opposed. If you’ve ever looked at the source for <a href="https://github.com/necolas/normalize.css/blob/master/normalize.css">normalize.css</a>, you’ll notice it’s chock-full of comments. And I’d say, most of them are <em>great</em> comments.</p>
+
+      <p>Look at this beauty:</p>
+
+      <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-css"><span class="com">/**</span></code></li><li class="L1"><code class="language-css"><span class="com"> * 1. Add the correct box sizing in Firefox.</span></code></li><li class="L2"><code class="language-css"><span class="com"> * 2. Show the overflow in Edge and IE.</span></code></li><li class="L3"><code class="language-css"><span class="com"> */</span></code></li><li class="L4"><code class="language-css"><span class="pln">hr </span><span class="pun">{</span></code></li><li class="L5"><code class="language-css"><span class="pln">  box</span><span class="pun">-</span><span class="pln">sizing</span><span class="pun">:</span><span class="pln"> content</span><span class="pun">-</span><span class="pln">box</span><span class="pun">;</span><span class="pln"> </span><span class="com">/* 1 */</span></code></li><li class="L6"><code class="language-css"><span class="pln">  height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> </span><span class="com">/* 1 */</span></code></li><li class="L7"><code class="language-css"><span class="pln">  overflow</span><span class="pun">:</span><span class="pln"> visible</span><span class="pun">;</span><span class="pln"> </span><span class="com">/* 2 */</span></code></li><li class="L8"><code class="language-css"><span class="pun">}</span></code></li></ol></pre>
+
+      <p>Without those comments, you would never know why those rules are there. When you code around a particular browser bug, it’s often something obscure and hard to remember. I am fully in support of comments like this. And if you examined this in the wrong browser, you might mistakenly think the rule is no longer needed and delete it.</p>
+
+      <p>Normalize in particular needs a lot of comments because it’s made up entirely of base styles. The selectors are all type selectors and attribute selectors. There are no classnames in sight, because they aren’t naming and styling classnames, so self-documentation is more difficult.</p>
+
+      <p>Here’s another comment from Bootstrap:</p>
+
+      <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-css"><span class="com">/* Chrome (OSX) fix for https://github.com/twbs/bootstrap/issues/11245 */</span></code></li><li class="L1"><code class="language-css"><span class="kwd">select</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L2"><code class="language-css"><span class="pln">  background</span><span class="pun">:</span><span class="pln"> </span><span class="com">#fff !important;</span></code></li><li class="L3"><code class="language-css"><span class="pun">}</span></code></li></ol></pre>
+
+      <p>A url to an issue on Github! That’s helpful. It tells me, without even following the link, that this was a bug, and it may have been hard to track down. If I need to go read up on it, I can do so and get all the dirty details. And best of all, it hasn’t cluttered up the code with a lengthy paragraph that attempts to summarize the full issue. It gives the browser (and OS) info I need, and tells me where I can find out more. Alternately, if you use a private issue tracker like JIRA, you can put just an associated ticket number in the comment.</p>
+
+      <p>You don’t need to do this to every bug you fix. But if it’s not obvious, and especially if it’s related to a browser quirk, go for it.</p>
+
+      <h2 id="good-mandatory-comments">Good: Mandatory Comments</h2>
+
+      <p>Some tools like <a href="https://github.com/kss-node/kss-node">KSS</a> build a styleguide from comments in your CSS:</p>
+
+      <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-css"><span class="com">/*</span></code></li><li class="L1"><code class="language-css"><span class="com">Alerts</span></code></li><li class="L2"><code class="language-css"></code></li><li class="L3"><code class="language-css"><span class="com">An alert box requires a contextual class to specify its importance.</span></code></li><li class="L4"><code class="language-css"></code></li><li class="L5"><code class="language-css"><span class="com">Markup:</span></code></li><li class="L6"><code class="language-css"><span class="com">&lt;div class="alert {{modifier_class}}"&gt;</span></code></li><li class="L7"><code class="language-css"><span class="com">  Take note of this important alert message.</span></code></li><li class="L8"><code class="language-css"><span class="com">&lt;/div&gt;</span></code></li><li class="L9"><code class="language-css"></code></li><li class="L0"><code class="language-css"><span class="com">alert-success   - Something good or successful</span></code></li><li class="L1"><code class="language-css"><span class="com">alert-info      - Something worth noting, but not super important</span></code></li><li class="L2"><code class="language-css"><span class="com">alert-warning   - Something to note, may require attention</span></code></li><li class="L3"><code class="language-css"><span class="com">alert-danger    - Something important. Usually signifies an error.</span></code></li><li class="L4"><code class="language-css"></code></li><li class="L5"><code class="language-css"><span class="com">Styleguide Alerts</span></code></li><li class="L6"><code class="language-css"><span class="com">*/</span></code></li></ol></pre>
+
+      <p>This is not just a comment; it is code. It is parsed by KSS and used to generate HTML output. It is part of your documentation. And, I would say, this is better than a separate hand-build HTML file, because it is co-located in the same file and more likely to stay in sync with the code.</p>
+
+      <p>Another type of mandatory comments are licenses. When you use a third-party library with a license in a comment, you typically need to include that.</p>
+
+      <p>When I pull out <a href="https://twitter.com/keithjgrant/status/867803638026035200">Robert Martin quotes</a> about comments, it tends to get a reaction. I don’t do it to be contrary. I do it because I believe in straightforward code that’s easy to understand quickly. If you’re littering your code with comments, be sure it’s not because you’re doing exactly the opposite.</p>
+
     </article>
   </body>
 </html>

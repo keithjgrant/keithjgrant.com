@@ -1,4 +1,5 @@
 @import "variables.css";
+@import "prettyprint";
 /*@import 'nav-main.css';*/
 
 /*
@@ -113,83 +114,4 @@ a:active {
 
 .article > :first-child {
   margin-top: 0;
-}
-
-#article .nav {
-  grid-column: 1 / span 1;
-}
-
-.nav {
-  display: grid;
-}
-
-.nav-main {
-  position: fixed;
-  top: 2rem;
-  left: 0;
-  padding: 1em 2em;
-  list-style: none;
-}
-
-.nav-main > li > a {
-  position: relative;
-  display: inline-block;
-  padding: 0.7em 1em;
-  color: white;
-  font-size: 0.8rem;
-  font-weight: 300;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.nav-main > li > a:hover {
-  color: var(--yellow-4);
-}
-
-.nav-main__label {
-  /*font-family: Amatic SC;
-  font-size: 1.25rem;*/
-  display: block;
-  transform: scale(1, 0);
-  transition: transform 0.2s ease-out;
-}
-
-.nav-main:hover .nav-main__label {
-  transform: scale(1, 1);
-  transition-delay: 0.2s;
-}
-
-.nav-main > li > a::before {
-  position: absolute;
-  top: 0.9em;
-  left: 1em;
-  content: "";
-  width: 1em;
-  height: 1em;
-  border: 1px solid var(--yellow-9);
-  border-radius: 50%;
-  transform-origin: left center;
-  transition: all 0.2s ease-out;
-  transition-delay: 0.2s;
-}
-
-.nav-main:hover > li > a::before {
-  transform: scale(3, 0);
-  transition-delay: 0s;
-}
-
-.nav-main > li:nth-child(3n) .nav-main__label {
-  transition-delay: 0.1s;
-}
-
-.nav-main:hover > li:nth-child(3n) .nav-main__label {
-  transition-delay: 0.3s;
-}
-
-.nav-main > li:nth-child(3n + 1) .nav-main__label {
-  transition-delay: 0.2s;
-}
-
-.nav-main:hover > li:nth-child(3n + 1) .nav-main__label {
-  transition-delay: 0.4s;
 }
