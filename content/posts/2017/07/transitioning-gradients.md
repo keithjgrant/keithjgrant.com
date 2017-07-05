@@ -3,7 +3,6 @@ date = "2017-07-05T13:33:51-04:00"
 title = "Transitioning Gradients"
 
 +++
-
 In, CSS, you can’t transition a background gradient. It sure would be nice if you could:
 
 ```css
