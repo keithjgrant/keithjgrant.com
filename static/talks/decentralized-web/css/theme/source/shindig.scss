@@ -1,0 +1,72 @@
+/**
+ * Shindig theme for reveal.js.
+ *
+ * By Keith J. Grant http://keithjgrant.com
+ */
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:700,900|Fira+Mono|Martel");
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+
+$yellow-9: hsl(31, 90%, 97%);
+$blue-4: hsl(211, 100%, 72%);
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #222;
+
+$mainColor: $yellow-9;
+$headingColor: $blue-4;
+
+$mainFontSize: 2.375rem;
+$mainFont: Martel, serif;
+$headingFont: Fira Sans Condensed, Impact, Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontWeight: 600;
+$linkColor: #42affa;
+$linkColorHover: lighten($linkColor, 15%);
+$selectionBackgroundColor: lighten($linkColor, 25%);
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1em;
+
+section.has-light-background {
+  &,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #222;
+  }
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.vanish {
+  transition: all 0.7s ease-in;
+}
+
+.vanish.is-hidden {
+  font-size: 0;
+  opacity: 0;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.slide-title > h1 {
+  font-weight: 900;
+}
