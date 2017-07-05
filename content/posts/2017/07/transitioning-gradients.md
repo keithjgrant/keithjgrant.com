@@ -61,7 +61,7 @@ So let’s hack it! We can achieve this effect with the help of a pseudo-element
 }
 ```
 
-It also takes a little bit of `z-index` work to ensure the pseudo-element stays positioned behind the content of the main element.
+The pseudo-element is initially hidden via `opacity: 0`. On hover, that transitions to an `opacity: 1`. This produces the illusion of the main gradient transitioning to the pseudo-element’s gradient. It also takes a little bit of `z-index` work to ensure the pseudo-element stays positioned behind the content of the main element.
 
 This takes a fair bit of code, unfortunately. But if you need this effect, this is the best (and only) way I’ve found so far to accomplish it.
 
