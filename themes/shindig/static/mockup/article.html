@@ -9,7 +9,6 @@
     <style>
       body {
         font-family: Martel;
-        letter-spacing: -0.02em;
       }
 
       h1, h2 {
@@ -19,11 +18,11 @@
 
       h2 {
         font-size: 1.2rem;
-        text-transform: uppercase;
         letter-spacing: 0.04em;
       }
 
       #article {
+        display: grid;
         grid-template-columns:
           minmax(1rem, auto)
           [wide-start] minmax(2rem, 10ch)
@@ -34,6 +33,7 @@
       }
 
       .nav {
+        display: block;
         position: relative;
         grid-column: wide;
         /*background-color: var(--blue-1);*/
@@ -53,6 +53,7 @@
 
       .nav-main {
         display: flex;
+        flex: 1;
         justify-content: space-between;
         margin: 0;
         padding-left: 0;
@@ -62,7 +63,7 @@
         display: block;
         padding: 1em;
         color: inherit;
-        font-family: Work Sans, sans-serif;
+        font-family: Fira Sans, sans-serif;
         font-size: 0.85rem;
         font-weight: 400;
         text-transform: uppercase;
@@ -110,9 +111,6 @@
   </head>
   <body id="article">
     <nav class="nav">
-      <div class="logo">
-        Keith<br>Grant
-      </div>
       <ul class="nav-main">
         <li><a href="/">Home</a></li>
         <li><a href="/posts">Posts</a></li>

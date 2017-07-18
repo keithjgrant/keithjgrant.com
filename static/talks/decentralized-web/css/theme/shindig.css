@@ -4,6 +4,7 @@
  * By Keith J. Grant http://keithjgrant.com
  */
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:700,900|Fira+Mono|Martel");
+@import url("https://fonts.googleapis.com/css?family=Poppins:700|Martel");
 @import url(../../lib/font/source-sans-pro/source-sans-pro.css);
 section.has-light-background,
 section.has-light-background h1,
@@ -23,7 +24,7 @@ body {
 
 .reveal {
   font-family: Martel, serif;
-  font-size: 38px;
+  font-size: 2.375rem;
   font-weight: normal;
   color: #fef8f0; }
 
@@ -48,7 +49,7 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #70b5ff;
-  font-family: Fira Sans Condensed, Impact, Helvetica, sans-serif;
+  font-family: Poppins, Fira Sans Condensed, Impact, Helvetica, sans-serif;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: normal;

@@ -47,3 +47,5 @@
   --gray-8: hsl(211, 11%, 85%);
   --gray-9: hsl(211, 14%, 93%);
 }
+
+$container-wide: 62.5rem;
