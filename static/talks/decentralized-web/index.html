@@ -26,15 +26,165 @@ document.getElementsByTagName('head')[0].appendChild(link);
   <body>
     <div class="reveal">
       <div class="slides">
-        <section class="slide-title">
-          <h1>The<br>Decentralized Social Web</h1>
+        <section class="slide-title" data-background-image="images/network.jpg">
+          <h1>The<br>Decentralized<br>Social Web</h1>
         </section>
 
         <section>
           <h2>keithjgrant.com</h2>
-          <p><em>Intercontinental Exchange</em>/New York Stock&nbsp;Exchange</p>
-          <p><em>CSS in Depth</em>, Manning Publications (2017)</p>
+          <p class="text-left"><em>Intercontinental Exchange</em></p>
+          <p class="text-left"><em>CSS in Depth</em>, Manning Publications (2017)</p>
           <p class="text-right"><a href="http://keithjgrant.com/talks">keithjgrant.com/talks</a></p>
+        </section>
+
+        <section>
+          <section>
+            <h2>What happened to blogs?</h2>
+          </section>
+
+          <section>
+            <img src="images/twitter.png" class="sn-icon"/>
+            <img src="images/facebook.png" class="sn-icon"/>
+            <img src="images/gplus.png" class="sn-icon"/>
+            <br>
+            <img src="images/linkedin.png" class="sn-icon"/>
+            <img src="images/instagram.png" class="sn-icon"/>
+            <img src="images/snapchat.png" class="sn-icon"/>
+          </section>
+
+          <section>
+            <h3>Why social networks?</h3>
+            <ul>
+              <li>Large number of users</li>
+              <li>Better UI</li>
+              <li>Quick & easy signup</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Problems with social networks</h3>
+            <ul>
+              <li>Requires account on each network</li>
+              <li>Virtually no compatability</li>
+              <li>Little control</li>
+              <li>Don’t own your data</li>
+              <li>Neglect of personal & corporate websites</li>
+            </ul>
+            <p class="fragment">TLDR: not a blog</p>
+          </section>
+
+          <section>
+            <h3>Attempts to unseat Facebook/Twitter fail</h3>
+            <ul>
+              <li>Buzz</li>
+              <li>Ello</li>
+              <li>Diaspora</li>
+              <li>Ping</li>
+              <li>Mastodon</li>
+            </ul>
+            <p class="fragment">Another social network clone is not the answer</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>The “IndieWeb”</h2>
+          </section>
+
+          <section>
+            <p>Grassroots movement<br>+<br>W3C Specifications</p>
+          </section>
+
+          <section>
+            <h2>POSSE</h2>
+            <p><u>P</u>ublish on your <u>O</u>wn <u>S</u>ite, <u>S</u>yndicate <u>E</u>lsewhere</p>
+          </section>
+
+          <section>
+            <h3>Multiple pieces to the puzzle</h3>
+            <ul>
+              <li>IndieAuth</li>
+              <li>Microformats</li>
+              <li>Webmentions</li>
+              <li>Micropub</li>
+              <li>Syndication</li>
+              <li>...</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Adopt incrementally</h3>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Get your own site</h2>
+          </section>
+
+          <section>
+            <h3>One <strong>central location</strong> for your<br>broader online presence</h3>
+            <div>
+              <img src="images/own-domain.png" alt="browser address bar reading keithjgrant.com"/>
+            </div>
+          </section>
+
+          <section>
+            <div class="split">
+              <div>
+                <img src="images/kjg-toc.png" alt="keithjgrant.com menu, including links to posts, notes, and social"/>
+              </div>
+              <ul>
+                <li><strong>Posts/Articles</strong></li>
+                <li><strong>Notes</strong></li>
+                <li>Reposts</li>
+                <li>Replies</li>
+                <li>Likes</li>
+              </ul>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Microformats</h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>IndieAuth</h2>
+          </section>
+
+          <!-- Simplified: OpenID -> RelMeAuth -> IndieAuth -->
+        </section>
+
+        <section>
+          <section>
+            <h2>Webmentions</h2>
+          </section>
+
+          <!-- Simplified: Pingback -> Webmention -->
+        </section>
+
+        <section>
+          <section>
+            <h2>Syndication</h2>
+          </section>
+
+          <!-- brid.gy -->
+        </section>
+
+        <section>
+          <section>
+            <h2>Micropub</h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Demo Time!</h2>
+          </section>
         </section>
 
         <section>
@@ -57,6 +207,10 @@ document.getElementsByTagName('head')[0].appendChild(link);
         </section>
 
         <section>
+          <p><a href="https://indieweb.org">indeweb.org</a></p>
+        </section>
+
+        <section>
           <h1>Thank you!</h1>
 
           <p><a href="http://keithjgrant.com">keithjgrant.com</a></p>
@@ -66,6 +220,11 @@ document.getElementsByTagName('head')[0].appendChild(link);
         </section>
       </div>
     </div>
+
+    <!--
+    https://speakerdeck.com/calumryan/the-indieweb
+    http://slides.aaronparecki.com/2016/osbridge-w3c-socialwg/
+    -->
 
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>

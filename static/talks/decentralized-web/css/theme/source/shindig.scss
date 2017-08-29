@@ -4,7 +4,6 @@
  * By Keith J. Grant http://keithjgrant.com
  */
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:700,900|Fira+Mono|Martel");
-@import url("https://fonts.googleapis.com/css?family=Poppins:700|Martel");
 
 // Default mixins and settings -----------------
 @import "../template/mixins";
@@ -16,6 +15,9 @@
 
 $yellow-9: hsl(31, 90%, 97%);
 $blue-4: hsl(211, 100%, 72%);
+$red-4: hsl(344, 96%, 48%);
+$green-4: hsl(179, 100%, 24%);
+$yellow-4: hsl(31, 80%, 60%);
 
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: #222;
@@ -25,7 +27,7 @@ $headingColor: $blue-4;
 
 $mainFontSize: 2.375rem;
 $mainFont: Martel, serif;
-$headingFont: Poppins, Fira Sans Condensed, Impact, Helvetica, sans-serif;
+$headingFont: Fira Sans Condensed, Impact, Helvetica, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: none;
@@ -55,19 +57,64 @@ section.has-light-background {
 @import "../template/theme";
 // ---------------------------------------------
 
-.vanish {
-  transition: all 0.7s ease-in;
-}
+.reveal {
+  section img {
+    margin: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
 
-.vanish.is-hidden {
-  font-size: 0;
-  opacity: 0;
-}
+  .vanish {
+    transition: all 0.7s ease-in;
+  }
 
-.text-right {
-  text-align: right !important;
-}
+  .vanish.is-hidden {
+    font-size: 0;
+    opacity: 0;
+  }
 
-.slide-title > h1 {
-  font-weight: 900;
+  .sn-icon {
+    height: 2em;
+    margin: 0.6em;
+    vertical-align: middle;
+  }
+
+  .text-left {
+    text-align: left !important;
+  }
+
+  .text-right {
+    text-align: right !important;
+  }
+
+  .slide-title {
+    > h1 {
+      margin-bottom: -40vh;
+      font-weight: 900;
+      line-height: 1;
+      text-align: left;
+      text-shadow: 0.01em 0.01em 0.1em rgb(0, 0, 30);
+    }
+  }
+
+  strong {
+    color: $yellow-4;
+  }
+
+  .split {
+    display: flex;
+
+    & > * {
+      flex: 1;
+    }
+
+    & > * + * {
+      margin-left: 2rem;
+    }
+
+    & * + ul {
+      margin-left: 5rem;
+    }
+  }
 }
