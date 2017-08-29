@@ -117,4 +117,11 @@ section.has-light-background {
       margin-left: 5rem;
     }
   }
+
+  code mark {
+    padding: 0 0.1em;
+    color: inherit;
+    background-color: transparent;
+    box-shadow: 0 0 0.3em 0.2em #e8547e;
+  }
 }

@@ -135,8 +135,8 @@ document.getElementsByTagName('head')[0].appendChild(link);
                 <img src="images/kjg-toc.png" alt="keithjgrant.com menu, including links to posts, notes, and social"/>
               </div>
               <ul>
-                <li><strong>Posts/Articles</strong></li>
-                <li><strong>Notes</strong></li>
+                <li>Articles</li>
+                <li>Notes</li>
                 <li>Reposts</li>
                 <li>Replies</li>
                 <li>Likes</li>
@@ -148,6 +148,118 @@ document.getElementsByTagName('head')[0].appendChild(link);
         <section>
           <section>
             <h2>Microformats</h2>
+            <p class="fragment">Ensure markup is machine-parsable</p>
+          </section>
+
+          <section>
+            <h3>Example microformat markup</h3>
+            <pre><code data-trim data-noescape>
+&lt;header <mark>class="h-card"</mark>&gt;
+  &lt;a <mark>class="p-name u-url"</mark> href="http://keithjgrant.com"&gt;
+    Keith J. Grant
+  &lt;/a&gt;
+  &lt;img <mark>class="u-photo"</mark> src="/images/keithjgrant.jpg" alt="Photo of Keith" /&gt;
+
+  &lt;div class="bio-links"&gt;
+    &lt;p&gt;Atlanta, GA&lt;br&gt;United States&lt;/p&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;Twitter&lt;/dt&gt;
+      &lt;dd&gt;&lt;a href="https://twitter.com/keithjgrant/" <mark>rel="me"</mark>&gt;@keithjgrant&lt;/a&gt;&lt;/dd&gt;
+      &lt;dt&gt;Github&lt;/dt&gt;
+      &lt;dd&gt;&lt;a href="https://github.com/keithjgrant" <mark>rel="me"</mark>&gt;keithjgrant&lt;/a&gt;&lt;/dd&gt;
+      &lt;dt&gt;Author&lt;/dt&gt;
+      &lt;dd&gt;&lt;a href="https://www.manning.com/books/css-in-depth"&gt;CSS in Depth&lt;/a&gt;&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Microformat vocabularies</h3>
+            <ul>
+              <li>h-card</li>
+              <li>h-entry</li>
+              <li>h-event</li>
+              <li>h-adr</li>
+              <li>h-product</li>
+              <li>h-recipe</li>
+              <li>...</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Microformat properties</h3>
+            <p>Describe parts of an “h-*” item</p>
+            <div class="split">
+              <ul class="fragment">
+                <li>p-name</li>
+                <li>p-summary</li>
+                <li>p-author</li>
+                <li>p-category</li>
+                <li>p-geo</li>
+                <li>...</li>
+              </ul>
+              <ul class="fragment">
+                <li>e-content (“entry”)</li>
+                <li>u-url (refers to href)</li>
+                <li>u-email</li>
+                <li>dt-published (“date”)</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h3>h-card example</h3>
+            <pre><code data-trim data-noescape>
+&lt;header <mark>class="h-card"</mark>&gt;
+  &lt;a <mark>class="p-name u-url"</mark> href="http://keithjgrant.com"&gt;
+    Keith J. Grant
+  &lt;/a&gt;
+  &lt;img <mark>class="u-photo"</mark> src="/images/keithjgrant.jpg" alt="Photo of Keith" /&gt;
+
+  &lt;div class="bio-links"&gt;
+    &lt;p&gt;Atlanta, GA&lt;br&gt;United States&lt;/p&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;Twitter&lt;/dt&gt;
+      &lt;dd&gt;&lt;a href="https://twitter.com/keithjgrant/" <mark>rel="me"</mark>&gt;@keithjgrant&lt;/a&gt;&lt;/dd&gt;
+      &lt;dt&gt;Github&lt;/dt&gt;
+      &lt;dd&gt;&lt;a href="https://github.com/keithjgrant" <mark>rel="me"</mark>&gt;keithjgrant&lt;/a&gt;&lt;/dd&gt;
+      &lt;dt&gt;Author&lt;/dt&gt;
+      &lt;dd&gt;&lt;a href="https://www.manning.com/books/css-in-depth"&gt;CSS in Depth&lt;/a&gt;&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>h-entry example</h3>
+            <pre><code data-trim data-noescape>
+&lt;div class="post-body__item <mark>h-entry</mark>"&gt;
+  &lt;div class="post-preview"&gt;
+    &lt;div class="post-preview__date metadata"&gt;
+      &lt;a class="<mark>u-url dt-published</mark>" href="http://keithjgrant.com/notes/2017/03/48158/"&gt;
+        17 Mar 2017 13:22:38
+      &lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div class="post-preview__content"&gt;
+      &lt;div class="content <mark>e-content</mark> show-embeds"&gt;
+        &lt;p&gt;Developers somehow acquired the idea that CSS should be easy. Like, learn
+        in a weekend easy.&lt;/p&gt;
+        &lt;p&gt;CSS isn’t like that. Nobody &lt;em&gt;in the world&lt;/em&gt; knows all of CSS. You
+        need to commit to learning it just as you do conventional programming.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <p>Don’t need to memorize them all</p>
+            <p><a href="http://microformats.org/wiki/microformats2">http://microformats.org/wiki/microformats2</a></p>
           </section>
         </section>
 
@@ -156,15 +268,41 @@ document.getElementsByTagName('head')[0].appendChild(link);
             <h2>IndieAuth</h2>
           </section>
 
-          <!-- Simplified: OpenID -> RelMeAuth -> IndieAuth -->
+          <section>
+            <h3>Simplified version of old OpenID</h3>
+            <p>OpenId &rarr; RelMeAuth &rarr; IndieAuth</p>
+          </section>
+
+          <section>
+            <h3>rel="me" links in h-card…</h3>
+            <pre><code data-trim data-noescape>
+&lt;a href="https://twitter.com/keithjgrant/" <mark>rel="me"</mark>&gt;@keithjgrant&lt;/a&gt;
+&lt;a href="https://github.com/keithjgrant" <mark>rel="me"</mark>&gt;keithjgrant&lt;/a&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>…rel="me" links in OAuth profile</h3>
+            <div>
+              <img src="images/twitter-bio.png" alt="Screenshot of my Twitter bio, with link back to my website"/>
+            </div>
+          </section>
+
+          <section>
+            <h3>Two-way verification</h3>
+            <p>OAuth login with my twitter account authenticates me as owner of my website</p>
+          </section>
         </section>
 
         <section>
           <section>
             <h2>Webmentions</h2>
           </section>
+          <section>
+            <p>Notify a page when you link to it</p>
+            <p class="fragment">Simplification of older “pingback”</p>
+          </section>
 
-          <!-- Simplified: Pingback -> Webmention -->
         </section>
 
         <section>

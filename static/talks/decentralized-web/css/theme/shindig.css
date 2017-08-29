@@ -335,3 +335,9 @@ body {
     margin-left: 2rem; }
   .reveal .split * + ul {
     margin-left: 5rem; }
+
+.reveal code mark {
+  padding: 0 0.1em;
+  color: inherit;
+  background-color: transparent;
+  box-shadow: 0 0 0.3em 0.2em #e8547e; }
