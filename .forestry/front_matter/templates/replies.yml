@@ -1,0 +1,44 @@
+---
+hide_body: false
+fields:
+- name: title
+  default: ''
+  label: Title
+  type: text
+  hidden: false
+- name: date
+  default: 2017-02-13 15:02:18 +0000
+  label: Date
+  type: datetime
+  hidden: false
+- name: layout
+  default: micropubpost
+  label: Layout
+  type: text
+  hidden: false
+- name: mf-in-reply-to
+  default:
+  - https://twitter.com/AdamRackis/status/831156101655691264
+  label: Mf in reply to
+  type: list
+  hidden: false
+- name: slug
+  default: '54138'
+  label: Slug
+  type: text
+  hidden: false
+- name: category
+  default: replies
+  label: Category
+  type: text
+  hidden: false
+- name: type
+  default: replies
+  label: Type
+  type: text
+  hidden: false
+- name: inReplyTo
+  default: URL
+  label: Inreplyto
+  type: text
+  hidden: false
