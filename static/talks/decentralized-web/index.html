@@ -43,7 +43,7 @@ document.getElementsByTagName('head')[0].appendChild(link);
           </section>
 
           <section>
-            <img src="images/twitter.png" class="sn-icon"/>
+            <img src="images/twitter.png" class="sn-icon" style="margin: 0.3em"/>
             <img src="images/facebook.png" class="sn-icon"/>
             <img src="images/gplus.png" class="sn-icon"/>
             <br>
@@ -92,7 +92,8 @@ document.getElementsByTagName('head')[0].appendChild(link);
           </section>
 
           <section>
-            <p>Grassroots movement<br>+<br>W3C Specifications</p>
+            <p>Grassroots movement + W3C Specifications</p>
+            <p class="fragment">Return to the original vision of the web</p>
           </section>
 
           <section>
@@ -159,7 +160,6 @@ document.getElementsByTagName('head')[0].appendChild(link);
     Keith J. Grant
   &lt;/a&gt;
   &lt;img <mark>class="u-photo"</mark> src="/images/keithjgrant.jpg" alt="Photo of Keith" /&gt;
-
   &lt;div class="bio-links"&gt;
     &lt;p&gt;Atlanta, GA&lt;br&gt;United States&lt;/p&gt;
     &lt;dl&gt;
@@ -290,7 +290,36 @@ document.getElementsByTagName('head')[0].appendChild(link);
 
           <section>
             <h3>Two-way verification</h3>
-            <p>OAuth login with my twitter account authenticates me as owner of my website</p>
+            <p><strong>OAuth login</strong> with my twitter account<br>
+              <strong>authenticates me as owner</strong> of my website</p>
+          </section>
+
+          <section>
+            <h3>Specify your auth endpoint in &lt;head&gt;</h3>
+            <pre><code data-trim data-noescape>
+&lt;link rel="authorization_endpoint" href="https://indieauth.com/auth" /&gt;
+&lt;link rel="token_endpoint" href="https://tokens.indieauth.com/token" /&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <h3><a href="https://quill.p3k.io/" class="demo-link" target="demo">Demo</a></h3>
+          </section>
+
+          <section>
+            <p><img src="images/indieauth-1.png" alt="IndieAuth login page for a web app"/></p>
+          </section>
+
+          <section>
+            <p><img src="images/indieauth-2.png" alt="OAuth links during login process"/></p>
+          </section>
+
+          <section>
+            <p><img src="images/indieauth-3.png" alt="OAuth app redirecting back to app's IndieAuth page"/></p>
+          </section>
+
+          <section>
+            <p><img src="images/indieauth-4.png" alt="Successfully logged in to App"/></p>
           </section>
         </section>
 
@@ -298,11 +327,58 @@ document.getElementsByTagName('head')[0].appendChild(link);
           <section>
             <h2>Webmentions</h2>
           </section>
+
           <section>
-            <p>Notify a page when you link to it</p>
-            <p class="fragment">Simplification of older “pingback”</p>
+            <h3>Notify a page when you link to it</h3>
+            <ul>
+              <li>Simplification of older “pingback”</li>
+              <li>Send POST to a specified endpoint</li>
+              <li><a href="https://www.w3.org/TR/webmention/">W3C Recommendation Spec</a></li>
+            </ul>
           </section>
 
+          <section>
+            <h3>Specify your webmention endpoint in &lt;head&gt;</h3>
+            <pre><code data-trim data-noescape>
+&lt;link rel="pingback" href="https://webmention.io/keithjgrant.com/xmlrpc" /&gt;
+&lt;link rel="webmention" href="https://webmention.io/keithjgrant.com/webmention" /&gt;
+            </code></pre>
+            <p><small>Pingback endpoint for backwards compatibility</small></p>
+          </section>
+
+          <section>
+            <h3>Webmention process</h3>
+            <ul>
+              <li>Create source document that mentions the target</li>
+              <li>Find webmention endpoint for target (<code>&lt;link rel="webmention"&gt;</code>)</li>
+              <li>Notify endpoint of source url & target url</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Comment, reply, like, repost…</h3>
+            <p>Specified by microformats in the source document</p>
+            <pre class="fragment"><code data-trim data-noescape>
+&lt;div <mark>class="h-entry"</mark>&gt;
+  &lt;p&gt;In reply to
+    &lt;a href="https://example.com/target/url" <mark>rel="u-in-reply-to"</mark>&gt;
+      a post on example.com
+    &lt;/a&gt;
+  &lt;/p&gt;
+  &lt;div class="e-content"&gt;…&lt;/div&gt;
+&lt;/div&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <h3><a href="https://webmention.io/">webmention.io</a> service</h3>
+            <p><img src="images/webmention.io.png" alt="screenshot of webmention.io homepage"/></p>
+          </section>
+
+          <section>
+            <p><img src="images/post-activity.png" alt="replies, likes, and shares displayed for a post"/></p>
+            <p><a href="http://keithjgrant.com/posts/2017/06/self-documenting-css/#comments" target="demo" class="demo-link">demo</a></p>
+          </section>
         </section>
 
         <section>

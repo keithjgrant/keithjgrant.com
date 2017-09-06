@@ -124,4 +124,15 @@ section.has-light-background {
     background-color: transparent;
     box-shadow: 0 0 0.3em 0.2em #e8547e;
   }
+
+  .demo-link::after {
+    content: "\25b6";
+    margin-left: 0.4em;
+    font-size: 0.6em;
+    vertical-align: 0.2em;
+  }
+
+  p code {
+    font-size-adjust: 0.7;
+  }
 }
