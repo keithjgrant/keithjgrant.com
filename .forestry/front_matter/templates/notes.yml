@@ -1,0 +1,33 @@
+---
+hide_body: false
+fields:
+- name: title
+  default: ''
+  label: Title
+  type: text
+  hidden: false
+- name: date
+  default: 2017-02-14 14:21:12 +0000
+  label: Date
+  type: datetime
+  hidden: false
+- name: layout
+  default: micropubpost
+  label: Layout
+  type: text
+  hidden: false
+- name: slug
+  default: '51672'
+  label: Slug
+  type: text
+  hidden: false
+- name: category
+  default: notes
+  label: Category
+  type: text
+  hidden: false
+- name: type
+  default: notes
+  label: Type
+  type: text
+  hidden: false
