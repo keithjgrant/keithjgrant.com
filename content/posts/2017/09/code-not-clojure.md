@@ -1,6 +1,6 @@
 +++
 date = "2017-09-08T11:09:23-04:00"
-title = "Code Not Clojure"
+title = "Code, Not Clojure"
 categories = ["css"]
 
 +++
