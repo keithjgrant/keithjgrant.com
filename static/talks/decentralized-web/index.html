@@ -329,6 +329,15 @@ document.getElementsByTagName('head')[0].appendChild(link);
           </section>
 
           <section>
+            <p><img src="images/disqus-abuse.png" alt="Disqus is using it's own embed as a click-farm to drive ad impressions"/></p>
+          </section>
+
+          <section>
+            <h3>Webmentions</h3>
+            <p>Tracking the conversation</p>
+          </section>
+
+          <section>
             <h3>Notify a page when you link to it</h3>
             <ul>
               <li>Simplification of older “pingback”</li>
@@ -340,18 +349,18 @@ document.getElementsByTagName('head')[0].appendChild(link);
           <section>
             <h3>Specify your webmention endpoint in &lt;head&gt;</h3>
             <pre><code data-trim data-noescape>
-&lt;link rel="pingback" href="https://webmention.io/keithjgrant.com/xmlrpc" /&gt;
-&lt;link rel="webmention" href="https://webmention.io/keithjgrant.com/webmention" /&gt;
+&lt;link rel="webmention"
+      href="https://webmention.io/keithjgrant.com/webmention" /&gt;
             </code></pre>
-            <p><small>Pingback endpoint for backwards compatibility</small></p>
           </section>
 
           <section>
             <h3>Webmention process</h3>
             <ul>
-              <li>Create source document that mentions the target</li>
-              <li>Find webmention endpoint for target (<code>&lt;link rel="webmention"&gt;</code>)</li>
+              <li>Create <strong>source</strong> document that mentions the <strong>target</strong></li>
+              <li>Find webmention <strong>endpoint</strong> for target (<code>&lt;link rel="webmention"&gt;</code>)</li>
               <li>Notify endpoint of source url & target url</li>
+              <li>Endpoint verifies source url</li>
             </ul>
           </section>
 
