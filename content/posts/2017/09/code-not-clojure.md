@@ -1,10 +1,9 @@
 +++
+categories = ["css"]
 date = "2017-09-08T11:09:23-04:00"
 title = "Code, Not Clojure"
-categories = ["css"]
 
 +++
-
 I’m going to make two declarations, that might sound contradictory:
 
 1. CSS is code.
