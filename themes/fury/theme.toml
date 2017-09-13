@@ -5,11 +5,11 @@ name = "Fury"
 license = "MIT"
 licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
 description = ""
-homepage = "http://keithjgrant.com/"
+homepage = "https://keithjgrant.com/"
 tags = ["", ""]
 features = ["", ""]
 min_version = 0.18
 
 [author]
   name = "Keith J. Grant"
-  homepage = "http://keithjgrant.com"
+  homepage = "https://keithjgrant.com"
