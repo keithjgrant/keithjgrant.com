@@ -4,43 +4,123 @@
     
     <title>Replies on Keith J. Grant</title>
     
-    <link>http://keithjgrant.com/replies/index.xml</link>
+    <link>https://keithjgrant.com/replies/index.xml</link>
     <description>Recent content in Replies on Keith J. Grant</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Feb 2017 15:02:18 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Aug 2017 13:39:24 +0000</lastBuildDate>
     <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
-    <link rel="self" href="http://keithjgrant.com/replies/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    <link rel="self" href="https://keithjgrant.com/replies/index.xml" xmlns="http://www.w3.org/2005/Atom" />
     
     <item>
       <title></title>
-      <link>http://keithjgrant.com/replies/2017/02/54138/</link>
-      <pubDate>Mon, 13 Feb 2017 15:02:18 +0000</pubDate>
+      <link>https://keithjgrant.com/replies/2017/08/49164/</link>
+      <pubDate>Fri, 11 Aug 2017 13:39:24 +0000</pubDate>
       
-      <guid>http://keithjgrant.com/replies/2017/02/54138/</guid>
-      <description>&lt;p&gt;Yeah, I&amp;#39;ve switched back and forth b/t light and dark a few times over the years. Takes a day or so to get accustomed&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Test reply</title>
-      <link>http://keithjgrant.com/replies/2017/02/142656/</link>
-      <pubDate>Fri, 10 Feb 2017 14:26:56 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/replies/2017/02/142656/</guid>
-      <description>&lt;p&gt;Nice site&lt;/p&gt;
+      <guid>https://keithjgrant.com/replies/2017/08/49164/</guid>
+      <description>&lt;p&gt;You can do it with brid.gy (like this post). Need to automate the webmention, though&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title></title>
-      <link>http://keithjgrant.com/replies/2017/01/102240/</link>
-      <pubDate>Wed, 25 Jan 2017 10:22:40 -0500</pubDate>
+      <link>https://keithjgrant.com/replies/2017/07/47567/</link>
+      <pubDate>Tue, 18 Jul 2017 13:12:47 +0000</pubDate>
       
-      <guid>http://keithjgrant.com/replies/2017/01/102240/</guid>
-      <description>&lt;p&gt;I definitely avoid using the microformat classes as hooks for CSS. That can lock you into HTML structures that you might need to change later on. Honestly, I’d prefer if microformats used a different attribute altogether, but I think that ship has sailed.&lt;/p&gt;
+      <guid>https://keithjgrant.com/replies/2017/07/47567/</guid>
+      <description>&lt;p&gt;IMO, this is bad advice. &lt;a href=&#34;https://meiert.com/en/blog/stop-using-resets/&#34;&gt;https://meiert.com/en/blog/stop-using-resets/&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;I haven’t mentioned anything about microformats in my book, though I could certainly point out this principle in more general terms &amp;mdash; try not to use the same classes as hooks for both JS and CSS, for instance (unless the two are inextricably linked to the same component).&lt;/p&gt;
+&lt;p&gt;Normalize.css fixes a number of odd browser bugs and provides behavior you almost certainly want like inputs and buttons inheriting font styles.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://keithjgrant.com/replies/2017/07/48520/</link>
+      <pubDate>Thu, 13 Jul 2017 13:28:40 +0000</pubDate>
+      
+      <guid>https://keithjgrant.com/replies/2017/07/48520/</guid>
+      <description>&lt;p&gt;I’m coming to think there will be a place for preprocessor variables from here on out, separate from native vars. (@imports is vital, too)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://keithjgrant.com/replies/2017/06/63862/</link>
+      <pubDate>Thu, 15 Jun 2017 17:44:22 +0000</pubDate>
+      
+      <guid>https://keithjgrant.com/replies/2017/06/63862/</guid>
+      <description>&lt;p&gt;Out of curiosity, what do you use for a reader?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://keithjgrant.com/replies/2017/04/53542/</link>
+      <pubDate>Wed, 12 Apr 2017 14:52:22 +0000</pubDate>
+      
+      <guid>https://keithjgrant.com/replies/2017/04/53542/</guid>
+      <description>&lt;p&gt;Okay, backing up. Here’s the problem, as you define it: some developer somewhere adds CSS to your codebase that has unintended consequences. By packaging in a reusable component, you’ve isolated the problem.&lt;/p&gt;
+
+&lt;p&gt;But in reality, all you’ve done is moved the API. You still need the developer to use your component. Do you then wrap every native in a component, like links and inputs? If you make a &amp;lt;Button&amp;gt;, what’s to say some dev isn’t going to forget it’s there and use a native &amp;lt;button&amp;gt;? What if they need/want something slightly different, do you keep adding more and more options to the component? These can be answered, but these are all the same decisions you would make in CSS land.&lt;/p&gt;
+
+&lt;p&gt;It’s a lot of overhead, and I don’t see the gain. What I do see is permission implicitly granted for devs who don’t understand CSS—and by that I mean things like positioning and layout and margin collapsing—to start writing CSS willy nilly.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://keithjgrant.com/replies/2017/04/62981/</link>
+      <pubDate>Tue, 11 Apr 2017 17:29:41 +0000</pubDate>
+      
+      <guid>https://keithjgrant.com/replies/2017/04/62981/</guid>
+      <description>&lt;p&gt;I feel like a guy yelling, “don’t drive on the sidewalk because people should be able to walk there” and your response is “nobody walks on the sidewalk because everybody drives there.”&lt;/p&gt;
+
+&lt;p&gt;Anyway, the larger point is: driving on the road is &lt;em&gt;better.&lt;/em&gt; And I would argue using relative units is better in many cases. Why? Because the code maintenance is easier. True, using px requires less thought up front. But if you use relative units, you can define systems that work together better as a whole.&lt;/p&gt;
+
+&lt;p&gt;You can change a few inputs and have the entire system respond. You can define things in terms of your fonts, because your fonts are an integral part of the design. With pixels, small changes in the future can require code changes all over your code to adapt to that change. With units, done right, one small change can update the entire system accordingly.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://keithjgrant.com/posts/2017/04/dont-qwop-your-css/&#34;&gt;http://keithjgrant.com/posts/2017/04/dont-qwop-your-css/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://keithjgrant.com/replies/2017/04/52869/</link>
+      <pubDate>Fri, 07 Apr 2017 14:41:09 +0000</pubDate>
+      
+      <guid>https://keithjgrant.com/replies/2017/04/52869/</guid>
+      <description>&lt;p&gt;Great talk! I think more devs need to think of their CSS as a function of design principles 👍&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://keithjgrant.com/replies/2017/04/74396/</link>
+      <pubDate>Thu, 06 Apr 2017 20:39:56 +0000</pubDate>
+      
+      <guid>https://keithjgrant.com/replies/2017/04/74396/</guid>
+      <description>&lt;p&gt;now that’s just cool&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://keithjgrant.com/replies/2017/04/1367/</link>
+      <pubDate>Thu, 06 Apr 2017 00:22:47 +0000</pubDate>
+      
+      <guid>https://keithjgrant.com/replies/2017/04/1367/</guid>
+      <description>&lt;p&gt;Looks like I’ll have some more tooling to integrate into it from my indieweb site&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://keithjgrant.com/replies/2017/04/359/</link>
+      <pubDate>Thu, 06 Apr 2017 00:05:59 +0000</pubDate>
+      
+      <guid>https://keithjgrant.com/replies/2017/04/359/</guid>
+      <description>&lt;p&gt;I’d love to hear the takeaways from that&lt;/p&gt;
 </description>
     </item>
     

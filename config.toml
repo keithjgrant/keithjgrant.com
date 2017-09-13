@@ -1,4 +1,4 @@
-baseUrl = "http://keithjgrant.com"
+baseUrl = "https://keithjgrant.com"
 languageCode = "en-us"
 paginate = 20
 theme = "fury"

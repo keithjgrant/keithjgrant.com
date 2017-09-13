@@ -2,162 +2,843 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://keithjgrant.com/notes/2017/02/65298/</loc>
+    <loc>https://keithjgrant.com/posts/2017/09/code-not-clojure/</loc>
+    <lastmod>2017-09-08T11:25:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/09/71404/</loc>
+    <lastmod>2017-09-06T19:50:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/09/52680/</loc>
+    <lastmod>2017-09-01T14:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/08/72390/</loc>
+    <lastmod>2017-08-31T20:06:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/08/52472/</loc>
+    <lastmod>2017-08-31T14:34:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/08/68549/</loc>
+    <lastmod>2017-08-30T19:02:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/08/51877/</loc>
+    <lastmod>2017-08-30T14:24:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/08/59260/</loc>
+    <lastmod>2017-08-29T16:27:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/08/45599/</loc>
+    <lastmod>2017-08-28T12:39:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/08/51607/</loc>
+    <lastmod>2017-08-18T14:20:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/08/65435/</loc>
+    <lastmod>2017-08-15T18:10:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/08/71775/</loc>
+    <lastmod>2017-08-11T19:56:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/08/54296/</loc>
+    <lastmod>2017-08-11T15:04:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/08/50907/</loc>
+    <lastmod>2017-08-11T14:08:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/08/49164/</loc>
+    <lastmod>2017-08-11T13:39:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/08/61283/</loc>
+    <lastmod>2017-08-10T17:01:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/08/55193/</loc>
+    <lastmod>2017-08-10T15:19:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/08/45208/</loc>
+    <lastmod>2017-08-10T12:33:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/08/51858/</loc>
+    <lastmod>2017-08-07T14:24:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/08/53242/</loc>
+    <lastmod>2017-08-01T14:47:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/07/61482/</loc>
+    <lastmod>2017-07-27T17:04:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/07/64290/</loc>
+    <lastmod>2017-07-20T17:51:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/07/52136/</loc>
+    <lastmod>2017-07-19T14:28:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/07/62318/</loc>
+    <lastmod>2017-07-18T17:18:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/07/47567/</loc>
+    <lastmod>2017-07-18T13:12:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/07/62250/</loc>
+    <lastmod>2017-07-17T17:17:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/07/48520/</loc>
+    <lastmod>2017-07-13T13:28:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/07/67387/</loc>
+    <lastmod>2017-07-11T18:43:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/07/65455/</loc>
+    <lastmod>2017-07-11T18:10:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/posts/2017/07/transitioning-gradients/</loc>
+    <lastmod>2017-07-05T13:33:51-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/06/53297/</loc>
+    <lastmod>2017-06-30T14:48:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/06/56279/</loc>
+    <lastmod>2017-06-28T15:37:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/06/56272/</loc>
+    <lastmod>2017-06-28T15:37:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/06/56261/</loc>
+    <lastmod>2017-06-28T15:37:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/06/56254/</loc>
+    <lastmod>2017-06-28T15:37:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/06/60952/</loc>
+    <lastmod>2017-06-23T16:55:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/06/51798/</loc>
+    <lastmod>2017-06-16T14:23:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/06/63862/</loc>
+    <lastmod>2017-06-15T17:44:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/06/47569/</loc>
+    <lastmod>2017-06-13T13:12:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/posts/2017/06/self-documenting-css/</loc>
+    <lastmod>2017-06-09T13:34:24-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/06/51160/</loc>
+    <lastmod>2017-06-09T14:12:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/06/65976/</loc>
+    <lastmod>2017-06-07T18:19:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/06/72962/</loc>
+    <lastmod>2017-06-01T20:16:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/05/58112/</loc>
+    <lastmod>2017-05-30T16:08:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/05/57946/</loc>
+    <lastmod>2017-05-30T16:05:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/05/47656/</loc>
+    <lastmod>2017-05-25T13:14:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/05/48227/</loc>
+    <lastmod>2017-05-12T13:23:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/posts/2017/05/memorizing-alignment-properties/</loc>
+    <lastmod>2017-05-05T09:44:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/05/64584/</loc>
+    <lastmod>2017-05-01T17:56:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/05/52909/</loc>
+    <lastmod>2017-05-01T14:41:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/04/55095/</loc>
+    <lastmod>2017-04-20T15:18:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/04/64656/</loc>
+    <lastmod>2017-04-19T17:57:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/04/48047/</loc>
+    <lastmod>2017-04-18T13:20:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/04/55658/</loc>
+    <lastmod>2017-04-17T15:27:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/04/62031/</loc>
+    <lastmod>2017-04-14T17:13:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/04/52158/</loc>
+    <lastmod>2017-04-14T14:29:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/04/52662/</loc>
+    <lastmod>2017-04-13T14:37:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/04/67695/</loc>
+    <lastmod>2017-04-12T18:48:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/posts/2017/04/grid-v-tables/</loc>
+    <lastmod>2017-04-12T11:52:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/04/53542/</loc>
+    <lastmod>2017-04-12T14:52:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/04/51720/</loc>
+    <lastmod>2017-04-12T14:22:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/04/62981/</loc>
+    <lastmod>2017-04-11T17:29:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/04/45005/</loc>
+    <lastmod>2017-04-11T12:30:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/posts/2017/04/dont-qwop-your-css/</loc>
+    <lastmod>2017-04-07T15:45:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/04/52869/</loc>
+    <lastmod>2017-04-07T14:41:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/04/50250/</loc>
+    <lastmod>2017-04-07T13:57:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/04/74396/</loc>
+    <lastmod>2017-04-06T20:39:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/04/6806/</loc>
+    <lastmod>2017-04-06T01:53:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/04/1367/</loc>
+    <lastmod>2017-04-06T00:22:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/04/1160/</loc>
+    <lastmod>2017-04-06T00:19:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/04/359/</loc>
+    <lastmod>2017-04-06T00:05:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/04/55573/</loc>
+    <lastmod>2017-04-03T15:26:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/04/51383/</loc>
+    <lastmod>2017-04-03T14:16:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/04/51200/</loc>
+    <lastmod>2017-04-03T14:13:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/04/48500/</loc>
+    <lastmod>2017-04-03T13:28:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/04/47049/</loc>
+    <lastmod>2017-04-03T13:04:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/04/46108/</loc>
+    <lastmod>2017-04-03T12:48:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/03/56394/</loc>
+    <lastmod>2017-03-31T15:39:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/03/55642/</loc>
+    <lastmod>2017-03-31T15:27:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/7485/</loc>
+    <lastmod>2017-03-31T02:04:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/03/7116/</loc>
+    <lastmod>2017-03-31T01:58:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/54156/</loc>
+    <lastmod>2017-03-30T15:02:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/03/53506/</loc>
+    <lastmod>2017-03-30T14:51:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/53329/</loc>
+    <lastmod>2017-03-30T14:48:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/03/53169/</loc>
+    <lastmod>2017-03-30T14:46:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/03/52907/</loc>
+    <lastmod>2017-03-30T14:41:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/03/52759/</loc>
+    <lastmod>2017-03-30T14:39:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/03/51992/</loc>
+    <lastmod>2017-03-30T14:26:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/46417/</loc>
+    <lastmod>2017-03-30T12:53:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/70522/</loc>
+    <lastmod>2017-03-29T19:35:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/03/65012/</loc>
+    <lastmod>2017-03-29T18:03:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/03/63999/</loc>
+    <lastmod>2017-03-29T17:46:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/60144/</loc>
+    <lastmod>2017-03-29T16:42:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/03/61587/</loc>
+    <lastmod>2017-03-28T17:06:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/61233/</loc>
+    <lastmod>2017-03-28T17:00:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/49514/</loc>
+    <lastmod>2017-03-28T13:45:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/48093/</loc>
+    <lastmod>2017-03-27T13:21:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/posts/2017/03/css-is-not-broken/</loc>
+    <lastmod>2017-03-24T14:15:34-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/03/73954/</loc>
+    <lastmod>2017-03-20T20:32:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/73775/</loc>
+    <lastmod>2017-03-20T20:29:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/posts/2017/03/more-thoughts-on-css-in-js/</loc>
+    <lastmod>2017-03-20T15:07:49-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/65329/</loc>
+    <lastmod>2017-03-20T18:08:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/03/48158/</loc>
+    <lastmod>2017-03-17T13:22:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/posts/2017/03/aspect-ratios/</loc>
+    <lastmod>2017-03-14T10:12:43-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/45532/</loc>
+    <lastmod>2017-03-14T12:38:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/03/68059/</loc>
+    <lastmod>2017-03-13T18:54:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/03/66211/</loc>
+    <lastmod>2017-03-13T18:23:31+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/03/65135/</loc>
+    <lastmod>2017-03-10T18:05:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/59289/</loc>
+    <lastmod>2017-03-10T16:28:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/51424/</loc>
+    <lastmod>2017-03-10T14:17:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/63434/</loc>
+    <lastmod>2017-03-09T17:37:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/53238/</loc>
+    <lastmod>2017-03-09T14:47:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/50504/</loc>
+    <lastmod>2017-03-09T14:01:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/03/71694/</loc>
+    <lastmod>2017-03-08T19:54:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/52042/</loc>
+    <lastmod>2017-03-08T14:27:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/03/77585/</loc>
+    <lastmod>2017-03-07T21:33:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/03/53802/</loc>
+    <lastmod>2017-03-07T14:56:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/03/73047/</loc>
+    <lastmod>2017-03-06T20:17:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/64435/</loc>
+    <lastmod>2017-03-06T17:53:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/social/</loc>
+    <lastmod>2017-03-06T10:49:18-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/03/71143/</loc>
+    <lastmod>2017-03-03T19:45:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/03/57387/</loc>
+    <lastmod>2017-03-03T15:56:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/03/73187/</loc>
+    <lastmod>2017-03-02T20:19:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/69327/</loc>
+    <lastmod>2017-03-02T19:15:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/03/77014/</loc>
+    <lastmod>2017-03-01T21:23:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/03/71084/</loc>
+    <lastmod>2017-03-01T19:44:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/03/70085/</loc>
+    <lastmod>2017-03-01T19:28:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/replies/2017/03/66842/</loc>
+    <lastmod>2017-03-01T18:34:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/02/55002/</loc>
+    <lastmod>2017-02-16T15:16:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/02/65242/</loc>
+    <lastmod>2017-02-15T18:07:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/likes/2017/02/56933/</loc>
+    <lastmod>2017-02-15T15:48:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/02/49315/</loc>
+    <lastmod>2017-02-15T13:41:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/02/86308/</loc>
+    <lastmod>2017-02-14T23:58:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/02/74634/</loc>
+    <lastmod>2017-02-14T20:43:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/notes/2017/02/65298/</loc>
     <lastmod>2017-02-13T18:08:18+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/replies/2017/02/54138/</loc>
+    <loc>https://keithjgrant.com/replies/2017/02/54138/</loc>
     <lastmod>2017-02-13T15:02:18+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/likes/2017/02/54029/</loc>
+    <loc>https://keithjgrant.com/likes/2017/02/54029/</loc>
     <lastmod>2017-02-13T15:00:29+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/replies/2017/02/142656/</loc>
-    <lastmod>2017-02-10T14:26:56-05:00</lastmod>
+    <loc>https://keithjgrant.com/replies/2017/02/142656/</loc>
+    <lastmod>2017-02-10T19:26:56+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/notes/2017/02/91624/</loc>
+    <loc>https://keithjgrant.com/notes/2017/02/91624/</loc>
     <lastmod>2017-02-09T09:16:25-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/notes/2017/02/84236/</loc>
+    <loc>https://keithjgrant.com/notes/2017/02/84236/</loc>
     <lastmod>2017-02-09T08:42:36-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/notes/2017/02/105953/</loc>
+    <loc>https://keithjgrant.com/notes/2017/02/105953/</loc>
     <lastmod>2017-02-03T10:59:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/notes/2017/01/145158/</loc>
+    <loc>https://keithjgrant.com/notes/2017/01/145158/</loc>
     <lastmod>2017-01-27T14:51:58-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/posts/2017/01/its-both/</loc>
+    <loc>https://keithjgrant.com/posts/2017/01/its-both/</loc>
     <lastmod>2017-01-27T08:54:57-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/replies/2017/01/102240/</loc>
-    <lastmod>2017-01-25T10:22:40-05:00</lastmod>
+    <loc>https://keithjgrant.com/replies/2017/01/102240/</loc>
+    <lastmod>2017-01-25T15:22:40+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/posts/2017/01/hello-indieweb/</loc>
+    <loc>https://keithjgrant.com/posts/2017/01/hello-indieweb/</loc>
     <lastmod>2017-01-23T15:34:37-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/posts/2016/12/separation-of-concerns/</loc>
+    <loc>https://keithjgrant.com/posts/2016/12/separation-of-concerns/</loc>
     <lastmod>2016-12-23T00:00:00-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/posts/2016/10/your-team-needs-a-ux-engineer/</loc>
+    <loc>https://keithjgrant.com/posts/2016/10/your-team-needs-a-ux-engineer/</loc>
     <lastmod>2016-10-02T00:00:00-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/posts/2016/08/css-in-depth/</loc>
+    <loc>https://keithjgrant.com/posts/2016/08/css-in-depth/</loc>
     <lastmod>2016-08-24T00:00:00-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/posts/2016/06/save-scoped-css/</loc>
+    <loc>https://keithjgrant.com/posts/2016/06/save-scoped-css/</loc>
     <lastmod>2016-06-09T00:00:00-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/posts/2016/02/a-quest-for-interchangeable-parts/</loc>
+    <loc>https://keithjgrant.com/posts/2016/02/a-quest-for-interchangeable-parts/</loc>
     <lastmod>2016-02-06T00:00:00-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/posts/2016/01/width-and-absolute-positioning/</loc>
+    <loc>https://keithjgrant.com/posts/2016/01/width-and-absolute-positioning/</loc>
     <lastmod>2016-01-30T00:00:00-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/posts/2016/01/simply-white/</loc>
+    <loc>https://keithjgrant.com/posts/2016/01/simply-white/</loc>
     <lastmod>2016-01-27T00:00:00-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/posts/2015/08/css-first/</loc>
+    <loc>https://keithjgrant.com/posts/2015/08/css-first/</loc>
     <lastmod>2015-08-01T10:00:00-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/posts/2015/05/into-the-future-of-css/</loc>
+    <loc>https://keithjgrant.com/posts/2015/05/into-the-future-of-css/</loc>
     <lastmod>2015-05-30T00:00:00-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/posts/2015/05/against-css-in-js/</loc>
+    <loc>https://keithjgrant.com/posts/2015/05/against-css-in-js/</loc>
     <lastmod>2015-05-29T00:00:00-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/posts/2015/05/hosting-on-github/</loc>
+    <loc>https://keithjgrant.com/posts/2015/05/hosting-on-github/</loc>
     <lastmod>2015-05-16T16:26:32-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/posts/2015/04/taming-css/</loc>
+    <loc>https://keithjgrant.com/posts/2015/04/taming-css/</loc>
     <lastmod>2015-04-29T16:26:32-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/about/</loc>
+    <loc>https://keithjgrant.com/about/</loc>
     <lastmod>2015-01-22T21:49:18-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/</loc>
-    <lastmod>2017-02-13T18:08:18+00:00</lastmod>
+    <loc>https://keithjgrant.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/likes/</loc>
-    <lastmod>2017-02-13T15:00:29+00:00</lastmod>
+    <loc>https://keithjgrant.com/categories/css/</loc>
+    <lastmod>2017-09-08T11:25:10-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/notes/</loc>
-    <lastmod>2017-02-13T18:08:18+00:00</lastmod>
+    <loc>https://keithjgrant.com/</loc>
+    <lastmod>2017-09-08T11:25:10-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/posts/</loc>
-    <lastmod>2017-01-27T08:54:57-05:00</lastmod>
+    <loc>https://keithjgrant.com/likes/</loc>
+    <lastmod>2017-08-31T14:34:32+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/replies/</loc>
-    <lastmod>2017-02-13T15:02:18+00:00</lastmod>
+    <loc>https://keithjgrant.com/notes/</loc>
+    <lastmod>2017-09-06T19:50:04+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/talks/</loc>
+    <loc>https://keithjgrant.com/posts/</loc>
+    <lastmod>2017-09-08T11:25:10-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://keithjgrant.com/talks/all/</loc>
+    <loc>https://keithjgrant.com/replies/</loc>
+    <lastmod>2017-08-11T13:39:24+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/talks/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://keithjgrant.com/talks/all/</loc>
   </url>
   
 </urlset>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    
+    <title>Social on Keith J. Grant</title>
+    
+    <link>https://keithjgrant.com/social/index.xml</link>
+    <description>Recent content in Social on Keith J. Grant</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Mar 2017 10:49:18 -0500</lastBuildDate>
+    <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
+    <link rel="self" href="https://keithjgrant.com/social/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    
+  </channel>
+</rss>

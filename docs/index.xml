@@ -4,143 +4,124 @@
     
     <title>Keith J. Grant</title>
     
-    <link>http://keithjgrant.com/index.xml</link>
+    <link>https://keithjgrant.com/index.xml</link>
     <description>Recent content in Keith J. Grant on Keith J. Grant</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Feb 2017 18:08:18 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Sep 2017 11:25:10 -0400</lastBuildDate>
     <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
-    <link rel="self" href="http://keithjgrant.com/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    <link rel="self" href="https://keithjgrant.com/index.xml" xmlns="http://www.w3.org/2005/Atom" />
     
     <item>
-      <title></title>
-      <link>http://keithjgrant.com/notes/2017/02/65298/</link>
-      <pubDate>Mon, 13 Feb 2017 18:08:18 +0000</pubDate>
+      <title>Code, Not Clojure</title>
+      <link>https://keithjgrant.com/posts/2017/09/code-not-clojure/</link>
+      <pubDate>Fri, 08 Sep 2017 11:25:10 -0400</pubDate>
       
-      <guid>http://keithjgrant.com/notes/2017/02/65298/</guid>
-      <description>&lt;p&gt;This was a solid episode. I learned a few things about AMP. I’m&amp;hellip; slightly less hostile to it now&lt;/p&gt;
+      <guid>https://keithjgrant.com/posts/2017/09/code-not-clojure/</guid>
+      <description>&lt;p&gt;I’m going to make two declarations that might sound contradictory:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://shoptalkshow.com/episodes/248-amp/&#34;&gt;http://shoptalkshow.com/episodes/248-amp/&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;CSS is code.&lt;/li&gt;
+&lt;li&gt;CSS is not a programming language.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Many developers get these backwards.&lt;/p&gt;
+
+&lt;p&gt;It is code in that it requires discipline and rigor. It requires forethought, planning, and both big-picture and small-picture thinking. You need to consider edge cases and strive to keep your CSS logically organized.&lt;/p&gt;
+
+&lt;p&gt;At the same time, it is not a programming language. It is not executed in a linear fashion. Many of the rules of software architecture do not (and should not) cleanly apply. It is meant to be global, a cross-cutting concern that uniformly addresses various circumstances wherever they appear on the page.&lt;/p&gt;
+
+&lt;p&gt;Too many developers try to force it into the mental model of a programming language, missing out on many of its most powerful features like the cascade and inheritance. And yet these same developers treat their CSS as an afterthought, throwing rules haphazardly onto the end of a stylesheet with little consideration for the selectors they use.&lt;/p&gt;
+
+&lt;p&gt;If you find yourself doing this, reverse your thinking. Don’t expect CSS to be a programming language, but do treat it like code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title></title>
-      <link>http://keithjgrant.com/replies/2017/02/54138/</link>
-      <pubDate>Mon, 13 Feb 2017 15:02:18 +0000</pubDate>
+      <link>https://keithjgrant.com/notes/2017/09/71404/</link>
+      <pubDate>Wed, 06 Sep 2017 19:50:04 +0000</pubDate>
       
-      <guid>http://keithjgrant.com/replies/2017/02/54138/</guid>
-      <description>&lt;p&gt;Yeah, I&amp;#39;ve switched back and forth b/t light and dark a few times over the years. Takes a day or so to get accustomed&lt;/p&gt;
+      <guid>https://keithjgrant.com/notes/2017/09/71404/</guid>
+      <description>&lt;p&gt;Universities: Let’s create WWW using HTML so information readily available&lt;/p&gt;
+
+&lt;p&gt;Also universities: Let’s make research papers available only as PDFs&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title></title>
-      <link>http://keithjgrant.com/likes/2017/02/54029/</link>
-      <pubDate>Mon, 13 Feb 2017 15:00:29 +0000</pubDate>
+      <link>https://keithjgrant.com/notes/2017/09/52680/</link>
+      <pubDate>Fri, 01 Sep 2017 14:38:00 +0000</pubDate>
       
-      <guid>http://keithjgrant.com/likes/2017/02/54029/</guid>
+      <guid>https://keithjgrant.com/notes/2017/09/52680/</guid>
+      <description>&lt;p&gt;I believe 100% in “Clean Code” and also believe repetition is much better than the wrong abstraction. Why do I keep seeing folks arguing between the two as if they somehow contradict?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://keithjgrant.com/notes/2017/08/72390/</link>
+      <pubDate>Thu, 31 Aug 2017 20:06:30 +0000</pubDate>
+      
+      <guid>https://keithjgrant.com/notes/2017/08/72390/</guid>
+      <description>&lt;p&gt;I’m reversing my previous position: Twitter should drop the 140 char limit.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://keithjgrant.com/likes/2017/08/52472/</link>
+      <pubDate>Thu, 31 Aug 2017 14:34:32 +0000</pubDate>
+      
+      <guid>https://keithjgrant.com/likes/2017/08/52472/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Test reply</title>
-      <link>http://keithjgrant.com/replies/2017/02/142656/</link>
-      <pubDate>Fri, 10 Feb 2017 14:26:56 -0500</pubDate>
+      <title></title>
+      <link>https://keithjgrant.com/notes/2017/08/68549/</link>
+      <pubDate>Wed, 30 Aug 2017 19:02:29 +0000</pubDate>
       
-      <guid>http://keithjgrant.com/replies/2017/02/142656/</guid>
-      <description>&lt;p&gt;Nice site&lt;/p&gt;
+      <guid>https://keithjgrant.com/notes/2017/08/68549/</guid>
+      <description>&lt;p&gt;Test post from Omnibear in Firefox!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title></title>
-      <link>http://keithjgrant.com/notes/2017/02/91624/</link>
-      <pubDate>Thu, 09 Feb 2017 09:16:25 -0500</pubDate>
+      <link>https://keithjgrant.com/notes/2017/08/51877/</link>
+      <pubDate>Wed, 30 Aug 2017 14:24:37 +0000</pubDate>
       
-      <guid>http://keithjgrant.com/notes/2017/02/91624/</guid>
-      <description>&lt;p&gt;Would it be totally annoying if my tweets linked back to my blog? It probably would, wouldn&amp;rsquo;t it?&lt;/p&gt;
-</description>
+      <guid>https://keithjgrant.com/notes/2017/08/51877/</guid>
+      <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://keithjgrant.com/notes/2017/02/84236/</link>
-      <pubDate>Thu, 09 Feb 2017 08:42:36 -0500</pubDate>
+      <link>https://keithjgrant.com/likes/2017/08/59260/</link>
+      <pubDate>Tue, 29 Aug 2017 16:27:40 +0000</pubDate>
       
-      <guid>http://keithjgrant.com/notes/2017/02/84236/</guid>
-      <description>&lt;p&gt;Current status &lt;a href=&#34;https://www.youtube.com/watch?v=g0MLscghcN4&#34;&gt;https://www.youtube.com/watch?v=g0MLscghcN4&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>https://keithjgrant.com/likes/2017/08/59260/</guid>
+      <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://keithjgrant.com/notes/2017/02/105953/</link>
-      <pubDate>Fri, 03 Feb 2017 10:59:54 -0500</pubDate>
+      <link>https://keithjgrant.com/likes/2017/08/45599/</link>
+      <pubDate>Mon, 28 Aug 2017 12:39:59 +0000</pubDate>
       
-      <guid>http://keithjgrant.com/notes/2017/02/105953/</guid>
-      <description>&lt;p&gt;Are there any codemods to convert LESS to PostCSS/cssnext syntax? Doesn&amp;rsquo;t need to be too fancy, just cut down on the busywork.&lt;/p&gt;
-</description>
+      <guid>https://keithjgrant.com/likes/2017/08/45599/</guid>
+      <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://keithjgrant.com/notes/2017/01/145158/</link>
-      <pubDate>Fri, 27 Jan 2017 14:51:58 -0500</pubDate>
+      <link>https://keithjgrant.com/likes/2017/08/51607/</link>
+      <pubDate>Fri, 18 Aug 2017 14:20:07 +0000</pubDate>
       
-      <guid>http://keithjgrant.com/notes/2017/01/145158/</guid>
-      <description>&lt;p&gt;Progressive enhancement and rule of least power MATTER &lt;a href=&#34;https://twitter.com/ArielleDRoss/status/825043489016705024&#34;&gt;https://twitter.com/ArielleDRoss/status/825043489016705024&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>It’s Both</title>
-      <link>http://keithjgrant.com/posts/2017/01/its-both/</link>
-      <pubDate>Fri, 27 Jan 2017 08:54:57 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2017/01/its-both/</guid>
-      <description>
-
-&lt;p&gt;I’m a JavaScript developer. I have experience working in large web applications and dealing with the problems that come from scaling up. I studied Computer Science in college and love solving problems of software architecture.&lt;/p&gt;
-
-&lt;p&gt;I’m also (in case you &lt;a href=&#34;https://www.manning.com/books/css-in-depth&#34;&gt;somehow missed it&lt;/a&gt;) a “CSS Guy”. I learned CSS during its infancy in the mid-nineties and have worked to stay up to speed ever since.&lt;/p&gt;
-
-&lt;p&gt;When I look out at the industry today, it kind of feels &lt;a href=&#34;https://medium.com/javascript-scene/jsx-looks-like-an-abomination-1c1ec351a918#1e2d&#34;&gt;like&lt;/a&gt; &lt;a href=&#34;http://mrmrs.io/writing/2016/03/24/scalable-css/&#34;&gt;watching&lt;/a&gt; &lt;a href=&#34;http://www.zeldman.com/2017/01/03/kiss-my-classname/&#34;&gt;parents&lt;/a&gt; &lt;a href=&#34;https://twitter.com/thejameskyle/status/824795012680421376&#34;&gt;fight&lt;/a&gt;. And I’ll admit it, I’ve &lt;a href=&#34;http://keithjgrant.com/posts/2015/05/against-css-in-js/&#34;&gt;contributed to the problem&lt;/a&gt;. But the more I watch this unfold, the more I feel like we have two camps, talking right past one another, and no meeting in the middle. Both are missing the points the other is trying to make. So I’m shifting my stance:&lt;/p&gt;
-
-&lt;h2 id=&#34;we-re-both-right&#34;&gt;We’re both right&lt;/h2&gt;
-
-&lt;p&gt;Writing SPAs is complicated business. The page isn’t just a static document you can slap some styles on and call it a day. What if you need to load content dynamically, and it results in unpredictable source order of your CSS? How do you know if styles for deeply-nested dependencies are already loaded? How do you know when you can delete code?&lt;/p&gt;
-
-&lt;p&gt;These are hard problems. You can’t answer them by simply saying “learn CSS”. I personally may not like CSS-in-JS or inline styles, but I do realize they are important experiments. They are quests for answers to these issues. I don’t think they are the ultimate solution. That’s okay. Maybe they will get us to it.&lt;/p&gt;
-
-&lt;p&gt;On the other hand, we have whole teams of developers who fundamentally don’t grok CSS. They code up their JavaScript components, then stick the styles they want into the project stylesheet. These may be great developers when it comes to traditional programming languages, but they get really frustrated with layout problems or specificity battles. Compound this with “too many cooks in the kitchen” and you have a real mess.&lt;/p&gt;
-
-&lt;p&gt;We have sixty-plus years of industry experience about architecting code in traditional programming languages, but we’ve struggled to apply this stuff to CSS. Only in the last seven years or so have we started to figure out best practices for the language, and we are not doing a great job of disseminating them. When we teach that BEM is a “naming convention” rather emphasize it is a way to architect systems with modular code, thousands of developers miss the point entirely. This only drives them further away because the so-called “best practices” don’t work when they aren’t actually followed.&lt;/p&gt;
-
-&lt;p&gt;They don’t understand that BEM is about architecture, not simply namespacing. They don’t see the value of using a pattern library, of centralizing your CSS and imposing order on who controls the CSS rather than treating it like a garbage pile where any random dev can just add haphazard code.&lt;/p&gt;
-
-&lt;p&gt;When JavaScript-centric developers hear, “putting your CSS in JavaScript makes it easier” they clamor to get on board. But this must be made absolutely clear: you still need to understand CSS. If you don’t know what a block formatting context is, CSS in JS will not fix your layout issues. If you don’t understand stacking contexts, you will continue to struggle with futile z-index battles. If you don’t learn custom properties or the difference between cascade and inheritance or margin collapsing, these experiments will not really solve the fundamental problem: most teams don’t know how to develop with CSS.&lt;/p&gt;
-
-&lt;h2 id=&#34;always-bet-on-del-javascript-del-the-open-web&#34;&gt;Always bet on &lt;del&gt;JavaScript&lt;/del&gt; the Open Web&lt;/h2&gt;
-
-&lt;p&gt;So, yes. Hire engineers who know how to deal with system architecture. But also &lt;a href=&#34;http://keithjgrant.com/posts/2016/10/your-team-needs-a-ux-engineer/&#34;&gt;hire someone exclusively for their CSS skills&lt;/a&gt;. Put smart people on your team from both camps. Let them work together to solve these problems. Because your problems are unique and your solutions might not look like someone else’s.&lt;/p&gt;
-
-&lt;p&gt;I can say with confidence that CSS in JS will pass. In our industry, something new always comes along. The saying is, “Always bet on JavaScript” &amp;mdash; but this isn’t quite right. When it’s JavaScript vs Java or Ruby, yes, bet on JS. JavaScript wins not because it is inherently better; it wins because it is part of the open web platform.&lt;/p&gt;
-
-&lt;p&gt;The open web platform always wins. And CSS is part of that platform. It’s not CSS versus JS. It’s CSS &lt;em&gt;plus&lt;/em&gt; JS. The platform will evolve. And the platform will win.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://keithjgrant.com/replies/2017/01/102240/</link>
-      <pubDate>Wed, 25 Jan 2017 10:22:40 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/replies/2017/01/102240/</guid>
-      <description>&lt;p&gt;I definitely avoid using the microformat classes as hooks for CSS. That can lock you into HTML structures that you might need to change later on. Honestly, I’d prefer if microformats used a different attribute altogether, but I think that ship has sailed.&lt;/p&gt;
-
-&lt;p&gt;I haven’t mentioned anything about microformats in my book, though I could certainly point out this principle in more general terms &amp;mdash; try not to use the same classes as hooks for both JS and CSS, for instance (unless the two are inextricably linked to the same component).&lt;/p&gt;
-</description>
+      <guid>https://keithjgrant.com/likes/2017/08/51607/</guid>
+      <description></description>
     </item>
     
   </channel>

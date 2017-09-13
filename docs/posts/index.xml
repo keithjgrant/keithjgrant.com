@@ -4,27 +4,646 @@
     
     <title>Posts on Keith J. Grant</title>
     
-    <link>http://keithjgrant.com/posts/index.xml</link>
+    <link>https://keithjgrant.com/posts/index.xml</link>
     <description>Recent content in Posts on Keith J. Grant</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Jan 2017 08:54:57 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 08 Sep 2017 11:25:10 -0400</lastBuildDate>
     <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
-    <link rel="self" href="http://keithjgrant.com/posts/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    <link rel="self" href="https://keithjgrant.com/posts/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    
+    <item>
+      <title>Code, Not Clojure</title>
+      <link>https://keithjgrant.com/posts/2017/09/code-not-clojure/</link>
+      <pubDate>Fri, 08 Sep 2017 11:25:10 -0400</pubDate>
+      
+      <guid>https://keithjgrant.com/posts/2017/09/code-not-clojure/</guid>
+      <description>&lt;p&gt;I’m going to make two declarations that might sound contradictory:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;CSS is code.&lt;/li&gt;
+&lt;li&gt;CSS is not a programming language.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Many developers get these backwards.&lt;/p&gt;
+
+&lt;p&gt;It is code in that it requires discipline and rigor. It requires forethought, planning, and both big-picture and small-picture thinking. You need to consider edge cases and strive to keep your CSS logically organized.&lt;/p&gt;
+
+&lt;p&gt;At the same time, it is not a programming language. It is not executed in a linear fashion. Many of the rules of software architecture do not (and should not) cleanly apply. It is meant to be global, a cross-cutting concern that uniformly addresses various circumstances wherever they appear on the page.&lt;/p&gt;
+
+&lt;p&gt;Too many developers try to force it into the mental model of a programming language, missing out on many of its most powerful features like the cascade and inheritance. And yet these same developers treat their CSS as an afterthought, throwing rules haphazardly onto the end of a stylesheet with little consideration for the selectors they use.&lt;/p&gt;
+
+&lt;p&gt;If you find yourself doing this, reverse your thinking. Don’t expect CSS to be a programming language, but do treat it like code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Transitioning Gradients</title>
+      <link>https://keithjgrant.com/posts/2017/07/transitioning-gradients/</link>
+      <pubDate>Wed, 05 Jul 2017 13:33:51 -0400</pubDate>
+      
+      <guid>https://keithjgrant.com/posts/2017/07/transitioning-gradients/</guid>
+      <description>&lt;p&gt;In, CSS, you can’t transition a background gradient. It sure would be nice if you could:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.gradient {
+  background-image: linear-gradient(
+    to right,
+    hsl(211, 100%, 50%),
+    hsl(179, 100%, 30%)
+  );
+  transition: background-image 0.5s linear;
+}
+
+.gradient:hover {
+  background-image: linear-gradient(
+    to bottom,
+    hsl(344, 100%, 50%),
+    hsl(31, 100%, 40%)
+  );
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But, no. It jumps from one gradient to the other immediately, with no smooth transition between the two.&lt;/p&gt;
+
+&lt;p&gt;So let’s hack it! We can achieve this effect with the help of a pseudo-element and an opacity transform instead.&lt;/p&gt;
+
+&lt;p&gt;First, apply one gradient to the element. Then, position its pseudo-element to fill the element and apply the second gradient to that. To transition between the two gradients,  transition the opacity of the pseudo-element.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.gradient {
+  position: relative;
+  background-image: linear-gradient(
+    to right,
+    hsl(211, 100%, 50%),
+    hsl(179, 100%, 30%)
+  );
+  z-index: 1;
+}
+
+.gradient::before {
+  position: absolute;
+  content: &amp;quot;&amp;quot;;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to bottom,
+    hsl(344, 100%, 50%),
+    hsl(31, 100%, 40%)
+  );
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+
+.gradient:hover::before {
+  opacity: 1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The pseudo-element is initially hidden via &lt;code&gt;opacity: 0&lt;/code&gt;. On hover, that transitions to an &lt;code&gt;opacity: 1&lt;/code&gt;. This produces the illusion of the main gradient transitioning to the pseudo-element’s gradient. It also takes a little bit of &lt;code&gt;z-index&lt;/code&gt; work to ensure the pseudo-element stays positioned behind the content of the main element.&lt;/p&gt;
+
+&lt;p&gt;This takes a fair bit of code, unfortunately. But if you need this effect, this is the best (and only) way I’ve found so far to accomplish it.&lt;/p&gt;
+
+&lt;p&gt;Check out the full working example:&lt;/p&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;300&#34; data-theme-id=&#34;0&#34; data-slug-hash=&#34;OgEdgN&#34; data-default-tab=&#34;css,result&#34; data-user=&#34;keithjgrant&#34; data-embed-version=&#34;2&#34; data-pen-title=&#34;OgEdgN&#34; class=&#34;codepen&#34;&gt;See the Pen &lt;a href=&#34;https://codepen.io/keithjgrant/pen/OgEdgN/&#34;&gt;OgEdgN&lt;/a&gt; by Keith Grant (&lt;a href=&#34;https://codepen.io/keithjgrant&#34;&gt;@keithjgrant&lt;/a&gt;) on &lt;a href=&#34;https://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;https://production-assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on Self-Documenting CSS</title>
+      <link>https://keithjgrant.com/posts/2017/06/self-documenting-css/</link>
+      <pubDate>Fri, 09 Jun 2017 13:34:24 -0400</pubDate>
+      
+      <guid>https://keithjgrant.com/posts/2017/06/self-documenting-css/</guid>
+      <description>
+
+&lt;p&gt;One of the best programming books I’ve ever read is &lt;a href=&#34;https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/&#34;&gt;Clean Code&lt;/a&gt; by Robert C. Martin. If you have never read it, add it to your list.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  Every comment represents a failure to make the code self explanatory.
+  &lt;cite&gt;Robert C. Martin&lt;/cite&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In one section, Martin discusses code comments, and makes a strong argument against them. I won’t repeat all his arguments, but in short he maintains they have a tendency to fall out of date. The computer ignores them, so nothing guarantees they accurately describe what the code does. It is far better when the code itself is clear; then both the programmer and the computer are reading the same thing.&lt;/p&gt;
+
+&lt;p&gt;Consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// Check to see if the employee is eligible for full benefits
+if ((employee.flags &amp;amp; HOURLY_FLAG) &amp;amp;&amp;amp; (employee.age &amp;gt; 65)) {
+  …
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Is the comment helpful? Absolutely. But this is better:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;if (employee.isEligibleForFullBenefits()) {
+  …
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The code says what it means and does what it says. Much of the time, a comment can be improved by deleting it and encapsulating meaning in well-named functions or variables. To be clear, Martin does not say comments should &lt;em&gt;never&lt;/em&gt; be used&amp;mdash;but you should always strive to render them unnecessary. Every comment represents a failure to do so.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-about-css&#34;&gt;What about CSS?&lt;/h2&gt;
+
+&lt;p&gt;I agree with Martin regarding comments. However, this thinking raises interesting questions when it comes to a declarative language like CSS. Declarations have to follow a strict pattern. Selectors are determined by the structure of the HTML, at least in part. You have far fewer options regarding code structure. Does this mean your CSS should have comments all over the place?&lt;/p&gt;
+
+&lt;p&gt;Well… maybe. We use comments different ways for a variety of reason. Let’s look at some comments, and consider what they add (or not) to the code. I’ll start with some low-hanging fruit, then move on to the less obvious stuff.&lt;/p&gt;
+
+&lt;h2 id=&#34;bad-obvious-comments&#34;&gt;Bad: Obvious Comments&lt;/h2&gt;
+
+&lt;p&gt;In any language, obvious comments are unnecessary. The following are actual examples of comments from an earlier version of Bootstrap 3 source:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sass&#34;&gt;// Addresses
+address {…}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Yes, that does appear to be a selector for addresses.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sass&#34;&gt;// Unordered and Ordered lists
+ul,
+ol {…}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Really?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sass&#34;&gt;// Blockquotes
+blockquote {…}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;OMG. Make it stop.&lt;/p&gt;
+
+&lt;p&gt;Don’t do comments like this. Delete that crap. It’s only echoing what’s already there in the code. Thankfully, most of these have been removed in newer versions of Bootstrap.&lt;/p&gt;
+
+&lt;h2 id=&#34;bad-section-separators&#34;&gt;Bad: Section Separators&lt;/h2&gt;
+
+&lt;p&gt;One type of comment that’s mostly unique to CSS are section separators. This sort of thing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* -----------------
+ * TOOLTIPS
+ * ----------------- */
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;These things drive me nuts. Don’t get me wrong; I understand why we have them. Our stylesheets can get really long. When scrolling through a 1000 line file, you need landmarks like this to help navigate.&lt;/p&gt;
+
+&lt;p&gt;But here’s the thing: we don’t work in 1000 line files any more. If your project needs a stylesheet this large, it should be broken out into bite-sized partials and you should be using a preprocessor to piece them all together. You don’t need a big &lt;code&gt;TOOLTIPS&lt;/code&gt; at the top of the file if the file is called &lt;code&gt;tooltips.scss&lt;/code&gt;. If you feel like you need a separator comment, split the code into a new file.&lt;/p&gt;
+
+&lt;h2 id=&#34;bad-explaining-the-language&#34;&gt;Bad: Explaining the Language&lt;/h2&gt;
+
+&lt;p&gt;I’m going to pick on Bootstrap again. This is from their &lt;a href=&#34;https://github.com/twbs/bootstrap/blob/v4-dev/scss/_tooltip.scss#L11&#34;&gt;_tooltips.scss&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Allow breaking very long words so they don&#39;t overflow the tooltip&#39;s bounds
+word-wrap: break-word;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is very close to the category of “obvious comments.” This comment explains what the &lt;code&gt;word-wrap&lt;/code&gt; property does, and no more. There is another rule of code comments that says a comment should explain &lt;a href=&#34;https://blog.codinghorror.com/code-tells-you-how-comments-tell-you-why/&#34;&gt;why, not what&lt;/a&gt;. This comment breaks that rule. Delete it.&lt;/p&gt;
+
+&lt;p&gt;There might be a fuzzy bound here in CSS, however. There are hundreds of properties, and you probably don’t know them all. If you’re using something &lt;em&gt;really&lt;/em&gt; obscure, maybe a comment like this is okay. Maybe.&lt;/p&gt;
+
+&lt;h2 id=&#34;bad-explaining-the-library&#34;&gt;Bad: Explaining the Library&lt;/h2&gt;
+
+&lt;p&gt;Let’s look at another comment from the same Bootstrap file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sass&#34;&gt;// Our parent element can be arbitrary since tooltips are by default inserted as a
+// sibling of their target element. So reset our font and text properties to avoid
+// inheriting weird values.
+@include reset-text();
+font-size: $font-size-sm;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This one is interesting. It seems to pass the “why, not what” sniff test. It explains that unexpected font properties might be inherited by this module, then uses a mixin to reset the font properties.&lt;/p&gt;
+
+&lt;p&gt;But upon further reflection, it’s obvious that this is the only reason the mixin exists in the first place. In fact, a search through the codebase reveals an identical comment every place this mixin is used. At the very least, this comment belongs where the mixin is defined, not each and every place it is used. You could move the comment there and cut down the number of comments cluttering the code.&lt;/p&gt;
+
+&lt;p&gt;However, I think even that is unnecessary: the name of the mixin provides enough information. And if it doesn’t, give it a name that does. Call it &lt;code&gt;reset-inherited-font&lt;/code&gt; or something more explicit that makes clear not only what it does, but why you need it. This is a function call; you have total control over the name here. Use that to your advantage and make it say what it does in a way that renders the comment unnecessary.&lt;/p&gt;
+
+&lt;p&gt;Preprocessors are one area where CSS is most like a conventional programming language. When you have the chance, use well-named variables and mixins to make the meaning of the code obvious. This code snippet gets this right with the &lt;code&gt;$font-size-sm&lt;/code&gt; variable: you know at a glance that the font is smaller than the main font size. You can also safely infer that this is a commonly-used font size; it is the same font size as other small text throughout the codebase.&lt;/p&gt;
+
+&lt;h2 id=&#34;bad-old-comments&#34;&gt;Bad: Old Comments&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.dropdown-header {
+  …
+  white-space: nowrap; // as with &amp;gt; li &amp;gt; a
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/twbs/bootstrap/blob/620257456ed0685cae6b6ff51d2ab1e37f02a4fa/scss/_dropdown.scss#L122&#34;&gt;&amp;ldquo;as with &amp;gt; li &amp;gt; a&amp;rdquo;&lt;/a&gt;? What does that mean? My first assumption is that, elsewhere in the file, there is an &lt;code&gt;&amp;gt; li &amp;gt; a&lt;/code&gt; selector and this somehow refers to that. Maybe there’s another comment there explaining the reasoning… But scanning through the file, there is no such selector. There is another &lt;code&gt;nowrap&lt;/code&gt; under a &lt;code&gt;.dropdown-item&lt;/code&gt; selector. Maybe that’s what this refers to? Or maybe it refers to something that has since been deleted or refactored into another file? The only way to know would be to dig through the git history.&lt;/p&gt;
+
+&lt;p&gt;This is an old comment. It presumably meant something at some point in time, but the code has long-since drifted from that. This gets back to one of the main reasons Robert Martin is so hard on comments: the code changes out from underneath them and they become meaningless&amp;mdash;or worse: they lie and actively lead you in the wrong direction. When you find a comment like this, delete it. It adds nothing to the code and has in fact has wasted our time trying to make sense of it.&lt;/p&gt;
+
+&lt;h2 id=&#34;sometimes-ok-meaningful-comments&#34;&gt;Sometimes OK: Meaningful Comments&lt;/h2&gt;
+
+&lt;p&gt;Here’s another block of code with several comments:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sass&#34;&gt;.dropdown-item {
+  display: block;
+  width: 100%; // For `&amp;lt;button&amp;gt;`s
+  padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+  clear: both;
+  font-weight: $font-weight-normal;
+  color: $dropdown-link-color;
+  text-align: inherit; // For `&amp;lt;button&amp;gt;`s
+  white-space: nowrap;
+  background: none; // For `&amp;lt;button&amp;gt;`s
+  border: 0; // For `&amp;lt;button&amp;gt;`s
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;These comments are meaningful. They tell me that several of these properties are applied specifically to override &lt;code&gt;&amp;lt;button&amp;gt;&lt;/code&gt; styles. These are good comments, because that is not immediately obvious.&lt;/p&gt;
+
+&lt;p&gt;But it’s worth asking the question: is there a way to express this in the code itself? You could move those particular declarations into a second ruleset that targets buttons specifically:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sass&#34;&gt;.dropdown-item {
+  display: block;
+  padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+  clear: both;
+  font-weight: $font-weight-normal;
+  color: $dropdown-link-color;
+  white-space: nowrap;
+}
+
+button.dropdown-item {
+  width: 100%;
+  text-align: inherit;
+  background: none;
+  border: 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is very explicit and easily understood. Unfortunately, it also raises the selector specificity. That’s a side-effect that may not be acceptable.&lt;/p&gt;
+
+&lt;p&gt;Instead, I think this is a strong candidate for a mixin. Refactoring to a mixin could mean cleaning up the code in several other places as well. Consider this version:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sass&#34;&gt;.dropdown-item {
+  @include remove-button-styles;
+
+  display: block;
+  width: 100%;
+  padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+  clear: both;
+  font-weight: $font-weight-normal;
+  color: $dropdown-link-color;
+  white-space: nowrap;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It’s clear what this does without any comments, and it gives me a mixin that performs a fairly common action, so other modules elsewhere could benefit from the same change. I did keep the &lt;code&gt;width: 100%&lt;/code&gt; here rather than moving it into the mixin, because that might cause unexpected breakages if the mixin applied that elsewhere.&lt;/p&gt;
+
+&lt;p&gt;Furthermore, the original ruleset had ten declarations. That’s about as long as I like to get, before I start thinking &lt;a href=&#34;https://en.wikipedia.org/wiki/Code_smell&#34;&gt;“code smell”&lt;/a&gt;. A mixin is a great way to shorten things up. It’s easier to get an overall feel for what this ruleset does at a glance.&lt;/p&gt;
+
+&lt;p&gt;Refactoring to a mixin won’t always be a preferable option, but look for it.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-annotate-obscure-bugfixes&#34;&gt;Good: Annotate Obscure Bugfixes&lt;/h2&gt;
+
+&lt;p&gt;I’ve brought the hammer down hard on comments here. But I’m not always opposed. If you’ve ever looked at the source for &lt;a href=&#34;https://github.com/necolas/normalize.css/blob/master/normalize.css&#34;&gt;normalize.css&lt;/a&gt;, you’ll notice it’s chock-full of comments. And I’d say, most of them are &lt;em&gt;great&lt;/em&gt; comments.&lt;/p&gt;
+
+&lt;p&gt;Look at this beauty:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Without those comments, you would never know why those rules are there. When you code around a particular browser bug, it’s often something obscure and hard to remember. I am fully in support of comments like this. And if you examined this in the wrong browser, you might mistakenly think the rule is no longer needed and delete it.&lt;/p&gt;
+
+&lt;p&gt;Normalize in particular needs a lot of comments because it’s made up entirely of base styles. The selectors are all type selectors and attribute selectors. There are no classnames in sight, because they aren’t naming and styling classnames, so self-documentation is more difficult.&lt;/p&gt;
+
+&lt;p&gt;Here’s another comment from Bootstrap:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* Chrome (OSX) fix for https://github.com/twbs/bootstrap/issues/11245 */
+select {
+  background: #fff !important;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A url to an issue on Github! That’s helpful. It tells me, without even following the link, that this was a bug, and it may have been hard to track down. If I need to go read up on it, I can do so and get all the dirty details. And best of all, it hasn’t cluttered up the code with a lengthy paragraph that attempts to summarize the full issue. It gives the browser (and OS) info I need, and tells me where I can find out more. Alternately, if you use a private issue tracker like JIRA, you can put just an associated ticket number in the comment.&lt;/p&gt;
+
+&lt;p&gt;You don’t need to do this to every bug you fix. But if it’s not obvious, and especially if it’s related to a browser quirk, go for it.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-mandatory-comments&#34;&gt;Good: Mandatory Comments&lt;/h2&gt;
+
+&lt;p&gt;Some tools like &lt;a href=&#34;https://github.com/kss-node/kss-node&#34;&gt;KSS&lt;/a&gt; build a styleguide from comments in your CSS:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/*
+Alerts
+
+An alert box requires a contextual class to specify its importance.
+
+Markup:
+&amp;lt;div class=&amp;quot;alert {{modifier_class}}&amp;quot;&amp;gt;
+  Take note of this important alert message.
+&amp;lt;/div&amp;gt;
+
+alert-success   - Something good or successful
+alert-info      - Something worth noting, but not super important
+alert-warning   - Something to note, may require attention
+alert-danger    - Something important. Usually signifies an error.
+
+Styleguide Alerts
+*/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is not just a comment; it is code. It is parsed by KSS and used to generate HTML output. It is part of your documentation. And, I would say, this is better than a separate hand-build HTML file, because it is co-located in the same file and more likely to stay in sync with the code.&lt;/p&gt;
+
+&lt;p&gt;Another type of mandatory comments are licenses. When you use a third-party library with a license in a comment, you typically need to include that.&lt;/p&gt;
+
+&lt;p&gt;When I pull out &lt;a href=&#34;https://twitter.com/keithjgrant/status/867803638026035200&#34;&gt;Robert Martin quotes&lt;/a&gt; about comments, it tends to get a reaction. I don’t do it to be contrary. I do it because I believe in straightforward code that’s easy to understand quickly. If you’re littering your code with comments, be sure it’s not because you’re doing exactly the opposite.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Memorizing Alignment Properties</title>
+      <link>https://keithjgrant.com/posts/2017/05/memorizing-alignment-properties/</link>
+      <pubDate>Fri, 05 May 2017 09:44:55 -0400</pubDate>
+      
+      <guid>https://keithjgrant.com/posts/2017/05/memorizing-alignment-properties/</guid>
+      <description>
+
+&lt;p&gt;Do you often find yourself looking up a Flexbox &lt;a href=&#34;https://css-tricks.com/snippets/css/a-guide-to-flexbox/&#34;&gt;cheat sheet&lt;/a&gt;? Wish you could just commit all those properties to memory and be done with it? Here’s how I memorized them.&lt;/p&gt;
+
+&lt;h2 id=&#34;learn-flex&#34;&gt;Learn “flex”&lt;/h2&gt;
+
+&lt;p&gt;If you’ve worked with flexbox much, you might already have this one committed to memory. The &lt;code&gt;flex&lt;/code&gt; property is itself shorthand for three other properties: &lt;code&gt;flex-grow&lt;/code&gt;, &lt;code&gt;flex-shrink&lt;/code&gt;, and &lt;code&gt;flex-basis&lt;/code&gt;. But most of the time, the shorthand is all you need (and is even preferable).&lt;/p&gt;
+
+&lt;p&gt;If you’re not familiar with this shorthand yet, learn it first. Learn only it. Don’t worry about any of the rest until you get this down.&lt;/p&gt;
+
+&lt;h2 id=&#34;justify-horizontal&#34;&gt;Justify = horizontal&lt;/h2&gt;
+
+&lt;p&gt;In Microsoft Word, if you “justify” text, you control how the text is spaced out horizontally. It spaces to be flush against the left and right sides.&lt;/p&gt;
+
+&lt;p&gt;In the same way, &lt;code&gt;justify-content&lt;/code&gt; is used on a flex container to control how its flex items are spaced &lt;em&gt;horizontally&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;align-vertical&#34;&gt;Align = vertical&lt;/h2&gt;
+
+&lt;p&gt;You know there’s a &lt;code&gt;vertical-align&lt;/code&gt; property, right? Maybe it didn’t ever do what you expected it do, but you know it’s there. The same way, the &lt;code&gt;align-*&lt;/code&gt; properties control &lt;em&gt;vertical&lt;/em&gt; alignment.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;align-content&lt;/code&gt; controls how the rows of flex items align vertically within the flex container. (This generally only applies when you have flex-wrap enabled.)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;align-items&lt;/code&gt; controls how the flex items align themselves vertically within each row.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;align-self&lt;/code&gt; on a single flex item controls how that item is aligned vertically within a row, overriding its parent’s &lt;code&gt;align-items&lt;/code&gt; setting.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;one-caveat&#34;&gt;One caveat&lt;/h2&gt;
+
+&lt;p&gt;If you can remember this rule, you’ll have a lot more of flexbox ready from memory. Note that &lt;strong&gt;these swap if you change the flex direction&lt;/strong&gt; to “column” or “column reverse”. Technically speaking, &lt;code&gt;justify-content&lt;/code&gt; spaces along the main axis, and &lt;code&gt;align-*&lt;/code&gt; properties space along the cross axis. But learn the default behavior, as it is the most common scenario; and know that rotating these axes changes it.&lt;/p&gt;
+
+&lt;p&gt;As a bonus, these properties also apply to CSS Grid as well. Grid also brings in a &lt;code&gt;justify-items&lt;/code&gt; and &lt;code&gt;justify-self&lt;/code&gt; property to fill out the set. These work much like their &lt;code&gt;align-*&lt;/code&gt; counterparts, but on the horizontal plane.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>What Grid Can Do That Tables Can’t</title>
+      <link>https://keithjgrant.com/posts/2017/04/grid-v-tables/</link>
+      <pubDate>Wed, 12 Apr 2017 11:52:15 -0400</pubDate>
+      
+      <guid>https://keithjgrant.com/posts/2017/04/grid-v-tables/</guid>
+      <description>&lt;p&gt;There’s a kind of narrative out there that’s basically, “Silly CSS wonks: first they tell us tables are bad, now they give us grid.” Nevermind that this is completely ignorant of the original argument against tables for layout (tables were never bad for layout because of the way they looked on screen; they were bad because of what they did to your markup).&lt;/p&gt;
+
+&lt;p&gt;It’s true that grid looks a lot like tables at first glance. But it’s also worth noting the features grid provides that cannot be accomplished using tables. Here are just a few:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://gridbyexample.com/examples/example15/&#34;&gt;Overlapping cells&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://gridbyexample.com/examples/example12/&#34;&gt;Empty cells&lt;/a&gt;, without a bunch of empty tags&lt;/li&gt;
+&lt;li&gt;Size columns (or rows!) in &lt;a href=&#34;https://alligator.io/css/css-grid-layout-fr-unit/&#34;&gt;proportion to one another&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://gridbyexample.com/examples/example24/&#34;&gt;Complex alignment&lt;/a&gt; of &lt;a href=&#34;http://gridbyexample.com/examples/example25/&#34;&gt;contents within a cell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Specify a &lt;a href=&#34;https://rachelandrew.co.uk/archives/2016/04/12/flexible-sized-grids-with-auto-fill-and-minmax/&#34;&gt;flexible range of acceptable sizes&lt;/a&gt; for columns &amp;amp; rows&lt;/li&gt;
+&lt;li&gt;Provide a full definition of responsive behavior, often without any media queries&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Don’t QWOP Your Way Through CSS</title>
+      <link>https://keithjgrant.com/posts/2017/04/dont-qwop-your-css/</link>
+      <pubDate>Fri, 07 Apr 2017 15:45:07 -0400</pubDate>
+      
+      <guid>https://keithjgrant.com/posts/2017/04/dont-qwop-your-css/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.foddy.net/Athletics.html&#34;&gt;QWOP&lt;/a&gt;, if you haven’t played it, is a ridiculous running game. Instead of pressing, say, the right arrow key to run, you must control each of the runner’s muscles independently. Pressing the keys Q, W, O, and P will each extend one leg or bend one knee. Coordinating them all is incredibly difficult, and you are usually lucky if you can make a full stride before falling on your head.&lt;/p&gt;
+
+&lt;p&gt;This is also how a lot of developers treat CSS. Instead of thinking about constructing a robust system, they focus on only one specific part of the desired result. Instead of asking, “How do I run?”, they ask, “How do I flex my knee?” I can teach you how to flex your knee, but if QWOP shows us anything, that knowledge might actually make running more difficult.&lt;/p&gt;
+
+&lt;p&gt;CSS does a lot of work for you, if you will let it. Normal document flow ensures things all fit together on the page; this is why you should be judicious with positioning that breaks out of document flow. CSS automatically sizes your elements to contain their text; this is why you should avoid explicitly setting height. Relative units allow you to define one value in terms of another so they will respond together if the context changes; this is why I sometimes frown on pixel units. Margins collapse so that paragraphs stack with the correct spacing. Certain properties inherit down the DOM tree so you don’t have to specify a font for every single element.&lt;/p&gt;
+
+&lt;p&gt;You can get down to the “bare metal” in CSS, if you want. You can specify absolute positions for everything and set explicit heights and define every single value in pixels and override inheritance. But in the end, this will make more work for yourself and unearth edge cases you didn’t think about.&lt;/p&gt;
+
+&lt;p&gt;The next time you find yourself asking something like, “How do I vertically center this?”, take a step back. Are you having trouble because you set the height on something? Why did you set a height? What are you &lt;em&gt;actually&lt;/em&gt; trying to achieve? Instead of focusing on a specific metric, think about the system as a whole: perhaps you want several items to all have the same height. Now, the problem is defined in terms of some desired &lt;a href=&#34;https://www.youtube.com/watch?v=TGHbkTGVqoU&#34;&gt;system behavior&lt;/a&gt;. Solve for that: flexbox or grid can align multiple elements with the same height (they can also center the contents within, too).&lt;/p&gt;
+
+&lt;p&gt;The automatic behaviors of CSS aren’t always apparent if you aren’t familiar with them. They can result in weird outcomes, and you will be frustrated by them. So, I think, the first tendency is to find a way to turn off this “help.” Don’t.&lt;/p&gt;
+
+&lt;p&gt;Trust CSS; it does good things for you if you let it. Learn how to solve for system behaviors. Unless you like running by pressing Q, W, O, and P.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CSS is Not Broken</title>
+      <link>https://keithjgrant.com/posts/2017/03/css-is-not-broken/</link>
+      <pubDate>Fri, 24 Mar 2017 14:15:34 -0400</pubDate>
+      
+      <guid>https://keithjgrant.com/posts/2017/03/css-is-not-broken/</guid>
+      <description>&lt;p&gt;Coding in any language is hard before you spend time mastering it. Imagine what your JavaScript would look like if you never took the time to learn about OOP or functional programming principles? Just because you &lt;em&gt;expect&lt;/em&gt; CSS to be easy, doesn’t mean the language is broken when you find it is not.&lt;/p&gt;
+
+&lt;p&gt;A lot of people have &lt;a href=&#34;https://simpleprogrammer.com/2013/05/06/why-javascript-is-doomed/&#34;&gt;gone on about&lt;/a&gt; &lt;a href=&#34;https://medium.com/smalltalk-talk/the-three-worst-programming-languages-b1ec25a232c1#e848&#34;&gt;how horrible JavaScript is&lt;/a&gt;. JavaScript is not horrible. It is an incredible language. It has a few odd quirks, just as CSS does. But if you take the time to actually understand these quirks, you will reap huge reward.&lt;/p&gt;
+
+&lt;p&gt;You cannot be proficient in JavaScript until you understand coercion, prototypal inheritance, and asyncronous flow control. Likewise, in CSS, you have to understand the cascade, inheritance, and the box model. Once you have those down, take a deeper look at the various layout methods. Do you know what stacking contexts and block formatting contexts are? Do you know why setting a height on an element leads to problems and how to accomplish what you need without doing so?&lt;/p&gt;
+
+&lt;p&gt;CSS is hard. But this is not because the language is faulty. Rather, the difficulty lies in what the language seeks to accomplish. I’ve heard many developers say they wish they could “throw out CSS and start over with something better.” I think this betrays a fundamental misunderstanding of the purpose of the language:&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-conversation=&#34;none&#34; data-lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;When you code CSS, you’re writing abstract rules to take &lt;em&gt;unknown&lt;/em&gt; content and organize it in an &lt;em&gt;unknown&lt;/em&gt; medium. That shit is hard.&lt;/p&gt;&amp;mdash; keith•j•grant (@keithjgrant) &lt;a href=&#34;https://twitter.com/keithjgrant/status/842728744653676544&#34;&gt;March 17, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Furthermore, CSS isn’t just code, it’s also part of the design. A &lt;a href=&#34;https://snook.ca/archives/html_and_css/css-concerns&#34;&gt;vital concern of CSS is consistency&lt;/a&gt;. You should want “global” styles: colors and spacing should be consistent throughout your application. Similar components need to look similar. Your buttons should all be consistently sized and your box shadows or border radiuses should not be ad-hoc.&lt;/p&gt;
+
+&lt;p&gt;I find it ironic that developers who bemoan the “global” nature of CSS are usually the ones who run into specificity problems because they unnecessarily scope their styles to particular parts of a particular page. When you have selectors like &lt;code&gt;#directory .sorted .sidebar :nth-child(2) button&lt;/code&gt;, your problem isn’t that CSS is global. Your CSS isn’t global enough!&lt;/p&gt;
+
+&lt;p&gt;The next thing you know, you find yourself using &lt;code&gt;!important&lt;/code&gt; to correct specificity problems. This is a red flag that you need to stop and learn the cascade. You can use &lt;code&gt;!important&lt;/code&gt; to sweep specificity problems under the rug once. But you will soon need it a second time, at which point you will face the same specificity problem all over again.&lt;/p&gt;
+
+&lt;p&gt;Design your styles so they can be reused, anywhere in the app. Learn SMACSS and BEM. And don’t stop because you understand the “naming system”&amp;mdash;these methodologies are about far more than double-underscores and double-hyphens. They are about code organization, reuse, and refactoring. They are the solution to dead code elimination. They offer ways to utilize the cascade instead of fearing it. They allow you to know precisely where in your code you can find a certain set of styles.&lt;/p&gt;
+
+&lt;p&gt;CSS isn’t broken. But it does require &lt;a href=&#34;https://www.manning.com/books/css-in-depth&#34;&gt;study and skill&lt;/a&gt;. It does require careful thought. As with anything in programming, you can make a mess of the code. Sure, blaming the language is the easy way out. But when your JavaScript is confusing and buggy, you know it’s not the language’s fault.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>More thoughts on CSS in JS</title>
+      <link>https://keithjgrant.com/posts/2017/03/more-thoughts-on-css-in-js/</link>
+      <pubDate>Mon, 20 Mar 2017 15:07:49 -0400</pubDate>
+      
+      <guid>https://keithjgrant.com/posts/2017/03/more-thoughts-on-css-in-js/</guid>
+      <description>&lt;p&gt;At a previous job, I was brought in to a team of Java devs to provide a little JS support. They had been using something called PrimeFaces, basically a bunch of front-end components you drop into JSF pages. Working with it was horrid.&lt;/p&gt;
+
+&lt;p&gt;In short, these devs knew nothing about JavaScript or the front-end, but this tool let them sort of hack a UI together. It abstracted away all the tools needed for really working in the front end. For me, someone adept in JavaScript, working with PrimeFaces was like trying to code without a keyboard.&lt;/p&gt;
+
+&lt;p&gt;I’ve also had to work on projects coded in ExtJS. These feel about the same way: although you are technically editing a JS file, you aren’t really programming “in JavaScript.” Instead, you are basically coding via configuration. Actual understanding of JavaScript doesn’t help you much.&lt;/p&gt;
+
+&lt;p&gt;To me, CSS in JS feels the same way. It feels like a tool so a bunch of JavaScript devs can kinda-sorta hack together styles without actually having to write CSS. Except the syntax is more clunky and you have taken away the cascade. (And, yet, surprise! You still need to learn the most complicated parts of CSS.)&lt;/p&gt;
+
+&lt;p&gt;Now I’ll be fair, CSS in JS libraries typically provide a much thinner buffer between you and the actual CSS when compared to PrimeFaces. But still… it’s an abstraction layer. It gives the illusion of writing styles in perfect isolation, but inheritance still takes place and can interfere. It gets between me and the code I want actual control over.&lt;/p&gt;
+
+&lt;p&gt;I know what I’m doing when I code CSS. I &lt;em&gt;want&lt;/em&gt; the cascade in many instances; removing it feels crippling. I won’t deny CSS in JS offers some benefits. But they are benefits I am not convinced I need at a cost I am not sure I want to pay.&lt;/p&gt;
+
+&lt;p&gt;I won’t say it’s the wrong choice for everyone. Some folks who really do grok CSS are in favor of it. Sometimes ExtJS is the right choice (don’t quote me on that). But dang, please know it’s a compromise that someone might have to clean up down the road.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A better approach to CSS aspect ratios</title>
+      <link>https://keithjgrant.com/posts/2017/03/aspect-ratios/</link>
+      <pubDate>Tue, 14 Mar 2017 10:12:43 -0400</pubDate>
+      
+      <guid>https://keithjgrant.com/posts/2017/03/aspect-ratios/</guid>
+      <description>
+
+&lt;p&gt;There’s an old hack for creating elements with a fixed aspect ratio that involves using a percentage-based padding. You may be familiar with it. It looks something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.tile {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 25%;
+  background-color: bisque;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The element is forced to have no height, then its bottom padding is set to the actual desired height. This produces an element something like this:&lt;/p&gt;
+
+&lt;figure class=&#34;-demo-container&#34;&gt;
+  &lt;div class=&#34;-demo1&#34;&gt;
+    4:1 aspect ratio
+  &lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This works because of a peculiar quirk of padding: Any padding specified in percent computes to a percentage of the element’s &lt;em&gt;width&lt;/em&gt;&amp;mdash;even if it is a top or bottom padding. (The same is true for margin as well.) This is a bit counter-intuitive, but it comes in handy. I think the original reasoning was so you could declare something like &lt;code&gt;padding: 5%&lt;/code&gt; and get an equal padding on all four sides of the element, regardless of its shape.&lt;/p&gt;
+
+&lt;p&gt;Of course, this approach has a problem: overflow is cut off:&lt;/p&gt;
+
+&lt;figure class=&#34;-demo-container&#34;&gt;
+  &lt;div class=&#34;-demo1&#34;&gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet tellus ut erat egestas vestibulum. Aliquam erat volutpat. Fusce ut nibh quis lectus fermentum aliquet. Suspendisse potenti.
+  &lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This approach creates fixed height of the element, which in CSS is an anti-pattern. For this reason, I’ve always felt dirty using it.&lt;/p&gt;
+
+&lt;h2 id=&#34;dealing-with-overflow&#34;&gt;Dealing with overflow&lt;/h2&gt;
+
+&lt;p&gt;A while back, I stumbled across an approach that is similar, but prevents the overflow problem. Instead of setting our element’s height, we can set the height on a floated &lt;code&gt;::before&lt;/code&gt; pseudo-element. Watch what happens when we do this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.tile {
+  background-color: darkseagreen;
+}
+.tile::before {
+  content: &amp;quot;&amp;quot;;
+  float: left;
+  padding-bottom: 25%;
+}
+.tile::after {
+  clear: left;
+  content: &amp;quot; &amp;quot;;
+  display: table;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;::after&lt;/code&gt; is just a familiar clearfix. This produces a very similar result:&lt;/p&gt;
+
+&lt;figure class=&#34;-demo-container&#34;&gt;
+  &lt;div class=&#34;-demo2&#34;&gt;
+    4:1 aspect ratio
+  &lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;However, the element will still grow to contain overflow if necessary:&lt;/p&gt;
+
+&lt;figure class=&#34;-demo-container&#34;&gt;
+  &lt;div class=&#34;-demo2&#34;&gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet tellus ut erat egestas vestibulum. Aliquam erat volutpat. Fusce ut nibh quis lectus fermentum aliquet. Suspendisse potenti.
+  &lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;how-it-works&#34;&gt;How it works&lt;/h2&gt;
+
+&lt;p&gt;The trick is, instead of explicitly controlling (and thus limiting) the height of the element, we set a known height on the floated pseudo element. By using a padding-based percentage, this will be a ratio of the element’s width. We float it left and leave it empty, producing a width of zero. Here is the floated element, with a black outline added:&lt;/p&gt;
+
+&lt;figure class=&#34;-demo-container&#34;&gt;
+  &lt;div class=&#34;-demo3&#34;&gt;
+    Floated pseudo element provides a min height to the element.
+  &lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Then, in the &lt;code&gt;::after&lt;/code&gt; pseudo-element, we clear the float, forcing the element to grow to contain the floated &lt;code&gt;::before&lt;/code&gt;. Since the float has a width of 0, it doesn’t interfere with the content layout in any way.  And when the content extends below the bottom of the float, the box simply grows naturally to contain it:&lt;/p&gt;
+
+&lt;figure class=&#34;-demo-container&#34;&gt;
+  &lt;div class=&#34;-demo3&#34;&gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet tellus ut erat egestas vestibulum. Aliquam erat volutpat. Fusce ut nibh quis lectus fermentum aliquet. Suspendisse potenti.
+  &lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;style&gt;
+  .-demo-container {
+    max-width: 300px;
+    line-height: 1.6;
+  }
+
+  .-demo1 {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 25%;
+    background-color: bisque;
+  }
+
+  .-demo2 {
+    background-color: darkseagreen;
+    line-height: 1.6;
+  }
+  .-demo2::before {
+    content: &#34;&#34;;
+    float: left;
+    padding-bottom: 25%;
+  }
+  .-demo2::after {
+    clear: left;
+    content: &#34; &#34;;
+    display: table;
+  }
+
+  .-demo3 {
+    background-color: darkseagreen;
+    line-height: 1.6;
+  }
+  .-demo3::before {
+    content: &#34;&#34;;
+    float: left;
+    padding-bottom: 25%;
+    border: 1px solid black;
+  }
+  .-demo3::after {
+    clear: left;
+    content: &#34; &#34;;
+    display: table;
+  }
+&lt;/style&gt;
+</description>
+    </item>
     
     <item>
       <title>It’s Both</title>
-      <link>http://keithjgrant.com/posts/2017/01/its-both/</link>
+      <link>https://keithjgrant.com/posts/2017/01/its-both/</link>
       <pubDate>Fri, 27 Jan 2017 08:54:57 -0500</pubDate>
       
-      <guid>http://keithjgrant.com/posts/2017/01/its-both/</guid>
+      <guid>https://keithjgrant.com/posts/2017/01/its-both/</guid>
       <description>
 
 &lt;p&gt;I’m a JavaScript developer. I have experience working in large web applications and dealing with the problems that come from scaling up. I studied Computer Science in college and love solving problems of software architecture.&lt;/p&gt;
 
 &lt;p&gt;I’m also (in case you &lt;a href=&#34;https://www.manning.com/books/css-in-depth&#34;&gt;somehow missed it&lt;/a&gt;) a “CSS Guy”. I learned CSS during its infancy in the mid-nineties and have worked to stay up to speed ever since.&lt;/p&gt;
 
-&lt;p&gt;When I look out at the industry today, it kind of feels &lt;a href=&#34;https://medium.com/javascript-scene/jsx-looks-like-an-abomination-1c1ec351a918#1e2d&#34;&gt;like&lt;/a&gt; &lt;a href=&#34;http://mrmrs.io/writing/2016/03/24/scalable-css/&#34;&gt;watching&lt;/a&gt; &lt;a href=&#34;http://www.zeldman.com/2017/01/03/kiss-my-classname/&#34;&gt;parents&lt;/a&gt; &lt;a href=&#34;https://twitter.com/thejameskyle/status/824795012680421376&#34;&gt;fight&lt;/a&gt;. And I’ll admit it, I’ve &lt;a href=&#34;http://keithjgrant.com/posts/2015/05/against-css-in-js/&#34;&gt;contributed to the problem&lt;/a&gt;. But the more I watch this unfold, the more I feel like we have two camps, talking right past one another, and no meeting in the middle. Both are missing the points the other is trying to make. So I’m shifting my stance:&lt;/p&gt;
+&lt;p&gt;When I look out at the industry today, it kind of feels &lt;a href=&#34;https://medium.com/javascript-scene/jsx-looks-like-an-abomination-1c1ec351a918#1e2d&#34;&gt;like&lt;/a&gt; &lt;a href=&#34;http://mrmrs.io/writing/2016/03/24/scalable-css/&#34;&gt;watching&lt;/a&gt; &lt;a href=&#34;http://www.zeldman.com/2017/01/03/kiss-my-classname/&#34;&gt;parents&lt;/a&gt; &lt;a href=&#34;https://twitter.com/thejameskyle/status/824795012680421376&#34;&gt;fight&lt;/a&gt;. And I’ll admit it, I’ve &lt;a href=&#34;https://keithjgrant.com/posts/2015/05/against-css-in-js/&#34;&gt;contributed to the problem&lt;/a&gt;. But the more I watch this unfold, the more I feel like we have two camps, talking right past one another, and no meeting in the middle. Both are missing the points the other is trying to make. So I’m shifting my stance:&lt;/p&gt;
 
 &lt;h2 id=&#34;we-re-both-right&#34;&gt;We’re both right&lt;/h2&gt;
 
@@ -42,577 +661,11 @@
 
 &lt;h2 id=&#34;always-bet-on-del-javascript-del-the-open-web&#34;&gt;Always bet on &lt;del&gt;JavaScript&lt;/del&gt; the Open Web&lt;/h2&gt;
 
-&lt;p&gt;So, yes. Hire engineers who know how to deal with system architecture. But also &lt;a href=&#34;http://keithjgrant.com/posts/2016/10/your-team-needs-a-ux-engineer/&#34;&gt;hire someone exclusively for their CSS skills&lt;/a&gt;. Put smart people on your team from both camps. Let them work together to solve these problems. Because your problems are unique and your solutions might not look like someone else’s.&lt;/p&gt;
+&lt;p&gt;So, yes. Hire engineers who know how to deal with system architecture. But also &lt;a href=&#34;https://keithjgrant.com/posts/2016/10/your-team-needs-a-ux-engineer/&#34;&gt;hire someone exclusively for their CSS skills&lt;/a&gt;. Put smart people on your team from both camps. Let them work together to solve these problems. Because your problems are unique and your solutions might not look like someone else’s.&lt;/p&gt;
 
 &lt;p&gt;I can say with confidence that CSS in JS will pass. In our industry, something new always comes along. The saying is, “Always bet on JavaScript” &amp;mdash; but this isn’t quite right. When it’s JavaScript vs Java or Ruby, yes, bet on JS. JavaScript wins not because it is inherently better; it wins because it is part of the open web platform.&lt;/p&gt;
 
 &lt;p&gt;The open web platform always wins. And CSS is part of that platform. It’s not CSS versus JS. It’s CSS &lt;em&gt;plus&lt;/em&gt; JS. The platform will evolve. And the platform will win.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hello, World Wide IndieWeb!</title>
-      <link>http://keithjgrant.com/posts/2017/01/hello-indieweb/</link>
-      <pubDate>Mon, 23 Jan 2017 15:34:37 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2017/01/hello-indieweb/</guid>
-      <description>
-
-&lt;p&gt;It’s a new year, so it’s time for a new design! Only this time, the update is more than just a CSS revamp. This year, I join the “IndieWeb”. If you don’t know what that is, read on.&lt;/p&gt;
-
-&lt;p&gt;Let me introduce you to the newest social network: it’s called the World Wide Web and it’s more than 25 years old.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-decentralized-social-web&#34;&gt;The decentralized social web&lt;/h2&gt;
-
-&lt;p&gt;Social networks bother me. I don’t mean the privacy issues or mysterious sorting algorithms. Apart from these things, walled gardens are antithetical to the open standards that made the web successful in the first place. I can’t follow you on Facebook unless I have a Facebook account. You can’t like or reply to my tweet unless you join Twitter. The internet was founded on principles of decentralization, yet here we are, consolidating the bulk of our online activity into a small handful of sites we don’t control.&lt;/p&gt;
-
-&lt;p&gt;I have long wanted an open protocol to bring the key features of social networks (liking, commenting, sharing, following) out into the open web. Now, finally, I have discovered that a fair bit of progress has been made in this regard. The W3C now has a &lt;a href=&#34;https://www.w3.org/wiki/Socialwg&#34;&gt;Social Web working group&lt;/a&gt;, and their specifications are stabilizing and have even been &lt;a href=&#34;http://indieweb.org/&#34;&gt;adopted by many&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This redesign is my first step toward adopting these standards myself. I’ve completed phase one out of two (or possibly three) steps I want to take. Each one corresponds to a key piece of the “Social Web” protocols.&lt;/p&gt;
-
-&lt;h2 id=&#34;phase-i-webmentions&#34;&gt;Phase I: Webmentions&lt;/h2&gt;
-
-&lt;p&gt;This site now supports comments: you may comment on my blog by writing about it on your own blog. Then your blog should send mine a &lt;a href=&#34;https://indieweb.org/Webmention&#34;&gt;webmention&lt;/a&gt;. These are similar to the old “pingbacks”, except they use a simpler format and they are an official &lt;a href=&#34;https://www.w3.org/TR/webmention/&#34;&gt;W3C Recommendation&lt;/a&gt;. (If your site doesn’t support webmentions, I’ve provided a little form where you can submit this yourself).&lt;/p&gt;
-
-&lt;p&gt;They basically work like this: I write you a post. Then you write a post, with metadata indicating it is a response to my post. Your blog then tells my blog that you replied and provides the URL. If I want, I can then link to your reply. Both our posts now link to each other, and we each own our own data!&lt;/p&gt;
-
-&lt;p&gt;And because we are still beholden to some social networks, there is a service called &lt;a href=&#34;https://brid.gy/&#34;&gt;brid.gy&lt;/a&gt; that will find links to my post (and replies to those links) on Twitter or Facebook, and let my blog know about them, so I can log them here as comments. We can drag the old social network silos out into the open web!&lt;/p&gt;
-
-&lt;h2 id=&#34;phase-ii-micropub&#34;&gt;Phase II: MicroPub&lt;/h2&gt;
-
-&lt;p&gt;My next goal will be to incorporate something called MicroPub. This basically means I can write short posts (say, 140 characters), called Notes. I will use these notes to post replies to articles on the web. I can also syndicate these to twitter, where webmentions and brid.gy will help me track any conversation that happens there and link to it from my blog.&lt;/p&gt;
-
-&lt;p&gt;This involves a few more moving parts than phase I, but thankfully, most of the tools for this already exist as services online. I just need to wire things up and test them out.&lt;/p&gt;
-
-&lt;h2 id=&#34;phase-iii-activitypub&#34;&gt;Phase III: ActivityPub?&lt;/h2&gt;
-
-&lt;p&gt;The last piece of the puzzle for a decentralized social web is the whole subscribers/followers bit. The old concepts of RSS, PubSub, and feed readers can do this, but that model is more of a one-way publication, not a two-way street. There is a new approaches the W3C has been working on called ActivityPub that involves tracking followers and bringing more of the social network activities into this realm.&lt;/p&gt;
-
-&lt;p&gt;This arena isn’t as mature yet, but I’ve certainly got my eye on it.&lt;/p&gt;
-
-&lt;p&gt;I have high hopes for this will take us. It may take a while &amp;mdash; a couple years, at least &amp;mdash; but I think we will start to see more discussion happening in this arena. If you want to learn more about this stuff, checkout &lt;a href=&#34;http://indieweb.org/&#34;&gt;indieweb.org&lt;/a&gt; or the &lt;a href=&#34;https://wordpress.org/plugins/indieweb/&#34;&gt;IndieWeb WordPress plugin&lt;/a&gt;. Hello, IndieWeb!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Let’s Talk About Separation of Concerns</title>
-      <link>http://keithjgrant.com/posts/2016/12/separation-of-concerns/</link>
-      <pubDate>Fri, 23 Dec 2016 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2016/12/separation-of-concerns/</guid>
-      <description>&lt;p&gt;There’s been a lot of talk lately about good old Separation of Concerns &amp;mdash; primarily in the context of React and the use of inline styles or CSS-in-JS. Advocates of these approaches argue that the language we use (be it JS, HTML, or CSS) is an arbitrary line to draw. And I would say: Yes, language is, for the most part, an arbitrary line. But that’s beside the point.&lt;/p&gt;
-
-&lt;p&gt;So let’s get one thing straight. This&amp;hellip;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import styles from &#39;./tile.css&#39;;
-...
-render() {
-  return &amp;lt;div className={styles.tile}&amp;gt;...&amp;lt;/div&amp;gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&amp;hellip;is architectually equivalent to this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;render() {
-  return &amp;lt;div className=&amp;quot;tile&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The latter approach, however:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;requires a drastically simpler build process&lt;/li&gt;
-&lt;li&gt;is both backwards- and forwards-compatible across all frameworks&lt;/li&gt;
-&lt;li&gt;doesn’t try to pretend that those styles exist in perfect encapsulated isolation&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Stop championing CSS-in-JS as some ground breaking re-thinking of Separation of Concerns. It’s not. The React component will still inherit its font face, color, and size from a parent container. It still exists on the web platform, in an HTML document, where all the rules of styles and inheritance still apply.&lt;/p&gt;
-
-&lt;p&gt;We can debate about class name collision, co-locating stylesheets, &lt;a href=&#34;http://keithjgrant.com/posts/css-first.html&#34;&gt;how styles fit into system archetecture&lt;/a&gt;, and other related topics. But let’s take this one off the table, because it’s a straw man argument.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Your Team Needs a UX Engineer</title>
-      <link>http://keithjgrant.com/posts/2016/10/your-team-needs-a-ux-engineer/</link>
-      <pubDate>Sun, 02 Oct 2016 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2016/10/your-team-needs-a-ux-engineer/</guid>
-      <description>&lt;p&gt;Recently, after I mentioned that I was the only one on my team that writes the CSS, someone replied, “You’re lucky”.&lt;/p&gt;
-
-&lt;p&gt;It stuck with me, and I’ve been thinking about it since. The thing is, it’s not luck. It was a deliberate decision made early when the team was first put together. And I think the rest of the developers on my team would think themselves lucky for &lt;em&gt;not&lt;/em&gt; having to touch the CSS. It is more valuable for us to have one person on the team who specializes in that.&lt;/p&gt;
-
-&lt;p&gt;We need to rethink something about the way we build our web development teams. We spend a lot of effort hiring good programmers, but for the most part, they are interchangeable. We make sure that everyone we hire knows the fundamentals of software engineering, architecture, and the primary language the team uses. And then we &lt;em&gt;assume&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;If a developer has a solid grasp on JavaScript, we think, surely they know CSS. Surely they know how to deal with accessibility. Surely they have a grasp on how and when to use various HTML elements and aria-* properties. These are small beans compared to &lt;em&gt;the code&lt;/em&gt;. And in many ways, they are.&lt;/p&gt;
-
-&lt;p&gt;But, of course, this isn’t how it plays out. Because we hire purely for the bigger task, CSS and accessibility always remain an afterthought. On most teams, nobody really knows what they are doing when it comes to these topics. They team stumbles along, joking amongst themselves how horrible CSS is.&lt;/p&gt;
-
-&lt;p&gt;We need to fix this. On teams larger than four or five developers, I think we can: one person per team should be hired explicitly for these tasks. Most of the team will still be focused on JavaScript (or Python or Java). But one person&amp;mdash;call them a “CSS Developer” or “UX Engineer”&amp;mdash;should be hired specifically for these “afterthought” concerns.&lt;/p&gt;
-
-&lt;p&gt;Is a developer building a new component and needs some styles? The UX Engineer writes that CSS. The UX Engineer gives a snippet of HTML to the developer for them to incorporate into the component. The UX engineer ensures the correct semantics and can come alongside the developer to ensure keyboard navigation works. The UX Engineer maintains a pattern library for the team to use as a reference to find existing styles.&lt;/p&gt;
-
-&lt;p&gt;This UX Engineer serves an important role, but furthermore, they allow the other developer to offload some work. The developer can focus on the &amp;ldquo;bigger concern&amp;rdquo; of getting the business logic right and ensuring the app works correctly. This improves the developer’s productivity.&lt;/p&gt;
-
-&lt;p&gt;This is how things work on my team. I am effectively the UX Engineer, and I think everyone enjoys the process more because of it. In our case, we stumbled upon this setup&amp;mdash;I was originally hired for my JavaScript skills. As always, the CSS was an afterthought; I just happened to be good at it, so we settled into the current arrangement.&lt;/p&gt;
-
-&lt;p&gt;Don’t wait for your team to stumble into this. Set it up intentionally. Hire a UX Engineer.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>CSS in Depth</title>
-      <link>http://keithjgrant.com/posts/2016/08/css-in-depth/</link>
-      <pubDate>Wed, 24 Aug 2016 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2016/08/css-in-depth/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://keithjgrant.com/images/2016/css-in-depth-cover.png&#34; alt=&#34;Cover of CSS in Depth&#34; class=&#34;float-right&#34;/&gt;My book is finally for sale! The &lt;abbr title=&#34;Manning Early Access Program&#34;&gt;MEAP&lt;/abbr&gt; is available on &lt;a href=&#34;https://manning.com/books/css-in-depth&#34;&gt;Manning’s website&lt;/a&gt;. The first three chapters are available now, and others will be rolling out steadily (I’ve actually already completed drafts of six chapters at this point).&lt;/p&gt;
-
-&lt;p&gt;Until the end of August, you can use my code &lt;strong&gt;mlgrant2&lt;/strong&gt; for 50% off. Follow &lt;a href=&#34;https://twitter.com/CSSinDepth&#34;&gt;@CSSinDepth&lt;/a&gt; on Twitter for updates.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Save Scoped CSS</title>
-      <link>http://keithjgrant.com/posts/2016/06/save-scoped-css/</link>
-      <pubDate>Thu, 09 Jun 2016 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2016/06/save-scoped-css/</guid>
-      <description>
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update June 23, 2016:&lt;/strong&gt; The editor&amp;rsquo;s draft has been updated again. It looks like &lt;code&gt;@scope&lt;/code&gt; is gone for good, so this post is now a moot point. The way forward now lies in the Shadow DOM.&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;About &lt;a href=&#34;http://keithjgrant.com/posts/into-the-future-of-css.html#scoped-css&#34;&gt;a year ago&lt;/a&gt;, I wrote about a promising feature of CSS, scoping. I love the idea of this feature, and I think it could be one of the most important changes in the near future of CSS. You know all those complaints about “in CSS everything is global&amp;rdquo;? This feature is the answer.&lt;/p&gt;
-
-&lt;p&gt;I became excited recently when I noticed some movement in the W3C concerning this spec. So I took a look at what was going on. I found some good news, and I found some bad news.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-good-news&#34;&gt;The good news&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://drafts.csswg.org/css-scoping/&#34;&gt;editor&amp;rsquo;s draft of the specification&lt;/a&gt; has recently been updated. The changes, I think, significantly improve the viability of the feature. They more closely resemble the hypothetical changes I wished for last year. Most importantly, scoped styles would no longer need to be defined inline in the HTML document; you can define scoped styles in an external stylesheet.&lt;/p&gt;
-
-&lt;p&gt;The proposed syntax looks like this, using a new &lt;code&gt;@scope&lt;/code&gt; at-rule:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;@scope .foo-module {
-  p {
-    color: blue;
-  }
-}
-
-@scope .bar-module {
-  p {
-    color: red;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Each scope is defined with a selector (&lt;code&gt;.foo-module&lt;/code&gt;, &lt;code&gt;.bar-module&lt;/code&gt;). This establishes a new scope for matched elements and their descendants. Inside the braces that follow, you can specify any styles you wish. These styles are then applied only to the elements belonging to that scope.&lt;/p&gt;
-
-&lt;p&gt;According to the rules of &lt;a href=&#34;https://www.w3.org/TR/css-cascade-3/#cascade-scope&#34;&gt;the cascade&lt;/a&gt;, rules applied to an inner scope will override those applied to an outer scope, &lt;em&gt;regardless of their selector specificity&lt;/em&gt;. This is precisely the behavior CSS-in-JS and/or CSS Modules users want! And yes, this definition is in the current Candidate Recommendation of the spec.&lt;/p&gt;
-
-&lt;p&gt;This means, given the example above, a &lt;code&gt;foo-module&lt;/code&gt; inside a &lt;code&gt;bar-module&lt;/code&gt; will have blue text; and a &lt;code&gt;bar-module&lt;/code&gt; inside a &lt;code&gt;foo-module&lt;/code&gt; will have red text. This could solve so many developer frustrations.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-bad-news&#34;&gt;The bad news&lt;/h2&gt;
-
-&lt;p&gt;I got excited when I saw these changes, so I started reading more on what prompted them. I discovered that it is a sort of last-ditch effort to salvage the spec. The problem? Browser vendors have shown no interest in implementing it. Firefox has long-since implemented the earlier version of the spec, but that&amp;rsquo;s it.&lt;/p&gt;
-
-&lt;p&gt;If we developers want this feature, we need to let the browser vendors know. Otherwise, it&amp;rsquo;s DOA.&lt;/p&gt;
-
-&lt;p&gt;So tell them, please. Follow these links, and up-vote or leave comments in support of scoped styles:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://groups.google.com/a/chromium.org/forum/#!searchin/blink-dev/scoped/blink-dev/R1x18ZLS5qQ/Bjuh_cENhlQJ&#34;&gt;Chrome&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/14895573--scope&#34;&gt;Edge&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;I couldn&amp;rsquo;t find a channel for Safari. If you know where it is, please let me know and I&amp;rsquo;ll add it here.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Let&amp;rsquo;s not allow this to die.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A Quest for Interchangeable Parts</title>
-      <link>http://keithjgrant.com/posts/2016/02/a-quest-for-interchangeable-parts/</link>
-      <pubDate>Sat, 06 Feb 2016 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2016/02/a-quest-for-interchangeable-parts/</guid>
-      <description>
-
-&lt;p&gt;This is a bolt. &lt;img class=&#34;float-right&#34; src=&#34;http://keithjgrant.com/images/2016/m20-bolt.jpg&#34; height=&#34;200&#34; width=&#34;200&#34; alt=&#34;bolt&#34;&gt; You may not realize it, but it is a modern marvel. It is a 150mm bolt with an M20 threading. It works in any piece of hardware that is cut with the same size and threading. It can be turned with any 30mm hex wrench. You can reach into a pile of M20-2.50 nuts, made by any manufacturer, pull any one out, and it will fit this bolt.&lt;/p&gt;
-
-&lt;p&gt;This is because of a key principle that made the industrial revolution possible: &lt;a href=&#34;https://en.wikipedia.org/wiki/Interchangeable_parts&#34;&gt;interchangeable parts&lt;/a&gt;. It took countless inventors over the course of hundreds of years to perfect the manufacturing necessary for this. Many people, such as Eli Whitney and Samuel Colt, devoted years of their lives and a great amount of resources in the quest to achieve it.&lt;/p&gt;
-
-&lt;p&gt;Before their efforts, everything had to be hand-made for the particular project. Every gun was uniquely crafted. Every piece of rigging on a ship. And if a part broke, you couldn’t just buy a replacement; one had to be hand-made to fit the parts it integrated with&amp;hellip; or the entire device had to be replaced.&lt;/p&gt;
-
-&lt;h2 id=&#34;learn-from-history&#34;&gt;Learn from history&lt;/h2&gt;
-
-&lt;p&gt;This is a tweet. &lt;img src=&#34;http://keithjgrant.com/images/2016/tweet.png&#34; alt=&#34;screenshot of tweet&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;You may not realize it, but it is stuck in the pre-industrial age. Because it is not an interchangeable part. It doesn’t fit into a Facebook wall, or onto a YouTube page.&lt;/p&gt;
-
-&lt;p&gt;Sure, it’s &lt;em&gt;almost&lt;/em&gt; interchangeable. You can post a link to its url in most places, or a screenshot of the tweet. Or you can copy the text and give attribution. But it does not interoperate with other social networks. You can’t retweet it or like it from anywhere but a limited number of places: an embedded tweet (put there by a script provided by Twitter) or a third-party app that uses Twitter’s API. This is because Twitter has a vested interest in keeping a tight reign on where and how a tweet can, and cannot, be used.&lt;/p&gt;
-
-&lt;p&gt;Our digital world is full of these semi-interchangeable parts. You can buy an album from iTunes or Amazon or Google Play. However, if you assemble your music collection using two or more of these, you have to jump through some hoops to keep it all in one place and to sync it to your phone.&lt;/p&gt;
-
-&lt;p&gt;You can subscribe to Hulu and Netflix and Amazon Prime, but you can’t just tune into them on any TV: you need to use something like a Roku that brings them all together. Nothing is standardized.&lt;/p&gt;
-
-&lt;h2 id=&#34;a-better-way&#34;&gt;A better way&lt;/h2&gt;
-
-&lt;p&gt;Netflix has to build an app for iOS, an app for Android, an app for Roku and Apple TV and the Amazon Fire Stick. They do all this just so users of those devices can tune in to their service. What if, instead, they just produced their content in a single, standardized web format. Imagine if HBO and Hulu broadcast in the same format. Imagine if subscribers merely had to tune in their TVs to the right “channel” watch. No Apple TV or Roku necessary. Like broadcast television.&lt;/p&gt;
-
-&lt;p&gt;iTunes keeps an iron grip on the whole pipeline of your music: the financial transaction, the download, the files on your hard drive, the sync to your Apple device. What if, instead, iTunes or Amazon were just a store, and they all provided music in the same format for you to save wherever you choose, and sync however you choose. Like it a CD.&lt;/p&gt;
-
-&lt;p&gt;What if, instead of “following” your friend Joseph on Twitter, you could just follow &lt;em&gt;Joseph&lt;/em&gt;. He could tweet on Twitter or post to Facebook and you would get it, on the social network of your choosing, that offers the controls and options you like. There would be a single, common digital format for a social media post, that worked on all networks. You could be on Twitter or Google Plus, and read his updates, wherever they came from. Like email.&lt;/p&gt;
-
-&lt;h2 id=&#34;an-open-web&#34;&gt;An open web&lt;/h2&gt;
-
-&lt;p&gt;Unlike the centuries-long quest for interchangeable parts in manufacturing, there is nothing technically holding us back from this. We might need to hash out what these standards look like, but that is relatively easy. The forces holding us back are more capitalistic&amp;mdash;or rather, &lt;em&gt;monopolistic&lt;/em&gt;. Because the world of open standards I just described would be a much more open, free market: a level playing field where far more companies could innovate and compete, rather than just a small handful of big players. It would be a world where users had more choices and more control over their media, and where they didn’t have to put up with so much headache.&lt;/p&gt;
-
-&lt;p&gt;Has the digital age made life easier? Absolutely. I don’t want to go back to broadcast television or CDs. While email still serves a purpose, it’s different than that of social media.&lt;/p&gt;
-
-&lt;p&gt;But the digital age has still not matured. We need interchangeable parts. It will take some concerted effort to break through the barriers holding us back. I admit don’t know precisely how to do that. But, just as we pushed through the difficulties that held back physical manufacturing in centuries past and ushered in the industrial revolution, we can break through these, and usher in a new digital revolution. The modern digital life is still more complicated than it need be.&lt;/p&gt;
-
-&lt;p&gt;The Internet may be the first true write-once-run-anywhere platform, but as long as these industries are shackled by proprietary lock-in, these parts of the web aren’t open. An open web requires interchangeable parts.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Width and Absolute Positioning</title>
-      <link>http://keithjgrant.com/posts/2016/01/width-and-absolute-positioning/</link>
-      <pubDate>Sat, 30 Jan 2016 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2016/01/width-and-absolute-positioning/</guid>
-      <description>
-
-&lt;p&gt;I recently came across this question on Twitter:
-&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;What&amp;#39;s the diff on a position:absolute el btw {top:0;right:0;bottom:0;left:0;} and {top:0;left:0;height:100%;width:100%;} ?&lt;/p&gt;&amp;mdash; Karl Swedberg (@kswedberg) &lt;a href=&#34;https://twitter.com/kswedberg/status/692720642580295681&#34;&gt;January 28, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-“That’s easy”, I thought. “They often seem the same in practice, but width and height are based on the parent (or nearest block-level ancestor). Top, right, bottom, and left are based on the nearest &lt;em&gt;positioned&lt;/em&gt; ancestor. Those aren’t necessarily the same element.”&lt;/p&gt;
-
-&lt;p&gt;Shows what I know: my &lt;a href=&#34;http://codepen.io/keithjgrant/pen/obddgy&#34;&gt;quick mockup&lt;/a&gt; to illustrate the difference proved me wrong.&lt;/p&gt;
-
-&lt;p&gt;On first pass, &lt;code&gt;top: 0; right: 0; bottom: 0; left: 0;&lt;/code&gt; and &lt;code&gt;top: 0; left: 0; width: 100%; height: 100%;&lt;/code&gt; are equivalent. Of course, we always &lt;em&gt;treat&lt;/em&gt; them as equivalent, because in most real-world cases, the nearest positioned ancestor is the nearest block-level element (usually the parent). But my codepen showed me an absolutely positioned element whose width and height are derived from the positioned ancestor, not the immediate container.&lt;/p&gt;
-
-&lt;p&gt;In retrospect, this makes a certain kind of sense, because the absolutely positioned element is removed from the normal flow. It&amp;rsquo;s then “contained” by the positioned ancestor.&lt;/p&gt;
-
-&lt;p&gt;So, the two scenarios are effectively the same. But a quick look at the spec made it clear that padding and margin would weigh in. So it might worth a little experimenting to see what we get.&lt;/p&gt;
-
-&lt;h2 id=&#34;experimenting&#34;&gt;Experimenting&lt;/h2&gt;
-
-&lt;p&gt;So here’s the basic scenario I set up. Three elements: one relatively positioned as the anchor for the absolute positioning, one to serve as the parent, and then the child, which will be absolutely positioned. For better visibility, the positioned container has a faint background color, the parent has a purple border, and the child has a medium gray background (transparent, so the others will show through).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;  &amp;lt;div class=&amp;quot;positioned&amp;quot;&amp;gt;
-    &amp;lt;div class=&amp;quot;parent&amp;quot;&amp;gt;
-      &amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt;
-      &amp;lt;/div&amp;gt;
-    &amp;lt;/div&amp;gt;
-  &amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;  .positioned {
-    position: relative;
-    background-color: rgba(0,0,255, 0.1);
-  }
-
-  .parent {
-    width: 200px;
-    min-height: 200px;
-    border: 2px solid #936;
-  }
-
-  .child {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then, we’ll play around with the child’s properties to see what happens. We&amp;rsquo;ll create two variations. First, one with top, right, bottom, and left all set to zero. And second, one with a top and left of zero, and a width and height of 100%.&lt;/p&gt;
-
-&lt;div class=&#34;demo demo--basic&#34;&gt;
-  &lt;div class=&#34;demo-col&#34;&gt;
-    &lt;pre class=&#34;prettyprint&#34;&gt;.child {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-&lt;/pre&gt;
-    &lt;div class=&#34;demo-1 positioned&#34;&gt;
-      &lt;div class=&#34;parent&#34;&gt;
-        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&#34;demo-col&#34;&gt;
-    &lt;pre class=&#34;prettyprint&#34;&gt;.child {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}&lt;/pre&gt;
-    &lt;div class=&#34;demo-2 positioned&#34;&gt;
-      &lt;div class=&#34;parent&#34;&gt;
-        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The two children appear identical. They overflow outside the parent, and fill the size of the positioned container. Visually, you can’t tell the difference between the container and the child. Let&amp;rsquo;s add some padding to the child and see what happens&amp;hellip;&lt;/p&gt;
-
-&lt;pre class=&#34;prettyprint&#34;&gt;
-  .child {
-    padding: 1em;
-  }
-&lt;/pre&gt;
-  &lt;div class=&#34;demo demo--padding&#34;&gt;
-    &lt;div class=&#34;demo-col&#34;&gt;
-      &lt;div class=&#34;demo-1 positioned&#34;&gt;
-        &lt;div class=&#34;parent&#34;&gt;
-          &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;demo-col&#34;&gt;
-      &lt;div class=&#34;demo-2 positioned&#34;&gt;
-        &lt;div class=&#34;parent&#34;&gt;
-          &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-...nothing. Note, I&#39;ve got &lt;code&gt;box-sizing: border-box&lt;/code&gt; set globally on the page. Let&#39;s turn that off:
-&lt;pre class=&#34;prettyprint&#34;&gt;
-  .child {
-    box-sizing: content-box;
-    padding: 1em;
-  }
-&lt;/pre&gt;
-
-&lt;div class=&#34;demo demo--padding-2&#34;&gt;
-  &lt;div class=&#34;demo-col&#34;&gt;
-    &lt;div class=&#34;demo-1 positioned&#34;&gt;
-      &lt;div class=&#34;parent&#34;&gt;
-        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&#34;demo-col&#34;&gt;
-    &lt;div class=&#34;demo-2 positioned&#34;&gt;
-      &lt;div class=&#34;parent&#34;&gt;
-        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The padding still has no effect on the size of the first variation. But it adds to the width and height in the second; that child now overflows the positioned container. That makes sense. So there&amp;rsquo;s a key difference here, if you don&amp;rsquo;t have a global box-sizing fix in place.&lt;/p&gt;
-
-&lt;p&gt;Now let’s see what a margin does:&lt;/p&gt;
-
-&lt;pre class=&#34;prettyprint&#34;&gt;
-  .child {
-    margin: 1em;
-  }
-&lt;/pre&gt;
-
-&lt;div class=&#34;demo demo--margin&#34;&gt;
-  &lt;div class=&#34;demo-col&#34;&gt;
-    &lt;div class=&#34;demo-1 positioned&#34;&gt;
-      &lt;div class=&#34;parent&#34;&gt;
-        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&#34;demo-col&#34;&gt;
-    &lt;div class=&#34;demo-2 positioned&#34;&gt;
-      &lt;div class=&#34;parent&#34;&gt;
-        &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now that was unexpected, at least to me. With &lt;code&gt;right: 0; bottom: 0&lt;/code&gt;, the margin is contained inside the positioned descendant; they will shrink the size of the element.&lt;/p&gt;
-
-&lt;p&gt;With &lt;code&gt;width: 100%; height: 100%&lt;/code&gt;, the top and left margins are contained, but the element is shifted, maintaining its original size. The right and bottom margins are then added outside the whole structure.&lt;/p&gt;
-
-&lt;p&gt;What’s interesting is that in all these scenarios, the parent element doesn’t affect the shape of the child element at all&amp;mdash;Though it does provide the height to the positioned container.&lt;/p&gt;
-
-&lt;h2 id=&#34;take-away&#34;&gt;Take-away&lt;/h2&gt;
-
-&lt;p&gt;So what does this mean? It seems to me that &lt;code&gt;top: 0; right: 0; bottom: 0; left: 0&lt;/code&gt; is probably the one to favor, as it&amp;rsquo;s a little more predictable, unless you have a particular reason to use height or width instead.&lt;/p&gt;
-
-&lt;style type=&#34;text/css&#34;&gt;
-  .demo-col {
-    margin: 1em 0;
-  }
-  @media screen and (min-width: 900px) {
-    .demo {
-      display: flex;
-      flex-flow: space-between;
-      margin: 1em 0;
-    }
-
-    .demo-col {
-      flex: 1;
-      margin: 0;
-    }
-    .demo-col:not(:first-child) {
-      margin-left: 3em;
-    }
-  }
-
-  .demo .positioned {
-    position: relative;
-    background-color: rgba(0,0,255, 0.1);
-  }
-  .demo .parent {
-    width: 200px;
-    min-height: 200px;
-    border: 2px solid #936;
-  }
-  .demo .child {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-
-  .demo-1 .child {
-    right: 0;
-    bottom: 0;
-  }
-
-  .demo-2 .child {
-    width: 100%;
-    height: 100%;
-  }
-
-  .demo--padding .child {
-    padding: 1em;
-  }
-
-  .demo--padding-2 {
-    margin-bottom: 2em;
-  }
-  .demo--padding-2 .child {
-    box-sizing: content-box;
-    padding: 1em;
-  }
-
-  .demo--margin .child {
-    margin: 1em;
-  }
-&lt;/style&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Simply White</title>
-      <link>http://keithjgrant.com/posts/2016/01/simply-white/</link>
-      <pubDate>Wed, 27 Jan 2016 00:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2016/01/simply-white/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.benjaminmoore.com/en-us/for-your-home/benjamin-moore-color-trends-2016&#34;&gt;Benjamin
-Moore&lt;/a&gt; has declared the Color of the Year for 2016 to be &amp;ldquo;simply white&amp;rdquo;. We have reached peak
-minimalism, y&amp;rsquo;all.&lt;/p&gt;
-
-&lt;p&gt;So I&amp;rsquo;m steering into the skid. Here&amp;rsquo;s my new design.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://keithjgrant.com/images/2016/simply-white.png&#34; alt=&#34;screenshot of &#39;Simply White&#39; design&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>CSS First</title>
-      <link>http://keithjgrant.com/posts/2015/08/css-first/</link>
-      <pubDate>Sat, 01 Aug 2015 10:00:00 -0500</pubDate>
-      
-      <guid>http://keithjgrant.com/posts/2015/08/css-first/</guid>
-      <description>
-
-&lt;p&gt;In 2003, the &lt;em&gt;CSS Zen Garden&lt;/em&gt; went live, and it spearheaded a revolution. At the time, many web designers were still using tables for layouts, and the battle for semantic markup was underway. The Zen Garden showed the world, in beautiful color, what CSS could do. By changing the CSS, you could make the website retro, postmodern, abstract, or elegant. You could move the sidebar to the left, the right, the top, or the bottom of the page. You could do anything with the font, the colors, the shapes and sizes of the elements on the screen. No changes to the HTML were necessary.&lt;/p&gt;
-
-&lt;p&gt;What we didn&amp;rsquo;t realize at the time was how much of a disservice this was for the next generation of designers and developers.&lt;/p&gt;
-
-&lt;p&gt;Don&amp;rsquo;t get me wrong, the CSS Zen Garden was an essential part of moving the web forward. Without it, we might have seen table-based designs for much longer than we did. It did a lot of good for us, but it left us with one bad habit: it taught us to write HTML (or take existing HTML), and then write CSS for it. But this is wrong. The HTML shouldn&amp;rsquo;t come first; the CSS should.&lt;/p&gt;
-
-&lt;h2 id=&#34;css-your-first-dependency&#34;&gt;CSS: your first dependency&lt;/h2&gt;
-
-&lt;p&gt;Many web developers still try to think about how to write their HTML so that it can be sensibly targeted by their CSS. Instead, we aught to be writing selectors that can be used easily by HTML. The HTML depends upon the CSS, not the other way around.&lt;/p&gt;
-
-&lt;p&gt;CSS is the first dependency of your website or web application. The HTML expects it to be there; the JavaScript expects it to be there. Certain things are supposed to happen when they add or remove classes. CSS should be modular enough that it can be reused on a number of different web pages, and ideally even across different applications if needed. If you are using a modern practice like &lt;a href=&#34;https://smacss.com/&#34;&gt;SMACSS&lt;/a&gt; or BEM, this thinking is probably not new to you, but it&amp;rsquo;s worth unpacking.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;rsquo;s look at a little CSS. The familiar &lt;a href=&#34;http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/&#34;&gt;media object&lt;/a&gt; will do:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.media {
-  margin: 10px 0;
-}
-.media::after {
-  /* clearfix */
-  display: block;
-  content: &amp;quot; &amp;quot;;
-  clear: both;
-}
-
-.media-object {
-  float: left;
-  margin-right: 10px;
-}
-
-.media-body {
-  overflow: hidden;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This is designed for the &lt;code&gt;media&lt;/code&gt; class to go on a container div, and the &lt;code&gt;media-object&lt;/code&gt; and &lt;code&gt;media-body&lt;/code&gt; to go on two child elements. Most likely these will be an &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; and a &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;, but you could probably change that up a bit. This can be placed inside other modules, and other modules can be placed inside of this module&amp;rsquo;s media-body.&lt;/p&gt;
-
-&lt;p&gt;These class names and small bit of implied DOM structure dictate an API contract with the HTML and JavaScript. This way, it&amp;rsquo;s reusable. You can put as many, or as few, of these on the page as you need, and the CSS never needs to change. Other modules might come with various states: classes like &lt;code&gt;is-open&lt;/code&gt;, &lt;code&gt;is-active&lt;/code&gt;. JavaScript can toggle them and allow the CSS to show, hide, highlight, or do whatever else it needs to do. It&amp;rsquo;s all part of the API.&lt;/p&gt;
-
-&lt;p&gt;This is the secret to separating the concerns of CSS from those of HTML and JavaScript. The CSS specifies the rules, and it&amp;rsquo;s up to the other two to follow them. It&amp;rsquo;s a one-way contract.&lt;/p&gt;
-
-&lt;p&gt;We tried for years to do it the other way around, and that&amp;rsquo;s what got us into trouble. When you approach web development HTML first, the HTML inevitably becomes coupled with the CSS. The CSS Zen Garden model works&amp;hellip; until the HTML changes. And in in the real world, the HTML changes all the time. If the CSS is based on that HTML, the CSS will have to change with it.&lt;/p&gt;
-
-&lt;p&gt;Instead, by developing the CSS first, in a way that is modular, we can apply it again and again to changing HTML, without needing to make changes upstream. The HTML just has to follow the conventions laid out by the API.&lt;/p&gt;
-
-&lt;p&gt;To do this, we need to develop our CSS as if it is for a third party, similar to Bootstrap and other CSS frameworks. If your project (or your team) is moderate to large size, this will begin to necessitate two important features for our CSS: it should be well documented, and it should be versioned.&lt;/p&gt;
-
-&lt;h2 id=&#34;documentation-driven&#34;&gt;Documentation-driven&lt;/h2&gt;
-
-&lt;p&gt;Ugh. Documentation. The longest four-letter word in a developer&amp;rsquo;s life.  Bear with me on this.&lt;/p&gt;
-
-&lt;p&gt;Since you are producing an API that other developers will consume, it needs to be documented. That means show each module in action so developers can skim through and find the pieces they need. Publish static HTML pages that organizes them in a reasonable way. Show the variants available. Add some bare-bones JavaScript to illustrate changing states and transition effects. Your CSS will eat its own dog food before you ever use it in your app.&lt;/p&gt;
-
-&lt;p&gt;At my job, we document our styles using &lt;a href=&#34;http://jade-lang.com/&#34;&gt;Jade&lt;/a&gt;, and have some mixins that duplicate portions of markup: once to render on the page, and the second time to print the markup into a &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; tag for reading. But for smaller projects, this may not be necessary; browser dev tools make it easy enough for a developer look under the covers at any of your examples.&lt;/p&gt;
-
-&lt;p&gt;This documentation serves double-duty: it also becomes your unit tests. Every module you build, and the variations thereof, are rendered into a page. Package your documentation with your CSS. Write the documentation for a module as you write the CSS. See it in action during development.&lt;/p&gt;
-
-&lt;p&gt;If you need to verify multiple permutations of module states or test how various modules work together, add appendices to your documentation to do these things, where you won&amp;rsquo;t bog down developers who are referring to the main docs. Our documentation at work has a series of fully-mocked up static pages (to ensure everything works together as expected) and several &amp;ldquo;test&amp;rdquo; pages where our grid system is put through paces and various table styles are mixed and matched in numerous ways to ensure they all work well together.&lt;/p&gt;
-
-&lt;p&gt;Unit tests in CSS are notoriously difficult to do. Some people use tools that take screenshots and compare for changes, but this is prone to all sorts of false positives. Some rely on linting, but that only gets you so far. If you write documentation as you develop, it serves the same purpose. Even better, eyes are on your tests, because developers and content editors will refer to it regularly.&lt;/p&gt;
-
-&lt;h2 id=&#34;versioned&#34;&gt;Versioned&lt;/h2&gt;
-
-&lt;p&gt;Second, version your styles using &lt;a href=&#34;http://semver.org/&#34;&gt;semver&lt;/a&gt;. Your HTML is opting-in to your CSS. You can&amp;rsquo;t just change things out from underneath it. Deploy your styles to a url with the version in the path, so you always know what you&amp;rsquo;re getting. Alternately, package your styles in a way that your project can import them at a certain version, whether an npm module or Ruby gem or similar.&lt;/p&gt;
-
-&lt;p&gt;Dead code elimination is a tough problem with CSS. If your CSS is versioned, you can deprecate and delete features with much lower risk.&lt;/p&gt;
-
-&lt;p&gt;Publish a changelog. This can make developers aware of new features, as well as give them a heads up when you deprecate something.&lt;/p&gt;
-
-&lt;h2 id=&#34;write-the-css-in-a-clean-room&#34;&gt;Write the CSS in a clean-room&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;CSS first&lt;/em&gt; doesn&amp;rsquo;t mean you write all of your CSS before you write any HTML or JavaScript. It applies at a finer-grained level. Each module is first built in the CSS before it can be used in the HTML. When you need styles in your app or website, your first stop should be the existing CSS documentation. Look for something that already meets your needs. Once you have built up a robust toolset of styles, you will often find you don&amp;rsquo;t need something new after all.&lt;/p&gt;
-
-&lt;p&gt;Only when nothing there fits your situation should you start coding new CSS. Once it&amp;rsquo;s written, and &amp;ldquo;tested&amp;rdquo; (i.e. added to the documentation), bump the version and cut a new release of the CSS.&lt;/p&gt;
-
-&lt;p&gt;This adds a small obstacle to adding new styles, which is intentional. It forces you to stop and think about your CSS outside the context of your particular problem, and encourages you to write a more general-use module. It also encourages developers to use existing styles as much as possible before rolling their own, which will result in a more cohesive look and feel throughout your site.&lt;/p&gt;
-
-&lt;p&gt;This is probably overkill for small projects. I certainly don&amp;rsquo;t jump through all these hoops for this blog. But the more your project scales up, the more essential they will become, and the more your team will benefit from them.&lt;/p&gt;
-
-&lt;p&gt;The API of your CSS will be much more robust as a result of this work.  That API is important. The inner-workings of your CSS are easy to change. Your HTML is easy to change. But that API between them is the most important part. Making significant changes to that is costly, because everything on both sides needs to be updated accordingly. Design that API well. Design it from the viewpoint of the CSS, and then build your HTML to match.&lt;/p&gt;
 </description>
     </item>
     

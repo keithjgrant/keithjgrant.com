@@ -4,64 +4,108 @@
     
     <title>Notes on Keith J. Grant</title>
     
-    <link>http://keithjgrant.com/notes/index.xml</link>
+    <link>https://keithjgrant.com/notes/index.xml</link>
     <description>Recent content in Notes on Keith J. Grant</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Feb 2017 18:08:18 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Sep 2017 19:50:04 +0000</lastBuildDate>
     <link rel="hub"  href="https://keithjgrant.superfeedr.com/" xmlns="http://www.w3.org/2005/Atom" />
-    <link rel="self" href="http://keithjgrant.com/notes/index.xml" xmlns="http://www.w3.org/2005/Atom" />
+    <link rel="self" href="https://keithjgrant.com/notes/index.xml" xmlns="http://www.w3.org/2005/Atom" />
     
     <item>
       <title></title>
-      <link>http://keithjgrant.com/notes/2017/02/65298/</link>
-      <pubDate>Mon, 13 Feb 2017 18:08:18 +0000</pubDate>
+      <link>https://keithjgrant.com/notes/2017/09/71404/</link>
+      <pubDate>Wed, 06 Sep 2017 19:50:04 +0000</pubDate>
       
-      <guid>http://keithjgrant.com/notes/2017/02/65298/</guid>
-      <description>&lt;p&gt;This was a solid episode. I learned a few things about AMP. I’m&amp;hellip; slightly less hostile to it now&lt;/p&gt;
+      <guid>https://keithjgrant.com/notes/2017/09/71404/</guid>
+      <description>&lt;p&gt;Universities: Let’s create WWW using HTML so information readily available&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://shoptalkshow.com/episodes/248-amp/&#34;&gt;http://shoptalkshow.com/episodes/248-amp/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Also universities: Let’s make research papers available only as PDFs&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title></title>
-      <link>http://keithjgrant.com/notes/2017/02/91624/</link>
-      <pubDate>Thu, 09 Feb 2017 09:16:25 -0500</pubDate>
+      <link>https://keithjgrant.com/notes/2017/09/52680/</link>
+      <pubDate>Fri, 01 Sep 2017 14:38:00 +0000</pubDate>
       
-      <guid>http://keithjgrant.com/notes/2017/02/91624/</guid>
-      <description>&lt;p&gt;Would it be totally annoying if my tweets linked back to my blog? It probably would, wouldn&amp;rsquo;t it?&lt;/p&gt;
+      <guid>https://keithjgrant.com/notes/2017/09/52680/</guid>
+      <description>&lt;p&gt;I believe 100% in “Clean Code” and also believe repetition is much better than the wrong abstraction. Why do I keep seeing folks arguing between the two as if they somehow contradict?&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title></title>
-      <link>http://keithjgrant.com/notes/2017/02/84236/</link>
-      <pubDate>Thu, 09 Feb 2017 08:42:36 -0500</pubDate>
+      <link>https://keithjgrant.com/notes/2017/08/72390/</link>
+      <pubDate>Thu, 31 Aug 2017 20:06:30 +0000</pubDate>
       
-      <guid>http://keithjgrant.com/notes/2017/02/84236/</guid>
-      <description>&lt;p&gt;Current status &lt;a href=&#34;https://www.youtube.com/watch?v=g0MLscghcN4&#34;&gt;https://www.youtube.com/watch?v=g0MLscghcN4&lt;/a&gt;&lt;/p&gt;
+      <guid>https://keithjgrant.com/notes/2017/08/72390/</guid>
+      <description>&lt;p&gt;I’m reversing my previous position: Twitter should drop the 140 char limit.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title></title>
-      <link>http://keithjgrant.com/notes/2017/02/105953/</link>
-      <pubDate>Fri, 03 Feb 2017 10:59:54 -0500</pubDate>
+      <link>https://keithjgrant.com/notes/2017/08/68549/</link>
+      <pubDate>Wed, 30 Aug 2017 19:02:29 +0000</pubDate>
       
-      <guid>http://keithjgrant.com/notes/2017/02/105953/</guid>
-      <description>&lt;p&gt;Are there any codemods to convert LESS to PostCSS/cssnext syntax? Doesn&amp;rsquo;t need to be too fancy, just cut down on the busywork.&lt;/p&gt;
+      <guid>https://keithjgrant.com/notes/2017/08/68549/</guid>
+      <description>&lt;p&gt;Test post from Omnibear in Firefox!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title></title>
-      <link>http://keithjgrant.com/notes/2017/01/145158/</link>
-      <pubDate>Fri, 27 Jan 2017 14:51:58 -0500</pubDate>
+      <link>https://keithjgrant.com/notes/2017/08/51877/</link>
+      <pubDate>Wed, 30 Aug 2017 14:24:37 +0000</pubDate>
       
-      <guid>http://keithjgrant.com/notes/2017/01/145158/</guid>
-      <description>&lt;p&gt;Progressive enhancement and rule of least power MATTER &lt;a href=&#34;https://twitter.com/ArielleDRoss/status/825043489016705024&#34;&gt;https://twitter.com/ArielleDRoss/status/825043489016705024&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>https://keithjgrant.com/notes/2017/08/51877/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://keithjgrant.com/notes/2017/08/65435/</link>
+      <pubDate>Tue, 15 Aug 2017 18:10:35 +0000</pubDate>
+      
+      <guid>https://keithjgrant.com/notes/2017/08/65435/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://keithjgrant.com/notes/2017/08/50907/</link>
+      <pubDate>Fri, 11 Aug 2017 14:08:27 +0000</pubDate>
+      
+      <guid>https://keithjgrant.com/notes/2017/08/50907/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://keithjgrant.com/notes/2017/08/51858/</link>
+      <pubDate>Mon, 07 Aug 2017 14:24:18 +0000</pubDate>
+      
+      <guid>https://keithjgrant.com/notes/2017/08/51858/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://keithjgrant.com/notes/2017/07/64290/</link>
+      <pubDate>Thu, 20 Jul 2017 17:51:30 +0000</pubDate>
+      
+      <guid>https://keithjgrant.com/notes/2017/07/64290/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://keithjgrant.com/notes/2017/06/56279/</link>
+      <pubDate>Wed, 28 Jun 2017 15:37:59 +0000</pubDate>
+      
+      <guid>https://keithjgrant.com/notes/2017/06/56279/</guid>
+      <description></description>
     </item>
     
   </channel>

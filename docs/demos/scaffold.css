@@ -1,0 +1,32 @@
+
+:root {
+  font-size: 1em;
+  font-family: Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+.demo-container {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.demo-styles {
+  display: block;
+  font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
+  white-space: pre;
+  border: 1px solid #333;
+  background-color: #eee;
+  padding: 0.5em 1em;
+  margin-top: 2em;
+}
