@@ -62,6 +62,19 @@ document.getElementsByTagName('head')[0].appendChild(link);
           </section>
 
           <section>
+            <h3>We <div class="flip"><span>love</span><span>hate</span></div> our social networks</h3>
+          </section>
+
+          <section>
+            <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">dear all social media platforms<br><br>i only ever want to get my feed in chronological order<br><br>that&#39;s it<br><br>please arrange this<br><br>thanks<br>-monk</p>&mdash; monk (@veshenjukkel) <a href="https://twitter.com/veshenjukkel/status/907230038143238144">September 11, 2017</a></blockquote>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </section>
+
+          <section>
+            <p><img src="images/liked-tweets.png" alt="A long list of tweets complaining about twitter showing liked tweets"/></p>
+          </section>
+
+          <section>
             <h3>Problems with social networks</h3>
             <ul>
               <li>Requires account on each network</li>
@@ -72,6 +85,8 @@ document.getElementsByTagName('head')[0].appendChild(link);
             </ul>
             <p class="fragment">TLDR: not a blog</p>
           </section>
+
+          <!-- https://twitter.com/veshenjukkel/status/907230038143238144?s=03 -->
 
           <section>
             <h3>Attempts to unseat Facebook/Twitter fail</h3>
@@ -116,6 +131,10 @@ document.getElementsByTagName('head')[0].appendChild(link);
           <section>
             <h3>Adopt incrementally</h3>
           </section>
+
+          <section>
+            <p><a href="http://indieweb.org/">indieweb.org</a></p>
+          </section>
         </section>
 
         <section>
@@ -135,13 +154,16 @@ document.getElementsByTagName('head')[0].appendChild(link);
               <div>
                 <img src="images/kjg-toc.png" alt="keithjgrant.com menu, including links to posts, notes, and social"/>
               </div>
-              <ul>
-                <li>Articles</li>
-                <li>Notes</li>
-                <li>Reposts</li>
-                <li>Replies</li>
-                <li>Likes</li>
-              </ul>
+              <div class="text-left">
+                <p>Put <strong>all</strong> your content on your site</p>
+                <ul>
+                  <li>Articles</li>
+                  <li>Notes</li>
+                  <li>Reposts</li>
+                  <li>Replies</li>
+                  <li>Likes</li>
+                </ul>
+              </div>
             </div>
           </section>
         </section>
@@ -149,7 +171,7 @@ document.getElementsByTagName('head')[0].appendChild(link);
         <section>
           <section>
             <h2>Microformats</h2>
-            <p class="fragment">Ensure markup is machine-parsable</p>
+            <p class="fragment">Ensures markup is machine-parsable</p>
           </section>
 
           <section>
@@ -326,14 +348,6 @@ document.getElementsByTagName('head')[0].appendChild(link);
         <section>
           <section>
             <h2>Webmentions</h2>
-          </section>
-
-          <section>
-            <p><img src="images/disqus-abuse.png" alt="Disqus is using it's own embed as a click-farm to drive ad impressions"/></p>
-          </section>
-
-          <section>
-            <h3>Webmentions</h3>
             <p>Tracking the conversation</p>
           </section>
 
@@ -349,8 +363,7 @@ document.getElementsByTagName('head')[0].appendChild(link);
           <section>
             <h3>Specify your webmention endpoint in &lt;head&gt;</h3>
             <pre><code data-trim data-noescape>
-&lt;link rel="webmention"
-      href="https://webmention.io/keithjgrant.com/webmention" /&gt;
+&lt;link rel="webmention" href="https://yoursite.com/webmention" /&gt;
             </code></pre>
           </section>
 
@@ -380,8 +393,23 @@ document.getElementsByTagName('head')[0].appendChild(link);
           </section>
 
           <section>
+            <h3>Implementations</h3>
+            <ul>
+              <li>micro.blog</li>
+              <li>withknown.com</li>
+              <li>Wordpress plugin</li>
+              <li>Drupal plugin</li>
+              <li><a href="http://indieweb.org/Webmention-developer#Publishing_Software">other plugins</a></li>
+              <li>Many <a href="http://indieweb.org/Webmention-developer#Implementations">open source libraries</a></li>
+              <li>webmention.io service</li>
+              <li>or write your own</li>
+            </ul>
+          </section>
+
+          <section>
             <h3><a href="https://webmention.io/">webmention.io</a> service</h3>
             <p><img src="images/webmention.io.png" alt="screenshot of webmention.io homepage"/></p>
+            <p>Useful for static sites</p>
           </section>
 
           <section>
@@ -392,16 +420,35 @@ document.getElementsByTagName('head')[0].appendChild(link);
 
         <section>
           <section>
-            <h2>Syndication</h2>
+            <h2>Micropub</h2>
+            <p>Open API standard for publishing to your site</p>
           </section>
 
-          <!-- brid.gy -->
+          <section>
+            <h3> from a 3rd party client</h3>
+            <ul>
+              <li>Publish posts, photos, comments, etc.</li>
+              <li>Post to your site from a third-party client</li>
+              <li>Update/delete posts</li>
+              <li><a href="https://www.w3.org/TR/micropub/">W3C Recommendation Spec</a></li>
+            </ul>
+          </section>
+
+
+          <section>
+            <h3>Specify your micropub endpoint in &lt;head&gt;</h3>
+            <pre><code data-trim data-noescape>
+&lt;link rel="webmention" href="https://yoursite.com/micropub" /&gt;
+            </code></pre>
+          </section>
         </section>
 
         <section>
           <section>
-            <h2>Micropub</h2>
+            <h2>Syndication</h2>
           </section>
+
+          <!-- brid.gy -->
         </section>
 
         <section>

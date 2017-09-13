@@ -135,4 +135,60 @@ section.has-light-background {
   p code {
     font-size-adjust: 0.7;
   }
+
+  .flip {
+    position: relative;
+    display: inline-block;
+    width: 4ch;
+    height: 1em;
+    color: $red-4;
+    perspective: 1000px;
+
+    & > span {
+      position: absolute;
+      top: 0.08em;
+      right: 0;
+      left: 0;
+      display: inline-block;
+      text-align: center;
+      backface-visibility: hidden;
+
+      &:nth-child(1) {
+        animation: flip1 3s infinite;
+      }
+
+      &:nth-child(2) {
+        transform: rotateX(180deg);
+        animation: flip2 3s infinite;
+      }
+    }
+  }
+
+  .twitter-tweet {
+    margin: 10vh auto 0 !important;
+  }
+}
+
+@keyframes flip1 {
+  0%,
+  35% {
+    transform: rotateX(0deg);
+  }
+
+  50%,
+  85% {
+    transform: rotateX(180deg);
+  }
+}
+
+@keyframes flip2 {
+  0%,
+  35% {
+    transform: rotateX(180deg);
+  }
+
+  50%,
+  85% {
+    transform: rotateX(0deg);
+  }
 }
