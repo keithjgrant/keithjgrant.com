@@ -80,8 +80,11 @@
     var urls = [];
     url = url.replace('localhost:1313', 'keithjgrant.com');
     urls.push(url);
+    urls.push(url.replace('https://', 'http://'));
     if (url.substr(-1) === '/') {
-      urls.push(url.substr(0, url.length - 1));
+      var noslash = url.substr(0, url.length - 1);
+      urls.push(noslash);
+      urls.push(noslash.replace('https://', 'http://'));
     }
     if (aliases) {
       aliases.forEach(function(alias) {
