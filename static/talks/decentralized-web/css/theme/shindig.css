@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Shindig theme for reveal.js.
  *
@@ -343,7 +344,7 @@ body {
   box-shadow: 0 0 0.3em 0.2em #e8547e; }
 
 .reveal .demo-link::after {
-  content: "\25b6";
+  content: '\25b6';
   margin-left: 0.4em;
   font-size: 0.6em;
   vertical-align: 0.2em; }
@@ -374,6 +375,21 @@ body {
 
 .reveal .twitter-tweet {
   margin: 10vh auto 0 !important; }
+
+.reveal .quote > q {
+  display: block;
+  text-align: left;
+  text-indent: -0.8ch; }
+  .reveal .quote > q::before {
+    content: '“'; }
+  .reveal .quote > q::after {
+    content: '”'; }
+
+.reveal .quote > cite {
+  display: block;
+  text-align: right; }
+  .reveal .quote > cite::before {
+    content: '–'; }
 
 @keyframes flip1 {
   0%,

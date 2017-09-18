@@ -6,8 +6,8 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:700,900|Fira+Mono|Martel");
 
 // Default mixins and settings -----------------
-@import "../template/mixins";
-@import "../template/settings";
+@import '../template/mixins';
+@import '../template/settings';
 // ---------------------------------------------
 
 // Include theme-specific fonts
@@ -54,7 +54,7 @@ section.has-light-background {
 }
 
 // Theme template ------------------------------
-@import "../template/theme";
+@import '../template/theme';
 // ---------------------------------------------
 
 .reveal {
@@ -126,7 +126,7 @@ section.has-light-background {
   }
 
   .demo-link::after {
-    content: "\25b6";
+    content: '\25b6';
     margin-left: 0.4em;
     font-size: 0.6em;
     vertical-align: 0.2em;
@@ -166,6 +166,31 @@ section.has-light-background {
 
   .twitter-tweet {
     margin: 10vh auto 0 !important;
+  }
+
+  .quote {
+    & > q {
+      display: block;
+      text-align: left;
+      text-indent: -0.8ch;
+
+      &::before {
+        content: '“';
+      }
+
+      &::after {
+        content: '”';
+      }
+    }
+
+    & > cite {
+      display: block;
+      text-align: right;
+
+      &::before {
+        content: '–';
+      }
+    }
   }
 }
 
