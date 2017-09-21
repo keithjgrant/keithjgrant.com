@@ -7,3 +7,8 @@ category: notes
 
 ---
 Hey ConnectJS! Are you ready to get on the IndieWeb?
+<style>
+#webmention-form {
+  display: none;
+}
+</style>
