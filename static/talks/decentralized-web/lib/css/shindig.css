@@ -9,7 +9,8 @@ based on dark.css by Ivan Sagalaev
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: hsla(192,17%,14%,1);
+  /*background: hsla(192,17%,14%,1);*/
+  background-color: hsl(211, 9%, 22%);
   color: #dcdcdc;
 }
 

@@ -2,7 +2,7 @@
 /**
  * Shindig theme for reveal.js.
  *
- * By Keith J. Grant http://keithjgrant.com
+ * By Keith J. Grant https://keithjgrant.com
  */
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:700,900|Fira+Mono|Martel");
 @import url(../../lib/font/source-sans-pro/source-sans-pro.css);
@@ -343,6 +343,10 @@ body {
   background-color: transparent;
   box-shadow: 0 0 0.3em 0.2em #e8547e; }
 
+.reveal pre code {
+  margin-left: 0 -1em;
+  padding: 0.6em 1em; }
+
 .reveal .demo-link::after {
   content: '\25b6';
   margin-left: 0.4em;
@@ -390,6 +394,16 @@ body {
   text-align: right; }
   .reveal .quote > cite::before {
     content: '–'; }
+
+.reveal .big1 {
+  font-size: 2em;
+  color: #06a7a5;
+  font-weight: 900;
+  letter-spacing: 0.02em; }
+
+.reveal .big2 {
+  font-size: 1.3em;
+  color: #eb9c47; }
 
 @keyframes flip1 {
   0%,

@@ -17,6 +17,7 @@ $yellow-9: hsl(31, 90%, 97%);
 $blue-4: hsl(211, 100%, 72%);
 $red-4: hsl(344, 96%, 48%);
 $green-4: hsl(179, 100%, 24%);
+$green-5: hsl(179, 93%, 34%);
 $yellow-4: hsl(31, 80%, 60%);
 
 // Override theme settings (see ../template/settings.scss)
@@ -125,6 +126,11 @@ section.has-light-background {
     box-shadow: 0 0 0.3em 0.2em #e8547e;
   }
 
+  pre code {
+    margin-left: 0 -1em;
+    padding: 0.6em 1em;
+  }
+
   .demo-link::after {
     content: '\25b6';
     margin-left: 0.4em;
@@ -191,6 +197,18 @@ section.has-light-background {
         content: '–';
       }
     }
+  }
+
+  .big1 {
+    font-size: 2em;
+    color: $green-5;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+  }
+
+  .big2 {
+    font-size: 1.3em;
+    color: $yellow-4;
   }
 }
 
