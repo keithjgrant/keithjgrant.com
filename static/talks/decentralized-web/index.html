@@ -80,7 +80,7 @@ document.getElementsByTagName('head')[0].appendChild(link);
           </section>
 
           <section>
-            <h3>Problems with<br><span class="big2">social networks</span></h3>
+            <h3><span class="big2">Problems</span><br>with social networks</h3>
             <ul>
               <li>Little control</li>
               <li>Don’t own your data</li>
@@ -94,7 +94,10 @@ document.getElementsByTagName('head')[0].appendChild(link);
           <!-- https://twitter.com/veshenjukkel/status/907230038143238144?s=03 -->
 
           <section>
-            <h3>Attempts to unseat Facebook/Twitter fail</h3>
+            <h3>Attempts to<br><span class="big1">unseat</span><br>Facebook/Twitter fail</h3>
+          </section>
+
+          <section>
             <ul>
               <li>Buzz</li>
               <li>Ello</li>
@@ -102,7 +105,7 @@ document.getElementsByTagName('head')[0].appendChild(link);
               <li>Ping</li>
               <li>Mastodon</li>
             </ul>
-            <p class="fragment">Another social network clone is not the answer</p>
+            <p>Another <strong>social network clone</strong> is not the answer</p>
           </section>
         </section>
 
@@ -112,8 +115,17 @@ document.getElementsByTagName('head')[0].appendChild(link);
           </section>
 
           <section>
-            <h3>Grassroots movement<br>+<br>W3C Specifications</h3>
-            <p class="fragment">Return to the original vision of the web</p>
+            <h3>
+              Grassroots movement<br>&rarr;<br>
+              Formalized standards<br>&rarr;<br>
+              W3C Specifications
+            </h3>
+          </section>
+
+          <section>
+            <h2>Return to the<br>
+              <span class="big2">original vision</span><br>
+              of the web</h2>
           </section>
 
           <section>
@@ -171,28 +183,24 @@ document.getElementsByTagName('head')[0].appendChild(link);
           </section>
 
           <section>
-            <div class="split">
-              <div>
-                <img src="images/kjg-toc.png" alt="keithjgrant.com menu, including links to posts, notes, and social"/>
-              </div>
-              <div class="text-left">
-                <p>Put <strong>all</strong> your content on your site</p>
-                <ul>
-                  <li>Articles</li>
-                  <li>Notes</li>
-                  <li>Reposts</li>
-                  <li>Replies</li>
-                  <li>Likes</li>
-                </ul>
-              </div>
-            </div>
+            <h3>Put <strong class="big2">all your content</strong> on your site</h3>
+            <ul>
+              <li>Articles</li>
+              <li>Notes</li>
+              <li>Reposts</li>
+              <li>Replies</li>
+              <li>Likes</li>
+            </ul>
           </section>
         </section>
 
         <section>
           <section>
             <h2>Microformats</h2>
-            <p>Ensures markup is<br><span class="big2">machine-parsable</span></p>
+          </section>
+
+          <section>
+            <h3>Ensures markup is<br><span class="big2">machine-parsable</span></h3>
           </section>
 
           <section>
@@ -318,8 +326,8 @@ document.getElementsByTagName('head')[0].appendChild(link);
             <ul>
               <li>Simplification of older “pingback”</li>
               <li>Send POST to a specified endpoint</li>
-              <li><a href="https://www.w3.org/TR/webmention/">W3C Recommendation Spec</a> (2017)</li>
             </ul>
+            <p class="fragment"><a href="https://www.w3.org/TR/webmention/">W3C Recommendation Spec</a> (2017)</p>
           </section>
 
           <section>
@@ -332,25 +340,36 @@ document.getElementsByTagName('head')[0].appendChild(link);
           <section>
             <h3>Webmention process</h3>
             <ul>
-              <li>Create <strong>source</strong> document that mentions the <strong>target</strong></li>
-              <li>Find webmention <strong>endpoint</strong> for target (<code>&lt;link rel="webmention"&gt;</code>)</li>
-              <li>Notify endpoint of source url & target url</li>
-              <li>Endpoint verifies source url</li>
+              <li class="fragment">Create <strong>source</strong> document that mentions the <strong>target</strong></li>
+              <li class="fragment">Find webmention <strong>endpoint</strong> for target<br>(<code>&lt;link rel="webmention"&gt;</code>)</li>
+              <li class="fragment">Notify endpoint of source url & target url</li>
+              <li class="fragment">Endpoint verifies source url</li>
             </ul>
           </section>
 
           <section>
-            <h3>Comment, reply, like, repost…</h3>
+            <h3>Reply, like, repost…</h3>
             <p>Specified by microformats in the source document</p>
-            <pre class="fragment"><code data-trim data-noescape>
-&lt;div <mark>class="h-entry"</mark>&gt;
-  &lt;p&gt;In reply to
-    &lt;a href="https://example.com/target/url" <mark>rel="u-in-reply-to"</mark>&gt;
+            <pre class="fragment"><code data-trim data-noescape class="html">
+    &lt;a href="https://example.com/target/url" <mark>class="u-in-reply-to"</mark>&gt;
       a post on example.com
     &lt;/a&gt;
   &lt;/p&gt;
   &lt;div class="e-content"&gt;…&lt;/div&gt;
 &lt;/div&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <pre><code data-trim data-noescape class="html">
+&lt;p&gt;Liked &lt;a href="https://example.com/target/url" <mark>class="u-like-of"</mark>&gt;
+  a post on example.com
+&lt;/a&gt;&lt;/p&gt;
+            </code></pre>
+            <pre><code data-trim data-noescape class="html">
+&lt;p&gt;Reposted &lt;a href="https://example.com/target/url" <mark>class="u-repost-of"</mark>&gt;
+  a post on example.com
+&lt;/a&gt;&lt;/p&gt;
             </code></pre>
           </section>
 
@@ -452,12 +471,13 @@ document.getElementsByTagName('head')[0].appendChild(link);
           </section>
 
           <section>
+            <h3>Micropub</h3>
             <ul>
               <li>Publish posts, photos, comments, etc.</li>
               <li>Post to your site from a third-party client</li>
               <li>Update/delete posts</li>
-              <li><a href="https://www.w3.org/TR/micropub/">W3C Recommendation Spec</a> (2017)</li>
             </ul>
+            <p class="fragment"><a href="https://www.w3.org/TR/micropub/">W3C Recommendation Spec</a> (2017)</p>
           </section>
 
 
@@ -671,17 +691,17 @@ document.getElementsByTagName('head')[0].appendChild(link);
           </section>
 
           <section>
-            <h3>CSS in Depth eBook givaway</h3>
+            <h3>CSS in Depth <span class="big2">eBook giveaway</span></h3>
             <ol>
-              <li>Tweet with hashtag <strong>#CSSinDepth</strong><br>(1 winner chosen randomly)</li>
-              <li style="margin-top: 1em">Send reply webmention to <a href="https://keithjgrant.com/notes/connect-tech/" target="demo">keithjgrant.com/notes/connect-tech</a><br>(2 winners - first webmentions received)</li>
+              <li class="fragment">Tweet with hashtag <strong>#CSSinDepth</strong><br>(1 winner chosen randomly)</li>
+              <li style="margin-top: 1em" class="fragment">Send reply webmention to <a href="https://keithjgrant.com/notes/connect-tech/" target="demo">keithjgrant.com/notes/connect-tech</a><br>(2 winners - first webmentions received)</li>
             </ol>
           </section>
 
         </section>
 
         <section>
-          <h2>Thank you!</h2>
+          <h2 class="big1">Thank you!</h2>
 
           <p><a href="http://keithjgrant.com">keithjgrant.com</a></p>
           <p>Slides: <a href="http://keithjgrant.com/talks">keithjgrant.com/talks</a></p>
