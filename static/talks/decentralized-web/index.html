@@ -34,7 +34,9 @@ document.getElementsByTagName('head')[0].appendChild(link);
           <h2>keithjgrant.com</h2>
           <p class="text-left"><em>Intercontinental Exchange</em></p>
           <p class="text-left"><em>CSS in Depth</em>, Manning Publications (2017)</p>
-          <p class="text-right"><a href="http://keithjgrant.com/talks">keithjgrant.com/talks</a></p>
+          <p class="text-right"><a href="http://keithjgrant.com/talks">keithjgrant.com/talks</a>
+          <br>
+          <a href="https://twitter.com/keithjgrant">@keithjgrant</a></p>
         </section>
 
         <section>
@@ -184,7 +186,7 @@ document.getElementsByTagName('head')[0].appendChild(link);
 
         <section>
           <section>
-            <h2>Microformats</h2>
+            <h2>Microformats 2</h2>
             <p class="fragment">Ensures markup is machine-parsable</p>
           </section>
 
@@ -299,65 +301,6 @@ document.getElementsByTagName('head')[0].appendChild(link);
           </section>
         </section>
 
-        <section>
-          <section>
-            <h2>IndieAuth</h2>
-          </section>
-
-          <section>
-            <h3>Simplified version of old OpenID</h3>
-            <p>OpenId &rarr; RelMeAuth &rarr; IndieAuth</p>
-          </section>
-
-          <section>
-            <h3>rel="me" links in h-card…</h3>
-            <pre><code data-trim data-noescape>
-&lt;a href="https://twitter.com/keithjgrant/" <mark>rel="me"</mark>&gt;@keithjgrant&lt;/a&gt;
-&lt;a href="https://github.com/keithjgrant" <mark>rel="me"</mark>&gt;keithjgrant&lt;/a&gt;
-            </code></pre>
-          </section>
-
-          <section>
-            <h3>…rel="me" links in OAuth profile</h3>
-            <div>
-              <img src="images/twitter-bio.png" alt="Screenshot of my Twitter bio, with link back to my website"/>
-            </div>
-          </section>
-
-          <section>
-            <h3>Two-way verification</h3>
-            <p><strong>OAuth login</strong> with my twitter account<br>
-              <strong>authenticates me as owner</strong> of my website</p>
-          </section>
-
-          <section>
-            <h3>Specify your auth endpoint in &lt;head&gt;</h3>
-            <pre><code data-trim data-noescape>
-&lt;link rel="authorization_endpoint" href="https://indieauth.com/auth" /&gt;
-&lt;link rel="token_endpoint" href="https://tokens.indieauth.com/token" /&gt;
-            </code></pre>
-          </section>
-
-          <section>
-            <h3><a href="https://quill.p3k.io/" class="demo-link" target="demo">Demo</a></h3>
-          </section>
-
-          <section>
-            <p><img src="images/indieauth-1.png" alt="IndieAuth login page for a web app"/></p>
-          </section>
-
-          <section>
-            <p><img src="images/indieauth-2.png" alt="OAuth links during login process"/></p>
-          </section>
-
-          <section>
-            <p><img src="images/indieauth-3.png" alt="OAuth app redirecting back to app's IndieAuth page"/></p>
-          </section>
-
-          <section>
-            <p><img src="images/indieauth-4.png" alt="Successfully logged in to App"/></p>
-          </section>
-        </section>
 
         <section>
           <section>
@@ -431,6 +374,68 @@ document.getElementsByTagName('head')[0].appendChild(link);
             <p><a href="http://keithjgrant.com/posts/2017/06/self-documenting-css/#comments" target="demo" class="demo-link">demo</a></p>
           </section>
         </section>
+
+
+        <section>
+          <section>
+            <h2>IndieAuth</h2>
+          </section>
+
+          <section>
+            <h3>Simplified version of old OpenID</h3>
+            <p>OpenId &rarr; RelMeAuth &rarr; IndieAuth</p>
+          </section>
+
+          <section>
+            <h3>rel="me" links in h-card…</h3>
+            <pre><code data-trim data-noescape>
+&lt;a href="https://twitter.com/keithjgrant/" <mark>rel="me"</mark>&gt;@keithjgrant&lt;/a&gt;
+&lt;a href="https://github.com/keithjgrant" <mark>rel="me"</mark>&gt;keithjgrant&lt;/a&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>…rel="me" links in OAuth profile</h3>
+            <div>
+              <img src="images/twitter-bio.png" alt="Screenshot of my Twitter bio, with link back to my website"/>
+            </div>
+          </section>
+
+          <section>
+            <h3>Two-way verification</h3>
+            <p><strong>OAuth login</strong> with my twitter account<br>
+              <strong>authenticates me as owner</strong> of my website</p>
+          </section>
+
+          <section>
+            <h3>Specify your auth endpoint in &lt;head&gt;</h3>
+            <pre><code data-trim data-noescape>
+&lt;link rel="authorization_endpoint" href="https://indieauth.com/auth" /&gt;
+&lt;link rel="token_endpoint" href="https://tokens.indieauth.com/token" /&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <h3><a href="https://quill.p3k.io/" class="demo-link" target="demo">Demo</a></h3>
+          </section>
+
+          <section>
+            <p><img src="images/indieauth-1.png" alt="IndieAuth login page for a web app"/></p>
+          </section>
+
+          <section>
+            <p><img src="images/indieauth-2.png" alt="OAuth links during login process"/></p>
+          </section>
+
+          <section>
+            <p><img src="images/indieauth-3.png" alt="OAuth app redirecting back to app's IndieAuth page"/></p>
+          </section>
+
+          <section>
+            <p><img src="images/indieauth-4.png" alt="Successfully logged in to App"/></p>
+          </section>
+        </section>
+
 
         <section>
           <section>
@@ -649,11 +654,20 @@ document.getElementsByTagName('head')[0].appendChild(link);
           <section>
             <div class="split">
               <div><img src="images/book-cover.png" alt="CSS in Depth book cover"/></div>
-              <div>
+              <div style="flex: 3">
                 <h3>CSS in Depth</h3>
                 <p><a href="https://manning.com/books/css-in-depth">manning.com/books/css-in-depth</a></p>
+                <p><strong>ctwconntech17</strong> &mdash; 40% off</p>
               </div>
             </div>
+          </section>
+
+          <section>
+            <h3>CSS in Depth eBook givaway</h3>
+            <ol>
+              <li>Tweet with hashtag <strong>#CSSinDepth</strong><br>(1 winner chosen randomly)</li>
+              <li>Send reply webmention to <a href="https://keithjgrant.com/notes/connect-js/">https://keithjgrant.com/notes/connect-js/</a><br>(2 winners - first webmentions received)</li>
+            </ol>
           </section>
 
         </section>
