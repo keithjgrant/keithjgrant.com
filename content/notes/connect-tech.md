@@ -2,7 +2,7 @@
 layout: micropubpost
 date: 2017-09-21 13:49:01 +0000
 title: ''
-slug: connect-js
+slug: connect-tech
 category: notes
 
 ---
