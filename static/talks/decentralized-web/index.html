@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/theme/shindig.css">
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/zenburn-modified.css">
+    <link rel="stylesheet" href="lib/css/shindig.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -192,7 +192,7 @@ document.getElementsByTagName('head')[0].appendChild(link);
 
           <section>
             <h3>Example microformat markup</h3>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape class="html">
 &lt;header <mark>class="h-card"</mark>&gt;
   &lt;a <mark>class="p-name u-url"</mark> href="http://keithjgrant.com"&gt;
     Keith J. Grant
@@ -249,7 +249,7 @@ document.getElementsByTagName('head')[0].appendChild(link);
 
           <section>
             <h3>h-card example</h3>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape class="html">
 &lt;header <mark>class="h-card"</mark>&gt;
   &lt;a <mark>class="p-name u-url"</mark> href="http://keithjgrant.com"&gt;
     Keith J. Grant
@@ -273,7 +273,7 @@ document.getElementsByTagName('head')[0].appendChild(link);
 
           <section>
             <h3>h-entry example</h3>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape class="html">
 &lt;div class="post-body__item <mark>h-entry</mark>"&gt;
   &lt;div class="post-preview"&gt;
     &lt;div class="post-preview__date metadata"&gt;
@@ -319,7 +319,7 @@ document.getElementsByTagName('head')[0].appendChild(link);
 
           <section>
             <h3>Specify your webmention endpoint in &lt;head&gt;</h3>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape class="html">
 &lt;link rel="webmention" href="https://yoursite.com/webmention" /&gt;
             </code></pre>
           </section>
@@ -391,7 +391,7 @@ document.getElementsByTagName('head')[0].appendChild(link);
 
           <section>
             <h3>rel="me" links in h-card…</h3>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape class="html">
 &lt;a href="https://twitter.com/keithjgrant/" <mark>rel="me"</mark>&gt;@keithjgrant&lt;/a&gt;
 &lt;a href="https://github.com/keithjgrant" <mark>rel="me"</mark>&gt;keithjgrant&lt;/a&gt;
             </code></pre>
@@ -412,7 +412,7 @@ document.getElementsByTagName('head')[0].appendChild(link);
 
           <section>
             <h3>Specify your auth endpoint in &lt;head&gt;</h3>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape class="html">
 &lt;link rel="authorization_endpoint" href="https://indieauth.com/auth" /&gt;
 &lt;link rel="token_endpoint" href="https://tokens.indieauth.com/token" /&gt;
             </code></pre>
@@ -458,7 +458,7 @@ document.getElementsByTagName('head')[0].appendChild(link);
 
           <section>
             <h3>1. Specify your micropub endpoint in &lt;head&gt;</h3>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape class="html">
 &lt;link rel="webmention" href="https://yoursite.com/micropub" /&gt;
             </code></pre>
           </section>

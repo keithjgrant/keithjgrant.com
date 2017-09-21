@@ -15,8 +15,10 @@ based on dark.css by Ivan Sagalaev
 
 .hljs-keyword,
 .hljs-selector-tag,
-.hljs-tag {
+.hljs-tag,
+.hljs-name {
   color: #e3ceab;
+  color: hsl(211, 65%, 85%);
 }
 
 .hljs-template-tag {
@@ -42,7 +44,7 @@ based on dark.css by Ivan Sagalaev
 }
 
 .hljs-title,
-.hljs-name,
+/*.hljs-name,*/
 .hljs-selector-id,
 .hljs-selector-class,
 .hljs-selector-pseudo,
@@ -62,6 +64,8 @@ based on dark.css by Ivan Sagalaev
 .hljs-built_in,
 .hljs-builtin-name {
   color: hsla(343,36%,69%,1);
+  color: hsl(211, 65%, 85%);
+  color: hsl(31, 50%, 72%);
 }
 
 .hljs-addition,
@@ -78,4 +82,8 @@ based on dark.css by Ivan Sagalaev
 
 .hljs-strong {
   font-weight: bold;
+}
+
+.hljs-attr {
+  color: hsl(31, 81%, 72%);
 }
