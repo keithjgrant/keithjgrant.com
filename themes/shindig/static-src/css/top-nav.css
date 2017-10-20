@@ -1,6 +1,12 @@
+.site-title {
+  text-align: center;
+
+  & > a {
+    font-weight: normal;
+  }
+}
+
 .top-nav {
-  max-width: $container-wide;
-  margin: 0 auto;
 }
 
 .nav-links {

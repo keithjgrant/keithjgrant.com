@@ -9,6 +9,7 @@ module.exports = {
     cssnext({
       features: {
         customProperties: false,
+        rem: false,
       },
     }),
   ],

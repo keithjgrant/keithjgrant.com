@@ -1,0 +1,33 @@
+.l-article {
+  display: grid;
+  /* prettier-ignore */
+  grid-template-columns:
+    [full-start] minmax(1em, 1fr)
+    [main-start] minmax(1em, 70ch)
+    [main-end] minmax(1em, 1fr)
+    [full-end];
+
+  & > * {
+    grid-column: main;
+  }
+}
+
+.article {
+  & > pre {
+    padding: 1em;
+    /* TODO: move to other module */
+    overflow: auto;
+    color: var(--gray-9);
+    background-color: var(--gray-3);
+
+    @media (min-width: 56em) {
+      margin-right: -3em;
+      margin-left: -3em;
+      padding: 1em 3rem;
+    }
+  }
+}
+
+.article__wide {
+  grid-column: wide;
+}

@@ -1,0 +1,72 @@
+<div class="loading-indicator" id="comments-loader">
+  <svg class="interaction-icon"><use xlink:href="#icon-loading"></use></svg>
+  <div>Loading interactions...</div>
+</div>
+<div class="post-interaction is-hidden" id="comments">
+  <div class="tabs">
+    <button aria-controls="pane-replies">
+      <svg class="interaction-icon"><use xlink:href="#icon-reply"></use></svg>
+      <span id="reply-count"></span>
+    </button>
+    <button aria-controls="pane-likes">
+      <svg class="interaction-icon"><use xlink:href="#icon-heart"></use></svg>
+      <span id="like-count"></span>
+    </button>
+    <button aria-controls="pane-shares">
+      <svg class="interaction-icon"><use xlink:href="#icon-share"></use></svg>
+      <span id="share-count"></span>
+    </button>
+  </div>
+  <div class="tab-pane " id="pane-replies" aria-controlled-by="tab-replies">
+    <h3>Replies</h3>
+    <form id="webmention-form" class="inline-form content" method="post" action="https://webmention.io/keithjgrant.com/webmention">
+      <input type="hidden" name="target" value="{{ .Permalink }}" />
+      <label for="reply-url">Have you written a <a href="https://indieweb.org/responses">response</a> to this? Let me know the URL:</label>
+      <div class="inline-form__inputs">
+        <input type="text" id="reply-url" name="source" />
+        <button type="submit" id="webmention-submit">Send Webmention</button>
+      </div>
+      <p class="form-alert is-hidden"></p>
+    </form>
+    <ul class="replies" id="replies"></ul>
+  </div>
+  <div class="tab-pane" id="pane-likes" aria-controlled-by="tab-likes">
+    <h3>Likes</h3>
+    <ul class="replies" id="likes"></ul>
+  </div>
+  <div class="tab-pane" id="pane-shares" aria-controlled-by="tab-shares">
+    <h3>Shares</h3>
+    <ul class="replies" id="shares"></ul>
+  </div>
+</div>
+
+<template id="reply-template">
+  <li class="reply">
+    <img src="" />
+    <div class="reply__body">
+      <div>
+        <a class="reply__author" href=""></a>
+        <a class="reply__date" href=""></a>
+      </div>
+      <div class="content reply__content"></div>
+    </div>
+  </li>
+</template>
+
+<template id="like-template">
+  <li class="reply reply--like">
+    <img src="" />
+    <div class="reply__body">
+      <div>
+        <a class="reply__author" href=""></a>
+        <a class="reply__date" href=""></a>
+      </div>
+    </div>
+  </li>
+</template>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    loadWebmentions({{ .Permalink }}, {{ .Aliases }});
+  });
+</script>

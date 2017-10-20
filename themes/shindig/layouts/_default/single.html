@@ -3,35 +3,30 @@
 <head>
   {{ partial "meta.html" . }}
 </head>
-<body class="h-entry">
-  {{ partial "svg.html" }}
+<body>
   {{ partial "header.html" . }}
 
-  <main class="post-container">
-    <div class="focus-container">
-      <h1 class="p-name"><a class="u-url" href="{{ .Permalink }}">{{ .Title }}</a></h1>
-    </div>
-    <article class="post-body">
-      <div>
-        {{ partial "in-reply-to" . }}
-        {{ partial "repost-of" . }}
-        {{ partial "like-of" . }}
-        <div class="e-content content show-embeds">
-            {{ .Content }}
-            {{ if not (eq .Section "posts") }}
-              <data class="p-bridgy-omit-link" value="false" />
-            {{ end }}
-          {{ if not (eq .Section "posts") }}
-            <a href="https://brid.gy/publish/twitter"></a>
-          {{ end }}
-        </div>
-      </div>
-      <p class="post-date metadata text-right"><date class="dt-published">{{ .Date.Format "02 Jan 2006 15:04:05" }}</date></p>
-      {{ if not (eq .Section "likes") }}
-        {{ partial "interactions.html" . }}
+  <article class="l-article h-entry">
+    <h1 class="p-name"><a class="u-url" href="{{ .Permalink }}">{{ .Title }}</a></h1>
+
+    {{ partial "in-reply-to" . }}
+    {{ partial "repost-of" . }}
+    {{ partial "like-of" . }}
+    <main class="e-content article show-embeds">
+      {{ .Content }}
+      {{ if not (eq .Section "posts") }}
+        <data class="p-bridgy-omit-link" value="false" />
       {{ end }}
+      {{ if not (eq .Section "posts") }}
+        <a href="https://brid.gy/publish/twitter"></a>
+      {{ end }}
+    </main>
     </article>
-  </main>
+    <p class="post-date metadata text-right"><date class="dt-published">{{ dateFormat "02 Jan 2006 15:04:05" .Date.Local}}</date></p>
+    {{ if not (eq .Section "likes") }}
+      {{ partial "interactions.html" . }}
+    {{ end }}
+  </article>
 
   {{ if eq .Section "posts" }}
     {{ partial "recent-posts.html" . }}

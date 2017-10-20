@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {{ partial "meta.html" . }}
+</head>
+<body>
+  <div class="article">
+    {{ partial "header.html" . }}
+    <article class="article__entry h-entry">
+
+      <div class="post-container">
+        <div class="focus-container">
+          <h1 class="p-name"><a class="u-url" href="{{ .Permalink }}">{{ .Title }}</a></h1>
+        </div>
+        <div class="post-body">
+          <div>
+            {{ partial "in-reply-to" . }}
+            {{ partial "repost-of" . }}
+            {{ partial "like-of" . }}
+            <main class="e-content content show-embeds">
+                {{ .Content }}
+                {{ if not (eq .Section "posts") }}
+                  <data class="p-bridgy-omit-link" value="false" />
+                {{ end }}
+              {{ if not (eq .Section "posts") }}
+                <a href="https://brid.gy/publish/twitter"></a>
+              {{ end }}
+            </main>
+          </div>
+          <p class="post-date metadata text-right"><date class="dt-published">{{ dateFormat "02 Jan 2006 15:04:05" .Date.Local}}</date></p>
+          {{ if not (eq .Section "likes") }}
+            {{ partial "interactions.html" . }}
+          {{ end }}
+        </div>
+      </div>
+
+      {{ if eq .Section "posts" }}
+        {{ partial "recent-posts.html" . }}
+      {{ end }}
+      {{ partial "footer.html" }}
+    </article>
+  </div>
+</body>
+</html>

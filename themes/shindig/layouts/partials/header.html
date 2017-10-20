@@ -1,36 +1,18 @@
-<div class="backdrop"></div>
-<header class="main-header h-card{{ if not (eq .URL "/") }} p-author{{ end }}">
+<header class="l-article main-header h-card{{ if not (eq .URL "/") }} p-author{{ end }}">
   <h1 class="site-title">
     <a class="p-name u-url" href="http://keithjgrant.com">
       Keith J. Grant
     </a>
   </h1>
+
+  <nav class="top-nav">
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts">Posts</a></li>
+      <li><a href="/notes">Notes</a></li>
+      <li><a href="/social">Social</a></li>
+      <li><a href="/talks/all">Talks</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
 </header>
-<nav class="top-nav">
-  <ul class="nav-links">
-    <li><a href="/">
-      <svg class="nav-links__icon"><use xlink:href="#icon-home"></use></svg>
-      <span class="nav-links__label">Home</span>
-    </a></li>
-    <li><a href="/posts">
-      <svg class="nav-links__icon"><use xlink:href="#icon-file"></use></svg>
-      <span class="nav-links__label">posts</span>
-    </a></li>
-    <li><a href="/notes">
-      <svg class="nav-links__icon"><use xlink:href="#icon-pencil"></use></svg>
-      <span class="nav-links__label">Notes</span>
-    </a></li>
-    <li><a href="/social">
-      <svg class="nav-links__icon"><use xlink:href="#icon-social"></use></svg>
-      <span class="nav-links__label">Social</span>
-    </a></li>
-    <li><a href="/talks/all">
-      <svg class="nav-links__icon"><use xlink:href="#icon-screen"></use></svg>
-      <span class="nav-links__label">Talks</span>
-    </a></li>
-    <li><a href="/about">
-      <svg class="nav-links__icon"><use xlink:href="#icon-user"></use></svg>
-      <span class="nav-links__label">About</span>
-    </a></li>
-  </ul>
-</nav>
