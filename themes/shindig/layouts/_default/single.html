@@ -7,25 +7,26 @@
   {{ partial "header.html" . }}
 
   <article class="l-article h-entry">
-    <h1 class="p-name"><a class="u-url" href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    <div>
+      <h1 class="article-title p-name"><a class="u-url" href="{{ .Permalink }}">{{ .Title }}</a></h1>
 
-    {{ partial "in-reply-to" . }}
-    {{ partial "repost-of" . }}
-    {{ partial "like-of" . }}
-    <main class="e-content article show-embeds">
-      {{ .Content }}
-      {{ if not (eq .Section "posts") }}
-        <data class="p-bridgy-omit-link" value="false" />
+      {{ partial "in-reply-to" . }}
+      {{ partial "repost-of" . }}
+      {{ partial "like-of" . }}
+      <main class="article show-embeds e-content">
+        {{ .Content }}
+        {{ if not (eq .Section "posts") }}
+          <data class="p-bridgy-omit-link" value="false" />
+        {{ end }}
+        {{ if not (eq .Section "posts") }}
+          <a href="https://brid.gy/publish/twitter"></a>
+        {{ end }}
+      </main>
+      <p class="post-date metadata text-right"><date class="dt-published">{{ dateFormat "02 Jan 2006 15:04:05" .Date.Local}}</date></p>
+      {{ if not (eq .Section "likes") }}
+        {{ partial "interactions.html" . }}
       {{ end }}
-      {{ if not (eq .Section "posts") }}
-        <a href="https://brid.gy/publish/twitter"></a>
-      {{ end }}
-    </main>
-    </article>
-    <p class="post-date metadata text-right"><date class="dt-published">{{ dateFormat "02 Jan 2006 15:04:05" .Date.Local}}</date></p>
-    {{ if not (eq .Section "likes") }}
-      {{ partial "interactions.html" . }}
-    {{ end }}
+    </div>
   </article>
 
   {{ if eq .Section "posts" }}

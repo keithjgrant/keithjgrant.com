@@ -1,5 +1,6 @@
 :root {
   box-sizing: border-box;
+  font-size: 1.1rem;
 }
 
 *,
@@ -13,8 +14,7 @@ body {
   margin: 0;
   color: var(--blue-1);
   background-color: var(--yellow-9);
-  font-family: Martel, serif;
-  font-size: 1.1rem;
+  font-family: Fira Sans, sans-serif;
   line-height: 1.7;
   letter-spacing: 0.01em;
 }
@@ -27,7 +27,7 @@ h1,
 h2,
 h3 {
   color: var(--blue-2);
-  font-family: Fira Sans Condensed, sans-serif;
+  font-family: Martel, serif;
 
   & a:any-link {
     color: inherit;
@@ -55,6 +55,10 @@ a:hover {
 a:active {
   color: var(--red-4);
   text-decoration: underline;
+}
+
+code {
+  font-size-adjust: 0.45;
 }
 
 ::selection {

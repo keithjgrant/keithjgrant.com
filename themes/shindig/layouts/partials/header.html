@@ -1,18 +1,18 @@
-<header class="l-article main-header h-card{{ if not (eq .URL "/") }} p-author{{ end }}">
-  <h1 class="site-title">
-    <a class="p-name u-url" href="http://keithjgrant.com">
+<header class="l-header main-header h-card{{ if not (eq .URL "/") }} p-author{{ end }}">
+  <h1 class="l-header__title main-header__title">
+    {{ partial "wolf-svg.html" }}
+    <a class="p-name u-url" href="/">
       Keith J. Grant
     </a>
   </h1>
 
-  <nav class="top-nav">
+  <nav class="l-header__menu top-nav">
     <ul class="nav-links">
-      <li><a href="/">Home</a></li>
       <li><a href="/posts">Posts</a></li>
       <li><a href="/notes">Notes</a></li>
       <li><a href="/social">Social</a></li>
-      <li><a href="/talks/all">Talks</a></li>
-      <li><a href="/about">About</a></li>
+      <li><a href="/talks">Talks</a></li>
+      <!-- <li><a href="/about">About</a></li> -->
     </ul>
   </nav>
 </header>

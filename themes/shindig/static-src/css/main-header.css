@@ -1,0 +1,27 @@
+$header-title-color: var(--blue-rich-4);
+
+.main-header {
+  color: var(--yellow-9);
+  background-color: var(--blue-rich-2);
+  background-image: linear-gradient(to bottom, var(--blue-2), var(--blue-rich-2));
+  box-shadow: 0.1em 0 0.1em var(--blue-2);
+}
+
+.main-header__title {
+  margin-bottom: 0;
+  color: $header-title-color;
+  text-align: center;
+
+  & > a {
+    font-weight: normal;
+    color: inherit;
+  }
+}
+
+.icon {
+  height: 1.3em;
+  vertical-align: -0.4em;
+  fill: $header-title-color;
+  stroke: $header-title-color;
+  stroke-width: 1px;
+}

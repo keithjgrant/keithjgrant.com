@@ -69,5 +69,5 @@ This takes a fair bit of code, unfortunately. But if you need this effect, this 
 
 Check out the full working example:
 
-<p data-height="300" data-theme-id="0" data-slug-hash="OgEdgN" data-default-tab="css,result" data-user="keithjgrant" data-embed-version="2" data-pen-title="OgEdgN" class="codepen">See the Pen <a href="https://codepen.io/keithjgrant/pen/OgEdgN/">OgEdgN</a> by Keith Grant (<a href="https://codepen.io/keithjgrant">@keithjgrant</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="500" data-theme-id="31665" data-slug-hash="OgEdgN" data-default-tab="css,result" data-user="keithjgrant" data-embed-version="2" data-pen-title="OgEdgN" class="codepen">See the Pen <a href="https://codepen.io/keithjgrant/pen/OgEdgN/">OgEdgN</a> on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>

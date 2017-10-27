@@ -2,4 +2,5 @@
 @import 'base';
 @import 'layout';
 @import 'prettyprint';
-@import 'top-nav';
+@import 'main-header';
+@import 'nav-links';

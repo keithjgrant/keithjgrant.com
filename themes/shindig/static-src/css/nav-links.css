@@ -1,26 +1,18 @@
-.site-title {
-  text-align: center;
-
-  & > a {
-    font-weight: normal;
-  }
-}
-
-.top-nav {
-}
-
 .nav-links {
   display: flex;
   padding-left: 0;
   list-style: none;
   justify-content: space-between;
+  margin-right: -1rem;
 }
 
 .nav-links > li > a {
   display: block;
-  padding: 1em;
+  padding: 1em 1em 0;
   color: inherit;
   font-size: 0.85rem;
+  font-family: Martel, serif;
+  font-weight: 700;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
