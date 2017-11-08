@@ -7,12 +7,13 @@
   {{ partial "header.html" . }}
 
   <article class="l-article h-entry">
-    <div>
-      <h1 class="article-title p-name"><a class="u-url" href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    <div class="l-article__inner">
+      <h1 class="main-title p-name"><a class="u-url" href="{{ .Permalink }}">{{ .Title }}</a></h1>
 
       {{ partial "in-reply-to" . }}
       {{ partial "repost-of" . }}
       {{ partial "like-of" . }}
+      <p class="post-date metadata text-right"><date class="dt-published">{{ dateFormat "02 Jan 2006" .Date.Local}}</date></p>
       <main class="article show-embeds e-content">
         {{ .Content }}
         {{ if not (eq .Section "posts") }}
@@ -22,16 +23,17 @@
           <a href="https://brid.gy/publish/twitter"></a>
         {{ end }}
       </main>
-      <p class="post-date metadata text-right"><date class="dt-published">{{ dateFormat "02 Jan 2006 15:04:05" .Date.Local}}</date></p>
       {{ if not (eq .Section "likes") }}
         {{ partial "interactions.html" . }}
       {{ end }}
     </div>
   </article>
 
+  <!--
   {{ if eq .Section "posts" }}
     {{ partial "recent-posts.html" . }}
   {{ end }}
+-->
   {{ partial "footer.html" }}
 </body>
 </html>

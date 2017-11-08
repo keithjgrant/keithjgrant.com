@@ -1,20 +1,20 @@
-<div class="loading-indicator" id="comments-loader">
+<div class="loading-indicator" id="comments-loader" style="display: none;">
   <svg class="interaction-icon"><use xlink:href="#icon-loading"></use></svg>
   <div>Loading interactions...</div>
 </div>
 <div class="post-interaction is-hidden" id="comments">
   <div class="tabs">
-    <button aria-controls="pane-replies">
-      <svg class="interaction-icon"><use xlink:href="#icon-reply"></use></svg>
-      <span id="reply-count"></span>
+    <button class="tabs__reply js-tab" aria-controls="pane-replies">
+      {{ partial "svg/comment.html" }}
+      <span id="reply-count">3</span>
     </button>
-    <button aria-controls="pane-likes">
-      <svg class="interaction-icon"><use xlink:href="#icon-heart"></use></svg>
-      <span id="like-count"></span>
+    <button class="tabs__like js-tab" aria-controls="pane-likes">
+      {{ partial "svg/heart.html" }}
+      <span id="like-count">5</span>
     </button>
-    <button aria-controls="pane-shares">
-      <svg class="interaction-icon"><use xlink:href="#icon-share"></use></svg>
-      <span id="share-count"></span>
+    <button class="tabs__repost js-tab" aria-controls="pane-shares">
+      {{ partial "svg/repost.html" }}
+      <span id="share-count">3</span>
     </button>
   </div>
   <div class="tab-pane " id="pane-replies" aria-controlled-by="tab-replies">

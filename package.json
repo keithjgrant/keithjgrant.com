@@ -37,6 +37,7 @@
     "prompt": "^1.0.0",
     "replace": "^0.3.0",
     "request": "^2.79.0",
+    "uglifyjs-webpack-plugin": "^1.0.1",
     "webpack": "^2.4.1"
   }
 }

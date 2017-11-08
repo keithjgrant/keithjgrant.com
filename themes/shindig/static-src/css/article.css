@@ -1,0 +1,37 @@
+.article {
+  & > pre {
+    margin-left: -3rem;
+    margin-right: -3rem;
+    padding: 1rem 3rem;
+    /* TODO: move to other module */
+    overflow: auto;
+    color: var(--gray-9);
+    background-color: var(--gray-3);
+
+    @media (min-width: 56em) {
+      /*margin-right: -3em;
+      margin-left: -3em;
+      padding: 1em 3rem;*/
+    }
+  }
+
+  & > :matches(ol, ul) {
+    padding-left: 1em;
+  }
+
+  /* codepen embed */
+  & > .cp_embed_wrapper {
+    margin: 0 -3rem;
+  }
+
+  /*@media (min-width: 56em) {
+    & > pre {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }*/
+}
+
+.article__wide {
+  grid-column: wide;
+}

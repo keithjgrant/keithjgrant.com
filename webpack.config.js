@@ -1,4 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const THEME = 'shindig';
 
@@ -8,7 +9,7 @@ const extractStyles = new ExtractTextPlugin('css/style.css');
 
 module.exports = {
   entry: {
-    bundle: THEME_DIR + 'js/index.js',
+    index: THEME_DIR + 'js/index.js',
     css: THEME_DIR + 'css/style.css',
   },
   output: {
@@ -36,5 +37,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [extractStyles],
+  plugins: [new UglifyJSPlugin(), extractStyles],
 };

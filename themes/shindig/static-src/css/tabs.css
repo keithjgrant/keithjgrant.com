@@ -1,0 +1,66 @@
+.tabs {
+  display: flex;
+
+  & > button {
+    padding: 0;
+    border: 0 solid var(--blue-6);
+    color: var(--blue-4);
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+
+    & svg path {
+      fill: transparent;
+      stroke: currentColor;
+      stroke-width: 5;
+    }
+
+    &.tabs__repost svg {
+      width: 1.3em;
+      vertical-align: -0.2em;
+      stroke-width: 10;
+    }
+
+    &.is-active {
+      & svg path {
+        fill: currentColor;
+        stroke-width: 0;
+      }
+
+      &.tabs__reply {
+        color: var(--blue-rich-1);
+      }
+
+      &.tabs__like {
+        color: var(--red-4);
+      }
+
+      &.tabs__repost {
+        color: var(--green-4);
+      }
+    }
+  }
+
+  & > button + button {
+    margin-left: 1.2em;
+  }
+
+  & > button.is-active {
+    border-bottom: 0;
+  }
+
+  & svg {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.3em;
+  }
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.is-active {
+  display: block;
+}

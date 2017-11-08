@@ -3,4 +3,10 @@
 @import 'layout';
 @import 'prettyprint';
 @import 'main-header';
+@import 'main-title';
+@import 'article';
 @import 'nav-links';
+@import 'post-date';
+@import 'post-interaction';
+@import 'tabs';
+@import 'footer';

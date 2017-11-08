@@ -41,7 +41,7 @@ h1 {
 a:link {
   color: var(--blue-rich-2);
   font-weight: bold;
-  text-decoration: none;
+  text-decoration-skip: ink;
 }
 
 a:visited {
@@ -54,7 +54,15 @@ a:hover {
 
 a:active {
   color: var(--red-4);
-  text-decoration: underline;
+}
+
+:matches(h1, h2, h3) a:link {
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
 }
 
 code {

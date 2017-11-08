@@ -1,0 +1,5 @@
+.post-date {
+  color: var(--gray-5);
+  font-size: 0.8rem;
+  text-align: right;
+}
