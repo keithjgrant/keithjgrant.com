@@ -1,0 +1,27 @@
+.inline-form {
+  color: var(--blue-4);
+}
+
+.inline-form__inputs {
+  display: flex;
+
+  & * + * {
+    margin-left: 0.2rem;
+  }
+
+  & input,
+  & button {
+    padding: 0.1em 1.2em;
+    border: 1px solid var(--blue-4);
+    border-radius: 0.5em;
+    color: var(--blue-4);
+  }
+
+  & input {
+    flex: 1;
+  }
+
+  & button {
+    background-color: var(--blue-7);
+  }
+}

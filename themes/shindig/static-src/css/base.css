@@ -65,6 +65,11 @@ a:active {
   }
 }
 
+input,
+button {
+  font: inherit;
+}
+
 code {
   font-size-adjust: 0.45;
 }

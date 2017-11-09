@@ -1,12 +1,19 @@
+$tab-border: var(--gray-7);
+
 .tabs {
   display: flex;
+  border-bottom: 1px solid $tab-border;
 
   & > button {
-    padding: 0;
-    border: 0 solid var(--blue-6);
+    margin-bottom: -1px;
+    padding: 0.6em 1.2em 0.4em;
+    border: 1px solid $tab-border;
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
     color: var(--blue-4);
     background: transparent;
-    font: inherit;
+    font-size: 0.8rem;
+    text-transform: uppercase;
     cursor: pointer;
 
     & svg path {
@@ -21,7 +28,10 @@
       stroke-width: 10;
     }
 
-    &.is-active {
+    &.is-active,
+    &:hover {
+      background-color: var(--yellow-9);
+
       & svg path {
         fill: currentColor;
         stroke-width: 0;
@@ -42,7 +52,7 @@
   }
 
   & > button + button {
-    margin-left: 1.2em;
+    border-left: 0;
   }
 
   & > button.is-active {

@@ -1,25 +1,25 @@
 export default function bindListeners() {
   document.body.addEventListener('click', function(e) {
-    if (!e.target.classList.contains('js-tab')) {
+    if (!e.target.matches('.js-tab, .js-tab *')) {
       return;
     }
-    console.log('clicked', e.target);
     e.preventDefault();
-    console.log(activateTab);
-    activateTab(e.target);
-    console.log('b');
+    clearActiveTabs();
+    const button = findButton(e.target);
+    activateTab(button);
     return false;
   });
 }
 
-function activateTab(button) {
-  console.log('ACTIVATING');
-  clearActiveTabs();
-  activateTab(button);
+function findButton(el) {
+  if (el.classList.contains('js-tab')) {
+    return el;
+  } else {
+    return findButton(el.parentNode);
+  }
 }
 
 function clearActiveTabs() {
-  console.log('CLEARING');
   const tabs = document.querySelectorAll('.tabs > button.is-active');
   const panes = document.querySelectorAll('.tab-pane.is-active');
   clearActiveClasses(tabs);
@@ -27,8 +27,10 @@ function clearActiveTabs() {
 }
 
 function clearActiveClasses(els) {
-  console.log('clearing', els);
-  Array.prototype.forEach.apply(els, el => {
+  if (!els.length) {
+    return;
+  }
+  Array.prototype.forEach.call(els, function(el) {
     el.classList.remove('is-active');
   });
 }
