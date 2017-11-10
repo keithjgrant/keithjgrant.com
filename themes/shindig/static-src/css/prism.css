@@ -1,0 +1,145 @@
+/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript */
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+  color: var(--gray-8);
+  background: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: var(--gray-2);
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata,
+.token.punctuation {
+  color: var(--gray-5);
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--yellow-5);
+}
+
+.token.boolean,
+.token.number {
+  color: var(--blue-5);
+}
+
+.token.selector,
+.token.attr-name,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--blue-6);
+}
+
+.token.string {
+  color: var(--yellow-sub-5);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable,
+.token.important {
+  color: var(--gray-5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.regex {
+  color: var(--red-sub-5);
+}
+
+.token.function {
+  color: var(--blue-6);
+}
+
+.token.keyword {
+  color: var(--blue-5);
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.pseudo-element,
+.token.keyword-this {
+  color: var(--red-5);
+}
+
+.token.keyword-try,
+.token.keyword-catch,
+.token.keyword-await {
+  color: var(--gray-5);
+}
+
+.token.class-name {
+  color: var(--blue-6);
+}
+
+/* CSS-specific overrides */
+code[class*='language-css'],
+pre[class*='language-css'] {
+  color: var(--blue-5);
+
+  & .token.function {
+    color: var(--red-sub-5);
+  }
+}

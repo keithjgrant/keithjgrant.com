@@ -1,9 +1,9 @@
 .nav-links {
   display: flex;
+  margin-right: -1rem;
   padding-left: 0;
   list-style: none;
   justify-content: space-between;
-  margin-right: -1rem;
 }
 
 .nav-links > li > a {
@@ -11,8 +11,9 @@
   padding: 1em 1em 0;
   color: inherit;
   font-size: 0.85rem;
-  font-family: Martel, serif;
-  font-weight: 700;
+  /*font-family: Martel, serif;*/
+  font-weight: normal;
   letter-spacing: 0.02em;
   text-transform: lowercase;
+  text-decoration: none;
 }

@@ -2,24 +2,40 @@
   display: grid;
   grid-column-gap: 0.5em;
   grid-template-columns: 2.4em auto;
+  font-family: $sans-serif;
 
   & > * {
     grid-column-start: 2;
   }
 
   & img {
+    position: relative;
     grid-column-start: 1;
     grid-row: span 2;
     width: 2.4em;
     height: 2.4em;
+
+    /* style missing images */
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: ' ';
+      display: block;
+      border: 1px solid var(--gray-7);
+      background: transparent url('/images/anon-avatar.png');
+    }
   }
 
   & .reply__meta {
-    line-height: 1.2;
     font-size: 0.8rem;
+    line-height: 1.2;
   }
 
   & a {
+    font-weight: normal;
     text-decoration: none;
     text-decoration-skip: initial;
 

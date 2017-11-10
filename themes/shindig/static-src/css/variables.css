@@ -18,6 +18,7 @@
   --red-5: hsl(344, 98%, 65%);
   --red-6: hsl(344, 99%, 85%);
   --red-7: hsl(344, 100%, 93%);
+  --red-sub-5: hsl(344, 66%, 65%);
 
   --green-1: hsl(179, 100%, 10%);
   --green-2: hsl(179, 100%, 14%);
@@ -30,7 +31,7 @@
   --yellow-4: hsl(31, 80%, 60%);
   --yellow-5: hsl(31, 81%, 72%);
   --yellow-9: hsl(31, 90%, 97%);
-  /*--yellow-sub-5: hsl(31, 50%, 72%);*/
+  --yellow-sub-5: hsl(31, 50%, 72%);
 
   --purple: #862254;
 
@@ -46,6 +47,11 @@
   --gray-7: hsl(211, 9%, 74%);
   --gray-8: hsl(211, 11%, 85%);
   --gray-9: hsl(211, 14%, 93%);
+
+  --white: hsl(31, 30%, 97%);
 }
 
 $container-wide: 62.5rem;
+
+$serif: Calendas PLus, Calluna, serif;
+$sans-serif: Alegreya Sans, sans-serif;
