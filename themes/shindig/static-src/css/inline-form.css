@@ -1,5 +1,7 @@
 .inline-form {
+  margin-bottom: 2.4rem;
   color: var(--blue-4);
+  font-size: 0.8rem;
 }
 
 .inline-form__inputs {
@@ -11,7 +13,7 @@
 
   & input,
   & button {
-    padding: 0.1em 1.2em;
+    padding: 0.2em 1.2em;
     border: 1px solid var(--blue-4);
     border-radius: 0.5em;
     color: var(--blue-4);
@@ -19,6 +21,11 @@
 
   & input {
     flex: 1;
+    padding: 0.2em 1.2em 0.1em;
+
+    &::placeholder {
+      color: var(--gray-6);
+    }
   }
 
   & button {

@@ -13,6 +13,7 @@ $tab-border: var(--gray-7);
     color: var(--blue-4);
     background: transparent;
     font-size: 0.8rem;
+    font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
 

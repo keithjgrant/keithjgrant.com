@@ -1,0 +1,54 @@
+.reply {
+  display: grid;
+  grid-column-gap: 0.5em;
+  grid-template-columns: 2.4em auto;
+
+  & > * {
+    grid-column-start: 2;
+  }
+
+  & img {
+    grid-column-start: 1;
+    grid-row: span 2;
+    width: 2.4em;
+    height: 2.4em;
+  }
+
+  & .reply__meta {
+    line-height: 1.2;
+    font-size: 0.8rem;
+  }
+
+  & a {
+    text-decoration: none;
+    text-decoration-skip: initial;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+a.reply__date {
+  color: var(--gray-6);
+  font-size: 0.8rem;
+}
+
+.reply--large {
+  grid-column-gap: 1.25em;
+  grid-template-columns: 2.4em auto auto;
+  align-items: baseline;
+
+  & img {
+    align-self: stretch;
+  }
+
+  & .reply__meta {
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  & .reply__content {
+    grid-column: span 2;
+  }
+}
