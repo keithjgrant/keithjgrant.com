@@ -1,0 +1,15 @@
+<h1 class="main-title p-name"><a class="u-url" href="{{ .Permalink }}">
+  {{ .Title }}
+  <!-- <img src="/images/glober-black.png" style="height: 1em"/> -->
+</a></h1>
+
+{{ partial "in-reply-to" . }}
+{{ partial "repost-of" . }}
+{{ partial "like-of" . }}
+<p class="post-date metadata text-right"><date class="dt-published">{{ dateFormat "02 Jan 2006" .Date.Local}}</date></p>
+<main class="article show-embeds e-content">
+  {{ .Content }}
+</main>
+{{ if not (eq .Section "likes") }}
+  {{ partial "interactions.html" . }}
+{{ end }}

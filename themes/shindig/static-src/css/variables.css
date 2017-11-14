@@ -6,10 +6,13 @@
   --blue-5: hsl(211, 51%, 65%);
   --blue-6: hsl(211, 65%, 85%);
   --blue-7: hsl(211, 90%, 93%);
-  --blue-rich-1: hsl(211, 65%, 48%);
-  --blue-rich-2: hsl(211, 85%, 55%);
-  --blue-rich-3: hsl(211, 95%, 65%);
-  --blue-rich-4: hsl(211, 100%, 72%);
+  --blue-rich-1: hsl(211, 100%, 15%);
+  --blue-rich-2: hsl(211, 100%, 22%);
+  --blue-rich-3: hsl(211, 85%, 35%);
+  --blue-rich-4: hsl(211, 65%, 48%);
+  --blue-rich-5: hsl(211, 85%, 55%);
+  --blue-rich-6: hsl(211, 95%, 65%);
+  --blue-rich-7: hsl(211, 100%, 72%);
 
   --red-1: hsl(344, 100%, 15%);
   --red-2: hsl(344, 99%, 20%);
@@ -53,5 +56,17 @@
 
 $container-wide: 62.5rem;
 
-$serif: Calendas PLus, Calluna, serif;
-$sans-serif: Alegreya Sans, sans-serif;
+$serif: Calendas Plus, Calluna, serif;
+$sans-serif: Glober, sans-serif;
+/*, Fira Sans Condensed, Poppins, Baloo, Helvetica,*/
+$monospace: Fira Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+
+/*
+Glober
+Baloo
+Poppins
+Fira Sans Condensed
+ITC Avant Garde Gothic
+Mariné Rounded
+Uni Neue
+*/

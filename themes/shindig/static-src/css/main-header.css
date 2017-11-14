@@ -1,9 +1,14 @@
-$header-title-color: var(--blue-rich-4);
+$header-title-color: var(--blue-rich-7);
 
 .main-header {
+  position: relative;
   color: var(--yellow-9);
-  background-color: var(--blue-rich-2);
-  background-image: linear-gradient(to bottom, var(--blue-2), var(--blue-rich-2));
+  background-color: var(--blue-rich-5);
+  background-image: linear-gradient(
+    to bottom,
+    var(--blue-2),
+    var(--blue-rich-5)
+  );
   box-shadow: 0.1em 0 0.1em var(--blue-2);
 }
 
@@ -13,8 +18,8 @@ $header-title-color: var(--blue-rich-4);
   text-align: center;
 
   & > a {
-    font-weight: normal;
     color: inherit;
+    font-weight: normal;
   }
 }
 

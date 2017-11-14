@@ -1,36 +1,4 @@
-.l-header {
-  display: grid;
-  /* prettier-ignore */
-  grid-template-columns:
-    [full-start] minmax(max-content, 1fr)
-    [main-start] minmax(1em, 80ch)
-    [main-end] minmax(1em, 1fr)
-    [full-end];
-  align-items: baseline;
-}
-
-.l-header__title {
-  grid-column: full-start / span 1;
-}
-
-.l-header__menu {
-  grid-column: main;
-  justify-self: end;
-}
-
-.l-article {
-  display: grid;
-  /* prettier-ignore */
-  grid-template-columns:
-    [full-start] minmax(1em, 1fr)
-    [main-start] minmax(1em, 80ch)
-    [main-end] minmax(1em, 1fr)
-    [full-end];
-  padding-top: 7rem;
-  padding-bottom: 7rem;
-}
-
-.l-article__inner {
-  grid-column: main;
-  padding: 0 3em;
-}
+@import 'layouts/header';
+@import 'layouts/article';
+@import 'layouts/list';
+@import 'layouts/note';

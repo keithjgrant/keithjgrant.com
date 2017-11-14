@@ -43,14 +43,14 @@ Well… maybe. We use comments different ways for a variety of reason. Let’s l
 
 In any language, obvious comments are unnecessary. The following are actual examples of comments from an earlier version of Bootstrap 3 source:
 
-```sass
+```scss
 // Addresses
 address {…}
 ```
 
 Yes, that does appear to be a selector for addresses.
 
-```sass
+```scss
 // Unordered and Ordered lists
 ul,
 ol {…}
@@ -58,7 +58,7 @@ ol {…}
 
 Really?
 
-```sass
+```scss
 // Blockquotes
 blockquote {…}
 ```
@@ -87,7 +87,7 @@ But here’s the thing: we don’t work in 1000 line files any more. If your pro
 
 I’m going to pick on Bootstrap again. This is from their [_tooltips.scss](https://github.com/twbs/bootstrap/blob/v4-dev/scss/_tooltip.scss#L11):
 
-```
+```scss
 // Allow breaking very long words so they don't overflow the tooltip's bounds
 word-wrap: break-word;
 ```
@@ -101,7 +101,7 @@ There might be a fuzzy bound here in CSS, however. There are hundreds of propert
 
 Let’s look at another comment from the same Bootstrap file:
 
-```sass
+```scss
 // Our parent element can be arbitrary since tooltips are by default inserted as a
 // sibling of their target element. So reset our font and text properties to avoid
 // inheriting weird values.
@@ -136,7 +136,7 @@ This is an old comment. It presumably meant something at some point in time, but
 
 Here’s another block of code with several comments:
 
-```sass
+```scss
 .dropdown-item {
   display: block;
   width: 100%; // For `<button>`s
@@ -155,7 +155,7 @@ These comments are meaningful. They tell me that several of these properties are
 
 But it’s worth asking the question: is there a way to express this in the code itself? You could move those particular declarations into a second ruleset that targets buttons specifically:
 
-```sass
+```scss
 .dropdown-item {
   display: block;
   padding: $dropdown-item-padding-y $dropdown-item-padding-x;
@@ -177,7 +177,7 @@ This is very explicit and easily understood. Unfortunately, it also raises the s
 
 Instead, I think this is a strong candidate for a mixin. Refactoring to a mixin could mean cleaning up the code in several other places as well. Consider this version:
 
-```sass
+```scss
 .dropdown-item {
   @include remove-button-styles;
 

@@ -1,5 +1,5 @@
-@import "variables.css";
-@import "prettyprint";
+@import 'variables.css';
+@import 'prettyprint';
 /*@import 'nav-main.css';*/
 
 /*
@@ -15,7 +15,9 @@ Fira Sans regular (400), Fira Sans Condensed 700
 :root {
   box-sizing: border-box;
 }
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -33,7 +35,9 @@ img {
   max-width: 100%;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: Tulia, Playfair Display, serif;
 }
 
@@ -42,17 +46,17 @@ h1 {
 }
 
 a:link {
-  color: var(--blue-rich-2);
+  color: var(--blue-rich-5);
   font-weight: bold;
   text-decoration: none;
 }
 
 a:visited {
-  color: var(--blue-rich-1);
+  color: var(--blue-rich-4);
 }
 
 a:hover {
-  color: var(--blue-rich-3);
+  color: var(--blue-rich-6);
 }
 
 a:active {
@@ -64,7 +68,7 @@ a:active {
   display: grid;
   min-height: 100vh;
   background-color: var(--blue-4);
-  background-image: radial-gradient(var(--blue-rich-4), var(--gray-3));
+  background-image: radial-gradient(var(--blue-rich-7), var(--gray-3));
 }
 
 .focus {
@@ -79,7 +83,11 @@ a:active {
 .focus__body {
   padding: 4rem;
   color: var(--white);
-  background-image: linear-gradient(to bottom, var(--blue-rich-3), var(--blue-rich-2));
+  background-image: linear-gradient(
+    to bottom,
+    var(--blue-rich-6),
+    var(--blue-rich-5)
+  );
   font-size: 2em;
   font-family: Open Sans Condensed;
 }

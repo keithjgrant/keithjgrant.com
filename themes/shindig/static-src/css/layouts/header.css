@@ -1,0 +1,19 @@
+.l-header {
+  display: grid;
+  /* prettier-ignore */
+  grid-template-columns:
+    [full-start] minmax(max-content, 1fr)
+    [main-start] minmax(1em, 80ch)
+    [main-end] minmax(1em, 1fr)
+    [full-end];
+  align-items: baseline;
+}
+
+.l-header__title {
+  grid-column: full-start / span 1;
+}
+
+.l-header__menu {
+  grid-column: main;
+  justify-self: end;
+}

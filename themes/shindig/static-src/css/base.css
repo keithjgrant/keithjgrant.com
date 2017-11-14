@@ -27,8 +27,8 @@ h1,
 h2,
 h3 {
   color: var(--blue-2);
-  /*font-family: Fira Sans Condensed, Martel, serif;*/
-  font-weight: normal;
+  font-family: $sans-serif;
+  letter-spacing: -0.02em;
 
   & a:any-link {
     color: inherit;
@@ -41,17 +41,17 @@ h1 {
 }
 
 a:link {
-  color: var(--blue-rich-2);
+  color: var(--blue-rich-5);
   font-weight: bold;
   text-decoration-skip: ink;
 }
 
 a:visited {
-  color: var(--blue-rich-1);
+  color: var(--blue-rich-4);
 }
 
 a:hover {
-  color: var(--blue-rich-3);
+  color: var(--blue-rich-6);
 }
 
 a:active {
@@ -74,6 +74,19 @@ button {
 
 code {
   font-size-adjust: 0.45;
+}
+
+pre > code {
+  color: var(--gray-8);
+  font-family: $monospace;
+  font-size-adjust: 0.45;
+  line-height: 1.5;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
 }
 
 ::selection {

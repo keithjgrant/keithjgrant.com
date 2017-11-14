@@ -14,7 +14,7 @@ $tab-border: var(--gray-7);
     background: transparent;
     font-size: 0.8rem;
     /*font-weight: bold;*/
-    font-family: Alegreya Sans, sans-serif;
+    font-family: $sans-serif;
     cursor: pointer;
 
     & svg path {
@@ -39,7 +39,7 @@ $tab-border: var(--gray-7);
       }
 
       &.tabs__reply {
-        color: var(--blue-rich-1);
+        color: var(--blue-rich-4);
       }
 
       &.tabs__like {

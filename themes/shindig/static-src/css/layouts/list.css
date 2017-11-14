@@ -1,0 +1,28 @@
+.l-list {
+  display: grid;
+  /* prettier-ignore */
+  grid-template-columns:
+    [full-start] minmax(1em, 1fr)
+    [main-start] minmax(1em, 50ch)
+    [main-end] minmax(1em, 1fr)
+    [full-end];
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  background-color: var(--blue-rich-2);
+  background-image: linear-gradient(
+    to right,
+    var(--blue-rich-1),
+    var(--blue-rich-2)
+  );
+}
+
+.l-list__inner {
+  grid-column: main;
+  border-radius: 0.8rem;
+  background-color: var(--white);
+
+  & > * {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}

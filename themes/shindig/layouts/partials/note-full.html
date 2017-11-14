@@ -1,0 +1,21 @@
+<div class="note-highlight">
+  <div class="note-highlight__body">
+    {{ partial "in-reply-to" . }}
+    {{ partial "repost-of" . }}
+    {{ partial "like-of" . }}
+    <p class="post-date metadata text-right">
+      <date class="dt-published">{{ dateFormat "02 Jan 2006" .Date.Local}}</date>
+    </p>
+    <main class="article show-embeds e-content">
+      {{ partial "photo.html" . }}
+      {{ .Content }}
+      <data class="p-bridgy-omit-link" value="false" />
+      <a href="https://brid.gy/publish/twitter"></a>
+    </main>
+  </div>
+  <div class="note-highlight__footer">
+    {{ if not (eq .Section "likes") }}
+      {{ partial "interactions.html" . }}
+    {{ end }}
+  </div>
+</div>

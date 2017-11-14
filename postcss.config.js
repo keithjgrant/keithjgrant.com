@@ -10,6 +10,9 @@ module.exports = {
       features: {
         customProperties: false,
         rem: false,
+        autoprefixer: {
+          grid: false,
+        },
       },
     }),
   ],

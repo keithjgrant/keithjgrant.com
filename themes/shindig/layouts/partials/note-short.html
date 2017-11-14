@@ -1,0 +1,16 @@
+<div class="note note--list h-entry">
+  {{ partial "in-reply-to" . }}
+  {{ partial "repost-of" . }}
+  {{ partial "like-of" . }}
+  <div class="note__date metadata">
+    <a class="u-url dt-published" href="{{ .Permalink }}">{{ .Date.Format "02 Jan 2006 15:04:05"}}</a>
+  </div>
+  {{ if .Content }}
+  <div class="note__content">
+    <div class="content e-content show-embeds">
+      {{ partial "photo" . }}
+      {{ .Content }}
+    </div>
+  </div>
+  {{ end }}
+</div>

@@ -1,0 +1,5 @@
+{{ with $.Param "mf-photo" }}
+  {{ range . }}
+    <img src="{{ . }}"/>
+  {{ end }}
+{{ end }}

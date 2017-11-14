@@ -1,0 +1,33 @@
+.note {
+  padding: 1rem 2rem;
+  border-top: 1px solid var(--gray-8);
+}
+
+.note-highlight {
+  & .note {
+    color: var(--white);
+    background-color: var(--blue-rich-5);
+    background-image: linear-gradient(
+      to bottom,
+      var(--blue-rich-5),
+      var(blue-rich-3)
+    );
+  }
+}
+
+.note-highlight__body {
+  padding: 1rem;
+  color: var(--white);
+  background-color: var(--blue-rich-3);
+  background-image: linear-gradient(
+    to bottom,
+    var(--blue-rich-4),
+    var(--blue-rich-3)
+  );
+}
+
+.note-highlight__footer {
+  padding: 1rem;
+  color: var(--blue-1);
+  background-color: var(--white);
+}
