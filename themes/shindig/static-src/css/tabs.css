@@ -31,7 +31,7 @@ $tab-border: var(--gray-7);
 
     &.is-active,
     &:hover {
-      background-color: var(--yellow-9);
+      background-color: var(--white);
 
       & svg path {
         fill: currentColor;

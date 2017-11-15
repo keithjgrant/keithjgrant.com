@@ -11,13 +11,14 @@
   background-color: var(--blue-rich-2);
   background-image: linear-gradient(
     to right,
-    var(--blue-rich-1),
+    var(--blue-1),
     var(--blue-rich-2)
   );
 }
 
 .l-list__inner {
   grid-column: main;
+  overflow: hidden;
   border-radius: 0.8rem;
   background-color: var(--white);
 

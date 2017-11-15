@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Glober';
+  font-weight: 100;
+  src: url('/glober-thin.otf');
+}
+
+@font-face {
+  font-family: 'Glober';
+  font-weight: 500;
+  src: local('Glober');
+}

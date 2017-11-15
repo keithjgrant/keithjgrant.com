@@ -47,11 +47,11 @@ a:link {
 }
 
 a:visited {
-  color: var(--blue-rich-4);
+  color: var(--blue-5);
 }
 
 a:hover {
-  color: var(--blue-rich-6);
+  color: var(--blue-rich-4);
 }
 
 a:active {

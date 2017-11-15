@@ -39,7 +39,8 @@
   --purple: #862254;
 
   --black: var(--blue-1);
-  --white: var(--yellow-9);
+  /*--white: hsl(31, 30%, 97%);*/
+  --white: #fff;
 
   --gray-1: hsl(211, 13%, 10%);
   --gray-2: hsl(211, 11%, 14%);
@@ -50,8 +51,6 @@
   --gray-7: hsl(211, 9%, 74%);
   --gray-8: hsl(211, 11%, 85%);
   --gray-9: hsl(211, 14%, 93%);
-
-  --white: hsl(31, 30%, 97%);
 }
 
 $container-wide: 62.5rem;

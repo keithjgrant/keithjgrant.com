@@ -14,6 +14,8 @@
     grid-row: span 2;
     width: 2.4em;
     height: 2.4em;
+    object-fit: cover;
+    object-position: 0 25%;
 
     /* style missing images */
     &::after {

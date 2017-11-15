@@ -44,7 +44,7 @@ pre[class*='language-'] {
 .token.doctype,
 .token.cdata,
 .token.punctuation {
-  color: var(--gray-5);
+  color: var(--gray-6);
 }
 
 .namespace {
@@ -60,7 +60,8 @@ pre[class*='language-'] {
 }
 
 .token.boolean,
-.token.number {
+.token.number,
+.token.variable {
   color: var(--blue-5);
 }
 
@@ -79,7 +80,6 @@ pre[class*='language-'] {
 .token.operator,
 .token.entity,
 .token.url,
-.token.variable,
 .token.important {
   color: var(--gray-5);
 }
@@ -125,12 +125,20 @@ pre[class*='language-'] {
   color: var(--blue-6);
 }
 
-/* CSS-specific overrides */
 code[class*='language-css'],
 pre[class*='language-css'] {
   color: var(--blue-5);
 
   & .token.function {
     color: var(--red-sub-5);
+  }
+}
+
+code[class*='language-js'],
+pre[class*='language-js'] {
+  color: var(--blue-5);
+
+  & .token.keyword {
+    color: var(--gray-5);
   }
 }

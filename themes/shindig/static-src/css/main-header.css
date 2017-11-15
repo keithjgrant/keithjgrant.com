@@ -2,6 +2,9 @@ $header-title-color: var(--blue-rich-7);
 
 .main-header {
   position: relative;
+  margin-bottom: -0.1em;
+  border-bottom-right-radius: 50% 0.1em;
+  border-bottom-left-radius: 50% 0.1em;
   color: var(--yellow-9);
   background-color: var(--blue-rich-5);
   background-image: linear-gradient(

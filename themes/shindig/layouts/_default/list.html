@@ -8,7 +8,7 @@
 
   <div class="l-list">
     <div class="l-list__inner">
-      <h1 class="list-heading">{{ .Title }}</h1>
+      <h1 class="list-heading capsule-head">{{ .Title }}</h1>
       {{ range .Paginator.Pages }}
         {{ if eq .Section "posts" }}
           {{ partial "post-summary.html" . }}
