@@ -1,10 +1,14 @@
 .comment {
   display: grid;
-  grid-template-columns: minmax(20ch, 1fr) auto;
+  grid-gap: 0.2em 1.4em;
+  grid-template-columns: 20ch auto;
+  align-items: baseline;
 }
 
 .comment__author {
+  grid-column: 1;
 }
 
 .comment__content {
+  grid-column: 2;
 }

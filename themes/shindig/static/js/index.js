@@ -278,25 +278,6 @@ function renderReposts(reposts) {
   var t = document.getElementById('like-template').content;
   var list = document.getElementById('shares');
   reposts.map(function(l) {
-    // if (l.data.author) {
-    //   t.querySelector('img').src = l.data.author.photo || ANON_AVATAR;
-    //   var author = t.querySelector('.reply__author');
-    //   author.href = l.data.author.url;
-    //   author.innerHTML = l.data.author.name;
-    // } else {
-    //   t.querySelector('img').src = ANON_AVATAR;
-    //   var author = t.querySelector('.reply__author');
-    //   author.href = l.data.url;
-    //   author.innerHTML = 'inbound link';
-    // }
-    // var date = t.querySelector('.reply__date');
-    // if (date) {
-    //   date.href = l.data.url;
-    //   var d = new Date(l.data.published || l.verified_date);
-    //   date.innerHTML = `${d.getDate()} ${months[
-    //     d.getMonth()
-    //   ]} ${d.getFullYear()}`;
-    // }
     let data;
     if (l.data.author) {
       data = {
@@ -321,17 +302,51 @@ function renderReposts(reposts) {
   });
 }
 
+function renderReplies(replies) {
+  var label = replies.length + (replies.length === 1 ? ' reply' : ' replies');
+  document.getElementById('reply-count').innerHTML = label;
+
+  var t = document.getElementById('reply-template').content;
+  var list = document.getElementById('replies');
+  replies.map(function(l) {
+    let data;
+    if (l.data.author) {
+      data = {
+        photo: l.data.author.photo || ANON_AVATAR,
+        name: l.data.author.name,
+        authorUrl: l.data.author.url,
+        url: l.data.url,
+        date: new Date(l.data.published || l.verified_date),
+        content: l.data.content,
+      };
+    } else {
+      data = {
+        photo: ANON_AVATAR,
+        name: 'inbound link',
+        authorUrl: l.data.url,
+        url: l.data.url,
+        date: new Date(l.data.published || l.verified_date),
+        content: l.data.content,
+      };
+    }
+
+    fillTemplate(t, data);
+    var clone = document.importNode(t, true);
+    list.appendChild(clone);
+  });
+}
+
 function fillTemplate(template, vals) {
   template.querySelector('.js-avatar').src = vals.photo;
-  const author = template.querySelector('.js-author');
-  author.href = vals.authorUrl;
-  const authorName = template.querySelector('.js-author-name');
-  authorName.innerHTML = vals.name;
-  const sourceLink = template.querySelector('.js-source');
-  sourceLink.href = vals.url;
+  template.querySelector('.js-author').href = vals.authorUrl;
+  template.querySelector('.js-author-name').innerHTML = vals.name;
+  template.querySelector('.js-source').href = vals.url;
   const date = template.querySelector('.js-date');
   if (date) {
     date.innerHTML = formatDate(vals.date);
+  }
+  if (vals.content) {
+    template.querySelector('.js-content').innerHTML = vals.content;
   }
 }
 
@@ -340,39 +355,6 @@ function formatDate(date) {
     return '';
   }
   return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
-}
-
-function renderReplies(replies) {
-  var label = replies.length + (replies.length === 1 ? ' reply' : ' replies');
-  document.getElementById('reply-count').innerHTML = label;
-
-  var t = document.getElementById('reply-template').content;
-  var list = document.getElementById('replies');
-  replies.map(function(l) {
-    var author = t.querySelector('.reply__author');
-    var body = t.querySelector('.reply__content');
-    if (l.data.author) {
-      t.querySelector('img').src =
-        (l.data.author ? l.data.author.photo : '') || ANON_AVATAR;
-      author.href = l.data.author.url;
-      author.innerHTML = l.data.author.name;
-      body.innerHTML = l.data.content;
-    } else {
-      t.querySelector('img').src = ANON_AVATAR;
-      author.href = l.data.url;
-      author.innerHTML = l.data.url;
-      body.innerHTML = `<i>link from <a href="${l.data.url}">${l.data
-        .url}</a></i>`;
-    }
-    var date = t.querySelector('.reply__date');
-    date.href = l.data.url;
-    var d = new Date(l.data.published || l.verified_date);
-    date.innerHTML = `${d.getDate()} ${months[
-      d.getMonth()
-    ]} ${d.getFullYear()}`;
-    var clone = document.importNode(t, true);
-    list.appendChild(clone);
-  });
 }
 
 function showInteractions() {

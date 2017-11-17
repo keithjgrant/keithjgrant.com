@@ -6,6 +6,7 @@
 }
 
 .reply__bar {
+  display: block;
   flex-grow: 1;
   margin-right: -1rem;
   padding-right: 2em;
@@ -17,14 +18,32 @@
   box-shadow: 0 2px 2px hsl(179, 50%, 35%, 0.16),
     0 0 0 1px hsl(179, 50%, 35%, 0.08);
 
-  & a:link,
-  & a:visited {
-    display: block;
-    padding: 0.6rem 1.3rem 0.6rem 1rem;
-    color: var(--blue-rich-3);
-    font-weight: normal;
+  /* prettier-ignore */
+  @nest
+  a:link& {
     text-decoration: none;
-    transition: all 0.2s ease-out;
+
+    & .reply__author,
+    & .reply__date {
+      padding: 0.6rem 1.3rem 0.6rem 1rem;
+      color: var(--blue-rich-3);
+      font-weight: normal;
+      text-decoration: none;
+      transition: all 0.2s ease-out;
+    }
+
+    & .reply__date {
+      position: absolute;
+      top: 0.6em;
+      right: 1em;
+      left: 0;
+      color: var(--gray-6);
+      font-size: 0.8rem;
+      font-weight: normal;
+      transform: translateY(1em);
+      opacity: 0;
+      text-decoration: none;
+    }
   }
 
   &:hover {
@@ -33,27 +52,8 @@
   }
 }
 
-.reply__date {
-  position: absolute;
-  top: 0.6em;
-  right: 1em;
-  left: 0;
-  font-size: 0.8rem;
-  transform: translateY(1em);
-  opacity: 0;
-
-  /* prettier-ignore */
-  @nest
-  a&:link,
-  a&:visited {
-    color: var(--gray-6);
-    font-weight: normal;
-    text-decoration: none;
-  }
-}
-
-.reply__bar:hover,
-.reply__bar:focus-within {
+a.reply__bar:hover,
+a.reply__bar:focus {
   & .reply__author {
     transform: translateY(-1em);
     opacity: 0;
