@@ -1,0 +1,33 @@
+.title-bar {
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1;
+  white-space: nowrap;
+
+  & > a:any-link {
+    display: block;
+    padding: 0.8em 1.6em 0.6em 2rem;
+    border: 1px solid transparent;
+    border-width: 1px 1px 1px 0;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    color: var(--blue-rich-6);
+    background-color: var(--blue-2);
+
+    &:hover,
+    &:focus {
+      border-color: var(--blue-4);
+      text-decoration: none;
+      outline: none;
+    }
+  }
+}
+
+.title-avatar {
+  width: 1.6em;
+  height: 1.6em;
+  margin-left: -1em;
+  border-radius: 50%;
+  vertical-align: -0.4em;
+  object-fit: cover;
+}

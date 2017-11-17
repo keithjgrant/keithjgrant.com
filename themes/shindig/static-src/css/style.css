@@ -5,6 +5,7 @@
 @import 'typography';
 @import 'layout';
 @import 'main-header';
+@import 'title-bar';
 @import 'main-title';
 @import 'article';
 @import 'nav-links';
@@ -17,8 +18,10 @@
 @import 'replies';
 @import 'reply';
 @import 'comment';
+@import 'loading-indicator';
+@import 'utility';
 
-.capsule-head {
+/*.capsule-head {
   background-color: var(--blue-rich-3);
   background-image: linear-gradient(
     180deg,
@@ -26,4 +29,4 @@
     var(--blue-rich-3)
   );
   color: rgba(255, 255, 255, 0.7);
-}
+}*/

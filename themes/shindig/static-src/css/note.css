@@ -16,7 +16,7 @@
 }
 
 .note-highlight__body {
-  padding: 1rem;
+  padding: 1rem 2rem;
   color: var(--white);
   background-color: var(--blue-rich-3);
   background-image: linear-gradient(

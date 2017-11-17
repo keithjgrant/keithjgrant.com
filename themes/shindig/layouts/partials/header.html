@@ -1,13 +1,15 @@
 {{ partial "svg.html" }}
-<header class="l-header main-header h-card{{ if not (eq .URL "/") }} p-author{{ end }}">
-  <h1 class="l-header__title main-header__title">
-    {{ partial "wolf-svg.html" }}
-    <a class="p-name u-url" href="/">
-      Keith J. Grant
-    </a>
-  </h1>
+<header class="main-header h-card{{ if not (eq .URL "/") }} p-author{{ end }}">
+  <div class="h-card">
+    <h1 class="title-bar">
+      <a class="p-name u-url" href="https://keithjgrant.com">
+        Keith J. Grant
+      </a>
+    </h1>
+    <img class="title-avatar u-photo" src="/images/keithjgrant.jpg"/>
+  </div>
 
-  <nav class="l-header__menu top-nav">
+  <nav class="main-header__nav top-nav">
     <ul class="nav-links">
       <li><a href="/posts">Posts</a></li>
       <li><a href="/notes">Notes</a></li>

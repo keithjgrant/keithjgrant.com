@@ -1,4 +1,13 @@
-$header-title-color: var(--blue-rich-7);
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+  background-color: var(--blue-rich-2);
+  background-image: linear-gradient(90deg, var(--blue-1), var(--blue-rich-2));
+}
+
+/*$header-title-color: var(--blue-rich-7);
 
 .main-header {
   position: relative;
@@ -32,4 +41,4 @@ $header-title-color: var(--blue-rich-7);
   fill: $header-title-color;
   stroke: $header-title-color;
   stroke-width: 1px;
-}
+}*/

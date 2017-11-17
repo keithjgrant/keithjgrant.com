@@ -4,8 +4,7 @@
     <ul class="iconlist">
       {{ range first 4 (where .Site.Pages "Section" "posts") }}
       <li><a href="{{ .Permalink }}">
-        <svg class="focus-cap"><use xlink:href="#path-hex"></use></svg>
-        <div class="iconlist__title">{{ .Title }}</div>
+        {{ .Title }}
       </a></li>
       {{ end }}
     </ul>

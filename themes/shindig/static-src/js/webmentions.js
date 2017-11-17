@@ -1,6 +1,9 @@
 const ANON_AVATAR = '/images/anon-avatar.png';
 
 export default function fetchWebmentions(url, aliases) {
+  // TODO: restore
+  return;
+  // TODO: only execute on relevant pages
   if (!url) {
     url = document.location.origin + document.location.pathname;
   }
@@ -12,6 +15,7 @@ export default function fetchWebmentions(url, aliases) {
   targets.forEach(function(targetUrl) {
     src += `&target[]=${encodeURIComponent(targetUrl)}`;
   });
+  // TODO: restore
   // src += `&_=${Math.random()}`;
   script.src = src;
   document.getElementsByTagName('head')[0].appendChild(script);

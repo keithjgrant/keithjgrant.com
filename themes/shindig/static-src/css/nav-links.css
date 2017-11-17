@@ -1,19 +1,36 @@
 .nav-links {
   display: flex;
-  margin-right: -1rem;
+  flex-wrap: wrap;
+  padding-right: 2em;
   padding-left: 0;
+  font-family: $sans-serif;
   list-style: none;
   justify-content: space-between;
 }
 
-.nav-links > li > a {
-  display: block;
-  padding: 1em 1em 0;
-  color: inherit;
-  font-size: 0.85rem;
-  /*font-family: Martel, serif;*/
-  font-weight: normal;
-  letter-spacing: 0.02em;
-  text-transform: lowercase;
-  text-decoration: none;
+.nav-links > li {
+  & > a {
+    display: block;
+    padding: 0.4em 1em 0.1em;
+    border: 2px solid transparent;
+    border-radius: 2em;
+    color: var(--blue-7);
+    font-size: 0.64rem;
+    font-weight: normal;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: border-color 0.4s linear;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+      border-color: var(--blue-6);
+      color: var(--white);
+      transition: none;
+    }
+  }
+
+  & + li {
+    margin-left: 0.4em;
+  }
 }
