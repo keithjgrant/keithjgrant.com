@@ -1,0 +1,10 @@
+.comment {
+  display: grid;
+  grid-template-columns: minmax(20ch, 1fr) auto;
+}
+
+.comment__author {
+}
+
+.comment__content {
+}

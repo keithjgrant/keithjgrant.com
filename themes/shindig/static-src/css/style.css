@@ -16,6 +16,7 @@
 @import 'inline-form';
 @import 'replies';
 @import 'reply';
+@import 'comment';
 
 .capsule-head {
   background-color: var(--blue-rich-3);

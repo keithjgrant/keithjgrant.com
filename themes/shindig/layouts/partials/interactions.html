@@ -57,10 +57,14 @@
 
 <template id="like-template">
   <li class="h-entry">
-    <div class="reply reply--like h-card p-author">
-      <img class="u-photo" src="" />
-      <a class="reply__author p-name" href=""></a>
-      <a class="reply__date u-url dt-published" href=""></a>
+    <div class="reply h-card p-author">
+      <div class="reply__bar">
+        <a class="reply__author reply__author p-name js-author-name" href=""></a>
+        <a class="reply__date js-date" href=""></a>
+      </div>
+      <a class="reply__avatar u-url js-author js-source" href="">
+        <img class="u-photo js-avatar" src=""/>
+      </a>
     </div>
   </li>
 </template>

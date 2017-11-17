@@ -9,7 +9,7 @@
 
 .replies--short {
   display: grid;
-  grid-gap: 1.4em;
+  grid-gap: 0.2em 1.4em;
   grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
 
   & li + li {
