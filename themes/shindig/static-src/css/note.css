@@ -24,10 +24,24 @@
     var(--blue-rich-4),
     var(--blue-rich-3)
   );
+  word-break: break-word;
+
+  & a:any-link {
+    color: var(--yellow-5);
+    text-decoration-skip: ink;
+  }
+
+  & a:hover,
+  & a:focus {
+    color: var(--yellow-4);
+  }
+
+  & a:active {
+    color: var(--red-4);
+  }
 }
 
 .note-highlight__footer {
-  padding: 1rem;
   color: var(--blue-1);
   background-color: var(--white);
 }

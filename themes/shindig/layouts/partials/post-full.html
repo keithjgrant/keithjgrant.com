@@ -11,5 +11,5 @@
   {{ .Content }}
 </main>
 {{ if not (eq .Section "likes") }}
-  {{ partial "interactions.html" . }}
+  {{ partial "post-interactions.html" . }}
 {{ end }}

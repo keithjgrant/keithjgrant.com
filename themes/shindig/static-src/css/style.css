@@ -18,6 +18,7 @@
 @import 'replies';
 @import 'reply';
 @import 'comment';
+@import 'comment-note';
 @import 'loading-indicator';
 @import 'utility';
 

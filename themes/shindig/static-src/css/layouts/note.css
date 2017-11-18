@@ -13,6 +13,7 @@ $header-height: 5rem;
 .l-note__inner {
   width: 40ch;
   margin-top: 6rem;
+  margin-bottom: 6rem;
   overflow: hidden;
   border-radius: 0.3rem;
   color: var(--blue-2);

@@ -1,7 +1,12 @@
 .inline-form {
   margin-bottom: 2.4rem;
   color: var(--blue-4);
+  font-family: $sans-serif;
   font-size: 0.8rem;
+
+  & > label {
+    padding: 0 0.3rem;
+  }
 }
 
 .inline-form__inputs {

@@ -3,8 +3,8 @@
     {{ partial "in-reply-to" . }}
     {{ partial "repost-of" . }}
     {{ partial "like-of" . }}
-    <p class="post-date metadata text-right">
-      <date class="dt-published">{{ dateFormat "02 Jan 2006" .Date.Local}}</date>
+    <p class="post-date post-date--note metadata text-right">
+      <date class="dt-published">{{ dateFormat "15:03 PM • 02 Jan 2006" .Date.Local}}</date>
     </p>
     <main class="article show-embeds e-content">
       {{ partial "photo.html" . }}
@@ -15,7 +15,7 @@
   </div>
   <div class="note-highlight__footer">
     {{ if not (eq .Section "likes") }}
-      {{ partial "interactions.html" . }}
+      {{ partial "note-interactions.html" . }}
     {{ end }}
   </div>
 </div>

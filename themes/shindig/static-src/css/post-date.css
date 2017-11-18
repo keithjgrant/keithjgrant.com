@@ -1,5 +1,10 @@
 .post-date {
-  color: var(--gray-5);
+  margin-top: 0;
+  color: var(--blue-5);
   font-size: 0.8rem;
   text-align: right;
+}
+
+.post-date--note {
+  color: hsl(179, 83%, 45%);
 }

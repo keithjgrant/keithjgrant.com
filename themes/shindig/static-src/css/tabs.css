@@ -13,7 +13,6 @@ $tab-border: var(--gray-7);
     color: var(--blue-4);
     background: transparent;
     font-size: 0.8rem;
-    /*font-weight: bold;*/
     font-family: $sans-serif;
     cursor: pointer;
 
@@ -70,8 +69,29 @@ $tab-border: var(--gray-7);
 
 .tab-pane {
   display: none;
+  font-size: 1rem;
 }
 
 .tab-pane.is-active {
   display: block;
+}
+
+.tabs--light {
+  & > button {
+    border-radius: 0;
+  }
+
+  & .tabs__reply {
+    flex-grow: 1;
+  }
+}
+
+.tab-pane--light {
+  padding: 1em;
+
+  & .tab-pane__banner {
+    margin: 0 -1rem 2rem;
+    padding: 0.4rem 1rem;
+    background-color: var(--blue-9);
+  }
 }

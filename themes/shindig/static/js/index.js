@@ -153,8 +153,6 @@ function getTabPane(button) {
 const ANON_AVATAR = '/images/anon-avatar.png';
 
 function fetchWebmentions(url, aliases) {
-  // TODO: restore
-  return;
   // TODO: only execute on relevant pages
   if (!url) {
     url = document.location.origin + document.location.pathname;
@@ -175,7 +173,7 @@ function fetchWebmentions(url, aliases) {
 
 function getUrlPermutations(url, aliases) {
   const urls = [];
-  url = url.replace('localhost:1313', 'keithjgrant.com');
+  url = url.replace('http://localhost:1313', 'https://keithjgrant.com');
   urls.push(url);
   urls.push(url.replace('https://', 'http://'));
   if (url.substr(-1) === '/') {

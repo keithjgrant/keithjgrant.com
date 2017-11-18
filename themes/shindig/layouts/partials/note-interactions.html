@@ -1,0 +1,78 @@
+<div class="loading-indicator" id="comments-loader">
+  Loading interactions…
+</div>
+<div class="post-interaction is-hidden" id="comments">
+  <div class="tabs tabs--light">
+    <button class="tabs__reply is-active js-tab" aria-controls="pane-replies">
+      {{ partial "svg/comment.html" }}
+      <span id="reply-count">replies</span>
+    </button>
+    <button class="tabs__like js-tab" aria-controls="pane-likes">
+      {{ partial "svg/heart.html" }}
+      <span id="like-count">likes</span>
+    </button>
+    <button class="tabs__repost js-tab" aria-controls="pane-shares">
+      {{ partial "svg/repost.html" }}
+      <span id="share-count">shares</span>
+    </button>
+  </div>
+  <div class="tab-pane tab-pane--light is-active " id="pane-replies" aria-controlled-by="tab-replies">
+    <form id="webmention-form" class="tab-pane__banner inline-form content" method="post" action="https://webmention.io/keithjgrant.com/webmention">
+      <input type="hidden" name="target" value="{{ .Permalink }}" />
+      <label for="reply-url">Have you written a <a href="https://indieweb.org/responses" target="_blank">response</a> to this? Let me know the URL:</label>
+      <div class="inline-form__inputs">
+        <input type="text" id="reply-url" name="source" placeholder="https://example.com/my-post" />
+        <button type="submit" id="webmention-submit">Send Webmention</button>
+      </div>
+      <p class="form-alert is-hidden"></p>
+    </form>
+    <ul class="replies" id="replies"></ul>
+  </div>
+  <div class="tab-pane tab-pane--light" id="pane-likes" aria-controlled-by="tab-likes">
+    <ul class="replies replies--short" id="likes"></ul>
+  </div>
+  <div class="tab-pane tab-pane--light" id="pane-shares" aria-controlled-by="tab-shares">
+    <ul class="replies replies--short" id="shares"></ul>
+  </div>
+</div>
+
+<template id="reply-template">
+  <li class="h-entry">
+    <div class="comment-note">
+      <div class="comment-note__avatar">
+        <a class="js-author" href="">
+          <img class="comment-avatar u-photo js-avatar" src=""/>
+        </a>
+      </div>
+      <div class="comment-note__body">
+        <div class="p-author">
+          <a class="comment-author js-author-name" href=""></a>
+          <a class="comment-timestamp u-url js-date js-source" href=""></a>
+        </div>
+        <div class="comment-body js-content"></div>
+      </div>
+    </div>
+  </li>
+</template>
+
+<template id="like-template">
+  <li class="h-entry">
+    <div class="reply h-card p-author">
+      <a class="reply__bar js-source" href="">
+        <div class="reply__author p-name js-author-name" href=""></div>
+        <div class="reply__date js-date" href=""></div>
+      </a>
+      <a class="reply__avatar u-url js-author" href="">
+        <img class="u-photo js-avatar" src=""/>
+      </a>
+    </div>
+  </li>
+</template>
+
+<script type="text/javascript">
+/*
+  document.addEventListener('DOMContentLoaded', function () {
+    loadWebmentions({{ .Permalink }}, {{ .Aliases }});
+  });
+*/
+</script>
