@@ -1,0 +1,31 @@
+.post-summary {
+  height: 100%; /* fill grid cell */
+  padding: 2.4rem 1.56rem;
+  border-radius: 0.8rem;
+  border-radius: 50% / 1.6rem;
+  background-color: var(--white);
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.post-summary__title {
+  margin-bottom: 0.8rem;
+  line-height: 1.1;
+}
+
+.post-summary__date {
+  display: block;
+  text-align: right;
+  margin-top: 0;
+}
+
+.post-summary__body {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}

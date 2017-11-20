@@ -1,6 +1,27 @@
 .note {
   padding: 1rem 2rem;
-  border-top: 1px solid var(--gray-8);
+  font-size: 0.8rem;
+  font-family: $sans-serif;
+  cursor: pointer;
+}
+
+.note__date {
+  text-align: right;
+
+  & > a:any-link {
+    font-weight: 100; /* TODO */
+    text-decoration: none;
+  }
+}
+
+.note__body {
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
 }
 
 .note-highlight {

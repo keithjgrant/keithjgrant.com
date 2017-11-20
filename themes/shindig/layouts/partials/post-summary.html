@@ -1,15 +1,14 @@
-<div class="post-body__item h-entry">
-  <h2 class="p-name">
+<div class="post-summary h-entry">
+  <h2 class="post-summary__title p-name">
     <a class="u-url" href="{{ .Permalink }}">
       {{ .Title }}
     </a>
-    <date class="post-date dt-published">{{ .Date.Format "02 Jan 2006" }}</date>
   </h2>
   {{ partial "in-reply-to" . }}
-  <div class="content">
-    <p>
-      <span class="p-summary">{{ .Summary }}</span>
-      <a href="{{ .Permalink }}">Continue reading...</a>
-    </p>
+  {{ partial "image-preview" . }}
+  <div class="post-summary__body">
+    <div class="p-summary">{{ .Summary }}</div>
+    <date class="post-date post-summary__date dt-published">{{ .Date.Format "02 Jan 2006" }}</date>
+    <div class="post-summary__continue"><a href="{{ .Permalink }}">Continue reading...</a></div>
   </div>
 </div>

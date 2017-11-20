@@ -7,6 +7,8 @@ title = "Width and Absolute Positioning"
 I recently came across this question on Twitter:
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">What&#39;s the diff on a position:absolute el btw {top:0;right:0;bottom:0;left:0;} and {top:0;left:0;height:100%;width:100%;} ?</p>&mdash; Karl Swedberg (@kswedberg) <a href="https://twitter.com/kswedberg/status/692720642580295681">January 28, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!--more-->
+
 “That’s easy”, I thought. “They often seem the same in practice, but width and height are based on the parent (or nearest block-level ancestor). Top, right, bottom, and left are based on the nearest <em>positioned</em> ancestor. Those aren’t necessarily the same element.”
 
 Shows what I know: my <a href="http://codepen.io/keithjgrant/pen/obddgy">quick mockup</a> to illustrate the difference proved me wrong.

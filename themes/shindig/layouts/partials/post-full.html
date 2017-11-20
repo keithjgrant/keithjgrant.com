@@ -6,7 +6,7 @@
 {{ partial "in-reply-to" . }}
 {{ partial "repost-of" . }}
 {{ partial "like-of" . }}
-<p class="post-date metadata text-right"><date class="dt-published">{{ dateFormat "02 Jan 2006" .Date.Local}}</date></p>
+<p class="post-date text-right"><date class="dt-published">{{ dateFormat "02 Jan 2006" .Date.Local}}</date></p>
 <main class="article show-embeds e-content">
   {{ .Content }}
 </main>

@@ -2,6 +2,7 @@
 aliases = ["/posts/simply-white.html"]
 date = "2016-01-27T00:00:00-05:00"
 title = "Simply White"
+mf-photo = ["/images/2016/simply-white.png"]
 
 +++
 <a href="http://www.benjaminmoore.com/en-us/for-your-home/benjamin-moore-color-trends-2016">Benjamin

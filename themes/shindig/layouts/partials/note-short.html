@@ -1,16 +1,14 @@
-<div class="note note--list h-entry">
+<div class="note note--list h-entry" data-href="{{ .Permalink }}">
+  <div class="note__date">
+    <a class="u-url dt-published" href="{{ .Permalink }}">{{ dateFormat "15:03 PM • 02 Jan 2006" .Date.Local}}</a>
+  </div>
   {{ partial "in-reply-to" . }}
   {{ partial "repost-of" . }}
   {{ partial "like-of" . }}
-  <div class="note__date metadata">
-    <a class="u-url dt-published" href="{{ .Permalink }}">{{ .Date.Format "02 Jan 2006 15:04:05"}}</a>
-  </div>
   {{ if .Content }}
-  <div class="note__content">
-    <div class="content e-content show-embeds">
-      {{ partial "photo" . }}
-      {{ .Content }}
-    </div>
+  <div class="note__body e-content show-embeds">
+    {{ partial "photo" . }}
+    {{ .Content }}
   </div>
   {{ end }}
 </div>

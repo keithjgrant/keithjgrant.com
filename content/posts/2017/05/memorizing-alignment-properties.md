@@ -5,6 +5,7 @@ title = "Memorizing Alignment Properties"
 
 +++
 Do you often find yourself looking up a Flexbox [cheat sheet](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)? Wish you could just commit all those properties to memory and be done with it? Here’s how I memorized them.
+<!--more-->
 
 ## Learn “flex”
 

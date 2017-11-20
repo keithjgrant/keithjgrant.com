@@ -24,9 +24,10 @@ In, CSS, you can’t transition a background gradient. It sure would be nice if 
 }
 ```
 
-But, no. It jumps from one gradient to the other immediately, with no smooth transition between the two.
+But, no. It jumps from one gradient to the other immediately, with no smooth transition between the two. So let’s hack it!
+<!--more-->
 
-So let’s hack it! We can achieve this effect with the help of a pseudo-element and an opacity transform instead.
+We can achieve this effect with the help of a pseudo-element and an opacity transform instead.
 
 First, apply one gradient to the element. Then, position its pseudo-element to fill the element and apply the second gradient to that. To transition between the two gradients,  transition the opacity of the pseudo-element.
 

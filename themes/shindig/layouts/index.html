@@ -19,10 +19,8 @@
           </a>
         </h2>
         <div class="content e-content">
-            {{ .Content }}
           <p class="post-date">{{ .Date.Format "02 Jan 2006" }}</p>
         </div>
-        {{ partial "interactions.html" . }}
       {{ end }}
     </article>
   </main>

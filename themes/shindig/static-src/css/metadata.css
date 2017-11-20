@@ -1,0 +1,10 @@
+.metadata {
+  margin: 0 -1em 1em;
+  padding: 0 1em;
+  border-radius: 1em;
+  color: var(--gray-5);
+  background-color: var(--gray-9);
+  font-size: 0.8rem;
+  font-family: $serif;
+  font-style: italic;
+}

@@ -44,10 +44,12 @@ a:link {
   color: var(--blue-rich-5);
   font-weight: bold;
   text-decoration-skip: ink;
+  transition: color 0.1s linear;
 }
 
 a:visited {
   color: var(--blue-5);
+  transition: color 0.1s linear;
 }
 
 a:hover {
