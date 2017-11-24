@@ -153,6 +153,7 @@ function getTabPane(button) {
 const ANON_AVATAR = '/images/anon-avatar.png';
 
 function fetchWebmentions(url, aliases) {
+  return;
   // TODO: only execute on relevant pages
   if (!url) {
     url = document.location.origin + document.location.pathname;

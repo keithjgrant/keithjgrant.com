@@ -1,0 +1,116 @@
+.l-homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, var(--green-1), var(--green-4));
+  background-color: var(--green-2);
+  min-height: calc(100vh - 4rem);
+}
+
+.l-homepage__inner {
+  display: grid;
+  grid-template-columns: 50% auto auto;
+  grid-template-rows: auto 60vh auto;
+  width: 100%;
+  height: 100%;
+  font-family: $sans-serif;
+}
+
+.welcome {
+  margin: 1.56em 0;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  color: var(--blue-3);
+  font-family: $serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  text-align: right;
+  background-color: white;
+  background-image: url('/images/owl_x.jpg');
+  background-repeat: no-repeat;
+  background-size: auto 80vh;
+  background-position: 0% 50%;
+  padding: 6rem 3rem 0 50%;
+  box-shadow: 0 0 1em var(--blue-1);
+}
+
+.word-art {
+  display: grid;
+  /* prettier-ignore */
+  grid-template:
+    "js  js  ."
+    "css ux  ."
+    "web web web";
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-left: 6rem;
+  font-size: 2rem;
+  color: var(--blue-rich-5);
+  line-height: 1;
+  text-align: center;
+  transform: rotate(-10deg);
+  opacity: 0.6;
+
+  & .w1 {
+    grid-area: js;
+    font-family: $serif;
+    color: var(--green-6);
+  }
+
+  & .w2 {
+    grid-area: css;
+    font-size: 2em;
+    line-height: 0.9;
+    letter-spacing: 0.03em;
+  }
+
+  & .w3 {
+    grid-area: ux;
+    writing-mode: tb;
+    font-family: $serif;
+    text-align: left;
+    color: var(--red-5);
+    line-height: 0.8;
+  }
+
+  & .w4 {
+    grid-area: web;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    font-weight: 100;
+    color: var(--yellow-5);
+  }
+}
+
+.whisky {
+  grid-column: 2 / 4;
+
+  & > img {
+    width: 100%;
+  }
+}
+
+.latest-post {
+  grid-column: 2;
+  grid-row: 3;
+  padding: 1em;
+  background: var(--white);
+  align-self: end;
+  border-radius: 0.8rem;
+
+  & > h2 {
+    margin: 0;
+  }
+}
+
+.latest-post_subheading {
+  font-size: 0.8em;
+  color: var(--gray-4);
+  text-align: right;
+}
+
+.latest-post__summary {
+  font-family: $serif;
+  color: var(--gray-3);
+  font-weight: regular;
+}

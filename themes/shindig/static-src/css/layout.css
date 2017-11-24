@@ -1,3 +1,4 @@
-@import 'layouts/article';
-@import 'layouts/list';
-@import 'layouts/note';
+@import 'layout/homepage';
+@import 'layout/article';
+@import 'layout/list';
+@import 'layout/note';
