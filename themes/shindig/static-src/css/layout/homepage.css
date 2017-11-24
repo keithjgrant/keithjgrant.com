@@ -11,92 +11,40 @@
   display: grid;
   grid-template-columns: 50% auto auto;
   grid-template-rows: auto 60vh auto;
+  grid-template-rows: auto 60vmin auto;
   width: 100%;
   height: 100%;
   font-family: $sans-serif;
 }
 
 .welcome {
-  margin: 1.56em 0;
   grid-column: 1 / -1;
   grid-row: 2;
+  margin: 1.56em 0;
+  padding: 6rem 6rem 0 50%;
+  border-radius: 50% / 1.6rem;
   color: var(--blue-3);
+  background-repeat: no-repeat;
+  background-size: auto 80vmin;
+  background-color: white;
+  background-image: url('/images/owl_x.jpg');
+  background-position: 0% 50%;
+  background-position: calc(50% - 20vw) 50%;
   font-family: $serif;
   font-size: 2rem;
   line-height: 1.2;
   text-align: right;
-  background-color: white;
-  background-image: url('/images/owl_x.jpg');
-  background-repeat: no-repeat;
-  background-size: auto 80vh;
-  background-position: 0% 50%;
-  padding: 6rem 3rem 0 50%;
   box-shadow: 0 0 1em var(--blue-1);
 }
 
-.word-art {
-  display: grid;
-  /* prettier-ignore */
-  grid-template:
-    "js  js  ."
-    "css ux  ."
-    "web web web";
-  grid-column: 1 / -1;
-  justify-self: start;
-  margin-left: 6rem;
-  font-size: 2rem;
-  color: var(--blue-rich-5);
-  line-height: 1;
-  text-align: center;
-  transform: rotate(-10deg);
-  opacity: 0.6;
-
-  & .w1 {
-    grid-area: js;
-    font-family: $serif;
-    color: var(--green-6);
-  }
-
-  & .w2 {
-    grid-area: css;
-    font-size: 2em;
-    line-height: 0.9;
-    letter-spacing: 0.03em;
-  }
-
-  & .w3 {
-    grid-area: ux;
-    writing-mode: tb;
-    font-family: $serif;
-    text-align: left;
-    color: var(--red-5);
-    line-height: 0.8;
-  }
-
-  & .w4 {
-    grid-area: web;
-    font-size: 0.8em;
-    text-transform: uppercase;
-    font-weight: 100;
-    color: var(--yellow-5);
-  }
-}
-
-.whisky {
-  grid-column: 2 / 4;
-
-  & > img {
-    width: 100%;
-  }
-}
-
 .latest-post {
-  grid-column: 2;
+  grid-column: 2 / -1;
   grid-row: 3;
-  padding: 1em;
+  padding: 1em 2em;
+  border-radius: 0.4rem;
   background: var(--white);
+  justify-self: start;
   align-self: end;
-  border-radius: 0.8rem;
 
   & > h2 {
     margin: 0;
@@ -104,13 +52,13 @@
 }
 
 .latest-post_subheading {
-  font-size: 0.8em;
   color: var(--gray-4);
+  font-size: 0.8em;
   text-align: right;
 }
 
 .latest-post__summary {
-  font-family: $serif;
   color: var(--gray-3);
+  font-family: $serif;
   font-weight: regular;
 }

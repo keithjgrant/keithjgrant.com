@@ -6,7 +6,7 @@
 
   & > a:any-link {
     display: block;
-    padding: 0.8em 1.6em 0.6em 2rem;
+    padding: 0.6em 1.6em 0.6em 2rem;
     border: 1px solid transparent;
     border-width: 1px 1px 1px 0;
     border-top-right-radius: 2rem;
@@ -20,6 +20,12 @@
       text-decoration: none;
       outline: none;
     }
+  }
+
+  & svg {
+    height: 1.2em;
+    margin-right: 0.4em;
+    vertical-align: -0.2em;
   }
 }
 
