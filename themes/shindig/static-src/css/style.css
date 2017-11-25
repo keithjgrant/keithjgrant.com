@@ -24,6 +24,8 @@
 @import 'metadata';
 @import 'img-banner-preview';
 @import 'pagination-loader';
+@import 'welcome';
+@import 'latest-post';
 @import 'utility';
 
 /*.capsule-head {

@@ -1,0 +1,25 @@
+.latest-post {
+  grid-column: 2 / -1;
+  grid-row: 3;
+  padding: 1em 2em;
+  border-radius: 0.4rem;
+  background: var(--white);
+  justify-self: start;
+  align-self: end;
+
+  & > h2 {
+    margin: 0;
+  }
+}
+
+.latest-post_subheading {
+  color: var(--gray-4);
+  font-size: 0.8em;
+  text-align: right;
+}
+
+.latest-post__summary {
+  color: var(--gray-3);
+  font-family: $serif;
+  font-weight: regular;
+}
