@@ -6,9 +6,9 @@
 <body class="h-feed">
   {{ partial "header.html" . }}
 
-  <div class="list-bg">
+  <div class="list-bg js-main">
     <h1 class="list-heading">{{ .Title }}</h1>
-    <div class="l-list js-main">
+    <div class="l-list">
       {{ if .Paginator.HasPrev }}
         <div class="l-list__pagination pagination-loader">
           <a rel="prev" href="{{.Paginator.Prev.URL}}">load newer posts</a>

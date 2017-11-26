@@ -87,17 +87,42 @@ function navigation() {
     const url = e.target.href;
     advanceToUrl(url, e.target);
   });
+  window.onpopstate = event => {
+    backToUrl(document.location.href);
+  };
 }
 
 async function advanceToUrl(url, clickedEl) {
+  try {
+    const newContent = await fetchPageContent(url);
+    const currentContent = document.querySelector('.js-main');
+    currentContent.parentNode.insertBefore(
+      newContent,
+      currentContent.nextSibling
+    );
+
+    history.pushState({}, '', url);
+    const effect = getEffect(url);
+    effect(currentContent, newContent, clickedEl);
+  } catch (e) {
+    document.location = url;
+  }
+}
+
+function getEffect(toUrl) {
+  const fromUrl = document.location.href;
+  console.log(fromUrl, toUrl);
+  return __WEBPACK_IMPORTED_MODULE_0__transitions__["a" /* zoomIn */];
+}
+
+async function backToUrl(url) {
   const newContent = await fetchPageContent(url);
   const currentContent = document.querySelector('.js-main');
   currentContent.parentNode.insertBefore(
     newContent,
     currentContent.nextSibling
   );
-
-  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__transitions__["a" /* scrollRightTo */])(currentContent, newContent);
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__transitions__["b" /* dropOut */])(currentContent, newContent);
 }
 
 async function fetchPageContent(url) {
@@ -465,7 +490,9 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__navigation__["a" /* default *
 
 "use strict";
 /* unused harmony export scrollDownTo */
-/* harmony export (immutable) */ __webpack_exports__["a"] = scrollRightTo;
+/* unused harmony export scrollRightTo */
+/* harmony export (immutable) */ __webpack_exports__["a"] = zoomIn;
+/* harmony export (immutable) */ __webpack_exports__["b"] = dropOut;
 function scrollDownTo(oldEl, newEl) {
   const height = document.documentElement.clientHeight;
   const tl = new TimelineLite({
@@ -475,12 +502,13 @@ function scrollDownTo(oldEl, newEl) {
   });
   tl.set(oldEl, {position: 'absolute', left: 0, right: 0});
   tl.set(newEl, {position: 'relative'});
-  tl.set(oldEl.parentNode, {height: '100vh'});
+  tl.set(oldEl.parentNode, {minHeight: '100vh'});
   tl.add('start');
   tl.to(oldEl, 1.5, {y: height * -1, ease: Power2.easeInOut}, 'start');
   tl.from(newEl, 1.5, {y: height, ease: Power2.easeInOut}, 'start');
   tl.set(newEl, {position: 'static'});
-  tl.set(oldEl.parentNode, {height: 'auto'});
+  tl.set(oldEl.parentNode, {minHeight: 'auto'});
+  tl.to(oldEl, 0.2, {opacity: 0});
   tl.play();
 }
 
@@ -493,12 +521,71 @@ function scrollRightTo(oldEl, newEl) {
   });
   tl.set(oldEl, {position: 'absolute', left: 0, right: 0});
   tl.set(newEl, {position: 'relative'});
-  tl.set(oldEl.parentNode, {height: '100vh'});
+  tl.set(oldEl.parentNode, {minHeight: '100vh'});
   tl.add('start');
   tl.to(oldEl, 1.5, {x: width * -1, ease: Power2.easeInOut}, 'start');
   tl.from(newEl, 1.5, {x: width, ease: Power2.easeInOut}, 'start');
   tl.set(newEl, {position: 'static'});
-  tl.set(oldEl.parentNode, {height: 'auto'});
+  tl.set(oldEl.parentNode, {minHeight: 'auto'});
+  tl.to(oldEl, 0.2, {opacity: 0});
+  tl.play();
+}
+
+function zoomIn(oldEl, newEl, link) {
+  const tl = new TimelineLite({
+    onComplete: () => {
+      oldEl.parentNode.removeChild(oldEl);
+    },
+  });
+  const first = link.getBoundingClientRect();
+  tl.set(oldEl, {position: 'absolute', left: 0, right: 0});
+  tl.set(oldEl.parentNode, {minHeight: '100vh'});
+  tl.set(newEl, {transformOrigin: '0 0'});
+  const last = newEl.getBoundingClientRect();
+  const invert = {
+    top: first.top - last.top,
+    left: first.left - last.left,
+    height: first.height / last.height,
+    width: first.width / last.width,
+  };
+  tl.from(newEl, 1.5, {
+    x: invert.left,
+    y: invert.top,
+    scaleX: invert.width,
+    scaleY: invert.height,
+    ease: Power4.easeOut,
+  });
+  tl.set(oldEl.parentNode, {minHeight: 'auto'});
+  tl.play();
+}
+
+function dropOut(oldEl, newEl) {
+  const tl = new TimelineLite({
+    onComplete: () => {
+      oldEl.parentNode.removeChild(oldEl);
+    },
+  });
+  tl.set(oldEl, {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    transformOrigin: '50% 0%',
+  });
+  tl.set(oldEl.parentNode, {
+    perspective: 500,
+  });
+  tl.add('top');
+  tl.to(
+    oldEl,
+    0.3,
+    {
+      y: 1000,
+      z: -1100,
+      opacity: 0,
+      ease: Power4.easeIn,
+    },
+    'top'
+  );
   tl.play();
 }
 

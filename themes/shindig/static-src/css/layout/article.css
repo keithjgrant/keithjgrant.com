@@ -8,6 +8,7 @@
     [full-end];
   padding-top: 7rem;
   padding-bottom: 7rem;
+  background-color: var(--white);
 }
 
 .l-article__inner {
