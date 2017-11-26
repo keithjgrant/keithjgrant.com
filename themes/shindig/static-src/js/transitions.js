@@ -98,6 +98,7 @@ export function dropDown(oldEl, newEl) {
   const height = document.documentElement.clientHeight;
   const bg = cloneBg(newEl);
   newEl.parentNode.insertBefore(bg, newEl);
+  const heading = newEl.querySelector('.list-heading');
   const tl = new TimelineLite({
     onComplete: () => {
       oldEl.parentNode.removeChild(oldEl);
@@ -122,12 +123,20 @@ export function dropDown(oldEl, newEl) {
       y: height * -1,
       background: 'none',
       ease: Power4.easeOut,
+      opacity: 0,
     },
     'start'
   );
   tl.to(bg, 0.8, {opacity: 1}, 'start');
-  // tl.set(newEl, {height: 'auto', position: 'static'});
   tl.set(oldEl.parentNode, {minHeight: 'auto'});
+  if (heading) {
+    tl.set(heading, {opacity: 1});
+    tl.from(heading, 1, {
+      x: -30,
+      opacity: 0,
+      ease: Power4.easeOut,
+    });
+  }
   tl.play();
 }
 
