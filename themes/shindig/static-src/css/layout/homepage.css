@@ -1,7 +1,12 @@
 .l-homepage {
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(to right, var(--green-1), var(--green-4));
+  background-image: linear-gradient(
+    to right,
+    var(--blue-1),
+    var(--blue-2) 30%,
+    var(--green-6)
+  );
   background-color: var(--green-2);
   min-height: calc(100vh - 4rem);
 
@@ -11,14 +16,25 @@
 }
 
 .l-homepage__inner {
+  --right-margin: 1rem;
   display: grid;
-  grid-template-columns: 50% auto auto;
+  grid-template-columns: 50% auto var(--right-margin);
   grid-template-rows: auto auto auto;
   width: 100%;
   height: 100%;
   font-family: $sans-serif;
 
+  /* 3rd column aligns with right padding of .welcome */
+
+  @media (min-width: 400px) {
+    --right-margin: 2rem;
+  }
+
   @media (min-width: 500px) {
     grid-template-rows: auto 60vmin auto;
+  }
+
+  @media (min-width: 750px) and (min-height: 600px) {
+    --right-margin: 6rem;
   }
 }

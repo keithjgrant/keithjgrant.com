@@ -63,11 +63,54 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = navigation;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__transitions__ = __webpack_require__(8);
+
+
+function navigation() {
+  document.body.addEventListener('click', function(e) {
+    if (!e.target.matches('a')) {
+      return;
+    }
+    if (e.target.origin !== location.origin) {
+      return;
+    }
+    e.preventDefault();
+    const url = e.target.href;
+    advanceToUrl(url, e.target);
+  });
+}
+
+async function advanceToUrl(url, clickedEl) {
+  const newContent = await fetchPageContent(url);
+  const currentContent = document.querySelector('.js-main');
+  currentContent.parentNode.insertBefore(
+    newContent,
+    currentContent.nextSibling
+  );
+
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__transitions__["a" /* scrollRightTo */])(currentContent, newContent);
+}
+
+async function fetchPageContent(url) {
+  const response = await fetch(url);
+  const html = await response.text();
+  const content = document.createElement('html');
+  content.innerHTML = html;
+  return content.querySelector('.js-main');
+}
+
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {
@@ -82,10 +125,10 @@ Prism.languages.css.selector={pattern:/[^{}\s][^{}]*(?=\s*\{)/,inside:{"pseudo-e
 Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(?:\/\*[\s\S]*?\*\/|\/\/.*)/,lookbehind:!0},atrule:{pattern:/@[\w-]+(?:\([^()]+\)|[^(])*?(?=\s+[{;])/,inside:{rule:/@[\w-]+/}},url:/(?:[-a-z]+-)*url(?=\()/i,selector:{pattern:/(?=\S)[^@;{}()]?(?:[^@;{}()]|&|#\{\$[-\w]+\})+(?=\s*\{(?:\}|\s|[^}]+[:{][^}]+))/m,inside:{parent:{pattern:/&/,alias:"important"},placeholder:/%[-\w]+/,variable:/\$[-\w]+|#\{\$[-\w]+\}/}}}),Prism.languages.insertBefore("scss","atrule",{keyword:[/@(?:if|else(?: if)?|for|each|while|import|extend|debug|warn|mixin|include|function|return|content)/i,{pattern:/( +)(?:from|through)(?= )/,lookbehind:!0}]}),Prism.languages.scss.property={pattern:/(?:[\w-]|\$[-\w]+|#\{\$[-\w]+\})+(?=\s*:)/i,inside:{variable:/\$[-\w]+|#\{\$[-\w]+\}/}},Prism.languages.insertBefore("scss","important",{variable:/\$[-\w]+|#\{\$[-\w]+\}/}),Prism.languages.insertBefore("scss","function",{placeholder:{pattern:/%[-\w]+/,alias:"selector"},statement:{pattern:/\B!(?:default|optional)\b/i,alias:"keyword"},"boolean":/\b(?:true|false)\b/,"null":/\bnull\b/,operator:{pattern:/(\s)(?:[-+*\/%]|[=!]=|<=?|>=?|and|or|not)(?=\s)/,lookbehind:!0}}),Prism.languages.scss.atrule.inside.rest=Prism.util.clone(Prism.languages.scss);
 !function(){"undefined"!=typeof self&&!self.Prism||"undefined"!=typeof global&&!global.Prism||Prism.hooks.add("wrap",function(e){"keyword"===e.type&&e.classes.push("keyword-"+e.content)})}();
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -145,7 +188,7 @@ function getTabPane(button) {
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -367,8 +410,8 @@ function showInteractions() {
 
 
 /***/ }),
-/* 3 */,
-/* 4 */
+/* 4 */,
+/* 5 */
 /***/ (function(module, exports) {
 
 var g;
@@ -395,21 +438,69 @@ module.exports = g;
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tabs__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__webmentions__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__prism__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__prism___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__prism__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tabs__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__webmentions__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__navigation__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__prism__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__prism___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__prism__);
+
 
 
 
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__tabs__["a" /* default */])();
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__webmentions__["a" /* default */])();
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__navigation__["a" /* default */])();
+
+
+/***/ }),
+/* 7 */,
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export scrollDownTo */
+/* harmony export (immutable) */ __webpack_exports__["a"] = scrollRightTo;
+function scrollDownTo(oldEl, newEl) {
+  const height = document.documentElement.clientHeight;
+  const tl = new TimelineLite({
+    onComplete: () => {
+      oldEl.parentNode.removeChild(oldEl);
+    },
+  });
+  tl.set(oldEl, {position: 'absolute', left: 0, right: 0});
+  tl.set(newEl, {position: 'relative'});
+  tl.set(oldEl.parentNode, {height: '100vh'});
+  tl.add('start');
+  tl.to(oldEl, 1.5, {y: height * -1, ease: Power2.easeInOut}, 'start');
+  tl.from(newEl, 1.5, {y: height, ease: Power2.easeInOut}, 'start');
+  tl.set(newEl, {position: 'static'});
+  tl.set(oldEl.parentNode, {height: 'auto'});
+  tl.play();
+}
+
+function scrollRightTo(oldEl, newEl) {
+  const width = document.documentElement.clientWidth;
+  const tl = new TimelineLite({
+    onComplete: () => {
+      oldEl.parentNode.removeChild(oldEl);
+    },
+  });
+  tl.set(oldEl, {position: 'absolute', left: 0, right: 0});
+  tl.set(newEl, {position: 'relative'});
+  tl.set(oldEl.parentNode, {height: '100vh'});
+  tl.add('start');
+  tl.to(oldEl, 1.5, {x: width * -1, ease: Power2.easeInOut}, 'start');
+  tl.from(newEl, 1.5, {x: width, ease: Power2.easeInOut}, 'start');
+  tl.set(newEl, {position: 'static'});
+  tl.set(oldEl.parentNode, {height: 'auto'});
+  tl.play();
+}
 
 
 /***/ })

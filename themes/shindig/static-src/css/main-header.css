@@ -1,4 +1,6 @@
 .main-header {
+  position: relative;
+  z-index: 1;
   padding: 0.67rem 0 0;
   color: var(--white);
   background-color: var(--blue-rich-2);

@@ -6,15 +6,16 @@
 <body>
   {{ partial "header.html" . }}
 
-  <main class="l-homepage">
+  <main class="l-homepage js-main">
     <div class="l-homepage__inner">
       <div class="welcome">Hi, I’m Keith<br>I make things on the web</div>
-      <div class="latest-post">
-        <div class="latest-post_subheading">Latest post</div>
-        {{ range first 1 (where .Site.Pages "Section" "posts") }}
+      {{ range first 1 (where .Site.Pages "Section" "posts") }}
+        <link rel="prefetch" href="{{ .URL }}">
+        <a class="latest-post" href={{ .URL }}>
+          <div class="latest-post_subheading">Latest post</div>
           <h2>{{ .Title }}</h2>
-        {{ end }}
-      </h2>
+        </a>
+      {{ end }}
     </div>
   </main>
 
