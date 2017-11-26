@@ -1,4 +1,5 @@
 .latest-post {
+  position: relative;
   grid-column: 1 / 3;
   grid-row: 3;
   margin-left: var(--right-margin);

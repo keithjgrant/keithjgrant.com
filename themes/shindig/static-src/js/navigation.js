@@ -1,4 +1,5 @@
-import {scrollDownTo, scrollRightTo, zoomIn, dropOut} from './transitions';
+import selectTransition from './selectTransition';
+import {dropOut} from './transitions';
 
 export default function navigation() {
   document.body.addEventListener('click', function(e) {
@@ -9,35 +10,33 @@ export default function navigation() {
       return;
     }
     e.preventDefault();
-    const url = e.target.href;
+    const url = e.target.pathname;
     advanceToUrl(url, e.target);
   });
   window.onpopstate = event => {
-    backToUrl(document.location.href);
+    backToUrl(document.location.pathname);
   };
 }
 
 async function advanceToUrl(url, clickedEl) {
-  try {
-    const newContent = await fetchPageContent(url);
-    const currentContent = document.querySelector('.js-main');
-    currentContent.parentNode.insertBefore(
-      newContent,
-      currentContent.nextSibling
-    );
+  // try {
+  const newContent = await fetchPageContent(url);
+  const currentContent = document.querySelector('.js-main');
+  currentContent.parentNode.insertBefore(
+    newContent,
+    currentContent.nextSibling
+  );
 
-    history.pushState({}, '', url);
-    const effect = getEffect(url);
+  const effect = selectTransition(url);
+  history.pushState({}, '', url);
+  if (effect) {
     effect(currentContent, newContent, clickedEl);
-  } catch (e) {
-    document.location = url;
+  } else {
+    // document.location = url;
   }
-}
-
-function getEffect(toUrl) {
-  const fromUrl = document.location.href;
-  console.log(fromUrl, toUrl);
-  return zoomIn;
+  // } catch (e) {
+  //   document.location = url;
+  // }
 }
 
 async function backToUrl(url) {

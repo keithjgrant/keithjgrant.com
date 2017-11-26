@@ -93,3 +93,46 @@ export function dropOut(oldEl, newEl) {
   );
   tl.play();
 }
+
+export function dropDown(oldEl, newEl) {
+  const height = document.documentElement.clientHeight;
+  const bg = cloneBg(newEl);
+  newEl.parentNode.insertBefore(bg, newEl);
+  const tl = new TimelineLite({
+    onComplete: () => {
+      oldEl.parentNode.removeChild(oldEl);
+      bg.parentNode.removeChild(bg);
+      TweenLite.set(newEl, {clearProps: 'all'});
+    },
+  });
+  tl.set(bg, {
+    position: 'absolute',
+    width: '100%',
+    height: '100vh',
+    opacity: 0,
+  });
+  tl.set(newEl, {height: height, position: 'relative', background: 'none'});
+  tl.set(oldEl, {position: 'absolute', left: 0, right: 0});
+  tl.set(oldEl.parentNode, {minHeight: '100vh'});
+  tl.add('start');
+  tl.from(
+    newEl,
+    0.8,
+    {
+      y: height * -1,
+      background: 'none',
+      ease: Power4.easeOut,
+    },
+    'start'
+  );
+  tl.to(bg, 0.8, {opacity: 1}, 'start');
+  // tl.set(newEl, {height: 'auto', position: 'static'});
+  tl.set(oldEl.parentNode, {minHeight: 'auto'});
+  tl.play();
+}
+
+function cloneBg(el) {
+  const bg = document.createElement('div');
+  bg.className = el.className.replace('js-main', 'js-bg');
+  return bg;
+}
