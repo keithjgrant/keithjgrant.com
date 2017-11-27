@@ -3,7 +3,7 @@ import {
   scrollRightTo,
   zoomIn,
   dropOut,
-  dropDown,
+  irisIn,
 } from './transitions';
 
 const NONE = 0;
@@ -20,7 +20,7 @@ export default function selectTransition(toUrl) {
     case TO_HP:
       return dropOut;
     case TO_LIST:
-      return dropDown;
+      return irisIn;
     case NONE: // TODO: distinguish b/t NONE & OTHER
     default:
       return null;

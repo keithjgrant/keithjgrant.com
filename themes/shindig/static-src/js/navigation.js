@@ -1,6 +1,9 @@
 import selectTransition from './selectTransition';
 import {dropOut} from './transitions';
 
+// TODO
+let isNavigating = false;
+
 export default function navigation() {
   document.body.addEventListener('click', function(e) {
     if (!e.target.matches('a')) {

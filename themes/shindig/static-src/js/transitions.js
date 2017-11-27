@@ -94,54 +94,79 @@ export function dropOut(oldEl, newEl) {
   tl.play();
 }
 
-export function dropDown(oldEl, newEl) {
-  const height = document.documentElement.clientHeight;
-  const bg = cloneBg(newEl);
+export function irisIn(oldEl, newEl) {
+  // const height = document.documentElement.clientHeight;
+  const bg = cloneBackground(newEl);
+  const oldBg = cloneBackground(oldEl);
+  newEl.parentNode.insertBefore(oldBg, newEl);
   newEl.parentNode.insertBefore(bg, newEl);
   const heading = newEl.querySelector('.list-heading');
   const tl = new TimelineLite({
     onComplete: () => {
-      oldEl.parentNode.removeChild(oldEl);
-      bg.parentNode.removeChild(bg);
+      removeNode(oldEl);
+      removeNode(bg);
+      removeNode(oldBg);
       TweenLite.set(newEl, {clearProps: 'all'});
     },
   });
   tl.set(bg, {
     position: 'absolute',
     width: '100%',
-    height: '100vh',
+    height: '200vh',
     opacity: 0,
   });
-  tl.set(newEl, {height: height, position: 'relative', background: 'none'});
-  tl.set(oldEl, {position: 'absolute', left: 0, right: 0});
-  tl.set(oldEl.parentNode, {minHeight: '100vh'});
+  tl.set(oldBg, {
+    position: 'absolute',
+    width: '100%',
+    height: '200vh',
+  });
+  tl.set(newEl, {
+    height: '200vh',
+    position: 'relative',
+    background: 'none',
+    overflow: 'hidden',
+  });
+  tl.set(oldEl, {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    background: 'none',
+    zIndex: 1,
+  });
+  tl.set(oldEl.parentNode, {minHeight: '200vh'});
   tl.add('start');
+  tl.to(oldEl, 0.4, {opacity: 0}, 'start');
   tl.from(
     newEl,
     0.8,
     {
-      y: height * -1,
+      scaleX: 0,
       background: 'none',
-      ease: Power4.easeOut,
+      ease: Power4.easeIn,
       opacity: 0,
     },
     'start'
   );
   tl.to(bg, 0.8, {opacity: 1}, 'start');
-  tl.set(oldEl.parentNode, {minHeight: 'auto'});
+  tl.set(oldEl.parentNode, {clearProps: 'all'});
+  tl.set(newEl, {clearProps: 'height, overflow, background'});
   if (heading) {
     tl.set(heading, {opacity: 1});
-    tl.from(heading, 1, {
+    tl.from(heading, 2, {
       x: -30,
       opacity: 0,
-      ease: Power4.easeOut,
+      ease: Power1.easeOut,
     });
   }
   tl.play();
 }
 
-function cloneBg(el) {
+function cloneBackground(el) {
   const bg = document.createElement('div');
   bg.className = el.className.replace('js-main', 'js-bg');
   return bg;
+}
+
+function removeNode(el) {
+  el.parentNode.removeChild(el);
 }
