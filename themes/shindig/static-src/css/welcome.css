@@ -1,8 +1,9 @@
 .welcome {
+  display: flex;
   grid-column: 1 / -1;
   grid-row: 2;
   margin: 1.56rem 0;
-  padding: 4rem var(--right-margin) 4rem 40%;
+  padding: 1rem var(--right-margin) 1.4rem 40%;
   border-radius: 50% / 1.6rem;
   color: var(--blue-3);
   background-repeat: no-repeat;
@@ -13,7 +14,10 @@
   background-position: calc(50% - 20vw) 50%;
   font-family: $serif;
   font-size: 1.25rem;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'swsh' 1;
   line-height: 1.2;
+  align-items: center;
+  justify-content: flex-end;
   text-align: right;
   box-shadow: 0 0 1em var(--blue-1);
 
@@ -23,7 +27,8 @@
   }
 
   @media (min-width: 750px) and (min-height: 600px) {
-    padding: 6rem var(--right-margin) 0 50%;
+    padding: 0 var(--right-margin) 0.4rem 50%;
     font-size: 2rem;
+    padding-top: 0;
   }
 }

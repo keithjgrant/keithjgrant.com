@@ -94,3 +94,48 @@ pre > code {
 ::selection {
   background-color: var(--red-6);
 }
+
+hr {
+  position: relative;
+  width: 0.6rem;
+  height: 0.6rem;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--blue-rich-4);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0.6rem;
+    height: 0.6rem;
+    border: 0;
+    border-radius: 50%;
+  }
+
+  &::before {
+    left: -1.4rem;
+    background-color: var(--blue-rich-5);
+  }
+
+  &::after {
+    right: -1.4rem;
+    background-color: var(--blue-rich-3);
+  }
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.svg-link:any-link {
+  text-decoration: none;
+}
+.svg-link + .svg-link {
+  margin-left: 0.4em;
+}

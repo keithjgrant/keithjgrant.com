@@ -1,12 +1,27 @@
 <footer class="footer">
-  <!-- TODO: h-card -->
-  <ul class="footer-links">
-    <li>Posts feed</li>
-    <li>Notes feed</li>
-    <li><a href="https://twitter.com/keithjgrant.com" rel="me">Twitter</a></li>
-    <li><a href="https://github.com/keithjgrant.com" rel="me">Github</a></li>
-    <li>Colophon?</li>
-  </ul>
+  <div class="footer__inner">
+    <div class="text-center footer-logo">
+      {{ partial "svg/logo.html" }}
+    </div>
+    <div class="split">
+      <div class="split__left">
+        <p><strong>&copy; 2015&ndash;2017 Keith J. Grant. All right reserved.</strong></p>
+        <p>This site supports <a href="https://webmention.net/">webmention</a>. Built with <a href="http://gohugo.io/">Hugo</a> and hosted on <a href="https://www.netlify.com/">Netlify</a>.</p>
+      </div>
+      <div class="split__right">
+        <ul class="footer-links">
+          <li><a href="">Posts RSS feed</a></li>
+          <li><a href="">Notes RSS feed</a></li>
+          <li class="footer-links__icon"><a href="https://twitter.com/keithjgrant" class="svg-link" rel="me">
+            {{ partial "svg/twitter.html" }}
+          </a>
+          <a href="https://github.com/keithjgrant" class="svg-link" rel="me">
+            {{ partial "svg/github.html" }}
+          </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <script src="/js/TweenLite.min.js"></script>

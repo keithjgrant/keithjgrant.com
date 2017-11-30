@@ -8,7 +8,9 @@
 
   <main class="l-homepage js-main">
     <div class="l-homepage__inner">
-      <div class="welcome">Hi, I’m Keith<br>I make things on the web</div>
+      <div class="welcome">
+        <div>Hi, I’m Keith<br>I make things on the web</div>
+      </div>
       {{ range first 1 (where .Site.Pages "Section" "posts") }}
         <link rel="prefetch" href="{{ .URL }}">
         <a class="latest-post" href={{ .URL }}>

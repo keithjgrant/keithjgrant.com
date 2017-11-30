@@ -2,6 +2,7 @@
   margin: 0 -1em 1em;
   padding: 0 1em;
   border-radius: 1em;
+  border-radius: 0.3rem / 50%;
   color: var(--gray-5);
   background-color: var(--gray-9);
   font-size: 0.8rem;

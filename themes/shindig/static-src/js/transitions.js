@@ -95,7 +95,6 @@ export function dropOut(oldEl, newEl) {
 }
 
 export function irisIn(oldEl, newEl) {
-  // const height = document.documentElement.clientHeight;
   const bg = cloneBackground(newEl);
   const oldBg = cloneBackground(oldEl);
   newEl.parentNode.insertBefore(oldBg, newEl);

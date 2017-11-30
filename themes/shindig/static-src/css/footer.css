@@ -1,13 +1,30 @@
 .footer {
-  padding: 1rem 0;
-  color: var(--blue-4);
-  background-color: var(--gray-7);
+  padding: 2rem 8rem 3rem;
+  border-top: 5px solid var(--gray-3);
+  color: var(--gray-7);
+  background-color: var(--gray-1);
+  font-size: 0.8rem;
   font-family: $sans-serif;
+
+  & svg {
+    height: 1.5em;
+  }
+
+  & a:any-link {
+    color: var(--blue-5);
+  }
+
+  & a:hover {
+    color: var(--blue-rich-5);
+  }
+}
+
+.footer__inner {
+  max-width: 42.5rem;
+  margin: 0 auto;
 }
 
 .footer-links {
-  display: flex;
-  max-width: 80ch;
   margin: 0 auto;
   padding: 0;
   list-style-type: none;
@@ -15,4 +32,17 @@
   & > li {
     flex: 1;
   }
+
+  & > li + li {
+    margin-top: 0.5em;
+  }
+}
+
+.footer-links__icon {
+  margin-top: 1em;
+}
+
+.footer-logo svg {
+  height: 2em;
+  margin: 1rem 0 2rem;
 }

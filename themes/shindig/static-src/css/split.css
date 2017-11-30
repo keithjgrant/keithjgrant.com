@@ -1,0 +1,17 @@
+.split {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  & > * {
+    flex: 1 0 0;
+  }
+
+  & > * + * {
+    margin-left: 4rem;
+  }
+}
+
+.split__right {
+  text-align: right;
+}
