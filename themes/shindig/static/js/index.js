@@ -664,20 +664,20 @@ function split(url) {
 
 
 function irisIn(oldEl, newEl) {
-  const bg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["b" /* cloneBackground */])(newEl);
+  const newBg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["b" /* cloneBackground */])(newEl);
   const oldBg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["b" /* cloneBackground */])(oldEl);
   newEl.parentNode.insertBefore(oldBg, newEl);
-  newEl.parentNode.insertBefore(bg, newEl);
+  newEl.parentNode.insertBefore(newBg, newEl);
   const heading = newEl.querySelector('.list-heading');
   const tl = new TimelineLite({
     onComplete: () => {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldEl);
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(bg);
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(newBg);
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldBg);
       TweenLite.set(newEl, {clearProps: 'all'});
     },
   });
-  tl.set(bg, {
+  tl.set(newBg, {
     position: 'absolute',
     width: '100%',
     height: '200vh',
@@ -715,7 +715,7 @@ function irisIn(oldEl, newEl) {
     },
     'start'
   );
-  tl.to(bg, 0.8, {opacity: 1}, 'start');
+  tl.to(newBg, 0.8, {opacity: 1}, 'start');
   tl.set(oldEl.parentNode, {clearProps: 'all'});
   tl.set(newEl, {clearProps: 'height, overflow, background'});
   if (heading) {
@@ -736,27 +736,83 @@ function irisIn(oldEl, newEl) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = noteZoom;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_transitions__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_dom__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_notes__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_transitions__ = __webpack_require__(16);
+
 
 
 
 function noteZoom(oldEl, newEl) {
-  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_transitions__["a" /* crossfadeBackground */])(oldEl, newEl);
-  const orig = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_notes__["a" /* findLinkToNote */])(oldEl, document.location.href);
-  const newNote = newEl.querySelector('.note-highlight');
+  const newBg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["b" /* cloneBackground */])(newEl);
+  const oldBg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["b" /* cloneBackground */])(oldEl);
+  newEl.parentNode.insertBefore(oldBg, newEl);
+  newEl.parentNode.insertBefore(newBg, newEl);
+  const oldNoteBox = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_notes__["a" /* findLinkToNote */])(oldEl, document.location.href);
+  const newNoteBox = newEl.querySelector('.note-highlight');
 
-  const tl = new TimelineLite();
-  tl.set(oldEl, {position: 'absolute', left: 0, right: 0});
-  tl.set(oldEl.parentNode, {minHeight: '100vh'});
-  tl.set(newEl, {transformOrigin: '0 0'});
-
-  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_transitions__["b" /* flipZoom */])(orig, newNote).then(() => {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_transitions__["c" /* removeNode */])(oldEl);
-    TweenLite.set(newEl, {clearProps: 'all'});
+  const tl = new TimelineLite({
+    onComplete: () => {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldEl);
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(newBg);
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldBg);
+      TweenLite.set(newEl, {clearProps: 'all'});
+      TweenLite.set(newNoteBox, {clearProps: 'all'});
+      TweenLite.set(newEl.parentNode, {clearProps: 'all'});
+    },
   });
+
+  tl.set(newBg, {
+    position: 'absolute',
+    width: '100%',
+    height: '200vh',
+    opacity: 0,
+  });
+  tl.set(oldBg, {
+    position: 'absolute',
+    width: '100%',
+    height: '200vh',
+  });
+  tl.set(newEl, {
+    height: '200vh',
+    position: 'relative',
+    background: 'none',
+    overflow: 'hidden',
+    zIndex: 1,
+  });
+  tl.set(oldEl, {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    background: 'none',
+    zIndex: 1,
+    transformOrigin: '50% 50vh',
+  });
+  tl.set(newNoteBox, {
+    transformOrigin: '0 0',
+  });
+  tl.set(oldEl.parentNode, {minHeight: '200vh'});
+  tl.set(oldNoteBox, {opacity: 0});
+  tl.addLabel('start');
+
+  tl.to(
+    oldEl,
+    1.2,
+    {
+      opacity: 0,
+      scaleX: 0.9,
+      scaleY: 0.9,
+    },
+    'start'
+  );
+  const first = oldNoteBox.getBoundingClientRect();
+  const last = newNoteBox.getBoundingClientRect();
+  const flipCoords = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_transitions__["a" /* getFlipCoords */])(first, last, {ease: Power4.easeOut});
+  tl.from(newNoteBox, 0.9, flipCoords, 'start');
+
+  tl.to(newBg, 0.6, {opacity: 1});
+
   tl.play();
-  // fadeOut(oldEl);
 }
 
 
@@ -825,6 +881,8 @@ function scrollRightTo(oldEl, newEl) {
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = zoomIn;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_dom__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_transitions__ = __webpack_require__(16);
+
 
 
 function zoomIn(oldEl, newEl, link) {
@@ -839,19 +897,11 @@ function zoomIn(oldEl, newEl, link) {
   tl.set(oldEl.parentNode, {minHeight: '100vh'});
   tl.set(newEl, {transformOrigin: '0 0'});
   const last = newEl.getBoundingClientRect();
-  const invert = {
-    top: first.top - last.top,
-    left: first.left - last.left,
-    height: first.height / last.height,
-    width: first.width / last.width,
-  };
-  tl.from(newEl, 1.5, {
-    x: invert.left,
-    y: invert.top,
-    scaleX: invert.width,
-    scaleY: invert.height,
+
+  const coords = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_transitions__["a" /* getFlipCoords */])(first, last, {
     ease: Power4.easeOut,
   });
+  tl.from(newEl, 1.5, coords);
   tl.set(oldEl.parentNode, {minHeight: 'auto'});
   tl.play();
 }
@@ -873,91 +923,87 @@ function findLinkToNote(container, noteUrl) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = crossfadeBackground;
-/* harmony export (immutable) */ __webpack_exports__["b"] = flipZoom;
-/* unused harmony export cloneBackground */
-/* harmony export (immutable) */ __webpack_exports__["c"] = removeNode;
-function crossfadeBackground(oldEl, newEl) {
-  const newBg = cloneBackground(newEl);
-  const oldBg = cloneBackground(oldEl);
-  newEl.parentNode.insertBefore(oldBg, oldEl);
-  newEl.parentNode.insertBefore(newBg, oldEl);
-  return new Promise((resolve, reject) => {
-    const tl = new TimelineLite({
-      onComplete: () => {
-        removeNode(newBg);
-        removeNode(oldBg);
-        TweenLite.set(newEl, {clearProps: 'all'});
-        resolve();
-      },
-    });
-    tl.set(newBg, {
-      position: 'absolute',
-      width: '100%',
-      height: '200vh',
-      opacity: 0,
-    });
-    tl.set(oldBg, {
-      position: 'absolute',
-      width: '100%',
-      height: '200vh',
-    });
-    tl.set(oldEl, {
-      position: 'absolute',
-      left: 0,
-      right: 0,
-      background: 'none',
-      zIndex: 1,
-    });
-    tl.set(newEl, {
-      // height: '200vh',
-      position: 'relative',
-      background: 'none',
-      // overflow: 'hidden',
-    });
-    tl.to(newBg, 0.8, {opacity: 1});
-    // tl.play();
-    tl.progress(0.5);
-    tl.pause();
-  });
-}
+/* harmony export (immutable) */ __webpack_exports__["a"] = getFlipCoords;
+// export function crossfadeBackground(oldEl, newEl) {
+//   const newBg = cloneBackground(newEl);
+//   const oldBg = cloneBackground(oldEl);
+//   newEl.parentNode.insertBefore(oldBg, oldEl);
+//   newEl.parentNode.insertBefore(newBg, oldEl);
+//   return new Promise((resolve, reject) => {
+//     const tl = new TimelineLite({
+//       onComplete: () => {
+//         removeNode(newBg);
+//         removeNode(oldBg);
+//         TweenLite.set(newEl, {clearProps: 'all'});
+//         resolve();
+//       },
+//     });
+//     tl.set(newBg, {
+//       position: 'absolute',
+//       width: '100%',
+//       height: '200vh',
+//       opacity: 0,
+//     });
+//     tl.set(oldBg, {
+//       position: 'absolute',
+//       width: '100%',
+//       height: '200vh',
+//     });
+//     tl.set(oldEl, {
+//       position: 'absolute',
+//       left: 0,
+//       right: 0,
+//       background: 'none',
+//       zIndex: 1,
+//     });
+//     tl.set(newEl, {
+//       // height: '200vh',
+//       position: 'relative',
+//       background: 'none',
+//       // overflow: 'hidden',
+//     });
+//     tl.to(newBg, 0.8, {opacity: 1});
+//     // tl.play();
+//     tl.progress(0.5);
+//     tl.pause();
+//   });
+// }
 
-function flipZoom(fromEl, toEl) {
-  return new Promise((resolve, reject) => {
-    const tl = new TimelineLite({
-      onComplete: () => resolve,
-    });
+// export function flipZoom(fromEl, toEl) {
+//   return new Promise((resolve, reject) => {
+//     const tl = new TimelineLite({
+//       onComplete: () => resolve,
+//     });
+//
+//     const first = fromEl.getBoundingClientRect();
+//     const last = toEl.getBoundingClientRect();
+//     // const invert = {
+//     //   top: first.top - last.top,
+//     //   left: first.left - last.left,
+//     //   height: first.height / last.height,
+//     //   width: first.width / last.width,
+//     // };
+//     tl.from(toEl, 1.5, {
+//       x: first.left - last.left,
+//       y: first.top - last.top,
+//       scaleX: first.width / last.width,
+//       scaleY: first.height / last.height,
+//       ease: Power4.easeOut,
+//     });
+//     tl.set(fromEl, {opacity: 0});
+//     tl.play();
+//   });
+// }
 
-    const first = fromEl.getBoundingClientRect();
-    const last = toEl.getBoundingClientRect();
-    // const invert = {
-    //   top: first.top - last.top,
-    //   left: first.left - last.left,
-    //   height: first.height / last.height,
-    //   width: first.width / last.width,
-    // };
-    tl.from(toEl, 1.5, {
-      x: first.left - last.left,
-      y: first.top - last.top,
-      scaleX: first.width / last.width,
-      scaleY: first.height / last.height,
-      ease: Power4.easeOut,
-    });
-    tl.set(orig, {opacity: 0});
-    tl.play();
-  });
-}
-
-// MOVED TO dom.js
-function cloneBackground(el) {
-  const bg = document.createElement('div');
-  bg.className = el.className.replace('js-main', 'js-bg');
-  return bg;
-}
-
-// MOVED TO dom.js
-function removeNode(el) {
-  el.parentNode.removeChild(el);
+function getFlipCoords(first, last, props) {
+  if (!props) {
+    props = {};
+  }
+  props.x = first.left - last.left;
+  props.y = first.top - last.top;
+  props.scaleX = first.width / last.width;
+  props.scaleY = first.height / last.height;
+  return props;
 }
 
 

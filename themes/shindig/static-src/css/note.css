@@ -38,6 +38,7 @@
 
 .note-highlight__body {
   padding: 1rem 2rem;
+  border-radius: 0.3rem 0.3rem 0 0;
   color: var(--white);
   background-color: var(--blue-rich-3);
   background-image: linear-gradient(
@@ -63,6 +64,7 @@
 }
 
 .note-highlight__footer {
+  border-radius: 0 0 0.3rem 0.3rem;
   color: var(--blue-1);
   background-color: var(--white);
 }

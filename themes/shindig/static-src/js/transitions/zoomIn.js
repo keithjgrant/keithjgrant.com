@@ -1,4 +1,5 @@
 import {removeNode} from '../util/dom';
+import {getFlipCoords} from '../util/transitions';
 
 export default function zoomIn(oldEl, newEl, link) {
   const tl = new TimelineLite({
@@ -12,19 +13,11 @@ export default function zoomIn(oldEl, newEl, link) {
   tl.set(oldEl.parentNode, {minHeight: '100vh'});
   tl.set(newEl, {transformOrigin: '0 0'});
   const last = newEl.getBoundingClientRect();
-  const invert = {
-    top: first.top - last.top,
-    left: first.left - last.left,
-    height: first.height / last.height,
-    width: first.width / last.width,
-  };
-  tl.from(newEl, 1.5, {
-    x: invert.left,
-    y: invert.top,
-    scaleX: invert.width,
-    scaleY: invert.height,
+
+  const coords = getFlipCoords(first, last, {
     ease: Power4.easeOut,
   });
+  tl.from(newEl, 1.5, coords);
   tl.set(oldEl.parentNode, {minHeight: 'auto'});
   tl.play();
 }

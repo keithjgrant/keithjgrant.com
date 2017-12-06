@@ -1,20 +1,20 @@
 import {removeNode, cloneBackground} from '../util/dom';
 
 export default function irisIn(oldEl, newEl) {
-  const bg = cloneBackground(newEl);
+  const newBg = cloneBackground(newEl);
   const oldBg = cloneBackground(oldEl);
   newEl.parentNode.insertBefore(oldBg, newEl);
-  newEl.parentNode.insertBefore(bg, newEl);
+  newEl.parentNode.insertBefore(newBg, newEl);
   const heading = newEl.querySelector('.list-heading');
   const tl = new TimelineLite({
     onComplete: () => {
       removeNode(oldEl);
-      removeNode(bg);
+      removeNode(newBg);
       removeNode(oldBg);
       TweenLite.set(newEl, {clearProps: 'all'});
     },
   });
-  tl.set(bg, {
+  tl.set(newBg, {
     position: 'absolute',
     width: '100%',
     height: '200vh',
@@ -52,7 +52,7 @@ export default function irisIn(oldEl, newEl) {
     },
     'start'
   );
-  tl.to(bg, 0.8, {opacity: 1}, 'start');
+  tl.to(newBg, 0.8, {opacity: 1}, 'start');
   tl.set(oldEl.parentNode, {clearProps: 'all'});
   tl.set(newEl, {clearProps: 'height, overflow, background'});
   if (heading) {

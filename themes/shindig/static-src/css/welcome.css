@@ -19,6 +19,9 @@
   align-items: center;
   justify-content: flex-end;
   text-align: right;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   box-shadow: 0 0 1em var(--blue-1);
 
   @media (min-width: 400px) {
