@@ -40,11 +40,11 @@ h1 {
   font-size: 2rem;
 }
 
-a:link {
+a {
   color: var(--blue-rich-5);
   font-weight: bold;
-  text-decoration-skip: ink;
   transition: color 0.1s linear;
+  text-decoration-skip: none;
 }
 
 a:visited {
@@ -60,8 +60,9 @@ a:active {
   color: var(--red-4);
 }
 
-:matches(h1, h2, h3) a:link {
+:matches(h1, h2, h3) a {
   text-decoration: none;
+  text-decoration-skip: ink;
 
   &:hover,
   &:active {

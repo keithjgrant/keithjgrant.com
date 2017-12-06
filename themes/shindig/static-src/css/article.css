@@ -5,7 +5,7 @@
     margin-left: -3rem;
     margin-right: -3rem;
     padding: 1rem 3rem;
-    /* TODO: move to other module */
+    border-radius: 0.3em;
     overflow: auto;
     color: var(--gray-9);
     background-color: var(--gray-3);

@@ -1,15 +1,15 @@
-import {
-  scrollDownTo,
-  scrollRightTo,
-  zoomIn,
-  dropOut,
-  irisIn,
-} from './transitions';
+import zoomIn from './transitions/zoomIn';
+import scrollRightTo from './transitions/scrollRightTo';
+import scrollDownTo from './transitions/scrollDownTo';
+import irisIn from './transitions/irisIn';
+import dropOut from './transitions/dropOut';
+import noteZoom from './transitions/noteZoom';
 
 const NONE = 0;
 const TO_POST = 1;
 const TO_HP = 2;
 const TO_LIST = 3;
+const NOTE_ZOOM = 4;
 const OTHER = 100;
 
 export default function selectTransition(toUrl) {
@@ -21,6 +21,8 @@ export default function selectTransition(toUrl) {
       return dropOut;
     case TO_LIST:
       return irisIn;
+    case NOTE_ZOOM:
+      return noteZoom;
     case NONE: // TODO: distinguish b/t NONE & OTHER
     default:
       return null;
@@ -29,12 +31,17 @@ export default function selectTransition(toUrl) {
 
 function getTransitionType(toUrl) {
   const fromUrl = document.location.pathname;
-  split(toUrl);
   if (fromUrl === toUrl) {
     return NONE;
   }
   if (isPostUrl(toUrl)) {
     return TO_POST;
+  }
+  if (isNoteUrl(toUrl)) {
+    if (isNoteList(fromUrl)) {
+      return NOTE_ZOOM;
+    }
+    return OTHER;
   }
   if (isHomepage(toUrl)) {
     return TO_HP;
@@ -51,6 +58,10 @@ function isPostUrl(url) {
   return isSingle(url, 'posts');
 }
 
+function isNoteUrl(url) {
+  return isSingle(url, 'notes');
+}
+
 function isSingle(url, basePath) {
   const parts = split(url);
   return parts[0] === basePath && parts.length > 1;
@@ -62,6 +73,16 @@ function isHomepage(url) {
 
 function isList(url) {
   return split(url).length === 1;
+}
+
+function isPostList(url) {
+  const parts = split(url);
+  return parts[0] == 'posts' && parts.length == 1;
+}
+
+function isNoteList(url) {
+  const parts = split(url);
+  return parts[0] == 'notes' && parts.length == 1;
 }
 
 function split(url) {

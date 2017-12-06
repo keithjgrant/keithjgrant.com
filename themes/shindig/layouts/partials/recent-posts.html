@@ -1,12 +1,12 @@
 <div class="bottom-container">
-  <div class="bottom-container__inner">
-    <h3>Recent posts</h3>
-    <ul class="iconlist">
-      {{ range first 4 (where .Site.Pages "Section" "posts") }}
-      <li><a href="{{ .Permalink }}">
-        {{ .Title }}
-      </a></li>
-      {{ end }}
-    </ul>
+  <h3>Recent posts</h3>
+  <div class="recent-posts">
+    {{- $currentUrl := .Permalink -}}
+    {{- range first 3 (where (where .Site.Pages "Section" "posts") ".Permalink" "!=" $currentUrl) -}}
+      <a href="{{ .Permalink }}">
+        {{- .Title -}}
+      </a>
+    {{- end -}}
   </div>
+  <p class="text-right"><a href="/posts">See all posts</a></p>
 </div>

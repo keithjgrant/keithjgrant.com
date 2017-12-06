@@ -26,6 +26,7 @@
 @import 'pagination-loader';
 @import 'welcome';
 @import 'latest-post';
+@import 'recent-posts';
 @import 'split';
 @import 'utility';
 

@@ -26,6 +26,11 @@
     transition: opacity ease-out 0.2s;
   }
 
+  &:focus:not(:hover) {
+    box-shadow: 0 0 5px 5px var(--red-5);
+    outline: none;
+  }
+
   &:hover::after,
   &:focus::after {
     opacity: 1;

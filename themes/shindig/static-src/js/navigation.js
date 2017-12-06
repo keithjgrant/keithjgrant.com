@@ -1,5 +1,5 @@
 import selectTransition from './selectTransition';
-import {dropOut} from './transitions';
+import dropOut from './transitions/dropOut';
 
 // TODO
 let isNavigating = false;

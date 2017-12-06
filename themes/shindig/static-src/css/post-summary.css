@@ -21,11 +21,18 @@
 
 .post-summary__date {
   display: block;
-  text-align: right;
   margin-top: 0;
+  text-align: right;
 }
 
 .post-summary__body {
   font-size: 0.8rem;
   line-height: 1.4;
+
+  & > div > pre {
+    padding: 1rem;
+    border-radius: 0.3em;
+    color: var(--gray-9);
+    background-color: var(--gray-3);
+  }
 }

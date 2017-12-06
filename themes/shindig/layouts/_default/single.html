@@ -10,9 +10,9 @@
     <article class="l-article h-entry js-main">
       <div class="l-article__inner">
         {{ partial "post-full.html" .}}
+        {{ partial "recent-posts.html" . }}
       </div>
     </article>
-    {{ partial "recent-posts.html" . }}
   {{ else }}
     <article class="l-note h-entry js-main">
       <div class="l-note__inner">

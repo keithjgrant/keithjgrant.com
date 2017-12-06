@@ -27,6 +27,7 @@
   "homepage": "https://github.com/keithjgrant/keithjgrant.com#readme",
   "devDependencies": {
     "css-loader": "^0.28.1",
+    "eslint": "^4.12.1",
     "extract-text-webpack-plugin": "^2.1.0",
     "parallelshell": "^2.0.0",
     "postcss": "^5.2.17",
