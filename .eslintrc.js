@@ -9,6 +9,7 @@ module.exports = {
   },
   globals: {
     document: true,
+    window: true,
     TimelineLite: true,
     TweenLite: true,
     Power1: true,

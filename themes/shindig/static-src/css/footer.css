@@ -1,4 +1,7 @@
 .footer {
+  position: relative; /* appear in front of transitions */
+  z-index: 1;
+
   margin-top: -5px;
   padding: 2rem 8rem 3rem;
   border-top: 5px solid rgba(20, 0, 0, 0.6);

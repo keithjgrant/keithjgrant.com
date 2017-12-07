@@ -9,6 +9,7 @@ export default function noteZoom(oldEl, newEl) {
   newEl.parentNode.insertBefore(newBg, newEl);
   const oldNoteBox = findLinkToNote(oldEl, document.location.href);
   const newNoteBox = newEl.querySelector('.note-highlight');
+  const scrollAmount = window.pageYOffset;
 
   const tl = new TimelineLite({
     onComplete: () => {
@@ -21,6 +22,7 @@ export default function noteZoom(oldEl, newEl) {
     },
   });
 
+  window.scrollTo(0, 0);
   tl.set(newBg, {
     position: 'absolute',
     width: '100%',
@@ -41,6 +43,7 @@ export default function noteZoom(oldEl, newEl) {
   });
   tl.set(oldEl, {
     position: 'absolute',
+    top: scrollAmount * -1,
     left: 0,
     right: 0,
     background: 'none',
@@ -51,7 +54,9 @@ export default function noteZoom(oldEl, newEl) {
     transformOrigin: '0 0',
   });
   tl.set(oldEl.parentNode, {minHeight: '200vh'});
-  tl.set(oldNoteBox, {opacity: 0});
+  tl.call(() => {
+    oldNoteBox.classList.add('is-transparent');
+  });
   tl.addLabel('start');
 
   tl.to(
@@ -66,10 +71,14 @@ export default function noteZoom(oldEl, newEl) {
   );
   const first = oldNoteBox.getBoundingClientRect();
   const last = newNoteBox.getBoundingClientRect();
-  const flipCoords = getFlipCoords(first, last, {ease: Power4.easeOut});
+  const flipCoords = getFlipCoords(first, last, {ease: Power3.easeOut});
   tl.from(newNoteBox, 0.9, flipCoords, 'start');
 
+  tl.addLabel('zoomDone');
+  tl.set(newEl, {clearProps: 'height'});
   tl.to(newBg, 0.6, {opacity: 1});
 
+  // tl.seek(0.4);
+  // tl.stop();
   tl.play();
 }

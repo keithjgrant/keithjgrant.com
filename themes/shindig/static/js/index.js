@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -129,8 +129,97 @@ function dropOut(oldEl, newEl) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = getFlipCoords;
+// export function crossfadeBackground(oldEl, newEl) {
+//   const newBg = cloneBackground(newEl);
+//   const oldBg = cloneBackground(oldEl);
+//   newEl.parentNode.insertBefore(oldBg, oldEl);
+//   newEl.parentNode.insertBefore(newBg, oldEl);
+//   return new Promise((resolve, reject) => {
+//     const tl = new TimelineLite({
+//       onComplete: () => {
+//         removeNode(newBg);
+//         removeNode(oldBg);
+//         TweenLite.set(newEl, {clearProps: 'all'});
+//         resolve();
+//       },
+//     });
+//     tl.set(newBg, {
+//       position: 'absolute',
+//       width: '100%',
+//       height: '200vh',
+//       opacity: 0,
+//     });
+//     tl.set(oldBg, {
+//       position: 'absolute',
+//       width: '100%',
+//       height: '200vh',
+//     });
+//     tl.set(oldEl, {
+//       position: 'absolute',
+//       left: 0,
+//       right: 0,
+//       background: 'none',
+//       zIndex: 1,
+//     });
+//     tl.set(newEl, {
+//       // height: '200vh',
+//       position: 'relative',
+//       background: 'none',
+//       // overflow: 'hidden',
+//     });
+//     tl.to(newBg, 0.8, {opacity: 1});
+//     // tl.play();
+//     tl.progress(0.5);
+//     tl.pause();
+//   });
+// }
+
+// export function flipZoom(fromEl, toEl) {
+//   return new Promise((resolve, reject) => {
+//     const tl = new TimelineLite({
+//       onComplete: () => resolve,
+//     });
+//
+//     const first = fromEl.getBoundingClientRect();
+//     const last = toEl.getBoundingClientRect();
+//     // const invert = {
+//     //   top: first.top - last.top,
+//     //   left: first.left - last.left,
+//     //   height: first.height / last.height,
+//     //   width: first.width / last.width,
+//     // };
+//     tl.from(toEl, 1.5, {
+//       x: first.left - last.left,
+//       y: first.top - last.top,
+//       scaleX: first.width / last.width,
+//       scaleY: first.height / last.height,
+//       ease: Power4.easeOut,
+//     });
+//     tl.set(fromEl, {opacity: 0});
+//     tl.play();
+//   });
+// }
+
+function getFlipCoords(first, last, props) {
+  if (!props) {
+    props = {};
+  }
+  props.x = first.left - last.left;
+  props.y = first.top - last.top;
+  props.scaleX = first.width / last.width;
+  props.scaleY = first.height / last.height;
+  return props;
+}
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = navigation;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__selectTransition__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__selectTransition__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transitions_dropOut__ = __webpack_require__(1);
 
 
@@ -196,7 +285,7 @@ async function fetchPageContent(url) {
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {
@@ -211,10 +300,10 @@ Prism.languages.css.selector={pattern:/[^{}\s][^{}]*(?=\s*\{)/,inside:{"pseudo-e
 Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(?:\/\*[\s\S]*?\*\/|\/\/.*)/,lookbehind:!0},atrule:{pattern:/@[\w-]+(?:\([^()]+\)|[^(])*?(?=\s+[{;])/,inside:{rule:/@[\w-]+/}},url:/(?:[-a-z]+-)*url(?=\()/i,selector:{pattern:/(?=\S)[^@;{}()]?(?:[^@;{}()]|&|#\{\$[-\w]+\})+(?=\s*\{(?:\}|\s|[^}]+[:{][^}]+))/m,inside:{parent:{pattern:/&/,alias:"important"},placeholder:/%[-\w]+/,variable:/\$[-\w]+|#\{\$[-\w]+\}/}}}),Prism.languages.insertBefore("scss","atrule",{keyword:[/@(?:if|else(?: if)?|for|each|while|import|extend|debug|warn|mixin|include|function|return|content)/i,{pattern:/( +)(?:from|through)(?= )/,lookbehind:!0}]}),Prism.languages.scss.property={pattern:/(?:[\w-]|\$[-\w]+|#\{\$[-\w]+\})+(?=\s*:)/i,inside:{variable:/\$[-\w]+|#\{\$[-\w]+\}/}},Prism.languages.insertBefore("scss","important",{variable:/\$[-\w]+|#\{\$[-\w]+\}/}),Prism.languages.insertBefore("scss","function",{placeholder:{pattern:/%[-\w]+/,alias:"selector"},statement:{pattern:/\B!(?:default|optional)\b/i,alias:"keyword"},"boolean":/\b(?:true|false)\b/,"null":/\bnull\b/,operator:{pattern:/(\s)(?:[-+*\/%]|[=!]=|<=?|>=?|and|or|not)(?=\s)/,lookbehind:!0}}),Prism.languages.scss.atrule.inside.rest=Prism.util.clone(Prism.languages.scss);
 !function(){"undefined"!=typeof self&&!self.Prism||"undefined"!=typeof global&&!global.Prism||Prism.hooks.add("wrap",function(e){"keyword"===e.type&&e.classes.push("keyword-"+e.content)})}();
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -274,7 +363,7 @@ function getTabPane(button) {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -496,8 +585,8 @@ function showInteractions() {
 
 
 /***/ }),
-/* 6 */,
-/* 7 */
+/* 7 */,
+/* 8 */
 /***/ (function(module, exports) {
 
 var g;
@@ -524,15 +613,15 @@ module.exports = g;
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tabs__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__webmentions__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__navigation__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__prism__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tabs__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__webmentions__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__navigation__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__prism__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__prism___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__prism__);
 
 
@@ -545,17 +634,17 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__navigation__["a" /* default *
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = selectTransition;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__transitions_zoomIn__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transitions_scrollRightTo__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transitions_scrollDownTo__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__transitions_irisIn__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__transitions_zoomIn__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transitions_scrollRightTo__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transitions_scrollDownTo__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__transitions_irisIn__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__transitions_dropOut__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__transitions_noteZoom__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__transitions_noteZoom__ = __webpack_require__(12);
 
 
 
@@ -655,7 +744,7 @@ function split(url) {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -731,14 +820,14 @@ function irisIn(oldEl, newEl) {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = noteZoom;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_dom__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_notes__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_transitions__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_notes__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_transitions__ = __webpack_require__(2);
 
 
 
@@ -750,6 +839,7 @@ function noteZoom(oldEl, newEl) {
   newEl.parentNode.insertBefore(newBg, newEl);
   const oldNoteBox = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_notes__["a" /* findLinkToNote */])(oldEl, document.location.href);
   const newNoteBox = newEl.querySelector('.note-highlight');
+  const scrollAmount = window.pageYOffset;
 
   const tl = new TimelineLite({
     onComplete: () => {
@@ -762,6 +852,7 @@ function noteZoom(oldEl, newEl) {
     },
   });
 
+  window.scrollTo(0, 0);
   tl.set(newBg, {
     position: 'absolute',
     width: '100%',
@@ -782,6 +873,7 @@ function noteZoom(oldEl, newEl) {
   });
   tl.set(oldEl, {
     position: 'absolute',
+    top: scrollAmount * -1,
     left: 0,
     right: 0,
     background: 'none',
@@ -792,7 +884,9 @@ function noteZoom(oldEl, newEl) {
     transformOrigin: '0 0',
   });
   tl.set(oldEl.parentNode, {minHeight: '200vh'});
-  tl.set(oldNoteBox, {opacity: 0});
+  tl.call(() => {
+    oldNoteBox.classList.add('is-transparent');
+  });
   tl.addLabel('start');
 
   tl.to(
@@ -807,17 +901,21 @@ function noteZoom(oldEl, newEl) {
   );
   const first = oldNoteBox.getBoundingClientRect();
   const last = newNoteBox.getBoundingClientRect();
-  const flipCoords = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_transitions__["a" /* getFlipCoords */])(first, last, {ease: Power4.easeOut});
+  const flipCoords = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_transitions__["a" /* getFlipCoords */])(first, last, {ease: Power3.easeOut});
   tl.from(newNoteBox, 0.9, flipCoords, 'start');
 
+  tl.addLabel('zoomDone');
+  tl.set(newEl, {clearProps: 'height'});
   tl.to(newBg, 0.6, {opacity: 1});
 
+  // tl.seek(0.4);
+  // tl.stop();
   tl.play();
 }
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -846,7 +944,7 @@ function scrollDownTo(oldEl, newEl) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -875,13 +973,13 @@ function scrollRightTo(oldEl, newEl) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = zoomIn;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_dom__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_transitions__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_transitions__ = __webpack_require__(2);
 
 
 
@@ -908,102 +1006,13 @@ function zoomIn(oldEl, newEl, link) {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = findLinkToNote;
 function findLinkToNote(container, noteUrl) {
   return container.querySelector(`[data-href="${noteUrl}"]`);
-}
-
-
-/***/ }),
-/* 16 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = getFlipCoords;
-// export function crossfadeBackground(oldEl, newEl) {
-//   const newBg = cloneBackground(newEl);
-//   const oldBg = cloneBackground(oldEl);
-//   newEl.parentNode.insertBefore(oldBg, oldEl);
-//   newEl.parentNode.insertBefore(newBg, oldEl);
-//   return new Promise((resolve, reject) => {
-//     const tl = new TimelineLite({
-//       onComplete: () => {
-//         removeNode(newBg);
-//         removeNode(oldBg);
-//         TweenLite.set(newEl, {clearProps: 'all'});
-//         resolve();
-//       },
-//     });
-//     tl.set(newBg, {
-//       position: 'absolute',
-//       width: '100%',
-//       height: '200vh',
-//       opacity: 0,
-//     });
-//     tl.set(oldBg, {
-//       position: 'absolute',
-//       width: '100%',
-//       height: '200vh',
-//     });
-//     tl.set(oldEl, {
-//       position: 'absolute',
-//       left: 0,
-//       right: 0,
-//       background: 'none',
-//       zIndex: 1,
-//     });
-//     tl.set(newEl, {
-//       // height: '200vh',
-//       position: 'relative',
-//       background: 'none',
-//       // overflow: 'hidden',
-//     });
-//     tl.to(newBg, 0.8, {opacity: 1});
-//     // tl.play();
-//     tl.progress(0.5);
-//     tl.pause();
-//   });
-// }
-
-// export function flipZoom(fromEl, toEl) {
-//   return new Promise((resolve, reject) => {
-//     const tl = new TimelineLite({
-//       onComplete: () => resolve,
-//     });
-//
-//     const first = fromEl.getBoundingClientRect();
-//     const last = toEl.getBoundingClientRect();
-//     // const invert = {
-//     //   top: first.top - last.top,
-//     //   left: first.left - last.left,
-//     //   height: first.height / last.height,
-//     //   width: first.width / last.width,
-//     // };
-//     tl.from(toEl, 1.5, {
-//       x: first.left - last.left,
-//       y: first.top - last.top,
-//       scaleX: first.width / last.width,
-//       scaleY: first.height / last.height,
-//       ease: Power4.easeOut,
-//     });
-//     tl.set(fromEl, {opacity: 0});
-//     tl.play();
-//   });
-// }
-
-function getFlipCoords(first, last, props) {
-  if (!props) {
-    props = {};
-  }
-  props.x = first.left - last.left;
-  props.y = first.top - last.top;
-  props.scaleX = first.width / last.width;
-  props.scaleY = first.height / last.height;
-  return props;
 }
 
 
