@@ -1,7 +1,7 @@
 const ANON_AVATAR = '/images/anon-avatar.png';
 
 export default function fetchWebmentions(url, aliases) {
-  // return;
+  return;
   // TODO: only execute on relevant pages
   if (!url) {
     url = document.location.origin + document.location.pathname;

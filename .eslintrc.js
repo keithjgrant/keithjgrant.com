@@ -14,6 +14,7 @@ module.exports = {
     TweenLite: true,
     Power1: true,
     Power4: true,
+    Back: true,
     Promise: true,
   },
 };

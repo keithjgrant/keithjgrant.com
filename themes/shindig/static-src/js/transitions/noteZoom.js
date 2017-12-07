@@ -10,6 +10,8 @@ export default function noteZoom(oldEl, newEl) {
   const oldNoteBox = findLinkToNote(oldEl, document.location.href);
   const newNoteBox = newEl.querySelector('.note-highlight');
   const scrollAmount = window.pageYOffset;
+  const headerHeight = 75;
+  const notesOnScreen = findNotesOnScreen(oldEl);
 
   const tl = new TimelineLite({
     onComplete: () => {
@@ -22,7 +24,6 @@ export default function noteZoom(oldEl, newEl) {
     },
   });
 
-  window.scrollTo(0, 0);
   tl.set(newBg, {
     position: 'absolute',
     width: '100%',
@@ -43,7 +44,7 @@ export default function noteZoom(oldEl, newEl) {
   });
   tl.set(oldEl, {
     position: 'absolute',
-    top: scrollAmount * -1,
+    // top: scrollAmount * -1,
     left: 0,
     right: 0,
     background: 'none',
@@ -52,33 +53,54 @@ export default function noteZoom(oldEl, newEl) {
   });
   tl.set(newNoteBox, {
     transformOrigin: '0 0',
+    opacity: 0,
   });
   tl.set(oldEl.parentNode, {minHeight: '200vh'});
-  tl.call(() => {
-    oldNoteBox.classList.add('is-transparent');
-  });
   tl.addLabel('start');
 
-  tl.to(
-    oldEl,
-    1.2,
+  tl.set(oldEl, {top: scrollAmount * -1 + headerHeight});
+  tl.call(() => {
+    window.scrollTo(0, 0);
+  });
+
+  tl.set(newNoteBox, {opacity: 1});
+  tl.set(oldNoteBox, {opacity: 0});
+  tl.staggerTo(
+    notesOnScreen,
+    0.3,
     {
       opacity: 0,
-      scaleX: 0.9,
-      scaleY: 0.9,
+      scale: 0.5,
     },
-    'start'
+    0.1
   );
+  tl.addLabel('mid');
   const first = oldNoteBox.getBoundingClientRect();
   const last = newNoteBox.getBoundingClientRect();
-  const flipCoords = getFlipCoords(first, last, {ease: Power3.easeOut});
+  const flipCoords = getFlipCoords(first, last, {ease: Back.easeInOut});
   tl.from(newNoteBox, 0.9, flipCoords, 'start');
 
-  tl.addLabel('zoomDone');
+  tl.addLabel('zoom-done');
   tl.set(newEl, {clearProps: 'height'});
   tl.to(newBg, 0.6, {opacity: 1});
 
-  // tl.seek(0.4);
-  // tl.stop();
   tl.play();
+}
+
+function findNotesOnScreen(container) {
+  const notes = container.querySelectorAll('.note');
+  const screenHeight = document.documentElement.clientHeight;
+  const location = document.location;
+  const skipUrl = `${location.origin}${location.pathname}`;
+  const matches = [];
+  notes.forEach(note => {
+    if (note.attributes['data-href'].value === skipUrl) {
+      return;
+    }
+    const rect = note.getBoundingClientRect();
+    if (rect.bottom > 0 && rect.top < screenHeight) {
+      matches.push(note);
+    }
+  });
+  return matches;
 }

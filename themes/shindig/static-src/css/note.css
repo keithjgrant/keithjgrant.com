@@ -1,5 +1,6 @@
 .note {
   padding: 1rem 2rem;
+  background-color: var(--white);
   font-size: 0.8rem;
   font-family: $sans-serif;
   cursor: pointer;

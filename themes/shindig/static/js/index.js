@@ -130,6 +130,7 @@ function dropOut(oldEl, newEl) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = getFlipCoords;
+/* unused harmony export scaleBoundingBox */
 // export function crossfadeBackground(oldEl, newEl) {
 //   const newBg = cloneBackground(newEl);
 //   const oldBg = cloneBackground(oldEl);
@@ -210,6 +211,21 @@ function getFlipCoords(first, last, props) {
   props.scaleX = first.width / last.width;
   props.scaleY = first.height / last.height;
   return props;
+}
+
+function scaleBoundingBox(coords, scalar) {
+  const width = coords.width * scalar;
+  const height = coords.height * scalar;
+  const left = coords.left - (width - coords.width) / 2;
+  const top = coords.top - (height - coords.height) / 2;
+  return {
+    left,
+    top,
+    width,
+    height,
+    right: left + width,
+    bottom: top + height,
+  };
 }
 
 
@@ -371,7 +387,7 @@ function getTabPane(button) {
 const ANON_AVATAR = '/images/anon-avatar.png';
 
 function fetchWebmentions(url, aliases) {
-  // return;
+  return;
   // TODO: only execute on relevant pages
   if (!url) {
     url = document.location.origin + document.location.pathname;
@@ -840,6 +856,8 @@ function noteZoom(oldEl, newEl) {
   const oldNoteBox = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_notes__["a" /* findLinkToNote */])(oldEl, document.location.href);
   const newNoteBox = newEl.querySelector('.note-highlight');
   const scrollAmount = window.pageYOffset;
+  const headerHeight = 75;
+  const notesOnScreen = findNotesOnScreen(oldEl);
 
   const tl = new TimelineLite({
     onComplete: () => {
@@ -852,7 +870,6 @@ function noteZoom(oldEl, newEl) {
     },
   });
 
-  window.scrollTo(0, 0);
   tl.set(newBg, {
     position: 'absolute',
     width: '100%',
@@ -873,7 +890,7 @@ function noteZoom(oldEl, newEl) {
   });
   tl.set(oldEl, {
     position: 'absolute',
-    top: scrollAmount * -1,
+    // top: scrollAmount * -1,
     left: 0,
     right: 0,
     background: 'none',
@@ -882,35 +899,56 @@ function noteZoom(oldEl, newEl) {
   });
   tl.set(newNoteBox, {
     transformOrigin: '0 0',
+    opacity: 0,
   });
   tl.set(oldEl.parentNode, {minHeight: '200vh'});
-  tl.call(() => {
-    oldNoteBox.classList.add('is-transparent');
-  });
   tl.addLabel('start');
 
-  tl.to(
-    oldEl,
-    1.2,
+  tl.set(oldEl, {top: scrollAmount * -1 + headerHeight});
+  tl.call(() => {
+    window.scrollTo(0, 0);
+  });
+
+  tl.set(newNoteBox, {opacity: 1});
+  tl.set(oldNoteBox, {opacity: 0});
+  tl.staggerTo(
+    notesOnScreen,
+    0.3,
     {
       opacity: 0,
-      scaleX: 0.9,
-      scaleY: 0.9,
+      scale: 0.5,
     },
-    'start'
+    0.1
   );
+  tl.addLabel('mid');
   const first = oldNoteBox.getBoundingClientRect();
   const last = newNoteBox.getBoundingClientRect();
-  const flipCoords = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_transitions__["a" /* getFlipCoords */])(first, last, {ease: Power3.easeOut});
+  const flipCoords = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_transitions__["a" /* getFlipCoords */])(first, last, {ease: Back.easeInOut});
   tl.from(newNoteBox, 0.9, flipCoords, 'start');
 
-  tl.addLabel('zoomDone');
+  tl.addLabel('zoom-done');
   tl.set(newEl, {clearProps: 'height'});
   tl.to(newBg, 0.6, {opacity: 1});
 
-  // tl.seek(0.4);
-  // tl.stop();
   tl.play();
+}
+
+function findNotesOnScreen(container) {
+  const notes = container.querySelectorAll('.note');
+  const screenHeight = document.documentElement.clientHeight;
+  const location = document.location;
+  const skipUrl = `${location.origin}${location.pathname}`;
+  const matches = [];
+  notes.forEach(note => {
+    if (note.attributes['data-href'].value === skipUrl) {
+      return;
+    }
+    const rect = note.getBoundingClientRect();
+    if (rect.bottom > 0 && rect.top < screenHeight) {
+      matches.push(note);
+    }
+  });
+  return matches;
 }
 
 

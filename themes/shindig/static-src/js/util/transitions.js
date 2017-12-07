@@ -79,3 +79,18 @@ export function getFlipCoords(first, last, props) {
   props.scaleY = first.height / last.height;
   return props;
 }
+
+export function scaleBoundingBox(coords, scalar) {
+  const width = coords.width * scalar;
+  const height = coords.height * scalar;
+  const left = coords.left - (width - coords.width) / 2;
+  const top = coords.top - (height - coords.height) / 2;
+  return {
+    left,
+    top,
+    width,
+    height,
+    right: left + width,
+    bottom: top + height,
+  };
+}
