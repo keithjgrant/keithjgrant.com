@@ -15,6 +15,7 @@ module.exports = {
     Power1: true,
     Power4: true,
     Back: true,
+    Expo: true,
     Promise: true,
   },
 };

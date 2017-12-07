@@ -245,14 +245,15 @@ let isNavigating = false;
 
 function navigation() {
   document.body.addEventListener('click', function(e) {
-    if (!e.target.matches('a')) {
+    // TODO: traverse up to [data-href]
+    if (!e.target.matches('a') && !e.target.attributes['data-href']) {
       return;
     }
-    if (e.target.origin !== location.origin) {
+    if (e.target.origin && e.target.origin !== location.origin) {
       return;
     }
     e.preventDefault();
-    const url = e.target.pathname;
+    const url = e.target.pathname || e.target.attributes['data-href'].value;
     advanceToUrl(url, e.target);
   });
   window.onpopstate = event => {
@@ -265,14 +266,15 @@ async function advanceToUrl(url, clickedEl) {
   const newContent = await fetchPageContent(url);
   const currentContent = document.querySelector('.js-main');
   currentContent.parentNode.insertBefore(
-    newContent,
+    newContent.container,
     currentContent.nextSibling
   );
 
   const effect = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__selectTransition__["a" /* default */])(url);
-  history.pushState({}, '', url);
+  history.pushState({title: newContent.title}, '', url);
+  document.title = newContent.title;
   if (effect) {
-    effect(currentContent, newContent, clickedEl);
+    effect(currentContent, newContent.container, clickedEl);
   } else {
     // document.location = url;
   }
@@ -284,11 +286,12 @@ async function advanceToUrl(url, clickedEl) {
 async function backToUrl(url) {
   const newContent = await fetchPageContent(url);
   const currentContent = document.querySelector('.js-main');
+  document.title = newContent.title;
   currentContent.parentNode.insertBefore(
-    newContent,
+    newContent.container,
     currentContent.nextSibling
   );
-  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__transitions_dropOut__["a" /* default */])(currentContent, newContent);
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__transitions_dropOut__["a" /* default */])(currentContent, newContent.container);
 }
 
 async function fetchPageContent(url) {
@@ -296,7 +299,11 @@ async function fetchPageContent(url) {
   const html = await response.text();
   const content = document.createElement('html');
   content.innerHTML = html;
-  return content.querySelector('.js-main');
+  const title = content.querySelector('title');
+  return {
+    title: title ? title.innerHTML : 'Keith J. Grant',
+    container: content.querySelector('.js-main'),
+  };
 }
 
 
@@ -890,7 +897,6 @@ function noteZoom(oldEl, newEl) {
   });
   tl.set(oldEl, {
     position: 'absolute',
-    // top: scrollAmount * -1,
     left: 0,
     right: 0,
     background: 'none',
@@ -925,10 +931,11 @@ function noteZoom(oldEl, newEl) {
   const last = newNoteBox.getBoundingClientRect();
   const flipCoords = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_transitions__["a" /* getFlipCoords */])(first, last, {ease: Back.easeInOut});
   tl.from(newNoteBox, 0.9, flipCoords, 'start');
+  tl.to(oldEl, 0.3, {opacity: 0}, 'start+=0.3');
 
   tl.addLabel('zoom-done');
   tl.set(newEl, {clearProps: 'height'});
-  tl.to(newBg, 0.6, {opacity: 1});
+  tl.to(newBg, 1.5, {opacity: 1});
 
   tl.play();
 }
@@ -1022,23 +1029,39 @@ function scrollRightTo(oldEl, newEl) {
 
 
 function zoomIn(oldEl, newEl, link) {
+  const scrollAmount = window.pageYOffset;
+  const headerHeight = 75;
   const tl = new TimelineLite({
     onComplete: () => {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldEl);
+      TweenLite.set(newEl, {clearProps: 'all'});
+      TweenLite.set(newEl.parentNode, {clearProps: 'all'});
     },
   });
 
-  const first = link.getBoundingClientRect();
   tl.set(oldEl, {position: 'absolute', left: 0, right: 0});
   tl.set(oldEl.parentNode, {minHeight: '100vh'});
-  tl.set(newEl, {transformOrigin: '0 0'});
-  const last = newEl.getBoundingClientRect();
-
-  const coords = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_transitions__["a" /* getFlipCoords */])(first, last, {
-    ease: Power4.easeOut,
+  tl.set(newEl, {
+    transformOrigin: '0 0',
+    maxHeight: '100vh',
+    overflow: 'hidden',
+    boxShadow: '0 0 0.5em 0.5em rgba(0, 0, 0, 0.1)',
   });
-  tl.from(newEl, 1.5, coords);
-  tl.set(oldEl.parentNode, {minHeight: 'auto'});
+
+  tl.addLabel('start');
+  tl.set(oldEl, {top: scrollAmount * -1 + headerHeight});
+  tl.call(() => {
+    window.scrollTo(0, 0);
+  });
+
+  const first = link.getBoundingClientRect();
+  const last = newEl.getBoundingClientRect();
+  const coords = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_transitions__["a" /* getFlipCoords */])(first, last, {
+    ease: Expo.easeInOut,
+  });
+  tl.from(newEl, 1, coords, 'start');
+  tl.from(newEl, 0.5, {opacity: 0, ease: Power1.EaseOut}, 'start');
+
   tl.play();
 }
 

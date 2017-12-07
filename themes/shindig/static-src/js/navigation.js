@@ -6,14 +6,15 @@ let isNavigating = false;
 
 export default function navigation() {
   document.body.addEventListener('click', function(e) {
-    if (!e.target.matches('a')) {
+    // TODO: traverse up to [data-href]
+    if (!e.target.matches('a') && !e.target.attributes['data-href']) {
       return;
     }
-    if (e.target.origin !== location.origin) {
+    if (e.target.origin && e.target.origin !== location.origin) {
       return;
     }
     e.preventDefault();
-    const url = e.target.pathname;
+    const url = e.target.pathname || e.target.attributes['data-href'].value;
     advanceToUrl(url, e.target);
   });
   window.onpopstate = event => {
@@ -26,14 +27,15 @@ async function advanceToUrl(url, clickedEl) {
   const newContent = await fetchPageContent(url);
   const currentContent = document.querySelector('.js-main');
   currentContent.parentNode.insertBefore(
-    newContent,
+    newContent.container,
     currentContent.nextSibling
   );
 
   const effect = selectTransition(url);
-  history.pushState({}, '', url);
+  history.pushState({title: newContent.title}, '', url);
+  document.title = newContent.title;
   if (effect) {
-    effect(currentContent, newContent, clickedEl);
+    effect(currentContent, newContent.container, clickedEl);
   } else {
     // document.location = url;
   }
@@ -45,11 +47,12 @@ async function advanceToUrl(url, clickedEl) {
 async function backToUrl(url) {
   const newContent = await fetchPageContent(url);
   const currentContent = document.querySelector('.js-main');
+  document.title = newContent.title;
   currentContent.parentNode.insertBefore(
-    newContent,
+    newContent.container,
     currentContent.nextSibling
   );
-  dropOut(currentContent, newContent);
+  dropOut(currentContent, newContent.container);
 }
 
 async function fetchPageContent(url) {
@@ -57,5 +60,9 @@ async function fetchPageContent(url) {
   const html = await response.text();
   const content = document.createElement('html');
   content.innerHTML = html;
-  return content.querySelector('.js-main');
+  const title = content.querySelector('title');
+  return {
+    title: title ? title.innerHTML : 'Keith J. Grant',
+    container: content.querySelector('.js-main'),
+  };
 }

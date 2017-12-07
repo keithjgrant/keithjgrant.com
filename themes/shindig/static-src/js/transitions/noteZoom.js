@@ -44,7 +44,6 @@ export default function noteZoom(oldEl, newEl) {
   });
   tl.set(oldEl, {
     position: 'absolute',
-    // top: scrollAmount * -1,
     left: 0,
     right: 0,
     background: 'none',
@@ -79,10 +78,11 @@ export default function noteZoom(oldEl, newEl) {
   const last = newNoteBox.getBoundingClientRect();
   const flipCoords = getFlipCoords(first, last, {ease: Back.easeInOut});
   tl.from(newNoteBox, 0.9, flipCoords, 'start');
+  tl.to(oldEl, 0.3, {opacity: 0}, 'start+=0.3');
 
   tl.addLabel('zoom-done');
   tl.set(newEl, {clearProps: 'height'});
-  tl.to(newBg, 0.6, {opacity: 1});
+  tl.to(newBg, 1.5, {opacity: 1});
 
   tl.play();
 }

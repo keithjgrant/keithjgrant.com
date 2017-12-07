@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
   margin: 0;
   color: var(--blue-1);
-  background-color: var(--white);
+  background-color: var(--gray-1);
   font-family: $serif;
   line-height: 1.7;
   letter-spacing: 0.01em;
