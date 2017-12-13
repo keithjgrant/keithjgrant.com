@@ -26,10 +26,10 @@ async function advanceToUrl(url, clickedEl) {
   // try {
   const newContent = await fetchPageContent(url);
   const currentContent = document.querySelector('.js-main');
-  currentContent.parentNode.insertBefore(
-    newContent.container,
-    currentContent.nextSibling
-  );
+  // currentContent.parentNode.insertBefore(
+  //   newContent.container,
+  //   currentContent.nextSibling
+  // );
 
   const effect = selectTransition(url);
   history.pushState({title: newContent.title}, '', url);

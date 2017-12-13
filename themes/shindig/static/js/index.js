@@ -97,6 +97,7 @@ function dropOut(oldEl, newEl) {
   const tl = new TimelineLite({
     onComplete: () => {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldEl);
+      TweenLite.set(newEl, {clearProps: 'all'});
     },
   });
   tl.set(oldEl, {
@@ -105,21 +106,22 @@ function dropOut(oldEl, newEl) {
     right: 0,
     transformOrigin: '50% 0%',
   });
+  tl.set(newEl, {
+    position: 'relative',
+    zIndex: -1,
+  });
   tl.set(oldEl.parentNode, {
     perspective: 500,
   });
-  tl.add('top');
-  tl.to(
-    oldEl,
-    0.3,
-    {
-      y: 1000,
-      z: -1100,
-      opacity: 0,
-      ease: Power4.easeIn,
-    },
-    'top'
-  );
+  tl.call(() => {
+    oldEl.parentNode.insertBefore(newEl, oldEl.nextSibling);
+  });
+  tl.to(oldEl, 0.3, {
+    y: 1000,
+    z: -1100,
+    opacity: 0,
+    ease: Power4.easeIn,
+  });
   tl.play();
 }
 
@@ -265,10 +267,10 @@ async function advanceToUrl(url, clickedEl) {
   // try {
   const newContent = await fetchPageContent(url);
   const currentContent = document.querySelector('.js-main');
-  currentContent.parentNode.insertBefore(
-    newContent.container,
-    currentContent.nextSibling
-  );
+  // currentContent.parentNode.insertBefore(
+  //   newContent.container,
+  //   currentContent.nextSibling
+  // );
 
   const effect = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__selectTransition__["a" /* default */])(url);
   history.pushState({title: newContent.title}, '', url);
@@ -666,8 +668,10 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__navigation__["a" /* default *
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transitions_scrollRightTo__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transitions_scrollDownTo__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__transitions_irisIn__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__transitions_dropOut__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__transitions_noteZoom__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__transitions_irisStagger__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__transitions_dropOut__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__transitions_noteZoom__ = __webpack_require__(12);
+
 
 
 
@@ -679,6 +683,7 @@ const NONE = 0;
 const TO_POST = 1;
 const TO_HP = 2;
 const TO_LIST = 3;
+const TO_POST_LIST = 5;
 const NOTE_ZOOM = 4;
 const OTHER = 100;
 
@@ -688,11 +693,13 @@ function selectTransition(toUrl) {
     case TO_POST:
       return __WEBPACK_IMPORTED_MODULE_0__transitions_zoomIn__["a" /* default */];
     case TO_HP:
-      return __WEBPACK_IMPORTED_MODULE_4__transitions_dropOut__["a" /* default */];
+      return __WEBPACK_IMPORTED_MODULE_5__transitions_dropOut__["a" /* default */];
+    case TO_POST_LIST:
+      return __WEBPACK_IMPORTED_MODULE_4__transitions_irisStagger__["a" /* default */];
     case TO_LIST:
       return __WEBPACK_IMPORTED_MODULE_3__transitions_irisIn__["a" /* default */];
     case NOTE_ZOOM:
-      return __WEBPACK_IMPORTED_MODULE_5__transitions_noteZoom__["a" /* default */];
+      return __WEBPACK_IMPORTED_MODULE_6__transitions_noteZoom__["a" /* default */];
     case NONE: // TODO: distinguish b/t NONE & OTHER
     default:
       return null;
@@ -715,6 +722,9 @@ function getTransitionType(toUrl) {
   }
   if (isHomepage(toUrl)) {
     return TO_HP;
+  }
+  if (isPostList(toUrl)) {
+    return TO_POST_LIST;
   }
   if (isList(toUrl)) {
     return TO_LIST;
@@ -1074,6 +1084,87 @@ function zoomIn(oldEl, newEl, link) {
 /* harmony export (immutable) */ __webpack_exports__["a"] = findLinkToNote;
 function findLinkToNote(container, noteUrl) {
   return container.querySelector(`[data-href="${noteUrl}"]`);
+}
+
+
+/***/ }),
+/* 17 */,
+/* 18 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = irisStagger;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_dom__ = __webpack_require__(0);
+
+
+function irisStagger(oldEl, newEl) {
+  const newBg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["b" /* cloneBackground */])(newEl);
+  const oldBg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["b" /* cloneBackground */])(oldEl);
+  const heading = newEl.querySelector('.list-heading');
+  const tl = new TimelineLite({
+    onComplete: () => {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldEl);
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(newBg);
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldBg);
+      TweenLite.set(newEl, {clearProps: 'all'});
+    },
+  });
+  tl.set(newBg, {
+    position: 'absolute',
+    width: '100%',
+    height: '200vh',
+    opacity: 0,
+  });
+  tl.set(oldBg, {
+    position: 'absolute',
+    width: '100%',
+    height: '200vh',
+  });
+  tl.set(newEl, {
+    height: '200vh',
+    position: 'relative',
+    background: 'none',
+    overflow: 'hidden',
+  });
+  tl.set(oldEl, {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    background: 'none',
+    zIndex: 1,
+  });
+  tl.call(() => {
+    const parent = oldEl.parentNode;
+    parent.insertBefore(newEl, oldEl.nextSibling);
+    parent.insertBefore(oldBg, newEl);
+    parent.insertBefore(newBg, newEl);
+  });
+  tl.set(oldEl.parentNode, {minHeight: '200vh'});
+  tl.add('start');
+  tl.to(oldEl, 0.4, {opacity: 0}, 'start');
+  tl.set(newEl, {opacity: 1}, 'start');
+  tl.staggerFrom(
+    newEl.querySelectorAll('.post-summary'),
+    0.6,
+    {
+      scaleX: 0,
+      ease: Power1.easeOut,
+    },
+    0.1,
+    'start'
+  );
+  tl.to(newBg, 1.8, {opacity: 1}, 'start+=0.6');
+  tl.set(oldEl.parentNode, {clearProps: 'all'});
+  tl.set(newEl, {clearProps: 'height, overflow, background'});
+  if (heading) {
+    tl.set(heading, {opacity: 1});
+    tl.from(heading, 2, {
+      x: -30,
+      opacity: 0,
+      ease: Power1.easeOut,
+    });
+  }
+  tl.play();
 }
 
 

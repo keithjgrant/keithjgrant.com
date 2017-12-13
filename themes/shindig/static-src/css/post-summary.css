@@ -4,6 +4,7 @@
   border-radius: 0.8rem;
   border-radius: 50% / 1.6rem;
   background-color: var(--white);
+  will-change: transform;
 
   & > :first-child {
     margin-top: 0;

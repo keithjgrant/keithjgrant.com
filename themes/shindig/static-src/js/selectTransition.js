@@ -2,6 +2,7 @@ import zoomIn from './transitions/zoomIn';
 import scrollRightTo from './transitions/scrollRightTo';
 import scrollDownTo from './transitions/scrollDownTo';
 import irisIn from './transitions/irisIn';
+import irisStagger from './transitions/irisStagger';
 import dropOut from './transitions/dropOut';
 import noteZoom from './transitions/noteZoom';
 
@@ -9,6 +10,7 @@ const NONE = 0;
 const TO_POST = 1;
 const TO_HP = 2;
 const TO_LIST = 3;
+const TO_POST_LIST = 5;
 const NOTE_ZOOM = 4;
 const OTHER = 100;
 
@@ -19,6 +21,8 @@ export default function selectTransition(toUrl) {
       return zoomIn;
     case TO_HP:
       return dropOut;
+    case TO_POST_LIST:
+      return irisStagger;
     case TO_LIST:
       return irisIn;
     case NOTE_ZOOM:
@@ -45,6 +49,9 @@ function getTransitionType(toUrl) {
   }
   if (isHomepage(toUrl)) {
     return TO_HP;
+  }
+  if (isPostList(toUrl)) {
+    return TO_POST_LIST;
   }
   if (isList(toUrl)) {
     return TO_LIST;
