@@ -15,7 +15,11 @@
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@keithjgrant">
+{{ if .Params.image }}
+<meta name="twitter:image" content="https://keithjgrant.com{{ .Params.image }}">
+{{ else }}
 <meta name="twitter:image" content="https://keithjgrant.com/images/keithjgrant.jpg">
+{{ end }}
 {{ if eq .URL "/" }}
 <meta name="og:title" content="Keith J. Grant">
 <meta name="twitter:description" content="JavaScript, CSS, UX, & the open web">

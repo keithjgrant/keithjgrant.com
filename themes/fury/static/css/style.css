@@ -41,15 +41,15 @@ body {
   width: 100%;
   height: 100vh;
   margin-bottom: -100vh;
-  background-image:
-    linear-gradient(to top, #1a3c4d, transparent 6em),
+  background-image: linear-gradient(to top, #1a3c4d, transparent 6em),
     url(/images/clouds.jpg);
   background-position: bottom, center;
   background-repeat: no-repeat;
   background-size: 100% 6em, cover;
 }
 
-input, button {
+input,
+button {
   font-family: inherit;
   font-size: inherit;
 }
@@ -71,7 +71,7 @@ blockquote > cite {
   color: var(--content-color);
 }
 blockquote > cite::before {
-  content: "–";
+  content: '–';
 }
 
 a:link {
@@ -92,7 +92,7 @@ a:active {
 :first-child {
   margin-top: 0;
 }
-:first-child:empty {
+h2:first-child:empty {
   margin-bottom: 0;
 }
 :first-child:empty + * {
@@ -102,14 +102,20 @@ a:active {
   margin-bottom: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: Alfa Slab One, Garamond, serif;
   font-family: var(--font-heading);
   font-weight: normal;
 }
 
-h1 a:link, h2 a:link, h3 a:link,
-h1 a:visited, h2 a:visited, h3 a:visited {
+h1 a:link,
+h2 a:link,
+h3 a:link,
+h1 a:visited,
+h2 a:visited,
+h3 a:visited {
   color: inherit;
   text-decoration: none;
 }
@@ -160,7 +166,6 @@ img {
   }
 }
 
-
 .main-header {
   display: flex;
   align-items: flex-end;
@@ -185,7 +190,7 @@ img {
 
 .avatar {
   position: relative;
-  margin-left: .8em;
+  margin-left: 0.8em;
   mix-blend-mode: luminosity;
   z-index: 1;
 }
@@ -203,8 +208,7 @@ img {
   margin-top: 1em;
   opacity: 0;
   transform: translateX(100%);
-  transition: /* all 0.3s ease-out; */
-    transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+  transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28),
     opacity 0.3s linear;
 }
 .avatar:hover > .avatar__drawer,
@@ -219,7 +223,7 @@ img {
   min-width: 26ch;
   background: black;
   color: rgba(255, 255, 255, 0.8);
-  font-size: .8em;
+  font-size: 0.8em;
   text-align: right;
   border-radius: 0.3rem;
 }
@@ -350,10 +354,8 @@ img {
     display: inline-block;
     margin-right: 1em;
     opacity: 0;
-    transition:
-      transform 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28),
-      opacity 0.5s ease-out,
-      color 0.1s linear;
+    transition: transform 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+      opacity 0.5s ease-out, color 0.1s linear;
     transform: translateX(-1em);
   }
   .nav-links:hover .nav-links__label,
@@ -361,13 +363,24 @@ img {
     opacity: 1;
     transform: none;
   }
-  .nav-links > li:nth-child(2) .nav-links__label { transition-delay: 0.05s; }
-  .nav-links > li:nth-child(3) .nav-links__label { transition-delay: 0.1s; }
-  .nav-links > li:nth-child(4) .nav-links__label { transition-delay: 0.15s; }
-  .nav-links > li:nth-child(5) .nav-links__label { transition-delay: 0.2s; }
-  .nav-links > li:nth-child(6) .nav-links__label { transition-delay: 0.25s; }
-  .nav-links > li:nth-child(7) .nav-links__label { transition-delay: 0.3s; }
-
+  .nav-links > li:nth-child(2) .nav-links__label {
+    transition-delay: 0.05s;
+  }
+  .nav-links > li:nth-child(3) .nav-links__label {
+    transition-delay: 0.1s;
+  }
+  .nav-links > li:nth-child(4) .nav-links__label {
+    transition-delay: 0.15s;
+  }
+  .nav-links > li:nth-child(5) .nav-links__label {
+    transition-delay: 0.2s;
+  }
+  .nav-links > li:nth-child(6) .nav-links__label {
+    transition-delay: 0.25s;
+  }
+  .nav-links > li:nth-child(7) .nav-links__label {
+    transition-delay: 0.3s;
+  }
 }
 
 .post-title {
@@ -495,7 +508,7 @@ img {
   border-width: 1px 0;
   background-color: transparent;
   cursor: pointer;
-  transition: background-color .15s linear;
+  transition: background-color 0.15s linear;
 }
 .tabs > button:hover {
   background-color: rgba(0, 0, 0, 0.1);
@@ -505,7 +518,7 @@ img {
   color: var(--link-color);
 }
 .tabs > button + button {
-  border-left: 1px solid #eee;;
+  border-left: 1px solid #eee;
 }
 .tabs > button.is-active {
   border-bottom-color: transparent;
@@ -567,7 +580,7 @@ a.reply__date {
   flex: 1;
   margin-left: 1.25rem;
 }
-.reply > {
+.reply >  {
   color: inherit;
 }
 
@@ -615,8 +628,7 @@ a.reply__date {
 
 .bottom-container {
   padding: 0 1.25em 10em;
-  background-image:
-    linear-gradient(to bottom, #1a3c4d, transparent 6em),
+  background-image: linear-gradient(to bottom, #1a3c4d, transparent 6em),
     url(/images/clouds.jpg);
   background-position: top, center;
   background-repeat: no-repeat;
@@ -625,7 +637,12 @@ a.reply__date {
 .bottom-container__inner {
   margin: 0 auto;
   max-width: 800px;
-  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.4), transparent);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 0, 0, 0.4),
+    transparent
+  );
   padding: 1.25em;
   border-radius: 1em;
 }
@@ -683,7 +700,6 @@ a.reply__date {
   }
 }
 
-
 /* utilities */
 .is-hidden {
   display: none !important;
@@ -720,26 +736,39 @@ twitterwidget,
   margin: 0 auto;
 }
 
+.banner-image {
+  width: 100%;
+  max-height: 30vh;
+  margin-bottom: 1.4rem;
+  object-fit: cover;
+}
+
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(180deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes wobble {
   0% {
-    transform: none
+    transform: none;
   }
   25% {
-    transform: translate3d(1%,2%,0) rotate3d(0,0,1,-1deg)
+    transform: translate3d(1%, 2%, 0) rotate3d(0, 0, 1, -1deg);
   }
   50% {
-    transform: translate3d(-2%,0,1%) rotate3d(0,0,1,1deg)
+    transform: translate3d(-2%, 0, 1%) rotate3d(0, 0, 1, 1deg);
   }
   75% {
-    transform: translate3d(-1%,0,0);
+    transform: translate3d(-1%, 0, 0);
   }
   100% {
-    transform: none
+    transform: none;
   }
 }
