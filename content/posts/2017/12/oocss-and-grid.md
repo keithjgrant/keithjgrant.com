@@ -56,7 +56,7 @@ Take the example above, for instance. If you were to replace the `row` and `col-
   </div>
   <div class="grid__item">
     <div class="card">
-      <h3 class="card__title">Jane</h3>
+      <h3 class="card__title">Jayne</h3>
       <p class="card__body">The strongman.</p>
     </div>
   </div>
@@ -92,7 +92,7 @@ Watch what happens in our example, when we combine the grid item “structure”
     <p class="card__body">The mysterious prodigy. She kicks serious ass.</p>
   </div>
   <div class="grid__item card">
-    <h3 class="card__title">Jane</h3>
+    <h3 class="card__title">Jayne</h3>
     <p class="card__body">The strongman.</p>
   </div>
 </div>
