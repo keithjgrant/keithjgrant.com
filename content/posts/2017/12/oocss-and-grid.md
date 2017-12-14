@@ -77,7 +77,7 @@ First, *Separate Container and Content*. This means styles should not be locatio
 
 The second rule, however, isn’t followed as often in our newer methodologies: *Separate Structure and Skin*.  This means one class should be used to apply the structure to an element&mdash;its position and shape&mdash;while another should be used to apply its "skin"&mdash;its colors and stylistic appearance. Ideally, the same skin could be applied to a number of different “structures.”
 
-After years of working with BEM, this second rule feels foreign. We’re used to each module (or “block,” if you prefer) doing its thing. Any given DOM element belongs only to one module. It feels dirty to apply two different modules to the same element: one for skin and another for structure. But I think this skinning approach going to be an important approach in the world of CSS grid.
+After years of working with BEM, this second rule feels foreign. We’re used to each module (or “block,” if you prefer) doing its thing. Any given DOM element belongs only to one module. It feels dirty to apply two different modules to the same element: one for skin and another for structure. But I think this skinning approach going to be useful in the world of CSS grid.
 
 Watch what happens in our example, when we combine the grid item “structure” with the card “skin”, thereby removing one layer of depth from the DOM:
 
