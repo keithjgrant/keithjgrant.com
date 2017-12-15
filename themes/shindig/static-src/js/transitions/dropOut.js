@@ -29,5 +29,7 @@ export default function dropOut(oldEl, newEl) {
     opacity: 0,
     ease: Power4.easeIn,
   });
+  tl.addLabel('ready');
   tl.play();
+  return tl;
 }

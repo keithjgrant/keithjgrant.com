@@ -43,7 +43,7 @@ export default function irisStagger(oldEl, newEl) {
     parent.insertBefore(newBg, newEl);
   });
   tl.set(oldEl.parentNode, {minHeight: '200vh'});
-  tl.add('start');
+  tl.addLabel('start');
   tl.to(oldEl, 0.4, {opacity: 0}, 'start');
   tl.set(newEl, {opacity: 1}, 'start');
   tl.staggerFrom(
@@ -56,6 +56,7 @@ export default function irisStagger(oldEl, newEl) {
     0.1,
     'start'
   );
+  tl.addLabel('ready', 'start+=0.6');
   tl.to(newBg, 1.8, {opacity: 1}, 'start');
   tl.set(oldEl.parentNode, {clearProps: 'all'});
   tl.set(newEl, {clearProps: 'overflow, background'});
@@ -67,5 +68,7 @@ export default function irisStagger(oldEl, newEl) {
       ease: Power1.easeOut,
     });
   }
+
   tl.play();
+  return tl;
 }

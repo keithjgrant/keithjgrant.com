@@ -4,7 +4,7 @@ import {removeNode} from './util/dom';
 import {cleanupPage, initCurrentPage} from './init';
 
 // TODO
-let isNavigating = false;
+let currentEffect = null;
 
 export default function navigation() {
   document.body.addEventListener('click', function(e) {
@@ -25,6 +25,10 @@ export default function navigation() {
 }
 
 async function advanceToUrl(url, clickedEl) {
+  if (currentEffect) {
+    abortTransition(currentEffect);
+    currentEffect = null;
+  }
   try {
     const newContent = await fetchPageContent(url);
     const mainContent = document.querySelectorAll('.js-main');
@@ -40,8 +44,14 @@ async function advanceToUrl(url, clickedEl) {
     document.title = newContent.title;
     if (effect) {
       cleanupPage(currentContent);
-      await effect(currentContent, newContent.container, clickedEl);
-      setTimeout(initCurrentPage, 1000);
+      currentEffect = effect(currentContent, newContent.container, clickedEl);
+      if (currentEffect) {
+        currentEffect.call(initCurrentPage, null, null, 'ready');
+        currentEffect.call(() => {
+          currentEffect = null;
+        });
+      }
+      // setTimeout(initCurrentPage, 1000);
     } else {
       document.location = url;
     }
@@ -72,3 +82,8 @@ async function fetchPageContent(url) {
     container: content.querySelector('.js-main'),
   };
 }
+
+function abortTransition(tl) {
+  tl.progress(1.0);
+}
+

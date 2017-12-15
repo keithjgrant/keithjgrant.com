@@ -35,6 +35,8 @@ export default function zoomIn(oldEl, newEl, link) {
   });
   tl.from(newEl, 1, coords, 'start');
   tl.from(newEl, 0.5, {opacity: 0, ease: Power1.EaseOut}, 'start');
+  tl.addLabel('ready', 'start+=0.5');
 
   tl.play();
+  return tl;
 }

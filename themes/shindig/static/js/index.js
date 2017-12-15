@@ -151,7 +151,9 @@ function dropOut(oldEl, newEl) {
     opacity: 0,
     ease: Power4.easeIn,
   });
+  tl.addLabel('ready');
   tl.play();
+  return tl;
 }
 
 
@@ -276,7 +278,7 @@ function scaleBoundingBox(coords, scalar) {
 
 
 // TODO
-let isNavigating = false;
+let currentEffect = null;
 
 function navigation() {
   document.body.addEventListener('click', function(e) {
@@ -297,6 +299,10 @@ function navigation() {
 }
 
 async function advanceToUrl(url, clickedEl) {
+  if (currentEffect) {
+    abortTransition(currentEffect);
+    currentEffect = null;
+  }
   try {
     const newContent = await fetchPageContent(url);
     const mainContent = document.querySelectorAll('.js-main');
@@ -312,8 +318,14 @@ async function advanceToUrl(url, clickedEl) {
     document.title = newContent.title;
     if (effect) {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__init__["b" /* cleanupPage */])(currentContent);
-      await effect(currentContent, newContent.container, clickedEl);
-      setTimeout(__WEBPACK_IMPORTED_MODULE_3__init__["a" /* initCurrentPage */], 1000);
+      currentEffect = effect(currentContent, newContent.container, clickedEl);
+      if (currentEffect) {
+        currentEffect.call(__WEBPACK_IMPORTED_MODULE_3__init__["a" /* initCurrentPage */], null, null, 'ready');
+        currentEffect.call(() => {
+          currentEffect = null;
+        });
+      }
+      // setTimeout(initCurrentPage, 1000);
     } else {
       document.location = url;
     }
@@ -344,6 +356,11 @@ async function fetchPageContent(url) {
     container: content.querySelector('.js-main'),
   };
 }
+
+function abortTransition(tl) {
+  tl.progress(1.0);
+}
+
 
 
 /***/ }),
@@ -676,7 +693,9 @@ function irisIn(oldEl, newEl) {
       ease: Power1.easeOut,
     });
   }
+  tl.addLabel('ready');
   tl.play();
+  return tl;
 }
 
 
@@ -732,7 +751,7 @@ function irisStagger(oldEl, newEl) {
     parent.insertBefore(newBg, newEl);
   });
   tl.set(oldEl.parentNode, {minHeight: '200vh'});
-  tl.add('start');
+  tl.addLabel('start');
   tl.to(oldEl, 0.4, {opacity: 0}, 'start');
   tl.set(newEl, {opacity: 1}, 'start');
   tl.staggerFrom(
@@ -745,6 +764,7 @@ function irisStagger(oldEl, newEl) {
     0.1,
     'start'
   );
+  tl.addLabel('ready', 'start+=0.6');
   tl.to(newBg, 1.8, {opacity: 1}, 'start');
   tl.set(oldEl.parentNode, {clearProps: 'all'});
   tl.set(newEl, {clearProps: 'overflow, background'});
@@ -756,7 +776,9 @@ function irisStagger(oldEl, newEl) {
       ease: Power1.easeOut,
     });
   }
+
   tl.play();
+  return tl;
 }
 
 
@@ -856,6 +878,7 @@ function noteZoom(oldEl, newEl) {
   const last = newNoteBox.getBoundingClientRect();
   const flipCoords = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_transitions__["a" /* getFlipCoords */])(first, last, {ease: Back.easeInOut});
   tl.from(newNoteBox, 0.9, flipCoords, 'start');
+  tl.addLabel('ready');
   tl.to(oldEl, 0.3, {opacity: 0}, 'start+=0.3');
 
   tl.addLabel('zoom-done');
@@ -863,6 +886,7 @@ function noteZoom(oldEl, newEl) {
   tl.to(newBg, 1.5, {opacity: 1});
 
   tl.play();
+  return tl;
 }
 
 function findNotesOnScreen(container) {
@@ -903,13 +927,15 @@ function scrollDownTo(oldEl, newEl) {
   tl.set(oldEl, {position: 'absolute', left: 0, right: 0});
   tl.set(newEl, {position: 'relative'});
   tl.set(oldEl.parentNode, {minHeight: '100vh'});
-  tl.add('start');
+  tl.addLabel('start');
   tl.to(oldEl, 1.5, {y: height * -1, ease: Power2.easeInOut}, 'start');
   tl.from(newEl, 1.5, {y: height, ease: Power2.easeInOut}, 'start');
   tl.set(newEl, {position: 'static'});
   tl.set(oldEl.parentNode, {minHeight: 'auto'});
   tl.to(oldEl, 0.2, {opacity: 0});
+  tl.addLabel('ready');
   tl.play();
+  return tl;
 }
 
 
@@ -932,13 +958,15 @@ function scrollRightTo(oldEl, newEl) {
   tl.set(oldEl, {position: 'absolute', left: 0, right: 0});
   tl.set(newEl, {position: 'relative'});
   tl.set(oldEl.parentNode, {minHeight: '100vh'});
-  tl.add('start');
+  tl.addLabel('start');
   tl.to(oldEl, 1.5, {x: width * -1, ease: Power2.easeInOut}, 'start');
   tl.from(newEl, 1.5, {x: width, ease: Power2.easeInOut}, 'start');
   tl.set(newEl, {position: 'static'});
   tl.set(oldEl.parentNode, {minHeight: 'auto'});
   tl.to(oldEl, 0.2, {opacity: 0});
+  tl.addLabel('ready');
   tl.play();
+  return tl;
 }
 
 
@@ -987,8 +1015,10 @@ function zoomIn(oldEl, newEl, link) {
   });
   tl.from(newEl, 1, coords, 'start');
   tl.from(newEl, 0.5, {opacity: 0, ease: Power1.EaseOut}, 'start');
+  tl.addLabel('ready', 'start+=0.5');
 
   tl.play();
+  return tl;
 }
 
 

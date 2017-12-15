@@ -69,5 +69,7 @@ export default function irisIn(oldEl, newEl) {
       ease: Power1.easeOut,
     });
   }
+  tl.addLabel('ready');
   tl.play();
+  return tl;
 }

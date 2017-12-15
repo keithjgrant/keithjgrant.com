@@ -85,6 +85,7 @@ export default function noteZoom(oldEl, newEl) {
   const last = newNoteBox.getBoundingClientRect();
   const flipCoords = getFlipCoords(first, last, {ease: Back.easeInOut});
   tl.from(newNoteBox, 0.9, flipCoords, 'start');
+  tl.addLabel('ready');
   tl.to(oldEl, 0.3, {opacity: 0}, 'start+=0.3');
 
   tl.addLabel('zoom-done');
@@ -92,6 +93,7 @@ export default function noteZoom(oldEl, newEl) {
   tl.to(newBg, 1.5, {opacity: 1});
 
   tl.play();
+  return tl;
 }
 
 function findNotesOnScreen(container) {
