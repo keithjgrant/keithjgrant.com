@@ -1,5 +1,6 @@
 import selectTransition from './selectTransition';
 import dropOut from './transitions/dropOut';
+import {cleanupPage, initCurrentPage} from './init';
 
 // TODO
 let isNavigating = false;
@@ -33,7 +34,9 @@ async function advanceToUrl(url, clickedEl) {
   history.pushState({title: newContent.title}, '', url);
   document.title = newContent.title;
   if (effect) {
-    effect(currentContent, newContent.container, clickedEl);
+    cleanupPage(currentContent);
+    await effect(currentContent, newContent.container, clickedEl);
+    setTimeout(initCurrentPage, 1000);
   } else {
     // document.location = url;
   }

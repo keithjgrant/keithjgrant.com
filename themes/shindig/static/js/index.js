@@ -239,8 +239,10 @@ function scaleBoundingBox(coords, scalar) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = navigation;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__selectTransition__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__selectTransition__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transitions_dropOut__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__init__ = __webpack_require__(10);
+
 
 
 
@@ -276,7 +278,9 @@ async function advanceToUrl(url, clickedEl) {
   history.pushState({title: newContent.title}, '', url);
   document.title = newContent.title;
   if (effect) {
-    effect(currentContent, newContent.container, clickedEl);
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__init__["b" /* cleanupPage */])(currentContent);
+    await effect(currentContent, newContent.container, clickedEl);
+    setTimeout(__WEBPACK_IMPORTED_MODULE_2__init__["a" /* initCurrentPage */], 1000);
   } else {
     // document.location = url;
   }
@@ -396,13 +400,15 @@ function getTabPane(button) {
 const ANON_AVATAR = '/images/anon-avatar.png';
 
 function fetchWebmentions(url, aliases) {
-  return;
-  // TODO: only execute on relevant pages
+  if (!document.getElementById('comments')) {
+    return;
+  }
+  console.log('FETCHING');
   if (!url) {
     url = document.location.origin + document.location.pathname;
   }
   const targets = getUrlPermutations(url, aliases);
-  //
+
   var script = document.createElement('script');
   var src =
     'https://webmention.io/api/mentions?perPage=500&jsonp=parseWebmentions';
@@ -644,18 +650,15 @@ module.exports = g;
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tabs__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__webmentions__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__navigation__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__prism__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__prism___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__prism__);
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__navigation__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__init__ = __webpack_require__(10);
 
 
 
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__tabs__["a" /* default */])();
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__webmentions__["a" /* default */])();
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__navigation__["a" /* default */])();
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__navigation__["a" /* default */])();
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__init__["a" /* initCurrentPage */])();
 
 
 /***/ }),
@@ -663,14 +666,41 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__navigation__["a" /* default *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = initCurrentPage;
+/* harmony export (immutable) */ __webpack_exports__["b"] = cleanupPage;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__webmentions__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__prism__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__prism___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__prism__);
+
+
+
+function initCurrentPage() {
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__webmentions__["a" /* default */])();
+  __WEBPACK_IMPORTED_MODULE_1__prism___default.a.highlightAll();
+}
+
+function cleanupPage(content) {
+  // remove 'comments' ID so new content w/ comments can be added to page
+  const comments = content.querySelector('#comments');
+  if (comments) {
+    comments.id = '';
+  }
+}
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = selectTransition;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__transitions_zoomIn__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transitions_scrollRightTo__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transitions_scrollDownTo__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__transitions_irisIn__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__transitions_irisStagger__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__transitions_zoomIn__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transitions_scrollRightTo__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transitions_scrollDownTo__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__transitions_irisIn__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__transitions_irisStagger__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__transitions_dropOut__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__transitions_noteZoom__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__transitions_noteZoom__ = __webpack_require__(14);
 
 
 
@@ -787,7 +817,7 @@ function split(url) {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -868,7 +898,7 @@ function irisIn(oldEl, newEl) {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -948,13 +978,13 @@ function irisStagger(oldEl, newEl) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = noteZoom;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_dom__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_notes__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_notes__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_transitions__ = __webpack_require__(2);
 
 
@@ -1065,7 +1095,7 @@ function findNotesOnScreen(container) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1094,7 +1124,7 @@ function scrollDownTo(oldEl, newEl) {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1123,7 +1153,7 @@ function scrollRightTo(oldEl, newEl) {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1173,7 +1203,7 @@ function zoomIn(oldEl, newEl, link) {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

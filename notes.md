@@ -4,4 +4,4 @@
 Play off of https://madebymike.com.au/writing/the-invisible-parts-of-CSS/
 
 # Dialog element & polyfill
-# Grid & the return of OOCSS
+# Why can’t we have a parent selector!?

@@ -1,13 +1,15 @@
 const ANON_AVATAR = '/images/anon-avatar.png';
 
 export default function fetchWebmentions(url, aliases) {
-  return;
-  // TODO: only execute on relevant pages
+  if (!document.getElementById('comments')) {
+    return;
+  }
+  console.log('FETCHING');
   if (!url) {
     url = document.location.origin + document.location.pathname;
   }
   const targets = getUrlPermutations(url, aliases);
-  //
+
   var script = document.createElement('script');
   var src =
     'https://webmention.io/api/mentions?perPage=500&jsonp=parseWebmentions';

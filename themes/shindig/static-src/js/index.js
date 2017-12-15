@@ -1,8 +1,7 @@
 import tabs from './tabs';
-import loadInteractions from './webmentions';
 import navigation from './navigation';
-import prism from './prism';
+import {initCurrentPage} from './init';
 
 tabs();
-loadInteractions();
 navigation();
+initCurrentPage();
