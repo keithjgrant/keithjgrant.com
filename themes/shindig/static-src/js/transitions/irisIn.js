@@ -28,6 +28,7 @@ export default function irisIn(oldEl, newEl) {
     position: 'relative',
     background: 'none',
     overflow: 'hidden',
+    zIndex: 1,
   });
   tl.set(oldEl, {
     position: 'absolute',

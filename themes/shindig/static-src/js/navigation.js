@@ -1,5 +1,6 @@
 import selectTransition from './selectTransition';
 import dropOut from './transitions/dropOut';
+import {removeNode} from './util/dom';
 import {cleanupPage, initCurrentPage} from './init';
 
 // TODO
@@ -24,25 +25,29 @@ export default function navigation() {
 }
 
 async function advanceToUrl(url, clickedEl) {
-  // try {
-  // TODO loader?
-  const newContent = await fetchPageContent(url);
-  const mainContent = document.querySelectorAll('.js-main');
-  const currentContent = mainContent[mainContent.length - 1];
+  try {
+    const newContent = await fetchPageContent(url);
+    const mainContent = document.querySelectorAll('.js-main');
+    const currentContent = mainContent[mainContent.length - 1];
+    if (mainContent.length > 1) {
+      for (let i = 0; i < mainContent.length - 1; i++) {
+        removeNode(mainContent[i]);
+      }
+    }
 
-  const effect = selectTransition(url);
-  history.pushState({title: newContent.title}, '', url);
-  document.title = newContent.title;
-  if (effect) {
-    cleanupPage(currentContent);
-    await effect(currentContent, newContent.container, clickedEl);
-    setTimeout(initCurrentPage, 1000);
-  } else {
-    // document.location = url;
+    const effect = selectTransition(url);
+    history.pushState({title: newContent.title}, '', url);
+    document.title = newContent.title;
+    if (effect) {
+      cleanupPage(currentContent);
+      await effect(currentContent, newContent.container, clickedEl);
+      setTimeout(initCurrentPage, 1000);
+    } else {
+      document.location = url;
+    }
+  } catch (e) {
+    document.location = url;
   }
-  // } catch (e) {
-  //   document.location = url;
-  // }
 }
 
 async function backToUrl(url) {

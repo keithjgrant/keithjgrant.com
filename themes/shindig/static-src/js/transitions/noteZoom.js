@@ -5,6 +5,7 @@ import {getFlipCoords} from '../util/transitions';
 export default function noteZoom(oldEl, newEl) {
   const newBg = cloneBackground(newEl);
   const oldBg = cloneBackground(oldEl);
+  oldEl.parentNode.insertBefore(newEl, oldEl.nextSibling);
   newEl.parentNode.insertBefore(oldBg, newEl);
   newEl.parentNode.insertBefore(newBg, newEl);
   const oldNoteBox = findLinkToNote(oldEl, document.location.href);
@@ -55,6 +56,12 @@ export default function noteZoom(oldEl, newEl) {
     opacity: 0,
   });
   tl.set(oldEl.parentNode, {minHeight: '200vh'});
+  // tl.call(() => {
+  //   const parent = oldEl.parentNode;
+  //   parent.insertBefore(newEl, oldEl.nextSibling);
+  //   parent.insertBefore(oldBg, newEl);
+  //   parent.insertBefore(newBg, newEl);
+  // });
   tl.addLabel('start');
 
   tl.set(oldEl, {top: scrollAmount * -1 + headerHeight});

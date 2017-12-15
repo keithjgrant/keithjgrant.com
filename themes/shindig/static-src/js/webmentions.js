@@ -4,7 +4,6 @@ export default function fetchWebmentions(url, aliases) {
   if (!document.getElementById('comments')) {
     return;
   }
-  console.log('FETCHING');
   if (!url) {
     url = document.location.origin + document.location.pathname;
   }
