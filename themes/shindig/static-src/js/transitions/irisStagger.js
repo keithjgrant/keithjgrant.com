@@ -24,10 +24,10 @@ export default function irisStagger(oldEl, newEl) {
     height: '200vh',
   });
   tl.set(newEl, {
-    height: '200vh',
     position: 'relative',
     background: 'none',
     overflow: 'hidden',
+    zIndex: 1,
   });
   tl.set(oldEl, {
     position: 'absolute',
@@ -56,9 +56,9 @@ export default function irisStagger(oldEl, newEl) {
     0.1,
     'start'
   );
-  tl.to(newBg, 1.8, {opacity: 1}, 'start+=0.6');
+  tl.to(newBg, 1.8, {opacity: 1}, 'start');
   tl.set(oldEl.parentNode, {clearProps: 'all'});
-  tl.set(newEl, {clearProps: 'height, overflow, background'});
+  tl.set(newEl, {clearProps: 'overflow, background'});
   if (heading) {
     tl.set(heading, {opacity: 1});
     tl.from(heading, 2, {

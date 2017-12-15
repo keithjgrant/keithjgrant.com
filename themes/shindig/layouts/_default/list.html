@@ -1,36 +1,40 @@
 <!doctype html>
 <html lang="en-US">
 <head>
-  {{ partial "meta.html" . }}
+  {{- partial "meta.html" . -}}
 </head>
 <body class="h-feed">
-  {{ partial "header.html" . }}
+  {{- partial "header.html" . -}}
 
   <div class="list-bg js-main">
     <h1 class="list-heading">{{ .Title }}</h1>
     <div class="l-list">
-      {{ if .Paginator.HasPrev }}
+      {{- if .Paginator.HasPrev -}}
         <div class="l-list__pagination pagination-loader">
           <a rel="prev" href="{{.Paginator.Prev.URL}}">load newer posts</a>
         </div>
-      {{ end }}
-      {{ range .Paginator.Pages }}
-        <div class="l-list__item">
-          {{ if eq .Section "posts" }}
-            {{ partial "post-summary.html" . }}
-          {{ else }}
-            {{ partial "note-short.html" . }}
-          {{ end }}
-        </div>
-      {{ end }}
-      {{ if .Paginator.HasNext }}
+      {{- end -}}
+      {{- range .Paginator.Pages -}}
+        {{- if eq .Section "talks" -}}
+          {{- .Content -}}
+        {{- else -}}
+          <div class="l-list__item">
+            {{- if eq .Section "posts" -}}
+              {{- partial "post-summary.html" . -}}
+            {{- else -}}
+              {{- partial "note-short.html" . -}}
+            {{- end -}}
+          </div>
+        {{- end -}}
+      {{- end -}}
+      {{- if .Paginator.HasNext -}}
         <div class="l-list__pagination pagination-loader">
           <a rel="next" href="{{.Paginator.Next.URL}}">load more posts</a>
         </div>
-      {{ end }}
+      {{- end -}}
     </div>
   </div>
 
-  {{ partial "footer.html" . }}
+  {{- partial "footer.html" . -}}
 </body>
 </html>

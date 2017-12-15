@@ -10,8 +10,9 @@ const NONE = 0;
 const TO_POST = 1;
 const TO_HP = 2;
 const TO_LIST = 3;
-const TO_POST_LIST = 5;
 const NOTE_ZOOM = 4;
+const TO_POST_LIST = 5;
+const TO_TALK_LIST = 6;
 const OTHER = 100;
 
 export default function selectTransition(toUrl) {
@@ -22,6 +23,7 @@ export default function selectTransition(toUrl) {
     case TO_HP:
       return dropOut;
     case TO_POST_LIST:
+    case TO_TALK_LIST:
       return irisStagger;
     case TO_LIST:
       return irisIn;
@@ -52,6 +54,9 @@ function getTransitionType(toUrl) {
   }
   if (isPostList(toUrl)) {
     return TO_POST_LIST;
+  }
+  if (isTalkList(toUrl)) {
+    return TO_TALK_LIST;
   }
   if (isList(toUrl)) {
     return TO_LIST;
@@ -90,6 +95,11 @@ function isPostList(url) {
 function isNoteList(url) {
   const parts = split(url);
   return parts[0] == 'notes' && parts.length == 1;
+}
+
+function isTalkList(url) {
+  const parts = split(url);
+  return parts[0] == 'talks' && parts.length == 1;
 }
 
 function split(url) {

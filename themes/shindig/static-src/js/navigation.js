@@ -24,12 +24,10 @@ export default function navigation() {
 
 async function advanceToUrl(url, clickedEl) {
   // try {
+  // TODO loader?
   const newContent = await fetchPageContent(url);
-  const currentContent = document.querySelector('.js-main');
-  // currentContent.parentNode.insertBefore(
-  //   newContent.container,
-  //   currentContent.nextSibling
-  // );
+  const mainContent = document.querySelectorAll('.js-main');
+  const currentContent = mainContent[mainContent.length - 1];
 
   const effect = selectTransition(url);
   history.pushState({title: newContent.title}, '', url);

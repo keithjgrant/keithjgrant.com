@@ -1,5 +1,7 @@
 export function removeNode(el) {
-  el.parentNode.removeChild(el);
+  if (el.parentNode) {
+    el.parentNode.removeChild(el);
+  }
 }
 
 export function cloneBackground(el) {

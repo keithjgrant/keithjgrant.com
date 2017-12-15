@@ -74,7 +74,9 @@
 /* harmony export (immutable) */ __webpack_exports__["a"] = removeNode;
 /* harmony export (immutable) */ __webpack_exports__["b"] = cloneBackground;
 function removeNode(el) {
-  el.parentNode.removeChild(el);
+  if (el.parentNode) {
+    el.parentNode.removeChild(el);
+  }
 }
 
 function cloneBackground(el) {
@@ -265,12 +267,10 @@ function navigation() {
 
 async function advanceToUrl(url, clickedEl) {
   // try {
+  // TODO loader?
   const newContent = await fetchPageContent(url);
-  const currentContent = document.querySelector('.js-main');
-  // currentContent.parentNode.insertBefore(
-  //   newContent.container,
-  //   currentContent.nextSibling
-  // );
+  const mainContent = document.querySelectorAll('.js-main');
+  const currentContent = mainContent[mainContent.length - 1];
 
   const effect = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__selectTransition__["a" /* default */])(url);
   history.pushState({title: newContent.title}, '', url);
@@ -683,8 +683,9 @@ const NONE = 0;
 const TO_POST = 1;
 const TO_HP = 2;
 const TO_LIST = 3;
-const TO_POST_LIST = 5;
 const NOTE_ZOOM = 4;
+const TO_POST_LIST = 5;
+const TO_TALK_LIST = 6;
 const OTHER = 100;
 
 function selectTransition(toUrl) {
@@ -695,6 +696,7 @@ function selectTransition(toUrl) {
     case TO_HP:
       return __WEBPACK_IMPORTED_MODULE_5__transitions_dropOut__["a" /* default */];
     case TO_POST_LIST:
+    case TO_TALK_LIST:
       return __WEBPACK_IMPORTED_MODULE_4__transitions_irisStagger__["a" /* default */];
     case TO_LIST:
       return __WEBPACK_IMPORTED_MODULE_3__transitions_irisIn__["a" /* default */];
@@ -725,6 +727,9 @@ function getTransitionType(toUrl) {
   }
   if (isPostList(toUrl)) {
     return TO_POST_LIST;
+  }
+  if (isTalkList(toUrl)) {
+    return TO_TALK_LIST;
   }
   if (isList(toUrl)) {
     return TO_LIST;
@@ -763,6 +768,11 @@ function isPostList(url) {
 function isNoteList(url) {
   const parts = split(url);
   return parts[0] == 'notes' && parts.length == 1;
+}
+
+function isTalkList(url) {
+  const parts = split(url);
+  return parts[0] == 'talks' && parts.length == 1;
 }
 
 function split(url) {
@@ -890,10 +900,10 @@ function irisStagger(oldEl, newEl) {
     height: '200vh',
   });
   tl.set(newEl, {
-    height: '200vh',
     position: 'relative',
     background: 'none',
     overflow: 'hidden',
+    zIndex: 1,
   });
   tl.set(oldEl, {
     position: 'absolute',
@@ -922,9 +932,9 @@ function irisStagger(oldEl, newEl) {
     0.1,
     'start'
   );
-  tl.to(newBg, 1.8, {opacity: 1}, 'start+=0.6');
+  tl.to(newBg, 1.8, {opacity: 1}, 'start');
   tl.set(oldEl.parentNode, {clearProps: 'all'});
-  tl.set(newEl, {clearProps: 'height, overflow, background'});
+  tl.set(newEl, {clearProps: 'overflow, background'});
   if (heading) {
     tl.set(heading, {opacity: 1});
     tl.from(heading, 2, {
