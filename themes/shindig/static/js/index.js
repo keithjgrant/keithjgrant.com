@@ -664,13 +664,13 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__navigation__["a" /* default *
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = selectTransition;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__transitions_zoomIn__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transitions_scrollRightTo__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transitions_scrollDownTo__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__transitions_zoomIn__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transitions_scrollRightTo__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transitions_scrollDownTo__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__transitions_irisIn__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__transitions_irisStagger__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__transitions_irisStagger__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__transitions_dropOut__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__transitions_noteZoom__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__transitions_noteZoom__ = __webpack_require__(13);
 
 
 
@@ -788,8 +788,6 @@ function split(url) {
 function irisIn(oldEl, newEl) {
   const newBg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["b" /* cloneBackground */])(newEl);
   const oldBg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["b" /* cloneBackground */])(oldEl);
-  newEl.parentNode.insertBefore(oldBg, newEl);
-  newEl.parentNode.insertBefore(newBg, newEl);
   const heading = newEl.querySelector('.list-heading');
   const tl = new TimelineLite({
     onComplete: () => {
@@ -824,7 +822,14 @@ function irisIn(oldEl, newEl) {
     zIndex: 1,
   });
   tl.set(oldEl.parentNode, {minHeight: '200vh'});
+  tl.call(() => {
+    const parent = oldEl.parentNode;
+    parent.insertBefore(newEl, oldEl.nextSibling);
+    parent.insertBefore(oldBg, newEl);
+    parent.insertBefore(newBg, newEl);
+  });
   tl.add('start');
+
   tl.to(oldEl, 0.4, {opacity: 0}, 'start');
   tl.from(
     newEl,
@@ -838,8 +843,8 @@ function irisIn(oldEl, newEl) {
     'start'
   );
   tl.to(newBg, 0.8, {opacity: 1}, 'start');
+  tl.set(newEl, {clearProps: 'height, overflow, background'}, 'start');
   tl.set(oldEl.parentNode, {clearProps: 'all'});
-  tl.set(newEl, {clearProps: 'height, overflow, background'});
   if (heading) {
     tl.set(heading, {opacity: 1});
     tl.from(heading, 2, {
@@ -857,9 +862,89 @@ function irisIn(oldEl, newEl) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = irisStagger;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_dom__ = __webpack_require__(0);
+
+
+function irisStagger(oldEl, newEl) {
+  const newBg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["b" /* cloneBackground */])(newEl);
+  const oldBg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["b" /* cloneBackground */])(oldEl);
+  const heading = newEl.querySelector('.list-heading');
+  const tl = new TimelineLite({
+    onComplete: () => {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldEl);
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(newBg);
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldBg);
+      TweenLite.set(newEl, {clearProps: 'all'});
+    },
+  });
+  tl.set(newBg, {
+    position: 'absolute',
+    width: '100%',
+    height: '200vh',
+    opacity: 0,
+  });
+  tl.set(oldBg, {
+    position: 'absolute',
+    width: '100%',
+    height: '200vh',
+  });
+  tl.set(newEl, {
+    height: '200vh',
+    position: 'relative',
+    background: 'none',
+    overflow: 'hidden',
+  });
+  tl.set(oldEl, {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    background: 'none',
+    zIndex: 1,
+  });
+  tl.call(() => {
+    const parent = oldEl.parentNode;
+    parent.insertBefore(newEl, oldEl.nextSibling);
+    parent.insertBefore(oldBg, newEl);
+    parent.insertBefore(newBg, newEl);
+  });
+  tl.set(oldEl.parentNode, {minHeight: '200vh'});
+  tl.add('start');
+  tl.to(oldEl, 0.4, {opacity: 0}, 'start');
+  tl.set(newEl, {opacity: 1}, 'start');
+  tl.staggerFrom(
+    newEl.querySelectorAll('.post-summary'),
+    0.6,
+    {
+      scaleX: 0,
+      ease: Power1.easeOut,
+    },
+    0.1,
+    'start'
+  );
+  tl.to(newBg, 1.8, {opacity: 1}, 'start+=0.6');
+  tl.set(oldEl.parentNode, {clearProps: 'all'});
+  tl.set(newEl, {clearProps: 'height, overflow, background'});
+  if (heading) {
+    tl.set(heading, {opacity: 1});
+    tl.from(heading, 2, {
+      x: -30,
+      opacity: 0,
+      ease: Power1.easeOut,
+    });
+  }
+  tl.play();
+}
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = noteZoom;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_dom__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_notes__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_notes__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_transitions__ = __webpack_require__(2);
 
 
@@ -970,7 +1055,7 @@ function findNotesOnScreen(container) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -999,7 +1084,7 @@ function scrollDownTo(oldEl, newEl) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1028,7 +1113,7 @@ function scrollRightTo(oldEl, newEl) {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1041,6 +1126,8 @@ function scrollRightTo(oldEl, newEl) {
 function zoomIn(oldEl, newEl, link) {
   const scrollAmount = window.pageYOffset;
   const headerHeight = 75;
+  oldEl.parentNode.insertBefore(newEl, oldEl.nextSibling);
+
   const tl = new TimelineLite({
     onComplete: () => {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldEl);
@@ -1048,7 +1135,6 @@ function zoomIn(oldEl, newEl, link) {
       TweenLite.set(newEl.parentNode, {clearProps: 'all'});
     },
   });
-
   tl.set(oldEl, {position: 'absolute', left: 0, right: 0});
   tl.set(oldEl.parentNode, {minHeight: '100vh'});
   tl.set(newEl, {
@@ -1067,7 +1153,7 @@ function zoomIn(oldEl, newEl, link) {
   const first = link.getBoundingClientRect();
   const last = newEl.getBoundingClientRect();
   const coords = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_transitions__["a" /* getFlipCoords */])(first, last, {
-    ease: Expo.easeInOut,
+    ease: Power4.easeInOut,
   });
   tl.from(newEl, 1, coords, 'start');
   tl.from(newEl, 0.5, {opacity: 0, ease: Power1.EaseOut}, 'start');
@@ -1077,94 +1163,13 @@ function zoomIn(oldEl, newEl, link) {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = findLinkToNote;
 function findLinkToNote(container, noteUrl) {
   return container.querySelector(`[data-href="${noteUrl}"]`);
-}
-
-
-/***/ }),
-/* 17 */,
-/* 18 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = irisStagger;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_dom__ = __webpack_require__(0);
-
-
-function irisStagger(oldEl, newEl) {
-  const newBg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["b" /* cloneBackground */])(newEl);
-  const oldBg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["b" /* cloneBackground */])(oldEl);
-  const heading = newEl.querySelector('.list-heading');
-  const tl = new TimelineLite({
-    onComplete: () => {
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldEl);
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(newBg);
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldBg);
-      TweenLite.set(newEl, {clearProps: 'all'});
-    },
-  });
-  tl.set(newBg, {
-    position: 'absolute',
-    width: '100%',
-    height: '200vh',
-    opacity: 0,
-  });
-  tl.set(oldBg, {
-    position: 'absolute',
-    width: '100%',
-    height: '200vh',
-  });
-  tl.set(newEl, {
-    height: '200vh',
-    position: 'relative',
-    background: 'none',
-    overflow: 'hidden',
-  });
-  tl.set(oldEl, {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    background: 'none',
-    zIndex: 1,
-  });
-  tl.call(() => {
-    const parent = oldEl.parentNode;
-    parent.insertBefore(newEl, oldEl.nextSibling);
-    parent.insertBefore(oldBg, newEl);
-    parent.insertBefore(newBg, newEl);
-  });
-  tl.set(oldEl.parentNode, {minHeight: '200vh'});
-  tl.add('start');
-  tl.to(oldEl, 0.4, {opacity: 0}, 'start');
-  tl.set(newEl, {opacity: 1}, 'start');
-  tl.staggerFrom(
-    newEl.querySelectorAll('.post-summary'),
-    0.6,
-    {
-      scaleX: 0,
-      ease: Power1.easeOut,
-    },
-    0.1,
-    'start'
-  );
-  tl.to(newBg, 1.8, {opacity: 1}, 'start+=0.6');
-  tl.set(oldEl.parentNode, {clearProps: 'all'});
-  tl.set(newEl, {clearProps: 'height, overflow, background'});
-  if (heading) {
-    tl.set(heading, {opacity: 1});
-    tl.from(heading, 2, {
-      x: -30,
-      opacity: 0,
-      ease: Power1.easeOut,
-    });
-  }
-  tl.play();
 }
 
 

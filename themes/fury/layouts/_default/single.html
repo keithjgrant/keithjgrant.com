@@ -13,7 +13,7 @@
     </div>
     <article class="post-body">
       {{ if .Params.image }}
-        <img src="{{ .Params.image }}" class="banner-image">
+        <img src="{{ .Params.image.url }}" class="banner-image" alt="{{ .Params.image.alt }}">
       {{ end }}
       <div>
         {{ partial "in-reply-to" . }}

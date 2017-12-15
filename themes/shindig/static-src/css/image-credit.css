@@ -1,0 +1,15 @@
+.image-credit {
+  color: var(--gray-6);
+  font-family: $sans-serif;
+  font-size: 0.8rem;
+  text-align: right;
+
+  & > a:any-link {
+    color: inherit;
+    font-weight: inherit;
+  }
+
+  & > a:hover {
+    color: var(--gray-4);
+  }
+}

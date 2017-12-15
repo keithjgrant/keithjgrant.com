@@ -3,3 +3,6 @@
     <img class="img-banner-preview" src="{{ . }}"/>
   {{ end }}
 {{ end }}
+{{ if .Params.image }}
+  <img class="img-banner-preview" src="{{ .Params.image.url }}" alt="{{ .Params.image.alt }}">
+{{ end }}

@@ -27,6 +27,8 @@
 @import 'welcome';
 @import 'latest-post';
 @import 'recent-posts';
+@import 'banner-image';
+@import 'image-credit';
 @import 'split';
 @import 'utility';
 

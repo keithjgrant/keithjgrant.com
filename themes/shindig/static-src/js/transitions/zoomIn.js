@@ -4,6 +4,8 @@ import {getFlipCoords} from '../util/transitions';
 export default function zoomIn(oldEl, newEl, link) {
   const scrollAmount = window.pageYOffset;
   const headerHeight = 75;
+  oldEl.parentNode.insertBefore(newEl, oldEl.nextSibling);
+
   const tl = new TimelineLite({
     onComplete: () => {
       removeNode(oldEl);
@@ -11,7 +13,6 @@ export default function zoomIn(oldEl, newEl, link) {
       TweenLite.set(newEl.parentNode, {clearProps: 'all'});
     },
   });
-
   tl.set(oldEl, {position: 'absolute', left: 0, right: 0});
   tl.set(oldEl.parentNode, {minHeight: '100vh'});
   tl.set(newEl, {
@@ -30,7 +31,7 @@ export default function zoomIn(oldEl, newEl, link) {
   const first = link.getBoundingClientRect();
   const last = newEl.getBoundingClientRect();
   const coords = getFlipCoords(first, last, {
-    ease: Expo.easeInOut,
+    ease: Power4.easeInOut,
   });
   tl.from(newEl, 1, coords, 'start');
   tl.from(newEl, 0.5, {opacity: 0, ease: Power1.EaseOut}, 'start');

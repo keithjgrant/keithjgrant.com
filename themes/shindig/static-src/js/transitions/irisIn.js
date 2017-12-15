@@ -3,8 +3,6 @@ import {removeNode, cloneBackground} from '../util/dom';
 export default function irisIn(oldEl, newEl) {
   const newBg = cloneBackground(newEl);
   const oldBg = cloneBackground(oldEl);
-  newEl.parentNode.insertBefore(oldBg, newEl);
-  newEl.parentNode.insertBefore(newBg, newEl);
   const heading = newEl.querySelector('.list-heading');
   const tl = new TimelineLite({
     onComplete: () => {
@@ -39,7 +37,14 @@ export default function irisIn(oldEl, newEl) {
     zIndex: 1,
   });
   tl.set(oldEl.parentNode, {minHeight: '200vh'});
+  tl.call(() => {
+    const parent = oldEl.parentNode;
+    parent.insertBefore(newEl, oldEl.nextSibling);
+    parent.insertBefore(oldBg, newEl);
+    parent.insertBefore(newBg, newEl);
+  });
   tl.add('start');
+
   tl.to(oldEl, 0.4, {opacity: 0}, 'start');
   tl.from(
     newEl,
@@ -53,8 +58,8 @@ export default function irisIn(oldEl, newEl) {
     'start'
   );
   tl.to(newBg, 0.8, {opacity: 1}, 'start');
+  tl.set(newEl, {clearProps: 'height, overflow, background'}, 'start');
   tl.set(oldEl.parentNode, {clearProps: 'all'});
-  tl.set(newEl, {clearProps: 'height, overflow, background'});
   if (heading) {
     tl.set(heading, {opacity: 1});
     tl.from(heading, 2, {

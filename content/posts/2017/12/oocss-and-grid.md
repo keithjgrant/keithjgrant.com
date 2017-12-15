@@ -1,11 +1,17 @@
 +++
 date = "2017-12-13T13:03:47-05:00"
 title = "OOCSS and Grid"
-image = "/images/2017/old-books-sm.jpg"
+
+[image]
+url = "/images/2017/old-books-sm.jpg"
+alt = "A stack of old leather-bound books"
+author = "Chris Lawton"
+authorUrl = "https://unsplash.com/photos/9T346Ij4kGk"
 
 +++
 
 [OOCSS](https://github.com/stubbornella/oocss/wiki) was the first of the many CSS methodologies. Since it arrived on the scene, the industry has moved on to newer, more strongly prescriptive methodologies like SMACSS, BEM, and ITCSS. These newer approaches dominate the conventional wisdom today. But CSS grid is here now, and I find it presents some challenges to this wisdom. I think it’s time we give OOCSS a little attention again, because it has an important idea to offer in the world of CSS grid.
+<!-- more -->
 
 A major theme recently is an emphasis on modular design: a user interface broken up into small modules whose styles are encapsulated. Modules are nested one within another to construct the entire interface. This leads to markup that looks something like this:
 
@@ -103,5 +109,3 @@ Now, the card styles are applied directly to the grid items (See this example [o
 <img src="/images/2017/oocss-grid-2.png" alt="Three white cards of equal heights, aligned correctly to the grid">
 
 It’s important with this approach to maintain a distinction between “structure” modules and “skin” modules, so you don’t accidentally mix two skins together for conflicting results. On the whole, that’s not too hard to do. It just takes some good old fashioned OOCSS.
-
-<small>Book photo by [Chris Lawton](https://unsplash.com/photos/9T346Ij4kGk)</small>
