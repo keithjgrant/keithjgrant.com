@@ -1,9 +1,15 @@
 import loadInteractions from './webmentions';
 import prism from './prism';
 
+export function initFirstPage() {
+  loadInteractions();
+  prism.highlightAll();
+}
+
 export function initCurrentPage() {
   loadInteractions();
   prism.highlightAll();
+  reportAnalyticsPageview();
 }
 
 export function cleanupPage(content) {
@@ -11,5 +17,12 @@ export function cleanupPage(content) {
   const comments = content.querySelector('#comments');
   if (comments) {
     comments.id = '';
+  }
+}
+
+function reportAnalyticsPageview() {
+  if (ga) {
+    ga('set', 'page', document.location.pathname);
+    ga('send', 'pageview');
   }
 }

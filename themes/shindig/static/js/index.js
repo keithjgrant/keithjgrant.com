@@ -91,7 +91,8 @@ function cloneBackground(el) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = initCurrentPage;
+/* harmony export (immutable) */ __webpack_exports__["a"] = initFirstPage;
+/* harmony export (immutable) */ __webpack_exports__["c"] = initCurrentPage;
 /* harmony export (immutable) */ __webpack_exports__["b"] = cleanupPage;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__webmentions__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__prism__ = __webpack_require__(9);
@@ -99,9 +100,15 @@ function cloneBackground(el) {
 
 
 
+function initFirstPage() {
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__webmentions__["a" /* default */])();
+  __WEBPACK_IMPORTED_MODULE_1__prism___default.a.highlightAll();
+}
+
 function initCurrentPage() {
   __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__webmentions__["a" /* default */])();
   __WEBPACK_IMPORTED_MODULE_1__prism___default.a.highlightAll();
+  reportAnalyticsPageview();
 }
 
 function cleanupPage(content) {
@@ -109,6 +116,13 @@ function cleanupPage(content) {
   const comments = content.querySelector('#comments');
   if (comments) {
     comments.id = '';
+  }
+}
+
+function reportAnalyticsPageview() {
+  if (ga) {
+    ga('set', 'page', document.location.pathname);
+    ga('send', 'pageview');
   }
 }
 
@@ -320,7 +334,7 @@ async function advanceToUrl(url, clickedEl) {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__init__["b" /* cleanupPage */])(currentContent);
       currentEffect = effect(currentContent, newContent.container, clickedEl);
       if (currentEffect) {
-        currentEffect.call(__WEBPACK_IMPORTED_MODULE_3__init__["a" /* initCurrentPage */], null, null, 'ready');
+        currentEffect.call(__WEBPACK_IMPORTED_MODULE_3__init__["c" /* initCurrentPage */], null, null, 'ready');
         currentEffect.call(() => {
           currentEffect = null;
         });
@@ -466,7 +480,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__tabs__["a" /* default */])();
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__navigation__["a" /* default */])();
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__init__["a" /* initCurrentPage */])();
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__init__["a" /* initFirstPage */])();
 
 
 /***/ }),

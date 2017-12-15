@@ -17,5 +17,6 @@ module.exports = {
     Back: true,
     Expo: true,
     Promise: true,
+    ga: true,
   },
 };
