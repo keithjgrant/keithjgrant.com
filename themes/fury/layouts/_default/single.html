@@ -12,6 +12,9 @@
       <h1 class="p-name"><a class="u-url" href="{{ .Permalink }}">{{ .Title }}</a></h1>
     </div>
     <article class="post-body">
+      {{ if .Params.image }}
+        <img src="{{ .Params.image }}" class="banner-image">
+      {{ end }}
       <div>
         {{ partial "in-reply-to" . }}
         {{ partial "repost-of" . }}
