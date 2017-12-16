@@ -1,0 +1,38 @@
+.l-error {
+  background-color: var(--white);
+}
+
+.l-error__image {
+  flex-grow: 1;
+  text-align: center;
+
+  & > img {
+    max-height: 60vmin;
+  }
+}
+
+.l-error__inner {
+  padding: 2rem;
+  flex-grow: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & h1 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 800px) {
+  .l-error {
+    display: flex;
+  }
+
+  .l-error__image {
+    text-align: right;
+
+    & > img {
+      max-height: 80vh;
+    }
+  }
+}

@@ -2,3 +2,5 @@
 @import 'layout/article';
 @import 'layout/list';
 @import 'layout/note';
+@import 'layout/error';
+
