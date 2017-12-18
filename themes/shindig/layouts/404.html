@@ -14,7 +14,7 @@
       <div>
         <h1>Not Found</h1>
 
-        <p>Cheerio. I’m afraid that page seems to be missing. Maybe one of these posts would interest you instead?</p>
+        <p>Cheerio. I’m afraid that page is missing. Maybe one of these posts would interest you instead?</p>
         <div class="recent-posts">
           {{- $currentUrl := .Permalink -}}
           {{- range first 4 (where (where .Site.Pages "Section" "posts") ".Permalink" "!=" $currentUrl) -}}
