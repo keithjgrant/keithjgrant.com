@@ -1,13 +1,45 @@
 @font-face {
   font-family: 'Glober';
   font-weight: normal;
-  src: url('/css/Glober_Regular.woff2');
+  src: url('/fonts/glober-regular.woff2') format('woff2'),
+    url('/fonts/glober-regular.woff') format('woff'),
+    url('/fonts/glober-regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Glober';
   font-weight: bold;
-  /*src: url('/css/Glober_Bold.woff2');*/
-  src: url('/css/Glober_XBold.woff');
-  /*src: url('/css/Glober_Heavy.woff2');*/
+  src: url('/fonts/glober-xbold.woff2') format('woff2'),
+    url('/fonts/glober-xbold.woff') format('woff'),
+    url('/fonts/glober-xbold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Calendas Plus';
+  src: url('/fonts/calendas_plus-webfont.woff2') format('woff2'),
+    url('/fonts/calendas_plus-webfont.woff') format('woff'),
+    url('/fonts/calendas_plus-webfont.ttf') format('truetype'),
+    url('/fonts/calendas_plus-webfont.svg#calendas_plusregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* @font-face {
+  font-family: 'Calendas Plus';
+  src: url('/fonts/calendas_plus_bold-webfont.woff2') format('woff2'),
+    url('/fonts/calendas_plus_bold-webfont.woff') format('woff'),
+    url('/fonts/calendas_plus_bold-webfont.ttf') format('truetype'),
+    url('/fonts/calendas_plus_bold-webfont.svg#calendas_plusbold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}*/
+
+@font-face {
+  font-family: 'Calendas Plus';
+  src: url('/fonts/calendas_plus_italic-webfont.woff2') format('woff2'),
+    url('/fonts/calendas_plus_italic-webfont.woff') format('woff'),
+    url('/fonts/calendas_plus_italic-webfont.ttf') format('truetype'),
+    url('/fonts/calendas_plus_italic-webfont.svg#calendas_plusitalic') format('svg');
+  font-weight: normal;
+  font-style: italic;
 }

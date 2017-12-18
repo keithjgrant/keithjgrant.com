@@ -48,7 +48,7 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #70b5ff;
+  color: #3d9bff;
   font-family: Fira Sans Condensed, Impact, Helvetica, sans-serif;
   font-weight: 600;
   line-height: 1.2;
@@ -397,7 +397,7 @@ body {
 
 .reveal .big1 {
   font-size: 2em;
-  color: #06a7a5;
+  color: #00adab;
   font-weight: 900;
   letter-spacing: 0.02em; }
 
