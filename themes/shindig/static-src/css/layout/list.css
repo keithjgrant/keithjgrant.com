@@ -1,10 +1,6 @@
 .list-bg {
   background-color: var(--blue-rich-2);
-  background-image: linear-gradient(
-    to right,
-    var(--blue-1),
-    var(--blue-rich-2)
-  );
+  background-image: linear-gradient(to right, var(--blue-1), var(--blue-rich-2));
   /* contain margins */
   &::after {
     content: ' ';
@@ -13,13 +9,20 @@
 }
 
 .l-list {
-  padding: 4rem 8rem;
+  padding: 2rem 0;
   display: grid;
   grid-gap: 1.56rem 1.25rem;
-  grid-template-columns: [full-start] repeat(auto-fill, minmax(35ch, 1fr)) [full-end];
+  grid-template-columns: [full-start] 1fr [full-end];
+  justify-content: center;
+
+  @media (min-width: 500px) {
+    padding: 4rem 4rem;
+    grid-template-columns: [full-start] repeat(auto-fill, 35ch) [full-end];
+  }
 }
 
 .l-list__item {
+  max-width: 100vw;
 }
 
 .l-list__pagination {

@@ -1,10 +1,13 @@
 .list-heading {
   grid-column: 1 / -1;
   margin: 0;
-  /*padding-top: 1rem;
-  padding-bottom: 0.8rem;*/
   padding: 1rem 2rem;
   color: var(--green-5);
   font-size: 1.56rem;
   line-height: 1;
+  text-align: center;
+
+  @media (min-width: 500px) {
+    text-align: left;
+  }
 }

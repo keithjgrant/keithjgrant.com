@@ -46,6 +46,7 @@
   color: var(--gray-4);
   font-size: 0.8em;
   text-align: right;
+  font-weight: normal;
 }
 
 .latest-post__summary {

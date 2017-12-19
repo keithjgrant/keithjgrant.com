@@ -14,8 +14,7 @@
 .nav-links > li {
   & > a {
     display: block;
-    /*padding: 0.6em 0.2em;*/
-    padding: 0.4em 1em 0.1em;
+    padding: 0.4em 0.4em 0.1em;
     border: 2px solid transparent;
     border-radius: 2em;
     color: var(--blue-7);
@@ -35,6 +34,17 @@
   }
 
   & + li {
-    margin-left: 0.4em;
+    margin-left: 0.1em;
+  }
+
+  @media (min-width: 500px) {
+    & > a {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+
+    & + li {
+      margin-left: 0.4em;
+    }
   }
 }

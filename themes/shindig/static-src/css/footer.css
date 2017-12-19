@@ -3,7 +3,7 @@
   z-index: 1;
 
   margin-top: -5px;
-  padding: 2rem 8rem 3rem;
+  padding: 2rem 1rem 3rem;
   border-top: 5px solid rgba(20, 0, 0, 0.6);
   color: var(--gray-7);
   background-color: var(--gray-1);
@@ -22,6 +22,14 @@
 
   & a:hover {
     color: var(--blue-rich-5);
+  }
+
+  @media (min-width: 500px) {
+    padding: 2rem 4rem 3rem;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 2rem 8rem 3rem;
   }
 }
 

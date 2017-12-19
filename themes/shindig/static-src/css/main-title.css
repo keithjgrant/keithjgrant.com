@@ -1,5 +1,6 @@
 .main-title {
   margin-bottom: 0;
+  color: var(--blue-1);
   line-height: 1.4;
-  text-align: right;
+  text-align: center;
 }

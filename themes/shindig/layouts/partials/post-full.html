@@ -5,7 +5,7 @@
 {{ partial "in-reply-to" . }}
 {{ partial "repost-of" . }}
 {{ partial "like-of" . }}
-<p class="post-date text-right"><date class="dt-published">{{ dateFormat "02 Jan 2006" .Date.Local}}</date></p>
+<p class="post-date"><date class="dt-published">{{ dateFormat "02 Jan 2006" .Date.Local}}</date></p>
 
 {{ if .Params.image }}
   <img class="banner-image"src="{{ .Params.image.url }}" alt="{{ .Params.image.alt }}">
