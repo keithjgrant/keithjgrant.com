@@ -21,7 +21,7 @@ export function cleanupPage(content) {
 }
 
 function reportAnalyticsPageview() {
-  if (ga) {
+  if (typeof ga !== 'undefined') {
     ga('set', 'page', document.location.pathname);
     ga('send', 'pageview');
   }

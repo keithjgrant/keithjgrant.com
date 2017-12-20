@@ -3,21 +3,16 @@ import dropOut from './transitions/dropOut';
 import {removeNode} from './util/dom';
 import {cleanupPage, initCurrentPage} from './init';
 
-// TODO
 let currentEffect = null;
 
 export default function navigation() {
   document.body.addEventListener('click', function(e) {
-    // TODO: traverse up to [data-href]
-    if (!e.target.matches('a') && !e.target.attributes['data-href']) {
-      return;
-    }
-    if (e.target.origin && e.target.origin !== location.origin) {
+    const targetData = getLocalUrl(e.target);
+    if (!targetData) {
       return;
     }
     e.preventDefault();
-    const url = e.target.pathname || e.target.attributes['data-href'].value;
-    advanceToUrl(url, e.target);
+    advanceToUrl(targetData.url, targetData.element);
   });
   window.onpopstate = event => {
     backToUrl(document.location.pathname);
@@ -51,11 +46,11 @@ async function advanceToUrl(url, clickedEl) {
           currentEffect = null;
         });
       }
-      // setTimeout(initCurrentPage, 1000);
     } else {
       document.location = url;
     }
   } catch (e) {
+    console.error(e);
     document.location = url;
   }
 }
@@ -87,3 +82,30 @@ function abortTransition(tl) {
   tl.progress(1.0);
 }
 
+function getLocalUrl(target) {
+  if (target.matches('a') && target.origin === location.origin) {
+    return {
+      url: target.pathname,
+      element: target,
+    };
+  }
+  const el = traverseUpToHref(target);
+  if (el) {
+    const href = el.attributes['data-href'].value;
+    return {
+      url: href.replace(window.location.origin, ''),
+      element: el,
+    };
+  }
+  return null;
+}
+
+function traverseUpToHref(element) {
+  if (element.attributes['data-href']) {
+    return element;
+  }
+  if (element.tagName === 'BODY') {
+    return null;
+  }
+  return traverseUpToHref(element.parentNode);
+}
