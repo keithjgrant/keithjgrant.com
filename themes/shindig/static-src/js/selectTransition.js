@@ -76,7 +76,7 @@ function isNoteUrl(url) {
 
 function isSingle(url, basePath) {
   const parts = split(url);
-  return parts[0] === basePath && parts.length > 1;
+  return parts[0] === basePath && parts.length > 1 && parts[1] !== 'page';
 }
 
 function isHomepage(url) {
@@ -89,7 +89,13 @@ function isList(url) {
 
 function isPostList(url) {
   const parts = split(url);
-  return parts[0] == 'posts' && parts.length == 1;
+  if (parts[0] !== 'posts') {
+    return false;
+  }
+  if (parts.length === 1 || parts[1] === 'page') {
+    return true;
+  }
+  return false;
 }
 
 function isNoteList(url) {

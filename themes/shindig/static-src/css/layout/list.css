@@ -26,17 +26,15 @@
 }
 
 .l-list__pagination {
-  grid-column: full;
+  grid-column: 1 / -1;
 }
 
 .l-notes-list {
   margin: 0 auto 6rem;
-  max-width: 45ch;
-  /*background-color: var(--white);*/
+  max-width: 28em;
   border-radius: 50% / 1.6rem;
   padding: 1.6em 0;
 
-  /* TODO: before & after fto add back in pill caps */
   &::before,
   &::after {
     content: '';
