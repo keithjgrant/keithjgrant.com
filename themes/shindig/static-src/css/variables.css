@@ -58,6 +58,6 @@
 
 $container-wide: 62.5rem;
 
-$serif: Calendas Plus, Calluna, serif;
-$sans-serif: Glober, sans-serif;
+$serif: Calendas Plus, Times New Roman, serif;
+$sans-serif: Glober, Helvetica, sans-serif;
 $monospace: Fira Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;

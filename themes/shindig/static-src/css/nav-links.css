@@ -31,6 +31,18 @@
       color: var(--white);
       transition: none;
     }
+
+    &.loading-indicator {
+      color: transparent;
+
+      &::before {
+        position: absolute;
+        top: 0.6em;
+        left: 50%;
+        margin-left: -0.5em;
+        background-color: var(--blue-7);
+      }
+    }
   }
 
   & + li {

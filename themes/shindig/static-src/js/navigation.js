@@ -20,12 +20,14 @@ export default function navigation() {
 }
 
 async function advanceToUrl(url, clickedEl) {
+  clickedEl.classList.add('loading-indicator');
   if (currentEffect) {
     abortTransition(currentEffect);
     currentEffect = null;
   }
   try {
     const newContent = await fetchPageContent(url);
+    clickedEl.classList.remove('loading-indicator');
     const mainContent = document.querySelectorAll('.js-main');
     const currentContent = mainContent[mainContent.length - 1];
     if (mainContent.length > 1) {

@@ -35,5 +35,12 @@
       color: var(--blue-rich-4);
       box-shadow: inset 0 0 0.4em rgba(0, 0, 0, 0.2);
     }
+
+    &.loading-indicator {
+      &::before {
+        position: absolute;
+        right: 0;
+      }
+    }
   }
 }

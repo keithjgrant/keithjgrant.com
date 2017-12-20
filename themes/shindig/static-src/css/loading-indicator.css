@@ -1,10 +1,5 @@
 .loading-indicator {
   position: relative;
-  border-radius: 0.8rem;
-  font-size: 1rem;
-  font-family: $sans-serif;
-  text-align: center;
-  box-shadow: 0 1px 2px hsla(311, 55%, 65%, 0.02);
 }
 
 .loading-indicator::before {
@@ -37,3 +32,12 @@
     opacity: 0;
   }
 }
+
+.interaction-alert {
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  font-family: $sans-serif;
+  text-align: center;
+  box-shadow: 0 1px 2px hsla(311, 55%, 65%, 0.02);
+}
+

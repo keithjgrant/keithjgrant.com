@@ -308,12 +308,14 @@ function navigation() {
 }
 
 async function advanceToUrl(url, clickedEl) {
+  clickedEl.classList.add('loading-indicator');
   if (currentEffect) {
     abortTransition(currentEffect);
     currentEffect = null;
   }
   try {
     const newContent = await fetchPageContent(url);
+    clickedEl.classList.remove('loading-indicator');
     const mainContent = document.querySelectorAll('.js-main');
     const currentContent = mainContent[mainContent.length - 1];
     if (mainContent.length > 1) {
@@ -754,6 +756,7 @@ function irisStagger(oldEl, newEl) {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(newBg);
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldBg);
       TweenLite.set(newEl, {clearProps: 'all'});
+      TweenLite.set(newEl.querySelectorAll('.post-summary'), {clearProps: 'all'});
     },
   });
   tl.set(newBg, {
@@ -1087,13 +1090,11 @@ function fetchWebmentions(url, aliases) {
   const targets = getUrlPermutations(url, aliases);
 
   var script = document.createElement('script');
-  var src =
-    'https://webmention.io/api/mentions?perPage=500&jsonp=parseWebmentions';
+  var src = 'https://webmention.io/api/mentions?perPage=500&jsonp=parseWebmentions';
   targets.forEach(function(targetUrl) {
     src += `&target[]=${encodeURIComponent(targetUrl)}`;
   });
-  // TODO: restore
-  // src += `&_=${Math.random()}`;
+  src += `&_=${Math.random()}`;
   script.src = src;
   document.getElementsByTagName('head')[0].appendChild(script);
 }

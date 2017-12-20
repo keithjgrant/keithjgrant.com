@@ -10,6 +10,7 @@ export default function irisStagger(oldEl, newEl) {
       removeNode(newBg);
       removeNode(oldBg);
       TweenLite.set(newEl, {clearProps: 'all'});
+      TweenLite.set(newEl.querySelectorAll('.post-summary'), {clearProps: 'all'});
     },
   });
   tl.set(newBg, {

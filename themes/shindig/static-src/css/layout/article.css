@@ -8,7 +8,7 @@
     /* prettier-ignore */
     grid-template-columns:
       [full-start] minmax(1em, 1fr)
-      [main-start] minmax(1em, 80ch)
+      [main-start] minmax(1em, 48rem)
       [main-end] minmax(1em, 1fr)
       [full-end];
     padding-top: 7rem;

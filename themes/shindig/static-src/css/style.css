@@ -2,6 +2,7 @@
 @import 'variables';
 @import 'base';
 @import 'prism';
+@import 'loading-indicator';
 @import 'list-heading';
 @import 'layout';
 @import 'main-header';
@@ -20,7 +21,6 @@
 @import 'reply';
 @import 'comment';
 @import 'comment-note';
-@import 'loading-indicator';
 @import 'metadata';
 @import 'img-banner-preview';
 @import 'pagination-loader';
