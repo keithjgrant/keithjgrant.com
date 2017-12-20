@@ -1,6 +1,9 @@
 :root {
   box-sizing: border-box;
-  font-size: 1.2rem;
+
+  @media (min-width: 500px) {
+    font-size: 1.2rem;
+  }
 }
 
 *,

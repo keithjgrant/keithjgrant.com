@@ -1,11 +1,15 @@
 .bottom-container {
-  margin: 8rem -3rem 3rem;
-  padding: 1rem 0;
+  margin: 8rem calc(var(--article-inset, 1em) * -1) 3rem;
+  padding: 1rem 1rem;
   border: 1px solid var(--gray-9);
   border-width: 1px 0;
 
   & h3 {
     margin-top: 0;
+  }
+
+  @media (min-width: 700px) {
+    padding: 1rem 0;
   }
 }
 

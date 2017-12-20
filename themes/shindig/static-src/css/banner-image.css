@@ -1,7 +1,7 @@
 .banner-image {
-  width: calc(100% + 6rem);
+  width: calc(100% + var(--article-inset, 1em) * 2);
   max-width: initial;
   max-height: 40vh;
-  margin: 0 -3rem 1rem;
+  margin: 0 calc(var(--article-inset, 1em) * -1) 1rem;
   object-fit: cover;
 }

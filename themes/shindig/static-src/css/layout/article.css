@@ -1,17 +1,27 @@
 .l-article {
-  display: grid;
-  /* prettier-ignore */
-  grid-template-columns:
-    [full-start] minmax(1em, 1fr)
-    [main-start] minmax(1em, 80ch)
-    [main-end] minmax(1em, 1fr)
-    [full-end];
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   background-color: var(--white);
+
+  @media (min-width: 700px) {
+    display: grid;
+    /* prettier-ignore */
+    grid-template-columns:
+      [full-start] minmax(1em, 1fr)
+      [main-start] minmax(1em, 80ch)
+      [main-end] minmax(1em, 1fr)
+      [full-end];
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
 }
 
 .l-article__inner {
+  --article-inset: 1em;
   grid-column: main;
-  padding: 0 3em;
+  padding: 0 var(--article-inset);
+
+  @media (min-width: 700px) {
+    --article-inset: 3em;
+  }
 }
