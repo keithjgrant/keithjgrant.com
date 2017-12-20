@@ -1,4 +1,4 @@
-<div class="post-summary h-entry">
+<div class="post-summary h-entry" data-href="{{ .Permalink }}">
   <h2 class="post-summary__title p-name">
     <a class="u-url" href="{{ .Permalink }}">
       {{ .Title }}
@@ -8,7 +8,7 @@
   {{ partial "image-preview" . }}
   <div class="post-summary__body">
     <div class="p-summary">{{ .Summary }}</div>
-    <date class="post-date post-summary__date dt-published">{{ .Date.Format "02 Jan 2006" }}</date>
+    <date class="post-summary__date dt-published">{{ .Date.Format "02 Jan 2006" }}</date>
     <div class="post-summary__continue"><a href="{{ .Permalink }}">Continue reading...</a></div>
   </div>
 </div>

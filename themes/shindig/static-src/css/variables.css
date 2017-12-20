@@ -43,7 +43,6 @@
   --purple: #862254;
 
   --black: var(--blue-1);
-  /*--white: hsl(31, 30%, 97%);*/
   --white: #fff;
 
   --gray-1: hsl(211, 13%, 10%);
@@ -61,15 +60,4 @@ $container-wide: 62.5rem;
 
 $serif: Calendas Plus, Calluna, serif;
 $sans-serif: Glober, sans-serif;
-/*, Fira Sans Condensed, Poppins, Baloo, Helvetica,*/
 $monospace: Fira Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-
-/*
-Glober
-Baloo
-Poppins
-Fira Sans Condensed
-ITC Avant Garde Gothic
-Mariné Rounded
-Uni Neue
-*/
