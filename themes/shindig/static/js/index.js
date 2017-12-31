@@ -532,15 +532,13 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(?
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = selectTransition;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__transitions_zoomIn__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transitions_scrollRightTo__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transitions_scrollDownTo__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__transitions_irisIn__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__transitions_irisStagger__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__transitions_dropOut__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__transitions_noteZoom__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transitions_irisIn__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transitions_irisStagger__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__transitions_dropOut__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__transitions_noteZoom__ = __webpack_require__(13);
 
-
-
+// import scrollRightTo from './transitions/scrollRightTo';
+// import scrollDownTo from './transitions/scrollDownTo';
 
 
 
@@ -561,14 +559,14 @@ function selectTransition(toUrl) {
     case TO_POST:
       return __WEBPACK_IMPORTED_MODULE_0__transitions_zoomIn__["a" /* default */];
     case TO_HP:
-      return __WEBPACK_IMPORTED_MODULE_5__transitions_dropOut__["a" /* default */];
+      return __WEBPACK_IMPORTED_MODULE_3__transitions_dropOut__["a" /* default */];
     case TO_POST_LIST:
     case TO_TALK_LIST:
-      return __WEBPACK_IMPORTED_MODULE_4__transitions_irisStagger__["a" /* default */];
+      return __WEBPACK_IMPORTED_MODULE_2__transitions_irisStagger__["a" /* default */];
     case TO_LIST:
-      return __WEBPACK_IMPORTED_MODULE_3__transitions_irisIn__["a" /* default */];
+      return __WEBPACK_IMPORTED_MODULE_1__transitions_irisIn__["a" /* default */];
     case NOTE_ZOOM:
-      return __WEBPACK_IMPORTED_MODULE_6__transitions_noteZoom__["a" /* default */];
+      return __WEBPACK_IMPORTED_MODULE_4__transitions_noteZoom__["a" /* default */];
     case NONE: // TODO: distinguish b/t NONE & OTHER
     default:
       return null;
@@ -585,6 +583,12 @@ function getTransitionType(toUrl) {
   }
   if (isNoteUrl(toUrl)) {
     if (isNoteList(fromUrl)) {
+      return NOTE_ZOOM;
+    }
+    return OTHER;
+  }
+  if (isReplyUrl(toUrl) || isLikeUrl(toUrl)) {
+    if (isSocialList(fromUrl)) {
       return NOTE_ZOOM;
     }
     return OTHER;
@@ -614,6 +618,14 @@ function isNoteUrl(url) {
   return isSingle(url, 'notes');
 }
 
+function isReplyUrl(url) {
+  return isSingle(url, 'replies');
+}
+
+function isLikeUrl(url) {
+  return isSingle(url, 'likes');
+}
+
 function isSingle(url, basePath) {
   const parts = split(url);
   return parts[0] === basePath && parts.length > 1 && parts[1] !== 'page';
@@ -624,28 +636,40 @@ function isHomepage(url) {
 }
 
 function isList(url) {
-  return split(url).length === 1;
+  if (split(url).length === 1) {
+    return true;
+  }
+  if (split(url).length >= 2) {
+    return true;
+  }
+  return false;
 }
 
 function isPostList(url) {
+  return isListType(url, 'posts');
+}
+
+function isNoteList(url) {
+  return isListType(url, 'notes');
+}
+
+function isSocialList(url) {
+  return isListType(url, 'social');
+}
+
+function isTalkList(url) {
+  return isListType(url, 'talks');
+}
+
+function isListType(url, type) {
   const parts = split(url);
-  if (parts[0] !== 'posts') {
+  if (parts[0] !== type) {
     return false;
   }
   if (parts.length === 1 || parts[1] === 'page') {
     return true;
   }
   return false;
-}
-
-function isNoteList(url) {
-  const parts = split(url);
-  return parts[0] == 'notes' && parts.length == 1;
-}
-
-function isTalkList(url) {
-  const parts = split(url);
-  return parts[0] == 'talks' && parts.length == 1;
 }
 
 function split(url) {
@@ -756,13 +780,14 @@ function irisStagger(oldEl, newEl) {
   const newBg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["b" /* cloneBackground */])(newEl);
   const oldBg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["b" /* cloneBackground */])(oldEl);
   const heading = newEl.querySelector('.list-heading');
+  const scrollAmount = window.pageYOffset;
+  const headerHeight = 75;
   const tl = new TimelineLite({
     onComplete: () => {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldEl);
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(newBg);
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldBg);
       TweenLite.set(newEl, {clearProps: 'all'});
-      TweenLite.set(newEl.querySelectorAll('.post-summary'), {clearProps: 'all'});
     },
   });
   tl.set(newBg, {
@@ -796,11 +821,19 @@ function irisStagger(oldEl, newEl) {
     parent.insertBefore(newBg, newEl);
   });
   tl.set(oldEl.parentNode, {minHeight: '200vh'});
+
+  tl.set(oldEl, {top: scrollAmount * -1 + headerHeight});
+  tl.call(() => {
+    window.scrollTo(0, 0);
+  });
+
   tl.addLabel('start');
   tl.to(oldEl, 0.4, {opacity: 0}, 'start');
   tl.set(newEl, {opacity: 1}, 'start');
+  const posts = newEl.querySelectorAll('.post-summary');
+  const items = Array.prototype.slice.call(posts, 0, 6);
   tl.staggerFrom(
-    newEl.querySelectorAll('.post-summary'),
+    items,
     0.6,
     {
       scaleX: 0,
@@ -809,6 +842,7 @@ function irisStagger(oldEl, newEl) {
     0.1,
     'start'
   );
+  tl.set(items, {clearProps: 'all'});
   tl.addLabel('ready', 'start+=0.6');
   tl.to(newBg, 1.8, {opacity: 1}, 'start');
   tl.set(oldEl.parentNode, {clearProps: 'all'});
@@ -954,68 +988,8 @@ function findNotesOnScreen(container) {
 
 
 /***/ }),
-/* 14 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export default */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_dom__ = __webpack_require__(0);
-
-
-function scrollDownTo(oldEl, newEl) {
-  const height = document.documentElement.clientHeight;
-  const tl = new TimelineLite({
-    onComplete: () => {
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldEl);
-    },
-  });
-  tl.set(oldEl, {position: 'absolute', left: 0, right: 0});
-  tl.set(newEl, {position: 'relative'});
-  tl.set(oldEl.parentNode, {minHeight: '100vh'});
-  tl.addLabel('start');
-  tl.to(oldEl, 1.5, {y: height * -1, ease: Power2.easeInOut}, 'start');
-  tl.from(newEl, 1.5, {y: height, ease: Power2.easeInOut}, 'start');
-  tl.set(newEl, {position: 'static'});
-  tl.set(oldEl.parentNode, {minHeight: 'auto'});
-  tl.to(oldEl, 0.2, {opacity: 0});
-  tl.addLabel('ready');
-  tl.play();
-  return tl;
-}
-
-
-/***/ }),
-/* 15 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export default */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_dom__ = __webpack_require__(0);
-
-
-function scrollRightTo(oldEl, newEl) {
-  const width = document.documentElement.clientWidth;
-  const tl = new TimelineLite({
-    onComplete: () => {
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_dom__["a" /* removeNode */])(oldEl);
-    },
-  });
-  tl.set(oldEl, {position: 'absolute', left: 0, right: 0});
-  tl.set(newEl, {position: 'relative'});
-  tl.set(oldEl.parentNode, {minHeight: '100vh'});
-  tl.addLabel('start');
-  tl.to(oldEl, 1.5, {x: width * -1, ease: Power2.easeInOut}, 'start');
-  tl.from(newEl, 1.5, {x: width, ease: Power2.easeInOut}, 'start');
-  tl.set(newEl, {position: 'static'});
-  tl.set(oldEl.parentNode, {minHeight: 'auto'});
-  tl.to(oldEl, 0.2, {opacity: 0});
-  tl.addLabel('ready');
-  tl.play();
-  return tl;
-}
-
-
-/***/ }),
+/* 14 */,
+/* 15 */,
 /* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

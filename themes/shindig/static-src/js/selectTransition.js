@@ -1,6 +1,6 @@
 import zoomIn from './transitions/zoomIn';
-import scrollRightTo from './transitions/scrollRightTo';
-import scrollDownTo from './transitions/scrollDownTo';
+// import scrollRightTo from './transitions/scrollRightTo';
+// import scrollDownTo from './transitions/scrollDownTo';
 import irisIn from './transitions/irisIn';
 import irisStagger from './transitions/irisStagger';
 import dropOut from './transitions/dropOut';
@@ -49,6 +49,12 @@ function getTransitionType(toUrl) {
     }
     return OTHER;
   }
+  if (isReplyUrl(toUrl) || isLikeUrl(toUrl)) {
+    if (isSocialList(fromUrl)) {
+      return NOTE_ZOOM;
+    }
+    return OTHER;
+  }
   if (isHomepage(toUrl)) {
     return TO_HP;
   }
@@ -74,6 +80,14 @@ function isNoteUrl(url) {
   return isSingle(url, 'notes');
 }
 
+function isReplyUrl(url) {
+  return isSingle(url, 'replies');
+}
+
+function isLikeUrl(url) {
+  return isSingle(url, 'likes');
+}
+
 function isSingle(url, basePath) {
   const parts = split(url);
   return parts[0] === basePath && parts.length > 1 && parts[1] !== 'page';
@@ -84,28 +98,40 @@ function isHomepage(url) {
 }
 
 function isList(url) {
-  return split(url).length === 1;
+  if (split(url).length === 1) {
+    return true;
+  }
+  if (split(url).length >= 2) {
+    return true;
+  }
+  return false;
 }
 
 function isPostList(url) {
+  return isListType(url, 'posts');
+}
+
+function isNoteList(url) {
+  return isListType(url, 'notes');
+}
+
+function isSocialList(url) {
+  return isListType(url, 'social');
+}
+
+function isTalkList(url) {
+  return isListType(url, 'talks');
+}
+
+function isListType(url, type) {
   const parts = split(url);
-  if (parts[0] !== 'posts') {
+  if (parts[0] !== type) {
     return false;
   }
   if (parts.length === 1 || parts[1] === 'page') {
     return true;
   }
   return false;
-}
-
-function isNoteList(url) {
-  const parts = split(url);
-  return parts[0] == 'notes' && parts.length == 1;
-}
-
-function isTalkList(url) {
-  const parts = split(url);
-  return parts[0] == 'talks' && parts.length == 1;
 }
 
 function split(url) {

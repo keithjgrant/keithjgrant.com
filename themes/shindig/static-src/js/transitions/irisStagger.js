@@ -4,13 +4,14 @@ export default function irisStagger(oldEl, newEl) {
   const newBg = cloneBackground(newEl);
   const oldBg = cloneBackground(oldEl);
   const heading = newEl.querySelector('.list-heading');
+  const scrollAmount = window.pageYOffset;
+  const headerHeight = 75;
   const tl = new TimelineLite({
     onComplete: () => {
       removeNode(oldEl);
       removeNode(newBg);
       removeNode(oldBg);
       TweenLite.set(newEl, {clearProps: 'all'});
-      TweenLite.set(newEl.querySelectorAll('.post-summary'), {clearProps: 'all'});
     },
   });
   tl.set(newBg, {
@@ -44,11 +45,19 @@ export default function irisStagger(oldEl, newEl) {
     parent.insertBefore(newBg, newEl);
   });
   tl.set(oldEl.parentNode, {minHeight: '200vh'});
+
+  tl.set(oldEl, {top: scrollAmount * -1 + headerHeight});
+  tl.call(() => {
+    window.scrollTo(0, 0);
+  });
+
   tl.addLabel('start');
   tl.to(oldEl, 0.4, {opacity: 0}, 'start');
   tl.set(newEl, {opacity: 1}, 'start');
+  const posts = newEl.querySelectorAll('.post-summary');
+  const items = Array.prototype.slice.call(posts, 0, 6);
   tl.staggerFrom(
-    newEl.querySelectorAll('.post-summary'),
+    items,
     0.6,
     {
       scaleX: 0,
@@ -57,6 +66,7 @@ export default function irisStagger(oldEl, newEl) {
     0.1,
     'start'
   );
+  tl.set(items, {clearProps: 'all'});
   tl.addLabel('ready', 'start+=0.6');
   tl.to(newBg, 1.8, {opacity: 1}, 'start');
   tl.set(oldEl.parentNode, {clearProps: 'all'});

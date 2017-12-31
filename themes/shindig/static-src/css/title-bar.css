@@ -2,6 +2,7 @@
   display: inline-block;
   margin: 0;
   font-size: 1rem;
+  font-weight: normal;
   line-height: 1;
   white-space: nowrap;
   text-rendering: optimizeLegibility;
