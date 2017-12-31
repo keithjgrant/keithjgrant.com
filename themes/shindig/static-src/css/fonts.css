@@ -4,6 +4,7 @@
   src: url('/fonts/glober-regular.woff2') format('woff2'),
     url('/fonts/glober-regular.woff') format('woff'),
     url('/fonts/glober-regular.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
@@ -12,6 +13,7 @@
   src: url('/fonts/glober-xbold.woff2') format('woff2'),
     url('/fonts/glober-xbold.woff') format('woff'),
     url('/fonts/glober-xbold.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
@@ -22,6 +24,7 @@
     url('/fonts/calendas_plus-webfont.svg#calendas_plusregular') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 /* @font-face {
@@ -32,6 +35,7 @@
     url('/fonts/calendas_plus_bold-webfont.svg#calendas_plusbold') format('svg');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }*/
 
 @font-face {
@@ -42,4 +46,5 @@
     url('/fonts/calendas_plus_italic-webfont.svg#calendas_plusitalic') format('svg');
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
 }

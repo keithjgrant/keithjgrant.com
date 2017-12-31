@@ -18,15 +18,14 @@ body {
   color: var(--blue-1);
   background-color: var(--gray-1);
   line-height: 1.7;
-  /* fallback spacing TODO */
-  /* font-family: Times New Roman, serif;
-  letter-spacing: 0.033em;
-
-  &.fonts-loaded { */
   font-family: $serif;
   letter-spacing: 0.01em;
-  /* } */
 }
+
+/* .fonts-failed body {
+  font-family: Times New Roman, serif;
+  letter-spacing: 0.033em;
+} */
 
 img {
   max-width: 100%;

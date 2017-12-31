@@ -1,7 +1,9 @@
 import loadInteractions from './webmentions';
 import prism from './prism';
+// import fonts from './fonts';
 
 export function initFirstPage() {
+  // fonts();
   loadInteractions();
   prism.highlightAll();
 }
