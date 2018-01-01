@@ -1,4 +1,5 @@
 .latest-post {
+  display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 3;
