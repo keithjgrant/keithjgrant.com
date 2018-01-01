@@ -1,11 +1,10 @@
 import loadInteractions from './webmentions';
 import prism from './prism';
-// import fonts from './fonts';
 
 export function initFirstPage() {
-  // fonts();
   loadInteractions();
   prism.highlightAll();
+  loadGSAP();
 }
 
 export function initCurrentPage() {
@@ -27,4 +26,11 @@ function reportAnalyticsPageview() {
     ga('set', 'page', document.location.pathname);
     ga('send', 'pageview');
   }
+}
+
+function loadGSAP() {
+  const script = document.createElement('script');
+  script.src = '/js/timelinemax.bundle.js';
+  script.async = true;
+  document.head.appendChild(script);
 }

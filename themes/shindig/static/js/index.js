@@ -99,12 +99,11 @@ function cloneBackground(el) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__prism___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__prism__);
 
 
-// import fonts from './fonts';
 
 function initFirstPage() {
-  // fonts();
   __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__webmentions__["a" /* default */])();
   __WEBPACK_IMPORTED_MODULE_1__prism___default.a.highlightAll();
+  loadGSAP();
 }
 
 function initCurrentPage() {
@@ -126,6 +125,13 @@ function reportAnalyticsPageview() {
     ga('set', 'page', document.location.pathname);
     ga('send', 'pageview');
   }
+}
+
+function loadGSAP() {
+  const script = document.createElement('script');
+  script.src = '/js/timelinemax.bundle.js';
+  script.async = true;
+  document.head.appendChild(script);
 }
 
 
@@ -1077,6 +1083,7 @@ function fetchWebmentions(url, aliases) {
   });
   src += `&_=${Math.random()}`;
   script.src = src;
+  script.async = true;
   document.getElementsByTagName('head')[0].appendChild(script);
 }
 

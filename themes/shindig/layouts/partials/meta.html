@@ -5,11 +5,7 @@
 {{ with .Site.Params.contact }}<meta name="contact" content="{{ . }}">{{ end }}
 {{ .Hugo.Generator }}
 
-<style>
-svg {
-  height: 1em;
-}
-</style>
+{{ partial "critical-styles.html" }}
 <link rel="stylesheet" href="/css/style.css">
 
 {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
@@ -47,3 +43,5 @@ svg {
 <!-- <link rel="preload" href="/fonts/glober-regular.woff2"> -->
 
 <link rel="canonical" href="{{ .Permalink }}">
+<script type="text/javascript" src="/js/index.js" async></script>
+<!-- <script src="/js/timelinemax.bundle.js" defer></script> -->

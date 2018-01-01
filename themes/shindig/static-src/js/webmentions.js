@@ -16,6 +16,7 @@ export default function fetchWebmentions(url, aliases) {
   });
   src += `&_=${Math.random()}`;
   script.src = src;
+  script.async = true;
   document.getElementsByTagName('head')[0].appendChild(script);
 }
 
