@@ -1,5 +1,5 @@
 baseUrl = "https://keithjgrant.com"
 languageCode = "en-us"
 paginate = 20
-theme = "fury"
+theme = "shindig"
 title = "Keith J. Grant"
