@@ -10,7 +10,8 @@ export default function fetchWebmentions(url, aliases) {
   const targets = getUrlPermutations(url, aliases);
 
   var script = document.createElement('script');
-  var src = 'https://webmention.io/api/mentions?perPage=500&jsonp=parseWebmentions';
+  var src =
+    'https://webmention.io/api/mentions?perPage=500&jsonp=parseWebmentions';
   targets.forEach(function(targetUrl) {
     src += `&target[]=${encodeURIComponent(targetUrl)}`;
   });

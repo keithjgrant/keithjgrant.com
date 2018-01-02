@@ -113,10 +113,23 @@ function initCurrentPage() {
 }
 
 function cleanupPage(content) {
-  // remove 'comments' ID so new content w/ comments can be added to page
-  const comments = content.querySelector('#comments');
-  if (comments) {
-    comments.id = '';
+  const ids = [
+    'comments',
+    'comments-loader',
+    'like-count',
+    'likes',
+    'share-count',
+    'shares',
+    'reply-count',
+    'replies',
+  ];
+  ids.forEach(stripId);
+
+  function stripId(id) {
+    const element = content.querySelector('#' + id);
+    if (element) {
+      element.id = '';
+    }
   }
 }
 
@@ -1080,7 +1093,8 @@ function fetchWebmentions(url, aliases) {
   const targets = getUrlPermutations(url, aliases);
 
   var script = document.createElement('script');
-  var src = 'https://webmention.io/api/mentions?perPage=500&jsonp=parseWebmentions';
+  var src =
+    'https://webmention.io/api/mentions?perPage=500&jsonp=parseWebmentions';
   targets.forEach(function(targetUrl) {
     src += `&target[]=${encodeURIComponent(targetUrl)}`;
   });

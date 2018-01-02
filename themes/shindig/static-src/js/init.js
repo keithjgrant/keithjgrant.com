@@ -14,10 +14,23 @@ export function initCurrentPage() {
 }
 
 export function cleanupPage(content) {
-  // remove 'comments' ID so new content w/ comments can be added to page
-  const comments = content.querySelector('#comments');
-  if (comments) {
-    comments.id = '';
+  const ids = [
+    'comments',
+    'comments-loader',
+    'like-count',
+    'likes',
+    'share-count',
+    'shares',
+    'reply-count',
+    'replies',
+  ];
+  ids.forEach(stripId);
+
+  function stripId(id) {
+    const element = content.querySelector('#' + id);
+    if (element) {
+      element.id = '';
+    }
   }
 }
 

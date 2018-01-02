@@ -18,7 +18,7 @@
   {{ partial "post-interactions.html" . }}
 {{ end }}
 
-{{- if .Params.image -}}
+{{- if and .Params.image .Params.image.author -}}
   <p class="image-credit">Banner image by
     {{if .Params.image.authorUrl}}
       <a href="{{ .Params.image.authorUrl }}">{{ .Params.image.author }}</a>.
