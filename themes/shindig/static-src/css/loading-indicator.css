@@ -3,6 +3,7 @@
 }
 
 .loading-indicator::before {
+  position: absolute;
   content: '';
   display: inline-block;
   width: 1em;
@@ -18,6 +19,14 @@
   position: absolute;
   top: 0.4em;
   left: 1em;
+}
+
+.loading-indicator--standalone {
+  padding: 1em 0;
+
+  &::before {
+    position: static;
+  }
 }
 
 @keyframes pulse {

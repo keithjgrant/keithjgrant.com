@@ -39,6 +39,9 @@ async function advanceToUrl(url, clickedEl) {
     const effect = selectTransition(url);
     history.pushState({title: newContent.title}, '', url);
     document.title = newContent.title;
+    if (effect === 'NONE') {
+      return;
+    }
     if (effect) {
       cleanupPage(currentContent);
       currentEffect = effect(currentContent, newContent.container, clickedEl);

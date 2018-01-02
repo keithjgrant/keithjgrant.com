@@ -335,6 +335,9 @@ async function advanceToUrl(url, clickedEl) {
     const effect = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__selectTransition__["a" /* default */])(url);
     history.pushState({title: newContent.title}, '', url);
     document.title = newContent.title;
+    if (effect === 'NONE') {
+      return;
+    }
     if (effect) {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__init__["b" /* cleanupPage */])(currentContent);
       currentEffect = effect(currentContent, newContent.container, clickedEl);
@@ -575,7 +578,8 @@ function selectTransition(toUrl) {
       return __WEBPACK_IMPORTED_MODULE_1__transitions_irisIn__["a" /* default */];
     case NOTE_ZOOM:
       return __WEBPACK_IMPORTED_MODULE_4__transitions_noteZoom__["a" /* default */];
-    case NONE: // TODO: distinguish b/t NONE & OTHER
+    case NONE:
+      return 'NONE';
     default:
       return null;
   }

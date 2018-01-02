@@ -29,7 +29,8 @@ export default function selectTransition(toUrl) {
       return irisIn;
     case NOTE_ZOOM:
       return noteZoom;
-    case NONE: // TODO: distinguish b/t NONE & OTHER
+    case NONE:
+      return 'NONE';
     default:
       return null;
   }
