@@ -31,8 +31,8 @@
   }
 
   @media (min-width: 750px) and (min-height: 600px) {
+    padding: 0 2rem 0.4rem 50%;
     padding: 0 var(--right-margin) 0.4rem 50%;
     font-size: 2rem;
-    padding-top: 0;
   }
 }
