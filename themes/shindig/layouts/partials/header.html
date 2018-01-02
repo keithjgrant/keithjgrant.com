@@ -1,6 +1,6 @@
 {{ partial "svg.html" }}
-<header class="main-header h-card{{ if not (eq .URL "/") }} p-author{{ end }}">
-  <div class="h-card">
+<header class="main-header">
+  <div class="h-card {{ if not (eq .URL "/") }} p-author{{ end }}">
     <h1 class="title-bar">
       <!-- TODO <a class="p-name u-url" href="https://keithjgrant.com"> -->
       <a class="p-name u-url" href="/">
