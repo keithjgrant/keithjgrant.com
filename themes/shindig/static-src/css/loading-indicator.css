@@ -9,7 +9,7 @@
   height: 1em;
   margin-right: 1em;
   border-radius: 50%;
-  background-color: var(--blue-4);
+  background-color: $blue-4;
   vertical-align: -0.1em;
   animation: pulse 1s ease-in-out infinite;
 }
@@ -40,4 +40,3 @@
   text-align: center;
   box-shadow: 0 1px 2px hsla(311, 55%, 65%, 0.02);
 }
-

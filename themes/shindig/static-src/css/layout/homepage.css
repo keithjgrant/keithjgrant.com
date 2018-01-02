@@ -3,11 +3,11 @@
   justify-content: center;
   background-image: linear-gradient(
     to right,
-    var(--blue-1),
-    var(--blue-2) 30%,
-    var(--green-6)
+    $blue-1,
+    $blue-2 30%,
+    $green-6
   );
-  background-color: var(--green-2);
+  background-color: $green-2;
   min-height: calc(100vh - 4rem);
 
   @media (min-width: 800px) {

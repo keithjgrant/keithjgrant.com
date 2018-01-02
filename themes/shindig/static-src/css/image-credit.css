@@ -1,5 +1,5 @@
 .image-credit {
-  color: var(--gray-6);
+  color: $gray-6;
   font-family: $sans-serif;
   font-size: 0.8rem;
   text-align: right;
@@ -10,6 +10,6 @@
   }
 
   & > a:hover {
-    color: var(--gray-4);
+    color: $gray-4;
   }
 }

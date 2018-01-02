@@ -15,8 +15,8 @@
 body {
   min-height: 100vh;
   margin: 0;
-  color: var(--blue-1);
-  background-color: var(--gray-1);
+  color: $blue-1;
+  background-color: $gray-1;
   line-height: 1.7;
   font-family: $serif;
   letter-spacing: 0.01em;
@@ -29,7 +29,7 @@ img {
 h1,
 h2,
 h3 {
-  color: var(--blue-2);
+  color: $blue-2;
   font-family: $sans-serif;
   letter-spacing: -0.02em;
 
@@ -44,23 +44,23 @@ h1 {
 }
 
 a {
-  color: var(--blue-rich-5);
+  color: $blue-rich-5;
   font-weight: bold;
   transition: color 0.1s linear;
   text-decoration-skip: none;
 }
 
 a:visited {
-  color: var(--blue-5);
+  color: $blue-5;
   transition: color 0.1s linear;
 }
 
 a:hover {
-  color: var(--blue-rich-4);
+  color: $blue-rich-4;
 }
 
 a:active {
-  color: var(--red-4);
+  color: $red-4;
 }
 
 :matches(h1, h2, h3) a {
@@ -83,7 +83,7 @@ code {
 }
 
 pre > code {
-  color: var(--gray-8);
+  color: $gray-8;
   font-family: $monospace;
   font-size-adjust: 0.45;
   line-height: 1.5;
@@ -96,7 +96,7 @@ pre > code {
 }
 
 ::selection {
-  background-color: var(--red-6);
+  background-color: $red-6;
 }
 
 hr {
@@ -105,7 +105,7 @@ hr {
   height: 0.6rem;
   border: 0;
   border-radius: 50%;
-  background-color: var(--blue-rich-4);
+  background-color: $blue-rich-4;
 
   &::before,
   &::after {
@@ -120,12 +120,12 @@ hr {
 
   &::before {
     left: -1.4rem;
-    background-color: var(--blue-rich-5);
+    background-color: $blue-rich-5;
   }
 
   &::after {
     right: -1.4rem;
-    background-color: var(--blue-rich-3);
+    background-color: $blue-rich-3;
   }
 }
 

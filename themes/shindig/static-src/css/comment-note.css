@@ -22,7 +22,7 @@
 }
 
 .comment-author:any-link {
-  color: var(--blue-3);
+  color: $blue-3;
   font-size: 0.8rem;
   font-weight: bold;
   text-decoration: none;
@@ -35,7 +35,7 @@
 }
 
 .comment-timestamp:any-link {
-  color: var(--blue-5);
+  color: $blue-5;
   font-size: 0.8rem;
   font-weight: 100; /* TODO */
   text-decoration: none;
@@ -48,6 +48,6 @@
 }
 
 .comment-body {
-  color: var(--blue-4);
+  color: $blue-4;
   font-size: 0.8rem;
 }

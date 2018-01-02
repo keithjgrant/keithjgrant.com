@@ -26,7 +26,7 @@
     & .reply__author,
     & .reply__date {
       padding: 0.6rem 1.3rem 0.6rem 1rem;
-      color: var(--blue-rich-3);
+      color: $blue-rich-3;
       font-weight: normal;
       text-decoration: none;
       transition: all 0.2s ease-out;
@@ -37,7 +37,7 @@
       top: 0.6em;
       right: 1em;
       left: 0;
-      color: var(--gray-6);
+      color: $gray-6;
       font-size: 0.8rem;
       font-weight: normal;
       transform: translateY(1em);

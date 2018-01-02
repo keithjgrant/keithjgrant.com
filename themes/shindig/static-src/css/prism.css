@@ -29,7 +29,7 @@ pre[class*='language-'] {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  background: var(--gray-2);
+  background: $gray-2;
 }
 
 /* Inline code */
@@ -44,7 +44,7 @@ pre[class*='language-'] {
 .token.doctype,
 .token.cdata,
 .token.punctuation {
-  color: var(--gray-6);
+  color: $gray-6;
 }
 
 .namespace {
@@ -56,13 +56,13 @@ pre[class*='language-'] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: var(--yellow-5);
+  color: $yellow-5;
 }
 
 .token.boolean,
 .token.number,
 .token.variable {
-  color: var(--blue-5);
+  color: $blue-5;
 }
 
 .token.selector,
@@ -70,32 +70,32 @@ pre[class*='language-'] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: var(--blue-6);
+  color: $blue-6;
 }
 
 .token.string {
-  color: var(--yellow-sub-5);
+  color: $yellow-sub-5;
 }
 
 .token.operator,
 .token.entity,
 .token.url,
 .token.important {
-  color: var(--gray-5);
+  color: $gray-5;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.regex {
-  color: var(--red-sub-5);
+  color: $red-sub-5;
 }
 
 .token.function {
-  color: var(--blue-6);
+  color: $blue-6;
 }
 
 .token.keyword {
-  color: var(--blue-5);
+  color: $blue-5;
 }
 
 .token.bold {
@@ -112,33 +112,33 @@ pre[class*='language-'] {
 
 .token.pseudo-element,
 .token.keyword-this {
-  color: var(--red-5);
+  color: $red-5;
 }
 
 .token.keyword-try,
 .token.keyword-catch,
 .token.keyword-await {
-  color: var(--gray-5);
+  color: $gray-5;
 }
 
 .token.class-name {
-  color: var(--blue-6);
+  color: $blue-6;
 }
 
 code[class*='language-css'],
 pre[class*='language-css'] {
-  color: var(--blue-5);
+  color: $blue-5;
 
   & .token.function {
-    color: var(--red-sub-5);
+    color: $red-sub-5;
   }
 }
 
 code[class*='language-js'],
 pre[class*='language-js'] {
-  color: var(--blue-5);
+  color: $blue-5;
 
   & .token.keyword {
-    color: var(--gray-5);
+    color: $gray-5;
   }
 }

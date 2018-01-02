@@ -16,12 +16,12 @@
     border-width: 1px 1px 1px 0;
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
-    color: var(--blue-rich-6);
-    background-color: var(--blue-2);
+    color: $blue-rich-6;
+    background-color: $blue-2;
 
     &:hover,
     &:focus {
-      border-color: var(--blue-4);
+      border-color: $blue-4;
       text-decoration: none;
       outline: none;
     }

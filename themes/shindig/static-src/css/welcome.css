@@ -6,7 +6,7 @@
   padding: 3rem 2rem 3.4rem 40%;
   padding: 3rem var(--right-margin) 3.4rem 40%;
   border-radius: 50% / 1.6rem;
-  color: var(--blue-3);
+  color: $blue-3;
   background-repeat: no-repeat;
   background-size: auto 90vmin;
   background-color: white;
@@ -23,7 +23,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  box-shadow: 0 0 1em var(--blue-1);
+  box-shadow: 0 0 1em $blue-1;
 
   @media (min-width: 400px) {
     background-size: auto 80vmin;

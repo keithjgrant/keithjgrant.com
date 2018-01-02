@@ -26,7 +26,7 @@
 }
 
 .nav-main > li > a:hover {
-  color: var(--yellow-4);
+  color: $yellow-4;
 }
 
 .nav-main__label {
@@ -47,7 +47,7 @@
   content: "";
   width: 1em;
   height: 1em;
-  border: 1px solid var(--yellow-9);
+  border: 1px solid $yellow-9;
   border-radius: 50%;
   transform-origin: left center;
   transition: all 0.2s ease-out;

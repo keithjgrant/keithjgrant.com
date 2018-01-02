@@ -1,4 +1,4 @@
-$tab-border: var(--gray-7);
+$tab-border: $gray-7;
 
 .tabs {
   display: flex;
@@ -10,7 +10,7 @@ $tab-border: var(--gray-7);
     border: 1px solid $tab-border;
     border-top-right-radius: 1em;
     border-top-left-radius: 1em;
-    color: var(--blue-4);
+    color: $blue-4;
     background: transparent;
     font-size: 0.8rem;
     font-family: $sans-serif;
@@ -30,7 +30,7 @@ $tab-border: var(--gray-7);
 
     &.is-active,
     &:hover {
-      background-color: var(--white);
+      background-color: $white;
 
       & svg path {
         fill: currentColor;
@@ -38,15 +38,15 @@ $tab-border: var(--gray-7);
       }
 
       &.tabs__reply {
-        color: var(--blue-rich-4);
+        color: $blue-rich-4;
       }
 
       &.tabs__like {
-        color: var(--red-4);
+        color: $red-4;
       }
 
       &.tabs__repost {
-        color: var(--green-4);
+        color: $green-4;
       }
     }
   }
@@ -92,6 +92,6 @@ $tab-border: var(--gray-7);
   & .tab-pane__banner {
     margin: 0 -1rem 2rem;
     padding: 0.4rem 1rem;
-    background-color: var(--blue-9);
+    background-color: $blue-9;
   }
 }

@@ -3,9 +3,9 @@ $header-height: 3.6rem;
 .l-note {
   display: flex;
   min-height: calc(100vh - $header-height);
-  background-color: var(--blue-rich-2);
-  background-image: radial-gradient(var(--blue-rich-1) 10%, transparent),
-    linear-gradient(to right, var(--blue-rich-2), var(--blue-rich-3));
+  background-color: $blue-rich-2;
+  background-image: radial-gradient($blue-rich-1 10%, transparent),
+    linear-gradient(to right, $blue-rich-2, $blue-rich-3);
   align-items: start;
   justify-content: center;
 }
