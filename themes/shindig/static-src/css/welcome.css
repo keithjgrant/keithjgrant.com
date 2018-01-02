@@ -10,7 +10,7 @@
   background-repeat: no-repeat;
   background-size: auto 90vmin;
   background-color: white;
-  background-image: url('/images/owl_x.jpg');
+  background-image: url('/images/owl-tilted.jpg');
   background-position: 0% 50%;
   background-position: calc(50% - 20vw) 50%;
   font-family: $serif;
