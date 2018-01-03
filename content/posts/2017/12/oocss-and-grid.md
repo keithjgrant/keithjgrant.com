@@ -11,7 +11,7 @@ authorUrl = "https://unsplash.com/photos/9T346Ij4kGk"
 +++
 
 [OOCSS](https://github.com/stubbornella/oocss/wiki) was the first of the many CSS methodologies. Since it arrived on the scene, the industry has moved on to newer, more strongly prescriptive methodologies like SMACSS, BEM, and ITCSS. These newer approaches dominate the conventional wisdom today. But CSS grid is here now, and I find it presents some challenges to this wisdom. I think it’s time we give OOCSS a little attention again, because it has an important idea to offer in the world of CSS grid.
-<!-- more -->
+<!--more-->
 
 A major theme recently is an emphasis on modular design: a user interface broken up into small modules whose styles are encapsulated. Modules are nested one within another to construct the entire interface. This leads to markup that looks something like this:
 
