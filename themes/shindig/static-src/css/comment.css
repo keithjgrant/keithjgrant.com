@@ -1,5 +1,4 @@
 .comment {
-  display: grid;
   grid-gap: 0.2em 1.4em;
   grid-template-columns: 20ch auto;
   align-items: baseline;
@@ -11,4 +10,20 @@
 
 .comment__content {
   grid-column: 2;
+  padding-left: 3em;
+  word-wrap: break-word;
+
+  @media (min-width: 400px) {
+    padding-left: 6em;
+  }
+}
+
+@media (min-width: 650px) {
+  .comment {
+    display: grid;
+  }
+
+  .comment__content {
+    padding-left: 0;
+  }
 }

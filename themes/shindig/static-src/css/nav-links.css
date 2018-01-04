@@ -1,7 +1,7 @@
 .nav-links {
   display: flex;
   margin: 0;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.6rem;
   font-family: $sans-serif;
   list-style: none;
   justify-content: space-between;

@@ -11,7 +11,7 @@
 
   & > a:any-link {
     display: block;
-    padding: 0.6em 1.6em 0.6em 2rem;
+    padding: 0.6em 1.6em 0.6em 1rem;
     border: 1px solid transparent;
     border-width: 1px 1px 1px 0;
     border-top-right-radius: 2rem;
@@ -24,6 +24,10 @@
       border-color: $blue-4;
       text-decoration: none;
       outline: none;
+    }
+
+    @media (min-width: 700px) {
+      padding: 0.6em 1.6em 0.6em 2rem;
     }
   }
 
