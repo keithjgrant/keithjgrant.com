@@ -3,9 +3,7 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta name="theme-color" content="#1a3c4d">
 {{ with .Site.Params.contact }}<meta name="contact" content="{{ . }}">{{ end }}
-{{ .Hugo.Generator }}
 
-{{ partial "critical-styles.html" }}
 <link rel="stylesheet" href="/css/style.css">
 
 {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
@@ -50,3 +48,4 @@
 
 <link rel="canonical" href="{{ .Permalink }}">
 <script type="text/javascript" src="/js/index.js" async></script>
+{{ .Hugo.Generator }}
