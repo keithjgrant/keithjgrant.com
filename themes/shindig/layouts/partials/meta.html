@@ -24,7 +24,7 @@
 {{ if eq .URL "/" }}
   <meta name="og:title" content="Keith J. Grant">
   <meta name="twitter:description" content="JavaScript, CSS, UX, & the open web">
-  <link rel="alternate" type="application/atom+xml" title="{{.Title}}" href="https://keithjgrant.com/posts/index.xml">
+  {{ if .RSSLink }}<link rel="alternate" type="application/atom+xml" title="{{.Title}}" href="{{ .RSSLink }}">{{ end }}
 {{ else }}
   <meta name="og:title" content="{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}">
   <meta name="twitter:description" content="{{ substr (plainify .Summary) 0 200 }}">
