@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/style.css">
 
 {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
-<title>{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ if .Title }}{{ .Title }}{{else}}Keith J. Grant — Front-end web developer, author, and speaker{{ end }}{{ end }}</title>
+<title>{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ if .Title }}{{ .Title }}{{else}}{{ if eq .Section "notes" }}{{substr (plainify .Summary) 0 50 }}{{ else }}Keith J. Grant — Front-end web developer, author, and speaker{{end}}{{ end }}{{ end }}</title>
 
 <link rel="apple-touch-icon" href="/images/apple-icon-144.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
