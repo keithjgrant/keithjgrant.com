@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'Glober';
+  font-weight: bold;
+  src: url('https://keithjgrant.com/fonts/glober-xbold.woff2') format('woff2'),
+    url('https://keithjgrant.com/fonts/glober-xbold.woff') format('woff'),
+    url('https://keithjgrant.com/fonts/glober-xbold.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calendas Plus';
+  src: url('https://keithjgrant.com/fonts/calendas_plus-webfont.woff2')
+      format('woff2'),
+    url('https://keithjgrant.com/fonts/calendas_plus-webfont.woff')
+      format('woff'),
+    url('https://keithjgrant.com/fonts/calendas_plus-webfont.ttf')
+      format('truetype'),
+    url('https://keithjgrant.com/fonts/calendas_plus-webfont.svg#calendas_plusregular')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: Calendas Plus, Times New Roman, serif;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+h1,
+h2,
+h3 {
+  color: hsl(211, 65%, 18%);
+  font-family: Glober, Helvetica, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+h1 a,
+h2 a,
+h3 a {
+  color: inherit;
+  font: inherit;
+}
+
