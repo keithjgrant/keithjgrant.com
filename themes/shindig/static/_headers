@@ -1,5 +1,2 @@
 /fonts/*
-  Access-Control-Allow-Origin: https://codepen.io
-
-/css/codepen.css
-  Access-Control-Allow-Origin: https://codepen.io
+  Access-Control-Allow-Origin: https://*.codepen.io
