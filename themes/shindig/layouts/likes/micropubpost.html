@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  {{ partial "meta.html" . }}
+</head>
+<body>
+  {{ partial "header.html" . }}
+
+  {{ if or (eq .Section "posts") (eq .Section "") }}
+    <article class="l-article h-entry js-main">
+      <div class="l-article__inner">
+        {{ partial "post-full.html" .}}
+        {{ partial "recent-posts.html" . }}
+      </div>
+    </article>
+  {{ else }}
+    <article class="l-note h-entry js-main">
+      <div class="l-note__inner">
+        {{ partial "note-full.html" . }}
+      </div>
+    </article>
+  {{ end }}
+  {{ partial "footer.html" . }}
+</body>
+</html>
