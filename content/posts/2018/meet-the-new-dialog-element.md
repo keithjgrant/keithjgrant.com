@@ -26,7 +26,7 @@ The `open` attribute means that the dialog is visible. Without it, the dialog is
 
 <img src="/images/2018/native-dialog-basic.png" alt="Text in a box with a thick black outline" width="186" height="76"/>
 
-It’s absolutely positioned on the page, so it will appear in front of other content as you would expect, and is centered horizontally.
+It’s absolutely positioned on the page, so it will appear in front of other content as you would expect, and is centered horizontally. By default, it’s as wide as the contents within.
 
 ## Basic Operation
 
