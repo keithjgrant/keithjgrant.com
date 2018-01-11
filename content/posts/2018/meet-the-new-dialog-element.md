@@ -25,7 +25,7 @@ The `open` attribute means that the dialog is visible. Without it, the dialog is
 
 <img src="/images/2018/native-dialog-basic.png" alt="Text in a box with a thick black outline" width="186" height="76"/>
 
-It’s absolutely positioned on the page, so it will appear in front of other content as you would expect, centered horizontally on the page.
+It’s absolutely positioned on the page, so it will appear in front of other content as you would expect, and is centered horizontally.
 
 ## Opening and closing
 
@@ -61,7 +61,30 @@ This will not replace native behavior for browsers that have it.
 
 ## Styling
 
-Opening and closing a modal is nice, but it doesn’t look very professional yet. Adding styling is as simple as styling a div. Let’s add a little more markup to provide styling hooks. A common approach to dialog boxes is to break it up into a header, a body, and a footer:
+Opening and closing a modal is nice, but it doesn’t look very professional yet. Adding styling is as simple as styling any other element. The backdrop can be styled with the new `::backdrop` pseudo-class.
+
+```css
+dialog {
+  padding: 0;
+  border: 0;
+  border-radius: 0.6rem;
+  box-shadow: 0 0 1em black;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+```
+
+For older browsers, this pseudo-class selector will not work, however. To fix this, the polyfill adds a `.backdrop` element immediately following the dialog. You can target it with CSS like this:
+
+```css
+dialog + .backdrop {
+  background-color: rgba(0, 0, 0, 0);
+}
+```
+
+Let’s add a little more markup to provide styling hooks. A common approach to dialog boxes is to break it up into a header, a body, and a footer:
 
 ```html
 <dialog id="demo-modal">
