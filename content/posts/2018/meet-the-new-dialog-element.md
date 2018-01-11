@@ -64,7 +64,7 @@ This will not replace native behavior for browsers that have it.
 
 ## Styling
 
-Opening and closing a modal is nice, but it doesn’t look very professional yet. Adding styling is as simple as styling any other element. The backdrop can be styled with the new `::backdrop` pseudo-class.
+Opening and closing a modal is nice, but it doesn’t look very professional yet. Adding styling is as simple as styling any other element. The backdrop can be styled with the new `::backdrop` pseudo-element.
 
 ```css
 dialog {
@@ -80,7 +80,7 @@ dialog::backdrop {
 }
 ```
 
-For older browsers using the polyfill, this pseudo-class selector will not work, however. In its place, the polyfill adds a `.backdrop` element immediately following the dialog. You can target it with CSS like this:
+For older browsers using the polyfill, this pseudo-element selector will not work, however. In its place, the polyfill adds a `.backdrop` element immediately following the dialog. You can target it with CSS like this:
 
 ```css
 dialog + .backdrop {
