@@ -8,7 +8,7 @@
 <p class="post-date"><date class="dt-published">{{ dateFormat "02 Jan 2006" .Date.Local}}</date></p>
 
 {{ if .Params.image }}
-  <img class="banner-image"src="{{ .Params.image.url }}" alt="{{ .Params.image.alt }}">
+  <img class="banner-image"src="{{ .Params.image.url }}" alt="{{ .Params.image.alt }}"{{if .Params.image.align}}style="object-position: {{.Params.image.align}}"{{end}}>
 {{ end }}
 
 <main class="article show-embeds e-content">

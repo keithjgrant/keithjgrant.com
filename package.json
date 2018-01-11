@@ -7,8 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "hugo server",
-    "start:drafts": "hugo server -D",
+    "start": "hugo server -D",
+    "start:nodrafts": "hugo server",
     "next": "hugo server --theme shindig",
     "hugo": "hugo -d docs",
     "webpack:build": "webpack",

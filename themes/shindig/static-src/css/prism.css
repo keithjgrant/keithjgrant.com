@@ -142,3 +142,8 @@ pre[class*='language-js'] {
     color: $gray-5;
   }
 }
+
+/* fix collision with Comment module */
+.token.comment {
+  display: inline;
+}

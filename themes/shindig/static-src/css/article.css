@@ -19,6 +19,11 @@
   & > .cp_embed_wrapper {
     margin: 0 calc(var(--article-inset, 1em) * -1);
   }
+
+  & p > img:first-child:last-child {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .article__wide {

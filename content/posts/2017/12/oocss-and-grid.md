@@ -6,7 +6,7 @@ title = "OOCSS and Grid"
 url = "/images/2017/old-books-sm.jpg"
 alt = "A stack of old leather-bound books"
 author = "Chris Lawton"
-authorUrl = "https://unsplash.com/photos/9T346Ij4kGk"
+authorUrl = "https://unsplash.com/photos/9T346Ij4kGk?utm_medium=referral&utm_content=creditCopyText"
 
 +++
 
