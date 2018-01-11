@@ -11,6 +11,7 @@ image:
 ---
 
 [HTML 5.2](https://www.w3.org/TR/html52/) has introduced a new `<dialog>` element for native modal dialog boxes. At first glance, it seems fairly straightforward (and it is), but as I’ve been playing around with it, I’ve found it has some nice features that might be easy to miss.
+<!--more-->
 
 I’ve embedded a full working demo at the end of this article, but if you want to check it out as you read along, [you can see it here](https://codepen.io/keithjgrant/pen/eyMMVL).
 
