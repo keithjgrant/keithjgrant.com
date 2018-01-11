@@ -64,7 +64,7 @@ This will not replace native behavior for browsers that have it.
 
 ## Styling
 
-Opening and closing a modal is nice, but it doesn’t look very professional yet. Adding styling is as simple as styling any other element. The backdrop can be styled with the new `::backdrop` pseudo-element.
+Opening and closing a modal is nice, but it doesn’t look very professional at first. Adding styling is as simple as styling any other element. The backdrop can be styled with the new `::backdrop` pseudo-element.
 
 ```css
 dialog {
