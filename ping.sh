@@ -1,1 +1,1 @@
-curl --data "hub.mode=publish&hub.url[]=https%3A%2F%2Fkeithjgrant.com%2Findex.xml&hub.url[]=https%3A%2F%2Fkeithjgrant.com%2Fposts%2Findex.xml" http://keithjgrant.superfeedr.com
+curl https://keithjgrant.superfeedr.com -d hub.mode=publish -d hub.url=https://keithjgrant.com/ -d hub.url=https://keithjgrant.com/posts/ -d hub.url=https://keithjgrant.com/notes/
