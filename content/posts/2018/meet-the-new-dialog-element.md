@@ -1,14 +1,14 @@
----
-title: "Meet the New Dialog Element"
-date: 2018-01-11T09:22:12-05:00
++++
+title = "Meet the New Dialog Element"
+date = "2018-01-11T09:22:12-05:00"
 
-image:
-  url: "/images/2018/iron-mailbox.jpg"
-  alt: "Old iron mailbox with the word 'letters' emblazoned on front"
-  align: "50% 10%"
-  author: "Kirsty TG"
-  authorUrl: "https://unsplash.com/photos/xmY3qMBfzBs?utm_medium=referral&utm_content=creditCopyText"
----
+[image]
+  url = "/images/2018/iron-mailbox.jpg"
+  alt = "Old iron mailbox with the word 'letters' emblazoned on front"
+  align = "50% 10%"
+  author = "Kirsty TG"
+  authorUrl = "https://unsplash.com/photos/xmY3qMBfzBs?utm_medium=referral&utm_content=creditCopyText"
++++
 
 [HTML 5.2](https://www.w3.org/TR/html52/) has introduced a new `<dialog>` element for native modal dialog boxes. At first glance, it seems fairly straightforward (and it is), but as I’ve been playing around with it, I’ve found it has some nice features that might be easy to miss.
 <!--more-->
