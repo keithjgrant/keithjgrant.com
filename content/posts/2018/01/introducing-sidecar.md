@@ -1,7 +1,6 @@
 +++
 title = "Introducing Sidecar"
-date = "2018-01-18T15:43:41-05:00"
-draft = true
+date = "2018-01-19T08:46:41-05:00"
 
 +++
 
