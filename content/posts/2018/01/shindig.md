@@ -1,6 +1,7 @@
 +++
 date = "2018-01-02T14:38:37-05:00"
 title = "Shindig"
+aliases = ["/posts/2018/shindig/"]
 
 [image]
 url = "/images/2018/mal-kaylee-shindig.jpg"

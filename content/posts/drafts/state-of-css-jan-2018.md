@@ -6,15 +6,17 @@ draft = true
 image-ideas = "https://unsplash.com/search/photos/grid"
 +++
 
-## What’s safe
+## Safe to use now
 
 * Grid
+* sticky positioning
 
-## What’s cutting edge
+## Start experimenting
 
 * Custom properties
+* variable fonts (https://medium.com/clear-left-thinking/how-to-use-variable-fonts-in-the-real-world-e6d73065a604)
 
-## What’s around the corner
+## Keep an eye on it
 
 * Scroll snap points
 * place-* properties
