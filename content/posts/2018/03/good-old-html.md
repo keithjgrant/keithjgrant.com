@@ -1,5 +1,5 @@
 +++
-title = "Don’t forget about HTML"
+title = "Good Old HTML"
 date = 2018-03-01T10:56:47-05:00
 tags = ["html"]
 draft = true
@@ -82,12 +82,19 @@ An article is not a landmark, so it belongs in a landmark (probably the `<main>`
 
 ### Section
 
-If your content has multiple sections, you can use a `<section>` to contain each of these. You shouldn’t have one lone `<section>` on a page. An article may consist of multiple sections.
+If your content has multiple sections, you can use a `<section>` to contain each of these. You shouldn’t have one lone `<section>` on a page. A good rule of thumb is this: if the section could be an item in a table of contents, it might make sense as a `<section>`. An article, for instance, may consist of multiple sections.
 
 Like an article, each section should have a heading. This should be clearly called out with an `aria-label` or `aria-labelled-by` attribute on the section tag:
 
 ```html
-<section aria-label="">
+<section aria-label="Some fancy new thing">
+  <h2>Some fancy new thing</h2>
+  …
+</section>
+<section aria-labelled-by="heading-c">
+  <h2 id="heading-c">Another fancy thing</h2>
+  …
+</section>
 ```
 
 A section is not a landmark. It belongs in a landmark (probably the `<main>`).
