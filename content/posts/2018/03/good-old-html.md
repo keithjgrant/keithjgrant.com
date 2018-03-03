@@ -100,6 +100,8 @@ Like an article, each section should have a heading. This should be clearly call
 
 A section is not a landmark. It belongs in a landmark (probably the `<main>`).
 
+Hopefully, this gives you a better idea of how some of these "bigger" HTML5 elements work. Next time, we’ll look at an element that maybe you are less familiar with.
+
 ## References
 
 * [ARIA landmarks example](https://www.w3.org/TR/wai-aria-practices/examples/landmarks/HTML5.html)
