@@ -36,7 +36,6 @@ Several of these elements define *landmarks* on the page. Landmarks are an acces
 * `<section>` — as long as it has a title (`aria-labelled-by`, `aria-label`, or `title` attribute)
 * `<header>` — if it not within one of the other landmark sections above
 * `<footer>` — if it not within one of the other landmark sections above
-* `<form>`
 
 The use of landmarks makes it easier for screen reader users to find their way around the page. These don’t need to be the very top level of your DOM, but they should be near the the top. Landmarks should not be nested within one another, but you can group them using `<div>`s if necessary for your layout. *All content* on your page should be inside a landmark. The most important landmarks are `<main>` and `<nav>`.
 
@@ -45,6 +44,8 @@ Before HTML5, you had to use the `role` attribute to define landmarks. For insta
 {{< alert >}}
 When HTML5 was new, many tutorials recommended including the `role` on these elements (`<main role="main">`) since screen readers hadn’t yet caught up with the new standard. This doesn’t seem to be necessary anymore, but please correct me if I’m wrong about this. The current W3C specification explicitly recommends you [don’t add the role attribute](https://www.w3.org/TR/html52/dom.html#do-not-set) for these elements.
 {{< /alert >}}
+
+A `<form>` also defines a landmark, but it can be nested inside the other landmarks listed above.
 
 ## Headers and Footers
 
