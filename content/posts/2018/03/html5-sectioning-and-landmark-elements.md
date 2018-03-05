@@ -37,8 +37,8 @@ Several of these elements define *landmarks* on the page. Landmarks are an acces
 * `<nav>`
 * `<aside>`
 * `<section>` — only if it has a title (`aria-labelled-by`, `aria-label`, or `title` attribute)
-* `<header>` — if it not within one of the other landmark sections above
-* `<footer>` — if it not within one of the other landmark sections above
+* `<header>` — only if it’s not within one of the other landmark sections listed above
+* `<footer>` — only if it’s not within one of the other landmark sections listed above
 
 The use of landmarks makes it easier for <abbr title="assistive technology">AT</abbr> users to find their way around the page. These don’t need to be the very top level of your DOM, but they should be near the the top. Your top-level landmarks should not be nested within one another, but you can group them using `<div>`s if necessary for your layout. *All content* on your page should be inside a landmark. The most important landmarks are `<main>` and `<nav>`.
 
