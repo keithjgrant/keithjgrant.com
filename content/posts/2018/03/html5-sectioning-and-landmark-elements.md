@@ -11,15 +11,6 @@ tags = ["html"]
   authorUrl = "https://unsplash.com/photos/CIuakYIjadc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
 +++
 
-<!--
-https://www.w3.org/TR/html53/interactive-elements.html#the-details-element
-https://codepen.io/keithjgrant/pen/eVxXQd
-https://twitter.com/danielsdeboer/status/965766749026209792
-
-landmarks:
-https://www.w3.org/TR/wai-aria-practices/examples/landmarks/HTML5.html
--->
-
 A little while ago, I wrote about the [`<dialog>` element](/posts/2018/meet-the-new-dialog-element/). But there are plenty of interesting HTML elements that have been around longer, since HTML5 was first introduced, so I’ve decided to expand it into a series.
 
 Every now and then, I stumble across an element I haven’t heard of before. Some are interactive, and provide a surprising amount of functionality with little to no JavaScript. Others provide helpful semantic meaning and a welcome alternative to “div soup” in complex pages.
