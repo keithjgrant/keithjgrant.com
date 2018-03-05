@@ -54,7 +54,7 @@ A `<form>` also defines a landmark in most browser/AT combinations, but it can b
 
 Your page likely has a header and footer. That’s what `<header>` and `<footer>` are for. When used near the top-level of your DOM, outside any landmark elements, they denote landmarks for the page.
 
-However, these elements aren’t restricted only to use at a high level. If you have multiple `<section>`s on the page, for instance, each can have its own `<header>` and/or `<footer>`. In this case, it won’t function as a landmark, but it does provide semantic meaning in context. For example:
+However, these elements aren’t restricted only to use at a high level. If you have an `<article>`s on the page, for instance, it can have its own `<header>` and/or `<footer>`. In this case, it won’t function as a landmark, but it does provide semantic meaning in context. For example:
 
 ```html
 <article>
