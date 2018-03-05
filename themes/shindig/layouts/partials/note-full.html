@@ -1,5 +1,5 @@
 <div class="note-highlight">
-  <div class="note-highlight__body">
+  <article class="note-highlight__body">
     {{ partial "in-reply-to" . }}
     {{ partial "repost-of" . }}
     {{ partial "like-of" . }}
@@ -13,10 +13,10 @@
       <a href="https://brid.gy/publish/twitter"></a>
       <a href="https://fed.brid.gy/"></a>
     </main>
-  </div>
-  <div class="note-highlight__footer">
+  </article>
+  <aside class="note-highlight__footer">
     {{ if not (eq .Section "likes") }}
       {{ partial "note-interactions.html" . }}
     {{ end }}
-  </div>
+  </aside>
 </div>

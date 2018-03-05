@@ -4,5 +4,5 @@
   {{ end }}
 {{ end }}
 {{ if .Params.image }}
-  <img class="img-banner-preview" src="{{ .Params.image.url }}" alt="{{ .Params.image.alt }}">
+  <img class="img-banner-preview" src="{{ .Params.image.url }}" alt="{{ .Params.image.alt }}"{{if .Params.image.align}} style="object-position: {{.Params.image.align}}"{{end}}>
 {{ end }}

@@ -2,5 +2,8 @@
   padding: 1em;
   border-left: 3px solid $blue-5;
   background-color: $blue-9;
-  font-size: 0.8rem;
+
+  @media (min-width: 500px) {
+    font-size: 0.8rem;
+  }
 }

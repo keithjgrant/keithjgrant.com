@@ -6,7 +6,7 @@
 <body class="h-feed">
   {{ partial "header.html" . }}
 
-  <div class="list-bg js-main">
+  <main class="list-bg js-main">
     <h1 class="list-heading">{{ .Title }}</h1>
     <div class="l-notes-list">
       {{ $paginator := .Paginate (where .Site.Pages "Section" "in" (slice "replies" "likes")) }}
@@ -26,7 +26,7 @@
         </div>
       {{ end }}
     </div>
-  </div>
+  </main>
 
   {{ partial "footer.html" }}
 </body>

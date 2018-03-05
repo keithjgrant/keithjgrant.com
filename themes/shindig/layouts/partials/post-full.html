@@ -1,19 +1,21 @@
-<h1 class="main-title p-name"><a class="u-url" href="{{ .Permalink }}">
-  {{ .Title }}
-</a></h1>
+<article>
+  <h1 class="main-title p-name"><a class="u-url" href="{{ .Permalink }}">
+    {{ .Title }}
+  </a></h1>
 
-{{ partial "in-reply-to" . }}
-{{ partial "repost-of" . }}
-{{ partial "like-of" . }}
-<p class="post-date"><date class="dt-published">{{ dateFormat "02 Jan 2006" .Date.Local}}</date></p>
+  {{ partial "in-reply-to" . }}
+  {{ partial "repost-of" . }}
+  {{ partial "like-of" . }}
+  <p class="post-date"><date class="dt-published">{{ dateFormat "02 Jan 2006" .Date.Local}}</date></p>
 
-{{ if .Params.image }}
-  <img class="banner-image"src="{{ .Params.image.url }}" alt="{{ .Params.image.alt }}"{{if .Params.image.align}}style="object-position: {{.Params.image.align}}"{{end}}>
-{{ end }}
+  {{ if .Params.image }}
+    <img class="banner-image"src="{{ .Params.image.url }}" alt="{{ .Params.image.alt }}"{{if .Params.image.align}} style="object-position: {{.Params.image.align}}"{{end}}>
+  {{ end }}
 
-<main class="article show-embeds e-content">
-  {{ .Content }}
-</main>
+  <div class="article show-embeds e-content">
+    {{ .Content }}
+  </div>
+</article>
 {{ if not (eq .Section "likes") }}
   {{ partial "post-interactions.html" . }}
 {{ end }}
