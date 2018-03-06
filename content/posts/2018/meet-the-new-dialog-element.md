@@ -138,3 +138,11 @@ I’ve worked a lot of stuff into the demo below. Play around with and see what 
 
 <p data-height="300" data-theme-id="31665" data-slug-hash="eyMMVL" data-default-tab="result" data-user="keithjgrant" data-embed-version="2" data-pen-title="&lt;dialog&gt;" class="codepen">See the Pen <a href="https://codepen.io/keithjgrant/pen/eyMMVL/">&lt;dialog&gt;</a> by Keith J. Grant (<a href="https://codepen.io/keithjgrant">@keithjgrant</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+{{< alert >}}
+This post is part of a series exploring HTML5 elements:
+
+1. Meet the New Dialog Element
+2. [HTML5 Sectioning Elements and Landmarks](/posts/2018/03/html5-sectioning-and-landmark-elements)
+3. *coming soon*
+{{< /alert >}}
