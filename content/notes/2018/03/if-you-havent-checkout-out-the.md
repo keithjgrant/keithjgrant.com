@@ -4,6 +4,8 @@ date: '2018-03-23T18:50:08.106Z'
 title: ''
 slug: if-you-havent-checkout-out-the
 category: notes
+mf-in-reply-to:
+ - https://twitter.com/anildash/status/977232814512005121
 ---
 If you haven’t checkout out the “IndieWeb,” you should. I am in fact replying to this tweet using two open web standards backed by W3C specifications:
 
