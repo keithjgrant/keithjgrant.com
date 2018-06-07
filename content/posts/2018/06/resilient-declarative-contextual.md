@@ -5,7 +5,10 @@ tags: ["css", "css-thinking"]
 draft: true
 ---
 
-Working with CSS requires a different type of mindset than many developers are familiar with. If you come from the world of JavaScript, CSS can be frustrating. This is especially true if you come from the world of a non-web-based language like Java or Python.
+Working with CSS requires a different type of mindset than many developers are familiar with. If you come from the world of JavaScript, or any of the usual programming languages like Java or Python, CSS can be frustrating.
+
+/*  I'm not sure that this is especially true for Javas or Python. There is nothing about JS that makes it easier to understand CSS. */
+
 <!--more-->
 
 I’ve spent a lot of time thinking about what defines a CSS mindset. Some people “get” it, and other don’t. It’s always felt to me that if I could put my finger on that, maybe CSS would make more sense to those who have struggled with it. One piece of my motivation in writing [CSS in Depth](https://www.manning.com/books/css-in-depth) was to try to articulate some of those things.
@@ -17,6 +20,8 @@ Today I want to take a different tack; I want to look at three key characteristi
 If you were to randomly delete a chunk of code out of a JavaScript file, the app or page using it would almost certainly come crashing to a halt and much of the script (if not the page as a whole) would become useless. If you do the same thing to CSS, you might not even notice. Almost everything apart from that specific section of code will continue to work as intended.
 
 We call this *resilience*. HTML and CSS were specifically designed to be fault-tolerant. If there’s a problem, the browser won’t throw an error; instead, it will ignore that part of the code and keep on going.
+
+/* All true and a great point to make. However someone coming from "normal" programming would probably freak out at the idea that a language doesn't throw! How the heck are you supposed to find and fix bugs? Programmers completely depend on compiler, interpreter and runtime errors to tell them where to go fix the problems in their code. A language that doesn't error or throw is extremely disconcerting. I would address this, concede that it does take some getting used (to say the least), and offer a few ways CSS devs use to mitigate: editor hints, linters, and devtools for ex. */
 
 But the resilience of CSS isn’t only a mechanism for overcoming network errors or typos: it’s woven into the fabric of the language itself. You can safely use features of the language that aren’t supported in all browsers. It’s what makes progressive enhancement possible.
 
@@ -59,6 +64,8 @@ If you want to stop these things from happening, you can. You could cap the cont
 Some of the newer features in CSS do even more. Flexbox and Grid are prime examples of this. With just a few declarations, you can build a grid layout that is extremely flexible and “just works”. You don’t have to worry about countless edge cases. You say, effectively “put these boxes in columns of about 400px wide” and it will do it for you. It takes about three lines of code.
 
 If you were to do this imperatively, you would need to deal with all sorts of odd scenarios. What if there’s an extremely long word in one of the boxes? What if the viewport is very narrow? What if it’s very wide? What if one box has a ton of content and another contains just a few words? But chances are, in CSS, you don’t need to think about any of these things. All the hard thought for this has already gone into the spec, and the browser takes care of it for you. This is the power of a declarative language.
+
+/* One thing that bothers me a bit about this section is that it doesn't address the tradeoffs that this declarative system of constraints entails: that some layouts are super easy if you use CSS right, but some layouts are just not available to you. Take masonry grids for example. CSS grid is awesome but it doesn't do everything. And CSS, by its nature can't do every possible layout you can imagine. If you do CSS the "right way", you have to accept that part of the game is to accept that the language itself is a constraint. I think it's important to bring this up because "normal" procedural computer languages have few such limitations. There is very little you can't do if you're willing to throw some CPU power and RAM at it. I think most veteran "normal" developers have had to deal at some point with difficulties of declarative languages and how they can be limiting. */
 
 ## CSS is contextual
 
