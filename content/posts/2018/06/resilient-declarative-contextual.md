@@ -14,11 +14,11 @@ Today I want to take a different tack; I want to look at three key characteristi
 
 ## CSS is resilient
 
-If you were to randomly delete a chunk of code out of a JavaScript file, the app or page using it would almost certainly come crashing to a halt and the rest of the script (if not the page as a whole) would become useless. If you do the same thing to CSS, you might not even notice. Almost everything apart from that specific section of code will continue to work as intended.
+If you were to randomly delete a chunk of code out of a JavaScript file, the app or page using it would almost certainly come crashing to a halt and much of the script (if not the page as a whole) would become useless. If you do the same thing to CSS, you might not even notice. Almost everything apart from that specific section of code will continue to work as intended.
 
 We call this *resilience*. HTML and CSS were specifically designed to be fault-tolerant. If there’s a problem, the browser won’t throw an error; instead, it will ignore that part of the code and keep on going.
 
-But the resilience of CSS isn’t only a mechanism for overcoming network errors: it’s woven into the fabric of the language itself. You can safely use features of the language that aren’t supported in all browsers. It’s what makes progressive enhancement possible.
+But the resilience of CSS isn’t only a mechanism for overcoming network errors or typos: it’s woven into the fabric of the language itself. You can safely use features of the language that aren’t supported in all browsers. It’s what makes progressive enhancement possible.
 
 Consider this example of a grid layout. It works in browsers that support grid, and it works in browsers that don’t support grid. It will be slightly imperfect in those that don’t support grid (the exact sizes of the items will probably vary), but it will still layout the page in roughly the same way:
 
@@ -64,11 +64,23 @@ If you were to do this imperatively, you would need to deal with all sorts of od
 
 In the React-era, we have embraced the extremely useful approach of modular, component-based development. CSS best-practices do this as well, with BEM and SMACSS and CSS-in-JS. I don’t want to belittle this, because this is an essential way of thinking when building large-scale applications. But I think it’s equally important to acknowledge that CSS is not 100% modular, nor should it be.
 
-There are two reasons for this. First, and most obvious, is that your app should have some global styles. Nearly always you will want to set a default typeface and font size at the page level. These values will then be inherited by all descendant elements that don’t explicitly override them. You will also want certain aspects of your design to apply repeatedly throughout the page, such as theme colors, border radii, box shadows, and common margin sizes.
+There are two reasons for this. First, and most obvious, is that your app should have some global styles. You will almost always want to set a default typeface and font size at the page level. These values will then be inherited by all descendant elements that don’t explicitly override them. You will also want certain aspects of your design to apply repeatedly throughout the page, such as theme colors, border radii, box shadows, and common margin sizes. More localized styles on the page will then assume these global styles are in place.
 
-Second, and more subtle, is the way CSS and your styling decisions are informed by the surrounding context of the page. This can be due to the technicalities of how CSS works. For example, absolute positioning is made relative to the nearest positioned ancestor; applying `position: absolute; top: 10px` means different things depending on which ancestor, if any, has `position: relative` (or absolute, fixed, etc.) applied.
+Second, and more subtle, is the way CSS and your styling decisions are informed by the surrounding context of the page. Consider applying the following CSS to an element:
 
-But this is also due in part to the way design works. If an engineer designs a bridge, you can’t just look at the design and say, “this is all good except this one beam here; go ahead and take that out”. Removing that beam has ramifications on the structural integrity of the whole thing. Similarly, changing one part of a design can have ramifications on how other items on the screen are perceived.
+```css
+.the-thing {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+```
+
+What will this code do? Without knowledge of where the element is in the DOM and what styles are applied to the rest of the page, there is no way to know. Absolute positioning is made relative to the nearest positioned ancestor; applying it means different things depending on which ancestor, if any, has `position: relative` (or absolute, fixed, etc.) applied.
+
+Furthermore, how you can (or cannot) stack one element in front of another is going to be highly dependent on where the two are positioned in the DOM.  Shuffling items around in the DOM can cause drastic effects on the way items fit together and stack. This is why stacking contexts are a vital (and often complicated) topic.
+
+But the contextual nature of CSS is also due in part to the way design works. If an engineer designs a bridge, you can’t just look at the blueprint and say, “this is all good except this one beam here; go ahead and take that out”. Removing that beam has ramifications on the structural integrity of the whole thing. Similarly, changing one part of a design can have ramifications on how other items on the screen are perceived.
 
 If you make the heading in a tile bigger, for instance, it becomes more prominent to the user and therefore makes other items on the screen seem less important. The restrictions aren’t about physics in this case, but there are subtle rules of “soft science” that impact human perception. Parts of the page render in a physical space on screen, and the realities of the physical world (and how we perceive it) are important to be aware of.
 
