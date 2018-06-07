@@ -34,3 +34,8 @@ CSS Common Core
 * 8 + 5 = ?
 * step back, bigger picture
 * https://atomiks.github.io/30-seconds-of-css/
+
+1. Debugging: always consider the context. DevTools is *always* the first stop. Figure out which properties need to change on which elements; then which declarations/selectors to enact that change.
+2. Spacing elements in container?
+3. V centering. break the problem down into component parts?
+4. Don't set height.
