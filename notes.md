@@ -25,3 +25,12 @@ Big long list of HTML5 elements: http://www.html5accessibility.com/html5elements
 CSS can do that?
 * fade in/out using visibility
 * slide in/out sidebar
+
+Setting up Micropub on a static site
+
+---
+
+CSS Common Core
+* 8 + 5 = ?
+* step back, bigger picture
+* https://atomiks.github.io/30-seconds-of-css/

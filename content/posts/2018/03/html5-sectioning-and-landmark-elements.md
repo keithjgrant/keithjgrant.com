@@ -17,14 +17,6 @@ Every now and then, I stumble across an element I haven’t heard of before. Som
 
 For the next few blog posts, I’m going to explore some aspects of HTML5 that maybe haven’t received as much attention as they deserve.
 
-{{< alert >}}
-This post is part of a series exploring HTML5 elements:
-
-1. [Meet the New Dialog Element](/posts/2018/meet-the-new-dialog-element/)
-2. HTML5 Sectioning Elements and Landmarks
-3. *coming soon*
-{{< /alert >}}
-
 As a warm up, I’ll look at some elements from HTML5 that most web developers probably are somewhat familiar with: `<main>`, `<nav>`, `<article>`, `<section>`, `<aside>`, and other structural, semantic elements. Even if you already use these elements, you might just learn a few new things along the way (I know I did as I researched this).
 
 ## Landmarks
