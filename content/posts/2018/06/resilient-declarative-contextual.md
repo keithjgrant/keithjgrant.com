@@ -40,7 +40,7 @@ This concept of “fallback” behavior is integral to using CSS, but it is a fo
 
 ## CSS is declarative
 
-In JavaScript, you give specific, step-by-step instructions to make something happen. In CSS, you tell the browser what you want to have happen, and it works out the how. This is extremely important to understand. If you get it right, CSS will [do all the hard work for you](https://adactio.com/journal/13831)! And if you get it wrong, you’ll be fighting against the grain of the language and you will be frustrated at every turn.
+In JavaScript, you give specific, step-by-step instructions how to make something happen. In CSS, you tell the browser what you want to have happen, and it works out the how. This is extremely important to understand. If you get it right, CSS will [do all the hard work for you](https://adactio.com/journal/13831)! And if you get it wrong, you’ll be fighting against the grain of the language and you will be frustrated at every turn.
 
 Writing CSS is effectively setting up a system of constraints. You don’t tell the browser where to put every single element on the page; you tell it how much space to put between them and let it sort out where they belong. You don’t tell it (or at least shouldn’t tell it) how tall to make a container; you let it figure that out at render time when it knows the contents of the container, which other styles are applied, and how much width is available in the viewport.
 
@@ -56,7 +56,7 @@ If you want to stop these things from happening, you can. You could cap the cont
 
 ### Griddy goodness
 
-Some of the newer features in CSS do even more. Flexbox and Grid are prime examples of this. With just a few declarations, you can build a grid layout that is extremely flexible and “just works”. You don’t have to worry about countless edge cases. You say, effectively “put these boxes in columns of about 400px wide” and it will do it for you. It takes about three lines of code, counting the selector.
+Some of the newer features in CSS do even more. Flexbox and Grid are prime examples of this. With just a few declarations, you can build a grid layout that is extremely flexible and “just works”. You don’t have to worry about countless edge cases. You say, effectively “put these boxes in columns of about 400px wide” and it will do it for you. It takes about three lines of code.
 
 If you were to do this imperatively, you would need to deal with all sorts of odd scenarios. What if there’s an extremely long word in one of the boxes? What if the viewport is very narrow? What if it’s very wide? What if one box has a ton of content and another contains just a few words? But chances are, in CSS, you don’t need to think about any of these things. All the hard thought for this has already gone into the spec, and the browser takes care of it for you. This is the power of a declarative language.
 
@@ -84,8 +84,8 @@ But the contextual nature of CSS is also due in part to the way design works. If
 
 If you make the heading in a tile bigger, for instance, it becomes more prominent to the user and therefore makes other items on the screen seem less important. The restrictions aren’t about physics in this case, but there are subtle rules of “soft science” that impact human perception. Parts of the page render in a physical space on screen, and the realities of the physical world (and how we perceive it) are important to be aware of.
 
-We like to architect software using [principles of modularity and encapsulation](https://freecontent.manning.com/modular-css/). This makes sense in the world of code, because code is complicated and this breaks the problem up into manageable sizes. But we should also be aware that it isn’t always perfect. In CSS, we can never completely forget what’s going on outside a given module.
+We like to architect software using [principles of modularity and encapsulation](https://freecontent.manning.com/modular-css/). This makes sense in the world of code, because code is complicated and this breaks the problem up into manageable sizes. But we should also be aware that it isn’t always perfect. In CSS, we can never completely disregard what’s going on outside a given module.
 
 ## Summary
 
-These nuances make CSS different than conventional programming languages. These differences may feel foreign, but it’s these differences that make CSS so powerful. And I think developers who have embraced these things, and internalized them, tend to be far more proficient in CSS.
+These three aspects make CSS different than conventional programming languages. These differences may feel foreign, but it’s these differences that make CSS so powerful. And it’s my suspicion that developers who embrace these things, and have fully internalized them, tend to be far more proficient in CSS.
