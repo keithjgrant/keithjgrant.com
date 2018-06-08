@@ -1,9 +1,15 @@
----
-title: "Resilient, Declarative, Contextual"
-date: 2018-06-08T09:39:05-04:00
-tags: ["css", "css-thinking"]
-draft: true
----
++++
+title = "Resilient, Declarative, Contextual"
+date = 2018-06-08T09:39:05-04:00
+tags = ["css", "css-thinking"]
+
+[image]
+  url = "/images/2018/standout-citrus.jpg"
+  alt = "A bunch of lemon slices. One has bright pink flesh intead of yellow like the rest."
+  align = "50% 60%"
+  author = "rawpixel"
+  authorUrl = "https://www.pexels.com/photo/sliced-of-citrus-lemons-997725/"
++++
 
 I’ve spent a lot of time thinking about what defines a CSS mindset. Some people seem “get” it, and other don’t. It’s always felt to me that if I could put my finger on that, maybe CSS would make more sense to those who have struggled with it. One piece of my motivation in writing [CSS in Depth](https://www.manning.com/books/css-in-depth) was to try to articulate some of those things.
 <!--more-->
