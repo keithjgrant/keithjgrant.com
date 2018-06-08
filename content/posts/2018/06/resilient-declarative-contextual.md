@@ -2,6 +2,7 @@
 title: "Resilient, Declarative, Contextual"
 date: 2018-06-08T09:39:05-04:00
 tags: ["css", "css-thinking"]
+draft: true
 ---
 
 I’ve spent a lot of time thinking about what defines a CSS mindset. Some people seem “get” it, and other don’t. It’s always felt to me that if I could put my finger on that, maybe CSS would make more sense to those who have struggled with it. One piece of my motivation in writing [CSS in Depth](https://www.manning.com/books/css-in-depth) was to try to articulate some of those things.
@@ -75,7 +76,7 @@ Second, and more subtle, is the way CSS and your styling decisions are informed 
 }
 ```
 
-What will this code do? Without knowledge of where the element is in the DOM and what styles are applied to the rest of the page, there is no way to know. Absolute positioning is made relative to the nearest positioned ancestor; applying it means different things depending on which ancestor, if any, has `position: relative` (or absolute, fixed, etc.) applied.
+What will this code do? Without knowledge of where the element is in the DOM and what styles are applied to the rest of the page, there is no way to know. Absolute positioning is made relative to the nearest positioned ancestor; applying it means different things depending on which ancestor, if any, has positioning applied.
 
 Furthermore, how you can (or cannot) stack one element in front of another is going to be highly dependent on where the two are positioned in the DOM.  Shuffling items around in the DOM can cause drastic effects on the way items fit together and stack. This is why stacking contexts are a vital (and often complicated) topic.
 
