@@ -20,9 +20,9 @@ Today I want to take a different tack. I want to look at three key characteristi
 
 If you were to randomly delete a chunk of code out of a JavaScript file, the app or page using it would almost certainly come crashing to a halt and much of the script (if not the page as a whole) would become useless. If you do the same thing to CSS, you might not even notice. Almost everything apart from that specific section of code will continue to work as intended.
 
-We call this *resilience*. HTML and CSS were specifically designed to be fault-tolerant. If there’s a problem, the browser won’t throw an error; instead, it will ignore that part of the code and keep on going.
+We call this _resilience_. HTML and CSS were specifically designed to be fault-tolerant. If there’s a problem, the browser won’t throw an error; instead, it will ignore that part of the code and keep on going.
 
-This may seem crazy from a debugging perspective: if it doesn’t throw errors, how do you know what went wrong? But this is an essential piece to how the language works. It’s woven into the fabric of the language itself. It may take some getting used to, I admit. Once you understand this, though, you can safely use features of the language that aren’t supported in all browsers. This is what makes progressive enhancement possible.
+This may seem crazy from a debugging perspective: if it doesn’t throw errors, how do you know what went wrong? But this is an essential piece to how CSS works. It’s woven into the fabric of the language itself. It may take some getting used to, I admit. Once you understand this, though, you can safely use features that aren’t supported in all browsers. This is what makes progressive enhancement possible.
 
 Consider this example of a grid layout. It works in browsers that support grid, and it works in browsers that don’t support grid. It will be slightly imperfect in those that don’t support grid (the exact sizes of the items will probably vary), but it will still layout the page in roughly the same way:
 
@@ -48,7 +48,7 @@ In JavaScript, you give specific, step-by-step instructions how to make somethin
 
 Writing CSS is effectively setting up a system of constraints. You don’t tell the browser where to put every single element on the page; you tell it how much space to put between them and let it sort out where they belong. You don’t tell it (or at least shouldn’t tell it) how tall to make a container; you let it figure that out at render time when it knows the contents of the container, which other styles are applied, and how much width is available in the viewport.
 
-There are so many variables to consider. The point of CSS is to make it so you don’t have to worry about them all. Define some constraints. Let the language work out the details.
+There are too many variables to consider. The point of CSS is to make it so you don’t have to worry about them all. Define some constraints. Let the language work out the details.
 
 ### A simple example
 
@@ -56,7 +56,7 @@ Let’s consider this CSS for a moment: `font-size: 2em`. What does it do? “It
 
 That one declaration creates a whole slew of changes on the page. And they’re all exactly what you should want: the content will always fit, elements aren’t going to wind up overlapping oddly, and anything defined in terms of the font size (like padding, perhaps) will adapt. You don’t have to worry about those details. The browser makes all those calculations and does the work by default.
 
-If you want to stop these things from happening, you can. You could cap the container height with a `max-height` and `overflow: auto`. You could redefine padding to be in rems or px so it doesn’t adapt to the local font size. This highlights an interesting part of writing CSS: sometimes you’re not telling the browser what to do; you’re effectively telling it what *not* to do.
+If you want to stop these things from happening, you can. You could cap the container height with a `max-height` and `overflow: auto`. You could redefine padding to be in rems or px so it doesn’t adapt to the local font size. This highlights an interesting part of writing CSS: sometimes you’re not telling the browser what to do; you’re effectively telling it what _not_ to do.
 
 ### Griddy goodness
 
@@ -82,13 +82,13 @@ Second, and more subtle, is the way CSS and your styling decisions are informed 
 }
 ```
 
-What will this code do? Without knowledge of where the element is in the DOM and what styles are applied to the rest of the page, there is no way to know. Absolute positioning is made relative to the nearest positioned ancestor; applying it means different things depending on which ancestor, if any, has positioning applied.
+What will this code do? Without knowledge of where the element is in the DOM and what styles are applied to the rest of the page, there is no way to know. Absolute positioning is done relative to the nearest positioned ancestor; applying it means different things depending on which ancestor, if any, has positioning applied.
 
-Furthermore, how you can (or cannot) stack one element in front of another is going to be highly dependent on where the two are positioned in the DOM.  Shuffling items around in the DOM can cause drastic effects on the way items fit together and stack. This is why stacking contexts are a vital (and often complicated) topic.
+Furthermore, how you can (or cannot) stack one element in front of another is going to be highly dependent on where the two are positioned in the DOM. Shuffling items around in the DOM can cause drastic effects on the way items fit together and stack. This is why document flow and stacking contexts are a vital (and sometimes complicated) topics.
 
 But the contextual nature of CSS is also due in part to the way design works. If an engineer designs a bridge, you can’t just look at the blueprint and say, “this is all good except this one beam here; go ahead and take that out”. Removing that beam has ramifications on the structural integrity of the whole thing. Similarly, changing one part of a design can have ramifications on how other items on the screen are perceived. Frequently, you will need to style multiple elements together, in conjunction.
 
-If you make the heading in a tile bigger, for instance, it becomes more prominent to the user and therefore makes other items on the screen seem less important. The restrictions aren’t about physics in this case, but there are subtle rules of “soft science” that impact human perception. Parts of the page render in a physical space on screen, and the realities of the physical world (and how we perceive it) are important to be aware of.
+If you make the heading in a tile bigger, for instance, it becomes more prominent to the user and therefore makes other items on the screen seem less important. The restrictions aren’t about physics as with the bridge, but there are subtle rules of “soft science” that impact human perception. Parts of the page render in a physical space on screen, and the realities of the physical world (and how we perceive it) are important to be aware of.
 
 We like to architect software using [principles of modularity and encapsulation](https://freecontent.manning.com/modular-css/). This makes sense in the world of code, because code is complicated and this breaks the problem up into manageable sizes. But we should also be aware that it isn’t always perfect. In CSS, we can never completely disregard what’s going on outside a given module.
 
