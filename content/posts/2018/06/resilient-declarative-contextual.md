@@ -11,7 +11,7 @@ tags = ["css", "css-thinking"]
   authorUrl = "https://www.pexels.com/photo/sliced-of-citrus-lemons-997725/"
 +++
 
-I’ve spent a lot of time thinking about what defines a CSS mindset. Some people seem “get” it, and other don’t. It’s always felt to me that if I could put my finger on that, maybe CSS would make more sense to those who have struggled with it. One piece of my motivation in writing [CSS in Depth](https://www.manning.com/books/css-in-depth) was to try to articulate some of those things.
+I’ve spent a lot of time thinking about what defines a CSS mindset. Some people seem to “get” it, and other don’t. It’s always felt to me that if I could put my finger on that, maybe CSS would make more sense to those who have struggled with it. One piece of my motivation in writing [CSS in Depth](https://www.manning.com/books/css-in-depth) was to try to articulate some of those things.
 <!--more-->
 
 Today I want to take a different tack. I want to look at three key characteristics of CSS that set it apart from conventional programming languages: it’s resilient; it’s declarative; and it’s contextual. Understanding these aspects of the language, I think, is key to becoming proficient in CSS.
