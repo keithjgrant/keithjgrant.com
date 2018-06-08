@@ -123,6 +123,12 @@ function renderLikes(likes) {
   });
 }
 
+function getHostName(url) {
+  var a = document.createElement('a');
+  a.href = url;
+  return (a.hostname || '').replace('www.', '');
+}
+
 function renderReposts(reposts) {
   var label = reposts.length + (reposts.length === 1 ? ' share' : ' shares');
   document.getElementById('share-count').innerHTML = label;
@@ -142,7 +148,7 @@ function renderReposts(reposts) {
     } else {
       data = {
         photo: ANON_AVATAR,
-        name: 'inbound link',
+        name: getHostName(l.data.url) || 'inbound link',
         authorUrl: l.data.url,
         url: l.data.url,
         date: new Date(l.data.published || l.verified_date),
@@ -174,7 +180,7 @@ function renderReplies(replies) {
     } else {
       data = {
         photo: ANON_AVATAR,
-        name: 'inbound link',
+        name: getHostName(l.data.url) || 'inbound link',
         authorUrl: l.data.url,
         url: l.data.url,
         date: new Date(l.data.published || l.verified_date),

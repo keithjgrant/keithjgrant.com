@@ -9,11 +9,10 @@
   "scripts": {
     "start": "hugo server -D",
     "start:nodrafts": "hugo server",
-    "next": "hugo server --theme shindig",
     "hugo": "hugo -d docs",
     "webpack:build": "webpack",
     "webpack:watch": "webpack --watch",
-    "dev": "parallelshell 'npm run webpack:watch' 'npm run next'"
+    "dev": "parallelshell 'npm run webpack:watch' 'npm start'"
   },
   "repository": {
     "type": "git",
