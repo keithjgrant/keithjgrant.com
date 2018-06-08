@@ -68,7 +68,7 @@ This does come with a trade-off: if the declarative language doesn’t support s
 
 ## CSS is contextual
 
-In the React-era, we have embraced the extremely useful approach of modular, component-based development. CSS best-practices do this as well, with BEM and SMACSS and CSS-in-JS. I don’t want to belittle this, because this is an essential way of thinking when building large-scale applications. But I think it’s equally important to acknowledge that CSS is not 100% modular, nor should it be.
+In the React era, we have embraced the extremely useful approach of modular, component-based development. CSS best-practices do this as well, with BEM and SMACSS and CSS-in-JS. I don’t want to belittle this, because this is an essential way of thinking when building large-scale applications. But I think it’s equally important to acknowledge that CSS is not 100% modular, nor should it be.
 
 There are two reasons for this. First, and most obvious, is that your app should have some global styles. You will almost always want to set a default typeface and font size at the page level. These values will then be inherited by all descendant elements that don’t explicitly override them. You will also want certain aspects of your design to apply repeatedly throughout the page, such as theme colors, border radii, box shadows, and common margin sizes. More localized styles on the page will then assume these global styles are in place.
 
