@@ -39,3 +39,4 @@ CSS Common Core
 2. Spacing elements in container?
 3. V centering. break the problem down into component parts?
 4. Don't set height.
+5. Variables hierarchy

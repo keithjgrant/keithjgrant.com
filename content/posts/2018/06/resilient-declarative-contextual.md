@@ -1,16 +1,13 @@
 ---
 title: "Resilient, Declarative, Contextual"
-date: 2018-06-07T12:04:05-04:00
+date: 2018-06-08T09:39:05-04:00
 tags: ["css", "css-thinking"]
-draft: true
 ---
 
-Working with CSS requires a different type of mindset than many developers are familiar with. If you come from the world of JavaScript, CSS can be frustrating. This is especially true if you come from the world of a non-web-based language like Java or Python.
+I’ve spent a lot of time thinking about what defines a CSS mindset. Some people seem “get” it, and other don’t. It’s always felt to me that if I could put my finger on that, maybe CSS would make more sense to those who have struggled with it. One piece of my motivation in writing [CSS in Depth](https://www.manning.com/books/css-in-depth) was to try to articulate some of those things.
 <!--more-->
 
-I’ve spent a lot of time thinking about what defines a CSS mindset. Some people “get” it, and other don’t. It’s always felt to me that if I could put my finger on that, maybe CSS would make more sense to those who have struggled with it. One piece of my motivation in writing [CSS in Depth](https://www.manning.com/books/css-in-depth) was to try to articulate some of those things.
-
-Today I want to take a different tack; I want to look at three key characteristics of CSS that set it apart from conventional programming languages: it’s resilient; it’s declarative; and it’s contextual.
+Today I want to take a different tack; I want to look at three key characteristics of CSS that set it apart from conventional programming languages: it’s resilient; it’s declarative; and it’s contextual. Understanding these aspects of the language, I think, is key to becoming proficient in CSS.
 
 ## CSS is resilient
 
@@ -18,7 +15,7 @@ If you were to randomly delete a chunk of code out of a JavaScript file, the app
 
 We call this *resilience*. HTML and CSS were specifically designed to be fault-tolerant. If there’s a problem, the browser won’t throw an error; instead, it will ignore that part of the code and keep on going.
 
-But the resilience of CSS isn’t only a mechanism for overcoming network errors or typos: it’s woven into the fabric of the language itself. You can safely use features of the language that aren’t supported in all browsers. It’s what makes progressive enhancement possible.
+This may seem crazy from a debugging perspective: if it doesn’t throw errors, how do you know what went wrong? But this is an essential piece to how the language works. It’s woven into the fabric of the language itself. It may take some getting used to, I admit. Once you understand this, though, you can safely use features of the language that aren’t supported in all browsers. This is what makes progressive enhancement possible.
 
 Consider this example of a grid layout. It works in browsers that support grid, and it works in browsers that don’t support grid. It will be slightly imperfect in those that don’t support grid (the exact sizes of the items will probably vary), but it will still layout the page in roughly the same way:
 
@@ -59,6 +56,8 @@ If you want to stop these things from happening, you can. You could cap the cont
 Some of the newer features in CSS do even more. Flexbox and Grid are prime examples of this. With just a few declarations, you can build a grid layout that is extremely flexible and “just works”. You don’t have to worry about countless edge cases. You say, effectively “put these boxes in columns of about 400px wide” and it will do it for you. It takes about three lines of code.
 
 If you were to do this imperatively, you would need to deal with all sorts of odd scenarios. What if there’s an extremely long word in one of the boxes? What if the viewport is very narrow? What if it’s very wide? What if one box has a ton of content and another contains just a few words? But chances are, in CSS, you don’t need to think about any of these things. All the hard thought for this has already gone into the spec, and the browser takes care of it for you. This is the power of a declarative language.
+
+This does come with a trade-off: if the declarative language doesn’t support something you want to do (say, a “masonry” layout), you’re left relying on either odd hacks or JavaScript to help accomplish it. And for years, this sort of thing was a large part of CSS development. Thankfully, with the rise of Flexbox and Grid, we can do far more than we could in the past, without any hacks (and yes, floats were a hack). If this limitation still bothers you, I suggest you read up on [CSS Houdini](https://www.smashingmagazine.com/2016/03/houdini-maybe-the-most-exciting-development-in-css-youve-never-heard-of/), which is just beginning to land in browsers.
 
 ## CSS is contextual
 
