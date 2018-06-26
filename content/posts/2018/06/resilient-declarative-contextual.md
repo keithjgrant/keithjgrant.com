@@ -23,7 +23,7 @@ If you were to randomly delete a chunk of code out of a JavaScript file, the app
 
 We call this _resilience_. HTML and CSS were specifically designed to be fault-tolerant. If there’s a problem, the browser won’t throw an error; instead, it will ignore that part of the code and keep on going.
 
-This may seem crazy from a debugging perspective: if it doesn’t throw errors, how do you know what went wrong? But this is an essential piece to how CSS works. It’s woven into the fabric of the language itself. It may take some getting used to, I admit. Once you understand this, though, you can safely use features that aren’t supported in all browsers. This is what makes progressive enhancement possible.
+This may seem absurd from a debugging perspective: if it doesn’t throw errors, how do you know what went wrong? But this is an essential piece to how CSS works. It’s woven into the fabric of the language itself. It may take some getting used to, I admit. Once you understand this, though, you can safely use features that aren’t supported in all browsers. This is what makes progressive enhancement possible.
 
 Consider this example of a grid layout. It works in browsers that support grid, and it works in browsers that don’t support grid. It will be slightly imperfect in those that don’t support grid (the exact sizes of the items will probably vary), but it will still layout the page in roughly the same way:
 
