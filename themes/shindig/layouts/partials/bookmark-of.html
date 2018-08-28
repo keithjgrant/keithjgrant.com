@@ -1,0 +1,9 @@
+{{ $title := .Title }}
+{{ with $.Param "mf-bookmark-of" }}
+  <div class="post-preview__type metadata">bookmarked a link</div>
+  <div class="post-preview__content show-embeds">
+  {{ range . }}
+    <a href="{{ . }}" class="u-bookmark-of">{{ if $title }}{{ $title }}{{ else }}{{ . }}{{ end }}</a>
+  {{ end }}
+  </div>
+{{ end }}
