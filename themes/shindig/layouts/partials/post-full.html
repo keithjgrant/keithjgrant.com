@@ -16,8 +16,10 @@
     {{ .Content }}
   </div>
 </article>
-{{ if not (eq .Section "likes") }}
-  {{ partial "post-interactions.html" . }}
+{{ if not (eq ($.Param "disable-interactions") true)}}
+  {{ if not (eq .Section "likes") }}
+    {{ partial "post-interactions.html" . }}
+  {{ end }}
 {{ end }}
 
 {{- if and .Params.image .Params.image.author -}}
