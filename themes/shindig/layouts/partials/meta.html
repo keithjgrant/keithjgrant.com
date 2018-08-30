@@ -15,6 +15,9 @@
 <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
 
+<link rel="alternate" type="application/atom+xml" title="Posts" href="/posts/index.xml">
+<link rel="alternate" type="application/atom+xml" title="Notes" href="/notes/index.xml">
+
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@keithjgrant">
 {{ if .Params.image }}
@@ -22,15 +25,13 @@
 {{ else }}
 <meta name="twitter:image" content="https://keithjgrant.com/images/keithjgrant.jpg">
 {{ end }}
-{{ if eq .URL "/" }}
-  <meta name="og:title" content="Keith J. Grant">
-  <meta name="twitter:description" content="JavaScript, CSS, UX, & the open web">
-  {{ if .RSSLink }}<link rel="alternate" type="application/atom+xml" title="{{.Title}}" href="{{ .RSSLink }}">{{ end }}
-{{ else }}
-  <meta name="og:title" content="{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}">
-  <meta name="twitter:description" content="{{ substr (plainify .Summary) 0 200 }}">
-  {{ if .RSSLink }}<link rel="alternate" type="application/atom+xml" title="{{.Title}} | keithjgrant.com" href="{{ .RSSLink }}">{{ end }}
-{{ end }}
+{{- if eq .URL "/" -}}
+<meta name="og:title" content="Keith J. Grant">
+<meta name="twitter:description" content="JavaScript, CSS, UX, & the open web">
+{{- else -}}
+<meta name="og:title" content="{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}">
+<meta name="twitter:description" content="{{ substr (plainify .Summary) 0 200 }}">
+{{- end -}}
 <meta name="twitter:widgets:theme" content="light">
 <meta name="twitter:widgets:link-color" content="#f59f00">
 <meta name="twitter:widgets:border-color" content="#f1f3f5">
