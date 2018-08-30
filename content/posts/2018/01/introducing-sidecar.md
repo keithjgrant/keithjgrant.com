@@ -14,7 +14,7 @@ Now, I’ve decided to digitize that little booklet, in the form of a little web
 
 <img src="/images/2018/sidecar/negroni-sbagliato.png" alt="A recipe card for a cocktail called Negroni Sbagliato" width="555" height="288"/>
 
-It works well on desktop, but I’ve focused on optimizing it for mobile, so I can pull out my phone and look up a recipe wherever I am. If you’re interested, you can install it on your phone with your mobile browser’s “Add to Home Screen” option. I don’t have offline mode working quite yet, but it still works great as a <abbr title="Progressive Web App">PWA</abbr>.
+It works well on desktop, but I’ve focused on optimizing it for mobile, so I can pull out my phone and look up a recipe wherever I am. If you’re interested, you can install it on your phone with your mobile browser’s “Add to Home Screen” option. ~~I don’t have offline mode working quite yet~~ <ins>(**Update**: it works offline!)</ins>, but it still works great as a <abbr title="Progressive Web App">PWA</abbr>.
 
 Go ahead and give it a shot. And let me know if you find a recipe I should test out.
 
