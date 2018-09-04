@@ -1,7 +1,15 @@
 <article>
-  <h1 class="main-title p-name"><a class="u-url" href="{{ .Permalink }}">
-    {{ .Title }}
-  </a></h1>
+  {{ if $.Param "mf-bookmark-of" }}
+    {{ $linkUrl := index ($.Param "mf-bookmark-of") 0 }}
+    <h1 class="main-title p-name"><a class="u-url" href="{{ $linkUrl }}">
+      {{ .Title }}
+    </a></h1>
+  {{ else }}
+    <h1 class="main-title p-name"><a class="u-url" href="{{ .Permalink }}">
+      {{ .Title }}
+    </a></h1>
+  {{ end }}
+
 
   {{ partial "in-reply-to" . }}
   {{ partial "repost-of" . }}
@@ -15,6 +23,12 @@
   <div class="article show-embeds e-content">
     {{ .Content }}
   </div>
+
+  {{ with $.Param "mf-bookmark-of" }}
+    {{ range . }}
+      <p class="mb-md"><a href="{{ . }}" class="u-bookmark-of">Visit link</a></p>
+    {{ end }}
+  {{ end }}
 </article>
 {{ if not (eq ($.Param "disable-interactions") true)}}
   {{ if not (eq .Section "likes") }}

@@ -13,3 +13,7 @@
 .text-right {
   text-align: right !important;
 }
+
+.mb-md {
+  margin-bottom: 1rem !important;
+}
