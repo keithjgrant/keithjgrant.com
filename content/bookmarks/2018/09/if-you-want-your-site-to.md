@@ -1,7 +1,7 @@
 ---
 layout: micropubpost
 date: '2018-09-05T13:29:52.931Z'
-title: The Font Loading Checklist—zachleat.com
+title: The Font Loading Checklist
 mf-bookmark-of:
   - 'https://www.zachleat.com/web/font-checklist/'
 tags: ''
