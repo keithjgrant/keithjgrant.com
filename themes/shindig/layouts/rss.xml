@@ -9,6 +9,8 @@
     <uri>https://keithjgrant.com</uri>
   </author>
   <id>{{ .Permalink }}</id>
+  <icon>http://keithjgrant.com/favicon.ico</icon>
+  <logo>http://keithjgrant.com/images/favicon-96.png</logo>
   {{ range first 15 .Data.Pages }}
   <entry>
     <title>{{ .Title }}</title>
