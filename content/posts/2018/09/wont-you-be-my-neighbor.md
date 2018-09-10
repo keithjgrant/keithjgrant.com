@@ -24,7 +24,7 @@ Since this is clearly destined to happen again and again in the web developer co
 
 We’ve got to stop with the hot-takes. This is a complex topic, now with a lot of argumentative history and misunderstandings. 280 characters just isn’t enough to adequately frame your thoughts any more. Even if your tweet is well-phrased, it will not take long for it to mis-interpreted and quote tweeted while the conversation spirals out of control.
 
-Initially, [I tweeted something](https://twitter.com/keithjgrant/status/1038500386783588352), then tried to frame it better with a few follow-up tweets, but that thread quickly became a game of poking at the other side. [Eric Meyer tweeted](https://twitter.com/meyerweb/status/1038602174211784704), and it was interpreted in ways he didn’t intend. To the point where he’s [expressed regret for the tweet](https://twitter.com/meyerweb/status/1038905212315086848). These things just don’t work on twitter.
+Initially, [I tweeted something](https://twitter.com/keithjgrant/status/1038500386783588352), then tried to frame it better with a few follow-up tweets, but that thread quickly became a game of poking at the other side. [Eric Meyer tweeted](https://twitter.com/meyerweb/status/1038602174211784704), and it was interpreted in ways he didn’t intend. To the point where he’s [expressed regret for the tweet](https://twitter.com/meyerweb/status/1038905212315086848). These things just don’t work on Twitter.
 
 I recently heard how a friend helps their son when he’s being whiney: they tell him to “walk away and come back with a better attitude.” He has to literally walk down the hallway, then back into the room before asking for the thing he wants more politely. And it usually works.
 
@@ -38,7 +38,7 @@ Now, to be fair to Mark, he also tweeted several other things on the topic that 
 
 The problem with drawing lines like this: whichever side you find yourself on, there are some whackos out there throwing ridiculous arguments into the mix. And now people on the other side associate that viewpoint with you.
 
-Instead, call out the folks on “your side” who are off in the weeds. To whatever “cascade defender” out there made this about a CSS-in-JS bashing party: knock it off. To the few on the other side who said the don’t want their employees bothering to learn the cascade: cut it out. Everyone else is somewhere in between. And we don’t have to be old guard _or_ new guard. We can just be a web dev, and supporter of the open web platform as a whole.
+Instead, call out the folks on “your side” who are off in the weeds. To whatever “cascade defender” out there made this a CSS-in-JS bashing party: knock it off. To those on the other side who said the don’t want their employees bothering to learn the cascade: cut it out. Everyone else is somewhere in between. And we don’t have to be old guard _or_ new guard. We can just be a web dev, and supporter of the open web platform as a whole.
 
 ## Just so my cards are on the table:
 
@@ -46,4 +46,4 @@ Instead, call out the folks on “your side” who are off in the weeds. To what
 - I agree it’s not perfect, and I hope we can continue to iterate and improve on it. But it’s what we have to work with.
 - I don’t think you’re an idiot if you don’t know it.
 - That question was particularly misleading.
-- Despite all the dust I’ve kicked up in the past, I’m not completely opposed to CSS-in-JS. In fact, I brought it [Emotion](https://emotion.sh/) as an option for a project as recently as last week.
+- Despite all the dust I’ve kicked up in the past, I’m not completely opposed to CSS-in-JS. In fact, I brought up [Emotion](https://emotion.sh/) as an option for a project as recently as last week.
