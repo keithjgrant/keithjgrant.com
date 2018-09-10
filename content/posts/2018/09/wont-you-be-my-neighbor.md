@@ -13,7 +13,7 @@ Here we are again. Arguing about CSS, the cascade, and CSS-in-JS. And you know w
 
 Somebody [tweets something](https://twitter.com/mxstbr/status/1038073603311448064), usually rather innocuous. This gets spun a few times with various reactions. Then [it escalates](https://twitter.com/rhodesjason/status/1038497112869269504).
 
-<blockquote>So often conflicts arise from lack of communication, false assumptions or confusion.
+<blockquote>So often conflicts arise from lack of communication, false assumptions, or confusion.
 <cite>Mr. Rogers</cite>
 </blockquote>
 <!--more-->
