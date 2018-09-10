@@ -34,7 +34,7 @@ So maybe it’s time we all practice this, too. Myself included. Instead of a ho
 
 We’ve got to stop with the _this camp_ vs. _that camp_ stuff. [Mark Dagleish tweeted](https://twitter.com/markdalgleish/status/1038901043780702208), “It's my life goal to never be part of the technical old guard.” And I tell you what, this got my hackles up.
 
-Now, to be fair to Mark, he also tweeted several other things on the topic that I thought were very helpful and insightful. But I hate that this has somehow become some “old guard” vs. “new guard” thing.
+Now, to be fair to Mark, he’s far from the only one to make this about sides. He also tweeted several other things on the topic that I thought were very helpful and insightful. But I hate that this has somehow become some “old guard” vs. “new guard” thing.
 
 The problem with drawing lines like this: whichever side you find yourself on, there are some whackos out there throwing ridiculous arguments into the mix. And now people on the other side associate that viewpoint with you.
 
