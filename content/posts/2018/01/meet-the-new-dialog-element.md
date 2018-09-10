@@ -1,6 +1,7 @@
 +++
 title = "Meet the New Dialog Element"
 date = "2018-01-11T09:22:12-05:00"
+aliases = ["/posts/2018/meet-the-new-dialog-element"]
 
 [image]
   url = "/images/2018/iron-mailbox.jpg"
@@ -11,6 +12,7 @@ date = "2018-01-11T09:22:12-05:00"
 +++
 
 [HTML 5.2](https://www.w3.org/TR/html52/) has introduced a new `<dialog>` element for native modal dialog boxes. At first glance, it seems fairly straightforward (and it is), but as I’ve been playing around with it, I’ve found it has some nice features that might be easy to miss.
+
 <!--more-->
 
 I’ve embedded a full working demo at the end of this article, but if you want to check it out as you read along, [you can see it here](https://codepen.io/keithjgrant/pen/eyMMVL).
@@ -123,7 +125,7 @@ There are also some events you can listen for. Two useful ones are `close` (trig
 One thing that seems to be missing is the ability to close the modal when the backdrop is clicked, but there is a workaround. Clicking the backdrop fires a click event with the `<dialog>` as the event target. And if you construct the modal such that child elements fill the entire space of the dialog, those child elements will be the target of any clicks inside the dialog. This way, you can listen for clicks on the dialog, and close it when the dialog itself is the target of the click event:
 
 ```js
-modal.addEventListener('click', (event) => {
+modal.addEventListener('click', event => {
   if (event.target === modal) {
     modal.close('cancelled');
   }
