@@ -22,9 +22,9 @@ Since this is clearly destined to happen again and again in the web developer co
 
 ## The Twitter culture isn’t helping
 
-We’ve got to stop with the hot-takes. This is a complex topic, now with a lot of argumentative history and misunderstandings. 280 characters just isn’t enough to adequately frame your thoughts any more. Even if your tweet is well-phrased, it will not take long for it to mis-interpreted and quote tweeted while the conversation spirals out of control.
+We’ve got to stop with the hot-takes. This is a complex topic, now with a lot of argumentative history and misunderstandings. 280 characters just isn’t enough to adequately frame your thoughts any more. Even if your tweet is well-phrased, it will not take long for it to be mis-interpreted and quote tweeted while the conversation spirals out of control.
 
-Initially, [I tweeted something](https://twitter.com/keithjgrant/status/1038500386783588352), then tried to frame it better with a few follow-up tweets, but that thread quickly became a game of poking at the other side. [Eric Meyer tweeted](https://twitter.com/meyerweb/status/1038602174211784704), and it was interpreted in ways he didn’t intend. To the point where he’s [expressed regret for the tweet](https://twitter.com/meyerweb/status/1038905212315086848). These things just don’t work on Twitter.
+Initially, [I tweeted something](https://twitter.com/keithjgrant/status/1038500386783588352), then tried to frame it better with a few follow-up tweets, but the resulting thread quickly became a game of poking at the other side. [Eric Meyer tweeted](https://twitter.com/meyerweb/status/1038602174211784704), and it was interpreted in ways he didn’t intend. To the point where he’s [expressed regret for the tweet](https://twitter.com/meyerweb/status/1038905212315086848). These things just don’t work on Twitter.
 
 I recently heard how a friend helps their son when he’s being whiney: they tell him to “walk away and come back with a better attitude.” He has to literally walk down the hallway, then back into the room before asking for the thing he wants more politely. And it usually works.
 
