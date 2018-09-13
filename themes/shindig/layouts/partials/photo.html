@@ -1,7 +1,14 @@
 {{ with $.Param "mf-photo" }}
   {{ range . }}
-    {{ $prefix := "https://res.cloudinary.com/keithjgrant/image/upload" }}
-    {{ $trimmed := strings.TrimPrefix "https://keithjgrant.com/static" . }}
-    <img src="{{$prefix}}{{$trimmed}}"/>
+    {{ $prefix := "https://res.cloudinary.com/keithjgrant/image/fetch/c_scale,f_auto," }}
+    {{ $path := strings.TrimPrefix "https://keithjgrant.com/static" . }}
+    <img
+      sizes="(min-width: 700px) 600px, 100vw"
+      srcset="
+        {{$prefix}}w_320/https://keithjgrant.com{{$path}} 320w,
+        {{$prefix}}w_480/https://keithjgrant.com{{$path}} 480w,
+        {{$prefix}}w_600/https://keithjgrant.com{{$path}} 600w"
+       src="{{$prefix}}w_480/https://keithjgrant.com{{$path}}"
+       alt="{{with $.Param "mf-photo-alt"}}{{ . }}{{ end }}">
   {{ end }}
 {{ end }}
