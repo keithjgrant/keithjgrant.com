@@ -1,5 +1,7 @@
 {{ with $.Param "mf-photo" }}
   {{ range . }}
-    <img src="{{ . }}"/>
+    {{ $prefix := "https://res.cloudinary.com/keithjgrant/image/upload" }}
+    {{ $trimmed := strings.TrimPrefix "https://keithjgrant.com/static" . }}
+    <img src="{{$prefix}}{{$trimmed}}"/>
   {{ end }}
 {{ end }}
