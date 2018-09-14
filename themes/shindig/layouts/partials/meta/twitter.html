@@ -1,0 +1,35 @@
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@keithjgrant">
+{{ if .Params.image }}
+  <meta name="twitter:image" content="https://keithjgrant.com{{ .Params.image.url }}">
+{{- else -}}
+  {{- if $.Param "mf-photo" -}}
+    {{- with $.Param "mf-photo" -}}
+      {{- range . -}}
+        <meta name="twitter:image" content="{{ partial "cloudinary-url.html" . }}">
+      {{- end -}}
+    {{- end -}}
+  {{- else -}}
+  <meta name="twitter:image" content="https://keithjgrant.com/images/keithjgrant.jpg">
+  {{- end -}}
+{{- end -}}
+{{- if eq .URL "/" -}}
+<meta name="og:title" content="Keith J. Grant">
+<meta name="twitter:description" content="JavaScript, CSS, UX, & the open web">
+{{- else -}}
+<meta name="og:title" content="
+{{- if .Params.heading -}}
+  {{- .Params.heading -}}
+{{- else -}}
+  {{- if .Title -}}
+    {{- .Title -}}
+  {{- else -}}
+    {{- substr (plainify .Summary) 0 64 -}}
+  {{- end -}}
+{{- end -}}
+">
+<meta name="twitter:description" content="{{ substr (plainify .Summary) 0 200 }}">
+{{- end -}}
+<meta name="twitter:widgets:theme" content="light">
+<meta name="twitter:widgets:link-color" content="#f59f00">
+<meta name="twitter:widgets:border-color" content="#f1f3f5">
