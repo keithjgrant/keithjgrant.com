@@ -10,8 +10,7 @@
     <main class="article show-embeds e-content">
       {{ partial "photo.html" . }}
       {{ .Content }}
-      <data class="p-bridgy-omit-link" value="false"></data>
-      <a href="https://brid.gy/publish/twitter"></a>
+      {{ partial "syndications.html" . }}
     </main>
   </article>
   <aside class="note-highlight__footer">

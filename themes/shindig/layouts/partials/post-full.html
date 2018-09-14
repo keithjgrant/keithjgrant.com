@@ -22,6 +22,7 @@
 
   <div class="article show-embeds e-content">
     {{ .Content }}
+    {{ partial "syndications.html" . }}
   </div>
 
   {{ with $.Param "mf-bookmark-of" }}
