@@ -1,15 +1,17 @@
-<meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@keithjgrant">
 {{ if .Params.image }}
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:image" content="https://keithjgrant.com{{ .Params.image.url }}">
 {{- else -}}
   {{- if $.Param "mf-photo" -}}
     {{- with $.Param "mf-photo" -}}
       {{- range . -}}
+        <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:image" content="{{ partial "cloudinary-url.html" . }}">
       {{- end -}}
     {{- end -}}
   {{- else -}}
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:image" content="https://keithjgrant.com/images/keithjgrant.jpg">
   {{- end -}}
 {{- end -}}
