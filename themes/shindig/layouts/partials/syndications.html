@@ -2,8 +2,9 @@
 {{- with $.Param "mf-syndicate-to" -}}
   {{- range . -}}
     {{- if (eq . "https://twitter.com/keithjgrant") -}}
-    <data class="p-bridgy-omit-link" value="false"></data>
-    <a href="https://brid.gy/publish/twitter"></a>
     {{- end -}}
   {{- end -}}
 {{- end -}}
+
+<data class="p-bridgy-omit-link" value="false"></data>
+<a href="https://brid.gy/publish/twitter"></a>
