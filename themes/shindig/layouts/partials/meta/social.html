@@ -14,8 +14,10 @@
     {{- end -}}
   {{- else -}}
   <meta name="twitter:card" content="summary">
+  {{- if eq .Section "posts" -}}
   <meta name="twitter:image" content="https://keithjgrant.com/images/keithjgrant.jpg">
   <meta property="og:image" content="https://keithjgrant.com/images/keithjgrant.jpg">
+  {{- end -}}
   {{- end -}}
 {{- end -}}
 {{- if eq .URL "/" -}}
