@@ -7,4 +7,4 @@ mf-syndicate-to:
   - 'https://twitter.com/keithjgrant'
 category: notes
 ---
-The Edinburgh airport is like an IKEA. A slightly strange yet highly efficient system shuffling you through security, and a long winding path taking you through the sections sections of duty free shopping.
+The Edinburgh airport is like an IKEA. A slightly strange yet highly efficient system shuffling you through security, and a long winding path taking you through the sections of duty free shopping.
