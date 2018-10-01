@@ -2,7 +2,7 @@
 date: '2018-10-01T14:38:08.531Z'
 title: The Design System Decision Tree
 mf-bookmark-of:
-  - 'https://cap/the-design-system-decision-tree-edba9abdb83b'
+  - 'https://medium.com/@cap/the-design-system-decision-tree-edba9abdb83b'
 tags: ''
 slug: the-design-system-decision-tree
 mf-syndicate-to:
