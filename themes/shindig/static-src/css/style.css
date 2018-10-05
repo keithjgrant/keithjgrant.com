@@ -10,10 +10,10 @@
 @import 'main-title';
 @import 'article';
 @import 'nav-links';
+@import 'note';
 @import 'post-summary';
 @import 'post-date';
 @import 'post-interaction';
-@import 'note';
 @import 'tabs';
 @import 'footer';
 @import 'inline-form';

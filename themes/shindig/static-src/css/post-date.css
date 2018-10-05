@@ -8,3 +8,8 @@
 .post-date--note {
   color: hsl(179, 83%, 45%);
 }
+
+.post-date a:any-link {
+  color: inherit;
+  text-decoration: none;
+}

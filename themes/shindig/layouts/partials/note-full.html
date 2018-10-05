@@ -5,7 +5,7 @@
     {{ partial "like-of" . }}
     {{ partial "bookmark-of" . }}
     <p class="post-date post-date--note">
-      <date class="dt-published">{{ dateFormat "3:04 PM MST • 02 Jan 2006" .Date.Local }}</date>
+      <a class="u-url" href="{{ .Permalink }}"><date class="dt-published">{{ dateFormat "3:04 PM MST • 02 Jan 2006" .Date.Local }}</date></a>
     </p>
     <main class="article show-embeds e-content">
       {{ partial "photo.html" . }}
