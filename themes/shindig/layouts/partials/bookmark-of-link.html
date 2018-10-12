@@ -1,8 +1,8 @@
 {{ $title := .Title }}
 {{ with $.Param "mf-bookmark-of" }}
-  <p>Link:
-  {{ range . }}
-    <a href="{{ . }}" class="u-bookmark-of">{{ if $title }}{{ $title }}{{ else }}{{ . }}{{ end }}</a>
-  {{ end }}
-</p>
+  {{- range . -}}
+    <p>
+      <a href="{{ . }}" class="bookmark-link u-bookmark-of">{{ if $title }}{{ $title }}{{ else }}{{ . }}{{ end }}</a>
+    </p>
+  {{- end -}}
 {{ end }}
