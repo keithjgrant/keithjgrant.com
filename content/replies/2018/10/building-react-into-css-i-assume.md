@@ -5,6 +5,8 @@ mf-in-reply-to:
   - 'https://twitter.com/amberweinberg/status/1050840465069752321'
 tags: ''
 slug: building-react-into-css-i-assume
+mf-syndicate-to:
+  - 'https://twitter.com/keithjgrant'
 category: replies
 ---
 “building react into css” -&gt; I assume you mean into JS?
