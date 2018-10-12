@@ -1,8 +1,11 @@
 
+{{ $section := .Section }}
 {{- with $.Param "mf-syndicate-to" -}}
   {{- range . -}}
     {{- if (eq . "https://twitter.com/keithjgrant") -}}
-    <data class="p-bridgy-omit-link" value="false"></data>
+    {{ if not (eq $section "bookmarks") }}
+      <data class="p-bridgy-omit-link" value="false"></data>
+    {{- end -}}
     <a href="https://brid.gy/publish/twitter"></a>
     {{- end -}}
   {{- end -}}

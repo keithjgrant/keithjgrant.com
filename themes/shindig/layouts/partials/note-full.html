@@ -10,6 +10,8 @@
     <main class="article show-embeds e-content">
       {{ partial "photo.html" . }}
       {{ .Content }}
+
+      {{ partial "bookmark-of-link" . }}
       {{ partial "syndications.html" . }}
     </main>
   </article>
