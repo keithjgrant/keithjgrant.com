@@ -14,12 +14,14 @@
 
     <!-- Printing and PDF exports -->
     <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
+    var link = document.createElement('link');
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match(/print-pdf/gi)
+  ? 'css/print/pdf.css'
+  : 'css/print/paper.css';
+document.getElementsByTagName('head')[0].appendChild(link);
+</script>
   </head>
   <body>
     <div class="reveal">
@@ -1075,7 +1077,7 @@ module.exports = {
             <h2>CSS in Depth</h2>
             <div>
               <div>
-                <p><a href="https://manning.com/books/css-in-depth">manning.com/books/css-in-depth</a></p>
+                <p><a href="https://www.manning.com/books/css-in-depth?a_aid=kjg">manning.com/books/css-in-depth</a></p>
                 <p>50% off code: <strong>mlgrant2</strong></p>
               </div>
               <div>
@@ -1106,18 +1108,24 @@ module.exports = {
     <script src="js/reveal.js"></script>
 
     <script>
-      // More info https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-        history: true,
+    // More info https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+  history: true,
 
-        // More info https://github.com/hakimel/reveal.js#dependencies
-        dependencies: [
-          { src: 'plugin/markdown/marked.js' },
-          { src: 'plugin/markdown/markdown.js' },
-          { src: 'plugin/notes/notes.js', async: true },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-        ]
-      });
-    </script>
+  // More info https://github.com/hakimel/reveal.js#dependencies
+  dependencies: [
+    {src: 'plugin/markdown/marked.js'},
+    {src: 'plugin/markdown/markdown.js'},
+    {src: 'plugin/notes/notes.js', async: true},
+    {
+      src: 'plugin/highlight/highlight.js',
+      async: true,
+      callback: function() {
+        hljs.initHighlightingOnLoad();
+      },
+    },
+  ],
+});
+</script>
   </br>
 </html>
