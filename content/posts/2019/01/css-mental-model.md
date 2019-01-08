@@ -59,7 +59,7 @@ I think it’s high time we the teachers of CSS start discussing how exactly we 
 How do we, in specific and practical ways, help developers get past this point of frustration.
 Because we have not figured out how to properly teach a mental model of CSS.
 
-I think, perhaps, we’re beginning to circle closer to this. There seems to be more focus lately on understanding document flow and layout fundamentals.
+I think, perhaps, we’re beginning to circle closer to this. There seems to be [more focus lately](https://www.smashingmagazine.com/2019/01/how-to-learn-css/) on fundamentals of the language like document flow and the box model and formatting contexts.
 
 ## A “Common Core” for CSS
 
@@ -75,9 +75,9 @@ As someone who excelled at math in school,
 I have found that most of these Common Core tricks are things I discovered on my own as a student,
 and are precisely why I was able to do well in the subject.
 
-We need common core tricks like this for CSS:
-not “tricks” in the old sense (like how to fake a gradient border),
-but mental tricks: ways to frame the problem in our heads,
+We need common core tricks like this for CSS.
+Not “tricks” in the old sense (like how to fake a gradient border),
+but mental patterns: ways to frame the problem in our heads,
 so we can break problems into their constituent parts and notice recurring patterns.
 Those of us who deeply understand the language do this internally.
 We need to start working on distilling out these mental patterns we use for understanding layout and positioning and working with relative units, so that we can articulate them to others.
