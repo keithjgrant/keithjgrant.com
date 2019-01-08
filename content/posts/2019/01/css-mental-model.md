@@ -80,7 +80,7 @@ not “tricks” in the old sense (like how to fake a gradient border),
 but mental tricks: ways to frame the problem in our heads,
 so we can break problems into their constituent parts and notice recurring patterns.
 Those of us who deeply understand the language do this internally.
-We need to start working on distilling out these mental patterns for understand layout and positioning and working with relative units.
+We need to start working on distilling out these mental patterns we use for understanding layout and positioning and working with relative units, so that we can articulate them to others.
 
 This will take some deep consideration
 and intentional analysis of our internal thought processes while we code.
