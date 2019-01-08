@@ -1,7 +1,12 @@
----
-title: "Teaching a Correct CSS Mental Model"
-date: 2019-01-08T12:38:52-05:00
----
++++
+title = "Teaching a Correct CSS Mental Model"
+date = 2019-01-08T12:38:52-05:00
+
+[image]
+  url = "/images/2019/frustration.jpg"
+  alt = "A man holds his head in his hand in frustration while looking at his laptop"
+  align = "50% 25%"
++++
 
 Almost four years ago, [I chimed in](/posts/2015/05/against-css-in-js/) on the debate surrounding CSS.
 Is it good? [Is it broken](/posts/2017/03/css-is-not-broken/)?
