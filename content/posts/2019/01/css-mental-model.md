@@ -6,6 +6,8 @@ date = 2019-01-08T12:38:52-05:00
   url = "/images/2019/frustration.jpg"
   alt = "A man holds his head in his hand in frustration while looking at his laptop"
   align = "50% 25%"
+  author = "Tim Gouw"
+  authorUrl = "https://unsplash.com/photos/1K9T5YiZ2WU"
 +++
 
 Almost four years ago, [I chimed in](/posts/2015/05/against-css-in-js/) on the debate surrounding CSS.
