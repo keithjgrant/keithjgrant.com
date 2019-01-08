@@ -75,7 +75,10 @@ As someone who excelled at math in school,
 I have found that most of these Common Core tricks are things I discovered on my own as a student,
 and are precisely why I was able to do well in the subject.
 
-We need common core tricks like this for CSS.
+We need common core tricks like this for CSS:
+not “tricks” in the old sense (like how to fake a gradient border),
+but mental tricks: ways to frame the problem in our heads,
+so we can break problems into their constituent parts and notice recurring patterns.
 Those of us who deeply understand the language need to start working on distilling out the “tricks” we do in our heads to understand layout and positioning and working with relative units.
 
 This will take some deep consideration
