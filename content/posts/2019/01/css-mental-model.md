@@ -79,7 +79,8 @@ We need common core tricks like this for CSS:
 not “tricks” in the old sense (like how to fake a gradient border),
 but mental tricks: ways to frame the problem in our heads,
 so we can break problems into their constituent parts and notice recurring patterns.
-Those of us who deeply understand the language need to start working on distilling out the “tricks” we do in our heads to understand layout and positioning and working with relative units.
+Those of us who deeply understand the language do this internally.
+We need to start working on distilling out these mental patterns for understand layout and positioning and working with relative units.
 
 This will take some deep consideration
 and intentional analysis of our internal thought processes while we code.
