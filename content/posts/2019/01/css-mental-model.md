@@ -23,10 +23,10 @@ There are elements I still agree with, and some I don’t.
 There are some that I now think were beside the point.
 At the end, I concluded with this: “you need to learn CSS”.
 
-For quite a while now, I have distanced myself from that stance:
+For quite a while now, I have distanced myself from that argument:
 there are people in the CSS-in-JS community that really do understand the language,
 and are using JavaScript tooling to deal with its legitimate shortcomings.
-Learning the language isn’t necessarily going to take those shortcomings away.
+Many of them have learned the language, and those shortcomings are still there.
 
 ## We need to teach a mental model
 
@@ -57,6 +57,9 @@ and adjusting their mental model of the language.
 Some developers like myself were able to do it.
 Others stay stuck in this place for years.
 
+One facet of this whole CSS debate involves one side saying, “Just learn CSS”
+and the other side responding, “That’s what I’ve been trying to do!”
+
 I think it’s high time we the teachers of CSS start discussing how exactly we can teach a correct mental model.
 How do we, in specific and practical ways, help developers get past this point of frustration.
 Because we have not figured out how to properly teach a mental model of CSS.
@@ -67,7 +70,7 @@ I think, perhaps, we’re beginning to circle closer to this. There seems to be 
 
 Schools in the U.S. have recently begun teaching something called “Common Core.”
 It’s controversial in some ways
-(and I’m no expect in Common Core, so take this analogy with a grain of salt),
+(and I’m no expert in Common Core, so take this analogy with a grain of salt),
 but I like some of the things I’ve seen regarding Common Core math.
 
 It teaches tricks for making difficult arithmetic easier.
