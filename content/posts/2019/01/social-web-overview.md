@@ -1,7 +1,7 @@
 +++
 title = "Short-form Posting on a Static Site: Overview"
-date = 2019-01-14T11:47:33-05:00
-tags = ["indieweb", "webmentions"]
+date = 2019-01-16T11:43:33-05:00
+tags = ["indieweb", "webmentions", "micropub"]
 draft = true
 
 [image]
@@ -16,19 +16,22 @@ draft = true
 This post is part of a series exploring short-form posting, the IndieWeb, and taking control of your own online social workflow for your statically-generated site:
 
 1. Overview
-2. **Coming soon**
+2. [Setup](/posts/2019/01/social-web-setup/)
+3. Webmentions **Coming soon**
+4. Micropub **Coming soon**
 {{< /alert >}}
 
 I am thrilled to see
 [more](https://andy-bell.design/notes/97/) and
 [more](https://www.zachleat.com/web/notes/) folks are
 [moving to their blogs](https://twitter.com/SaraSoueidan/status/1084833046140981248) for posting short _notes_.
+A note, in this context, is a very brief blog post, usually about the same length as a Tweet or Facebook update.
 Of course, as they do this, they inevitably start grappling with the question:
 “How do I make sure these notes are copied to Twitter?”
 And maybe also: “How do I make the process quick and seamless?”
 
 I gave a talk a while back titled [The Decentralized Social Web](https://www.recallact.com/presentation/decentralized-social-web) where I covered the general principles to make this work.
-This is known as the _IndieWeb_.
+This is part of a concept known as the _IndieWeb_.
 But I haven’t covered the specifics of how I set this up for my site.
 I am frequently asked about my notes and replies on Twitter, and have promised a write-up repeatedly.
 It’s taken me far too long, but this is that write-up.
@@ -38,12 +41,12 @@ It’s taken me far too long, but this is that write-up.
 If you’re the type of person who uses a static site generator
 (i.e. a developer or at least rather technically literate),
 you should be able to set this stuff up yourself.
-None of it is too complicated, but there are a lot of pieces to it.
+None of it is too complicated, but there several pieces to it.
 
 Each piece on its own is fairly straightforward, and there is a sort of exponential return:
 the more of these pieces you put in place, the more they work together to give you a smooth workflow.
 Which is why I want to start by illustrating the final experience.
-I will avoid bogging this down with the “how” (those will come in the following posts) and will instead focus on “what”. I will get into the specific details in the following posts.
+I will avoid bogging this down with the _how_ (that will come in the following posts) and will instead focus on _what_. I will get into the specifics in the following posts.
 
 If you already have a blog or website: Congratulations! You’re already on the IndieWeb. The rest is a series of enhancements you can make to add to that experience.
 
@@ -82,10 +85,10 @@ But there are more standards beyond these languages.
 The W3C, in fact, has a Social Web Working Group.
 This group has published several standards.
 
-Two key standards to know are [Webmention](https://www.w3.org/TR/webmention/) and [Micropub](https://www.w3.org/TR/micropub/).
+Two key standards to be familiar with are [Webmention](https://www.w3.org/TR/webmention/) and [Micropub](https://www.w3.org/TR/micropub/).
 
 **Webmention** is a way to let another webpage know when you have linked to it.
-This is similar to the old Pingback approach&mdash;if you’re familiar with that&mdash;but greatly simplified.
+If you’re familiar with the old Pingback concept, this is similar, but greatly simplified.
 In the example above, I replied to a post on Twitter,
 but I can just as easily reply to a post on any site that supports Webmentions.
 If you write a note on your site, I can reply to it directly, without going through any third party service.
@@ -94,7 +97,7 @@ If you write a note on your site, I can reply to it directly, without going thro
 In the example above, this editor is Omnibear,
 but it could just as easily be an app called [Quill](https://quill.p3k.io/) or another similar service.
 
-The important thing to note here is that I haven’t rigged up a custom script to post to my site and post to Twitter and crawl through twitter for replies.
+The important thing to note here is that I haven’t rigged up a custom script to post to my site and copy to Twitter and crawl through twitter for replies.
 I am using open web standards.
 Most of the work is done by existing tools that understand these standards, not one-off code.
 

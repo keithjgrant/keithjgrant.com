@@ -1,6 +1,6 @@
 +++
 title = "Short-form Posting on a Static Site: Webmentions"
-date = 2019-01-14T12:47:33-05:00
+date = 2019-01-17T12:47:33-05:00
 tags = ["indieweb", "webmentions"]
 draft = true
 
@@ -16,8 +16,9 @@ draft = true
 This post is part of a series exploring short-form posting, the IndieWeb, and taking control of your own online social workflow for your statically-generated site:
 
 1. [Overview](/2019/01/social-web-overview/)
-2. Webmentions
-3. **Coming soon**
+2. Setup
+3. Webmentions
+4. **Coming soon**
 {{< /alert >}}
 
 Webmentions are a key building block of the IndieWeb.
