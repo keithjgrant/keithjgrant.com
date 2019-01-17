@@ -15,10 +15,10 @@ draft = true
 {{< alert >}}
 This post is part of a series exploring short-form posting, the IndieWeb, and taking control of your own online social workflow for your statically-generated site:
 
-1. [Overview](/2019/01/social-web-overview/)
-2. Setup
-3. Webmentions
-4. **Coming soon**
+1. [A Low-Friction Workflow for Short-form Posting on A Statically Generated Site](/posts/2019/01/low-friction-workflow-for-notes/)
+2. **Preparing Your Site for Posting Notes**
+3. Adding Webmention Support to a Static Site &mdash; _Coming soon_
+4. Using Micropub to Post to a Static Site &mdash; _Coming soon_
 {{< /alert >}}
 
 Webmentions are a key building block of the IndieWeb.

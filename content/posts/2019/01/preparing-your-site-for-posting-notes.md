@@ -1,8 +1,7 @@
 +++
 title = "Preparing Your Site for Posting Notes"
-date = 2019-01-16T12:43:33-05:00
+date = 2019-01-17T14:23:33-05:00
 tags = ["indieweb", "webmentions"]
-draft = true
 
 [image]
   url = "/images/2019/red-rotary-phone.jpg"
@@ -13,11 +12,12 @@ draft = true
 +++
 
 {{< alert >}}
-This post is part of a series exploring short-form posting, the IndieWeb, and taking control of your own online social workflow for your statically-generated site:
+This Part 2 in a series exploring short-form posting, the IndieWeb, and taking control of your own online social workflow for your statically-generated site:
 
-1. [My Workflow for Short-form Posting on My Statically Generated Site](/posts/2019/01/low-friction-workflow-for-notes/)
-2. **Preparing Your Site Posting Notes**
-3. _Coming soon_
+1. [A Low-Friction Workflow for Short-form Posting on A Statically Generated Site](/posts/2019/01/low-friction-workflow-for-notes/)
+2. **Preparing Your Site for Posting Notes**
+3. Adding Webmention Support to a Static Site &mdash; _Coming soon_
+4. Using Micropub to Post to a Static Site &mdash; _Coming soon_
 {{< /alert >}}
 
 If you’re eager to get going with short-form posting using webmentions and micropub,
@@ -25,23 +25,28 @@ it’s worth giving your site structure a little thought so you know where your 
 You’ll also need to enable something called Web Sign-in so you can use some of the tools I will mention in the upcoming posts.
 
 I’ll walk you through these things below.
-My thoughts on site structure may be self-apparent to you,
+My thoughts on site structure may be self-apparent,
 but be sure you don’t miss the setup instructions for Web Sign-in,
 as this will be an essential prerequisite as we continue in the following posts.
 
 ## Static site structure
 
 I use Hugo and Netlify for my site.
-If you want help getting started with those, Sara Soueidan has
+My site content is stored in a git repository.
+For new posts, I create a markdown file anywhere within a `content` directory.
+Hugo builds these files into web pages, with URLs matching the directory structure.
+When a change is pushed to Github, Netlify automatically runs Hugo and publishes the resulting pages.
+If you want help getting started with these, Sara Soueidan has
 [a great post on setting those up](https://www.sarasoueidan.com/blog/jekyll-ghpages-to-hugo-netlify/).
-My instructions in this series can be applied to any static site generator and hosting setup,
-as long as you have an automatic build process,
-but it you’ll have to adapt some of the specifics yourself.
 
-It usually makes sense to have separate places on your site for long- and short-form posts.
+My instructions in this series can be applied to any static site generator and hosting setup.
+As long as you have a static site and an automatic build process, it should work for you,
+but it you may have to adapt some of the specifics yourself.
+
+It usually makes sense to have separate places in your site structure for long- and short-form posts.
 On my site, I have broken these up into separate directories called `posts` and `notes`.
 I’ve also added additional directories for `replies`, `likes`, and `bookmarks`;
-you don’t have to add these if you don’t want to, but I find them useful to have.
+you don’t have to add these if you don’t want to, but I find them useful.
 
 Inside all five of these directories, have subdirectories for each year, and subdirectories for each month within those.
 My directory structure looks [something like this](https://github.com/keithjgrant/keithjgrant.com):
@@ -70,7 +75,7 @@ themes
 ```
 
 My site is run by [Hugo](https://gohugo.io/).
-Adjust this as necessary for Jekyll or 11ty.
+Adjust this as necessary for Jekyll or Eleventy.
 Or to suit your own desires, really.
 
 I prefer my long-form posts to look different than my notes and replies,
@@ -147,6 +152,8 @@ Second, on each of the services you link to, edit your profile so the "homepage"
 * [Edit your Twitter profile](https://twitter.com/settings/profile)
 * [Edit your GitHub profile](https://github.com/settings/profile)
 
+![The URL field in my Github profile, set to https://keithjgrant.com](/images/2019/social-web/url-in-github-profile.png)
+
 At this point, your homepage links to your social profiles,
 and your social profiles link back to your homepage,
 each with a `rel="me"` attribute.
@@ -187,4 +194,7 @@ This will take you to indieauth, your preferred Web sign-in endpoint. IndieAuth 
 
 Github is the only valid option right now, so click the green Github button. If you’re not already logged into Github, this will ask you to login. Once logged in, it will redirect you back to webmention.io.
 
-Now you’ve created an account on webmention.io: your website url is your username, and you didn’t need to create a password or open an email. In the next post, I’ll show you how you can use this service to receive webmentions on your site.
+Now you’ve created an account on webmention.io:
+your website url is your username, and you didn’t need to create a password or check an email;
+your website and Github account are all you need.
+In the next post, I’ll show you how you can use this service to receive webmentions on your site.

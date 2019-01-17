@@ -12,10 +12,10 @@ tags = ["indieweb", "webmentions", "micropub"]
 +++
 
 {{< alert >}}
-This post is part of a series exploring short-form posting, the IndieWeb, and taking control of your own online social workflow for a statically-generated site:
+This is Part 1 in a series exploring short-form posting, the IndieWeb, and taking control of your own online social workflow for a statically-generated site:
 
 1. **A Low-Friction Workflow for Short-form Posting on A Statically Generated Site**
-2. Preparing Your Site for Posting Notes &mdash; _Coming soon_
+2. [Preparing Your Site for Posting Notes](/posts/2019/01/preparing-your-site-for-posting-notes)
 3. Adding Webmention Support to a Static Site &mdash; _Coming soon_
 4. Using Micropub to Post to a Static Site &mdash; _Coming soon_
 {{< /alert >}}
