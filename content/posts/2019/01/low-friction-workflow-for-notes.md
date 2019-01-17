@@ -1,8 +1,7 @@
 +++
-title = "Short-form Posting on a Static Site: Overview"
-date = 2019-01-16T11:43:33-05:00
+title = "A Low-Friction Workflow for Short-form Posting on a Statically Generated Site"
+date = 2019-01-17T10:11:33-05:00
 tags = ["indieweb", "webmentions", "micropub"]
-draft = true
 
 [image]
   url = "/images/2019/vintage-phones.jpg"
@@ -13,25 +12,25 @@ draft = true
 +++
 
 {{< alert >}}
-This post is part of a series exploring short-form posting, the IndieWeb, and taking control of your own online social workflow for your statically-generated site:
+This post is part of a series exploring short-form posting, the IndieWeb, and taking control of your own online social workflow for a statically-generated site:
 
-1. Overview
-2. [Setup](/posts/2019/01/social-web-setup/)
-3. Webmentions **Coming soon**
-4. Micropub **Coming soon**
+1. **A Low-Friction Workflow for Short-form Posting on A Statically Generated Site**
+2. Preparing Your Site for Posting Notes &mdash; _Coming soon_
+3. Adding Webmention Support to a Static Site &mdash; _Coming soon_
+4. Using Micropub to Post to a Static Site &mdash; _Coming soon_
 {{< /alert >}}
 
 I am thrilled to see
 [more](https://andy-bell.design/notes/97/) and
 [more](https://www.zachleat.com/web/notes/) folks are
-[moving to their blogs](https://twitter.com/SaraSoueidan/status/1084833046140981248) for posting short _notes_.
-A note, in this context, is a very brief blog post, usually about the same length as a Tweet or Facebook update.
+[moving to their blogs](https://twitter.com/SaraSoueidan/status/1084833046140981248) for posting short-form content, usually referred to as _Notes_.
+These are very brief blog posts, usually about the same length as a Tweet or Facebook update.
 Of course, as they do this, they inevitably start grappling with the question:
 “How do I make sure these notes are copied to Twitter?”
 And maybe also: “How do I make the process quick and seamless?”
 
 I gave a talk a while back titled [The Decentralized Social Web](https://www.recallact.com/presentation/decentralized-social-web) where I covered the general principles to make this work.
-This is part of a concept known as the _IndieWeb_.
+This is part of a concept known as the [IndieWeb](https://indieweb.org/).
 But I haven’t covered the specifics of how I set this up for my site.
 I am frequently asked about my notes and replies on Twitter, and have promised a write-up repeatedly.
 It’s taken me far too long, but this is that write-up.
@@ -39,14 +38,14 @@ It’s taken me far too long, but this is that write-up.
 ## Getting on the IndieWeb
 
 If you’re the type of person who uses a static site generator
-(i.e. a developer or at least rather technically literate),
+(i.e. a developer or otherwise technically literate),
 you should be able to set this stuff up yourself.
 None of it is too complicated, but there several pieces to it.
 
 Each piece on its own is fairly straightforward, and there is a sort of exponential return:
 the more of these pieces you put in place, the more they work together to give you a smooth workflow.
 Which is why I want to start by illustrating the final experience.
-I will avoid bogging this down with the _how_ (that will come in the following posts) and will instead focus on _what_. I will get into the specifics in the following posts.
+I will avoid bogging this down with the _how_ (that will come in the following posts) and will instead focus on _what_. I will get into the specifics in the rest of this post series.
 
 If you already have a blog or website: Congratulations! You’re already on the IndieWeb. The rest is a series of enhancements you can make to add to that experience.
 
@@ -76,7 +75,7 @@ As before, this [posts to my site](https://keithjgrant.com/replies/2019/01/yes-d
 ![Screenshot of the reply on Twitter](/images/2019/social-web/reply-syndicated.png)
 
 Hopefully, this sort of workflow sounds appealing to you.
-So if you want to know how to do this stuff, stay tuned.
+If you want to know how to do this stuff, stay tuned.
 
 ## A new type of web standards
 
@@ -106,4 +105,4 @@ Open standards drive it all, so nothing is proprietary.
 In the following posts, I will show you how I chose to implement each piece of the puzzle;
 but you can just as easily change one piece out to suit your needs, while still doing other parts of it just as I have.
 
-In short: my process is not an all-or-nothing approach. I’ll show you what I use, and you are free to pick and choose from among the pieces.
+In short: my process is not an all-or-nothing approach. I’ll show you what I use, and you are free to pick and choose from among the pieces. You can implement them one at a time at your own pace, or all at once. In the rest of this series, I’ll walk you through how to do it.

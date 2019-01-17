@@ -1,5 +1,5 @@
 +++
-title = "Short-form Posting on a Static Site: Setup"
+title = "Preparing Your Site for Posting Notes"
 date = 2019-01-16T12:43:33-05:00
 tags = ["indieweb", "webmentions"]
 draft = true
@@ -15,9 +15,9 @@ draft = true
 {{< alert >}}
 This post is part of a series exploring short-form posting, the IndieWeb, and taking control of your own online social workflow for your statically-generated site:
 
-1. [Overview](/2019/01/social-web-overview/)
-2. Setup
-3. **Coming soon**
+1. [My Workflow for Short-form Posting on My Statically Generated Site](/posts/2019/01/low-friction-workflow-for-notes/)
+2. **Preparing Your Site Posting Notes**
+3. _Coming soon_
 {{< /alert >}}
 
 If you’re eager to get going with short-form posting using webmentions and micropub,
@@ -30,6 +30,13 @@ but be sure you don’t miss the setup instructions for Web Sign-in,
 as this will be an essential prerequisite as we continue in the following posts.
 
 ## Static site structure
+
+I use Hugo and Netlify for my site.
+If you want help getting started with those, Sara Soueidan has
+[a great post on setting those up](https://www.sarasoueidan.com/blog/jekyll-ghpages-to-hugo-netlify/).
+My instructions in this series can be applied to any static site generator and hosting setup,
+as long as you have an automatic build process,
+but it you’ll have to adapt some of the specifics yourself.
 
 It usually makes sense to have separate places on your site for long- and short-form posts.
 On my site, I have broken these up into separate directories called `posts` and `notes`.
