@@ -102,7 +102,7 @@ Most of the work is done by existing tools that understand these standards, not 
 
 If I want, I can swap out Omnibear for a different editor, or change to a new Micropub server if I find an alternative I like better.
 Open standards drive it all, so nothing is proprietary.
-In the following posts, I will show you how I chose to implement each piece of the puzzle;
+In the following posts, I will show you how I chose to configure each piece of the puzzle;
 but you can just as easily change one piece out to suit your needs, while still doing other parts of it just as I have.
 
 In short: my process is not an all-or-nothing approach. I’ll show you what I use, and you are free to pick and choose from among the pieces. You can implement them one at a time at your own pace, or all at once. In the rest of this series, I’ll walk you through how to do it.
