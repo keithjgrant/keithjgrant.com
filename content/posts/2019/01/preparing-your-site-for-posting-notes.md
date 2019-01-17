@@ -12,7 +12,7 @@ tags = ["indieweb", "webmentions"]
 +++
 
 {{< alert >}}
-This Part 2 in a series exploring short-form posting, the IndieWeb, and taking control of your own online social workflow for your statically-generated site:
+This is Part 2 in a series exploring short-form posting, the IndieWeb, and taking control of your own online social workflow for your statically-generated site:
 
 1. [A Low-Friction Workflow for Short-form Posting on A Statically Generated Site](/posts/2019/01/low-friction-workflow-for-notes/)
 2. **Preparing Your Site for Posting Notes**
