@@ -1,20 +1,10 @@
 
-* The invisible parts of HTML
+# CSS Common Core
 
-Play off of https://madebymike.com.au/writing/the-invisible-parts-of-CSS/
-
-* Why can’t we have a parent selector!?
-* Page transitions on a statically-generated site
-* In defense of human curation: news, music, TV, etc.
-* prioritizing font loading
-
-
----
-
-CSS Common Core
 * 8 + 5 = ?
 * step back, bigger picture
 * https://atomiks.github.io/30-seconds-of-css/
+* https://css-tricks.com/how-well-do-you-know-css-layout/
 
 1. Debugging: always consider the context. DevTools is *always* the first stop. Figure out which properties need to change on which elements; then which declarations/selectors to enact that change.
 2. Spacing elements in container?
@@ -33,3 +23,11 @@ CSS Common Core
   * if container isn’t top level, you can’t know what that min-height should be (i.e. subtract height of header/footer to avoid scrollbars)
 
 # Scoped CSS / First-class way to define base styles?
+
+# In defense of the Open Web Platform
+
+* You don’t need to hedge your bets against CSS, or write an abstraction layer above it.
+  * Yes, give yourself shorthands for your particular app
+  * But don’t think the web is just one platform among many.
+* OWP is the one platform to rule them all.
+* “Is the web a complile target?” — possible title?
