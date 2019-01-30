@@ -31,14 +31,16 @@ This is not the only way to do it, but it is how I do it for this site, so I kno
 ## Receiving Webmentions
 
 A webmention is sent as a POST request containing two pieces of information: a _source_ URL and a _target_ URL.
-The webmention endpoint verifies that the page at the source URL includes a link to the target URL.
+The page at the source URL must include a link to the target URL, which the webmention endpoint will verify before accepting the webmention.
+(You won’t actually have to implement this, but it’s worth knowing for context.)
 
-In [the previous post](/posts/2019/01/preparing-your-site-for-posting-notes), I showed you how to sign in to a service called [webmention.io].
+In [the previous post](/posts/2019/01/preparing-your-site-for-posting-notes), I showed you how to sign in to a service called [webmention.io](https://webmention.io).
 This will provide your site’s webmention endpoint.
 When someone links to a page on your site, they can notify the endpoint, and you can choose what to do with that webmention.
 
+You will have to make this endpoint known so you can receive webmentions.
 Log-in to webmention.io, and navigate to the [settings page](https://webmention.io/settings).
-This will provide you with two `<link>` tags you should add to your site’s `<head>`.
+This will provide you with two `<link>` tags you should add to the `<head>` for every page on your site.
 They will look something like this (with your site’s URL in place of `keithjgrant.com`):
 
 ```html
@@ -62,10 +64,11 @@ so I can’t give you exact code to copy and paste,
 but I’ll highlight the key things I do for my site.
 Here is my [source code](https://github.com/keithjgrant/keithjgrant.com/blob/master/themes/shindig/static-src/js/webmentions.js) for this.
 
-First, perform a GET to `https://webmention.io/api/mentions?perPage=500&jsonp=parseWebmentions&target[]={PAGE_URL}`,
-where `{PAGE_URL}` is the current page URL.
+First, perform a GET to `https://webmention.io/api/mentions?perPage=500&jsonp=parseWebmentions&target={PAGE_URL}`,
+where `{PAGE_URL}` is the current page.
 You will need to use [JSONP](https://stackoverflow.com/questions/2067472/what-is-jsonp-all-about#2067584) so you can make the request cross-domain.
 This url specifies the JSONP function `parseWebmentions`, which you will need to include in your page’s script.
+This function must be defined as a global, so the webmention.io script can invoke it.
 
 The `parseWebmentions()` function will be invoked with an array of objects, each representing a webmention you’ve recieved, including metadata about the source page that sent it.
 Each one of these objects will look something like this:
@@ -104,12 +107,15 @@ one for likes (`webmention.activity.type === 'like'`),
 one for reposts (`webmention.activity.type === 'repost' || webmention.activity.type === 'link'`),
 and one for replies (everything else).
 I then have code to convert the metadata into DOM elements and add them to the page in the appropriate place.
-Again, feel free to rework [my code](https://github.com/keithjgrant/keithjgrant.com/blob/master/themes/shindig/static-src/js/webmentions.js) to suit your purposes for this.
+Again, feel free to rework [my code](https://github.com/keithjgrant/keithjgrant.com/blob/master/themes/shindig/static-src/js/webmentions.js) to suit your purposes for this&mdash;I include a `<template>` on my page for these, which I clone into the page and hydrate with the fetched data.
+
+If you really want to get fancy, you can fetch your webmentions every time your site builds, and add them into the initial render of the page.
+If you go this route, however, you should probably make an additional fetch from the client side to pick up any webmentions that you’ve received since the last time you built your site.
 
 ## Enhancing with Microformats
 
 When a webmention is sent, it includes only the source URL and the target URL.
-But you’ll notice in the payload received from webmention.io,
+But you’ll notice in the payload received from webmention.io
 there is a whole lot more information included.
 This is all information it was able to parse from the page at the source URL.
 How much it is able to figure out will depend largely on whether or not the page uses _microformats_ in its markup.
@@ -119,20 +125,25 @@ I strongly urge you to add [microformats support](http://microformats.org/wiki/m
 Most tools for working with webmentions expect microformats to be there, so this will be essential for using some IndieWeb tools.
 
 There are two types of microformat that you should add to your site first: [h-entry](http://microformats.org/wiki/microformats2#h-entry) and [h-card](http://microformats.org/wiki/microformats2#h-card).
-An h-entry identifies the key elements of a post, including url, title, publish date, and content.
+An h-entry allows you to identify the key elements of a post, including url, title, publish date, and content.
 An h-card identifies an author, including name, website url, and an avatar image.
 
-Use an h-entry in the markup for every post on your site.
+Add the classes for an h-entry to the markup for every post on your site.
 Here is a sample post with h-entry microformat classes added:
 
 ```html
 <div class="note note--list h-entry">
   <div class="note__date">
-    <a class="u-url dt-published" href="https://keithjgrant.com/replies/2019/01/yes-do-it/">10:24 AM EST • 14 Jan 2019</a>
+    <a
+      class="u-url dt-published"
+      href="https://keithjgrant.com/replies/2019/01/yes-do-it/"
+    >10:24 AM EST • 14 Jan 2019</a>
   </div>
   <div class="metadata text-left">in reply to
-    <a href="https://twitter.com/SaraSoueidan/status/1084833046140981248"
-      class="u-in-reply-to" rel="in-reply-to" >a post on twitter.com</a>
+    <a
+      class="u-in-reply-to" rel="in-reply-to"
+      href="https://twitter.com/SaraSoueidan/status/1084833046140981248"
+    >a post on twitter.com</a>
   </div>
   <div class="note__body e-content show-embeds">
     <p>Yes! DO IT ✨</p>
@@ -140,14 +151,15 @@ Here is a sample post with h-entry microformat classes added:
 </div>
 ```
 
-The keys here are the classes `h-entry`, `u-url`, and `e-content`.
+The essentials here are the classes `h-entry`, `u-url`, and `e-content`.
 `h-entry` must be on an element containing the entire post.
 The other microformat classes within indicate further metadata on this entry.
 `u-url` indicates the canonical URL of this post (specified in the `href` attribute).
 `e-content` denotes the body of the post.
 `p-name`, when present, indicates the title of the post
 (this post has no title because it is a short-form note rather than a full blog post).
-Some other useful classes an h-entry might have are `u-in-reply-to` or `u-like-of`, indicating the post is a reply to or “like” of a post elsewhere on the web.
+Some other useful classes an h-entry might have are `u-in-reply-to` or `u-like-of`, indicating the post is a reply to or “like” of a post elsewhere on the web,
+and `dt-published` to indicate the publish date.
 
 The tag names are irrelevant;
 use correct semantic HTML elements,
@@ -186,6 +198,18 @@ This will display as a JSON object:
 
 ![A sample JSON result from X-Ray after parsing one of my posts](/images/2019/social-web/x-ray-results.png)
 
-## Integrating with Twitter/Facebook
+## Integrating with Twitter
+
+Webmentions are fantastic for interacting with other blogs, but what about social media?
+Twitter doesn’t support webmentions, but there is a tool called [Bridgy](https:/brid.gy) that can add this support for you.
+If you send Bridgy a webmention, it will post your note to your social network accounts for you.
+And if those posts get replies (or likes, or reposts), Bridgy will send you valid webmentions letting you know about them.
+
+To setup Bridgy for Twitter, visit [brid.gy](https://brid.gy) and click the Twitter button where it says “Connect your accounts”.
+This will take you to twitter, and will ask you to grant Bridgy access to post to your Twitter account.
+Click “Authorize app” to give it access.
+
+
+## Send your first webmention
 
 ## Sending Webmentions
