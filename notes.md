@@ -22,7 +22,9 @@
   * need to set height/min-height on container
   * if container isn’t top level, you can’t know what that min-height should be (i.e. subtract height of header/footer to avoid scrollbars)
 
+  
 # Scoped CSS / First-class way to define base styles?
+
 
 # In defense of the Open Web Platform
 
@@ -32,11 +34,16 @@
 * OWP is the one platform to rule them all.
 * “Is the web a complile target?” — possible title?
 
+
 # Design-y end of frontend dev is missing the point
 
 * They don’t seem to fully grasp the problem, nor the complaints aimed at themselves.
 * Try to frame things in a way that is familiar to them
 * https://christianheilmann.com/2019/01/28/html-is-and-always-was-a-compilation-target-can-we-deal-with-that/
 * Andy’s posts
-* “Wearing the other hat” - possible title?
-* Def not to belittle the gender element: https://twitter.com/betsythemuffin/status/1090342513054007296 
+* Def not to belittle the gender element: https://twitter.com/betsythemuffin/status/1090342513054007296
+* https://twitter.com/amasad/status/1091029816596357120 "I've only seen gatekeeping used self-servingly"
+* too many echo chamber posts
+* title ideas:
+  * "Beware the straw man"
+  * "Wearing the other hat"

@@ -16,7 +16,7 @@ This is Part 1 in a series exploring short-form posting, the IndieWeb, and takin
 
 1. **A Low-Friction Workflow for Short-form Posting on A Statically Generated Site**
 2. [Preparing Your Site for Posting Notes](/posts/2019/01/preparing-your-site-for-posting-notes)
-3. Adding Webmention Support to a Static Site &mdash; _Coming soon_
+3. [Adding Webmention Support to a Static Site](/posts/2019/02/adding-webmention-support-to-a-static-site)
 4. Using Micropub to Post to a Static Site &mdash; _Coming soon_
 {{< /alert >}}
 

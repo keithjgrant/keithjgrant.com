@@ -1,15 +1,12 @@
 +++
 title = "Adding Webmention Support to a Static Site"
-date = 2019-01-21T11:47:33-05:00
+date = 2019-02-01T12:47:33-05:00
 tags = ["indieweb", "webmentions"]
-draft = true
 
 [image]
-  url = ""
-  alt = ""
+  url = "/images/2019/antique-black-and-white-phone.jpg"
+  alt = "A black vintage rotary dial phone"
   align = "50% 50%"
-  author = ""
-  authorUrl = ""
 +++
 
 {{< alert >}}
@@ -104,7 +101,7 @@ Each one of these objects will look something like this:
 I sort these chronologically (using `webmention.data.published` or `webmention.verified_data`).
 Then I put them into three different arrays:
 one for likes (`webmention.activity.type === 'like'`),
-one for reposts (`webmention.activity.type === 'repost' || webmention.activity.type === 'link'`),
+one for reposts and regular links (`webmention.activity.type === 'repost' || webmention.activity.type === 'link'`),
 and one for replies (everything else).
 I then have code to convert the metadata into DOM elements and add them to the page in the appropriate place.
 Again, feel free to rework [my code](https://github.com/keithjgrant/keithjgrant.com/blob/master/themes/shindig/static-src/js/webmentions.js) to suit your purposes for this&mdash;I include a `<template>` on my page for these, which I clone into the page and hydrate with the fetched data.
@@ -191,25 +188,72 @@ This sort of metadata is what allows me to present not just replies to my posts,
 
 ![Two replies to a previous post of mine. Each reply includes the author’s name and small avatar image.](/images/2019/social-web/webmentions-formatted.png)
 
-Adding microformats can be a bit troublesome, because it’s hard to know whether you’ve done it correctly or not.
+Adding microformats can be a bit troublesome, because it’s hard to know at a glance whether you’ve done it correctly or not.
 One tool to help with this is [X-Ray](https://xray.p3k.io/).
 As you integrate microformats on your site, plug in the URL to a post into X-Ray and see what kind of metadata it finds.
 This will display as a JSON object:
 
 ![A sample JSON result from X-Ray after parsing one of my posts](/images/2019/social-web/x-ray-results.png)
 
+Additional microformats can be used to markup things like recipes, events, and products reviews. See [microformats.org](http://microformats.org/wiki/microformats2) for details on these if you’re interested.
+
 ## Integrating with Twitter
 
 Webmentions are fantastic for interacting with other blogs, but what about social media?
 Twitter doesn’t support webmentions, but there is a tool called [Bridgy](https:/brid.gy) that can add this support for you.
 If you send Bridgy a webmention, it will post your note to your social network accounts for you.
-And if those posts get replies (or likes, or reposts), Bridgy will send you valid webmentions letting you know about them.
+And if those posts get replies (or likes, or reposts), Bridgy will send you valid webmentions letting you know about it.
 
 To setup Bridgy for Twitter, visit [brid.gy](https://brid.gy) and click the Twitter button where it says “Connect your accounts”.
 This will take you to twitter, and will ask you to grant Bridgy access to post to your Twitter account.
 Click “Authorize app” to give it access.
 
+Next, you’ll need to add a link to Bridgy in your posts, so you can send a webmention to Bridgy.
+Add this to your page template for notes.
+If you followed the site structure like as I described in the previous post,
+a good place to add this would be to the partial template at `themes/[theme-name]/partials/note-full.html`.
+Place this inside the `e-content` of your `h-entry`:
+
+```html
+<a href="https://brid.gy/publish/twitter"></a>
+<data class="p-bridgy-omit-link" value="false"></data>
+```
+
+The first line provides an (empty) link to bridgy, so you can send Bridgy a webmention.
+The second line &mdash; which is totally optional &mdash; provides some metadata to bridgy telling it to include a link back to your post when it syndicates to twitter.
 
 ## Send your first webmention
 
-## Sending Webmentions
+At this point, your site should be able to receive webmentions,
+and it should have valid microformats so other sites can parse your content should you send webmentions.
+
+Your site doesn’t send webmentions yet
+&mdash; I’ll cover that in the next post &mdash;
+but in the meantime, you should be able to send them manually with a tool called Telegraph.
+
+If you haven’t already, publish a Note to your site.
+Make sure the resulting page has valid microformats (using [X-Ray](https://xray.p3k.io/)) and it includes a link to bridgy.
+
+Then visit [Telegraph](https://telegraph.p3k.io) and sign in using web sign-in:
+
+![Web sign in screen for Telegraph](/images/2019/social-web/telegraph-sign-in.png)
+
+Once logged in, you should see a text input labelled “Find Links”.
+Enter the full URL of the note you just published and click the button:
+
+![Telegraph screen to find links on a page. A page url has been entered into the form.](/images/2019/social-web/telegraph-find-links.png)
+
+Telegraph will scan the `h-entry` on that page and find any links therein, including your link to Bridgy.
+It will show you a list of these links and, for those targets that support webmentions, it will provide a button to send a webmention.
+Click the button next to ”https://brid.gy/publish/twitter”.
+
+![Telegraph screen listing links found in the given page. It includes a link to brid.gy/publish/twitter and a blue button that reads "Send Webmention".](/images/2019/social-web/telegraph-send-wm.png)
+
+If all goes well, your note should show up on Twitter, posted from your account!
+Bridgy will monitor your stream for activity, and when it sees some, it will forward it to your site as a webmention.
+It polls once every 30 minutes or so, so replies won’t show up immediately.
+While testing, though, you can log in to Bridgy and click the “poll now” button to skip this waiting period.
+
+Hopefully this is helpful!
+In the final post, I will walk you through setting up Micropub so you can post notes more quickly to your site,
+and I will show you how to automate the sending of webmentions, so you won’t have to open up Telegraph every time you post a new note.
