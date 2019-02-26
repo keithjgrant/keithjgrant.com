@@ -4,7 +4,7 @@
   {{- range . -}}
     {{- if (eq . "https://twitter.com/keithjgrant") -}}
     {{ if not (eq $section "bookmarks") }}
-      <data class="p-bridgy-omit-link" value="false"></data>
+      <data class="p-bridgy-omit-link" value="true"></data>
     {{- end -}}
     <a href="https://brid.gy/publish/twitter"></a>
     {{- end -}}

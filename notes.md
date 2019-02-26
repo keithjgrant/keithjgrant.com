@@ -22,7 +22,7 @@
   * need to set height/min-height on container
   * if container isn’t top level, you can’t know what that min-height should be (i.e. subtract height of header/footer to avoid scrollbars)
 
-  
+
 # Scoped CSS / First-class way to define base styles?
 
 
@@ -47,3 +47,9 @@
 * title ideas:
   * "Beware the straw man"
   * "Wearing the other hat"
+
+# The State of Web Components, 2019 -- from a React developer’s perspective
+
+* “standards” world balked at React... then learned from it
+* React world balked at web components... but will learn from it
+* two camps screaming over each other, not realizing they’re caught in a mutually beneficial symbiotic relationship
