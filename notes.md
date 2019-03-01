@@ -16,6 +16,13 @@
 
 # How I debug a CSS problem
 
+* edit in browser styles first!
+  1. Figure out what styles you want applied
+  2. Then figure out how to best apply them
+* active styles near the top in devtools
+* New things: get something rendering as early as possible
+
+
 # The Inherently Global Nature of Styling
 
 * vertically centering a small box (like a login box).
@@ -53,3 +60,7 @@
 * “standards” world balked at React... then learned from it
 * React world balked at web components... but will learn from it
 * two camps screaming over each other, not realizing they’re caught in a mutually beneficial symbiotic relationship
+
+# A thorough break down of word wrapping/breaking properties
+
+* Yuck. Lots of research needed here :(
