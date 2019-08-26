@@ -21,6 +21,7 @@
   2. Then figure out how to best apply them
 * active styles near the top in devtools
 * New things: get something rendering as early as possible
+* Don't keep throwing styles at it till it works: if styles are causing a problem, figure out how to delete them.
 
 
 # The Inherently Global Nature of Styling
