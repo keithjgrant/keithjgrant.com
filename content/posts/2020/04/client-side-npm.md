@@ -1,5 +1,5 @@
 ---
-title: "Client Side Npm"
+title: "Client Side NPM"
 date: 2020-04-21T10:00:47-07:00
 tags:
   - performance
