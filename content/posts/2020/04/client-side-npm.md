@@ -63,7 +63,7 @@ This sounds nice in theory, but how could it actually be accomplished? And I mea
 
 I see two potential approaches that could work.
 The first approach would be through the use of a browser extension.
-The second would be through the installation of a native application that leverages custom protocol URLs (something like `package://npmjs.com/react@^16.10.0`).
+The second would be through the installation of a native application that leverages custom protocol URLs (something like `package://npmjs.com/react/^16.10.0`).
 It’s possible a hybrid of both would be necessary to work around CORS issues and access to enough hard drive space to store downloaded packages.
 Either way, web apps that are built for this approach could encourage their users to install the appropriate dependencies:
 A banner with a link could appear at the top of the page that reads,
