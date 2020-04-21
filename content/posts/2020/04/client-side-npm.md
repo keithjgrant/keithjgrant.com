@@ -9,6 +9,8 @@ image:
   url: "/images/2020/fast-car.jpg"
   alt: "A red Lamborghini driving on the freeway alongside the ocean"
   align: "50% 50%"
+  author: "Street 965"
+  authorUrl: "https://www.pexels.com/photo/photo-of-car-on-expressway-3422964/"
 ---
 
 
@@ -30,7 +32,7 @@ This is a proposed solution to help address this problem: Client Side Package Ma
 
 On many, many sites, the bulk of the JavaScript bundle comes from dependencies.
 This means we spend most of our bandwidth downloading the same code over and over again as we browse the web.
-Client side package management offloads all of that into an efficient caching strategy.
+“Client side package management” would be an effort to offload all of that into an efficient caching strategy.
 If two completely unrelated sites both use React Router, they can use the same local copy without repeatedly pulling it down the wire.
 If a user frequently visits your app, they only need to re-download the code you wrote; not all of its dependencies.
 
