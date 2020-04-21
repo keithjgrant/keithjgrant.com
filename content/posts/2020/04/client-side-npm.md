@@ -119,6 +119,7 @@ However, this only applies to code installed directly off of a known package rep
 The key task here would be to ensure this can’t be spoofed.
 I would also presents the user with a big red dialog box about “unfamiliar package repository” if a site ever tried to install a package from anywhere else.
 (You could restrict it to npm only, but I want to leave the door open for alternatives like [Entropic](https://www.entropic.dev/).)
+Fingerprinting based on which packages load instantly from cache could also be a concern.
 
 ## Conclusion
 
