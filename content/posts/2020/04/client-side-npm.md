@@ -56,6 +56,7 @@ In practice, though, CDNs very rarely produce hits in the browser cache;
 too many sites rely on slightly different version numbers or different host CDNs to ever gain that benefit.
 But with package management, the host is always the user’s computer and it is fully aware of semantic versioning;
 one site relying on `lodash ^4.17.4` and another using `lodash ^4.17.10` would share the same resource.
+For reliability, packages are sourced directly from the package manager where their author has published them (i.e. npm.com).
 
 ## How to Accomplish This
 
