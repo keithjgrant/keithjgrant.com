@@ -1,13 +1,16 @@
-+++
-title = "Proposed: Client Side NPM"
-date = 2020-04-21T09:30:48-07:00
-tags = ["performance", "javascript"]
+---
+title: "Client Side Npm"
+date: 2020-04-21T10:00:47-07:00
+tags:
+  - performance
+  - javascript
 
-[image]
-  url = "/images/2020/fast-car.jpg"
-  alt = "A red Lamborghini driving on the freeway alongside the ocean"
-  align = "50% 50%"
-+++
+image:
+  url: "/images/2020/fast-car.jpg"
+  alt: "A red Lamborghini driving on the freeway alongside the ocean"
+  align: "50% 50%"
+---
+
 
 {{< alert >}}
 Disclaimer: this is an _idea_.

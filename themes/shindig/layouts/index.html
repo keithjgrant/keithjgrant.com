@@ -12,8 +12,8 @@
         <div>Hi, I’m Keith<br>I make things on the&nbsp;web</div>
       </div>
       {{ range first 1 (where .Site.Pages "Section" "posts") }}
-        <link rel="prefetch" href="{{ .URL }}">
-        <a class="latest-post" href={{ .URL }}>
+        <link rel="prefetch" href="{{ .RelPermalink }}">
+        <a class="latest-post" href={{ .RelPermalink }}>
           <div class="latest-post_subheading">Latest post</div>
           <h2>{{ .Title }}</h2>
         </a>
