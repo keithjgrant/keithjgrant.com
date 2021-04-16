@@ -1,2 +1,4 @@
+/*
+  Permissions-Policy: interest-cohort=()
 /fonts/*
   Access-Control-Allow-Origin: https://s.codepen.io
