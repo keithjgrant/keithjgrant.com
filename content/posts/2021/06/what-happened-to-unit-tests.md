@@ -72,7 +72,7 @@ With shallow rendering, a failure in the HiddenMessage test suite means HiddenMe
 With full rendering, a bug in Fade means dozens of tests are going to fail across multiple test suites.
 Then you get the fun job of tracking down where the bug originated.
 With unit tests, you know exactly where the bug is, because only the test suite for the Fade component will break.
-If `<Fade />` is well tested, and you assert `<HiddenMessage />` passes the correct props to `<Fade />` based on user interaction, then you can be confident in your code.
+If `<Fade />` is well tested, and you assert that `<HiddenMessage />` passes the correct props to `<Fade />` based on user interaction, then you can be confident in your code.
 
 ## Tests should be comprehensive
 
@@ -83,15 +83,18 @@ Apart from being faster, unit testing also tests something integration tests sim
 
 If a particular component has three key behaviors, it requires three unit tests*.
 If its child component has three key behaviors, it requires three unit tests.
-If you plan only to test those behaviors via integration tests, you need three times three unit tests, because you have to assert every permutation.
+If you plan only to test those behaviors via integration tests, you need three times three unit tests, because you have to check how every permutation behaves.
 
 But your app isn't just two components, so let's keep going.
 If you have a grandchild component with three key behaviors, you need three unit tests.
 But now you need to multiply all your integration tests by three, so you need 27 integration tests.
 Four interacting components mean 81 tests.
 
-The rate of growth is exponential.
-Even a moderately sized app will need thousands of tests to cover all the possible permutations of component behaviors.
+My codebase has hundreds of components.
+I asked my calculator how many tests that would need, and it gave me an answer with an _e_ in it, if that tells you something.
+How many components are in your codebase?
+
+Even a moderately sized app will need tens of thousands of tests to cover all the possible permutations of component behaviors.
 If you rely solely on integration tests, you will _never_ have confidence in the behavior of your application, because you will never be able to write thousands of tests, let alone wait for the hours required to run them all.
 
 <small>*I'm simplifying, of course. In reality, the component probably needs  six to ten unit tests, because you need to assert negative conditions as well, and error handling. So you can see that the problem will actually compound much worse that I've stated here.</small>
