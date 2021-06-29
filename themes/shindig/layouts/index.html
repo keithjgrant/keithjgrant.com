@@ -11,7 +11,7 @@
       <div class="welcome">
         <div>Hi, I’m Keith<br>I make things on the&nbsp;web</div>
       </div>
-      {{ range first 1 (where .Site.Pages "Section" "posts") }}
+      {{ range ( where site.RegularPages "Section" "posts" | first 1 ) }}
         <link rel="prefetch" href="{{ .RelPermalink }}">
         <a class="latest-post" href={{ .RelPermalink }}>
           <div class="latest-post_subheading">Latest post</div>
