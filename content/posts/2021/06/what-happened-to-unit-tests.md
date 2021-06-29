@@ -60,7 +60,7 @@ These are internals, implementation details that are irrelevant and have no busi
 And I also agree that Enzyme probably shouldn't give us the ability to do many of those things, as it enables bad practices.
 
 But that doesn't mean shallow rendering is wrong.
-It just means that bad test practices are bad.
+It means that bad test practices are.
 These bad habits can exist with deep rendering just as with shallow.
 
 Kent says, "For example, the `<Fade />` component we have above is an implementation detail of the `<HiddenMessage />` component, but because we're shallow rendering `<Fade />` isn't rendered so changes to that component could break our application but not our test."
