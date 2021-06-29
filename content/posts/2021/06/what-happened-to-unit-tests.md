@@ -86,8 +86,7 @@ If its child component has three key behaviors, it requires three unit tests.
 If you plan only to test those behaviors via integration tests, you need three times three unit tests, because you have to check how every permutation behaves.
 
 But your app isn't just two components, so let's keep going.
-If you have a grandchild component with three key behaviors, you need three unit tests.
-But now you need to multiply all your integration tests by three, so you need 27 integration tests.
+If you have a grandchild component with three key behaviors, you need to multiply all your integration tests by three, so you need 27 integration tests.
 Four interacting components mean 81 tests.
 
 My codebase has hundreds of components.
