@@ -4,7 +4,13 @@ date: 2021-06-29T09:25:49-07:00
 tags:
   - tests
   - javascript
-draft: true
+
+image:
+  url: "/images/2021/disassembled-typewriter.jpg"
+  alt: "A typwriter completely disassembled with all pieces arranged neatly on a white surface"
+  align: "50% 50%"
+  author: "Florian Klauer"
+  authorUrl: "https://unsplash.com/photos/-K6JMRMj4x4"
 ---
 
 It seems to me [one individual](https://kentcdodds.com/blog/why-i-never-use-shallow-rendering) has convinced our entire industry to stop shallow rendering, and to abandon unit testing in favor of exclusively using integration tests and I gotta be honest, I don't buy it.
