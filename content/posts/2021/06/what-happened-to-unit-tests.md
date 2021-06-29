@@ -95,7 +95,7 @@ I asked my calculator how many tests that would need, and it gave me an answer w
 How many components are in your codebase?
 
 Even a moderately sized app will need tens of thousands of tests to cover all the possible permutations of component behaviors.
-If you rely solely on integration tests, you will _never_ have confidence in the behavior of your application, because you will never be able to write thousands of tests, let alone wait for the hours required to run them all.
+If you rely solely on integration tests, you will _never_ have confidence in the behavior of your application, because you will never be able to write thousands of tests, let alone wait the hours required to run them all.
 
 <small>*I'm simplifying, of course. In reality, the component probably needs  six to ten unit tests, because you need to assert negative conditions as well, and error handling. So you can see that the problem will actually compound much worse that I've stated here.</small>
 
