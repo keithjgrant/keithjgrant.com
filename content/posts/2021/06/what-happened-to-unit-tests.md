@@ -98,6 +98,11 @@ If you rely solely on integration tests, you will _never_ have confidence in the
 
 <small>*I'm simplifying, of course. In reality, the component probably needs  six to ten unit tests, because you need to assert negative conditions as well, and error handling. So you can see that the problem will actually compound much worse that I've stated here.</small>
 
+But with unit tests, it's much simpler.
+Assert that each component does what it should when given certain props, and when certain user interactions occur.
+Then assert that each component sets the correct props on its children components.
+If those child components are similarly tested, you can be confident with far fewer tests than checking all the ways those behaviors can mix and match in integration.
+
 ## React has shot itself in the foot
 
 What really gets me about all this is it's not just the community that has gone down this road, the React library itself has encouraged it.
