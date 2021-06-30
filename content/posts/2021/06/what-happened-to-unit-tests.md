@@ -13,7 +13,7 @@ image:
   authorUrl: "https://unsplash.com/photos/-K6JMRMj4x4"
 ---
 
-It seems to me [one individual](https://kentcdodds.com/blog/why-i-never-use-shallow-rendering) has convinced our entire industry to stop shallow rendering, and to abandon unit testing in favor of exclusively using integration tests and I gotta be honest, I don't buy it.
+It seems to me [one individual](https://kentcdodds.com/blog/why-i-never-use-shallow-rendering) has convinced our entire industry to stop shallow rendering, and to abandon unit testing in favor of (almost) exclusively using integration tests and I gotta be honest, I don't buy it.
 I agree with many of the arguments in that post, but not the conclusion.
 And I think the state of unit testing in React is worse off today than it was three years ago because of this mindset.
 
